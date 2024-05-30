@@ -13,7 +13,6 @@
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "check-types": "tsc --noEmit --pretty",
     "test": "vitest run",
-    "commit": "cz",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "dotenv -c -- drizzle-kit studio",
@@ -22,8 +21,8 @@
     "storybook:build": "storybook build",
     "storybook:serve": "http-server storybook-static --port 6006 --silent",
     "serve-storybook": "run-s storybook:*",
-    "test-storybook:ci": "start-server-and-test serve-storybook http://127.0.0.1:6006 test-storybook",
-    "prepare": "husky"
+    "commit": "cz",
+    "test-storybook:ci": "start-server-and-test serve-storybook http://127.0.0.1:6006 test-storybook"
   },
   "dependencies": {
     "@clerk/localizations": "^2.4.3",
@@ -98,7 +97,6 @@
     "eslint-plugin-testing-library": "^6.2.2",
     "eslint-plugin-unused-imports": "^3.2.0",
     "http-server": "^14.1.1",
-    "husky": "^9.0.11",
     "jiti": "^1.21.0",
     "jsdom": "^24.1.0",
     "lint-staged": "^15.2.5",
@@ -111,7 +109,7 @@
     "storybook": "^8.1.4",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vite-tsconfig-paths": "^4.3.2",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "config": {
     "commitizen": {
@@ -120,7 +118,7 @@
   },
   "release": {
     "branches": [
-      "main"
+      "master"
     ],
     "plugins": [
       [
@@ -141,5 +139,5 @@
       "@semantic-release/github"
     ]
   },
-  "author": "Ixartz (https://github.com/ixartz)"
+  "author": "Remco Stoeten (https://github.com/remcostoeten)"
 }
