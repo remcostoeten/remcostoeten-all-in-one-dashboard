@@ -1,32 +1,32 @@
-import '@/styles/global.css';
+import "@/styles/global.css";
 
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from "@/utils/AppConfig";
 
 export const metadata: Metadata = {
   icons: [
     {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
     },
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/favicon-32x32.png',
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
     },
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/favicon-16x16.png',
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
     },
     {
-      rel: 'icon',
-      url: '/favicon.ico',
+      rel: "icon",
+      url: "/favicon.ico",
     },
   ],
 };
@@ -42,6 +42,8 @@ export default function RootLayout(props: {
   const messages = useMessages();
 
   return (
+    // ToDo add viewport tag https://www.youtube.com/shorts/YqAxXBrrryc
+    // ToDo implement logic for tab title change when switching https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c
     <html lang={props.params.locale}>
       <body>
         <NextIntlClientProvider

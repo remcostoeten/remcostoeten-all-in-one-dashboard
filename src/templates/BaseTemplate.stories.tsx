@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/test';
-import { NextIntlClientProvider } from 'next-intl';
+import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
+import { NextIntlClientProvider } from "next-intl";
 
-import messages from '@/locales/en.json';
+import messages from "@/locales/en.json";
 
-import { BaseTemplate } from './BaseTemplate';
+import { BaseTemplate } from "./BaseTemplate";
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
 const meta = {
-  title: 'Example/BaseTemplate',
+  title: "Example/BaseTemplate",
   component: BaseTemplate,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/7.0/react/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [
     (Story) => (
       <NextIntlClientProvider locale="en" messages={messages}>
@@ -41,7 +41,7 @@ export const BaseWithReactComponent = {
 
 export const BaseWithString = {
   args: {
-    children: 'String',
+    children: "String",
     leftNav: (
       <>
         <li>Link 1</li>
@@ -64,7 +64,7 @@ export const BaseWithHomeLink: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const link = canvas.getByText('Link 1');
+    const link = canvas.getByText("Link 1");
 
     await userEvent.click(link);
   },

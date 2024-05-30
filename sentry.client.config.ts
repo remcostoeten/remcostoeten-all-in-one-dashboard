@@ -2,8 +2,8 @@
 // The config you add here will be used whenever a users loads a page in their browser.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-import * as Sentry from '@sentry/nextjs';
-import * as Spotlight from '@spotlightjs/spotlight';
+import * as Sentry from "@sentry/nextjs";
+import * as Spotlight from "@spotlightjs/spotlight";
 
 Sentry.init({
   // FIXME: Add your Sentry DSN
@@ -31,6 +31,6 @@ Sentry.init({
   ],
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   Spotlight.init();
 }

@@ -1,0 +1,27 @@
+# Hosting
+# Replace by your domain name, only for production
+# NEXT_PUBLIC_APP_URL=https://panel.remcostoeten.com
+
+# Database
+# Using an incorrect DATABASE_URL value, Next.js build will timeout and you will get the following error: "because it took more than 60 seconds"
+# DATABASE_URL=libsql://[RANDOM-CHARS]-[DB-NAME]-[ORG-NAME].turso.io
+DATABASE_URL='libsql://all-in-one-dashboard-remcostoeten.turso.io'
+DATABASE_AUTH_TOKEN='eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTcwOTQxOTAsImlkIjoiNWE4N2NmNTgtY2RmYi00ZDBjLWI3NWEtZGE0NzBiOWE5OTgxIn0.rsTiNH6JK3S8oiSyza6fZ0k-KeGIPeC7hjo9YNzjD6xaEOAKHDuoZ_pNbnL1hGb3BBbnlAQdE6fyXi8NmbVJBg'
+
+# Clerk authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_b3Blbi1zdGlua2J1Zy04LmNsZXJrLmFjY291bnRzLmRldiQ
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+
+######## [BEGIN] SENSITIVE DATA ######## For security reason, don't update the following variables (secret key) directly in this file.
+######## Please create a new file named `.env.local`, all environment files ending with `.local` won't be tracked by Git.
+######## After creating the file, you can add the following variables.
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+NODE_ENV=development
+
+# LOGTAIL_SOURCE_TOKEN=
+######## [END] SENSITIVE DATA
+
+
+CROWDIN_PROJECT_ID='681042'  CROWDIN_PERSONAL_TOKEN='33f9b6cf870244d0e28fe45e584082fe2930dfda68a053fb27c1183bbfa5870ff2babe09e6c29b7c'
