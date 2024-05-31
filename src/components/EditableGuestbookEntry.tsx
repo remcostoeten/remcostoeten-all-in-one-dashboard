@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { GuestbookForm } from './GuestbookForm';
+import { GuestbookForm } from "./GuestbookForm";
 
 const EditableGuestbookEntry = (props: {
   id: number;
@@ -47,9 +47,9 @@ const EditableGuestbookEntry = (props: {
             }}
             onValid={async (data) => {
               await fetch(`/api/guestbook`, {
-                method: 'PUT',
+                method: "PUT",
                 headers: {
-                  'Content-Type': 'application/json',
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                   id: props.id,
@@ -62,7 +62,7 @@ const EditableGuestbookEntry = (props: {
           />
         ) : (
           <>
-            <span className="text-gray-500">{props.username}:</span>{' '}
+            <span className="text-gray-500">{props.username}:</span>{" "}
             <span className="text-gray-800">{props.body}</span>
           </>
         )}
