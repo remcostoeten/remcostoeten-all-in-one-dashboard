@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 const DeleteGuestbookEntry = (props: { id: number }) => {
   const router = useRouter();
 
   const handleDelete = async () => {
     await fetch(`/api/guestbook`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         id: props.id,
