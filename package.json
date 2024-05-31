@@ -33,7 +33,7 @@
     "next-intl": "^3.14.1",
     "pino": "^8.21.0",
     "pino-pretty": "^10.3.1",
-    "react": "~18.2.0",
+    "react": "~18.3.1",
     "react-dom": "~18.2.0",
     "react-hook-form": "^7.51.5",
     "sass": "^1.77.4",
