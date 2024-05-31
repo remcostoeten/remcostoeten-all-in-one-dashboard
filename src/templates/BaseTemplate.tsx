@@ -1,16 +1,17 @@
 import { useTranslations } from 'next-intl';
+import type { ReactNode } from 'react';
 
 import { AppConfig } from '@/utils/AppConfig';
 
 const BaseTemplate = (props: {
-  leftNav: React.ReactNode;
-  rightNav?: React.ReactNode;
-  children: React.ReactNode;
+  leftNav: ReactNode;
+  rightNav?: ReactNode;
+  children: ReactNode;
 }) => {
   const t = useTranslations('BaseTemplate');
 
   return (
-    <div className="w-full px-1 text-gray-700 antialiased">
+    <div className="w-full bg-gray-50 px-1 text-neutral-900 antialiased">
       <div className="mx-auto max-w-screen-md">
         <header className="border-b border-gray-300">
           <div className="pb-8 pt-16">
