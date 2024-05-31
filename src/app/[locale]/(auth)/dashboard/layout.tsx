@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { useTranslations } from "next-intl";
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
-import LocaleSwitcher from "@/components/LocaleSwitcher";
-import { LogOutButton } from "@/components/LogOutButton";
-import { BaseTemplate } from "@/templates/BaseTemplate";
+import LocaleSwitcher from '@/components/LocaleSwitcher';
+import { LogOutButton } from '@/components/LogOutButton';
+import { BaseTemplate } from '@/templates/BaseTemplate';
 
 export default function DashboardLayout(props: { children: React.ReactNode }) {
-  const t = useTranslations("DashboardLayout");
+  const t = useTranslations('DashboardLayout');
 
   return (
     <BaseTemplate
@@ -17,7 +17,7 @@ export default function DashboardLayout(props: { children: React.ReactNode }) {
               href="/dashboard/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t("dashboard_link")}
+              {t('dashboard_link')}
             </Link>
           </li>
           <li>
@@ -25,7 +25,7 @@ export default function DashboardLayout(props: { children: React.ReactNode }) {
               href="/dashboard/user-profile/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t("user_profile_link")}
+              {t('user_profile_link')}
             </Link>
           </li>
         </>
