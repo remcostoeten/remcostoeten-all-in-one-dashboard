@@ -1,7 +1,5 @@
 import { getTranslations } from 'next-intl/server';
 
-import { Sponsors } from '@/components/Sponsors';
-
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
@@ -44,7 +42,6 @@ export default function Index() {
         recommend trying them out.
       </p>
       <h2 className="mt-5 text-2xl font-bold">Sponsors</h2>
-      <Sponsors />
       <h2 className="mt-5 text-2xl font-bold">
         Boilerplate Code for Your Next.js Project with Tailwind CSS
       </h2>
