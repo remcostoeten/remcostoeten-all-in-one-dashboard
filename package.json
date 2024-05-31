@@ -13,12 +13,11 @@
     "lint": "next lint",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
-    "check-types": "tsc --noEmit --pretty",
+    "typecheck": "tsc --noEmit --pretty",
     "commit": "cz",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "dotenv -c -- drizzle-kit studio",
-    "test:e2e": "playwright test"
+    "db:studio": "dotenv -c -- drizzle-kit studio"
   },
   "dependencies": {
     "@clerk/localizations": "^2.4.3",
