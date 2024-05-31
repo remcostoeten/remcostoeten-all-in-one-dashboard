@@ -28,5 +28,20 @@
   },
   "prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
   "i18n-ally.localesPaths": ["src/locales"],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "folder-color.pathColors": [
+    {
+      "folderPath": "personal-panel/migrations/meta/",
+      "color": "foldercolorizer.LightYellow"
+    },
+    {
+      "folderPath": "personal-panel/src/",
+      "color": "foldercolorizer.LightPink",
+      "badge": "😀"
+    },
+    {
+      "folderPath": "personal-panel/ddd.local/",
+      "badge": "🥶"
+    }
+  ]
 }
