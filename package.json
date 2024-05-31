@@ -14,7 +14,8 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "typecheck": "tsc --noEmit --pretty",
-    "commit": "cz",
+    "commit": "git add * ; cz",
+    "push": "git add * ; cz ;git push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "dotenv -c -- drizzle-kit studio"
