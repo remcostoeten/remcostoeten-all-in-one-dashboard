@@ -1,20 +1,18 @@
-import pino from "pino";
-
-import { Env } from "./Env";
+import pino from 'pino';
 
 let options = {};
 
-if (Env.LOGTAIL_SOURCE_TOKEN) {
+if (process.env.LOGTAIL_SOURCE_TOKEN) {
   options = {
     transport: {
-      target: "@logtail/pino",
-      options: { sourceToken: Env.LOGTAIL_SOURCE_TOKEN },
+      target: '@logtail/pino',
+      options: { sourceToken: process.env.LOGTAIL_SOURCE_TOKEN },
     },
   };
 } else {
   options = {
     transport: {
-      target: "pino-pretty",
+      target: 'pino-pretty',
       options: {
         colorize: true,
       },
