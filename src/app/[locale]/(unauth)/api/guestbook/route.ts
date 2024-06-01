@@ -1,9 +1,9 @@
 import { eq, sql } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
+import { guestbookSchema } from "@/core/db-models/";
 import { db } from "@/libs/DB";
 import { logger } from "@/libs/Logger";
-import { guestbookSchema } from "@/core/db-models/";
 import {
   DeleteGuestbookValidation,
   EditGuestbookValidation,

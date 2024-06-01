@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 import { db } from "@/libs/DB";
 import { logger } from "@/libs/Logger";
 import {
-  TodoValidation,
-  EditTodoValidation,
-  DeleteTodoValidation,
   CompleteTodoValidation,
+  DeleteTodoValidation,
+  EditTodoValidation,
+  TodoValidation,
 } from "@/validations/TodoValidation";
 import { todoSchema } from "@/core/db-models";
 
@@ -46,6 +46,7 @@ export const PUT = async (request: Request) => {
       .update(todoSchema)
       .set({
         ...parse.data,
+        completed: parse.data.completed ? 1 : 0, // convert boolean to number
         updatedAt: sql`(strftime('%s', 'now'))`,
       })
       .where(eq(todoSchema.id, parse.data.id))
@@ -73,6 +74,7 @@ export const DELETE = async (request: Request) => {
     await db.delete(todoSchema).where(eq(todoSchema.id, parse.data.id)).run();
 
     logger.info("A todo has been deleted");
+    console.log("A todo has been deleted");
 
     return NextResponse.json({});
   } catch (error) {

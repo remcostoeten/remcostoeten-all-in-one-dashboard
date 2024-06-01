@@ -1,0 +1,2162 @@
+{
+  "layers": [
+    { "type": "FRAME", "width": 3278, "height": 1432, "x": 0, "y": 0 },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "width": 3278,
+      "height": 1432,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "width": 3278,
+      "height": 1432,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "width": 3278,
+      "height": 1432,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.0784313725490196,
+            "g": 0.09019607843137255,
+            "b": 0.10980392156862745
+          },
+          "opacity": 1
+        }
+      ],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "width": 3278,
+      "height": 1432,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.0784313725490196,
+            "g": 0.09019607843137255,
+            "b": 0.10980392156862745
+          },
+          "opacity": 1
+        }
+      ],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 116.80000305175781,
+      "width": 3278.400146484375,
+      "height": 0.8,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "width": 3278,
+      "height": 117,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 36,
+      "y": 16,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 36,
+      "y": 16,
+      "width": 32,
+      "height": 32,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.0784313725490196,
+            "g": 0.09019607843137255,
+            "b": 0.10980392156862745
+          },
+          "opacity": 1
+        }
+      ],
+      "effects": [
+        {
+          "color": { "r": 0, "g": 0, "b": 0, "a": 0.3 },
+          "type": "DROP_SHADOW",
+          "radius": 1,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "offset": { "x": 0, "y": 0 }
+        }
+      ],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 20,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 20,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "fills": [
+        {
+          "url": "https://app.gitbook.com/public/dist/assets/joypixels-sprite-64-objects-2IY3TKWN.png",
+          "type": "IMAGE",
+          "scaleMode": "FILL",
+          "imageHash": null
+        }
+      ],
+      "name": "IMAGE",
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 41,
+      "y": 21,
+      "width": 22,
+      "height": 22,
+      "fills": [
+        {
+          "url": "https://app.gitbook.com/public/dist/assets/joypixels-sprite-64-objects-2IY3TKWN.png",
+          "type": "IMAGE",
+          "scaleMode": "FILL",
+          "imageHash": null
+        }
+      ],
+      "name": "IMAGE",
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 84,
+      "y": 18,
+      "width": 106,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 84,
+      "y": 18,
+      "width": 106,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 92,
+      "y": 18,
+      "width": 90,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 2692,
+      "y": 24,
+      "width": 205,
+      "height": 20,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 2913,
+      "y": 18,
+      "width": 129,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 438.549 438.549\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\" fill=\"rgb(0, 0, 0)\"><path fill=\"rgb(222, 223, 227)\" d=\"M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 0 1-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z\"></path></svg>",
+      "x": 2926,
+      "y": 26,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3058,
+      "y": 16,
+      "width": 35,
+      "height": 35,
+      "fills": [],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.30196078431372547,
+            "b": 0.596078431372549,
+            "g": 0.8705882352941177
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 2
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3060,
+      "y": 18,
+      "width": 32,
+      "height": 32,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.0784313725490196,
+            "g": 0.09019607843137255,
+            "b": 0.10980392156862745
+          },
+          "opacity": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/57683378?v=4",
+          "type": "IMAGE",
+          "scaleMode": "FILL",
+          "imageHash": null
+        }
+      ],
+      "name": "IMAGE"
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3109,
+      "y": 18,
+      "width": 97,
+      "height": 32,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.13333333333333333,
+            "g": 0.15294117647058825,
+            "b": 0.1803921568627451
+          },
+          "opacity": 1
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" d=\"M7.4 11a.6.6 0 1 0 1.2 0V3.449l1.976 1.975a.6.6 0 0 0 .848-.848l-2.999-3a.622.622 0 0 0-.194-.13.598.598 0 0 0-.656.13l-3 3a.6.6 0 1 0 .85.848L7.4 3.45V11Z\"></path><path fill=\"rgb(222, 223, 227)\" d=\"M5.175 8.4H5.5a.6.6 0 0 1 0 1.2h-.3c-.57 0-.961 0-1.265.025-.296.024-.455.069-.57.128a1.4 1.4 0 0 0-.612.611c-.06.116-.104.275-.128.571-.025.304-.025.695-.025 1.265v.2c0 .29 0 .471.012.608.01.13.027.165.032.174a.4.4 0 0 0 .174.174.494.494 0 0 0 .174.032c.137.011.318.012.608.012h8.8c.29 0 .471 0 .608-.012a.494.494 0 0 0 .174-.032.4.4 0 0 0 .174-.174.494.494 0 0 0 .032-.174c.011-.137.012-.318.012-.608v-.2c0-.57 0-.961-.025-1.265-.024-.296-.069-.455-.128-.57a1.4 1.4 0 0 0-.611-.612c-.116-.06-.275-.104-.571-.128C11.76 9.6 11.37 9.6 10.8 9.6h-.3a.6.6 0 1 1 0-1.2h.325c.539 0 .98 0 1.338.03.37.03.705.094 1.017.253a2.6 2.6 0 0 1 1.137 1.137c.159.312.223.647.254 1.018.029.358.029.798.029 1.337v.247c0 .261 0 .492-.016.684a1.627 1.627 0 0 1-.158.62 1.6 1.6 0 0 1-.7.7 1.627 1.627 0 0 1-.62.158c-.192.016-.423.016-.684.016H3.578c-.261 0-.492 0-.684-.016a1.626 1.626 0 0 1-.62-.158 1.6 1.6 0 0 1-.7-.7 1.626 1.626 0 0 1-.158-.62c-.016-.192-.016-.423-.016-.684v-.247c0-.539 0-.98.03-1.338.03-.37.094-.705.253-1.017A2.6 2.6 0 0 1 2.82 8.683c.312-.159.647-.223 1.018-.254.358-.029.798-.029 1.337-.029Z\"></path></svg>",
+      "x": 3122,
+      "y": 26,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3222,
+      "y": 18,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" d=\"M8 2.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 6.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 11.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z\"></path></svg>",
+      "x": 3230,
+      "y": 26,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 66.40000457763672,
+      "width": 3278.400146484375,
+      "height": 0.8,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.16862745098039217,
+            "b": 0.2235294117647059,
+            "g": 0.1803921568627451
+          },
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 67,
+      "width": 3278,
+      "height": 49,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 76,
+      "width": 3198,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 76,
+      "width": 192,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><g clip-path=\"url(#ChangeRequest_svg__a)\"><path fill=\"rgb(222, 223, 227)\" fill-rule=\"evenodd\" d=\"M15.1 3.5c0 1.23-.853 2.26-2 2.53v.47a6.6 6.6 0 0 1-6.6 6.6h-.47A2.601 2.601 0 1 1 2.9 9.97V1.5a.6.6 0 0 1 1.2 0v8.47a2.604 2.604 0 0 1 1.93 1.93h.47a5.4 5.4 0 0 0 5.4-5.4v-.47a2.601 2.601 0 1 1 3.2-2.53Zm-2.6-1.4a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Zm-9 9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Z\" clip-rule=\"evenodd\"></path></g><defs><clipPath id=\"ChangeRequest_svg__a\"><path fill=\"rgb(255, 255, 255)\" d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 37,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 232,
+      "y": 76,
+      "width": 135,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" fill-rule=\"evenodd\" d=\"M5 1.6A1.4 1.4 0 0 0 3.6 3v3.4h8.8V3a1.4 1.4 0 0 0-1.3-1.396V4a.6.6 0 1 1-1.2 0V1.6H8.6V3a.6.6 0 1 1-1.2 0V1.6H5ZM5 .4A2.6 2.6 0 0 0 2.4 3v6A1.6 1.6 0 0 0 4 10.6h1.28a.4.4 0 0 1 .392.479L5.39 12.49a2.6 2.6 0 0 0 2.55 3.11h.12a2.6 2.6 0 0 0 2.55-3.11l-.282-1.412a.4.4 0 0 1 .392-.478H12A1.6 1.6 0 0 0 13.6 9V3A2.6 2.6 0 0 0 11 .4H5Zm7.4 7.2H3.6V9c0 .22.18.4.4.4h1.28a1.6 1.6 0 0 1 1.57 1.914l-.283 1.412A1.4 1.4 0 0 0 7.94 14.4h.12a1.4 1.4 0 0 0 1.373-1.675l-.282-1.411A1.6 1.6 0 0 1 10.72 9.4H12a.4.4 0 0 0 .4-.4V7.6Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 244,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 383,
+      "y": 76,
+      "width": 148,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" fill-rule=\"evenodd\" d=\"M4.975 3.125a2.225 2.225 0 0 1 4.45 0V3.5h.07c.437 0 .795 0 1.088.02.302.02.578.065.843.174a2.55 2.55 0 0 1 1.38 1.38c.11.265.153.54.174.843.01.151.015.32.018.508h.377a2.225 2.225 0 0 1 0 4.45H13v.53c0 .525 0 .955-.029 1.305-.03.362-.092.69-.249.998a2.55 2.55 0 0 1-1.114 1.114c-.308.157-.636.22-.998.25-.35.028-.78.028-1.305.028h-.48a.6.6 0 0 1-.6-.6v-1.137a.862.862 0 1 0-1.725 0V14.5a.6.6 0 0 1-.6.6h-.805c-.525 0-.955 0-1.305-.029-.362-.03-.69-.092-.998-.249a2.55 2.55 0 0 1-1.114-1.114c-.157-.308-.22-.636-.25-.998-.028-.35-.028-.78-.028-1.305v-.155c0-.87.705-1.575 1.575-1.575a1.025 1.025 0 1 0 0-2.05c-.852 0-1.608-.695-1.561-1.606.017-.344.059-.652.18-.945a2.55 2.55 0 0 1 1.38-1.38c.265-.11.54-.153.843-.174.293-.02.65-.02 1.087-.02h.071v-.375ZM7.2 2.1c-.566 0-1.025.459-1.025 1.025V4.1a.6.6 0 0 1-.6.6h-.65c-.463 0-.78 0-1.026.017-.242.017-.372.047-.466.086-.33.137-.593.4-.73.73-.044.105-.076.253-.09.548-.01.165.137.344.362.344a2.225 2.225 0 1 1 0 4.45.375.375 0 0 0-.375.375v.13c0 .556 0 .937.025 1.232.023.288.066.441.122.55.13.255.336.461.59.59.11.057.263.1.551.123.295.024.676.025 1.232.025h.18v-.537a2.062 2.062 0 1 1 4.125 0v.537c.478 0 .818-.003 1.087-.025.288-.023.441-.066.55-.122.255-.13.461-.336.59-.59.057-.11.1-.263.123-.551.024-.295.025-.676.025-1.232v-1.105a.6.6 0 0 1 .6-.6h.975a1.025 1.025 0 1 0 0-2.05H12.4a.6.6 0 0 1-.6-.6c0-.463 0-.78-.017-1.026-.017-.242-.047-.372-.086-.466a1.35 1.35 0 0 0-.73-.73c-.094-.04-.225-.07-.466-.086A16.748 16.748 0 0 0 9.475 4.7h-.65a.6.6 0 0 1-.6-.6v-.975c0-.566-.459-1.025-1.025-1.025Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 396,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3126,
+      "y": 76,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><g fill=\"rgb(222, 223, 227)\" fill-rule=\"evenodd\" clip-path=\"url(#Image_svg__a)\" clip-rule=\"evenodd\"><path d=\"M6 2.9a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2ZM4.6 5.5a1.4 1.4 0 1 1 2.8 0 1.4 1.4 0 0 1-2.8 0Z\" fill=\"rgb(222, 223, 227)\"></path><path d=\"M3 .9A2.6 2.6 0 0 0 .4 3.5v9A2.6 2.6 0 0 0 3 15.1h10a2.6 2.6 0 0 0 2.6-2.6v-9A2.6 2.6 0 0 0 13 .9H3ZM1.6 3.5A1.4 1.4 0 0 1 3 2.1h10a1.4 1.4 0 0 1 1.4 1.4v6.88l-1.189-1.932c-1.014-1.648-3.41-1.65-4.426-.003l-1.559 2.523-.175-.233a2.6 2.6 0 0 0-4.132-.036L1.6 12.394V3.5Zm.564 10.123c.234.174.523.277.836.277h2.415l1.134-1.835-.458-.61a1.4 1.4 0 0 0-2.225-.02l-1.702 2.188Zm4.662.277H13a1.4 1.4 0 0 0 1.391-1.244L12.19 9.077a1.4 1.4 0 0 0-2.383-.002L6.826 13.9Z\" fill=\"rgb(222, 223, 227)\"></path></g><defs><clipPath id=\"Image_svg__a\"><path fill=\"rgb(255, 255, 255)\" d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 3134,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3158,
+      "y": 76,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><g fill=\"rgb(222, 223, 227)\" clip-path=\"url(#History_svg__a)\"><path d=\"M6.012 1.919A6.368 6.368 0 0 0 3.206 3.76l1.573-.272a.61.61 0 0 1 .702.488.59.59 0 0 1-.48.692L2.15 5.16a.61.61 0 0 1-.702-.487l-.53-2.82a.59.59 0 0 1 .48-.692.61.61 0 0 1 .702.487l.24 1.279a7.568 7.568 0 0 1 3.3-2.15 7.584 7.584 0 0 1 6.122.62 7.563 7.563 0 0 1 2.739 2.664c.348.574.624 1.2.812 1.865a7.54 7.54 0 0 1 .247 1.286 7.562 7.562 0 0 1-.71 4.08 7.583 7.583 0 0 1-1.625 2.231l-.01.01a7.573 7.573 0 0 1-2.854 1.692 7.57 7.57 0 0 1-3.614.274 7.554 7.554 0 0 1-2.581-.935 7.563 7.563 0 0 1-1.976-1.66 7.562 7.562 0 0 1-1.373-2.418 7.561 7.561 0 0 1-.35-3.502.6.6 0 1 1 1.19.162 6.361 6.361 0 0 0 .649 3.777c.226.44.496.843.801 1.206a6.429 6.429 0 0 0 4.611 2.268 6.385 6.385 0 0 0 2.27-.313 6.367 6.367 0 0 0 3.78-3.31c.26-.542.437-1.1.537-1.663a6.411 6.411 0 0 0-1.343-5.153A6.427 6.427 0 0 0 8.28 1.607a6.385 6.385 0 0 0-2.268.312Z\" fill=\"rgb(222, 223, 227)\"></path><path d=\"M8.6 4a.6.6 0 0 0-1.2 0v4.281l3.216 2.68a.6.6 0 1 0 .768-.922L8.6 7.72V4Z\" fill=\"rgb(222, 223, 227)\"></path><path d=\"M6.012 1.919A6.368 6.368 0 0 0 3.206 3.76l1.573-.272a.61.61 0 0 1 .702.488.59.59 0 0 1-.48.692L2.15 5.16a.61.61 0 0 1-.702-.487l-.53-2.82a.59.59 0 0 1 .48-.692.61.61 0 0 1 .702.487l.24 1.279a7.568 7.568 0 0 1 3.3-2.15 7.584 7.584 0 0 1 6.122.62 7.563 7.563 0 0 1 2.739 2.664c.348.574.624 1.2.812 1.865a7.54 7.54 0 0 1 .247 1.286 7.562 7.562 0 0 1-.71 4.08 7.583 7.583 0 0 1-1.625 2.231l-.01.01a7.573 7.573 0 0 1-2.854 1.692 7.57 7.57 0 0 1-3.614.274 7.554 7.554 0 0 1-2.581-.935 7.563 7.563 0 0 1-1.976-1.66 7.562 7.562 0 0 1-1.373-2.418 7.561 7.561 0 0 1-.35-3.502.6.6 0 1 1 1.19.162 6.361 6.361 0 0 0 .649 3.777c.226.44.496.843.801 1.206a6.429 6.429 0 0 0 4.611 2.268 6.385 6.385 0 0 0 2.27-.313 6.367 6.367 0 0 0 3.78-3.31c.26-.542.437-1.1.537-1.663a6.411 6.411 0 0 0-1.343-5.153A6.427 6.427 0 0 0 8.28 1.607a6.385 6.385 0 0 0-2.268.312Z\" fill=\"rgb(222, 223, 227)\"></path><path d=\"M8.6 4a.6.6 0 0 0-1.2 0v4.281l3.216 2.68a.6.6 0 1 0 .768-.922L8.6 7.72V4Z\" fill=\"rgb(222, 223, 227)\"></path></g><defs><clipPath id=\"History_svg__a\"><path fill=\"rgb(255, 255, 255)\" d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 3166,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3190,
+      "y": 76,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" fill-rule=\"evenodd\" d=\"M15.6 4A2.6 2.6 0 0 0 13 1.4H3A2.6 2.6 0 0 0 .4 4v6A2.6 2.6 0 0 0 3 12.6h.092v2.117a.6.6 0 0 0 .987.46l2.672-2.248a1.4 1.4 0 0 1 .901-.329H13a2.6 2.6 0 0 0 2.6-2.6V4ZM13 2.6A1.4 1.4 0 0 1 14.4 4v6a1.4 1.4 0 0 1-1.4 1.4H7.652a2.6 2.6 0 0 0-1.673.61L4.292 13.43V12a.6.6 0 0 0-.6-.6H3A1.4 1.4 0 0 1 1.6 10V4A1.4 1.4 0 0 1 3 2.6h10Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 3198,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3222,
+      "y": 76,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 3222,
+      "y": 76,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" fill-rule=\"evenodd\" d=\"M8 5.4a.6.6 0 0 1 .424.176l4 4a.6.6 0 0 1-.848.848L8 6.85l-3.576 3.575a.6.6 0 0 1-.848-.848l4-4A.6.6 0 0 1 8 5.4Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 3230,
+      "y": 84,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 117,
+      "width": 3278,
+      "height": 1315,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 300,
+      "y": 116.80000305175781,
+      "width": 0.8,
+      "height": 1315.2000732421875,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 117,
+      "width": 300,
+      "height": 1315,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.0784313725490196,
+            "g": 0.09019607843137255,
+            "b": 0.10980392156862745
+          },
+          "opacity": 1
+        }
+      ],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 141,
+      "width": 275,
+      "height": 41,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 138,
+      "width": 275,
+      "height": 6,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 140,
+      "width": 275,
+      "height": 2,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 253,
+      "y": 131,
+      "width": 24,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 253,
+      "y": 131,
+      "width": 24,
+      "height": 20,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 253,
+      "y": 131,
+      "width": 24,
+      "height": 20,
+      "fills": [],
+      "topLeftRadius": 100,
+      "topRightRadius": 100,
+      "bottomRightRadius": 100,
+      "bottomLeftRadius": 100
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" data-rnwibutton--1q9ho9q-hover-focus=\"true\" data-rnwi-handle=\"nearest\" class=\"r-285fr0 r-h7gdob\" style=\"vertical-align: middle; width: 16px; height: 16px;\"><path fill=\"currentColor\" d=\"M8.6 3a.6.6 0 0 0-1.2 0v4.4H3a.6.6 0 0 0 0 1.2h4.4V13a.6.6 0 1 0 1.2 0V8.6H13a.6.6 0 1 0 0-1.2H8.6V3Z\"></path></svg>",
+      "x": 257,
+      "y": 133,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 141,
+      "width": 275,
+      "height": 41,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.16862745098039217,
+            "g": 0.1803921568627451,
+            "b": 0.2235294117647059
+          },
+          "opacity": 1
+        }
+      ],
+      "topLeftRadius": 4,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 259,
+      "y": 149,
+      "width": 24,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M8 2.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 6.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 11.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z\"></path></svg>",
+      "x": 264,
+      "y": 154,
+      "width": 14,
+      "height": 14
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 179,
+      "width": 275,
+      "height": 6,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 181,
+      "width": 275,
+      "height": 2,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 253,
+      "y": 172,
+      "width": 24,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 253,
+      "y": 172,
+      "width": 24,
+      "height": 20,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 253,
+      "y": 172,
+      "width": 24,
+      "height": 20,
+      "fills": [],
+      "topLeftRadius": 100,
+      "topRightRadius": 100,
+      "bottomRightRadius": 100,
+      "bottomLeftRadius": 100
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" data-rnwibutton--1q9ho9q-hover-focus=\"true\" data-rnwi-handle=\"nearest\" class=\"r-285fr0 r-h7gdob\" style=\"vertical-align: middle; width: 16px; height: 16px;\"><path fill=\"currentColor\" d=\"M8.6 3a.6.6 0 0 0-1.2 0v4.4H3a.6.6 0 0 0 0 1.2h4.4V13a.6.6 0 1 0 1.2 0V8.6H13a.6.6 0 1 0 0-1.2H8.6V3Z\"></path></svg>",
+      "x": 257,
+      "y": 174,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 24,
+      "y": 190,
+      "width": 259,
+      "height": 43,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"Qc\" style=\"vertical-align: middle;\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.2\" d=\"M8 12V4M4 8h8\"></path><circle cx=\"8\" cy=\"8\" r=\"7.05\" stroke=\"currentColor\" stroke-dasharray=\"2 3\" stroke-linecap=\"round\" stroke-width=\"1.2\"></circle></svg>",
+      "x": 40,
+      "y": 201,
+      "width": 18,
+      "height": 18
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 300,
+      "y": 117,
+      "width": 2978,
+      "height": 1315,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.0784313725490196,
+            "g": 0.09019607843137255,
+            "b": 0.10980392156862745
+          },
+          "opacity": 1
+        }
+      ],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 300,
+      "y": 117,
+      "width": 2978,
+      "height": 1315,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 300,
+      "y": 117,
+      "width": 2978,
+      "height": 1315,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 300,
+      "y": 117,
+      "width": 2978,
+      "height": 1315,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 308,
+      "y": 125,
+      "width": 32,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><g clip-path=\"url(#PanelLeftClose_svg__a)\"><path stroke=\"rgb(222, 223, 227)\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.2\" d=\"M4.791 14.5v-13m8.653 13H2.556c-.413 0-.809-.152-1.1-.423A1.394 1.394 0 0 1 1 13.055V2.945C1 2.147 1.696 1.5 2.556 1.5h10.888c.86 0 1.556.647 1.556 1.445v10.11c0 .798-.697 1.445-1.556 1.445Z\"></path><path fill=\"rgb(222, 223, 227)\" d=\"M8.017 7.618a.4.4 0 0 0 0 .566l2.4 2.4a.4.4 0 0 0 .683-.283v-4.8a.4.4 0 0 0-.683-.283l-2.4 2.4Z\"></path></g><defs><clipPath id=\"PanelLeftClose_svg__a\"><path d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 316,
+      "y": 133,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 117,
+      "width": 1056,
+      "height": 1315,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 117,
+      "width": 750,
+      "height": 147,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 117,
+      "width": 750,
+      "height": 147,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 125,
+      "width": 410,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 125,
+      "width": 126,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M3.47 5.1H1.5a.6.6 0 0 1 0-1.2h1.97a2.601 2.601 0 1 1 0 1.2Zm1.13-.6a1.4 1.4 0 1 0 2.8 0 1.4 1.4 0 0 0-2.8 0Z\" clip-rule=\"evenodd\"></path><path fill=\"currentColor\" d=\"M10.5 3.9a.6.6 0 1 0 0 1.2h4a.6.6 0 1 0 0-1.2h-4Z\"></path><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M7.4 10.5A1.6 1.6 0 0 1 9 8.9h2a1.6 1.6 0 0 1 1.6 1.6v.4h1.9a.6.6 0 1 1 0 1.2h-1.9v.4a1.6 1.6 0 0 1-1.6 1.6H9a1.6 1.6 0 0 1-1.6-1.6v-2Zm4 0v2a.4.4 0 0 1-.4.4H9a.4.4 0 0 1-.4-.4v-2c0-.22.18-.4.4-.4h2c.22 0 .4.18.4.4Z\" clip-rule=\"evenodd\"></path><path fill=\"currentColor\" d=\"M5.5 10.9a.6.6 0 1 1 0 1.2h-4a.6.6 0 1 1 0-1.2h4Z\"></path></svg>",
+      "x": 1273,
+      "y": 131,
+      "width": 12,
+      "height": 12
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1394,
+      "y": 125,
+      "width": 112,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><g fill=\"currentColor\" fill-rule=\"evenodd\" clip-path=\"url(#Image_svg__a)\" clip-rule=\"evenodd\"><path d=\"M6 2.9a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2ZM4.6 5.5a1.4 1.4 0 1 1 2.8 0 1.4 1.4 0 0 1-2.8 0Z\"></path><path d=\"M3 .9A2.6 2.6 0 0 0 .4 3.5v9A2.6 2.6 0 0 0 3 15.1h10a2.6 2.6 0 0 0 2.6-2.6v-9A2.6 2.6 0 0 0 13 .9H3ZM1.6 3.5A1.4 1.4 0 0 1 3 2.1h10a1.4 1.4 0 0 1 1.4 1.4v6.88l-1.189-1.932c-1.014-1.648-3.41-1.65-4.426-.003l-1.559 2.523-.175-.233a2.6 2.6 0 0 0-4.132-.036L1.6 12.394V3.5Zm.564 10.123c.234.174.523.277.836.277h2.415l1.134-1.835-.458-.61a1.4 1.4 0 0 0-2.225-.02l-1.702 2.188Zm4.662.277H13a1.4 1.4 0 0 0 1.391-1.244L12.19 9.077a1.4 1.4 0 0 0-2.383-.002L6.826 13.9Z\"></path></g><defs><clipPath id=\"Image_svg__a\"><path fill=\"#fff\" d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 1403,
+      "y": 131,
+      "width": 12,
+      "height": 12
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1510,
+      "y": 125,
+      "width": 164,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M15.6 4A2.6 2.6 0 0 0 13 1.4H3A2.6 2.6 0 0 0 .4 4v6A2.6 2.6 0 0 0 3 12.6h.092v2.117a.6.6 0 0 0 .987.46l2.672-2.248a1.4 1.4 0 0 1 .901-.329H13a2.6 2.6 0 0 0 2.6-2.6V4ZM13 2.6A1.4 1.4 0 0 1 14.4 4v6a1.4 1.4 0 0 1-1.4 1.4H7.652a2.6 2.6 0 0 0-1.673.61L4.292 13.43V12a.6.6 0 0 0-.6-.6H3A1.4 1.4 0 0 1 1.6 10V4A1.4 1.4 0 0 1 3 2.6h10Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 1519,
+      "y": 131,
+      "width": 12,
+      "height": 12
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 149,
+      "width": 714,
+      "height": 51,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1208,
+      "y": 159,
+      "width": 56,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1224,
+      "y": 159,
+      "width": 24,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" data-rnwinearest-1f2v84d-hover-focus=\"true\" data-rnwi-handle=\"nearest\" class=\"r-1pa6394\" style=\"vertical-align: middle; width: 24px; min-width: 24px; height: 24px;\"><g fill=\"currentColor\" clip-path=\"url(#EmojiReaction_svg__a)\"><path d=\"M5.287 9.732a.6.6 0 0 0-1.074.536C4.837 11.515 6.123 12.6 8 12.6c1.878 0 3.163-1.085 3.787-2.332a.6.6 0 0 0-1.074-.536C10.26 10.639 9.353 11.4 8 11.4s-2.26-.761-2.713-1.668ZM6 5.4a.6.6 0 0 1 .6.6v1.5a.6.6 0 1 1-1.2 0V6a.6.6 0 0 1 .6-.6ZM10.6 6a.6.6 0 1 0-1.2 0v1.5a.6.6 0 1 0 1.2 0V6Z\"></path><path fill-rule=\"evenodd\" d=\"M8 .4a7.6 7.6 0 1 0 0 15.2A7.6 7.6 0 0 0 8 .4ZM1.6 8a6.4 6.4 0 1 1 12.8 0A6.4 6.4 0 0 1 1.6 8Z\" clip-rule=\"evenodd\"></path></g><defs><clipPath id=\"EmojiReaction_svg__a\"><path fill=\"#fff\" d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 1224,
+      "y": 159,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 149,
+      "width": 714,
+      "height": 51,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1978,
+      "y": 156,
+      "width": 36,
+      "height": 36,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"rgb(222, 223, 227)\" d=\"M8 2.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 6.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM8 11.4a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z\"></path></svg>",
+      "x": 1988,
+      "y": 166,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 216,
+      "width": 750,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 216,
+      "width": 750,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 264,
+      "width": 1056,
+      "height": 182,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 264,
+      "width": 1056,
+      "height": 40,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 240,
+      "width": 1056,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 264,
+      "width": 1056,
+      "height": 40,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 264,
+      "width": 750,
+      "height": 40,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 264,
+      "width": 750,
+      "height": 40,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 264,
+      "width": 750,
+      "height": 40,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 264,
+      "width": 750,
+      "height": 40,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1204,
+      "y": 272,
+      "width": 56,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1236,
+      "y": 272,
+      "width": 24,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M8.6 3a.6.6 0 0 0-1.2 0v4.4H3a.6.6 0 0 0 0 1.2h4.4V13a.6.6 0 1 0 1.2 0V8.6H13a.6.6 0 1 0 0-1.2H8.6V3Z\"></path></svg>",
+      "x": 1241,
+      "y": 277,
+      "width": 14,
+      "height": 14
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 272,
+      "width": 750,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1313,
+      "y": 278,
+      "width": 20,
+      "height": 20,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.14901960784313725,
+            "g": 0.1607843137254902,
+            "b": 0.18823529411764706
+          },
+          "opacity": 1
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.3215686274509804,
+            "b": 0.3686274509803922,
+            "g": 0.3333333333333333
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 3,
+      "topRightRadius": 3,
+      "bottomRightRadius": 3,
+      "bottomLeftRadius": 3
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1926,
+      "y": 275,
+      "width": 24,
+      "height": 24,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.13333333333333333,
+            "g": 0.15294117647058825,
+            "b": 0.1803921568627451
+          },
+          "opacity": 1
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><g fill=\"currentColor\" fill-rule=\"evenodd\" clip-path=\"url(#Image_svg__a)\" clip-rule=\"evenodd\"><path d=\"M6 2.9a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2ZM4.6 5.5a1.4 1.4 0 1 1 2.8 0 1.4 1.4 0 0 1-2.8 0Z\"></path><path d=\"M3 .9A2.6 2.6 0 0 0 .4 3.5v9A2.6 2.6 0 0 0 3 15.1h10a2.6 2.6 0 0 0 2.6-2.6v-9A2.6 2.6 0 0 0 13 .9H3ZM1.6 3.5A1.4 1.4 0 0 1 3 2.1h10a1.4 1.4 0 0 1 1.4 1.4v6.88l-1.189-1.932c-1.014-1.648-3.41-1.65-4.426-.003l-1.559 2.523-.175-.233a2.6 2.6 0 0 0-4.132-.036L1.6 12.394V3.5Zm.564 10.123c.234.174.523.277.836.277h2.415l1.134-1.835-.458-.61a1.4 1.4 0 0 0-2.225-.02l-1.702 2.188Zm4.662.277H13a1.4 1.4 0 0 0 1.391-1.244L12.19 9.077a1.4 1.4 0 0 0-2.383-.002L6.826 13.9Z\"></path></g><defs><clipPath id=\"Image_svg__a\"><path fill=\"#fff\" d=\"M0 0h16v16H0z\"></path></clipPath></defs></svg>",
+      "x": 1931,
+      "y": 280,
+      "width": 14,
+      "height": 14
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1958,
+      "y": 275,
+      "width": 24,
+      "height": 24,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.13333333333333333,
+            "g": 0.15294117647058825,
+            "b": 0.1803921568627451
+          },
+          "opacity": 1
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M9.098 2.554a.6.6 0 1 0-1.196-.108l-1 11a.6.6 0 1 0 1.196.108l1-11ZM4.924 11.924a.6.6 0 0 1-.848 0l-3.5-3.5a.6.6 0 0 1 0-.848l3.5-3.5a.6.6 0 0 1 .848.848L1.85 8l3.075 3.076a.6.6 0 0 1 0 .848ZM11.076 11.924a.6.6 0 0 0 .848 0l3.5-3.5a.6.6 0 0 0 0-.848l-3.5-3.5a.6.6 0 1 0-.848.848L14.15 8l-3.075 3.076a.6.6 0 0 0 0 .848Z\"></path></svg>",
+      "x": 1963,
+      "y": 280,
+      "width": 14,
+      "height": 14
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1990,
+      "y": 275,
+      "width": 24,
+      "height": 24,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.13333333333333333,
+            "g": 0.15294117647058825,
+            "b": 0.1803921568627451
+          },
+          "opacity": 1
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M2.5 2.1a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8ZM2.5 7.1a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8ZM1.6 13a.9.9 0 1 1 1.8 0 .9.9 0 0 1-1.8 0ZM6 2.4a.6.6 0 0 0 0 1.2h8.5a.6.6 0 1 0 0-1.2H6ZM6 7.4a.6.6 0 0 0 0 1.2h8.5a.6.6 0 1 0 0-1.2H6ZM6 13.6h8.5a.6.6 0 0 0 0-1.2H6a.6.6 0 1 0 0 1.2Z\"></path></svg>",
+      "x": 1995,
+      "y": 280,
+      "width": 14,
+      "height": 14
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 272,
+      "width": 750,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 275,
+      "width": 2,
+      "height": 19,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.30196078431372547,
+            "g": 0.8705882352941177,
+            "b": 0.596078431372549
+          },
+          "opacity": 1
+        }
+      ],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1262,
+      "y": 269,
+      "width": 6,
+      "height": 6,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.30196078431372547,
+            "g": 0.8705882352941177,
+            "b": 0.596078431372549
+          },
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 2022,
+      "y": 272,
+      "width": 24,
+      "height": 24,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.13333333333333333,
+            "g": 0.15294117647058825,
+            "b": 0.1803921568627451
+          },
+          "opacity": 1
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M15.6 4A2.6 2.6 0 0 0 13 1.4H3A2.6 2.6 0 0 0 .4 4v6A2.6 2.6 0 0 0 3 12.6h.092v2.117a.6.6 0 0 0 .987.46l2.672-2.248a1.4 1.4 0 0 1 .901-.329H13a2.6 2.6 0 0 0 2.6-2.6V4ZM13 2.6A1.4 1.4 0 0 1 14.4 4v6a1.4 1.4 0 0 1-1.4 1.4H7.652a2.6 2.6 0 0 0-1.673.61L4.292 13.43V12a.6.6 0 0 0-.6-.6H3A1.4 1.4 0 0 1 1.6 10V4A1.4 1.4 0 0 1 3 2.6h10Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 2027,
+      "y": 277,
+      "width": 14,
+      "height": 14
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 304,
+      "width": 1056,
+      "height": 24,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1111,
+      "y": 304,
+      "width": 1056,
+      "height": 102,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 304,
+      "width": 750,
+      "height": 102,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 304,
+      "width": 750,
+      "height": 102,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 304,
+      "width": 750,
+      "height": 102,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1264,
+      "y": 320,
+      "width": 750,
+      "height": 86,
+      "fills": [],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.17647058823529413,
+            "b": 0.22745098039215686,
+            "g": 0.19607843137254902
+          },
+          "opacity": 1
+        }
+      ],
+      "strokeWeight": 1,
+      "topLeftRadius": 6,
+      "topRightRadius": 6,
+      "bottomRightRadius": 6,
+      "bottomLeftRadius": 6
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1273,
+      "y": 329,
+      "width": 171,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4 K0\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M8.6 2a.6.6 0 0 0-1.2 0v7.551L5.424 7.576a.6.6 0 1 0-.848.848l2.999 3 .01.01a.598.598 0 0 0 .83 0l.01-.01 3-3a.6.6 0 0 0-.85-.848L8.6 9.55V2Z\"></path><path fill=\"currentColor\" d=\"M12.373 8.946a.6.6 0 0 1 .807-.263 2.6 2.6 0 0 1 1.137 1.137c.159.312.223.647.254 1.018.029.358.029.798.029 1.337v.247c0 .261 0 .492-.016.684a1.627 1.627 0 0 1-.158.62 1.6 1.6 0 0 1-.7.7 1.627 1.627 0 0 1-.62.158c-.192.016-.423.016-.684.016H3.578c-.261 0-.492 0-.684-.016a1.626 1.626 0 0 1-.62-.158 1.6 1.6 0 0 1-.7-.7 1.626 1.626 0 0 1-.158-.62c-.016-.192-.016-.423-.016-.684v-.247c0-.539 0-.98.03-1.338.03-.37.094-.705.253-1.017A2.6 2.6 0 0 1 2.82 8.683a.6.6 0 1 1 .544 1.07 1.4 1.4 0 0 0-.611.611c-.06.116-.104.275-.128.571-.025.304-.025.695-.025 1.265v.2c0 .29 0 .471.012.608.01.13.027.165.032.174a.4.4 0 0 0 .174.174.494.494 0 0 0 .174.032c.137.011.318.012.608.012h8.8c.29 0 .471 0 .608-.012a.494.494 0 0 0 .174-.032.4.4 0 0 0 .174-.174.494.494 0 0 0 .032-.174c.011-.137.012-.318.012-.608v-.2c0-.57 0-.961-.025-1.265-.024-.296-.069-.455-.128-.57a1.4 1.4 0 0 0-.611-.612.6.6 0 0 1-.263-.807Z\"></path></svg>",
+      "x": 1286,
+      "y": 337,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1448,
+      "y": 329,
+      "width": 172,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4 K0\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M4 .4A2.6 2.6 0 0 0 1.4 3v10A2.6 2.6 0 0 0 4 15.6h8a2.6 2.6 0 0 0 2.6-2.6V6.328a2.6 2.6 0 0 0-.761-1.838L10.51 1.162A2.6 2.6 0 0 0 8.672.4H4ZM2.6 3A1.4 1.4 0 0 1 4 1.6h3.9v2.9a2.6 2.6 0 0 0 2.6 2.6h2.9V13a1.4 1.4 0 0 1-1.4 1.4H4A1.4 1.4 0 0 1 2.6 13V3Zm10.733 2.9a1.399 1.399 0 0 0-.343-.562L9.662 2.01a1.4 1.4 0 0 0-.562-.343V4.5a1.4 1.4 0 0 0 1.4 1.4h2.833Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 1461,
+      "y": 337,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1624,
+      "y": 329,
+      "width": 261,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 438.549 438.549\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4 K0\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" d=\"M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 0 1-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z\"></path></svg>",
+      "x": 1636,
+      "y": 337,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1273,
+      "y": 365,
+      "width": 163,
+      "height": 32,
+      "fills": [],
+      "topLeftRadius": 4,
+      "topRightRadius": 4,
+      "bottomRightRadius": 4,
+      "bottomLeftRadius": 4
+    },
+    {
+      "type": "SVG",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 16 16\" preserveAspectRatio=\"xMidYMid meet\" class=\"X4 K0\" style=\"vertical-align: middle;\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M8 .9a3.6 3.6 0 1 0 0 7.2A3.6 3.6 0 0 0 8 .9ZM5.6 4.5a2.4 2.4 0 1 1 4.8 0 2.4 2.4 0 0 1-4.8 0ZM7.131 9.4c-1.967 0-3.692 1.307-4.28 3.21l-.128.41c-.312 1.008.415 2.08 1.5 2.08h7.554c1.085 0 1.812-1.072 1.5-2.08l-.127-.41c-.589-1.902-2.314-3.21-4.281-3.21H7.131Zm-3.135 3.565c.44-1.418 1.713-2.365 3.135-2.365h1.738c1.422 0 2.696.947 3.135 2.365l.126.41c.087.28-.122.525-.353.525H4.223c-.231 0-.44-.245-.353-.526l.126-.41Z\" clip-rule=\"evenodd\"></path></svg>",
+      "x": 1286,
+      "y": 373,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 1257,
+      "y": 273,
+      "width": 15,
+      "height": 22,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "type": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1,
+      "fills": [],
+      "topLeftRadius": 0,
+      "topRightRadius": 0,
+      "bottomRightRadius": 0,
+      "bottomLeftRadius": 0
+    },
+    {
+      "x": -199960,
+      "y": 1,
+      "width": 25,
+      "height": 22,
+      "type": "TEXT",
+      "characters": "📒",
+      "fills": [
+        { "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 }, "opacity": 1 }
+      ],
+      "fontSize": 20,
+      "fontFamily": "\"Times New Roman\""
+    },
+    {
+      "x": -69952,
+      "y": 21,
+      "width": 9,
+      "height": 8,
+      "type": "TEXT",
+      "characters": "📒",
+      "fills": [
+        { "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 }, "opacity": 1 }
+      ],
+      "fontSize": 20,
+      "fontFamily": "\"Times New Roman\""
+    },
+    {
+      "x": 2708,
+      "y": 24,
+      "width": 173,
+      "height": 20,
+      "type": "TEXT",
+      "characters": "Changes are auto-saved",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "letterSpacing": { "unit": "PIXELS", "value": 0.15 },
+      "lineHeight": { "unit": "PIXELS", "value": 20 },
+      "fontSize": 15,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 2950,
+      "y": 21,
+      "width": 80,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Configure",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 3146,
+      "y": 21,
+      "width": 47,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Share",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 61,
+      "y": 79,
+      "width": 142,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Change Requests",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 268,
+      "y": 79,
+      "width": 86,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Customize",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 420,
+      "y": 79,
+      "width": 98,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Integrations",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 40,
+      "y": 148,
+      "width": 41,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Page",
+      "fills": [
+        { "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 }, "opacity": 1 }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 74,
+      "y": 198,
+      "width": 82,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Add new...",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.6431372549019608,
+            "g": 0.6549019607843137,
+            "b": 0.6901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 1289,
+      "y": 127,
+      "width": 92,
+      "height": 20,
+      "type": "TEXT",
+      "characters": "Page options",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "letterSpacing": { "unit": "PIXELS", "value": 0.15 },
+      "lineHeight": { "unit": "PIXELS", "value": 20 },
+      "fontSize": 15,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 1419,
+      "y": 127,
+      "width": 78,
+      "height": 20,
+      "type": "TEXT",
+      "characters": "Page cover",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "letterSpacing": { "unit": "PIXELS", "value": 0.15 },
+      "lineHeight": { "unit": "PIXELS", "value": 20 },
+      "fontSize": 15,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 1535,
+      "y": 127,
+      "width": 130,
+      "height": 20,
+      "type": "TEXT",
+      "characters": "Comment on page",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "letterSpacing": { "unit": "PIXELS", "value": 0.15 },
+      "lineHeight": { "unit": "PIXELS", "value": 20 },
+      "fontSize": 15,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 1264,
+      "y": 271,
+      "width": 44,
+      "height": 30,
+      "type": "TEXT",
+      "characters": "Type",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.6431372549019608,
+            "g": 0.6549019607843137,
+            "b": 0.6901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 30 },
+      "fontSize": 20,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 1319,
+      "y": 275,
+      "width": 7,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "/",
+      "fills": [
+        { "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 }, "opacity": 1 }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "textCase": "UPPER",
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 1338,
+      "y": 271,
+      "width": 133,
+      "height": 30,
+      "type": "TEXT",
+      "characters": "for commands",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.6431372549019608,
+            "g": 0.6549019607843137,
+            "b": 0.6901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 30 },
+      "fontSize": 20,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 1471,
+      "y": 271,
+      "width": 28,
+      "height": 30,
+      "type": "TEXT",
+      "characters": "or",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.6431372549019608,
+            "g": 0.6549019607843137,
+            "b": 0.6901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 30 },
+      "fontSize": 20,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 1499,
+      "y": 271,
+      "width": 271,
+      "height": 30,
+      "type": "TEXT",
+      "characters": "paste a link to embed content",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.6431372549019608,
+            "g": 0.6549019607843137,
+            "b": 0.6901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 30 },
+      "fontSize": 20,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    },
+    {
+      "x": 1310,
+      "y": 332,
+      "width": 121,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Import content",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 1485,
+      "y": 332,
+      "width": 122,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Use a template",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 1660,
+      "y": 332,
+      "width": 212,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Sync with GitHub / GitLab",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "x": 1310,
+      "y": 368,
+      "width": 113,
+      "height": 25,
+      "type": "TEXT",
+      "characters": "Add members",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.8705882352941177,
+            "g": 0.8745098039215686,
+            "b": 0.8901960784313725
+          },
+          "opacity": 1
+        }
+      ],
+      "lineHeight": { "unit": "PIXELS", "value": 25 },
+      "fontSize": 18,
+      "fontFamily": "gitbook-content-font, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "textAlignHorizontal": "CENTER"
+    }
+  ]
+}
