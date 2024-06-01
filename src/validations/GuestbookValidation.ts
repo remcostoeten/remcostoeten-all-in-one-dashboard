@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const GuestbookValidation = z.object({
   username: z.string().min(1),

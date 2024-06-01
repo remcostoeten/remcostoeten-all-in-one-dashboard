@@ -8,9 +8,9 @@ export const todoSchema = sqliteTable("todos", {
   description: text("description"),
   completed: integer("completed").default(0), // 0 for false, 1 for true
   createdAt: integer("created_at", { mode: "timestamp" }).default(
-    sql`(strftime('%s', 'now'))`
+    sql`(strftime('%s', 'now'))`,
   ),
   updatedAt: integer("updated_at", { mode: "timestamp" }).default(
-    sql`(strftime('%s', 'now'))`
+    sql`(strftime('%s', 'now'))`,
   ),
 });
