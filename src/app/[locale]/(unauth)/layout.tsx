@@ -37,6 +37,14 @@ export default function Layout(props: { children: React.ReactNode }) {
           </li>
           <li>
             <Link
+              href="/tasks/"
+              className="border-none text-gray-700 hover:text-gray-900"
+            >
+              {t('tasks')}
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/portfolio/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
