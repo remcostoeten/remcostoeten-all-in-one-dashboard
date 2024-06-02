@@ -11,7 +11,6 @@ const TaskList = async () => {
       {task.map((elt) => (
         <div key={elt.id} className="mb-1 flex items-center gap-x-1">
           <DeleteTaskEntry id={elt.id} />
-          <p>dwdw</p>
         </div>
       ))}
     </div>

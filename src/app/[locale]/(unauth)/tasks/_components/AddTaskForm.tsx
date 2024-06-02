@@ -1,9 +1,10 @@
 "use client";
 
-import { TaskForm } from "./TaskForm";
+import TaskForm from "./TaskForm";
+
 const AddTaskForm = () => (
   <TaskForm
-    onValid={async (data) => {
+    onValid={async (data: any) => {
       await fetch(`/api/tasks`, {
         method: "POST",
         headers: {

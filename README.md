@@ -1,10 +1,10 @@
 # Personal all-in-one panel!
-<small>Because I hate not owning my own stuff</small>
+<small>Because I hate load times (cloudflare ugh), and not owning my own stuff</small>
 
 > [!NOTE]
 > Just started this repo, will be migrating features I've build over so it's far from done. And probably never will be.
 
-This is a personal project that combines various tools and features I've built over the years. It's a one-stop solution for managing personal finance, secure file storage, code snippets,  and tools i've build for my self such as URL/text extractors , (reverse)geolocation finder,  SVG to CSS-psuedo elements, HTML to JSX/TSX converter, and loads more probably. 
+This is a personal project that combines various tools and features I've built over the years. It's a one-stop solution for managing personal finance, secure file storage, code snippets,  and tools i've build for my self such as URL/text extractors , (reverse)geolocation finder,  SVG to CSS-psuedo elements, HTML to JSX/TSX converter, and loads more probably.
 
 ## 🚀 Demo
 
