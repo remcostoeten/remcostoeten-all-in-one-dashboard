@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const DeleteTaskEntry = (props: { id: number }) => {
   const router = useRouter();
 
   const handleDelete = async () => {
-    await fetch(`/api/task`, {
-      method: 'DELETE',
+    await fetch(`/api/tasks`, {
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         id: props.id,

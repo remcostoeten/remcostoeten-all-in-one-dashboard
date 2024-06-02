@@ -1,10 +1,14 @@
-import { eq, sql } from 'drizzle-orm';
-import { NextResponse } from 'next/server';
+import { eq, sql } from "drizzle-orm";
+import { NextResponse } from "next/server";
 
-import { db } from '@/libs/DB';
-import { logger } from '@/libs/Logger';
-import { taskSchema } from '@/models/Schema';
-import { DeleteTaskValidation, EditTaskValidation, TaskValidation } from '@/validations/TaskValidation';
+import { db } from "@/libs/DB";
+import { logger } from "@/libs/Logger";
+import { taskSchema } from "@/models/Schema";
+import {
+  DeleteTaskValidation,
+  EditTaskValidation,
+  TaskValidation,
+} from "@/validations/TaskValidation";
 
 export const POST = async (request: Request) => {
   const json = await request.json();
@@ -23,13 +27,13 @@ export const POST = async (request: Request) => {
       })
       .returning();
 
-    logger.info('A new task has been created');
+    logger.info("A new task has been created");
 
     return NextResponse.json({
       id: task[0]?.id,
     });
   } catch (error) {
-    logger.error(error, 'An error occurred while creating a task');
+    logger.error(error, "An error occurred while creating a task");
 
     return NextResponse.json({}, { status: 500 });
   }
@@ -54,11 +58,11 @@ export const PUT = async (request: Request) => {
       .where(eq(taskSchema.id, parse.data.id))
       .run();
 
-    logger.info('A task entry has been updated');
+    logger.info("A task entry has been updated");
 
     return NextResponse.json({});
   } catch (error) {
-    logger.error(error, 'An error occurred while updating a task');
+    logger.error(error, "An error occurred while updating a task");
 
     return NextResponse.json({}, { status: 500 });
   }
@@ -73,16 +77,13 @@ export const DELETE = async (request: Request) => {
   }
 
   try {
-    await db
-      .delete(taskSchema)
-      .where(eq(taskSchema.id, parse.data.id))
-      .run();
+    await db.delete(taskSchema).where(eq(taskSchema.id, parse.data.id)).run();
 
-    logger.info('A task entry has been deleted');
+    logger.info("A task entry has been deleted");
 
     return NextResponse.json({});
   } catch (error) {
-    logger.error(error, 'An error occurred while deleting a task');
+    logger.error(error, "An error occurred while deleting a task");
 
     return NextResponse.json({}, { status: 500 });
   }

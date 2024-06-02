@@ -1,40 +1,40 @@
-'use client';
+import { TaskValidation } from "@/validations/TaskValidation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { type SubmitHandler, useForm } from 'react-hook-form';
-import type { z } from 'zod';
+type TaskFormValues = {
+  title: string;
+  description: string;
+  completed: boolean;
+};
 
-import { TaskValidation } from '@/validations/TaskValidation';
+type TaskFormProps = {
+  edit?: boolean;
+  id?: number;
+  defaultValues?: TaskFormValues;
+  onValid: (data: TaskFormValues) => void;
+};
 
-type ITaskFormProps =
-  | {
-      edit: true;
-      id: number;
-      defaultValues: z.infer<typeof TaskValidation>;
-      onValid: SubmitHandler<z.infer<typeof TaskValidation>>;
-    }
-  | {
-      edit?: false;
-      onValid: SubmitHandler<z.infer<typeof TaskValidation>>;
-    };
-
-const TaskForm = (props: ITaskFormProps) => {
+const TaskForm: React.FC<TaskFormProps> = ({
+  edit,
+  id,
+  defaultValues,
+  onValid,
+}) => {
   const {
     handleSubmit,
     register,
     reset,
     formState: { errors },
-  } = useForm<z.infer<typeof TaskValidation>>({
+  } = useForm<TaskFormValues>({
     resolver: zodResolver(TaskValidation),
-    defaultValues: props.edit ? props.defaultValues : undefined,
+    defaultValues: edit ? defaultValues : undefined,
   });
   const router = useRouter();
-  const t = useTranslations('TaskForm');
 
   const handleCreate = handleSubmit(async (data) => {
-    await props.onValid(data);
+    await onValid(data);
 
     reset();
     router.refresh();
@@ -45,18 +45,18 @@ const TaskForm = (props: ITaskFormProps) => {
       <div>
         <label
           className="text-sm font-bold text-gray-700"
-          htmlFor={`username${props.edit ? `-${props.id}` : ''}`}
+          htmlFor={`title${edit ? `-${id}` : ""}`}
         >
-          {t('username')}
+          Title
           <input
-            id={`username${props.edit ? `-${props.id}` : ''}`}
+            id={`title${edit ? `-${id}` : ""}`}
             className="mt-2 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none focus:ring focus:ring-blue-300/50"
-            {...register('username')}
+            {...register("title")}
           />
         </label>
-        {errors.username?.message && (
+        {errors.title?.message && (
           <div className="my-2 text-xs italic text-red-500">
-            {errors.username?.message}
+            {errors.title?.message}
           </div>
         )}
       </div>
@@ -64,18 +64,38 @@ const TaskForm = (props: ITaskFormProps) => {
       <div className="mt-3">
         <label
           className="text-sm font-bold text-gray-700"
-          htmlFor={`body${props.edit ? `-${props.id}` : ''}`}
+          htmlFor={`description${edit ? `-${id}` : ""}`}
         >
-          {t('body')}
+          Description
           <input
-            id={`body${props.edit ? `-${props.id}` : ''}`}
+            id={`description${edit ? `-${id}` : ""}`}
             className="mt-2 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none focus:ring focus:ring-blue-300/50"
-            {...register('body')}
+            {...register("description")}
           />
         </label>
-        {errors.body?.message && (
+        {errors.description?.message && (
           <div className="my-2 text-xs italic text-red-500">
-            {errors.body?.message}
+            {errors.description?.message}
+          </div>
+        )}
+      </div>
+
+      <div className="mt-3">
+        <label
+          className="text-sm font-bold text-gray-700"
+          htmlFor={`completed${edit ? `-${id}` : ""}`}
+        >
+          Completed
+          <input
+            id={`completed${edit ? `-${id}` : ""}`}
+            type="checkbox"
+            className="mt-2"
+            {...register("completed")}
+          />
+        </label>
+        {errors.completed?.message && (
+          <div className="my-2 text-xs italic text-red-500">
+            {errors.completed?.message}
           </div>
         )}
       </div>
@@ -85,7 +105,7 @@ const TaskForm = (props: ITaskFormProps) => {
           className="rounded bg-blue-500 px-5 py-1 font-bold text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300/50"
           type="submit"
         >
-          {t('save')}
+          Save
         </button>
       </div>
     </form>

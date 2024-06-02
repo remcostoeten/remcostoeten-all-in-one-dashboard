@@ -3,10 +3,10 @@
     "home_link": "Startpagina",
     "about_link": "Over",
     "guestbook_link": "Gastenboek",
-    "tasks": "Taken",
     "portfolio_link": "Portfolio",
     "sign_in_link": "Inloggen",
-    "sign_up_link": "Registreren"
+    "sign_up_link": "Registreren",
+    "tasks": "Takenlijst"
   },
   "BaseTemplate": {
     "description": "Startcode voor Next.js met Tailwind CSS",
@@ -26,6 +26,20 @@
     "username": "Gebruikersnaam",
     "body": "Bericht",
     "save": "Opslaan"
+  },
+  "Task": {
+    "meta_title": "Task-lijst",
+    "meta_description": "Een voorbeeld van een Task-lijst",
+    "loading_Tasks": "Takenlijst laden...",
+    "add_Task": "Voeg een taak toe"
+  },
+  "TaskForm": {
+    "title": "Titre",
+    "titlePlaceholder": "Entrez votre titre ici...",
+    "titleError": "Le titre est requis",
+    "save": "Enregistrer",
+    "update": "Mettre à jour",
+    "create": "Créer"
   },
   "About": {
     "meta_title": "Over",
