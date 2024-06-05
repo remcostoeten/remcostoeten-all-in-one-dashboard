@@ -26,7 +26,7 @@
     "@hookform/resolvers": "^3.4.2",
     "@libsql/client": "^0.6.1",
     "@logtail/pino": "^0.4.21",
-    "@sentry/nextjs": "^7.116.0",
+    "@sentry/nextjs": "^8.7.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "drizzle-orm": "^0.31.1",
     "next": "^14.2.3",
