@@ -65,7 +65,7 @@
     "checkly": "^4.6.3",
     "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^7.0.1",
+    "cssnano": "^7.0.2",
     "dotenv-cli": "^7.4.2",
     "drizzle-kit": "^0.21.4",
     "eslint": "^8.57.0",
