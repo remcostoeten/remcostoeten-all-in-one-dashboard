@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TaskForm } from "./TaskForm";
+import TaskForm  from "./TaskForm";
 
 type EditableTaskEntryProps = {
   id: number;
@@ -11,7 +11,6 @@ type EditableTaskEntryProps = {
   completed: boolean | number;
   createdAt: string | null;
   updatedAt: string | null;
-  username: string;
 };
 
 type TaskFormValues = {
@@ -21,49 +20,42 @@ type TaskFormValues = {
   description: string;
 };
 
-
 export default function EditableTaskEntry(props: EditableTaskEntryProps) {
-const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [completed, setCompleted] = useState(Boolean(props.completed));
 
   const handleEdit = () => {
     setIsEditing((value) => !value);
   };
 
+  const handleCompletedChange = (value: boolean) => {
+    setCompleted(value);
+  };
+
   const defaultValues: TaskFormValues = {
     title: props.title,
     body: props.body,
-    completed: Boolean(props.completed),
+    completed: completed,
     description: props.description ?? "",
   };
 
   return (
-    <div className="flex items-center gap-x-2">
+    <div className="flex items-center gap-x-2 bg-white shadow rounded p-4 mb-2">
       <button
         type="button"
         aria-label="edit"
-        onClick={() => {
-          handleEdit();
-        }}
+        onClick={handleEdit}
+        className="bg-blue-500 text-white rounded p-2"
       >
-        <svg
-          className="size-6 stroke-current"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          viewBox="0 0 24 24"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" />
-          <path d="M4 20h4L18.5 9.5a1.5 1.5 0 0 0-4-4L4 16v4M13.5 6.5l4 4" />
-        </svg>
+        {/* SVG icon */}
       </button>
-
       <div className="ml-1 grow">
         {isEditing ? (
           <TaskForm
             edit
             id={props.id}
             defaultValues={defaultValues}
-            onValid={async (data) => {
+            onValid={async (data: TaskFormValues) => {
               await fetch(`/api/tasks`, {
                 method: "PUT",
                 headers: {
@@ -74,36 +66,24 @@ const [isEditing, setIsEditing] = useState(false);
                   ...data,
                 }),
               });
-
               setIsEditing(false);
             }}
+            onCompletedChange={handleCompletedChange}
           />
         ) : (
-          <div>
+          <div className="flex flex-col gap-y-2">
             <h3 className="text-lg font-bold">{props.title}</h3>
             <p className="text-gray-600">{props.description}</p>
-            <p className="text-gray-800">{props.body}</p>
-            <p className="text-sm text-gray-500">
-              Created by: {props.username}
+            <p className="text-gray-500">{props.body}</p>
+            <p className="text-gray-400">
+              Created at: {props.createdAt}
             </p>
-            <p className="text-sm text-gray-500">
-              {props.completed ? "Completed" : "Not Completed"}
-            </p>
-            <p className="text-sm text-gray-500">
-              Created At:{" "}
-              {props.createdAt
-                ? new Date(props.createdAt).toLocaleString()
-                : "N/A"}
-            </p>
-            <p className="text-sm text-gray-500">
-              Updated At:{" "}
-              {props.updatedAt
-                ? new Date(props.updatedAt).toLocaleString()
-                : "N/A"}
+            <p className="text-gray-400">
+              Updated at: {props.updatedAt}
             </p>
           </div>
         )}
       </div>
     </div>
   );
-};
+}

@@ -10,7 +10,6 @@
      const [title, setTitle] = useState("");
      const [description, setDescription] = useState("");
      const [body, setBody] = useState("");
-     const [username, setUsername] = useState("");
 
      const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
@@ -18,7 +17,6 @@
         title,
         description,
         body,
-        username,
       };
       console.log("Submitting data:", data); // Add this line
       await onValid(data);
@@ -33,8 +31,7 @@
            placeholder="Title"
            required
          />
-         <input
-           type="text"
+         <textarea
            value={description}
            onChange={(e) => setDescription(e.target.value)}
            placeholder="Description"
@@ -44,13 +41,6 @@
            value={body}
            onChange={(e) => setBody(e.target.value)}
            placeholder="Body"
-           required
-         />
-         <input
-           type="text"
-           value={username}
-           onChange={(e) => setUsername(e.target.value)}
-           placeholder="Username"
            required
          />
          <button type="submit">Submit</button>
