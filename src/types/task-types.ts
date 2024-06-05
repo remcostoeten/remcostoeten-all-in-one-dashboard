@@ -10,15 +10,11 @@ export type EditableTaskEntryProps = {
 };
 
 export type TaskFormProps = {
-  edit?: boolean;
-  id?: number;
-  onValid: (data: any) => Promise<void>;
-  defaultValues?: {
-    title?: string;
-    description?: string;
-    body?: string;
-    username?: string;
-  };
+  id: number;
+  defaultValues: TaskFormValues;
+  onValid: (data: TaskFormValues) => Promise<void>;
+  onCompletedChange: (value: boolean) => void;
+  edit?: boolean; // Add the edit prop here
 };
 
 export type TaskFormValues = {
