@@ -1,6 +1,6 @@
 import { db } from "@/core/libs/DB";
 import { logger } from "@/core/libs/Logger";
-import { guestbookSchema } from "@/models/Schema";
+import { guestbookSchema } from "@/core/models/Schema";
 
 import { DeleteGuestbookEntry } from "./DeleteGuestbookEntry";
 import { EditableGuestbookEntry } from "./EditableGuestbookEntry";

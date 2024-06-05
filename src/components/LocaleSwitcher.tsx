@@ -4,7 +4,7 @@ import { useLocale } from "next-intl";
 import type { ChangeEventHandler } from "react";
 
 import { usePathname, useRouter } from "@/core/libs/i18nNavigation";
-import { AppConfig } from "@/utils/AppConfig";
+import { AppConfig } from "@/core/utils/AppConfig";
 
 export default function LocaleSwitcher() {
   const router = useRouter();

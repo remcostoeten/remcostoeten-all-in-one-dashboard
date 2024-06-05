@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 
-import { AppConfig } from "@/utils/AppConfig";
+import { AppConfig } from "@/core/utils/AppConfig";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {

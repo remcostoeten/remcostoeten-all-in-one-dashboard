@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import type { z } from "zod";
 
-import { GuestbookValidation } from "@/validations/GuestbookValidation";
+import { GuestbookValidation } from "@/core/validations/GuestbookValidation";
 
 type IGuestbookFormProps =
   | {

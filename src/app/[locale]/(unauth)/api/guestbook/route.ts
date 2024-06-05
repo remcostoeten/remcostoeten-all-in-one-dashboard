@@ -3,12 +3,12 @@ import { NextResponse } from "next/server";
 
 import { db } from "@/core/libs/DB";
 import { logger } from "@/core/libs/Logger";
-import { guestbookSchema } from "@/models/Schema";
+import { guestbookSchema } from "@/core/models/Schema";
 import {
   DeleteGuestbookValidation,
   EditGuestbookValidation,
   GuestbookValidation,
-} from "@/validations/GuestbookValidation";
+} from "@/core/validations/GuestbookValidation";
 
 export const POST = async (request: Request) => {
   const json = await request.json();
