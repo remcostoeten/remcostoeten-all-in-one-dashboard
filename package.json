@@ -28,6 +28,7 @@
     "@logtail/pino": "^0.4.21",
     "@radix-ui/react-slot": "^1.0.2",
     "@sentry/nextjs": "^7.116.0",
+    "@heroicons/react": "latest",
     "@t3-oss/env-nextjs": "^0.10.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

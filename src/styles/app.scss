@@ -1,3 +1,6 @@
+@import './theme/fonts.scss';
+@import './theme/colors.scss';
+
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
@@ -74,6 +77,12 @@
       @apply bg-background text-foreground;
     }
   }
+
+
+.font-interDisplay {
+  font-family: 'Inter Display';
+}
+
 
 .font-inter-ui-normal {
   font-family: 'Inter UI';

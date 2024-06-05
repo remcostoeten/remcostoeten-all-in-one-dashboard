@@ -1,16 +1,9 @@
-import { useTranslations } from 'next-intl';
+import type DashboardLayout from "@/app/[locale]/(auth)/dashboard/layout"
 
-import Navigation from '@/components/theme/sidebar/Navigation';
-import Aside from '@/components/theme/huly/aside';
-
-export default function DashboardLayout(props: { children: React.ReactNode }) {
-  const t = useTranslations('DashboardLayout');
-
+const ADashboardLayoutpp = () => {
   return (
-    <>
-     <main className="w-full h-screen flex flex-row relative">
-      <Aside/>
-      {/* <Navigation /> */}
+      <main className="w-full h-screen flex flex-row relative">
+        nva goes here
       <section className="flex flex-col p-10 ml-20 w-full gap-5">
         <h1 className="text-4xl text-neutral-200">Dashboard</h1>
         <div className="w-full h-80 border border-neutral-500/50 bg-neutral-800/20 rounded" />
@@ -20,6 +13,7 @@ export default function DashboardLayout(props: { children: React.ReactNode }) {
         </div>
       </section>
     </main>
-    </>
-  );
+  )
 }
+
+export default DashboardLayout
