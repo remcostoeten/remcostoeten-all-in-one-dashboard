@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { Suspense } from "react";
 import { AddTaskForm } from "./_components/AddTaskForm";
-import { TaskList } from "./_components/TaskList";
+import TaskList from "./_components/TaskList";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -19,9 +18,9 @@ const Task = () => {
   return (
     <>
       <AddTaskForm />
-      <Suspense fallback={<p>Loading...</p>}>
+      {/* <Suspense fallback={<p>Loading...</p>}> */}
         <TaskList />
-      </Suspense>
+      {/* </Suspense> */}
     </>
   );
 };

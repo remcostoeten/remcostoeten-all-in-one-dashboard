@@ -21,8 +21,9 @@ type TaskFormValues = {
   description: string;
 };
 
-const EditableTaskEntry = (props: EditableTaskEntryProps) => {
-  const [isEditing, setIsEditing] = useState(false);
+
+export default function EditableTaskEntry(props: EditableTaskEntryProps) {
+const [isEditing, setIsEditing] = useState(false);
 
   const handleEdit = () => {
     setIsEditing((value) => !value);
@@ -106,5 +107,3 @@ const EditableTaskEntry = (props: EditableTaskEntryProps) => {
     </div>
   );
 };
-
-export { EditableTaskEntry };
