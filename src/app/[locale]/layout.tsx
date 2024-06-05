@@ -53,7 +53,7 @@ export default function RootLayout(props: {
     // card anchor effect  https://codepen.io/jh3y/pen/MWLyGxo
 
     <html lang={props.params.locale}>
-      <body>
+      <body className="font-inter-display">
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
@@ -65,7 +65,7 @@ export default function RootLayout(props: {
   );
 }
 
-// Enable edge runtime but you are required to disable the `migrate` function in `src/libs/DB.ts`
+// Enable edge runtime but you are required to disable the `migrate` function in `src/core/libs/DB.ts`
 // Unfortunately, this also means it will also disable the automatic migration of the database
 // And, you will have to manually migrate it with `drizzle-kit push`
 // export const runtime = 'edge';

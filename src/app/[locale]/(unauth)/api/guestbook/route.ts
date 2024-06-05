@@ -1,8 +1,8 @@
 import { eq, sql } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
-import { db } from "@/libs/DB";
-import { logger } from "@/libs/Logger";
+import { db } from "@/core/libs/DB";
+import { logger } from "@/core/libs/Logger";
 import { guestbookSchema } from "@/models/Schema";
 import {
   DeleteGuestbookValidation,

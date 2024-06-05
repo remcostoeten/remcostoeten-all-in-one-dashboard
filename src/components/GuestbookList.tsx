@@ -1,5 +1,5 @@
-import { db } from "@/libs/DB";
-import { logger } from "@/libs/Logger";
+import { db } from "@/core/libs/DB";
+import { logger } from "@/core/libs/Logger";
 import { guestbookSchema } from "@/models/Schema";
 
 import { DeleteGuestbookEntry } from "./DeleteGuestbookEntry";
