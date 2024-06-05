@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-import LocaleSwitcher from '@/components/LocaleSwitcher';
-import { BaseTemplate } from '@/templates/BaseTemplate';
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { BaseTemplate } from "@/templates/BaseTemplate";
 
 export default function Layout(props: { children: React.ReactNode }) {
-  const t = useTranslations('RootLayout');
+  const t = useTranslations("RootLayout");
 
   return (
     <BaseTemplate
@@ -16,7 +16,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               href="/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t('home_link')}
+              {t("home_link")}
             </Link>
           </li>
           <li>
@@ -24,7 +24,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               href="/about/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t('about_link')}
+              {t("about_link")}
             </Link>
           </li>
           <li>
@@ -32,7 +32,15 @@ export default function Layout(props: { children: React.ReactNode }) {
               href="/guestbook/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t('guestbook_link')}
+              {t("guestbook_link")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/tasks/"
+              className="border-none text-gray-700 hover:text-gray-900"
+            >
+              {t("tasks")}
             </Link>
           </li>
           <li>
@@ -40,7 +48,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               href="/portfolio/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t('portfolio_link')}
+              {t("portfolio_link")}
             </Link>
           </li>
           <li>
@@ -60,7 +68,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               href="/sign-in/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t('sign_in_link')}
+              {t("sign_in_link")}
             </Link>
           </li>
 
@@ -69,7 +77,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               href="/sign-up/"
               className="border-none text-gray-700 hover:text-gray-900"
             >
-              {t('sign_up_link')}
+              {t("sign_up_link")}
             </Link>
           </li>
 

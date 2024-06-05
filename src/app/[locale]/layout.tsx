@@ -1,38 +1,39 @@
-import '@/styles/app.scss';
+import "@/styles/app.scss";
 
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from "@/utils/AppConfig";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   icons: [
     {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
     },
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/favicon-32x32.png',
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
     },
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/favicon-16x16.png',
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
     },
     {
-      rel: 'icon',
-      url: '/favicon.ico',
+      rel: "icon",
+      url: "/favicon.ico",
     },
   ],
 };
 
 export default function RootLayout(props: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: { locale: string };
 }) {
   // Validate that the incoming `locale` parameter is valid
@@ -44,6 +45,13 @@ export default function RootLayout(props: {
   return (
     // ToDo add viewport tag https://www.youtube.com/shorts/YqAxXBrrryc
     // ToDo implement logic for tab title change when switching https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c
+    // ToDo: Spark effect : https://codepen.io/hexagoncircle/details/bGZdWyw
+    // Dark glow btn https://codepen.io/collinsworth/pen/zYepgqG
+    //  Glow card
+    // Dark light mode toggle https://codepen.io/jh3y/pen/GRaWZrw
+    // menu animation https://codepen.io/jh3y/pen/GRapZqO
+    // card anchor effect  https://codepen.io/jh3y/pen/MWLyGxo
+
     <html lang={props.params.locale}>
       <body>
         <NextIntlClientProvider

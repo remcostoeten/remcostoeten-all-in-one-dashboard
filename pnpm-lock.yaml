@@ -29,6 +29,9 @@ dependencies:
   drizzle-orm:
     specifier: ^0.31.1
     version: 0.31.1(@libsql/client@0.6.1)(@types/react@18.3.3)(react@18.3.1)
+  framer-motion:
+    specifier: ^11.2.10
+    version: 11.2.10(react-dom@18.2.0)(react@18.3.1)
   next:
     specifier: ^14.2.3
     version: 14.2.3(react-dom@18.2.0)(react@18.3.1)(sass@1.77.4)
@@ -5578,6 +5581,25 @@ packages:
   /fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
+
+  /framer-motion@11.2.10(react-dom@18.2.0)(react@18.3.1):
+    resolution: {integrity: sha512-/gr3PLZUVFCc86a9MqCUboVrALscrdluzTb3yew+2/qKBU8CX6nzs918/SRBRCqaPbx0TZP10CB6yFgK2C5cYQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.3.1)
+      tslib: 2.6.2
+    dev: false
 
   /from2@2.3.0:
     resolution: {integrity: sha512-OMcX/4IC/uqEPVgGeyfN22LJk6AZrMkRZHxcHBMBvHScDGgwTm2GT2Wkgtocyd3JfZffjj2kYUDXXII0Fk9W0g==}

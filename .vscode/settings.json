@@ -42,6 +42,15 @@
     {
       "folderPath": "personal-panel/ddd.local/",
       "badge": "🥶"
+    },
+    {
+      "folderPath": "personal-panel/src/components/DeleteGuestbookEntry.tsx/",
+      "color": "foldercolorizer.Platinum"
+    },
+    {
+      "folderPath": "personal-panel/src/app/[locale]/(unauth)/tasks/",
+      "color": "foldercolorizer.PaleTaupe",
+      "badge": "✍️"
     }
   ],
   "workbench.colorCustomizations": {

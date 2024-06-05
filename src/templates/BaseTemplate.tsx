@@ -1,24 +1,24 @@
-import { useTranslations } from 'next-intl';
-import type { ReactNode } from 'react';
+import { useTranslations } from "next-intl";
+import type { ReactNode } from "react";
 
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from "@/utils/AppConfig";
 
 const BaseTemplate = (props: {
   leftNav: ReactNode;
   rightNav?: ReactNode;
   children: ReactNode;
 }) => {
-  const t = useTranslations('BaseTemplate');
+  const t = useTranslations("BaseTemplate");
 
   return (
-    <div className="w-full bg-gray-50 px-1 text-neutral-900 antialiased">
+    <div className="w-full bg-gray-500 px-1 min-h-screen text-neutral-200 antialiased">
       <div className="mx-auto max-w-screen-md">
         <header className="border-b border-gray-300">
           <div className="pb-8 pt-16">
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-3xl font-bold text-gray-400">
               {AppConfig.name}
             </h1>
-            <h2 className="text-xl">{t('description')}</h2>
+            <h2 className="text-xl">{t("description")}</h2>
           </div>
 
           <div className="flex justify-between">
@@ -40,7 +40,7 @@ const BaseTemplate = (props: {
 
         <footer className="border-t border-gray-300 py-8 text-center text-sm">
           © Copyright {new Date().getFullYear()} {AppConfig.name}.
-          {` ${t('made_with')} `}
+          {` ${t("made_with")} `}
           <a
             href="https://creativedesignsguru.com"
             className="text-blue-700 hover:border-b-2 hover:border-blue-700"
