@@ -26,10 +26,14 @@
     "@hookform/resolvers": "^3.4.2",
     "@libsql/client": "^0.6.1",
     "@logtail/pino": "^0.4.21",
+    "@radix-ui/react-slot": "^1.0.2",
     "@sentry/nextjs": "^7.116.0",
     "@t3-oss/env-nextjs": "^0.10.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "drizzle-orm": "^0.31.1",
     "framer-motion": "^11.2.10",
+    "lucide-react": "^0.383.0",
     "next": "^14.2.3",
     "next-intl": "^3.14.1",
     "pino": "^8.21.0",
@@ -39,6 +43,8 @@
     "react-hook-form": "^7.51.5",
     "sass": "^1.77.4",
     "sharp": "^0.33.4",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
