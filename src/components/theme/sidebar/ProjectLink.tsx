@@ -1,18 +1,18 @@
-import { ChevronRightIcon } from "@heroicons/react/24/outline"
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 interface Props {
-  children: React.ReactNode
-  name: string
-  setSelectedProject: (val: string | null) => void
+  children: React.ReactNode;
+  name: string;
+  setSelectedProject: (val: string | null) => void;
 }
 
 const ProjectLink = ({ children, name, setSelectedProject }: Props) => {
   const handleClick = () => {
-    setSelectedProject(null)
+    setSelectedProject(null);
     setTimeout(() => {
-      setSelectedProject(name)
-    }, 250)
-  }
+      setSelectedProject(name);
+    }, 250);
+  };
   return (
     <a
       href="#"
@@ -27,7 +27,7 @@ const ProjectLink = ({ children, name, setSelectedProject }: Props) => {
         <ChevronRightIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
       </div>
     </a>
-  )
-}
+  );
+};
 
-export default ProjectLink
+export default ProjectLink;

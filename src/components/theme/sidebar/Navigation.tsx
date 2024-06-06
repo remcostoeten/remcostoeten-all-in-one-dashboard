@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { motion, useAnimationControls, AnimatePresence } from "framer-motion"
-import { useState, useEffect } from "react"
-import NavigationLink from "./NavigationLink"
+import { motion, useAnimationControls, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import NavigationLink from "./NavigationLink";
 import {
   ChartBarIcon,
   ChartPieIcon,
   DocumentCheckIcon,
   Square2StackIcon,
   UsersIcon,
-} from "@heroicons/react/24/outline"
-import ProjectLink from "./ProjectLink"
-import ProjectNavigation from "./ProjectNavigation"
+} from "@heroicons/react/24/outline";
+import ProjectLink from "./ProjectLink";
+import ProjectNavigation from "./ProjectNavigation";
 
 const containerVariants = {
   close: {
@@ -30,7 +30,7 @@ const containerVariants = {
       duration: 0.5,
     },
   },
-}
+};
 
 const svgVariants = {
   close: {
@@ -39,29 +39,29 @@ const svgVariants = {
   open: {
     rotate: 180,
   },
-}
+};
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedProject, setSelectedProject] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  const containerControls = useAnimationControls()
-  const svgControls = useAnimationControls()
+  const containerControls = useAnimationControls();
+  const svgControls = useAnimationControls();
 
   useEffect(() => {
     if (isOpen) {
-      containerControls.start("open")
-      svgControls.start("open")
+      containerControls.start("open");
+      svgControls.start("open");
     } else {
-      containerControls.start("close")
-      svgControls.start("close")
+      containerControls.start("close");
+      svgControls.start("close");
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   const handleOpenClose = () => {
-    setIsOpen(!isOpen)
-    setSelectedProject(null)
-  }
+    setIsOpen(!isOpen);
+    setSelectedProject(null);
+  };
 
   return (
     <>
@@ -69,7 +69,7 @@ const Navigation = () => {
         variants={containerVariants}
         animate={containerControls}
         initial="close"
-        className="bg-neutral-900 flex flex-col z-10 gap-20 p-5 absolute top-0 left-0 h-full shadow shadow-neutral-600"
+        className="bg-neutral-900 flex flex-col z-10 gap-20 p-5 absolute top-0 right-0 h-full shadow shadow-neutral-600"
       >
         <div className="flex flex-row w-full justify-between place-items-center">
           <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-700 rounded-full" />
@@ -150,7 +150,7 @@ const Navigation = () => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

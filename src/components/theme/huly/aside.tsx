@@ -1,8 +1,11 @@
+import { MapIcon } from "@heroicons/react/24/outline";
 import * as React from "react";
+import IconShell from "../shells/IconShell";
+import GhostLabel from "../shells/IconShell";
 
 export default function Aside() {
   return (
-    <div className="flex flex-col text-sm font-medium text-white whitespace-nowrap max-w-[67px]">
+    <aside className="flex flex-col text-sm font-medium text-white w-sidebar justify-between bg-sidebar">
       <div className="flex flex-col items-center pb-14 w-full">
         <div className="justify-center items-center px-3 w-8 h-8 bg-red-400 rounded">
           R
@@ -23,12 +26,34 @@ export default function Aside() {
           className="self-stretch w-full aspect-[0.17]"
         />
       </div>
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/3156d5ab89a512f276f7c75d87f4242ce83563ec018ea6fb164e5414d9e7023c?apiKey=2a72745ec00444ad9fe2bd2391d98932&"
-        className="self-center mt-64 w-9 border-t border-solid aspect-[0.27] border-white border-opacity-10"
-      />
-    </div>
+      <BottomSection />
+    </aside>
   );
 }
 
+const BottomSection = () => {
+  return (
+    <div className="flex flex-col items-center justify-center w-full h-24">
+      {/* <div className="flex items-center justify-center w-6 h-6 bg-white rounded-full">
+        <svg
+          className="w-4 h-4 text-black"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+          ></path>
+        </svg>
+      </div> */}
+      <div>
+        <GhostLabel label="Show" as="a" href="/dww" />
+        <GhostLabel icon={MapIcon} label="Show" as="button" />
+      </div>
+    </div>
+  );
+};

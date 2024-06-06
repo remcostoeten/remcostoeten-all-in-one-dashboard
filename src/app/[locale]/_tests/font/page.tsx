@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { Bai_Jamjuree, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
@@ -16,10 +16,10 @@ const plexsans = IBM_Plex_Sans({
 interface FontShowcaseProps {}
 
 const FontShowcase: React.FC<FontShowcaseProps> = () => {
-  const [font, setFont] = useState('plexmono');
+  const [font, setFont] = useState("plexmono");
 
   const toggleFont = () => {
-    setFont(font === 'plexmono' ? 'plexsans' : 'plexmono');
+    setFont(font === "plexmono" ? "plexsans" : "plexmono");
   };
 
   return (
