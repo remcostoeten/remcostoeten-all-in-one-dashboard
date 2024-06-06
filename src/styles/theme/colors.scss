@@ -3,8 +3,10 @@
   --dark-blue: #14141F; // sidebar
   --light-blue: #1A1A28; // body bg
   --text-white: rgba(255, 255, 255, 0.8);
-  --grey-icon: #1A1A28; // icons in the sidebar
+  --icon: #1A1A28;
+  --icon-border: #ffffff17;
   --icon-active: white;
+  --icon-on-bg: rgba(255, 255, 255, 0.6);
   --icon-active-background: rgba(255, 255, 255, 0.08);
   --border: rgba(255, 255, 255, 0.11);
   --seperator: var(--border);

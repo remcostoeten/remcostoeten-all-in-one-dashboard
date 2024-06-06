@@ -3,7 +3,7 @@ type UserConfig = {
 };
 
 const Configuration: UserConfig = {
-  extends: ["@commitlint/config-conventional"],
+  extends: ['@commitlint/config-conventional'],
 };
 
 export default Configuration;

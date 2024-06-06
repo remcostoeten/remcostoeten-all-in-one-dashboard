@@ -6,7 +6,8 @@
     "portfolio_link": "Portfolio",
     "sign_in_link": "Inloggen",
     "sign_up_link": "Registreren",
-    "tasks": "Tasks"
+    "tasks": "Tasks",
+    "dashboard_link": "Dashboard"
   },
   "BaseTemplate": {
     "description": "Startcode voor Next.js met Tailwind CSS",

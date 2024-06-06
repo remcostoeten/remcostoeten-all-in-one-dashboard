@@ -1,27 +1,25 @@
-import { useTranslations } from "next-intl";
+import { ReactNode } from 'react';
 
-import Navigation from "@/components/theme/sidebar/Navigation";
-import Aside from "@/components/theme/huly/aside";
-import IconShell from "@/components/theme/shells/IconShell";
+import Aside from '@/components/theme/huly/aside';
+import Navigation from '@/components/theme/sidebar/Navigation';
 
-export default function DashboardLayout(props: { children: React.ReactNode }) {
-  const t = useTranslations("DashboardLayout");
-
+interface DashboardLayoutProps {
+  children: ReactNode;
+}
+export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <>
-      <main className="w-full h-screen flex flex-row relative">
-        <Aside />
-        <Navigation />
-        <IconShell label="Show" as="a" href="/dww" />
-        <section className="flex flex-col p-10 ml-20 w-full gap-5">
-          <h1 className="text-4xl text-neutral-200">Dashboard</h1>
-          <div className="w-full h-80 border border-neutral-500/50 bg-neutral-800/20 rounded" />
-          <div className="flex flex-row gap-5 w-full">
-            <div className="border-neutral-500/50 h-60 w-1/2 bg-neutral-800/20 rounded border" />
-            <div className="border-neutral-500/50 h-60 w-1/2 bg-neutral-800/20 rounded border" />
-          </div>
-        </section>
-      </main>
-    </>
+    <main className="relative flex h-screen w-full flex-row">
+      <Aside />
+      <Navigation />
+      <section className="ml-20 flex w-full flex-col gap-5 p-10">
+        {children}
+        <h1 className="text-4xl text-neutral-200">Dashboard</h1>
+        <div className="h-80 w-full rounded border border-neutral-500/50 bg-neutral-800/20" />
+        <div className="flex w-full flex-row gap-5">
+          <div className="h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20" />
+          <div className="h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20" />
+        </div>
+      </section>
+    </main>
   );
 }

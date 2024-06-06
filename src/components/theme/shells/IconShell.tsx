@@ -1,73 +1,54 @@
-import Link from "next/link";
-import { FunctionComponent, SVGProps, ReactNode, ElementType } from "react";
+import type { FunctionComponent, ReactNode } from 'react';
 
-interface LocalIconContainerProps {
-  children: ReactNode;
-  as?: ElementType;
-  href?: string;
+type IconGhostProps = {
+  as?: 'div' | 'button';
+  isButton?: boolean;
   [x: string]: any;
-}
+  children: ReactNode;
+  hasBorder?: boolean;
+};
 
-const sharedClasses =
-  "flex gap-1.5 flex items-center justify-center px-3 py-1.5 mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover hover:bg-ghost-hover border-transition";
+type WrapperProps = {
+  children: ReactNode;
+  isButton?: boolean;
+  hasBorder?: boolean;
+  [x: string]: any;
+};
 
-const LocalIconContainer: FunctionComponent<LocalIconContainerProps> = ({
+const Wrapper: FunctionComponent<WrapperProps> = ({
   children,
-  as: Component = "div",
-  href,
+  isButton,
+  hasBorder = true,
   ...props
 }) => {
-  if (Component === "a") {
-    return (
-      <a
-        href={href!}
-        {...props}
-        className={`${sharedClasses} border-ghost hover:border-ghost-hover hover:bg-ghost-hover`}
-      >
-        {children}
-      </a>
-    );
-  }
-
+  const Component = isButton ? 'button' : 'div';
+  const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md ${hasBorder ? 'border border-solid border-[#ffffff17] hover:cursor-pointer hover:border-white/40 transition-colors  duration-500' : ''}`;
   return (
-    <Component
-      className={`${sharedClasses} border-ghost hover:border-ghost-hover hover:bg-ghost-hover`}
-      {...props}
-    >
+    <Component className={classes} {...props}>
       {children}
     </Component>
   );
 };
 
-type LocalIconLabelProps = {
-  label: string;
-};
-
-const LocalIconLabel: FunctionComponent<LocalIconLabelProps> = ({ label }) => (
-  <span>{label}</span>
-);
-
-interface LocalIconShellProps {
-  icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
-  label: string;
-  as?: "div" | "button" | "a";
-  href?: string;
-  [x: string]: any;
+export default function IconGhost({
+  as = 'div',
+  children,
+  isButton,
+  hasBorder,
+  ...props
+}: IconGhostProps) {
+  return (
+    <Wrapper isButton={isButton} hasBorder={hasBorder} {...props}>
+      <span className="size-icon-size text-[#fff9]">{children}</span>
+    </Wrapper>
+  );
 }
 
-const GhostLabel: FunctionComponent<LocalIconShellProps> = ({
-  icon: Icon,
-  label,
-  as = "div",
-  href,
-  ...props
-}) => {
-  return (
-    <LocalIconContainer as={as} href={href} {...props}>
-      {Icon && <Icon className="w-icon h-icon" />}
-      <LocalIconLabel label={label} />
-    </LocalIconContainer>
-  );
-};
-
-export default GhostLabel;
+/* usage
+<IconGhost isButton={true} onClick={() => console.log('Icon clicked')}>
+  <MapIcon />
+</IconGhost>
+<IconGhost>
+  <UserIcon />
+</IconGhost>
+*/

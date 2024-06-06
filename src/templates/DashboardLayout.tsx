@@ -1,15 +1,13 @@
-import type DashboardLayout from "@/app/[locale]/(auth)/dashboard/layout";
-
-const ADashboardLayoutpp = () => {
+const DashboardLayout = () => {
   return (
-    <main className="w-full h-screen flex flex-row relative">
+    <main className="relative flex h-screen w-full flex-row">
       nva goes here
-      <section className="flex flex-col p-10 ml-20 w-full gap-5">
+      <section className="ml-20 flex w-full flex-col gap-5 p-10">
         <h1 className="text-4xl text-neutral-200">Dashboard</h1>
-        <div className="w-full h-80 border border-neutral-500/50 bg-neutral-800/20 rounded" />
-        <div className="flex flex-row gap-5 w-full">
-          <div className="border-neutral-500/50 h-60 w-1/2 bg-neutral-800/20 rounded border" />
-          <div className="border-neutral-500/50 h-60 w-1/2 bg-neutral-800/20 rounded border" />
+        <div className="h-80 w-full rounded border border-neutral-500/50 bg-neutral-800/20" />
+        <div className="flex w-full flex-row gap-5">
+          <div className="h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20" />
+          <div className="h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20" />
         </div>
       </section>
     </main>
