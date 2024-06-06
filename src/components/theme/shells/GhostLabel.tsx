@@ -3,7 +3,7 @@ import type {
   FunctionComponent,
   ReactNode,
   SVGProps,
-} from 'react';
+} from "react";
 
 interface LocalIconContainerProps {
   children: ReactNode;
@@ -13,15 +13,15 @@ interface LocalIconContainerProps {
 }
 
 const sharedClasses =
-  'flex gap-1.5 flex items-center justify-center px-3 py-1.5 mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover hover:bg-ghost-hover border-transition';
+  "flex gap-1.5 flex items-center justify-center px-3 py-1.5 mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover hover:bg-ghost-hover border-transition";
 
 const LocalIconContainer: FunctionComponent<LocalIconContainerProps> = ({
   children,
-  as: Component = 'div',
+  as: Component = "div",
   href,
   ...props
 }) => {
-  if (Component === 'a') {
+  if (Component === "a") {
     return (
       <a
         href={href!}
@@ -54,7 +54,7 @@ const LocalIconLabel: FunctionComponent<LocalIconLabelProps> = ({ label }) => (
 interface LocalIconShellProps {
   icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
   label: string;
-  as?: 'div' | 'button' | 'a';
+  as?: "div" | "button" | "a";
   href?: string;
   [x: string]: any;
 }
@@ -62,7 +62,7 @@ interface LocalIconShellProps {
 const GhostLabel: FunctionComponent<LocalIconShellProps> = ({
   icon: Icon,
   label,
-  as = 'div',
+  as = "div",
   href,
   ...props
 }) => {

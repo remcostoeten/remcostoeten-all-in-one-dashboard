@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-import Aside from '@/components/theme/huly/aside';
-import Navigation from '@/components/theme/sidebar/Navigation';
+import Aside from "@/components/theme/huly/aside";
+import Navigation from "@/components/theme/sidebar/Navigation";
 
 interface DashboardLayoutProps {
   children: ReactNode;

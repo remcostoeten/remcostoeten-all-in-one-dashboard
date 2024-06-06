@@ -7,10 +7,10 @@ import {
   UserGroupIcon,
   UserIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+} from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
-import NavigationLink from './NavigationLink';
+import NavigationLink from "./NavigationLink";
 
 const variants = {
   close: {
@@ -42,10 +42,10 @@ const ProjectNavigation = ({
       exit="close"
       transition={{
         duration: 0.25,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       }}
       className={`absolute ml-0 flex h-full w-64 flex-col gap-8 bg-neutral-900 ${
-        isOpen ? 'left-64' : 'left-20'
+        isOpen ? "left-64" : "left-20"
       } border-r border-neutral-800 p-5`}
     >
       <div className="flex w-full flex-row place-items-center justify-between">

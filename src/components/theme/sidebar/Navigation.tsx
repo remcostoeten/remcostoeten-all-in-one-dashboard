@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   ChartBarIcon,
@@ -6,27 +6,27 @@ import {
   DocumentCheckIcon,
   Square2StackIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline';
-import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
-import { useEffect, useState } from 'react';
+} from "@heroicons/react/24/outline";
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
+import { useEffect, useState } from "react";
 
-import NavigationLink from './NavigationLink';
-import ProjectLink from './ProjectLink';
-import ProjectNavigation from './ProjectNavigation';
+import NavigationLink from "./NavigationLink";
+import ProjectLink from "./ProjectLink";
+import ProjectNavigation from "./ProjectNavigation";
 
 const containerVariants = {
   close: {
-    width: '5rem',
+    width: "5rem",
     transition: {
-      type: 'spring',
+      type: "spring",
       damping: 15,
       duration: 0.5,
     },
   },
   open: {
-    width: '16rem',
+    width: "16rem",
     transition: {
-      type: 'spring',
+      type: "spring",
       damping: 15,
       duration: 0.5,
     },
@@ -51,11 +51,11 @@ const Navigation = () => {
 
   useEffect(() => {
     if (isOpen) {
-      containerControls.start('open');
-      svgControls.start('open');
+      containerControls.start("open");
+      svgControls.start("open");
     } else {
-      containerControls.start('close');
-      svgControls.start('close');
+      containerControls.start("close");
+      svgControls.start("close");
     }
   }, [isOpen]);
 
@@ -94,7 +94,7 @@ const Navigation = () => {
                 d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
                 transition={{
                   duration: 0.5,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
             </svg>

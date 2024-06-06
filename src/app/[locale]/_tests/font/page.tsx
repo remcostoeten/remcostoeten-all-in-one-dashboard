@@ -1,26 +1,27 @@
 // @ts-nocheck
-'use client';
 
-import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
-import React, { useState } from 'react';
+"use client";
+
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import React, { useState } from "react";
 
 const plexmono = IBM_Plex_Mono({
-  weight: ['200', '300', '400', '500', '600', '700'],
-  subsets: ['latin'],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
 });
 
 const plexsans = IBM_Plex_Sans({
-  weight: ['200', '300', '400', '500', '600', '700'],
-  subsets: ['latin'],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
 });
 
 interface FontShowcaseProps {}
 
 const FontShowcase: React.FC<FontShowcaseProps> = () => {
-  const [font, setFont] = useState('plexmono');
+  const [font, setFont] = useState("plexmono");
 
   const toggleFont = () => {
-    setFont(font === 'plexmono' ? 'plexsans' : 'plexmono');
+    setFont(font === "plexmono" ? "plexsans" : "plexmono");
   };
 
   return (

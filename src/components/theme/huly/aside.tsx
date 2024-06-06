@@ -1,14 +1,13 @@
 'use client';
 
-import { MapIcon, UserIcon } from '@heroicons/react/24/outline';
-
+import { SettingsIcon, UserIcon } from '../icons';
 import IconGhost from '../shells/IconShell';
 import IconComponent from '../shells/IconShell';
 
 export default function Aside() {
   return (
-    <aside className="flex w-sidebar flex-col justify-between bg-sidebar text-sm font-medium text-white">
-      <div className="flex w-full flex-col items-center pb-14">
+    <aside className="flex h-screen  w-sidebar flex-col justify-between py-4 !bg-zinc-900 bg-sidebar text-sm font-medium text-white">
+      <div className="flex w-full flex-col items-center pb-14 flex-1">
         <div className="size-8 items-center justify-center rounded bg-red-400 px-3">
           R
         </div>
@@ -35,13 +34,13 @@ export default function Aside() {
 
 const BottomSection = () => {
   return (
-    <div className="flex h-24 w-full flex-col items-center justify-center">
+    <><div className="w-[65%] mx-auto px-4 h-[1px] my-4 bg-border" /><div className="flex  gap-1 w-full flex-col items-center justify-center">
       <IconGhost hasBorder={false}>
-        <MapIcon />
+        <SettingsIcon fill='#fff9' width='20 ' height='20' />
       </IconGhost>
       <IconComponent>
-        <UserIcon />
+        <UserIcon  width={36} height={24} />
       </IconComponent>
-    </div>
+    </div></>
   );
 };

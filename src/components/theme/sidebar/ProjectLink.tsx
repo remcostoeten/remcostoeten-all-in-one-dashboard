@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   children: React.ReactNode;

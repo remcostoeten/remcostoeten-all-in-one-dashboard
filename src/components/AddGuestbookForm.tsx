@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { GuestbookForm } from './GuestbookForm';
+import { GuestbookForm } from "./GuestbookForm";
 
 const AddGuestbookForm = () => (
   <GuestbookForm
     onValid={async (data) => {
       await fetch(`/api/guestbook`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
