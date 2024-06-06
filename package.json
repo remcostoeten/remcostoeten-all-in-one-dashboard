@@ -33,6 +33,7 @@
     "@sentry/nextjs": "^7.116.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "class-variance-authority": "^0.7.0",
+    "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.31.1",
     "framer-motion": "^11.2.10",

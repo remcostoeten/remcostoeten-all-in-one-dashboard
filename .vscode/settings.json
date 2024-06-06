@@ -59,6 +59,9 @@
     {
       "folderPath": "personal-panel/src/components/ui/",
       "badge": "😍"
+    },
+    {
+      "folderPath": "personal-panel/src/styles/theme/utilities.scss/"
     }
   ],
   "workbench.colorCustomizations": {
