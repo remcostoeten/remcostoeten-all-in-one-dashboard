@@ -21,17 +21,10 @@ This is a personal project that combines various tools and features I've built o
 - **Validation**: [ZOD](https://zod.dev/)
 - **Analytics**: [Posthog](https://posthog.com/)
 - **i18n**: [i18next](https://www.i18next.com/)
-- **Observability**: [Betterstack](https://betterstack.com/)
 <br/>
 
 
 ## 🐻 Miscellaneous
-
-- Prettier/ESLint configs
-- Custom utility scripts
-- SEO optimization
-- Lighthouse score improvements
-<br/>
 
 <h2> 📋 Repos Used</h2>
 
