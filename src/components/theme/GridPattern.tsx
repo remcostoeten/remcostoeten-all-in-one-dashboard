@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/core/utils/utils";
 import GridPattern from "../magicui/grid-pattern";
 
 export default function GridPatternLinearGradient() {

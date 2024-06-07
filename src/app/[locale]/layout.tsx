@@ -1,12 +1,13 @@
+// src/app/[locale]/layout.tsx
+import GridBackground from "@/components/effects/GridPattern";
+import { AppConfig } from "@/core/utils/AppConfig";
 import "@/styles/app.scss";
-
 import type { Metadata } from "next";
+import { useMessages, NextIntlClientProvider } from "next-intl";
 import { IBM_Plex_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider, useMessages } from "next-intl";
 import type { ReactNode } from "react";
 
-import { AppConfig } from "@/core/utils/AppConfig";
 
 const plexsans = IBM_Plex_Sans({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -25,12 +26,12 @@ export default function RootLayout(props: {
 
   return (
     <html lang={props.params.locale} className="dark">
-      <body className={`${plexsans.className} bg-light-blue`}>
-        {" "}
+      <body className={`${plexsans.className}`}>
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
         >
+          <GridBackground rayCount={10} animationDuration={4} />
           {props.children}
         </NextIntlClientProvider>
       </body>

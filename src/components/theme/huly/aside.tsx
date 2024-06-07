@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { SettingsIcon, UserIcon } from '../icons';
-import IconGhost from '../shells/IconShell';
-import IconComponent from '../shells/IconShell';
+import { SettingsIcon, UserIcon } from "../icons";
+import IconGhost from "../shells/IconShell";
+import IconComponent from "../shells/IconShell";
 
 export default function Aside() {
   return (
@@ -34,13 +34,16 @@ export default function Aside() {
 
 const BottomSection = () => {
   return (
-    <><div className="w-[65%] mx-auto px-4 h-[1px] my-4 bg-border" /><div className="flex  gap-1 w-full flex-col items-center justify-center">
-      <IconGhost hasBorder={false}>
-        <SettingsIcon fill='#fff9' width='20 ' height='20' />
-      </IconGhost>
-      <IconComponent>
-        <UserIcon  width={36} height={24} />
-      </IconComponent>
-    </div></>
+    <>
+      <div className="w-[65%] mx-auto px-4 h-[1px] my-4 bg-border" />
+      <div className="flex  gap-1 w-full flex-col items-center justify-center">
+        <IconGhost hasBorder={false}>
+          <SettingsIcon fill="#fff9" width="20 " height="20" />
+        </IconGhost>
+        <IconComponent>
+          <UserIcon width={36} height={24} />
+        </IconComponent>
+      </div>
+    </>
   );
 };
