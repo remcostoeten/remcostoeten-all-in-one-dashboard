@@ -13,10 +13,12 @@ const BaseTemplate = (props: {
 
   return (
     <div className="relative w-screen h-screen">
-  <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-background fixed p-20 md:shadow-xl -z-10 mx-auto grid-pattern">
+      <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-background fixed p-20 md:shadow-xl -z-10 mx-auto grid-pattern">
         {/* <GridPattern width={60} height={60} /> */}
-      </div>    {/* Other content */}
-  </div> );
+      </div>{" "}
+      {/* Other content */}
+    </div>
+  );
 };
 
 export { BaseTemplate };

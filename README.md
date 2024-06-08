@@ -1,4 +1,5 @@
 # Personal all-in-one panel!
+
 <small>Because I hate load times (cloudflare ugh), and not owning my own stuff</small>
 
 > [!NOTE]
@@ -12,6 +13,7 @@ This is a personal project that combines various tools and features I've built o
 
 [The design im working with](https://www.figma.com/community/file/1380305920742671237)
 <br/>
+
 ## 🧐 Features
 
 - **Frontend**: [NextJS 15](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/)
@@ -23,18 +25,17 @@ This is a personal project that combines various tools and features I've built o
 - **Validation**: [ZOD](https://zod.dev/)
 - **Analytics**: [Posthog](https://posthog.com/)
 - **i18n**: [i18next](https://www.i18next.com/)
-<br/>
+  <br/>
 
 ## 🐻 Packages
 
 - [useHooksPackage](https://usehooks.com/)
   - [useFavicon](https://usehooks.com/useFavicon) (dynamically update the favicon)
-    could be paired with the logic of changing tab-title  when switching tabs -> [Phind Search](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c)
+    could be paired with the logic of changing tab-title when switching tabs -> [Phind Search](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c)
   - [useLocalStorage](https://usehooks.com/uselocalstorage)
-  - [useGeoLocation](https://usehooks.com/usegeolocation) - Maybe when extending my own reverse geo app?
--[Zustand](https://zustand.surge.sh/) - State management<br/>
+  - [useGeoLocation](https://usehooks.com/usegeolocation) - Maybe when extending my own reverse geo app? -[Zustand](https://zustand.surge.sh/) - State management<br/>
 - [React Query ?](https://react-query.tanstack.com/) - Data fetching (trying/PoC vs server actions/api calls)
-<br/>
+  <br/>
 
 ## 🐻 Big core overhauls that need to be done
 
@@ -42,7 +43,6 @@ This is a personal project that combines various tools and features I've built o
   - [React 19 release notes](https://reactjs.org/blog/2022/02/23/react-19.html#release-notes)
 - NextJS -15 upgrade]
   - [NextJS -15 release notes](https://nextjs.org/blog/next-15#release-notes)
-
 
 ## 🐻 Tools that can be useful
 
@@ -76,12 +76,13 @@ This is a personal project that combines various tools and features I've built o
 - [Supabase dashboard - loaders, collapse menu](https://supabase.com/dashboard/projects)
 
 ### Too fancy ui stuff
+
 - Spark effect ([source](https://codepen.io/hexagoncircle/details/bGZdWyw))
 - Dark glow button ([source](https://codepen.io/collinsworth/pen/zYepgqG))
 - Glow card ([source](https://codepen.io/jh3y/pen/MWxgJXY)
 - Menu animation ([source](https://codepen.io/jh3y/pen/GRapZqO))
 - Card anchor effect ([source](https://codepen.io/jh3y/pen/MWLyGxo))
-</br>
+  </br>
 
 ## 🛣️ Roadmap and To-Do
 
@@ -103,11 +104,11 @@ This is a personal project that combines various tools and features I've built o
 - [ ] [Migrate and cleanup perfect blackjack strategy tool](https://portfolio.remcostoeten.com/blackjack)
 - [ ] [Migrate SVG to CSS pseudo element and create UI]()
 - [ ] Add file vault feature
-    - [ ] Integrate uploadthing
-    - [ ] Allow uploading
-    - [ ] Allow downloading
-    - [ ] Allow deleting
-    - [ ] Allow sharing
+  - [ ] Integrate uploadthing
+  - [ ] Allow uploading
+  - [ ] Allow downloading
+  - [ ] Allow deleting
+  - [ ] Allow sharing
 
 ### Unique Implementations
 
@@ -123,7 +124,7 @@ This is a personal project that combines various tools and features I've built o
 - [personal-platform](https://github.com/remcostoeten/personal-platform)
 - Local project with recent features that i must migrate sit over at [/home/remcostoeten/projects/dashboard_w_chat-history-api_working-status-tracker]
 - and more over the previous years..
-<br/>
+  <br/>
 
 <h2>💖Like my work?</h2>
 

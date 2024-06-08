@@ -8,7 +8,6 @@ import { IBM_Plex_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
-
 const plexsans = IBM_Plex_Sans({
   weight: ["200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],

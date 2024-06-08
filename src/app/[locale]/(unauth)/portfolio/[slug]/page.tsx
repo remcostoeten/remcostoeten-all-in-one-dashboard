@@ -29,8 +29,8 @@ const PortfolioDetail = (props: IPortfolioDetailProps) => {
 
   return (
     <>
-      <h1 className="capitalize">{t('header', { slug: props.params.slug })}</h1>
-      <p>{t('content')}</p>
+      <h1 className="capitalize">{t("header", { slug: props.params.slug })}</h1>
+      <p>{t("content")}</p>
     </>
   );
 };
