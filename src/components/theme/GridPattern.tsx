@@ -1,6 +1,6 @@
 "use client";
 
-import GridPattern from "../magicui/grid-pattern";
+import GridPattern from "../effects/magicui/grid-pattern";
 
 export default function GridPatternLinearGradient() {
   return (

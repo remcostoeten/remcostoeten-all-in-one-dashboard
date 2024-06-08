@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
 import RayBackground from "@/components/theme/AnimGrid";
-import GridPattern from "@/components/magicui/grid-pattern";
+import GridPattern from "@/components/effects/magicui/grid-pattern";
 
 const BaseTemplate = (props: {
   leftNav: ReactNode;
