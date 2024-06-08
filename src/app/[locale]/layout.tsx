@@ -30,7 +30,7 @@ export default function RootLayout(props: {
           locale={props.params.locale}
           messages={messages}
         >
-          <GridBackground rayCount={10} animationDuration={4} />
+          {/* <GridBackground rayCount={10} animationDuration={4} /> */}
           {props.children}
         </NextIntlClientProvider>
       </body>

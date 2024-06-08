@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 
-import { AddGuestbookForm } from "@/components/AddGuestbookForm";
+import { AddGuestbookForm } from "@/components/dashboard/guestbook/AddGuestbookForm";
 import { GuestbookList } from "@/components/GuestbookList";
 
 export async function generateMetadata(props: { params: { locale: string } }) {
