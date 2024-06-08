@@ -1,4 +1,4 @@
-import HeroSection from "@/components/landing/HeroSection";
+import HeroSection from "@/components/marketing/HeroSection";
 import { AppConfig } from "@/core/utils/AppConfig";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
