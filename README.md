@@ -9,6 +9,7 @@ This is a personal project that combines various tools and features I've built o
 ## 🚀 Demo
 
 [Visit the demo](https://panel.remcostoeten.com)
+
 [The design im working with](https://www.figma.com/community/file/1380305920742671237)
 <br/>
 ## 🧐 Features
@@ -63,6 +64,9 @@ This is a personal project that combines various tools and features I've built o
 - [TomIsLoading](https://www.hover.dev/)
 - [Way to fancy GSAP/Framer stuff](https://blog.olivierlarose.com/tutorials)
 - [?? components](https://components.bridger.to/hero)
+- [own components showcase](https://github.com/remcostoeten/fancy-component-showcase)
+- [syntaxUI](https://syntaxui.com/)
+
 <br/>
 
 ## 🐻 Design inspiration
@@ -70,21 +74,46 @@ This is a personal project that combines various tools and features I've built o
 - [SaaS landing with dope bento glass style](https://www.hover.dev/templates/demo/the-startup)
 - [Vercel blog page with cool gradient](https://vercel.com/blog/deploy-summary)
 - [Supabase dashboard - loaders, collapse menu](https://supabase.com/dashboard/projects)
-- Too fancy ui stuff
+
+### Too fancy ui stuff
 - Spark effect ([source](https://codepen.io/hexagoncircle/details/bGZdWyw))
 - Dark glow button ([source](https://codepen.io/collinsworth/pen/zYepgqG))
-- Glow card
+- Glow card ([source](https://codepen.io/jh3y/pen/MWxgJXY)
 - Menu animation ([source](https://codepen.io/jh3y/pen/GRapZqO))
 - Card anchor effect ([source](https://codepen.io/jh3y/pen/MWLyGxo))
 </br>
 
-## 📝 To Do
+## 🛣️ Roadmap and To-Do
 
-Way to much but unique things which I want implemented which are not that typical.
+### Short-Term Goals
+
+- [x] Initial setup
+- [x] Add user authentication
+- [ ] Implement dark mode
+- [ ] Add more features
+
+### Long-Term Goals
+
+- [ ] Localization
+  - [ ] [Add pretty flags](https://flagpack.xyz/)
+- [ ] [Migrate geolocation](https://features.remcostoeten.com/geolocation) and re-create UI
+- [ ] Create landing page
+- [ ] [Migrate URL tool](https://url.remcostoeten.com/) - [finished version, ugly UI](https://vsc.remcostoeten.com/)
+- [ ] [Migrate HTML to React tool and cleanup UI](https://portfolio.remcostoeten.com/html-to-jsx)
+- [ ] [Migrate and cleanup perfect blackjack strategy tool](https://portfolio.remcostoeten.com/blackjack)
+- [ ] [Migrate SVG to CSS pseudo element and create UI]()
+- [ ] Add file vault feature
+    - [ ] Integrate uploadthing
+    - [ ] Allow uploading
+    - [ ] Allow downloading
+    - [ ] Allow deleting
+    - [ ] Allow sharing
+
+### Unique Implementations
 
 - [ ] Add viewport tag ([source](https://www.youtube.com/shorts/YqAxXBrrryc))
 - [ ] Implement logic for tab title change when switching ([source](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c))
-- Dark light mode toggle ([source](https://codepen.io/jh3y/pen/GRaWZrw))
+- [ ] Dark light mode toggle ([source](https://codepen.io/jh3y/pen/GRaWZrw))
 
 <h2> 📋 Repos Used</h2>
 
@@ -92,7 +121,7 @@ Way to much but unique things which I want implemented which are not that typica
 - [nextjs-drizzle-crud-w-images](https://github.com/remcostoeten/nextjs-drizzle-crud-w-images-tfw-no-relation-ship-sad-pepe)
 - [t3gallery](https://github.com/remcostoeten/t3gallery)
 - [personal-platform](https://github.com/remcostoeten/personal-platform)
-- Local project with recent features that i must migrate sit over at
+- Local project with recent features that i must migrate sit over at [/home/remcostoeten/projects/dashboard_w_chat-history-api_working-status-tracker]
 - and more over the previous years..
 <br/>
 
