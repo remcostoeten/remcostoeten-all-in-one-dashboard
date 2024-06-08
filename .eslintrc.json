@@ -34,13 +34,6 @@
         "project": "./tsconfig.json"
       },
       "rules": {
-        "prettier/prettier": [
-          "error",
-          {
-            "singleQuote": true,
-            "endOfLine": "auto"
-          }
-        ],
         "import/extensions": "off",
         "react/function-component-definition": "off",
         "react/destructuring-assignment": "off",
@@ -57,8 +50,7 @@
         "import/prefer-default-export": "off",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",
-        "import/order": "off",
-        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
           "error",

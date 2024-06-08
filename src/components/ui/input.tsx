@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "@/core/utils/utils";
+import { cn } from "@/core/utils/cn";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}

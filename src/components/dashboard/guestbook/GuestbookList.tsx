@@ -3,7 +3,7 @@ import { logger } from "@/core/libs/Logger";
 import { guestbookSchema } from "@/core/models/Schema";
 
 import { DeleteGuestbookEntry } from "./DeleteGuestbookEntry";
-import { EditableGuestbookEntry } from "./EditableGuestbookEntry";
+import { EditableGuestbookEntry } from "../../EditableGuestbookEntry";
 
 const GuestbookList = async () => {
   const guestbook = await db.select().from(guestbookSchema).all();

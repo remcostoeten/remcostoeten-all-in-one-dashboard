@@ -1,11 +1,11 @@
-@import './theme/colors.scss';
-@import './theme/fonts.scss';
+@import "./theme/colors.scss";
+@import "./theme/fonts.scss";
 // @import './theme/theme.scss';
-@import './theme/variables.scss';
+@import "./theme/variables.scss";
 
-@import './components/grid-rays.scss';
+@import "./components/grid-rays.scss";
 
-@import './utilities/utilities.scss';
+@import "./utilities/utilities.scss";
 
 @tailwind base;
 @tailwind components;
@@ -72,38 +72,40 @@
 }
 
 .font-interDisplay {
-  font-family: 'Inter Display';
+  font-family: "Inter Display";
 }
 
 .font-inter-ui-normal {
-  font-family: 'Inter UI';
+  font-family: "Inter UI";
   font-weight: 400;
 }
 
 .font-inter-ui-bold {
-  font-family: 'Inter UI';
+  font-family: "Inter UI";
   font-weight: 800;
 }
 
 .font-inter-ui-italic {
-  font-family: 'Inter UI';
+  font-family: "Inter UI";
   font-style: italic;
   font-weight: 400;
 }
 
 .font-inter-ui-italic-bold {
-  font-family: 'Inter UI';
+  font-family: "Inter UI";
   font-style: italic;
   font-weight: 800;
 }
 
 .font-inter-display-semibold {
-  font-family: 'Inter Display';
+  font-family: "Inter Display";
   font-weight: 600;
 }
 
 /* Add this to your global CSS file or a relevant CSS module */
-body, html, #__next {
+body,
+html,
+#__next {
   height: 100%;
   width: 100%;
   margin: 0;

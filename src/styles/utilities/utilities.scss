@@ -2,7 +2,11 @@ $bg-fade: rgba(26, 26, 40, 0);
 
 @mixin gradient-fade($color-start, $color-end, $start-percent, $end-percent) {
   background: $color-start;
-  background: linear-gradient(0deg, $color-start $start-percent, $color-end $end-percent);
+  background: linear-gradient(
+    0deg,
+    $color-start $start-percent,
+    $color-end $end-percent
+  );
 }
 
 .grid-pattern {
@@ -13,7 +17,8 @@ $bg-fade: rgba(26, 26, 40, 0);
   left: 0;
   transform-origin: bottom center;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     top: 0;
