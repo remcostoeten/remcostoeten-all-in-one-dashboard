@@ -1,11 +1,11 @@
-import { auth } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 export default function CenteredLayout(props: { children: React.ReactNode }) {
   const { userId } = auth();
 
   if (userId) {
-    redirect('/dashboard');
+    redirect("/dashboard");
   }
 
   return (

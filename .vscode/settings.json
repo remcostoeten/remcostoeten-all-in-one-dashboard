@@ -51,6 +51,17 @@
       "folderPath": "personal-panel/src/app/[locale]/(unauth)/tasks/",
       "color": "foldercolorizer.PaleTaupe",
       "badge": "✍️"
+    },
+    {
+      "folderPath": "personal-panel/src/core/",
+      "badge": "🥰"
+    },
+    {
+      "folderPath": "personal-panel/src/components/ui/",
+      "badge": "😍"
+    },
+    {
+      "folderPath": "personal-panel/src/styles/theme/utilities.scss/"
     }
   ],
   "workbench.colorCustomizations": {

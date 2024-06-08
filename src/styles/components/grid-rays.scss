@@ -1,0 +1,85 @@
+// src/styles/components/grid-rays.scss
+
+$color-blue: #0050A9;
+$color-blue-lowlight: #002F55;
+$color-blue-highlight: #008CFF;
+$color-blue-subtle: #EDF8FF;
+$color-white: #FFF;
+$color-gray-2: #F9F9F9;
+$color-gray-5: #F2F2F2;
+$color-grey-69: #414B50;
+$ray-animation-time: 5s;
+$color-gray-11: #DDE0E2;
+
+:root {
+  --ray-width: 2px;
+  --ray-beam-color: rgba(255, 0, 0, 0.8); // Red color with some opacity
+  --ray-track-color: #F2F2F2;
+  --ray-animation-time: #{$ray-animation-time};
+}
+
+.t {
+  width: 100vw;
+  height: 100vh;
+  background: red;
+}
+
+body {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: red;
+  align-items: center;
+  justify-content: center;
+}
+
+svg.grid-rays {
+  height: 100vh;
+  width: 100vw;
+  background: black;
+}
+
+g.ray {
+  height: 100vh;
+  width: 100vw;
+
+  path.track {
+    stroke: var(--ray-track-color);
+    stroke-width: var(--ray-width);
+  }
+  path.beam {
+    fill: var(--ray-track-color);
+    stroke: var(--ray-beam-color);
+    stroke-width: var(--ray-width);
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: beam var(--ray-animation-time) ease-in-out forwards infinite;
+    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.8)); // Glowing effect
+  }
+
+  &:nth-child(2n) path.beam {
+    animation-direction: reverse;
+  }
+
+  @for $x from 1 through 50 {
+    &:nth-child(#{$x}) path.beam {
+      animation-delay: #{random($ray-animation-time)}s;
+    }
+  }
+}
+
+@keyframes beam {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke-dashoffset: -2000;
+  }
+  100% {
+    stroke-dashoffset: -2000;
+  }
+}

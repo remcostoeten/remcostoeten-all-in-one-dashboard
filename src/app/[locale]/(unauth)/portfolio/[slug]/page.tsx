@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 type IPortfolioDetailProps = {
   params: { slug: string; locale: string };
@@ -15,17 +15,17 @@ export function generateStaticParams() {
 export async function generateMetadata(props: IPortfolioDetailProps) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: 'PortfolioSlug',
+    namespace: "PortfolioSlug",
   });
 
   return {
-    title: t('meta_title', { slug: props.params.slug }),
-    description: t('meta_description', { slug: props.params.slug }),
+    title: t("meta_title", { slug: props.params.slug }),
+    description: t("meta_description", { slug: props.params.slug }),
   };
 }
 
 const PortfolioDetail = (props: IPortfolioDetailProps) => {
-  const t = useTranslations('PortfolioSlug');
+  const t = useTranslations("PortfolioSlug");
 
   return (
     <>

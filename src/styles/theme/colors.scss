@@ -1,0 +1,33 @@
+:root {
+  --blue-primary: #205DC2; // active buttons, cta etc
+  --dark-blue: #14141F; // sidebar
+  --light-blue: #1A1A28; // body bg
+  --text-white: rgba(255, 255, 255, 0.8);
+  --icon: #1A1A28;
+  --icon-border: #ffffff17;
+  --icon-active: white;
+  --icon-on-bg: rgba(255, 255, 255, 0.6);
+  --icon-active-background: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 1);
+  --seperator: var(--border);
+
+  --bg-ghost: #ffffff05;
+  --bg-ghost-hover: #ffffff0a;
+  --bg-ghost-active: #ffffff0d;
+  --border-ghost: #rgb(255 255 255 / 4%);
+  --border-ghost-hover: #rgb(255 255 255 / 8%);
+
+
+
+  --background-main: #1A1B1E;
+  --background-sidebar: #202225;
+  --background-card: #2C2F33;
+  --background-active: #3B3E44;
+
+  --text-primary: #E4E6EB;
+  --text-secondary: #B0B3B8;
+  --text-active: #FFFFFF;
+
+  --button-primary: #3B82F6;
+  --button-primary-hover: #2563EB;
+}
