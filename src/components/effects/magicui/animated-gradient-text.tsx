@@ -1,27 +1,77 @@
-"use client";
+// @ts-nocheck
+import { cn } from '@/core/utils/cn'
+import { useId } from 'react'
 
-import { cn } from "@/core/utils/cn";
-import { ReactNode } from "react";
-
-export default function AnimatedGradientText({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={cn(
-        "group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40",
-        className,
-      )}
-    >
-      <div
-        className={`absolute inset-0 block h-full w-full animate-gradient bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] p-[1px] ![mask-composite:subtract] [border-radius:inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`}
-      />
-
-      {children}
-    </div>
-  );
+interface GridPatternProps {
+    width?: any
+    height?: any
+    x?: any
+    y?: any
+    squares?: Array<[x: number, y: number]>
+    strokeDasharray?: any
+    className?: string
+    [key: string]: any
 }
+
+export function GridPattern({
+    width = 40,
+    height = 40,
+    x = -1,
+    y = -1,
+    strokeDasharray = 0,
+    squares,
+    className,
+    ...props
+}: GridPatternProps) {
+    const id = useId()
+
+    return (
+        <svg
+            aria-hidden='true'
+            className={cn(
+                'pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30',
+                className
+            )}
+            {...props}
+        >
+            <defs>
+                <pattern
+                    id={id}
+                    width={width}
+                    height={height}
+                    patternUnits='userSpaceOnUse'
+                    x={x}
+                    y={y}
+                >
+                    <path
+                        d={`M.5 ${height}V.5H${width}`}
+                        fill='none'
+                        strokeDasharray={strokeDasharray}
+                    />
+                </pattern>
+            </defs>
+            <rect
+                width='100%'
+                height='100%'
+                strokeWidth={0}
+                fill={`url(#${id})`}
+            />
+            {squares && (
+                <svg x={x} y={y} className='overflow-visible'>
+                    {squares.map(([squareX, squareY]) => (
+                        <rect
+                            strokeWidth='0'
+                            key={`${squareX}-${squareY}`}
+                            width={width - 1}
+                            height={height - 1}
+                            x={squareX * width + 1}
+                            y={squareY * height + 1}
+                        />
+                    ))}
+                </svg>
+            )}
+        </svg>
+    )
+}
+
+export default GridPattern

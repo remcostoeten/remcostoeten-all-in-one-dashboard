@@ -1,15 +1,15 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next'
 
-import { getBaseUrl } from "@/core/utils/Helpers";
+import { getBaseUrl } from '@/core/utils/Helpers'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${getBaseUrl()}/`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
-    // Add more URLs here
-  ];
+    return [
+        {
+            url: `${getBaseUrl()}/`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.7
+        }
+        // Add more URLs here
+    ]
 }

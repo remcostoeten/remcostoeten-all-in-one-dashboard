@@ -1,56 +1,60 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "strict": false,
-    "alwaysStrict": false,
-    "strictNullChecks": false,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "noImplicitThis": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "allowUnreachableCode": true,
-    "noFallthroughCasesInSwitch": false,
-    "target": "es2017",
-    "outDir": "out",
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "checkJs": false,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": false,
-    "jsx": "preserve",
-    "noEmit": false,
-    "isolatedModules": false,
-    "incremental": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"],
-      "@ui/*": ["./src/components/ui/*"],
-      "@c/*": ["./src/components/*"],
-      "@mark/*": ["./src/components/marketing/*"],
-      "@dash/*": ["./src/components/dashboard/*"]
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "strictNullChecks": true,
+        "noUncheckedIndexedAccess": true,
+
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowUnreachableCode": false,
+        "noFallthroughCasesInSwitch": true,
+
+        "target": "es2017",
+        "outDir": "out",
+        "sourceMap": true,
+
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "checkJs": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+
+        "jsx": "preserve",
+        "noEmit": true,
+        "isolatedModules": true,
+        "incremental": true,
+
+        // Path aliases
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@/public/*": ["./public/*"]
+        },
+
+        // Editor support
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "exclude": ["./out/**/*", "./node_modules/**/*"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "**/*.mts"
     ]
-  },
-  "exclude": ["./out/**/*", "./node_modules/**/*"],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "**/*.mts"
-  ]
 }

@@ -1,86 +1,86 @@
 {
-  "RootLayout": {
-    "home_link": "Startpagina",
-    "about_link": "Over",
-    "guestbook_link": "Gastenboek",
-    "portfolio_link": "Portfolio",
-    "sign_in_link": "Inloggen",
-    "sign_up_link": "Registreren",
-    "tasks": "Takenlijst",
-    "dashboard_link": "Dashboard"
-  },
-  "BaseTemplate": {
-    "description": "Startcode voor Next.js met Tailwind CSS",
-    "made_with": "Gemaakt met"
-  },
-  "Index": {
-    "meta_title": "Introductie van Next.js Boilerplate",
-    "meta_description": "Next js Boilerplate is de perfecte startcode voor uw project. Bouw uw React-applicatie met het Next.js-framework."
-  },
-  "Guestbook": {
-    "meta_title": "Gastenboek",
-    "meta_description": "Een voorbeeld van CRUD-werking",
-    "database_powered_by": "Database aangedreven door",
-    "loading_guestbook": "Gastenboek laden..."
-  },
-  "GuestbookForm": {
-    "username": "Gebruikersnaam",
-    "body": "Bericht",
-    "save": "Opslaan"
-  },
-  "Task": {
-    "meta_title": "Task-lijst",
-    "meta_description": "Een voorbeeld van een Task-lijst",
-    "loading_Tasks": "Takenlijst laden...",
-    "add_Task": "Voeg een taak toe"
-  },
-  "TaskForm": {
-    "title": "Titre",
-    "titlePlaceholder": "Entrez votre titre ici...",
-    "titleError": "Le titre est requis",
-    "save": "Enregistrer",
-    "update": "Mettre à jour",
-    "create": "Créer"
-  },
-  "About": {
-    "meta_title": "Over",
-    "meta_description": "Over beschrijving",
-    "about_paragraph": "Welkom op onze Over-pagina! Wij zijn een team van gepassioneerde en toegewijde softwaremakers.",
-    "translation_powered_by": "Vertaling aangedreven door"
-  },
-  "Portfolio": {
-    "meta_title": "Portfolio",
-    "meta_description": "Welkom op de pagina van mijn portfolio!",
-    "presentation": "Welkom op mijn portfolio-pagina! Hier vindt u een zorgvuldig georganiseerde collectie van mijn werk en prestaties. Door middel van dit portfolio laat ik mijn expertise, creativiteit en de waarde die ik kan toevoegen aan uw projecten zien.",
-    "portfolio_name": "Portfolio {name}",
-    "error_reporting_powered_by": "Foutenrapportage aangedreven door",
-    "coverage_powered_by": "Code dekking aangedreven door"
-  },
-  "PortfolioSlug": {
-    "meta_title": "Portfolio {slug}",
-    "meta_description": "Beschrijving van Portfolio {slug}",
-    "header": "Portfolio {slug}",
-    "content": "Een set van promotioneel materiaal en branding-elementen gecreëerd voor een bedrijfsevenement. Ontworpen een visueel uniform thema, inclusief een logo, posters, banners en digitale assets. De merkidentiteit van de klant geïntegreerd terwijl het een hedendaagse en innovatieve benadering werd ingeblazen. Positieve reacties van deelnemers leidden tot een succesvol evenement met verhoogde deelnemersbetrokkenheid en betere merkzichtbaarheid.",
-    "log_management_powered_by": "Logbeheer aangedreven door"
-  },
-  "SignIn": {
-    "meta_title": "Inloggen",
-    "meta_description": "Log in op uw account met gemak."
-  },
-  "SignUp": {
-    "meta_title": "Registreren",
-    "meta_description": "Maak moeiteloos een account aan met ons intuïtieve registratieproces."
-  },
-  "Dashboard": {
-    "meta_title": "Dashboard",
-    "hello_message": "Hallo {email}!"
-  },
-  "UserProfile": {
-    "meta_title": "Gebruikersprofiel"
-  },
-  "DashboardLayout": {
-    "dashboard_link": "Dashboard",
-    "user_profile_link": "Beheer uw account",
-    "sign_out": "Uitloggen"
-  }
+    "RootLayout": {
+        "home_link": "Startpagina",
+        "about_link": "Over",
+        "guestbook_link": "Gastenboek",
+        "portfolio_link": "Portfolio",
+        "sign_in_link": "Inloggen",
+        "sign_up_link": "Registreren",
+        "tasks": "Takenlijst",
+        "dashboard_link": "Dashboard"
+    },
+    "BaseTemplate": {
+        "description": "Startcode voor Next.js met Tailwind CSS",
+        "made_with": "Gemaakt met"
+    },
+    "Index": {
+        "meta_title": "Introductie van Next.js Boilerplate",
+        "meta_description": "Next js Boilerplate is de perfecte startcode voor uw project. Bouw uw React-applicatie met het Next.js-framework."
+    },
+    "Guestbook": {
+        "meta_title": "Gastenboek",
+        "meta_description": "Een voorbeeld van CRUD-werking",
+        "database_powered_by": "Database aangedreven door",
+        "loading_guestbook": "Gastenboek laden..."
+    },
+    "GuestbookForm": {
+        "username": "Gebruikersnaam",
+        "body": "Bericht",
+        "save": "Opslaan"
+    },
+    "Task": {
+        "meta_title": "Task-lijst",
+        "meta_description": "Een voorbeeld van een Task-lijst",
+        "loading_Tasks": "Takenlijst laden...",
+        "add_Task": "Voeg een taak toe"
+    },
+    "TaskForm": {
+        "title": "Titre",
+        "titlePlaceholder": "Entrez votre titre ici...",
+        "titleError": "Le titre est requis",
+        "save": "Enregistrer",
+        "update": "Mettre à jour",
+        "create": "Créer"
+    },
+    "About": {
+        "meta_title": "Over",
+        "meta_description": "Over beschrijving",
+        "about_paragraph": "Welkom op onze Over-pagina! Wij zijn een team van gepassioneerde en toegewijde softwaremakers.",
+        "translation_powered_by": "Vertaling aangedreven door"
+    },
+    "Portfolio": {
+        "meta_title": "Portfolio",
+        "meta_description": "Welkom op de pagina van mijn portfolio!",
+        "presentation": "Welkom op mijn portfolio-pagina! Hier vindt u een zorgvuldig georganiseerde collectie van mijn werk en prestaties. Door middel van dit portfolio laat ik mijn expertise, creativiteit en de waarde die ik kan toevoegen aan uw projecten zien.",
+        "portfolio_name": "Portfolio {name}",
+        "error_reporting_powered_by": "Foutenrapportage aangedreven door",
+        "coverage_powered_by": "Code dekking aangedreven door"
+    },
+    "PortfolioSlug": {
+        "meta_title": "Portfolio {slug}",
+        "meta_description": "Beschrijving van Portfolio {slug}",
+        "header": "Portfolio {slug}",
+        "content": "Een set van promotioneel materiaal en branding-elementen gecreëerd voor een bedrijfsevenement. Ontworpen een visueel uniform thema, inclusief een logo, posters, banners en digitale assets. De merkidentiteit van de klant geïntegreerd terwijl het een hedendaagse en innovatieve benadering werd ingeblazen. Positieve reacties van deelnemers leidden tot een succesvol evenement met verhoogde deelnemersbetrokkenheid en betere merkzichtbaarheid.",
+        "log_management_powered_by": "Logbeheer aangedreven door"
+    },
+    "SignIn": {
+        "meta_title": "Inloggen",
+        "meta_description": "Log in op uw account met gemak."
+    },
+    "SignUp": {
+        "meta_title": "Registreren",
+        "meta_description": "Maak moeiteloos een account aan met ons intuïtieve registratieproces."
+    },
+    "Dashboard": {
+        "meta_title": "Dashboard",
+        "hello_message": "Hallo {email}!"
+    },
+    "UserProfile": {
+        "meta_title": "Gebruikersprofiel"
+    },
+    "DashboardLayout": {
+        "dashboard_link": "Dashboard",
+        "user_profile_link": "Beheer uw account",
+        "sign_out": "Uitloggen"
+    }
 }
