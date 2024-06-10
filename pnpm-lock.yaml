@@ -80,6 +80,9 @@ dependencies:
     sharp:
         specifier: ^0.33.4
         version: 0.33.4
+    sonner:
+        specifier: ^1.5.0
+        version: 1.5.0(react-dom@18.3.1)(react@18.3.1)
     tailwind-merge:
         specifier: ^2.3.0
         version: 2.3.0
@@ -13991,6 +13994,19 @@ packages:
             }
         dependencies:
             atomic-sleep: 1.0.0
+        dev: false
+
+    /sonner@1.5.0(react-dom@18.3.1)(react@18.3.1):
+        resolution:
+            {
+                integrity: sha512-FBjhG/gnnbN6FY0jaNnqZOMmB73R+5IiyYAw8yBj7L54ER7HB3fOSE5OFiQiE2iXWxeXKvg6fIP4LtVppHEdJA==
+            }
+        peerDependencies:
+            react: ^18.0.0
+            react-dom: ^18.0.0
+        dependencies:
+            react: 18.3.1
+            react-dom: 18.3.1(react@18.3.1)
         dev: false
 
     /source-map-js@1.2.0:

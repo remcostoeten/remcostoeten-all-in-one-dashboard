@@ -1,8 +1,9 @@
-'use client'
-import { ArrowRight, Github } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '../ui/button'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
+import { ArrowRight } from '../theme/icons'
+// import PushButton from '../shared/SentPushNotificationt'
+import { Button } from '../ui/button'
+
 export default function HeroSection() {
     return (
         <div className='flex flex-col items-center justify-center leading-6'>
@@ -45,8 +46,10 @@ export default function HeroSection() {
                     target='_blank'
                     className='animate-buttonheartbeat border p-2 rounded-full mt-5 hover:dark:bg-black hover:cursor-pointer'
                 >
-                    <Github className='w-4 h-4' />
+                    Github logo
+                    {/* <Github className="w-4 h-4" /> */}
                 </Link>
+                {/* <PushButton /> */}
             </div>
             <div>
                 <div className='relative flex max-w-6xl justify-center overflow-hidden mt-7'>

@@ -1,13 +1,12 @@
 // src/app/[locale]/layout.tsx
+import PushButton from '@/components/shared/SentPushNotificationt'
+import { AppConfig } from '@/core/utils/AppConfig'
 import '@/styles/app.scss'
-
 import type { Metadata } from 'next'
+import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
-import { NextIntlClientProvider, useMessages } from 'next-intl'
 import type { ReactNode } from 'react'
-
-import { AppConfig } from '@/core/utils/AppConfig'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -31,7 +30,7 @@ export default function RootLayout(props: {
                     locale={props.params.locale}
                     messages={messages}
                 >
-                    {/* <GridBackground rayCount={10} animationDuration={4} /> */}
+                    <PushButton />
                     {props.children}
                 </NextIntlClientProvider>
             </body>
