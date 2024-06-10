@@ -1,97 +1,30 @@
-import { getTranslations } from 'next-intl/server'
+import AnimatedLogoCloud from '@/components/marketing/AnimatedLogoCloud'
+import HeroSection from '@/components/marketing/HeroSection'
+import PageWrapper from '@/components/shared/containers/PageWrapper'
 
-export async function generateMetadata(props: { params: { locale: string } }) {
-    const t = await getTranslations({
-        locale: props.params.locale,
-        namespace: 'Index'
-    })
-
-    return {
-        title: t('meta_title'),
-        description: t('meta_description')
-    }
-}
-
-export default function Index() {
+export default function Home() {
     return (
-        <>
-            <p>
-                Looking for a SaaS Boilerplate?{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://nextjs-boilerplate.com/pro-saas-starter-kit'
-                >
-                    Next.js Boilerplate Pro
-                </a>{' '}
-                can help you build your SaaS.
-            </p>
-            <p>
-                Follow{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://twitter.com/ixartz'
-                    target='_blank'
-                >
-                    @Ixartz on Twitter
-                </a>{' '}
-                for updates and more information about the boilerplate.
-            </p>
-            <p>
-                Our sponsors&apos; exceptional support has made this project
-                possible. Their services integrate seamlessly with the
-                boilerplate, and we recommend trying them out.
-            </p>
-            <h2 className='mt-5 text-2xl font-bold'>Sponsors</h2>
-            <h2 className='mt-5 text-2xl font-bold'>
-                Boilerplate Code for Your Next.js Project with Tailwind CSS
-            </h2>
-            <p className='text-base'>
-                <span role='img' aria-label='rocket'>
-                    🚀
-                </span>{' '}
-                Next.js Boilerplate is a developer-friendly starter code for
-                Next.js projects, built with Tailwind CSS, and TypeScript.{' '}
-                <span role='img' aria-label='zap'>
-                    ⚡️
-                </span>{' '}
-                Made with developer experience first: Next.js, TypeScript,
-                ESLint, Prettier, Husky, Lint-Staged, Jest (replaced by Vitest),
-                Testing Library, Commitlint, VSCode, PostCSS, Tailwind CSS,
-                Authentication with{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://clerk.com?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=nextjs-boilerplate'
-                    target='_blank'
-                >
-                    Clerk
-                </a>
-                , Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://turso.tech/?utm_source=nextjsstarterbp'
-                    target='_blank'
-                >
-                    Turso
-                </a>
-                , Error Monitoring with{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://sentry.io/for/nextjs/?utm_source=github&amp;utm_medium=paid-community&amp;utm_campaign=general-fy25q1-nextjs&amp;utm_content=github-banner-nextjsboilerplate-logo'
-                    target='_blank'
-                >
-                    Sentry
-                </a>
-                , Logging with Pino.js and Log Management with{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://betterstack.com/?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=next-js-boilerplate'
-                    target='_blank'
-                >
-                    Better Stack
-                </a>
-                , Monitoring as Code with Checkly, Storybook, Multi-language
-                (i18n), and more.
-            </p>
-        </>
+        <PageWrapper>
+            <div className='flex flex-col justify-center items-center w-full mt-[1rem] p-3'>
+                <HeroSection />
+                <div className='w-[80%] py-[4rem] dark:hidden'>
+                    <AnimatedLogoCloud />
+                </div>
+                {/* <StaticLogoCloud /> */}
+            </div>
+            <div className='flex my-[5rem] w-full justify-center items-center'>
+                Side by side component
+            </div>
+            <div className='flex flex-col p-2 w-full justify-center items-center'>
+                Marketing cards here
+            </div>
+            <div className='max-w-[1200px] p-8 mt-[2rem] lg:mt-[6rem] lg:mb-[5rem]'>
+                Blog sample here
+            </div>
+            <div>Pricing component here</div>
+            <div className='flex justify-center items-center w-full my-[8rem]'>
+                accordion component here
+            </div>
+        </PageWrapper>
     )
 }

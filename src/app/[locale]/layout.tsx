@@ -1,5 +1,3 @@
-// src/app/[locale]/layout.tsx
-import PushButton from '@/components/shared/SentPushNotificationt'
 import { AppConfig } from '@/core/utils/AppConfig'
 import '@/styles/app.scss'
 import type { Metadata } from 'next'
@@ -30,8 +28,7 @@ export default function RootLayout(props: {
                     locale={props.params.locale}
                     messages={messages}
                 >
-                    <PushButton />
-                    {props.children}
+                    <main>{props.children}</main>
                 </NextIntlClientProvider>
             </body>
         </html>

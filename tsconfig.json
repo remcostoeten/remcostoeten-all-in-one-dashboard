@@ -39,10 +39,11 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
-            "@/public/*": ["./public/*"]
+            "@ui/*": ["./src/components/ui/*"],
+            "@core/*": ["./src/core/*"],
+            "@ui/components/*": ["./src/components/*"]
         },
 
-        // Editor support
         "plugins": [
             {
                 "name": "next"

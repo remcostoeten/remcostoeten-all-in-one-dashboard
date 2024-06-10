@@ -1,93 +1,54 @@
-import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { ThemeProvider } from '@core/providers/theme-provider'
+import { ClerkProvider } from '@clerk/nextjs'
+import type { Metadata } from 'next'
+import '@/styles/app.scss'
+import { Toaster } from 'sonner'
+import { interDisplay } from '@/core/utils/fonts'
 
-import LocaleSwitcher from '@/components/LocaleSwitcher'
-import { BaseTemplate } from '@/templates/BaseTemplate'
-
-export default function Layout(props: { children: React.ReactNode }) {
-    const t = useTranslations('RootLayout')
-
+export const metadata: Metadata = {
+    metadataBase: new URL('https://panel.remcostoeten.com'),
+    title: {
+        default: 'Personal all in one dashnoard',
+        template: `%s | Remco Stoeten - Personal all in one dashboard`
+    },
+    openGraph: {
+        description: 'Your all in one dashboard',
+        images: ['']
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Nextjs Starter ',
+        description: 'Your all in one dashboard',
+        siteId: '',
+        creator: '@remcostoeten',
+        creatorId: '',
+        images: ['']
+    }
+}
+export default function RootLayout({
+    children
+}: {
+    children: React.ReactNode
+}) {
     return (
-        <BaseTemplate
-            leftNav={
-                <>
-                    <li>
-                        <Link
-                            href='/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('home_link')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/about/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('about_link')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/guestbook/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('guestbook_link')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/dashboard/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('dashboard_link')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/portfolio/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('portfolio_link')}
-                        </Link>
-                    </li>
-                    <li>
-                        <a
-                            className='border-none text-gray-700 hover:text-gray-900'
-                            href='https://github.com/ixartz/Next-js-Boilerplate'
-                        >
-                            GitHub
-                        </a>
-                    </li>
-                </>
-            }
-            rightNav={
-                <>
-                    <li>
-                        <Link
-                            href='/sign-in/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('sign_in_link')}
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link
-                            href='/sign-up/'
-                            className='border-none text-gray-700 hover:text-gray-900'
-                        >
-                            {t('sign_up_link')}
-                        </Link>
-                    </li>
-
-                    <li>
-                        <LocaleSwitcher />
-                    </li>
-                </>
-            }
-        >
-            <div className='py-5 text-xl [&_p]:my-6'>{props.children}</div>
-        </BaseTemplate>
+        <ClerkProvider>
+            <html lang='en' suppressHydrationWarning>
+                <body className={interDisplay.className}>
+                    <ThemeProvider
+                        attribute='class'
+                        defaultTheme='dark'
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <div className='min-w-screen dark:bg-dot-white/[0.2] bg-dot-black/[0.2 flex flex-col items-center justify-between bg-white pt-16 dark:bg-black'>
+                            <div className='mx-auto max-w-screen-md'>
+                                {children}
+                            </div>
+                        </div>
+                        <Toaster />
+                    </ThemeProvider>
+                </body>
+            </html>
+        </ClerkProvider>
     )
 }
