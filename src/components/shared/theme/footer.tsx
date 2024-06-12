@@ -5,12 +5,7 @@ import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
 
 export default function Footer() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset
-    } = useForm()
+    const { register, handleSubmit } = useForm()
 
     const onSubmit = async (data: any) => {
         console.log(data)
