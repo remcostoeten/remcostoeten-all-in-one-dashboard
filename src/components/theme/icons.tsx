@@ -104,7 +104,7 @@ export function UserIcon({ className, fill, width, height }: IconProps) {
                 height='32'
                 rx='6.4'
                 fill='white'
-                fill-opacity='0.02'
+                fillOpacity='0.02'
             />
             <rect
                 x='0.49176'
@@ -113,19 +113,19 @@ export function UserIcon({ className, fill, width, height }: IconProps) {
                 height='31'
                 rx='5.9'
                 stroke='white'
-                stroke-opacity='0.09'
+                strokeOpacity='0.09'
             />
             <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M15.9918 16.3901C17.8806 16.3901 19.4118 14.8589 19.4118 12.9701C19.4118 11.0813 17.8806 9.5501 15.9918 9.5501C14.1029 9.5501 12.5718 11.0813 12.5718 12.9701C12.5718 14.8589 14.1029 16.3901 15.9918 16.3901ZM15.9918 17.5301C18.5102 17.5301 20.5518 15.4885 20.5518 12.9701C20.5518 10.4517 18.5102 8.4101 15.9918 8.4101C13.4733 8.4101 11.4318 10.4517 11.4318 12.9701C11.4318 15.4885 13.4733 17.5301 15.9918 17.5301Z'
                 fill='white'
-                fill-opacity='0.6'
+                fillOpacity='0.6'
             />
             <path
                 d='M14.2817 18.6701C12.0781 18.6701 10.2917 20.4564 10.2917 22.6601V23.8001C10.2917 24.1149 10.5469 24.3701 10.8617 24.3701C11.1766 24.3701 11.4317 24.1149 11.4317 23.8001V22.6601C11.4317 21.0861 12.7077 19.8101 14.2817 19.8101H17.7017C19.2758 19.8101 20.5517 21.0861 20.5517 22.6601V23.8001C20.5517 24.1149 20.8069 24.3701 21.1217 24.3701C21.4366 24.3701 21.6917 24.1149 21.6917 23.8001V22.6601C21.6917 20.4564 19.9053 18.6701 17.7017 18.6701H14.2817Z'
                 fill='white'
-                fill-opacity='0.6'
+                fillOpacity='0.6'
             />
         </svg>
     )
@@ -140,9 +140,9 @@ export function ArrowRight({ className, fill, width, height }: IconProps) {
             viewBox='0 0 24 24'
             fill={fill || 'none'}
             stroke='currentColor'
-            stroke-width='2'
-            stroke-linecap='round'
-            stroke-linejoin='round'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
             className={
                 className ||
                 'icon icon-tabler icons-tabler-outline icon-tabler-arrow-right'

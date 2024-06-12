@@ -17,7 +17,6 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 const Dashboard = () => (
     <div className='[&_p]:my-6'>
-        {/* @ts-ignore */}
         <HelloWrapper />
     </div>
 )

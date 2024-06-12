@@ -35,6 +35,7 @@ const Guestbook = () => {
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://turso.tech/?utm_source=nextjsstarterbp'
                     target='_blank'
+                    rel='noreferrer'
                 >
                     Turso
                 </a>
@@ -43,6 +44,7 @@ const Guestbook = () => {
             <a
                 href='https://turso.tech/?utm_source=nextjsstarterbp'
                 target='_blank'
+                rel='noreferrer'
             >
                 <Image
                     className='mx-auto mt-2'
