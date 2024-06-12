@@ -95,7 +95,7 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className='flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
-                                {components.map((component, index) => (
+                                {components.map((component) => (
                                     <ListItem
                                         key={component.title}
                                         title={component.title}
