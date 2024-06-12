@@ -1,8 +1,8 @@
 'use client'
 
 import { useAuth } from '@clerk/nextjs'
-import Link from 'next/link'
-import React, * as React from 'react'
+import  Link from 'next/link'
+import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Profile } from './Profile'
 import {
@@ -26,7 +26,6 @@ import {
 import { DashboardIcon } from '@radix-ui/react-icons'
 import LogoIcon from './Logo'
 import { components } from '@/core/data/menu-items'
-import MotionLink from '@/components/core/MotionLink'
 import { motion } from 'framer-motion'
 import { defaultTransition, navVariants } from '@/core/utils/animations'
 

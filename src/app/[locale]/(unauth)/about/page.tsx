@@ -26,13 +26,13 @@ export default function About() {
                 <a
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://l.crowdin.com/next-js'
-                    target='_blank'
+                    target='_blank' rel="noreferrer"
                 >
                     Crowdin
                 </a>
             </div>
 
-            <a href='https://l.crowdin.com/next-js' target='_blank'>
+            <a href='https://l.crowdin.com/next-js' target='_blank' rel="noreferrer">
                 <Image
                     className='mx-auto mt-2'
                     src='https://support.crowdin.com/assets/logos/core-logo/svg/crowdin-core-logo-cDark.svg'

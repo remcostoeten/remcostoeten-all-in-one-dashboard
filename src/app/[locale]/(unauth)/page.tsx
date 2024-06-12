@@ -30,7 +30,7 @@ export default function Index() {
                 <a
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://twitter.com/ixartz'
-                    target='_blank'
+                    target='_blank' rel="noreferrer"
                 >
                     @Ixartz on Twitter
                 </a>{' '}
@@ -61,7 +61,7 @@ export default function Index() {
                 <a
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://clerk.com?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=nextjs-boilerplate'
-                    target='_blank'
+                    target='_blank' rel="noreferrer"
                 >
                     Clerk
                 </a>
@@ -69,7 +69,7 @@ export default function Index() {
                 <a
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://turso.tech/?utm_source=nextjsstarterbp'
-                    target='_blank'
+                    target='_blank' rel="noreferrer"
                 >
                     Turso
                 </a>
@@ -77,7 +77,7 @@ export default function Index() {
                 <a
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://sentry.io/for/nextjs/?utm_source=github&amp;utm_medium=paid-community&amp;utm_campaign=general-fy25q1-nextjs&amp;utm_content=github-banner-nextjsboilerplate-logo'
-                    target='_blank'
+                    target='_blank' rel="noreferrer"
                 >
                     Sentry
                 </a>
@@ -85,7 +85,7 @@ export default function Index() {
                 <a
                     className='text-blue-700 hover:border-b-2 hover:border-blue-700'
                     href='https://betterstack.com/?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=next-js-boilerplate'
-                    target='_blank'
+                    target='_blank' rel="noreferrer"
                 >
                     Better Stack
                 </a>
