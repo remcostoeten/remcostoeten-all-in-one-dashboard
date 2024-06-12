@@ -8,6 +8,7 @@
     "dev:next": "next dev",
     "build": "next build",
     "buildd": "pnpm run db:migrate && p build",
+    "cleanup-imports": "eslint --fix --ext .ts,.tsx .",
     "start": "next start",
     "build-stats": "cross-env ANALYZE=true npm run build",
     "clean": "rimraf .next .swc out coverage",
@@ -19,9 +20,7 @@
     "push": "git add * ; cz ;git push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "dotenv -c -- drizzle-kit studio",
-    "remove-unused-imports": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "remove-unused-imports-and-build": "npm run remove-unused-imports && npm run build"
+    "db:studio": "dotenv -c -- drizzle-kit studio"
   },
   "dependencies": {
     "@clerk/localizations": "^2.4.3",
@@ -68,8 +67,8 @@
     "@testing-library/react": "^16.0.0",
     "@types/node": "^20.12.13",
     "@types/react": "^18.3.3",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "@typescript-eslint/parser": "^7.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
     "autoprefixer": "^10.4.19",
     "checkly": "^4.6.3",
     "cssnano": "^7.0.1",

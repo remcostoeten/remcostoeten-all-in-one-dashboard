@@ -1,0 +1,48 @@
+{
+    "extends": [
+        "airbnb-base",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "warn",
+            {
+                "singleQuote": true,
+                "endOfLine": "auto"
+            }
+        ]
+    },
+    "ignorePatterns": ["node_modules/", ".next/", "out/"],
+    "overrides": [
+        {
+            "files": ["**/*.ts", "**/*.tsx", "**/*.mts"],
+            "plugins": [
+                "@typescript-eslint",
+                "unused-imports",
+                "tailwindcss",
+                "simple-import-sort"
+            ],
+            "extends": [
+                "plugin:tailwindcss/recommended",
+                "airbnb",
+                "airbnb-typescript",
+                "next/core-web-vitals",
+                "plugin:prettier/recommended"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "project": "./tsconfig.json"
+            },
+            "rules": {
+                // Add or update rules here
+                "unused-imports/no-unused-imports": "error", // Add this line to enable the rule
+                "unused-imports/no-unused-vars": "warn", // Optionally, change this to "warn" or "error" as per your preference
+                // Existing rules
+                "import/extensions": "off",
+                "react/function-component-definition": "off"
+                // Other rules omitted for brevity
+            }
+        }
+    ]
+}
