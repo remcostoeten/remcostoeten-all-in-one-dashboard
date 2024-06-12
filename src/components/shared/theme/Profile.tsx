@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { SignOutButton, useUser } from '@clerk/nextjs'
 import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar'
-import { LogOut, Settings, User } from 'lucide-react'
+import { CreditCard, LogOut, Settings, User } from 'lucide-react'
 import Link from 'next/link'
 
 export function Profile() {

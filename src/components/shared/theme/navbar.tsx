@@ -2,7 +2,6 @@
 import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
 import * as React from 'react'
-import { BlocksIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Profile } from './Profile'
 import {
@@ -24,6 +23,7 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
+import LogoIcon from './Logo'
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -95,9 +95,7 @@ export default function NavBar() {
             </div>
             <NavigationMenu>
                 <NavigationMenuList className='max-[825px]:hidden flex gap-3 w-[100%] justify-between'>
-                    <Link href='/' className='pl-2'>
-                        <BlocksIcon />
-                    </Link>
+                    <LogoIcon isLink />
                 </NavigationMenuList>
                 <NavigationMenuList>
                     <NavigationMenuItem className='max-[825px]:hidden ml-5'>
