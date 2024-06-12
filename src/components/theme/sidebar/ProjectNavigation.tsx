@@ -10,7 +10,7 @@ import {
     UserIcon,
     XMarkIcon
 } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import NavigationLink from './NavigationLink'
 
@@ -37,7 +37,7 @@ const ProjectNavigation = ({
     setSelectedProject
 }: Props) => {
     return (
-        <motion.nav
+        <m.nav
             variants={variants}
             initial='close'
             animate='open'
@@ -98,7 +98,7 @@ const ProjectNavigation = ({
                     <p className='tracking-wide text-neutral-400'>Jeff Bezos</p>
                 </a>
             </div>
-        </motion.nav>
+        </m.nav>
     )
 }
 

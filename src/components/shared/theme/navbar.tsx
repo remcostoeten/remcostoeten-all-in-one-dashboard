@@ -1,7 +1,8 @@
 'use client'
+
 import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
-import * as React from 'react'
+import React, * as React from 'react'
 import { Button } from '@/components/ui/button'
 import { Profile } from './Profile'
 import {
@@ -24,30 +25,22 @@ import {
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
 import LogoIcon from './Logo'
-
-const components: { title: string; href: string; description: string }[] = [
-    {
-        title: 'Marketing Page',
-        href: '/marketing-page',
-        description: 'Write some wavy here to get them to click.'
-    },
-    {
-        title: 'Second Tab',
-        href: '/',
-        description: 'Write some wavy here to get them to click.'
-    },
-    {
-        title: 'Third Tab',
-        href: '/',
-        description: 'Write some wavy here to get them to click.'
-    }
-]
+import { components } from '@/core/data/menu-items'
+import MotionLink from '@/components/core/MotionLink'
+import { motion } from 'framer-motion'
+import { defaultTransition, navVariants } from '@/core/utils/animations'
 
 export default function NavBar() {
     const { userId } = useAuth()
 
     return (
-        <div className='flex min-w-full fixed justify-between p-2 border-b z-10 dark:bg-black dark:bg-opacity-50 bg-white'>
+        <motion.nav
+            variants={navVariants}
+            initial='hidden'
+            animate='visible'
+            transition={defaultTransition}
+            className='flex min-w-full fixed justify-between p-2 border-b z-10 dark:bg-black dark:bg-opacity-50 bg-white'
+        >
             <div className='flex justify-between w-full min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
@@ -81,7 +74,6 @@ export default function NavBar() {
                             <DialogClose asChild>
                                 <Link
                                     href='/blog'
-                                    legacyBehavior
                                     passHref
                                     className='cursor-pointer'
                                 >
@@ -104,7 +96,7 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className='flex flex-col w-[400px] gap-3 p-4  lg:w-[500px]'>
-                                {components.map((component) => (
+                                {components.map((component, index) => (
                                     <ListItem
                                         key={component.title}
                                         title={component.title}
@@ -136,7 +128,7 @@ export default function NavBar() {
                 {userId && <Profile />}
                 <ModeToggle />
             </div>
-        </div>
+        </motion.nav>
     )
 }
 

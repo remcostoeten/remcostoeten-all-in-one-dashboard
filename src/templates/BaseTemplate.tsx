@@ -36,9 +36,8 @@ const BaseTemplate = (props: {
                         </nav>
                     </div>
                 </header>
-
-                <main>{props.children}</main>
-
+                <main className='pt-16'>{props.children}</main>{' '}
+                {/* Add padding-top here */}
                 <footer className='border-t border-gray-300 py-8 text-center text-sm'>
                     © Copyright {new Date().getFullYear()} {AppConfig.name}.
                     {` ${t('made_with')} `}

@@ -55,7 +55,14 @@ export default function RootLayout(props: {
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
                         <NavBar />
-                        {props.children}
+                        <main
+                            style={{
+                                paddingTop: 'calc(var(--nav-height) + 16px)'
+                            }}
+                        >
+                            {props.children}
+                        </main>{' '}
+                        {/* Add padding-top here */}
                     </ClerkProvider>
                 </NextIntlClientProvider>
             </body>

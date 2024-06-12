@@ -19,14 +19,19 @@ const config: Config = {
             }
         },
         extend: {
+            padding: {
+                nav: 'var(--nav-height)'
+            },
             width: {
                 sidebar: 'var(--sidebar-width)',
                 icon: 'var(--icon-size)'
             },
             height: {
-                icon: 'var(--icon-size)'
+                icon: 'var(--icon-size)',
+                nav: 'var(--nav-height'
             },
             colors: {
+                'theme-primary': 'var(--theme-primary)',
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',
                 background: 'hsl(var(--background))',
