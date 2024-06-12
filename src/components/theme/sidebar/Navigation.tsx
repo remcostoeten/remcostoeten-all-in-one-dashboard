@@ -7,7 +7,7 @@ import {
     Square2StackIcon,
     UsersIcon
 } from '@heroicons/react/24/outline'
-import { AnimatePresence, m, useAnimationControls } from 'framer-motion'
+import { AnimatePresence, m, motion, useAnimationControls } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 import NavigationLink from './NavigationLink'
@@ -66,11 +66,11 @@ const Navigation = () => {
 
     return (
         <>
-            <m.nav
+            <motion.nav
                 variants={containerVariants}
                 animate={containerControls}
                 initial='close'
-                className='absolute right-0 top-0 z-10 flex h-full flex-col gap-20 bg-neutral-900 p-5 shadow shadow-neutral-600'
+                className='absolute right-0 top-20 z-10 flex h-full flex-col gap-20 bg-neutral-900 p-5 shadow shadow-neutral-600'
             >
                 <div className='flex w-full flex-row place-items-center justify-between'>
                     <div className='size-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-700' />
@@ -143,7 +143,7 @@ const Navigation = () => {
                         <div className='mx-2 aspect-square min-w-4 rounded-full border border-yellow-600 bg-yellow-700' />
                     </ProjectLink>
                 </div>
-            </m.nav>
+            </motion.nav>
             <AnimatePresence>
                 {selectedProject && (
                     <ProjectNavigation

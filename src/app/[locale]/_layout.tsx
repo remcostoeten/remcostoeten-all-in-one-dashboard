@@ -56,7 +56,7 @@ export default function RootLayout(props: {
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
                         <NavBar />
-                        <main className='min-w-screen bg-dot-white/[0.2] bg-dot-black/[0.2 flex flex-col items-center  justify-between bg-black pt-16'>
+                        <main className='min-w-screen bg-dot-black/[0.2 flex flex-col items-center justify-between  bg-black pt-16 bg-dot-white/[0.2]'>
                             <div className='pointer-events-none absolute inset-0 z-[-99] flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
                             {props.children}
                         </main>

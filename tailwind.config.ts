@@ -111,6 +111,11 @@ const config: Config = {
                 'icon-bg-size': 'var(--icon-bg-size)'
             },
             keyframes: {
+                'border-beam': {
+                    '100%': {
+                        'offset-distance': '100%'
+                    }
+                },
                 'accordion-down': {
                     from: { height: '0' },
                     to: { height: 'var(--radix-accordion-content-height)' }
@@ -121,8 +126,16 @@ const config: Config = {
                 }
             },
             animation: {
+                'logo-cloud': 'logo-cloud 30s linear infinite', // Adjust duration and timing as needed for your design.
+                orbit: 'orbit calc(var(--duration)*1s) linear infinite',
+                gradient: 'gradient 8s linear infinite',
+                shimmer: 'shimmer 8s infinite',
+                buttonheartbeat: 'buttonheartbeat 2s infinite ease-in-out',
                 'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out'
+                'accordion-up': 'accordion-up 0.2s ease-out',
+                'border-beam':
+                    'border-beam calc(var(--duration)*1s) infinite linear',
+                'background-shine': 'background-shine 2s linear infinite'
             }
         }
     },

@@ -56,7 +56,7 @@ export default function RootLayout(props: {
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
                         <NavBar />
-                        <main className='min-w-screen dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex mx-auto flex-col  bg-white pt-16 dark:bg-black '>
+                        <main className='min-w-screen mx-auto flex flex-col bg-white pt-16  bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2] '>
                             <div className='mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8'>
                                 {props.children}
                             </div>

@@ -28,9 +28,13 @@ import { defaultTransition, navVariants } from '@/core/utils/animations'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
+import { usePathname } from 'next/navigation'
 
 export default function NavBar() {
     const { userId } = useAuth()
+    const pathname = usePathname()
+
+    const isHome = pathname === '/'
 
     return (
         <motion.nav
@@ -38,7 +42,7 @@ export default function NavBar() {
             initial='hidden'
             animate='visible'
             transition={defaultTransition}
-            className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'
+            className={`${isHome ? 'bg-black bg-opacity-50' : 'bg-white dark:bg-zinc-900'} fixed z-10 flex min-w-full justify-between border-b dark:border-zinc-800 p-2`}
         >
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
@@ -149,7 +153,7 @@ const ListItem = React.forwardRef<
                     <div className='text-sm font-medium leading-none'>
                         {title}
                     </div>
-                    <p className='text-muted-foreground line-clamp-2 text-sm leading-snug'>
+                    <p className='line-clamp-2 text-sm leading-snug text-muted-foreground'>
                         {children}
                     </p>
                 </a>
