@@ -18,10 +18,10 @@ export function Profile() {
 
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger asChild className='w-[2.25rem] h-[2.25rem]'>
+            <DropdownMenuTrigger asChild className='size-9'>
                 <Avatar>
                     <AvatarImage src={user?.imageUrl} alt='User Profile' />
-                    <AvatarFallback></AvatarFallback>
+                    <AvatarFallback />
                 </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className='w-56'>
@@ -30,14 +30,14 @@ export function Profile() {
                 <DropdownMenuGroup>
                     <Link href='/user-profile'>
                         <DropdownMenuItem>
-                            <User className='mr-2 h-4 w-4' />
+                            <User className='mr-2 size-4' />
                             <span>Profile</span>
                             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                         </DropdownMenuItem>
                     </Link>
                     <Link href='/dashboard/settings'>
                         <DropdownMenuItem>
-                            <Settings className='mr-2 h-4 w-4' />
+                            <Settings className='mr-2 size-4' />
                             <span>Settings</span>
                             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                         </DropdownMenuItem>
@@ -45,7 +45,7 @@ export function Profile() {
                 </DropdownMenuGroup>
                 <SignOutButton>
                     <DropdownMenuItem>
-                        <LogOut className='mr-2 h-4 w-4' />
+                        <LogOut className='mr-2 size-4' />
                         <span>Log out</span>
                         <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                     </DropdownMenuItem>

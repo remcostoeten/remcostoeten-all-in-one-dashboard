@@ -1,10 +1,9 @@
 'use client'
 
 import { useAuth } from '@clerk/nextjs'
-import  Link from 'next/link'
+import Link from 'next/link'
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { Profile } from './Profile'
 import {
     SheetTrigger,
     SheetContent,
@@ -14,7 +13,6 @@ import {
 import { Dialog, DialogClose } from '@radix-ui/react-dialog'
 import { cn } from '@/core/utils/cn'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { ModeToggle } from './ModeToggle'
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -24,10 +22,12 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
-import LogoIcon from './Logo'
 import { components } from '@/core/data/menu-items'
 import { motion } from 'framer-motion'
 import { defaultTransition, navVariants } from '@/core/utils/animations'
+import LogoIcon from './Logo'
+import { ModeToggle } from './ModeToggle'
+import { Profile } from './Profile'
 
 export default function NavBar() {
     const { userId } = useAuth()
@@ -38,9 +38,9 @@ export default function NavBar() {
             initial='hidden'
             animate='visible'
             transition={defaultTransition}
-            className='flex min-w-full fixed justify-between p-2 border-b z-10 dark:bg-black dark:bg-opacity-50 bg-white'
+            className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'
         >
-            <div className='flex justify-between w-full min-[825px]:hidden'>
+            <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
                         <GiHamburgerMenu />
@@ -49,7 +49,7 @@ export default function NavBar() {
                         <SheetHeader>
                             <SheetTitle>Next Starter</SheetTitle>
                         </SheetHeader>
-                        <div className='flex flex-col space-y-3 mt-[1rem]'>
+                        <div className='mt-4 flex flex-col space-y-3'>
                             <DialogClose asChild>
                                 <Link href='/'>
                                     <Button
@@ -85,16 +85,16 @@ export default function NavBar() {
                 <ModeToggle />
             </div>
             <NavigationMenu>
-                <NavigationMenuList className='max-[825px]:hidden flex gap-3 w-[100%] justify-between'>
+                <NavigationMenuList className='flex w-full justify-between gap-3 max-[825px]:hidden'>
                     <LogoIcon isLink />
                 </NavigationMenuList>
                 <NavigationMenuList>
-                    <NavigationMenuItem className='max-[825px]:hidden ml-5'>
+                    <NavigationMenuItem className='ml-5 max-[825px]:hidden'>
                         <NavigationMenuTrigger className='dark:bg-black dark:bg-opacity-50'>
                             Features
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className='flex flex-col w-[400px] gap-3 p-4  lg:w-[500px]'>
+                            <ul className='flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
                                 {components.map((component, index) => (
                                     <ListItem
                                         key={component.title}
@@ -120,7 +120,7 @@ export default function NavBar() {
                         className='rounded-lg dark:bg-black dark:bg-opacity-50'
                         variant='outline'
                     >
-                        <DashboardIcon className='w-4 h-3' />
+                        <DashboardIcon className='h-3 w-4' />
                         <p className='pl-1'>Dashboard</p>
                     </Button>
                 </Link>
