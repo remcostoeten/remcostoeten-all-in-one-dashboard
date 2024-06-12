@@ -34,15 +34,14 @@
         "noEmit": true,
         "isolatedModules": true,
         "incremental": true,
-
-        // Path aliases
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
+            "@c/*": ["./src/components/*"],
+            "@core/*": ["./src/core/*"],
+            "@ui/*": ["./src/components/ui*"],
             "@/public/*": ["./public/*"]
         },
-
-        // Editor support
         "plugins": [
             {
                 "name": "next"
