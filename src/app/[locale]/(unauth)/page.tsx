@@ -16,7 +16,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 export default function Index() {
     return (
         <>
-        <HeroSection/>
+            <HeroSection />
             <p>
                 Looking for a SaaS Boilerplate?{' '}
                 <a
