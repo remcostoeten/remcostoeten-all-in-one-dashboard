@@ -1,5 +1,4 @@
-// src/app/[locale]/layout.tsx
-import PushButton from '@/components/shared/SentPushNotificationt'
+import NavBar from '@/components/shared/theme/navbar'
 import { AppConfig } from '@/core/utils/AppConfig'
 import '@/styles/app.scss'
 import type { Metadata } from 'next'
@@ -7,6 +6,8 @@ import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
+import { enUS, frFR } from '@clerk/localizations'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -23,6 +24,22 @@ export default function RootLayout(props: {
     // Using internationalization in Client Components
     const messages = useMessages()
 
+    // Clerk localization and URLs
+    let clerkLocale = enUS
+    let signInUrl = '/sign-in'
+    let signUpUrl = '/sign-up'
+    let dashboardUrl = '/dashboard'
+
+    if (props.params.locale === 'fr') {
+        clerkLocale = frFR
+    }
+
+    if (props.params.locale !== 'en') {
+        signInUrl = `/${props.params.locale}${signInUrl}`
+        signUpUrl = `/${props.params.locale}${signUpUrl}`
+        dashboardUrl = `/${props.params.locale}${dashboardUrl}`
+    }
+
     return (
         <html lang={props.params.locale} className='dark'>
             <body className={`${plexsans.className}`}>
@@ -30,8 +47,16 @@ export default function RootLayout(props: {
                     locale={props.params.locale}
                     messages={messages}
                 >
-                    <PushButton />
-                    {props.children}
+                    <ClerkProvider
+                        localization={clerkLocale}
+                        signInUrl={signInUrl}
+                        signUpUrl={signUpUrl}
+                        signInFallbackRedirectUrl={dashboardUrl}
+                        signUpFallbackRedirectUrl={dashboardUrl}
+                    >
+                        <NavBar />
+                        {props.children}
+                    </ClerkProvider>
                 </NextIntlClientProvider>
             </body>
         </html>
