@@ -7,7 +7,7 @@ import IconComponent from '../shells/IconShell'
 const BottomSection = () => {
     return (
         <>
-            <div className='mx-auto my-4 h-px w-[65%] bg-border px-4' />
+            <div className='bg-border mx-auto my-4 h-px w-[65%] px-4' />
             <div className='flex  w-full flex-col items-center justify-center gap-1'>
                 <IconGhost hasBorder={false}>
                     <SettingsIcon fill='#fff9' width='20 ' height='20' />
@@ -22,7 +22,7 @@ const BottomSection = () => {
 
 export default function Aside() {
     return (
-        <aside className='flex h-screen  w-sidebar flex-col justify-between !bg-zinc-900 bg-sidebar py-4 text-sm font-medium text-white'>
+        <aside className='w-sidebar bg-sidebar  flex h-screen flex-col justify-between !bg-zinc-900 py-4 text-sm font-medium text-white'>
             <div className='flex w-full flex-1 flex-col items-center pb-14'>
                 <div className='size-8 items-center justify-center rounded bg-red-400 px-3'>
                     R

@@ -10,10 +10,10 @@ export default function HeroSection() {
             <div className='my-5'>
                 <AnimatedGradientPill />
             </div>
-            <h1 className='inline-block max-w-[1120px] scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-center text-4xl font-semibold tracking-tight text-transparent dark:from-white dark:to-slate-400 sm:text-4xl md:text-6xl lg:text-7xl'>
+            <h1 className='inline-block max-w-[1120px] scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-center text-4xl font-semibold tracking-tight text-transparent sm:text-4xl md:text-6xl lg:text-7xl dark:from-white dark:to-slate-400'>
                 Build & Ship Fast with the Ultimate Nextjs Starter Kit
             </h1>
-            <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 dark:text-gray-400 md:text-lg'>
+            <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 md:text-lg dark:text-gray-400'>
                 Everything you need to quickly build your SaaS, AI product, or
                 any other web application fast giving you time to focus on what
                 really matters

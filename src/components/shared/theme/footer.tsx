@@ -1,4 +1,5 @@
 'use client'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
@@ -31,7 +32,7 @@ export default function Footer() {
                             </div>
                             <form
                                 onSubmit={handleSubmit(onSubmit)}
-                                className='flex flex-col border rounded-xl p-4 gap-3 mt-6 w-full'
+                                className='mt-6 flex w-full flex-col gap-3 rounded-xl border p-4'
                             >
                                 <Input
                                     {...register('email', { required: true })}

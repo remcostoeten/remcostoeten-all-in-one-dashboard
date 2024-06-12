@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { enUS, frFR } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
+import Footer from '@/components/shared/theme/footer'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -55,14 +56,19 @@ export default function RootLayout(props: {
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
                         <NavBar />
-                        <main
+                        <main className='min-w-screen bg-dot-white/[0.2] bg-dot-black/[0.2 flex flex-col items-center  justify-between bg-black pt-16'>
+                            <div className='pointer-events-none absolute inset-0 z-[-99] flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]' />
+                            {props.children}
+                        </main>
+                        <Footer />
+                        {/* <main
                             style={{
                                 paddingTop: 'calc(var(--nav-height) + 16px)'
                             }}
                         >
                             {props.children}
                         </main>{' '}
-                        {/* Add padding-top here */}
+                        Add padding-top here */}
                     </ClerkProvider>
                 </NextIntlClientProvider>
             </body>
