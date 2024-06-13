@@ -2,7 +2,7 @@
 
 import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
     SheetTrigger,
@@ -25,14 +25,24 @@ import { DashboardIcon } from '@radix-ui/react-icons'
 import { components } from '@/core/data/menu-items'
 import { motion } from 'framer-motion'
 import { defaultTransition, navVariants } from '@/core/utils/animations'
+import { usePathname } from 'next/navigation'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
-import { usePathname } from 'next/navigation'
 
 export default function NavBar() {
     const { userId } = useAuth()
     const pathname = usePathname()
+    const [initialVisit, setInitialVisit] = useState(true)
+
+    useEffect(() => {
+        const hasVisited = localStorage.getItem('hasVisited')
+        if (hasVisited) {
+            setInitialVisit(false)
+        } else {
+            localStorage.setItem('hasVisited', 'true')
+        }
+    }, [])
 
     const isHome = pathname === '/'
 
@@ -40,9 +50,9 @@ export default function NavBar() {
         <motion.nav
             variants={navVariants}
             initial='hidden'
-            animate='visible'
+            animate={initialVisit ? 'visible' : 'visible'}
             transition={defaultTransition}
-            className={`${isHome ? 'bg-black bg-opacity-50' : 'bg-white dark:bg-zinc-900'} fixed z-10 flex min-w-full justify-between border-b dark:border-zinc-800 p-2`}
+            className={`${isHome ? 'bg-black bg-opacity-50' : 'bg-white dark:bg-zinc-900'} fixed z-10 flex min-w-full justify-between border-b p-2 dark:border-zinc-800`}
         >
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>

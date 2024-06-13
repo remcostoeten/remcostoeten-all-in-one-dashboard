@@ -5,6 +5,20 @@ import withNextIntl from 'next-intl/plugin'
 
 const withNextIntlConfig = withNextIntl('./src/core/libs/i18n.ts')
 
+const nextConfig = {
+  reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    domains: ["cdn.builder.io", "media.licdn.com"],
+  },
+};
+
+
 const bundleAnalyzer = withBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true'
 })

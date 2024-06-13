@@ -20,7 +20,7 @@ const Dashboard = () => (
     <div className='[&_p]:my-6'>
         <h3>Work in progresssssssss...</h3>
         <Link
-            className='underline text-xl'
+            className='text-xl underline'
             href='https://www.figma.com/design/1GPCg6iRCkIF0xcUB91GXi/Dashboard-design?node-id=6-1521&t=G5Bnba9CYsDvPKxj-0'
             target='_blank'
         >

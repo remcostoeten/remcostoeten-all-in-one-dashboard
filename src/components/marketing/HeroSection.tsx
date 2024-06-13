@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import { ArrowRight, Github } from 'lucide-react'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
-
-// import PushButton from '../shared/SentPushNotificationt'
 import { Button } from '../ui/button'
 import { BorderBeam } from '../effects/magicui/border-beam'
+import siteConfig from '@/core/data/site-config'
 
 export default function HeroSection() {
     return (
@@ -17,8 +16,9 @@ export default function HeroSection() {
             </h1>
             <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 dark:text-gray-400 md:text-lg'>
                 And I hate waiting for cloudflare to load. So I built this. It's
-                fast, it's simple, and it's free. Manage your files, finances,
-                snippets, to-do lists.
+                fast, it's simple, and it's free. Manage your files fast, it's
+                simple, and it's free. Manage your files, finances, snippets,
+                to-do lists.
             </p>
             <div className='flex items-center justify-center gap-3'>
                 <Link href='/dashboard' className='mt-5'>
@@ -39,14 +39,19 @@ export default function HeroSection() {
                         variant='outline'
                         className='flex gap-1 text-blue-600 hover:bg-blue-100 hover:text-blue-600'
                     >
-                        a random cta?
+                        a button..
                         <ArrowRight className='size-4' />
                     </Button>
                 </Link>
-                <Link
-                    href='https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard'
+                {/* <Link
+                    href='https://github.com/remcostoeten/  remcostoeten-all-in-one-dashboard'
                     target='_blank'
                     className='mt-5 animate-buttonheartbeat rounded-full border p-2 hover:cursor-pointer hover:dark:bg-black'
+                > */}
+                <Link
+                    href={siteConfig.github}
+                    target='_blank'
+                    className='animate-buttonheartbeat border p-2 rounded-full mt-5 hover:dark:bg-black hover:cursor-pointer'
                 >
                     <Github className='size-4' />
                 </Link>

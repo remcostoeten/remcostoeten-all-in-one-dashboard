@@ -1,40 +1,52 @@
+import Head from 'next/head'
 import HeroSection from '@/components/marketing/HeroSection'
 import { getTranslations } from 'next-intl/server'
-import type { title } from 'process'
+import { IBM_Plex_Sans } from 'next/font/google'
 
-export async function generateMetadata(props: { params: { locale: string } }) {
-    const t = await getTranslations(props.params.locale, 'Index')
-
-    return {
-        title: t('meta_title'),
-        description: t('meta_description')
-    }
+interface CustomLinkProps {
+    href: string
+    children: React.ReactNode
 }
+
+const plexsans = IBM_Plex_Sans({
+    weight: ['200', '300', '400', '500', '600', '700'],
+    subsets: ['latin']
+})
+
+const CustomLink: React.FC<CustomLinkProps> = ({ href, children }) => (
+    <a
+        className='text-blue-700 hover:border-b-2 hover:border-blue-700'
+        href={href}
+        target='_blank'
+        rel='noopener noreferrer'
+    >
+        {children}
+    </a>
+)
 
 export default function Index() {
     return (
         <>
+            <Head>
+                <title>Remco Stoeten's All-in-One Dashboard</title>
+                <meta
+                    name='description'
+                    content="Manage your personal projects with Remco Stoeten's All-in-One Dashboard."
+                />
+            </Head>
             <HeroSection />
             <p>
                 Looking for a personal all-in-one panel?{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard'
-                >
+                <CustomLink href='https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard'>
                     Remco Stoeten's All-in-One Dashboard
-                </a>{' '}
+                </CustomLink>{' '}
                 can help you manage your personal projects.
             </p>
             <p>
                 Follow{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://twitter.com/remcostoeten'
-                    target='_blank'
-                    rel='noreferrer'
-                >
+                <CustomLink href='https://twitter.com/remcostoeten'>
                     @remcostoeten on Twitter
-                </a>{' '}
+                </CustomLink>{' '}
                 for updates and more information about the dashboard.
             </p>
             <p>
@@ -58,41 +70,21 @@ export default function Index() {
                 Made with developer experience first: Next.js, TypeScript,
                 ESLint, Prettier, Husky, Lint-Staged, Vitest, Testing Library,
                 Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate'
-                    target='_blank'
-                    rel='noreferrer'
-                >
+                <CustomLink href='https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate'>
                     Clerk
-                </a>
+                </CustomLink>
                 , Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://turso.tech/?utm_source=nextjsstarterbp'
-                    target='_blank'
-                    rel='noreferrer'
-                >
+                <CustomLink href='https://turso.tech/?utm_source=nextjsstarterbp'>
                     Turso
-                </a>
+                </CustomLink>
                 , Error Monitoring with{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo'
-                    target='_blank'
-                    rel='noreferrer'
-                >
+                <CustomLink href='https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo'>
                     Sentry
-                </a>
+                </CustomLink>
                 , Logging with Pino.js and Log Management with{' '}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate'
-                    target='_blank'
-                    rel='noreferrer'
-                >
+                <CustomLink href='https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate'>
                     Better Stack
-                </a>
+                </CustomLink>
                 , Monitoring as Code with Checkly, Storybook, Multi-language
                 (i18n), and more.
             </p>
