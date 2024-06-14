@@ -3,31 +3,30 @@ import {
     LockClosedIcon,
     ServerIcon
 } from '@heroicons/react/24/outline'
-import { OrbitingCirclesComponent } from '../marketing/OrbitingCircles'
+import { useTranslations } from 'next-intl'
 import Circles from './animated-logo-cloud'
 
-const features = [
-    {
-        name: 'Manage personal finance.',
-        description:
-            'A one-stop solution for managing personal finance, secure file storage, code snippets, and tools.',
-        icon: CloudArrowUpIcon
-    },
-    {
-        name: 'Secure file storage.',
-        description:
-            'Keep your files secure with built-in secure file storage solutions.',
-        icon: LockClosedIcon
-    },
-    {
-        name: 'Code snippets and tools.',
-        description:
-            'Access various tools and features like URL/text extractors, (reverse) geolocation finder, SVG to CSS-pseudo elements, HTML to JSX/TSX converter, and more.',
-        icon: ServerIcon
-    }
-]
-
 export default function SideBySide() {
+    const t = useTranslations('Landing')
+
+    const features = [
+        {
+            name: t('features.manageFinance.name'),
+            description: t('features.manageFinance.description'),
+            icon: CloudArrowUpIcon
+        },
+        {
+            name: t('features.secureStorage.name'),
+            description: t('features.secureStorage.description'),
+            icon: LockClosedIcon
+        },
+        {
+            name: t('features.codeSnippets.name'),
+            description: t('features.codeSnippets.description'),
+            icon: ServerIcon
+        }
+    ]
+
     return (
         <div className='overflow-hidden '>
             <div className='mx-auto max-w-7xl px-6 lg:px-8'>
@@ -35,15 +34,13 @@ export default function SideBySide() {
                     <div className='lg:pr-8 lg:pt-4'>
                         <div className='lg:max-w-lg'>
                             <h2 className='text-base font-semibold leading-7 text-indigo-600'>
-                                Some slogan
+                                {t('header.title')}
                             </h2>
                             <p className='mt-2 text-3xl font-bold tracking-tight  dark:text-white text-gray-900 sm:text-4xl'>
-                                A faster way to production
+                                {t('header.subtitle')}
                             </p>
                             <p className='mt-6 text-lg leading-8  dark:text-gray-400 text-gray-600'>
-                                Get rid of your dozens of dashboards and start
-                                building your application with a single, unified
-                                solution.
+                                {t('header.description')}
                             </p>
                             <dl className='mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none'>
                                 {features.map((feature) => (

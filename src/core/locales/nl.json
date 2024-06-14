@@ -1,9 +1,29 @@
 {
   "Landing": {
-    "usp": "<i>Het</i>, persoonlijke dashboard",
-    "intro_heading": "Gebouwd omdat wie wil er nu 10 verschillende dashboards?",
-    "intro_description": "En ik haat het om te wachten tot Cloudflare geladen is. Dus heb ik dit gebouwd. Het is snel, het is eenvoudig, en het is gratis. Beheer je bestanden snel, het is makkelijk, en het is gratis. Beheer je bestanden, financiën, snippets, to-do lijsten.",
-    "get_started": "Beginnen"
+    "usp1": "Het",
+    "usp2": "persoonlijke dashboard",
+    "intro_heading": "Eén oplossing voor al je behoeften",
+    "intro_description": "Beheer je bestanden snel, het is makkelijk, en het is gratis. Beheer je bestanden, financiën, snippets, to-do lijsten. En nog meer op de roadmap.",
+    "get_started": "Begin nu",
+    "header": {
+      "title": "Omdat wachten op cloudflare vervelend is",
+      "subtitle": "Een snellere manier naar productie",
+      "description": "Verwijder je tientallen dashboards en begin met het bouwen van je applicatie met een enkele, uniforme oplossing."
+    },
+    "features": {
+      "manageFinance": {
+        "name": "Beheer persoonlijke financiën.",
+        "description": "Een alles-in-één oplossing voor het beheren van persoonlijke financiën, veilige bestandsopslag, codefragmenten en tools."
+      },
+      "secureStorage": {
+        "name": "Veilige bestandsopslag.",
+        "description": "Houd uw bestanden veilig met ingebouwde veilige bestandsopslagoplossingen."
+      },
+      "codeSnippets": {
+        "name": "Codefragmenten en tools.",
+        "description": "Toegang tot verschillende tools en functies zoals URL/tekst-extractors, (omgekeerde) geolocatiezoeker, SVG naar CSS-pseudo-elementen, HTML naar JSX/TSX-converter en meer."
+      }
+    }
   },
   "RootLayout": {
     "home_link": "Startpagina",
@@ -41,12 +61,12 @@
     "add_Task": "Voeg een taak toe"
   },
   "TaskForm": {
-    "title": "Titre",
-    "titlePlaceholder": "Entrez votre titre ici...",
-    "titleError": "Le titre est requis",
-    "save": "Enregistrer",
-    "update": "Mettre à jour",
-    "create": "Créer"
+    "title": "Titel",
+    "titlePlaceholder": "Voer hier uw titel in...",
+    "titleError": "De titel is vereist",
+    "save": "Opslaan",
+    "update": "Bijwerken",
+    "create": "Aanmaken"
   },
   "About": {
     "meta_title": "Over",

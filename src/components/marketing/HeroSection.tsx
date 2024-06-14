@@ -1,24 +1,25 @@
 import Link from 'next/link'
-import { ArrowRight, Github } from 'lucide-react'
+
+import { Github, ArrowRight } from 'lucide-react'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
 import { Button } from '../ui/button'
 import { BorderBeam } from '../effects/magicui/border-beam'
 import siteConfig from '@/core/data/site-config'
+import { useTranslations } from 'next-intl'
 
 export default function HeroSection() {
+    const t = useTranslations('Landing')
+
     return (
         <div className='flex flex-col items-center justify-center leading-6'>
             <div className='my-5'>
                 <AnimatedGradientPill />
             </div>
             <h1 className='inline-block max-w-screen-lg scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-center text-4xl font-semibold tracking-tight text-transparent dark:from-white dark:to-slate-400 sm:text-4xl md:text-6xl lg:text-7xl'>
-                Built because who want's 10 different dashboards?
+                {t('intro_heading')}
             </h1>
             <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 prose-base dark:text-gray-400 md:prose-lg'>
-                And I hate waiting for cloudflare to load. So I built this. It's
-                fast, it's simple, and it's free. Manage your files fast, it's
-                simple, and it's free. Manage your files, finances, snippets,
-                to-do lists.
+                {t('intro_description')}
             </p>
             <div className='flex items-center justify-center gap-3'>
                 <Link href='/dashboard' className='mt-5'>
@@ -26,7 +27,7 @@ export default function HeroSection() {
                         size='sm'
                         className='animate-buttonheartbeat rounded-md bg-blue-600 text-sm font-semibold text-white hover:bg-blue-500'
                     >
-                        Get Started
+                        {t('get_started')}
                     </Button>
                 </Link>
                 <Link
@@ -39,15 +40,10 @@ export default function HeroSection() {
                         variant='outline'
                         className='flex gap-1 text-blue-600 hover:bg-blue-100 hover:text-blue-600'
                     >
-                        a button..
+                        een knop..
                         <ArrowRight className='size-4' />
                     </Button>
                 </Link>
-                {/* <Link
-                    href='https://github.com/remcostoeten/  remcostoeten-all-in-one-dashboard'
-                    target='_blank'
-                    className='mt-5 animate-buttonheartbeat rounded-full border p-2 hover:cursor-pointer hover:dark:bg-black'
-                > */}
                 <Link
                     href={siteConfig.github}
                     target='_blank'

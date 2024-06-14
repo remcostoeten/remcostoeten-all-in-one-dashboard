@@ -149,7 +149,7 @@ export default function Roadmap() {
                                 href='https://posthog.com/'
                                 className='text-blue-500 hover:underline'
                             >
-                                Posthog
+                                Posthog en{' '}
                             </a>
                         </li>
                         <li>
