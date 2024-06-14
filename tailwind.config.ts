@@ -1,24 +1,19 @@
 import type { Config } from 'tailwindcss'
-
 const svgToDataUri = require('mini-svg-data-uri')
-
 const colors = require('tailwindcss/colors')
 const {
     default: flattenColorPalette
 } = require('tailwindcss/lib/util/flattenColorPalette')
 
 const config: Config = {
-    // Merging the content arrays and removing duplicates
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
         './src/**/*.{ts,tsx}'
     ],
-    // Enabling dark mode
-    darkMode: 'class', // Assuming you want to enable dark mode based on the class strategy
+    darkMode: 'class',
     theme: {
-        // Merging container configuration from the second file
         container: {
             center: true,
             padding: '2rem',
@@ -27,11 +22,9 @@ const config: Config = {
             }
         },
         extend: {
-            // Merging backgroundImage from the first file
             backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+                'gradient-to-solid':
+                    'linear-gradient(to bottom, var(--tw-gradient-stops), #000000)' // Customize the solid color here
             },
             padding: {
                 nav: 'var(--nav-height)'
@@ -59,7 +52,7 @@ const config: Config = {
                 'dark-blue': 'var(--dark-blue)',
                 sidebar: 'var(--dark-blue)',
                 'light-blue': 'var(--light-blue)',
-                'bg-body': 'var(--light-blue)', // alias for light-blue
+                'bg-body': 'var(--light-blue)',
                 'text-white': 'var(--text-white)',
                 icon: '#1A1A28',
                 'icon-active': 'var(--icon-active)',
@@ -74,7 +67,6 @@ const config: Config = {
                 'text-active': 'var(--text-active)',
                 'button-primary': 'var(--button-primary)',
                 'button-primary-hover': 'var(--button-primary-hover)',
-                // border: 'rgba(255, 255, 255, .141)',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))'
@@ -136,7 +128,6 @@ const config: Config = {
                     from: { transform: 'translateX(0)' },
                     to: { transform: 'translateX(calc(-100% - 4rem))' }
                 },
-
                 orbit: {
                     '0%': {
                         transform:
@@ -186,7 +177,7 @@ const config: Config = {
                 }
             },
             animation: {
-                'logo-cloud': 'logo-cloud 30s linear infinite', // Adjust duration and timing as needed for your design.
+                'logo-cloud': 'logo-cloud 30s linear infinite',
                 orbit: 'orbit calc(var(--duration)*1s) linear infinite',
                 gradient: 'gradient 8s linear infinite',
                 shimmer: 'shimmer 8s infinite',
@@ -201,6 +192,7 @@ const config: Config = {
     },
     plugins: [
         require('tailwindcss-animate'),
+        require('@tailwindcss/typography'),
         function ({ matchUtilities, theme }: any) {
             matchUtilities(
                 {

@@ -14,7 +14,7 @@ export default function HeroSection() {
             <h1 className='inline-block max-w-screen-lg scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-center text-4xl font-semibold tracking-tight text-transparent dark:from-white dark:to-slate-400 sm:text-4xl md:text-6xl lg:text-7xl'>
                 Built because who want's 10 different dashboards?
             </h1>
-            <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 dark:text-gray-400 md:text-lg'>
+            <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 prose-base dark:text-gray-400 md:prose-lg'>
                 And I hate waiting for cloudflare to load. So I built this. It's
                 fast, it's simple, and it's free. Manage your files fast, it's
                 simple, and it's free. Manage your files, finances, snippets,
