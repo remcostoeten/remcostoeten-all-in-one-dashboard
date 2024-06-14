@@ -2,6 +2,10 @@ import Head from 'next/head'
 import HeroSection from '@/components/marketing/HeroSection'
 import { getTranslations } from 'next-intl/server'
 import { IBM_Plex_Sans } from 'next/font/google'
+import Roadmap from '../_tests/font/readme/page'
+import SideBySide from '@/components/effects/SideBySide'
+import AnimatedLogoCloud from '@/components/effects/animated-logo-cloud'
+import MarketingCards from '@/components/marketing/MarketingCards'
 
 interface CustomLinkProps {
     href: string
@@ -27,67 +31,21 @@ const CustomLink: React.FC<CustomLinkProps> = ({ href, children }) => (
 export default function Index() {
     return (
         <>
-            <Head>
-                <title>Remco Stoeten's All-in-One Dashboard</title>
-                <meta
-                    name='description'
-                    content="Manage your personal projects with Remco Stoeten's All-in-One Dashboard."
-                />
-            </Head>
-            <HeroSection />
-            <p>
-                Looking for a personal all-in-one panel?{' '}
-                <CustomLink href='https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard'>
-                    Remco Stoeten's All-in-One Dashboard
-                </CustomLink>{' '}
-                can help you manage your personal projects.
-            </p>
-            <p>
-                Follow{' '}
-                <CustomLink href='https://twitter.com/remcostoeten'>
-                    @remcostoeten on Twitter
-                </CustomLink>{' '}
-                for updates and more information about the dashboard.
-            </p>
-            <p>
-                Our sponsors&apos; exceptional support has made this project
-                possible. Their services integrate seamlessly with the
-                dashboard, and we recommend trying them out.
-            </p>
-            <h2 className='mt-5 text-2xl font-bold'>Sponsors</h2>
-            <h2 className='mt-5 text-2xl font-bold'>
-                Boilerplate Code for Your Next.js Project with Tailwind CSS
-            </h2>
-            <p className='text-base'>
-                <span role='img' aria-label='rocket'>
-                    🚀
-                </span>{' '}
-                This dashboard is a developer-friendly starter code for Next.js
-                projects, built with Tailwind CSS, and TypeScript.{' '}
-                <span role='img' aria-label='zap'>
-                    ⚡️
-                </span>{' '}
-                Made with developer experience first: Next.js, TypeScript,
-                ESLint, Prettier, Husky, Lint-Staged, Vitest, Testing Library,
-                Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with{' '}
-                <CustomLink href='https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate'>
-                    Clerk
-                </CustomLink>
-                , Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and{' '}
-                <CustomLink href='https://turso.tech/?utm_source=nextjsstarterbp'>
-                    Turso
-                </CustomLink>
-                , Error Monitoring with{' '}
-                <CustomLink href='https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo'>
-                    Sentry
-                </CustomLink>
-                , Logging with Pino.js and Log Management with{' '}
-                <CustomLink href='https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate'>
-                    Better Stack
-                </CustomLink>
-                , Monitoring as Code with Checkly, Storybook, Multi-language
-                (i18n), and more.
-            </p>
+            z1{' '}
+            <div className='flex flex-col justify-center items-center w-full mt-[1rem] p-3'>
+                <HeroSection />
+                <div className='w-[80%] py-[4rem] dark:hidden'>
+                    <AnimatedLogoCloud />
+                </div>
+            </div>
+            <div className='flex my-[5rem] w-full justify-center items-center'>
+                <SideBySide />
+            </div>{' '}
+            <div className='flex flex-col p-2 w-full justify-center items-center'>
+                <MarketingCards />
+            </div>
+            f
+            <Roadmap />
         </>
     )
 }
