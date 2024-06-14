@@ -1,5 +1,3 @@
-'use client'
-
 import { cn } from '@/core/utils/cn'
 
 export default function OrbitingCircles({
@@ -47,8 +45,7 @@ export default function OrbitingCircles({
                     } as React.CSSProperties
                 }
                 className={cn(
-                    `absolute flex h-full w-full transform-gpu animate-orbit items-center justify-center rounded-full border
-           [animation-delay:calc(var(--delay)*1000ms)] `,
+                    'absolute flex h-full w-full transform-gpu animate-orbit items-center justify-center rounded-full border bg-black/10 [animation-delay:calc(var(--delay)*1000ms)] dark:bg-white/10',
                     { '[animation-direction:reverse]': reverse },
                     className
                 )}

@@ -4,6 +4,7 @@ import {
     ServerIcon
 } from '@heroicons/react/24/outline'
 import { OrbitingCirclesComponent } from '../marketing/OrbitingCircles'
+import Circles from './animated-logo-cloud'
 
 const features = [
     {
@@ -65,7 +66,7 @@ export default function SideBySide() {
                             </dl>
                         </div>
                     </div>
-                    <OrbitingCirclesComponent />
+                    <Circles />
                 </div>
             </div>
         </div>
