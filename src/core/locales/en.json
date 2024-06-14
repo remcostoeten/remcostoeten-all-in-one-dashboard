@@ -5,6 +5,7 @@
     "intro_heading": "Built because who want's 10 different dashboards?",
     "intro_description": "And I hate waiting for cloudflare to load. So I built this. It's fast, it's simple, and it's free. Manage your files fast, it's easy, and it's free. Manage your files, finances, snippets, to-do lists.",
     "get_started": "Get Started",
+    "replace": "Replace these",
     "header": {
       "title": "Because waiting on cloudflare sucks",
       "subtitle": "A faster way to production",

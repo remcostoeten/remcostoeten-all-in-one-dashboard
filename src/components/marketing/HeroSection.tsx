@@ -15,7 +15,7 @@ export default function HeroSection() {
             <div className='my-5'>
                 <AnimatedGradientPill />
             </div>
-            <h1 className='inline-block max-w-screen-lg scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-center text-4xl font-semibold tracking-tight text-transparent dark:from-white dark:to-slate-400 sm:text-4xl md:text-6xl lg:text-7xl'>
+            <h1 className='inline-block max-w-screen-lg scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-balance text-center prose-4xl font-semibold tracking-tight text-transparent dark:from-white dark:to-slate-400 sm:text-4xl md:text-6xl lg:text-7xl'>
                 {t('intro_heading')}
             </h1>
             <p className='mx-auto mt-2 max-w-[700px] text-center text-gray-500 prose-base dark:text-gray-400 md:prose-lg'>

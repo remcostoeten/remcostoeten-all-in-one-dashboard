@@ -3,25 +3,26 @@
     "usp1": "Het",
     "usp2": "persoonlijke dashboard",
     "intro_heading": "Eén oplossing voor al je behoeften",
-    "intro_description": "Beheer je bestanden snel, het is makkelijk, en het is gratis. Beheer je bestanden, financiën, snippets, to-do lijsten. En nog meer op de roadmap.",
+    "intro_description": "Beheer je bestanden snel, het is makkelijk, en het is gratis. Beheer je bestanden, financiën, snippets, to-do lijsten. En nog veel meer op de roadmap.",
     "get_started": "Begin nu",
     "header": {
-      "title": "Omdat wachten op cloudflare vervelend is",
+      "title": "Omdat wachten op Cloudflare vervelend is",
       "subtitle": "Een snellere manier naar productie",
       "description": "Verwijder je tientallen dashboards en begin met het bouwen van je applicatie met een enkele, uniforme oplossing."
     },
+    "replace": "Vervang deze",
     "features": {
       "manageFinance": {
-        "name": "Beheer persoonlijke financiën.",
-        "description": "Een alles-in-één oplossing voor het beheren van persoonlijke financiën, veilige bestandsopslag, codefragmenten en tools."
+        "name": "Persoonlijke Financiën",
+        "description": "Alles-in-één oplossing voor het beheren van financiën, veilige opslag, codefragmenten en tools."
       },
       "secureStorage": {
-        "name": "Veilige bestandsopslag.",
-        "description": "Houd uw bestanden veilig met ingebouwde veilige bestandsopslagoplossingen."
+        "name": "Veilige Bestandsopslag",
+        "description": "Houd je bestanden veilig met ingebouwde beveiliging."
       },
       "codeSnippets": {
-        "name": "Codefragmenten en tools.",
-        "description": "Toegang tot verschillende tools en functies zoals URL/tekst-extractors, (omgekeerde) geolocatiezoeker, SVG naar CSS-pseudo-elementen, HTML naar JSX/TSX-converter en meer."
+        "name": "Codefragmenten en Tools",
+        "description": "Toegang tot tools zoals URL/tekst-extractors, geolocatiezoeker, SVG naar CSS-converter, HTML naar JSX/TSX-converter, en meer."
       }
     }
   },
