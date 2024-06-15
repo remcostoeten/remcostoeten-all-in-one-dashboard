@@ -1,9 +1,10 @@
 import HeroSection from '@/components/marketing/HeroSection'
-import Roadmap from '../_tests/font/readme/page'
+import Roadmap from '../tests/font/readme/page'
 import SideBySide from '@/components/effects/SideBySide'
 import MarketingCards from '@/components/marketing/MarketingCards'
 import type { ReactNode } from 'react'
 import Circles from '@/components/effects/animated-logo-cloud'
+import CardHover from '@/components/effects/CardHoverEffect'
 
 export default function Index() {
     return (
@@ -21,6 +22,9 @@ export default function Index() {
             <div className='flex flex-col p-2 w-full justify-center items-center'>
                 <MarketingCards />
             </div>
+            <Section spacingY='xl'>
+                <CardHover />
+            </Section>
             <Roadmap />
         </>
     )

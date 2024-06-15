@@ -9,81 +9,68 @@ const ProjectsData = [
         name: 'Nextjs 14',
         description:
             'A framework for React that enables server-side rendering and effortless deployment.',
-        image: '/nextjs.svg',
-        imageDark: '/nextjs-dark.png'
+        image: '/home/nextjs.svg',
+        imageDark: '/home/nextjs-dark.png'
     },
     {
         id: 2,
         name: 'TypeScript',
         description:
             'A typed superset of JavaScript that enhances code maintainability and scalability.',
-        image: '/typescript.png'
+        image: '/home/typescript.png'
     },
     {
         id: 3,
         name: 'Tailwind CSS',
         description:
             'A utility-first CSS framework for building custom designs with ease.',
-        image: '/tailwind.png'
+        image: '/home/tailwind.png'
     },
     {
         id: 4,
         name: 'Shadcn UI',
         description: 'Beautifully designed components by Shadcn.',
-        image: '/shadcn.png',
-        imageDark: '/shadcn-dark.png'
+        image: '/home/shadcn.png',
+        imageDark: '/home/shadcn-dark.png'
     },
     {
         id: 5,
         name: 'Syntax UI',
         description: 'Beautifully designed components by Syntax UI.',
-        image: '/syntaxUI.svg'
+        image: '/home/syntaxUI.svg'
     },
     {
         id: 6,
         name: 'MagicUI',
         description: 'Beautifully designed components by Magic UI.',
-        image: '/magicui.png'
+        image: '/home/magicui.png'
     },
     {
         id: 7,
         name: 'Postgres (Supabase)',
         description:
             'PostgreSQL-based open-source database with Supabase for building scalable applications.',
-        image: '/supabase.png'
+        image: '/home/supabase.png'
     },
     {
         id: 8,
-        name: 'Prisma ORM',
+        name: 'Drizzle ORM',
         description:
             'Modern database toolkit for TypeScript and Node.js, simplifying database interactions.',
-        image: '/prisma.png'
+        image: '/home/drizzle.png'
     },
     {
         id: 9,
         name: 'Clerk Authentication',
         description:
             'Seamless and secure authentication service for web applications.',
-        image: '/clerk.png'
-    },
-    {
-        id: 10,
-        name: 'Stripe Subsctiptions & One time payments',
-        description:
-            'Payment processing solution for handling subscriptions and one-off transactions securely.',
-        image: '/stripe.png'
+        image: '/home/clerk.png'
     },
     {
         id: 11,
-        name: 'Upstash (Redis)',
-        description: 'Redis-based cloud database service for rate-limiting.',
-        image: '/upstash.png'
-    },
-    {
-        id: 12,
-        name: 'Tanstack Query',
-        description: 'For client side fetching, caching, and revalidation.',
-        image: '/tanstack.png'
+        name: 'Turso (Sqlite)',
+        description: 'Turso is a simple and fast SQLite cloud solution.',
+        image: '/home/turso.png'
     }
 ]
 

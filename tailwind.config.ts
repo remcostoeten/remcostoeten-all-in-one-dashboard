@@ -67,6 +67,7 @@ const config: Config = {
                 'text-active': 'var(--text-active)',
                 'button-primary': 'var(--button-primary)',
                 'button-primary-hover': 'var(--button-primary-hover)',
+                'top-bar': 'var(--top-bar)',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))'
@@ -186,7 +187,7 @@ const config: Config = {
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'border-beam':
                     'border-beam calc(var(--duration)*1s) infinite linear',
-                'background-shine': 'background-shine 2s linear infinite'
+                'background-shine': 'background-s1A1928hine 2s linear infinite'
             }
         }
     },

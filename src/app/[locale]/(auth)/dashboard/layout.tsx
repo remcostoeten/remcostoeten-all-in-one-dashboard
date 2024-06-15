@@ -3,7 +3,7 @@ import Aside from '@/components/theme/huly/aside'
 import Navigation from '@/components/theme/sidebar/Navigation'
 import NavBar from '@/components/shared/theme/NavBar'
 import Footer from '@/components/shared/theme/Footer'
-import { AppConfig } from '@/core/utils/AppConfig'
+import { AppConfig } from '@/core/data/AppConfig'
 import '@/styles/app.scss'
 import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
@@ -48,43 +48,28 @@ export default function DashboardLayout({
     }
 
     return (
-        <html lang={params.locale} className='dark'>
+        <html className='dark'>
             <body className={`${plexsans.className}`}>
-                <NextIntlClientProvider
-                    locale={params.locale}
-                    messages={messages}
+                <NavBar />
+                <main
+                    className='relative flex h-screen w-full flex-row'
+                    style={{
+                        paddingTop: 'calc(var(--nav-height) + 2rem)'
+                    }}
                 >
-                    <ClerkProvider
-                        localization={clerkLocale}
-                        signInUrl={signInUrl}
-                        signUpUrl={signUpUrl}
-                        signInFallbackRedirectUrl={dashboardUrl}
-                        signUpFallbackRedirectUrl={dashboardUrl}
-                    >
-                        <NavBar />
-                        <main
-                            className='relative flex h-screen w-full flex-row'
-                            style={{
-                                paddingTop: 'calc(var(--nav-height) + 2rem)'
-                            }}
-                        >
-                            <Aside />
-                            <Navigation />
-                            <section className='ml-20 flex w-full flex-col gap-5 p-10'>
-                                {children}
-                                <h1 className='text-4xl text-neutral-200'>
-                                    Dashboard
-                                </h1>
-                                <div className='h-80 w-full rounded border border-neutral-500/50 bg-neutral-800/20' />
-                                <div className='flex w-full flex-row gap-5'>
-                                    <div className='h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20' />
-                                    <div className='h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20' />
-                                </div>
-                            </section>
-                        </main>
-                        <Footer />
-                    </ClerkProvider>
-                </NextIntlClientProvider>
+                    <Aside />
+                    <Navigation />
+                    <section className='ml-20 flex w-full flex-col gap-5 p-10'>
+                        {children}
+                        <h1 className='text-4xl text-neutral-200'>Dashboard</h1>
+                        <div className='h-80 w-full rounded border border-neutral-500/50 bg-neutral-800/20' />
+                        <div className='flex w-full flex-row gap-5'>
+                            <div className='h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20' />
+                            <div className='h-60 w-1/2 rounded border border-neutral-500/50 bg-neutral-800/20' />
+                        </div>
+                    </section>
+                </main>
+                <Footer />
             </body>
         </html>
     )

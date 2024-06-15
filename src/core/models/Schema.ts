@@ -25,3 +25,13 @@ export const taskSchema = sqliteTable('task', {
         sql`(strftime('%s', 'now'))`
     )
 })
+
+export const Transaction = sqliteTable('transactions', {
+    id: text('id').primaryKey(),
+    amount: integer('amount'),
+    description: text('description'),
+    date: integer('created_at', { mode: 'timestamp' }).default(
+        sql`(strftime('%s', 'now'))`
+    ),
+    category: text('category')
+})

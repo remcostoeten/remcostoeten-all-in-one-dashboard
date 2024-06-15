@@ -4,7 +4,7 @@ import '@/styles/app.scss'
 import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
 import type { ReactNode } from 'react'
-import { enUS, nlNL } from '@clerk/localizations'
+import { enUS } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/shared/theme/Footer'
 import TopNav from '@/components/shared/theme/TopNav'
@@ -25,21 +25,21 @@ export default function RootLayout(props: {
     let signUpUrl = '/sign-up'
     let dashboardUrl = '/dashboard'
 
-    if (props.params.locale === 'nl') {
-        clerkLocale = nlNL
-    }
+    // if (props.params.locale === 'nl') {
+    //     clerkLocale = nlNL
+    // }
 
-    if (props.params.locale !== 'en') {
-        signInUrl = `/${props.params.locale}${signInUrl}`
-        signUpUrl = `/${props.params.locale}${signUpUrl}`
-        dashboardUrl = `/${props.params.locale}${dashboardUrl}`
-    }
+    // if (props.params.locale !== 'en') {
+    //     signInUrl = `/${props.params.locale}${signInUrl}`
+    //     signUpUrl = `/${props.params.locale}${signUpUrl}`
+    //     dashboardUrl = `/${props.params.locale}${dashboardUrl}`
+    // }
 
     return (
         <html lang={props.params.locale} className='dark'>
-            <body className={`${plexsans.className} text-foreground`}>
-                {' '}
-                <div className='test' />{' '}
+            <body
+                className={`${plexsans.className} text-foreground overflow-x-hidden`}
+            >
                 <NextIntlClientProvider
                     locale={props.params.locale}
                     messages={messages}
@@ -57,7 +57,6 @@ export default function RootLayout(props: {
                         <main className='min-w-screen bg-dot-black/[0.2 flex flex-col items-center justify-between  bg-black pt-16 bg-dot-white/[0.2]'>
                             {props.children}
                         </main>
-                        <Footer />
                         {/* <main
                             style={{
                                 paddingTop: 'calc(var(--nav-height) + 16px)'

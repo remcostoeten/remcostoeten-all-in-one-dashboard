@@ -1,14 +1,14 @@
 {
   "Landing": {
     "usp1": "The",
-    "usp2": "all in one dashboard",
-    "intro_heading": "Built because who want's 10 different dashboards?",
-    "intro_description": "And I hate waiting for cloudflare to load. So I built this. It's fast, it's simple, and it's free. Manage your files fast, it's easy, and it's free. Manage your files, finances, snippets, to-do lists.",
+    "usp2": "all-in-one dashboard",
+    "intro_heading": "Built because who wants 10 different dashboards?",
+    "intro_description": "And I hate waiting for Cloudflare to load. So, I built this. It's fast, it's simple, and it's free. Manage your files fast, it's easy, and it's free. Manage your files, finances, snippets, to-do lists.",
     "get_started": "Get Started",
     "replace": "Replace these",
     "header": {
-      "title": "No ads, cloudflare, or annoying re-captchas",
-      "subtitle": "Those three are the primary driving force behind this project.",
+      "title": "No ads, Cloudflare, or annoying re-captchas",
+      "subtitle": "Annoyance: the primary driving force behind this project.",
       "description": "Built for myself, as a front-end developer. But who knows, maybe I'll get two users someday!."
     },
     "features": {

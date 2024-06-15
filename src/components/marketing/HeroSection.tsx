@@ -30,11 +30,7 @@ export default function HeroSection() {
                         {t('get_started')}
                     </Button>
                 </Link>
-                <Link
-                    href='https://discord.gg/HUcHdrrDgY'
-                    target='_blank'
-                    className='mt-5'
-                >
+                <Link href='#' target='_blank' className='mt-5'>
                     <Button
                         size='sm'
                         variant='outline'

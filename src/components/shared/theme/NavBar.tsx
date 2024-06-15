@@ -44,15 +44,14 @@ export default function NavBar() {
         }
     }, [])
 
-    const isHome = pathname === '/'
-
+    const isHome = pathname === '/' || pathname === '/en' || pathname === '/nl'
     return (
         <motion.nav
             variants={navVariants}
             initial='hidden'
             animate={initialVisit ? 'visible' : 'visible'}
             transition={defaultTransition}
-            className={`${isHome ? 'bg-black bg-opacity-50' : 'bg-white dark:bg-zinc-900'} fixed z-10 flex min-w-full justify-between border-b p-2 dark:border-zinc-800`}
+            className={`${isHome ? 'bg-black bg-opacity-50' : 'bg-white dark:bg-zinc-900'} fixed z-10 flex min-w-full justify-between border-b p-2 dark:border-zinc-800 pr-6`}
         >
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
@@ -131,6 +130,7 @@ export default function NavBar() {
             <div className='flex items-center gap-2 max-[825px]:hidden'>
                 <Link href='/dashboard' className='max-[825px]:hidden'>
                     <Button
+                        disabled
                         className='rounded-lg dark:bg-black dark:bg-opacity-50'
                         variant='outline'
                     >
