@@ -6,9 +6,9 @@
     "intro_description": "Beheer je bestanden snel, het is makkelijk, en het is gratis. Beheer je bestanden, financiën, snippets, to-do lijsten. En nog veel meer op de roadmap.",
     "get_started": "Begin nu",
     "header": {
-      "title": "Omdat wachten op Cloudflare vervelend is",
-      "subtitle": "Een snellere manier naar productie",
-      "description": "Verwijder je tientallen dashboards en begin met het bouwen van je applicatie met een enkele, uniforme oplossing."
+      "title": "Geen ads, cloudflare of irritante re-captchas",
+      "subtitle": "Die drie zijn de primaire drijfveer achter dit project. ",
+      "description": "Gebouwd voor mezelf, als front-end developer. Maar wie weet haal ik ooit twee users!."
     },
     "replace": "Vervang deze",
     "features": {
@@ -22,7 +22,7 @@
       },
       "codeSnippets": {
         "name": "Codefragmenten en Tools",
-        "description": "Toegang tot tools zoals URL/tekst-extractors, geolocatiezoeker, SVG naar CSS-converter, HTML naar JSX/TSX-converter, en meer."
+        "description": "Toegang tot tools zoals URL/tekst-extractors, geolocatiezoeker, SVG naar CSS, HTML naar React, en meer."
       }
     }
   },

@@ -7,9 +7,9 @@
     "get_started": "Get Started",
     "replace": "Replace these",
     "header": {
-      "title": "Because waiting on cloudflare sucks",
-      "subtitle": "A faster way to production",
-      "description": "Get rid of your dozens of dashboards and start building your application with a single, unified solution."
+      "title": "No ads, cloudflare, or annoying re-captchas",
+      "subtitle": "Those three are the primary driving force behind this project.",
+      "description": "Built for myself, as a front-end developer. But who knows, maybe I'll get two users someday!."
     },
     "features": {
       "manageFinance": {
