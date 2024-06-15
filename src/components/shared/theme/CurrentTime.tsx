@@ -1,14 +1,44 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-export default function CurrentTime() {
-    const [time, setTime] = useState(new Date())
+type CurrentTimeProps = {
+  format?: 'HH:MM' | 'full';
+  showPeriod?: boolean;
+}
 
-    useEffect(() => {
-        const timer = setInterval(() => setTime(new Date()), 1000)
-        return () => clearInterval(timer)
-    }, [])
+export default function CurrentTime({ format = 'HH:MM', showPeriod = false }: CurrentTimeProps) {
+  const [time, setTime] = useState(new Date());
+  const [blink, setBlink] = useState(true);
 
-    return <time className='text-white'>{time.toLocaleTimeString()}</time>
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());
+      setBlink(prev => !prev);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const timeOptions: Intl.DateTimeFormatOptions = {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  };
+
+  if (format !== 'HH:MM') {
+    timeOptions.second = '2-digit';
+    if (showPeriod) {
+      timeOptions.hour12 = true;
+    }
+  }
+
+  const timeString = time.toLocaleTimeString([], timeOptions);
+  const parts = timeString.split(':');
+  const formattedTime = `${parts[0]}${blink ? ':' : ' '}${parts.slice(1).join(':')}`;
+
+  return (
+    <time className='text-white' dateTime={time.toISOString()} aria-live="polite">
+      {formattedTime}
+    </time>
+  );
 }
