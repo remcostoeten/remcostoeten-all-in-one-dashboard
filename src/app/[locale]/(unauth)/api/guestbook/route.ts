@@ -2,7 +2,6 @@ import { eq, sql } from 'drizzle-orm'
 import { NextResponse } from 'next/server'
 
 import { db } from '@/core/libs/DB'
-import { logger } from '@/core/libs/Logger'
 import { guestbookSchema } from '@/core/models/Schema'
 import {
     DeleteGuestbookValidation,

@@ -9,13 +9,13 @@ export const components: {
         description: 'Write some wavy here to get them to click.'
     },
     {
-        title: 'Second Tab',
-        href: '/',
+        title: 'Guestbook',
+        href: '/guestbook',
         description: 'Write some wavy here to get them to click.'
     },
     {
-        title: 'Third Tab',
-        href: '/',
+        title: 'About',
+        href: '/about',
         description: 'Write some wavy here to get them to click.'
     }
 ]

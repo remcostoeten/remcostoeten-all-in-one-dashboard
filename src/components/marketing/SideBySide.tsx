@@ -4,7 +4,7 @@ import {
     ServerIcon
 } from '@heroicons/react/24/outline'
 import { useTranslations } from 'next-intl'
-import Circles from './animated-logo-cloud'
+import Circles from '../effects/animated-logo-cloud'
 
 export default function SideBySide() {
     const t = useTranslations('Landing')

@@ -25,7 +25,7 @@ const getDistance = (
     const toRad = (value: number) => (value * Math.PI) / 180
     const R = 6371
     const dLat = toRad(lat2 - lat1)
-    const dLng = toRad(lng2 - lng1)
+    const dLng = toRad(lat2 - lng1)
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(toRad(lat1)) *

@@ -1,6 +1,6 @@
 import HeroSection from '@/components/marketing/HeroSection'
 import Roadmap from '../tests/font/readme/page'
-import SideBySide from '@/components/effects/SideBySide'
+import SideBySide from '@/components/marketing/SideBySide'
 import MarketingCards from '@/components/marketing/MarketingCards'
 import type { ReactNode } from 'react'
 import Circles from '@/components/effects/animated-logo-cloud'

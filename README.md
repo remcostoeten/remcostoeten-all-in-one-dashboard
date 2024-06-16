@@ -51,6 +51,7 @@ This is a personal project that combines various tools and features I've built o
 -   AI prompt optimizer(https://promptperfect.jina.ai/interactive)]
 -   [HTML to skeleton loader for Tailwind](https://gpt-skeleton.vercel.app/generate)
     -   [Finance maybe app has a cool modular way of creating skeletons](https://github.com/maybe-finance/maybe-archive/tree/main/libs/design-system/src/lib/LoadingPlaceholder)[usage]()
+    [Another skeleton helper](https://mkfizi.dev/tailbone/)
 
 ## 🐻 Interesting and/or very cool/unique components
 
