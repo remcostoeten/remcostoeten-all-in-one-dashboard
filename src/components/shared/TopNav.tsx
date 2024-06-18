@@ -1,30 +1,14 @@
-'use client'
 
-import React, { useEffect, useState } from 'react'
+
 import CurrentTime from './navigation/CurrentTime'
 import TopNavSettings from './navigation/TopNavSettings'
 import Breadcrumbs from './navigation/Breadcrumbs'
 import LocaleSwitcher from '../LocaleSwitcher'
 import Settings from './navigation/Settings'
+import DisplayCity from './navigation/DisplayCity'
 
-export default function TopNav() {
-    const [location, setLocation] = useState<{ city: string } | null>(null)
-    const [error, setError] = useState<Error | null>(null)
-
-    useEffect(() => {
-        async function fetchLocation() {
-            try {
-                const response = await fetch('/api/getUserLocation')
-                const data = await response.json()
-                setLocation(data)
-            } catch (error) {
-                console.error('Error fetching user location:', error)
-                setError(error)
-            }
-        }
-
-        fetchLocation()
-    }, [])
+export default async function TopNav() {
+  // const city = await getCity();
 
     return (
         <div className='flex flex-col justify-center whitespace-nowrap bg-gray-900 text-xs h-top-bar py-1'>
@@ -34,9 +18,7 @@ export default function TopNav() {
                     <TopNavSettings />
                     <Settings />
                     <LocaleSwitcher />
-                    <p className='text-white'>
-                        {location ? location.city : 'Loading...'}
-                    </p>
+                    <DisplayCity/>
                     <CurrentTime />
                 </div>
             </nav>
