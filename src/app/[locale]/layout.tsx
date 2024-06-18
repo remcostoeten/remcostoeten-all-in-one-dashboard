@@ -1,6 +1,6 @@
 import NavBar from '@/components/shared/theme/navbar'
 import { AppConfig } from '@/core/utils/AppConfig'
-import '@/styles/app.scss'
+import '../../styles/app.scss'
 import type { Metadata } from 'next'
 import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { enUS, frFR } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
+import TopNav from '@/components/shared/TopNav'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -54,8 +55,10 @@ export default function RootLayout(props: {
                         signInFallbackRedirectUrl={dashboardUrl}
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
-                        <NavBar />
-                        <main
+
+<TopNav />
+<NavBar />
+<main
                             style={{
                                 paddingTop: 'calc(var(--nav-height) + 16px)'
                             }}

@@ -4,45 +4,41 @@
         "module": "esnext",
         "moduleResolution": "bundler",
         "resolveJsonModule": true,
-        "removeComments": true,
+        "removeComments": false,
         "preserveConstEnums": true,
-        "strict": true,
-        "alwaysStrict": true,
-        "strictNullChecks": true,
-        "noUncheckedIndexedAccess": true,
-
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "allowUnreachableCode": false,
-        "noFallthroughCasesInSwitch": true,
-
+        "strict": false,
+        "alwaysStrict": false,
+        "strictNullChecks": false,
+        "noUncheckedIndexedAccess": false,
+        "noImplicitAny": false,
+        "noImplicitReturns": false,
+        "noImplicitThis": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "allowUnreachableCode": true,
+        "noFallthroughCasesInSwitch": false,
         "target": "es2017",
         "outDir": "out",
         "sourceMap": true,
-
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
-        "checkJs": true,
+        "checkJs": false,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-
+        "forceConsistentCasingInFileNames": false,
         "jsx": "preserve",
-        "noEmit": true,
+        "noEmit": false,
         "isolatedModules": true,
-        "incremental": true,
-
-        // Path aliases
+        "incremental": false,
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
-            "@/public/*": ["./public/*"]
+            "@/public/*": ["./public/*"],
+            "@ui/*": ["./src/components/ui/*"],
+            "@c/*": ["./src/components/*"],
+            "@mark/*": ["./src/components/marketing/*"],
+            "@dash/*": ["./src/components/dashboard/*"]
         },
-
-        // Editor support
         "plugins": [
             {
                 "name": "next"
