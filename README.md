@@ -3,6 +3,7 @@
 <small>Because I hate load times (cloudflare ugh), and not owning my own stuff</small>
 
 > [!NOTE]
+
 > Just started this repo, will be migrating features I've built over so it's far from done. And probably never will be.
 
 This is a personal project that combines various tools and features I've built over the years. It's a one-stop solution for managing personal finance, secure file storage, code snippets, and tools I've built for myself such as URL/text extractors, (reverse) geolocation finder, SVG to CSS-pseudo elements, HTML to JSX/TSX converter, and loads more probably.
@@ -33,7 +34,8 @@ This is a personal project that combines various tools and features I've built o
     -   [useFavicon](https://usehooks.com/useFavicon) (dynamically update the favicon)
         could be paired with the logic of changing tab-title when switching tabs -> [Phind Search](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c)
     -   [useLocalStorage](https://usehooks.com/uselocalstorage)
-    -   [useGeoLocation](https://usehooks.com/usegeolocation) - Maybe when extending my own reverse geo app? -[Zustand](https://zustand.surge.sh/) - State management<br/>
+    -   [useGeoLocation](https://usehooks.com/usegeolocation) - Maybe when extending my own reverse geo app?
+    -[Zustand](https://zustand.surge.sh/) - State management<br/>
 -   [React Query ?](https://react-query.tanstack.com/) - Data fetching (trying/PoC vs server actions/api calls)
     <br/>
 
@@ -49,6 +51,7 @@ This is a personal project that combines various tools and features I've built o
 -   AI prompt optimizer(https://promptperfect.jina.ai/interactive)]
 -   [HTML to skeleton loader for Tailwind](https://gpt-skeleton.vercel.app/generate)
     -   [Finance maybe app has a cool modular way of creating skeletons](https://github.com/maybe-finance/maybe-archive/tree/main/libs/design-system/src/lib/LoadingPlaceholder)[usage]()
+    [Another skeleton helper](https://mkfizi.dev/tailbone/)
 
 ## 🐻 Interesting and/or very cool/unique components
 
@@ -95,7 +98,7 @@ This is a personal project that combines various tools and features I've built o
 
 ### Long-Term Goals
 
--   [ ] Localization
+-   [x] Localization
     -   [ ] [Add pretty flags](https://flagpack.xyz/)
 -   [ ] [Migrate geolocation](https://features.remcostoeten.com/geolocation) and re-create UI
 -   [ ] Create landing page
@@ -118,7 +121,7 @@ This is a personal project that combines various tools and features I've built o
 
 <h2> 📋 Repos Used</h2>
 
--   [turso-nextjs-starter](https://github.com/remcostoeten/turso-nextjs-starter)
+-   [Turso next crud operations (no orm) - ez drizzle installation](https://github.com/remcostoeten/turso-nextjs-starter)
 -   [nextjs-drizzle-crud-w-images](https://github.com/remcostoeten/nextjs-drizzle-crud-w-images-tfw-no-relation-ship-sad-pepe)
 -   [t3gallery](https://github.com/remcostoeten/t3gallery)
 -   [personal-platform](https://github.com/remcostoeten/personal-platform)
