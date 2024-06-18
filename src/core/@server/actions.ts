@@ -1,1 +1,0 @@
-export { getUserLocation } from './getUserLocation'

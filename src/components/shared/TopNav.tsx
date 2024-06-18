@@ -1,5 +1,3 @@
-
-
 import CurrentTime from './navigation/CurrentTime'
 import TopNavSettings from './navigation/TopNavSettings'
 import Breadcrumbs from './navigation/Breadcrumbs'
@@ -8,7 +6,7 @@ import Settings from './navigation/Settings'
 import DisplayCity from './navigation/DisplayCity'
 
 export default async function TopNav() {
-  // const city = await getCity();
+    // const city = await getCity();
 
     return (
         <div className='flex flex-col justify-center whitespace-nowrap bg-gray-900 text-xs h-top-bar py-1'>
@@ -18,7 +16,7 @@ export default async function TopNav() {
                     <TopNavSettings />
                     <Settings />
                     <LocaleSwitcher />
-                    <DisplayCity/>
+                    <DisplayCity />
                     <CurrentTime />
                 </div>
             </nav>
