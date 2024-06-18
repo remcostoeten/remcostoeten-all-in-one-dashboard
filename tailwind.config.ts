@@ -35,7 +35,8 @@ const config: Config = {
             },
             height: {
                 icon: 'var(--icon-size)',
-                nav: 'var(--nav-height'
+                nav: 'var(--nav-height',
+                'top-bar': 'var(--top-bar-height)'
             },
             colors: {
                 'theme-primary': 'var(--theme-primary)',

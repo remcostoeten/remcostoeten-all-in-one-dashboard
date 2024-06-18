@@ -2,21 +2,19 @@ import type { ReactNode } from 'react'
 import Aside from '@/components/theme/huly/aside'
 import Navigation from '@/components/theme/sidebar/Navigation'
 import NavBar from '@/components/shared/theme/NavBar'
-import Footer from '@/components/shared/theme/Footer'
-import { AppConfig } from '@/core/data/AppConfig'
 import '@/styles/app.scss'
-import { useMessages, NextIntlClientProvider } from 'next-intl'
+import { useMessages } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { enUS, frFR } from '@clerk/localizations'
-import { ClerkProvider } from '@clerk/nextjs'
+import siteConfig from '@/core/data/site-config'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
 
-interface DashboardLayoutProps {
+type DashboardLayoutProps = {
     children: ReactNode
     params: { locale: string }
 }
@@ -25,13 +23,10 @@ export default function DashboardLayout({
     children,
     params
 }: DashboardLayoutProps) {
-    // Validate that the incoming `locale` parameter is valid
-    if (!AppConfig.locales.includes(params.locale)) notFound()
+    if (!siteConfig.locales.includes(params.locale)) notFound()
 
-    // Using internationalization in Client Components
     const messages = useMessages()
 
-    // Clerk localization and URLs
     let clerkLocale = enUS
     let signInUrl = '/sign-in'
     let signUpUrl = '/sign-up'
@@ -69,7 +64,6 @@ export default function DashboardLayout({
                         </div>
                     </section>
                 </main>
-                <Footer />
             </body>
         </html>
     )

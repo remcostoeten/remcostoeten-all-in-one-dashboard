@@ -1,15 +1,15 @@
 export default function Roadmap() {
     return (
-        <div className='prose mx-auto px-4 py-10'>
+        <div className='text-white prose mx-auto px-4 py-10 bg-zinc-900/40 b-dashed border-amber-600'>
             <header className='text-center'>
-                <h1 className='text-4xl font-bold text-gray-800'>
+                <h1 className='text-4xl font-bold text-white'>
                     Personal all-in-one panel!
                 </h1>
-                <small className='text-gray-600 italic mt-2'>
+                <small className='text-white italic mt-2'>
                     Because I hate load times (cloudflare ugh), and not owning
                     my own stuff
                 </small>
-                <blockquote className='mt-4'>
+                <blockquote className='mt-4   text-white'>
                     <p>
                         Just started this repo, will be migrating features I've
                         built over so it's far from done. And probably never
@@ -20,7 +20,9 @@ export default function Roadmap() {
 
             <main>
                 <section className='my-10'>
-                    <h2 className='text-3xl font-bold'>Description</h2>
+                    <h2 className='text-3xl text-white       font-bold'>
+                        Description
+                    </h2>
                     <p>
                         This is a personal project that combines various tools
                         and features I've built over the years. It's a one-stop

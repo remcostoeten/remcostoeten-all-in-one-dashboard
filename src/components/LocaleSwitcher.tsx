@@ -4,7 +4,7 @@ import { useLocale } from 'next-intl'
 import type { ChangeEventHandler } from 'react'
 
 import { usePathname, useRouter } from '@/core/libs/i18nNavigation'
-import { AppConfig } from '@/core/data/AppConfig'
+import siteConfig from '@/core/data/site-config'
 
 export default function LocaleSwitcher() {
     const router = useRouter()
@@ -22,7 +22,7 @@ export default function LocaleSwitcher() {
             onChange={handleChange}
             className='border border-gray-300 font-medium focus:outline-none focus-visible:ring'
         >
-            {AppConfig.locales.map((elt) => (
+            {siteConfig.locales.map((elt) => (
                 <option key={elt} value={elt}>
                     {elt.toUpperCase()}
                 </option>

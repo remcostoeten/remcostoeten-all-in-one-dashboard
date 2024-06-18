@@ -1,7 +1,7 @@
-import { AppConfig } from '../data/AppConfig'
+import siteConfig from '../data/site-config'
 
 export const getI18nPath = (url: string, locale: string) => {
-    if (locale === AppConfig.defaultLocale) {
+    if (locale === siteConfig.defaultLocale) {
         return url
     }
 

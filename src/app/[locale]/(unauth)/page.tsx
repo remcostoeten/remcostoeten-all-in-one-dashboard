@@ -5,10 +5,11 @@ import MarketingCards from '@/components/marketing/MarketingCards'
 import type { ReactNode } from 'react'
 import Circles from '@/components/effects/animated-logo-cloud'
 import CardHover from '@/components/effects/CardHoverEffect'
+import SmoothScroll from '@/components/effects/SmoothScroll'
 
 export default function Index() {
     return (
-        <>
+        <SmoothScroll>
             {IosNotesIcon()}
             <Section spacingY='regular'>
                 <HeroSection />
@@ -19,14 +20,12 @@ export default function Index() {
             <Section spacingY='xl'>
                 <SideBySide />
             </Section>
-            <div className='flex flex-col p-2 w-full justify-center items-center'>
-                <MarketingCards />
-            </div>
+
             <Section spacingY='xl'>
                 <CardHover />
             </Section>
             <Roadmap />
-        </>
+        </SmoothScroll>
     )
 }
 

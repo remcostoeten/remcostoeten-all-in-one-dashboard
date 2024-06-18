@@ -26,8 +26,8 @@ import { components } from '@/core/data/menu-items'
 import { motion } from 'framer-motion'
 import { defaultTransition, navVariants } from '@/core/utils/animations'
 import { usePathname } from 'next/navigation'
-import LogoIcon from './Logo'
-import { ModeToggle } from './ModeToggle'
+import LogoIcon from '../navigation/Logo'
+import { ModeToggle } from '../navigation/ModeToggle'
 import { Profile } from './Profile'
 
 export default function NavBar() {

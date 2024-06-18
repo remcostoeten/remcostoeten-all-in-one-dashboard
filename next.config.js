@@ -29,6 +29,12 @@ images: {
       port: '',
       pathname: '/**',
     },
+    {
+      protocol: 'http',
+      hostname: 'b.io',
+      port: '',
+      pathname: '/**'
+    }
   ],
 },
 };
