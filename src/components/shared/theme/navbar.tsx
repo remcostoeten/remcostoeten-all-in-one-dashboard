@@ -26,21 +26,36 @@ import { components } from '@/core/data/menu-items'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
-
 export default function NavBar() {
     const { userId } = useAuth()
 
-    const fixedOnScroll = () => {
-        const nav = document.querySelector('nav')
-        if (nav) {
-            window.scrollY > 0
-                ? nav.classList.add('shadow-md')
-                : nav.classList.remove('shadow-md')
+    const ref = React.useRef<HTMLDivElement>(null)
+    const [isFixed, setIsFixed] = React.useState(false)
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (ref.current) {
+                setIsFixed(window.scrollY > ref.current.clientHeight)
+            }
+            console.log(window.scrollY)
         }
-    }
+
+        if (ref.current) {
+            setIsFixed(window.scrollY > ref.current.clientHeight)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     return (
-        <nav className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'>
+        <nav
+            ref={ref}
+            className={`z-10 flex min-w-full justify-between border-b bg-white p-2 transition-all duration-1000 dark:bg-black dark:bg-opacity-50 ${isFixed ? 'fixed top-0 ' : '-top-5'}`}
+        >
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
