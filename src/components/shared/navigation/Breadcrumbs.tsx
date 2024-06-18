@@ -30,9 +30,10 @@ function Breadcrumbs() {
             const formattedSegment = segment
                 .split('-')
                 .map((part) => {
-                  if (part.length === 0) return '';
-                  const formattedPart = part[0]?.toUpperCase() + part.slice(1).toLowerCase();
-                  return formattedPart;
+                    if (part.length === 0) return ''
+                    const formattedPart =
+                        part[0]?.toUpperCase() + part.slice(1).toLowerCase()
+                    return formattedPart
                 })
                 .join(' ') // Join the parts with a space
 

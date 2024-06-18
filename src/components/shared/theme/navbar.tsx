@@ -33,13 +33,7 @@ export default function NavBar() {
     const { userId } = useAuth()
 
     return (
-        <motion.nav
-            variants={navVariants}
-            initial='hidden'
-            animate='visible'
-            transition={defaultTransition}
-            className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'
-        >
+        <nav className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'>
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
@@ -127,7 +121,7 @@ export default function NavBar() {
                 {userId && <Profile />}
                 <ModeToggle />
             </div>
-        </motion.nav>
+        </nav>
     )
 }
 

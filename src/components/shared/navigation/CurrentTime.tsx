@@ -40,7 +40,11 @@ export default function CurrentTime({
     const formattedTime = `${parts[0]}${blink ? ':' : ' '}${parts.slice(1).join(':')}`
 
     return (
-        <time className=' ' dateTime={time.toISOString()} aria-live='polite'>
+        <time
+            className='min-w-[50px]'
+            dateTime={time.toISOString()}
+            aria-live='polite'
+        >
             {formattedTime}
         </time>
     )

@@ -2,6 +2,7 @@ import NavBar from '@/components/shared/theme/navbar'
 import { AppConfig } from '@/core/utils/AppConfig'
 import '../../styles/app.scss'
 import type { Metadata } from 'next'
+import { Toaster } from 'sonner'
 import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
@@ -55,17 +56,16 @@ export default function RootLayout(props: {
                         signInFallbackRedirectUrl={dashboardUrl}
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
-
-<TopNav />
-<NavBar />
-<main
+                        <TopNav />
+                        <NavBar />
+                        <main
                             style={{
                                 paddingTop: 'calc(var(--nav-height) + 16px)'
                             }}
                         >
                             {props.children}
                         </main>{' '}
-                        {/* Add padding-top here */}
+                        <Toaster invert />
                     </ClerkProvider>
                 </NextIntlClientProvider>
             </body>

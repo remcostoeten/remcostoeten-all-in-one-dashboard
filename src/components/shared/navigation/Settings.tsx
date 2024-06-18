@@ -1,4 +1,3 @@
-import React from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { SettingsIcon } from '@/components/theme/icons'
 import { Button } from '@/components/ui/button'
@@ -19,8 +18,12 @@ export default function Settings() {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align='end'>
-                    <DropdownMenuItem><Sun/></DropdownMenuItem>
-                    <DropdownMenuItem><Moon/></DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Sun />
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Moon />
+                    </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
         </>

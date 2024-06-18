@@ -1,5 +1,8 @@
+$hero-svg: '%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%3E%3C%2Fpath%3E%3C%2Fsvg%3E';
+
 .hero-bg {
   z-index: -1;
+  // background-image: url('data:image/svg+xml;utf8,#{$hero-svg}');
   background-image: url('../../../public/herobg.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,81 +13,79 @@
   bottom: auto;
   left: 0%;
   right: auto;
-
-  .mask {
-    background-color: transparent;
-    background-image: linear-gradient(rgba(11, 11, 11, 0), #0b0b0b 65%);
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-    overflow: visible;
-  }
 }
 
+.hero-bg .mask {
+  background-color: transparent;
+  background-image: linear-gradient(rgba(11, 11, 11, 0), #0b0b0b 65%);
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: visible;
+}
 
+/* .test {
+  position: relative;
+  background: linear-gradient(to bottom, #3b82f6, #000000);
+  color: var(--foreground);
+}
 
-// .test {
-//   position: relative;
-//   background: linear-gradient(to bottom, #3b82f6, #000000); /* Fallback gradient */
-//   color: var(--foreground); /* Assuming you have a CSS variable for text color */
+.test::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3e%3ccircle fill='rgb(255 255 255 / 0.2)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3e%3c/circle%3e%3c/svg%3e");
+  background-repeat: repeat;
+}
 
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100vw;
-//     height: 100vh;
-//     z-index: -2; /* Ensure it is behind other content */
-//     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3e%3ccircle fill='rgb(255 255 255 / 0.2)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3e%3c/circle%3e%3c/svg%3e");
-//     background-repeat: repeat;
-//   }
+.test::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: linear-gradient(transparent, black);
+}
 
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100vw;
-//     height: 100vh;
-//     z-index: 1; /* Ensure it is above the ::before pseudo-element but behind content */
-//     background: linear-gradient(transparent, black);
-//   }
+.test * {
+  position: relative;
+  z-index: 2 !important;
+}
 
-//   /* Ensure all content is above the background and overlay */
-//    * {
-//     position: relative;
-//     z-index:2!important;
-//   }
-// }
-// body {
-//   margin: 0;
-//   height: 100vh;
-//   background-color: #000; /* Body background color */
-//   background-image: radial-gradient(rgba(244, 244, 244, 0.2) 1px, transparent 1px);
-//   background-size: 10px 10px; /* Size of the dots and spacing */
-//   position: relative;
-// }
-
-.fade {
-  &::after {
-    content: "";
-    position: fixed;
-    /* top: 0; */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(#0000, #000);
-    width: 100vw;
-    height: 51vh;
-    z-index: -2;
-  }
+body {
   margin: 0;
   height: 100vh;
-  background-color: #000; /* Body background color */
+  background-color: #000;
   background-image: radial-gradient(rgba(244, 244, 244, 0.2) 1px, transparent 1px);
-  background-size: 10px 10px; /* Size of the dots and spacing */
+  background-size: 10px 10px;
+  position: relative;
+} */
+
+.fade::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(#0000, #000);
+  width: 100vw;
+  height: 51vh;
+  z-index: -2;
+}
+
+.fade {
+  margin: 0;
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(rgba(244, 244, 244, 0.2) 1px, transparent 1px);
+  background-size: 10px 10px;
   position: fixed;
 }
