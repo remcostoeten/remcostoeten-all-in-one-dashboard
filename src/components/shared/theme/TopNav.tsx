@@ -1,7 +1,7 @@
 import { getUserLocation } from '@/core/@server/actions'
 import Breadcrumbs from '../Breadcrumbs'
 import CurrentTime from '../navigation/CurrentTime'
-
+import TopNavSettings from '../navigation/TopNavSettings'
 export default async function TopNav() {
     // Assuming getUserLocation is a server action that will be resolved before the component mounts
     const location = await getUserLocation()
@@ -11,8 +11,8 @@ export default async function TopNav() {
             <nav className='flex gap-5 justify-between h-top-bar pl-4 w-full max-md:flex-wrap max-md:max-w-full pr-6 items-center'>
                 <Breadcrumbs />
                 <div className='flex gap-5 items-center'>
+                    <TopNavSettings />
                     <CurrentTime />
-                    {/* Corrected syntax error and wrapped location display in a semantic <p> tag */}
                     {location.city && (
                         <p className='text-white'>{location.city}</p>
                     )}

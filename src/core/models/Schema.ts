@@ -1,3 +1,4 @@
+import { transactionSchema as ZTransactionSchema } from './Schema'
 import { sql } from 'drizzle-orm'
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 
@@ -26,7 +27,7 @@ export const taskSchema = sqliteTable('task', {
     )
 })
 
-export const Transaction = sqliteTable('transactions', {
+export const transactionSchema = sqliteTable('transactions', {
     id: text('id').primaryKey(),
     amount: integer('amount'),
     description: text('description'),

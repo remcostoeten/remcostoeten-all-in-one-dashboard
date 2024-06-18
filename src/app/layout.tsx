@@ -6,8 +6,8 @@ import { IBM_Plex_Sans } from 'next/font/google'
 import type { ReactNode } from 'react'
 import { enUS } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
-import Footer from '@/components/shared/theme/Footer'
 import TopNav from '@/components/shared/theme/TopNav'
+import { Toaster } from 'sonner'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -65,6 +65,7 @@ export default function RootLayout(props: {
                             {props.children}
                         </main>{' '}
                         Add padding-top here */}
+                        <Toaster />
                     </ClerkProvider>
                 </NextIntlClientProvider>
             </body>

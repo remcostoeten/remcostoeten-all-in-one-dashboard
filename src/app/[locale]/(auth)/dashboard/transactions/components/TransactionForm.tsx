@@ -1,62 +1,81 @@
-import React, { useState } from 'react'
+'use client'
 
-const TransactionForm: React.FC = () => {
-    const [transaction, setTransaction] = useState<Transaction>({
-        id: '',
-        amount: 0,
-        description: '',
-        date: new Date(),
-        category: ''
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
+import type { z } from 'zod'
+import React from 'react'
+
+import { useTranslations } from 'next-intl'
+import { TransactionValidation } from '@/core/validations/TransactionValidation'
+import type { Transaction } from '@libsql/client'
+
+interface TransactionFormProps {
+    transaction?: Transaction
+    onValid?: (data: any) => Promise<void>
+}
+
+const TransactionForm = (props: TransactionFormProps) => {
+    const {
+        handleSubmit,
+        register,
+        reset,
+        formState: { errors }
+    } = useForm<z.infer<typeof TransactionValidation>>({
+        resolver: zodResolver(TransactionValidation),
+        defaultValues: {
+            id: '',
+            amount: 0,
+            description: '',
+            date: new Date(),
+            category: ''
+        }
+    })
+    const router = useRouter()
+    const t = useTranslations('GuestbookForm')
+
+    const handleCreate = handleSubmit(async (data) => {
+        await props.onValid(data)
+
+        reset()
+        router.refresh()
     })
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        const { name, value } = e.target
-        setTransaction((prev) => ({ ...prev, [name]: value }))
-    }
-
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault()
-        if (transaction) {
-            await TransactionModel.insert(transaction)
-            setTransaction({
-                id: '',
-                amount: 0,
-                description: '',
-                date: new Date(),
-                category: ''
-            }) // Reset form after submission
-        }
-    }
-
     return (
-        <form onSubmit={handleSubmit} className='bg-gray-800 p-4 text-white'>
+        <form onSubmit={handleCreate} className='bg-gray-800 p-4 text-white'>
             <div className='mb-4'>
                 <label htmlFor='id' className='block text-sm font-medium'>
                     ID
+                    <input
+                        type='text'
+                        id='id'
+                        {...register('id')}
+                        className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
+                        placeholder='Enter ID'
+                    />
                 </label>
-                <input
-                    type='text'
-                    name='id'
-                    value={transaction.id}
-                    onChange={handleChange}
-                    className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
-                    placeholder='Enter ID'
-                />
+                {errors.id?.message && (
+                    <div className='my-2 text-xs italic text-red-500'>
+                        {errors.id?.message}
+                    </div>
+                )}
             </div>
             <div className='mb-4'>
                 <label htmlFor='amount' className='block text-sm font-medium'>
                     Amount
+                    <input
+                        type='number'
+                        id='amount'
+                        {...register('amount')}
+                        className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
+                        placeholder='Enter Amount'
+                    />
                 </label>
-                <input
-                    type='number'
-                    name='amount'
-                    value={transaction.amount}
-                    onChange={handleChange}
-                    className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
-                    placeholder='Enter amount'
-                />
+                {errors.amount?.message && (
+                    <div className='my-2 text-xs italic text-red-500'>
+                        {errors.amount?.message}
+                    </div>
+                )}
             </div>
             <div className='mb-4'>
                 <label
@@ -64,39 +83,51 @@ const TransactionForm: React.FC = () => {
                     className='block text-sm font-medium'
                 >
                     Description
+                    <textarea
+                        id='description'
+                        {...register('description')}
+                        className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
+                        placeholder='Enter Description'
+                    />
                 </label>
-                <textarea
-                    name='description'
-                    value={transaction.description}
-                    onChange={handleChange}
-                    className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
-                    placeholder='Enter description'
-                />
+                {errors.description?.message && (
+                    <div className='my-2 text-xs italic text-red-500'>
+                        {errors.description?.message}
+                    </div>
+                )}
             </div>
             <div className='mb-4'>
                 <label htmlFor='date' className='block text-sm font-medium'>
                     Date
+                    <input
+                        type='date'
+                        id='date'
+                        {...register('date')}
+                        className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
+                    />
                 </label>
-                <input
-                    type='date'
-                    name='date'
-                    value={transaction.date.toISOString().substring(0, 10)}
-                    onChange={handleChange}
-                    className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
-                />
+                {errors.date?.message && (
+                    <div className='my-2 text-xs italic text-red-500'>
+                        {errors.date?.message}
+                    </div>
+                )}
             </div>
             <div className='mb-4'>
                 <label htmlFor='category' className='block text-sm font-medium'>
                     Category
+                    <input
+                        type='text'
+                        id='category'
+                        {...register('category')}
+                        className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
+                        placeholder='Enter Category'
+                    />
                 </label>
-                <input
-                    type='text'
-                    name='category'
-                    value={transaction.category}
-                    onChange={handleChange}
-                    className='mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md'
-                    placeholder='Enter category'
-                />
+                {errors.category?.message && (
+                    <div className='my-2 text-xs italic text-red-500'>
+                        {errors.category?.message}
+                    </div>
+                )}
             </div>
             <button
                 type='submit'

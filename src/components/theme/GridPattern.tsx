@@ -7,7 +7,7 @@ function generateGridPattern({
     height = 40,
     strokeDasharray = 0,
     x = 0,
-    y = 0,
+    y = 0
 }: {
     width?: number
     height?: number
@@ -37,7 +37,7 @@ export function GridPatternBackground() {
         const pattern = generateGridPattern({
             width: 40,
             height: 40,
-            strokeDasharray: 0,
+            strokeDasharray: 0
         })
 
         document.body.style.backgroundImage = pattern

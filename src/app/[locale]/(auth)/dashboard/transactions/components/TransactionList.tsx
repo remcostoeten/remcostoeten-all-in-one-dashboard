@@ -1,16 +1,18 @@
 'use client'
 
-// src/components/TransactionList.tsx
+import {
+    TransactionModel,
+    Transaction as TransactionType
+} from '@/core/@server/models/transaction-model'
 import React, { useEffect, useState } from 'react'
-import { TransactionModel } from '../core/models/Schema'
-import { Transaction } from '../core/validations/transactionValidation'
 
 const TransactionList: React.FC = () => {
-    const [transactions, setTransactions] = useState<Transaction[]>([])
+    const [transactions, setTransactions] = useState<TransactionType[]>([])
 
     useEffect(() => {
         const fetchTransactions = async () => {
-            const loadedTransactions = await TransactionModel.select().run()
+            const loadedTransactions: TransactionType[] =
+                await TransactionModel.getAll()
             setTransactions(loadedTransactions)
         }
         fetchTransactions()

@@ -1,12 +1,11 @@
-// src/core/validations/transactionValidation.ts
 import { z } from 'zod'
 
-export const transactionSchema = z.object({
+export const TransactionValidation = z.object({
     id: z.string(),
     amount: z.number(),
-    description: z.string(),
+    description: z.string().optional(),
     date: z.date(),
-    category: z.string()
+    category: z.string().optional()
 })
 
-export type TransactionType = z.infer<typeof transactionSchema>
+export type TransactionType = z.infer<typeof TransactionValidation>
