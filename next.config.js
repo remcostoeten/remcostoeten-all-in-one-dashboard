@@ -8,9 +8,9 @@ const withNextIntl = require('next-intl/plugin');
 const withNextIntlConfig = withNextIntl('./src/core/libs/i18n.ts');
 
 const nextConfig = {
-reactStrictMode: true,
+reactStrictMode: false,
 typescript: {
-  ignoreBuildErrors: true,
+  ignoreBuildErrors: false,
 },
 eslint: {
   ignoreDuringBuilds: true,
