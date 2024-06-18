@@ -77,6 +77,7 @@ This is a personal project that combines various tools and features I've built o
 -   [SaaS landing with dope bento glass style](https://www.hover.dev/templates/demo/the-startup)
 -   [Vercel blog page with cool gradient](https://vercel.com/blog/deploy-summary)
 -   [Supabase dashboard - loaders, collapse menu](https://supabase.com/dashboard/projects)
+-   [Fancy ?all-in-one? dashboard](https://web.clay.earth/)
 
 ### Too fancy ui stuff
 
