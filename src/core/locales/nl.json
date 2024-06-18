@@ -1,4 +1,31 @@
 {
+    "Landing": {
+        "usp1": "Het",
+        "usp2": "persoonlijke dashboard",
+        "intro_heading": "Eén oplossing voor al je behoeften",
+        "intro_description": "Beheer je bestanden snel, het is makkelijk, en het is gratis. Beheer je bestanden, financiën, snippets, to-do lijsten. En nog veel meer op de roadmap.",
+        "get_started": "Begin nu",
+        "header": {
+            "title": "Geen ads, cloudflare of irritante re-captchas",
+            "subtitle": "Die drie zijn de primaire drijfveer achter dit project. ",
+            "description": "Gebouwd voor mezelf, als front-end developer. Maar wie weet haal ik ooit twee users!."
+        },
+        "replace": "Vervang deze",
+        "features": {
+            "manageFinance": {
+                "name": "Persoonlijke Financiën",
+                "description": "Alles-in-één oplossing voor het beheren van financiën, veilige opslag, codefragmenten en tools."
+            },
+            "secureStorage": {
+                "name": "Veilige Bestandsopslag",
+                "description": "Houd je bestanden veilig met ingebouwde beveiliging."
+            },
+            "codeSnippets": {
+                "name": "Codefragmenten en Tools",
+                "description": "Toegang tot tools zoals URL/tekst-extractors, geolocatiezoeker, SVG naar CSS, HTML naar React, en meer."
+            }
+        }
+    },
     "RootLayout": {
         "home_link": "Startpagina",
         "about_link": "Over",
@@ -35,12 +62,12 @@
         "add_Task": "Voeg een taak toe"
     },
     "TaskForm": {
-        "title": "Titre",
-        "titlePlaceholder": "Entrez votre titre ici...",
-        "titleError": "Le titre est requis",
-        "save": "Enregistrer",
-        "update": "Mettre à jour",
-        "create": "Créer"
+        "title": "Titel",
+        "titlePlaceholder": "Voer hier uw titel in...",
+        "titleError": "De titel is vereist",
+        "save": "Opslaan",
+        "update": "Bijwerken",
+        "create": "Aanmaken"
     },
     "About": {
         "meta_title": "Over",

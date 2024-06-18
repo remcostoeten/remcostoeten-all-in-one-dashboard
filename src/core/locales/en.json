@@ -1,4 +1,31 @@
 {
+    "Landing": {
+        "usp1": "The",
+        "usp2": "all-in-one dashboard",
+        "intro_heading": "Built because who wants 10 different dashboards?",
+        "intro_description": "And I hate waiting for Cloudflare to load. So, I built this. It's fast, it's simple, and it's free. Manage your files fast, it's easy, and it's free. Manage your files, finances, snippets, to-do lists.",
+        "get_started": "Get Started",
+        "replace": "Replace these",
+        "header": {
+            "title": "No ads, Cloudflare, or annoying re-captchas",
+            "subtitle": "Annoyance: the primary driving force behind this project.",
+            "description": "Built for myself, as a front-end developer. But who knows, maybe I'll get two users someday!."
+        },
+        "features": {
+            "manageFinance": {
+                "name": "Manage personal finance.",
+                "description": "A one-stop solution for managing personal finance, secure file storage, code snippets, and tools."
+            },
+            "secureStorage": {
+                "name": "Secure file storage.",
+                "description": "Keep your files secure with built-in secure file storage solutions."
+            },
+            "codeSnippets": {
+                "name": "Code snippets and tools.",
+                "description": "Access various tools and features like URL/text extractors, (reverse) geolocation finder, SVG to CSS-pseudo elements, HTML to JSX/TSX converter, and more."
+            }
+        }
+    },
     "RootLayout": {
         "home_link": "Startpagina",
         "about_link": "Over",

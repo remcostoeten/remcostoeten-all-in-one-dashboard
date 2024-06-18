@@ -23,8 +23,6 @@ import {
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
 import { components } from '@/core/data/menu-items'
-import { motion } from 'framer-motion'
-import { defaultTransition, navVariants } from '@/core/utils/animations'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
@@ -32,14 +30,17 @@ import { Profile } from './Profile'
 export default function NavBar() {
     const { userId } = useAuth()
 
+    const fixedOnScroll = () => {
+        const nav = document.querySelector('nav')
+        if (nav) {
+            window.scrollY > 0
+                ? nav.classList.add('shadow-md')
+                : nav.classList.remove('shadow-md')
+        }
+    }
+
     return (
-        <motion.nav
-            variants={navVariants}
-            initial='hidden'
-            animate='visible'
-            transition={defaultTransition}
-            className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'
-        >
+        <nav className='fixed z-10 flex min-w-full justify-between border-b bg-white p-2 dark:bg-black dark:bg-opacity-50'>
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
@@ -127,7 +128,7 @@ export default function NavBar() {
                 {userId && <Profile />}
                 <ModeToggle />
             </div>
-        </motion.nav>
+        </nav>
     )
 }
 

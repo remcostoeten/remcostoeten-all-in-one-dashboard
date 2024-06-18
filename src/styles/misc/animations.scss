@@ -1,0 +1,35 @@
+$bezier: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$bezier2: cubic-bezier(0.645, 0.045, 0.355, 1);
+$duration: 0.74s;
+
+.logo {
+    transition: all $duration $bezier2;
+    z-index: 2222;
+
+    path {
+        box-shadow: rgba(49, 131, 1) 0px 5px 15px;
+        transition: transform 0.2s $bezier2 $duration;
+        transition:
+            fill $duration $bezier2,
+            transform 0.3s $bezier;
+        transform-origin: bottom right;
+
+        &:nth-child(2) {
+            transform-origin: top left;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.04);
+        path {
+            fill: #3b82f6;
+            // transform: scale(1.04) rotate(3deg);
+            &:nth-child(2) {
+                transform: scale(1.04);
+                transform-origin: top left;
+            }
+        }
+    }
+}
+
+// End animation for icon log hover

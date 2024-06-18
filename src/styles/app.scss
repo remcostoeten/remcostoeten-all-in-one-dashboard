@@ -1,13 +1,9 @@
 @import './theme/colors.scss';
 @import './theme/fonts.scss';
 @import './theme/theme.scss';
-@import './theme/variables.scss';
 
-@import './theme/animations.scss';
-
-@import './components/grid-rays.scss';
-
-@import './utilities/utilities.scss';
+@import './misc/animations.scss';
+@import './misc/utilities.scss';
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +11,6 @@
 
 @layer base {
     :root {
-        --nav-height: 70px;
         --sidebar-width: 5.25rem;
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
@@ -74,37 +69,6 @@
     }
 }
 
-.font-interDisplay {
-    font-family: 'Inter Display';
-}
-
-.font-inter-ui-normal {
-    font-family: 'Inter UI';
-    font-weight: 400;
-}
-
-.font-inter-ui-bold {
-    font-family: 'Inter UI';
-    font-weight: 800;
-}
-
-.font-inter-ui-italic {
-    font-family: 'Inter UI';
-    font-style: italic;
-    font-weight: 400;
-}
-
-.font-inter-ui-italic-bold {
-    font-family: 'Inter UI';
-    font-style: italic;
-    font-weight: 800;
-}
-
-.font-inter-display-semibold {
-    font-family: 'Inter Display';
-    font-weight: 600;
-}
-
 /* Add this to your global CSS file or a relevant CSS module */
 body,
 html,
@@ -113,24 +77,4 @@ html,
     width: 100%;
     margin: 0;
     padding: 0;
-}
-
-.relative {
-    position: relative;
-}
-
-.absolute {
-    position: absolute;
-}
-
-.z-10 {
-    z-index: 10;
-}
-
-.z-0 {
-    z-index: 0;
-}
-
-.skew-depth {
-    transform: skewY(10deg);
 }
