@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+// @import './theme/colors.scss';
+@import './theme/theme.scss';
+@import './theme/animations.scss';
+
 
 @layer base {
   :root {
