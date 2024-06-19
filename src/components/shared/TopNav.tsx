@@ -2,22 +2,20 @@ import CurrentTime from './navigation/CurrentTime'
 import TopNavSettings from './navigation/TopNavSettings'
 import Breadcrumbs from './navigation/Breadcrumbs'
 import LocaleSwitcher from '../LocaleSwitcher'
-import Settings from './navigation/Settings'
 import DisplayCity from './navigation/DisplayCity'
+import Settings from './navigation/Settings'
 
-export default async function TopNav() {
+export default function TopNav() {
     return (
-        <div className='flex flex-col justify-center whitespace-nowrap bg-gray-900 text-xs h-top-bar py-1'>
-            <nav className='flex gap-5 justify-between h-top-bar pl-4 w-full max-md:flex-wrap max-md:max-w-full pr-6 items-center'>
-                <Breadcrumbs />
-                <div className='flex gap-5 items-center'>
-                    <TopNavSettings />
-                    <Settings />
-                    <LocaleSwitcher />
-                    <DisplayCity />
-                    <CurrentTime />
-                </div>
-            </nav>
+        <div className='flex w-full items-center justify-between whitespace-nowrap flex-1 h-top-bar px-4 pr-8 py-1'>
+            <Breadcrumbs />
+            <div className='flex gap-6 items-center justify-end'>
+                <TopNavSettings />
+                <Settings />
+                <LocaleSwitcher />
+                <DisplayCity />
+                <CurrentTime />
+            </div>
         </div>
     )
 }

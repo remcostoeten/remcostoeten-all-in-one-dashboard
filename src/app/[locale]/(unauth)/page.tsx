@@ -2,13 +2,12 @@ import HeroSection from '@/components/marketing/HeroSection'
 import SideBySide from '@/components/marketing/SideBySide'
 import type { ReactNode } from 'react'
 import CardHover from '@/components/effects/CardHoverEffect'
-import SmoothScroll from '@/components/effects/SmoothScroll'
 import Roadmap from '@/app/[locale]/readme/page'
 import Circles from '@/components/effects/animated-logo-cloud'
 
 export default function Index() {
     return (
-        <SmoothScroll>
+        <>
             {IosNotesIcon()}
             <Section spacingY='regular'>
                 <HeroSection />
@@ -24,7 +23,7 @@ export default function Index() {
                 <CardHover />
             </Section>
             <Roadmap />
-        </SmoothScroll>
+        </>
     )
 }
 

@@ -47,10 +47,10 @@ function Breadcrumbs() {
 
     return (
         <nav
-            className='flex gap-2 px-4 text-xs leading-5 rounded h-nav bg-white bg-opacity-10 h-[26px]'
+            className=' bg-gray-900 bg-opacity-10 text-white text-opacity-80 rounded-lg flex items-center gap-2 flex-1'
             aria-label='Breadcrumb'
         >
-            <ol className='flex text-xs  rounded bg-icon-active-bg'>
+            <ol className='flex text-xs bg-white px-2 py-1  bg-opacity-10   rounded bg-icon-active-bg'>
                 {formattedSegments.map((segment, index) => (
                     <li
                         key={index}

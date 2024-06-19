@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Popover, PopoverTrigger, PopoverContent } from './ui/popover'
+import { PopoverTrigger, PopoverContent, Popover } from './ui/popover'
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from '@/core/libs/i18nNavigation'
 
@@ -25,14 +25,11 @@ export default function LocaleSwitcherPopover() {
         <div className='flex items-center space-x-4'>
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
-                    <button className='border-0 bg-transparent'>
-                        {flagMap[locale]?.flag || '🇺🇸'}
-                    </button>
+                    <span>{flagMap[locale]?.flag || '🇺🇸'}</span>
                 </PopoverTrigger>
                 <PopoverContent
                     className='p-4 w-[205px] flex flex-col gap-4 bg-[#2A2939] border border-icon'
                     side='bottom'
-                    align='start'
                 >
                     {Object.entries(flagMap).map(([key, { flag, name }]) => (
                         <button
