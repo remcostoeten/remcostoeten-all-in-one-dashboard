@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import type { ReactNode } from 'react'
 
 import HeroSection from '@/components/marketing/HeroSection'
-import { AppConfig } from '@/core/utils/AppConfig'
+import siteConfig from '@/core/data/site-config'
 
 const BaseTemplate = (props: {
     leftNav: ReactNode
@@ -18,7 +18,7 @@ const BaseTemplate = (props: {
                     <div className='pb-8 pt-16'>
                         <HeroSection />
                         <h1 className='text-3xl font-bold text-gray-900'>
-                            {AppConfig.name}
+                            {siteConfig.name}
                         </h1>
                         <h2 className='text-xl'>{t('description')}</h2>
                     </div>
@@ -39,7 +39,7 @@ const BaseTemplate = (props: {
                 <main className='pt-16'>{props.children}</main>{' '}
                 {/* Add padding-top here */}
                 <footer className='border-t border-gray-300 py-8 text-center text-sm'>
-                    © Copyright {new Date().getFullYear()} {AppConfig.name}.
+                    © Copyright {new Date().getFullYear()} {siteConfig.name}.
                     {` ${t('made_with')} `}
                     <a
                         href='https://creativedesignsguru.com'

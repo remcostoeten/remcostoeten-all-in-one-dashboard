@@ -8,22 +8,26 @@ export default function DisplayCity() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const cachedCity = localStorage.getItem('city')
-        if (cachedCity) {
-            setCity(cachedCity)
-            setLoading(false)
-        } else {
-            getCity()
-                .then((fetchedCity) => {
+        const fetchCity = async () => {
+            const cachedCity = localStorage.getItem('city')
+            if (cachedCity) {
+                setCity(cachedCity)
+                setLoading(false)
+            } else {
+                try {
+                    const fetchedCity = await getCity()
                     localStorage.setItem('city', fetchedCity)
                     setCity(fetchedCity)
-                })
-                .catch((error) => {
+                } catch (error) {
                     console.error(error)
                     setCity('Unknown City')
-                })
-                .finally(() => setLoading(false))
+                } finally {
+                    setLoading(false)
+                }
+            }
         }
+
+        fetchCity()
     }, [])
 
     if (loading) {

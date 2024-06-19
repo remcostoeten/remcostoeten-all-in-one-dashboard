@@ -2,6 +2,7 @@
 
 import { toast } from 'sonner'
 import Search from './Search'
+import SearchDialog from './Search'
 
 export default function TopNavSettings() {
     return (
@@ -46,7 +47,7 @@ export default function TopNavSettings() {
                 showToast={true}
                 message='Toggle theme (not implemented)'
             >
-                <Search />
+                <SearchDialog />
             </SettingWrapper>
         </div>
     )

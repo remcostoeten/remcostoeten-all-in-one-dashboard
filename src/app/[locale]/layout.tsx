@@ -1,5 +1,4 @@
 import NavBar from '@/components/shared/theme/navbar'
-import { AppConfig } from '@/core/utils/AppConfig'
 import '../../styles/app.scss'
 import type { Metadata } from 'next'
 import { Toaster } from 'sonner'
@@ -11,6 +10,7 @@ import { enUS, frFR } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import TopNav from '@/components/shared/TopNav'
 import { Analytics } from '@vercel/analytics/react'
+import siteConfig from '@/core/data/site-config'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -22,7 +22,7 @@ export default function RootLayout(props: {
     params: { locale: string }
 }) {
     // Validate that the incoming `locale` parameter is valid
-    if (!AppConfig.locales.includes(props.params.locale)) notFound()
+    if (!siteConfig.locales.includes(props.params.locale)) notFound()
 
     // Using internationalization in Client Components
     const messages = useMessages()
