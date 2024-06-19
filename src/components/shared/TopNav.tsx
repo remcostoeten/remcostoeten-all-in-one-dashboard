@@ -11,7 +11,6 @@ export default function TopNav() {
             <Breadcrumbs />
             <div className='flex gap-6 items-center justify-end'>
                 <TopNavSettings />
-                <Settings />
                 <LocaleSwitcher />
                 <DisplayCity />
                 <CurrentTime />

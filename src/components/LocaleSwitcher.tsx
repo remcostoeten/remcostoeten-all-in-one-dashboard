@@ -22,7 +22,7 @@ export default function LocaleSwitcherPopover() {
     }
 
     return (
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-4 cursor-pointer'>
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                     <span>{flagMap[locale]?.flag || '🇺🇸'}</span>

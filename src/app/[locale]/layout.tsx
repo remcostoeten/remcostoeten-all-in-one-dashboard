@@ -10,7 +10,6 @@ import type { ReactNode } from 'react'
 import { enUS, frFR } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import TopNav from '@/components/shared/TopNav'
-import GlowBackground from '@/components/theme/GlowBackground'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
