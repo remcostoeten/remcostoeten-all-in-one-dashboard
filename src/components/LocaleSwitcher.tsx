@@ -28,7 +28,7 @@ export default function LocaleSwitcherPopover() {
                     <span>{flagMap[locale]?.flag || '🇺🇸'}</span>
                 </PopoverTrigger>
                 <PopoverContent
-                    className='p-4 w-[205px] flex flex-col gap-4 bg-[#2A2939] border border-icon'
+                    className='p-4 w-[205px] flex flex-col gap-4 bg-popup border border-icon'
                     side='bottom'
                 >
                     {Object.entries(flagMap).map(([key, { flag, name }]) => (

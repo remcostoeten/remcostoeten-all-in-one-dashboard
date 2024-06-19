@@ -67,6 +67,8 @@ const config: Config = {
                 'text-secondary': 'var(--text-secondary)',
                 'text-active': 'var(--text-active)',
                 'button-primary': 'var(--button-primary)',
+                popup: 'rgb(42, 41, 57)',
+                'popup-hover': 'rgb(42, 41, 57)',
                 'button-primary-hover': 'var(--button-primary-hover)',
                 'top-bar': 'var(--top-bar)',
                 primary: {

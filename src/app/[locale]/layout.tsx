@@ -10,6 +10,7 @@ import type { ReactNode } from 'react'
 import { enUS, frFR } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import TopNav from '@/components/shared/TopNav'
+import { Analytics } from '@vercel/analytics/react'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -41,13 +42,6 @@ export default function RootLayout(props: {
         signUpUrl = `/${props.params.locale}${signUpUrl}`
         dashboardUrl = `/${props.params.locale}${dashboardUrl}`
     }
-    const ellipseProps = {
-        cx: 735.902,
-        cy: -440.872,
-        rx: 630.75,
-        ry: 638,
-        transform: 'rotate(5.11905 735.902 -440.872)'
-    }
     return (
         <html lang={props.params.locale} className='dark'>
             <body className={`${plexsans.className} overflow-x-hidden`}>
@@ -74,6 +68,7 @@ export default function RootLayout(props: {
                         >
                             {props.children}
                         </main>{' '}
+                        <Analytics />
                         <Toaster invert />
                     </ClerkProvider>
                 </NextIntlClientProvider>
