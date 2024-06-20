@@ -5,6 +5,7 @@
 @import './misc/animations.scss';
 @import './misc/utilities.scss';
 @import './misc/analog-clock.scss';
+@import './misc/scrollbar.scss';
 
 @tailwind base;
 @tailwind components;
@@ -70,12 +71,6 @@
     }
 }
 
-/* Add this to your global CSS file or a relevant CSS module */
-body,
-html,
-#__next {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+* {
+  scrollbar-color: rgba(255, 255, 255, .1);
 }

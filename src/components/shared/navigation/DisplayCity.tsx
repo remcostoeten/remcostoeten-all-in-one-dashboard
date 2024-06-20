@@ -36,7 +36,7 @@ export default function DisplayCity({
 
     if (loading) {
         return (
-            <div className='mx-2 animate-pulse bg-gray-300 h-3 w-24 rounded-md' />
+            <div className='mx-2 animate-pulse bg-gray-300 h-3 w-12 rounded-xs' />
         )
     }
 

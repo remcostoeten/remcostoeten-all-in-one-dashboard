@@ -13,7 +13,7 @@
         "clean": "rimraf .next .swc out coverage",
         "lint": "next lint",
         "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-        "format": "prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+        "format": "prettier '**/*.{json,yaml}' --write --ignore-path ~/.prettierignore",
         "typecheck": "tsc --noEmit --pretty",
         "commit": "git add * ; cz",
         "push": "git add * ; cz ;git push",

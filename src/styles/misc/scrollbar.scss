@@ -1,0 +1,48 @@
+@mixin scroll-style($size: 10px,
+  $thumb: none,
+  $thumb-color: grey,
+  $thumb-radius: 10px,
+  $track-color: transparent,
+  $track-radius: 10px) {
+
+  // Support for Firefox
+  @supports not (selector(::-webkit-scrollbar-thumb)) {
+    scrollbar-color: $thumb-color $track-color;
+    scrollbar-width: thin;
+  }
+
+  // For WebKit-based browsers
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    &-track {
+      background-color: $track-color;
+      border-radius: $track-radius;
+    }
+    &-thumb {
+      background-color: $thumb-color;
+      background-image: $thumb;
+      border-radius: $thumb-radius;
+    }
+  }
+}
+
+html {
+  @include scroll-style(
+    $size: var(--scroll-size, 10px),
+    $thumb:  var(--scroll-thumb, none),
+    $thumb-color: var(--scroll-thumb-color, grey),
+    $thumb-radius: var(--scroll-thumb-radius, var(--scroll-radius)),
+    $track-color: var(--scroll-track, transparent),
+    $track-radius: var(--scroll-track-radius, var(--scroll-radius)),
+  );
+}
+
+// Example customization
+:root {
+  --scroll-size: 12px;
+  --scroll-radius: 12px;
+  --scroll-track: rgba(255, 255, 255 .41);
+  --scroll-thumb-color: var(--theme-primary);
+  --scroll-thumb-radius: 12px;
+}

@@ -54,7 +54,7 @@ export default function NavBar() {
     return (
         <nav
             ref={ref}
-            className={`z-10 flex min-w-full justify-between border-b bg-white p-2 transition-all duration-1000 dark:bg-black dark:bg-opacity-50 ${isFixed ? 'fixed top-0 ' : '-top-5'}`}
+            className={`z-[999] flex min-w-full justify-between border-b bg-white p-2 transition-all duration-1000 dark:bg-black ${isFixed ? 'fixed top-0 ' : ''}`}
         >
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>

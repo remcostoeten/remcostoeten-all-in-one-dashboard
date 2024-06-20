@@ -71,6 +71,7 @@ const config: Config = {
                 'popup-hover': 'rgb(42, 41, 57)',
                 'button-primary-hover': 'var(--button-primary-hover)',
                 'top-bar': 'var(--top-bar)',
+                'search-hover': 'var(--search-hover',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))'
