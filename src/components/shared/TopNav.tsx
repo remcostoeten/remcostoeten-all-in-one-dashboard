@@ -1,8 +1,7 @@
-import CurrentTime from './navigation/CurrentTime'
+import { CurrentTime } from './navigation'
 import Breadcrumbs from './navigation/Breadcrumbs'
 import DisplayCity from './navigation/DisplayCity'
-import CustomPopover from './UiWrappers/Dialog'
-import { Button } from '../ui/button'
+import SearchDialog from './navigation/Search'
 
 export default function TopNav() {
     return (
@@ -11,11 +10,8 @@ export default function TopNav() {
             <div className='flex gap-6 items-center justify-end'>
                 {/* <TopNavSettings /> */}
                 {/* <LocaleSwitcher /> */}
-                {/* <CommandPalette/>  */}
-                  <CustomPopover trigger={<Button>Open Popover</Button>}>
-        <p>This is the popover content.</p>
-      </CustomPopover>
-                  <DisplayCity />
+<SearchDialog />
+                <DisplayCity />
                 <CurrentTime />
             </div>
         </div>
