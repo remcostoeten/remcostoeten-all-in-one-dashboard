@@ -3,6 +3,8 @@ import {
     PopoverContent,
     PopoverTrigger
 } from '@/components/ui/popover'
+import type { ReactNode } from 'react'
+import type React from 'react'
 
 export default function CustomPopover({
     trigger,
@@ -11,7 +13,7 @@ export default function CustomPopover({
 }: {
     trigger: JSX.Element
     align?: 'center' | 'end' | 'start'
-    children: React.ReactNode
+    children: ReactNode
 }) {
     return (
         <Popover>
@@ -22,8 +24,9 @@ export default function CustomPopover({
                     backgroundColor: 'rgb(42, 41, 57)',
                     border: '1px solid rgba(255, 255, 255, 0.09)',
                     borderRadius: 'var(--radius)',
-                    padding: '16px',
-                    color: 'white'
+                    padding: '0',
+                    color: 'white',
+                    width: '175px'
                 }}
             >
                 {children}

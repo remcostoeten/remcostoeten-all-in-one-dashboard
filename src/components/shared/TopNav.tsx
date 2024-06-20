@@ -10,7 +10,7 @@ export default function TopNav() {
             <div className='flex gap-6 items-center justify-end'>
                 {/* <TopNavSettings /> */}
                 {/* <LocaleSwitcher /> */}
-<SearchDialog />
+                <SearchDialog />
                 <DisplayCity />
                 <CurrentTime />
             </div>

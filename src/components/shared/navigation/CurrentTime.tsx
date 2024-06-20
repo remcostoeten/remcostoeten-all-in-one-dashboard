@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import CustomPopover from '../Wrappers/CustomPopover'
-import { useTime } from 'framer-motion'
-import React from 'react'
+import DisplayCity from './DisplayCity'
 
 type CurrentTimeProps = {
     format?: 'HH:MM' | 'full'
@@ -11,13 +10,13 @@ type CurrentTimeProps = {
 }
 
 const useCustomTime = () => {
-    const now = new Date();
+    const now = new Date()
     return {
         hours: now.getHours(),
         minutes: now.getMinutes(),
-        seconds: now.getSeconds(),
-    };
-};
+        seconds: now.getSeconds()
+    }
+}
 
 function CurrentTime({
     format = 'HH:MM',
@@ -25,7 +24,7 @@ function CurrentTime({
 }: CurrentTimeProps) {
     const [time, setTime] = useState(new Date())
     const [blink, setBlink] = useState(true)
-    const [isPopoverOpen, setIsPopoverOpen] = useState(false) // State to manage popover visibility
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -50,9 +49,14 @@ function CurrentTime({
 
     const timeString = time.toLocaleTimeString([], timeOptions)
     const parts = timeString.split(':')
-    const formattedTime = `${parts[0]}${blink ? ':' : ' '}${parts.slice(1).join(':')}`
-
-    const handleClick = () => setIsPopoverOpen(!isPopoverOpen) // Toggle popover visibility
+    const formattedTime = (
+        <div className='flex items-center space-x-1'>
+            {parts[0]}
+            <div className='w-1 relative'>{blink && <span>:</span>}</div>
+            {parts.slice(1).join(':')}
+        </div>
+    )
+    const handleClick = () => setIsPopoverOpen(!isPopoverOpen)
 
     return (
         <CustomPopover
@@ -68,7 +72,12 @@ function CurrentTime({
                 </time>
             }
         >
-            {isPopoverOpen && <AnalogClock />}
+            {isPopoverOpen && (
+                <div className='flex items-center  flex-col ga'>
+                    <AnalogClock />
+                    <DisplayCity className='-translate-y-2' />
+                </div>
+            )}
         </CustomPopover>
     )
 }
@@ -93,7 +102,8 @@ function AnalogClock() {
         '2'
     ]
 
-    const markerIndexToRadians = (markerIndex: number): number => (Math.PI * markerIndex) / 30
+    const markerIndexToRadians = (markerIndex: number): number =>
+        (Math.PI * markerIndex) / 30
 
     const drawMinuteMarker = (markerIndex: number) => (
         <g key={markerIndex} style={{ stroke: 'black' }}>
@@ -135,7 +145,7 @@ function AnalogClock() {
         <svg
             viewBox='0 0 300 300'
             style={{
-                scale: '1.5',
+                scale: '1',
                 maxWidth: '500px',
                 display: 'block',
                 margin: '0 auto'
@@ -147,7 +157,7 @@ function AnalogClock() {
                     style={{
                         stroke: 'black',
                         backgroundColor: 'white',
-                        fill: 'transparent',
+                        fill: 'rgba(255, 255, 255,.3)',
                         strokeWidth: '10'
                     }}
                 />

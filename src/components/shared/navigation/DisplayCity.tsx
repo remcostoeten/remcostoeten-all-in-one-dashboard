@@ -3,7 +3,11 @@
 import { getCity } from '@/core/@server'
 import { useEffect, useState } from 'react'
 
-export default function DisplayCity() {
+export default function DisplayCity({
+    className = ''
+}: {
+    className?: string
+}) {
     const [city, setCity] = useState('')
     const [loading, setLoading] = useState(true)
 
@@ -36,5 +40,5 @@ export default function DisplayCity() {
         )
     }
 
-    return <p className='text-white'>{city}</p>
+    return <p className={`text-white ${className}`}>{city}</p>
 }
