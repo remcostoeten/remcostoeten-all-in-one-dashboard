@@ -81,8 +81,8 @@ dependencies:
     specifier: ^1.0.45
     version: 1.1.3(react-dom@18.3.1)(react@18.3.1)
   lucide-react:
-    specifier: ^0.394.0
-    version: 0.394.0(react@18.3.1)
+    specifier: ^0.395.0
+    version: 0.395.0(react@18.3.1)
   mini-svg-data-uri:
     specifier: ^1.4.4
     version: 1.4.4
@@ -3731,12 +3731,6 @@ packages:
     resolution: {integrity: sha512-wK1pzsJVVAjYCSZWQoWHziQZbNggXFDUEIGf54g4ZM/ERuP86uGdWeKZWMYlqTPMZfHJJvLPyogXGvCOg87yLQ==}
     dependencies:
       '@types/node': 20.14.6
-    dev: false
-
-  /@types/node@20.14.5:
-    resolution: {integrity: sha512-aoRR+fJkZT2l0aGOJhuA8frnCSoNX6W7U2mpNq63+BxBIj5BQFt8rHy627kijCmm63ijdSdwvGgpUsU6MBsZZA==}
-    dependencies:
-      undici-types: 5.26.5
     dev: false
 
   /@types/node@20.14.6:
@@ -7871,7 +7865,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.6
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -8280,8 +8274,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-react@0.394.0(react@18.3.1):
-    resolution: {integrity: sha512-PzTbJ0bsyXRhH59k5qe7MpTd5MxlpYZUcM9kGSwvPGAfnn0J6FElDwu2EX6Vuh//F7y60rcVJiFQ7EK9DCMgfw==}
+  /lucide-react@0.395.0(react@18.3.1):
+    resolution: {integrity: sha512-6hzdNH5723A4FLaYZWpK50iyZH8iS2Jq5zuPRRotOFkhu6kxxJiebVdJ72tCR5XkiIeYFOU5NUawFZOac+VeYw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
