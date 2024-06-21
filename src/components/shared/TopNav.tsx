@@ -1,9 +1,8 @@
-import CurrentTime from './navigation/CurrentTime'
+import {CurrentTime} from './navigation/CurrentTime'
 import TopNavSettings from './navigation/TopNavSettings'
 import Breadcrumbs from './navigation/Breadcrumbs'
 import LocaleSwitcher from '../LocaleSwitcher'
 import DisplayCity from './navigation/DisplayCity'
-import Settings from './navigation/Settings'
 
 export default function TopNav() {
     return (

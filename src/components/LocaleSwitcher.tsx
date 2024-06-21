@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from '@/core/libs/i18nNavigation'
 import CustomPopover from './theme/shells/CustomPopover'

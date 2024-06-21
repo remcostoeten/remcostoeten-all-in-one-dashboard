@@ -1,9 +1,7 @@
 'use client'
 
+import CustomPopover from '@/components/theme/shells/CustomPopover'
 import { useState, useEffect } from 'react'
-import CustomPopover from '../Wrappers/CustomPopover'
-import { useTime } from 'framer-motion'
-import React from 'react'
 
 type CurrentTimeProps = {
     format?: 'HH:MM' | 'full'
@@ -11,13 +9,13 @@ type CurrentTimeProps = {
 }
 
 const useCustomTime = () => {
-    const now = new Date();
+    const now = new Date()
     return {
         hours: now.getHours(),
         minutes: now.getMinutes(),
-        seconds: now.getSeconds(),
-    };
-};
+        seconds: now.getSeconds()
+    }
+}
 
 function CurrentTime({
     format = 'HH:MM',
@@ -25,7 +23,7 @@ function CurrentTime({
 }: CurrentTimeProps) {
     const [time, setTime] = useState(new Date())
     const [blink, setBlink] = useState(true)
-    const [isPopoverOpen, setIsPopoverOpen] = useState(false) // State to manage popover visibility
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -59,7 +57,7 @@ function CurrentTime({
             align='end'
             trigger={
                 <time
-                    className='cursor-pointer'
+                    className='cursor-pointer w-8 h-8' 
                     dateTime={time.toISOString()}
                     aria-live='polite'
                     onClick={handleClick}
@@ -93,7 +91,8 @@ function AnalogClock() {
         '2'
     ]
 
-    const markerIndexToRadians = (markerIndex: number): number => (Math.PI * markerIndex) / 30
+    const markerIndexToRadians = (markerIndex: number): number =>
+        (Math.PI * markerIndex) / 30
 
     const drawMinuteMarker = (markerIndex: number) => (
         <g key={markerIndex} style={{ stroke: 'black' }}>
@@ -136,7 +135,6 @@ function AnalogClock() {
             viewBox='0 0 300 300'
             style={{
                 scale: '1.5',
-                maxWidth: '500px',
                 display: 'block',
                 margin: '0 auto'
             }}
@@ -146,7 +144,7 @@ function AnalogClock() {
                     r='110'
                     style={{
                         stroke: 'black',
-                        backgroundColor: 'white',
+                        backgroundColor: 'wh',
                         fill: 'transparent',
                         strokeWidth: '10'
                     }}
@@ -181,4 +179,4 @@ function AnalogClock() {
         </svg>
     )
 }
-export { CurrentTime, AnalogClock }
+export { CurrentTime}
