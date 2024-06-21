@@ -1,7 +1,7 @@
 'use client'
 
 import { toast } from 'sonner'
-import Search from './Search'
+import { Search } from '.'
 
 export default function TopNavSettings() {
     return (
@@ -76,8 +76,4 @@ const SettingWrapper: React.FC<SettingWrapperProps> = ({
             {children}
         </div>
     )
-}
-
-function toggleTheme() {
-    // Implementation placeholder
 }
