@@ -47,7 +47,7 @@ function Breadcrumbs() {
 
     return (
         <nav
-            className=' bg-gray-900 bg-opacity-10 text-white text-opacity-80 rounded-lg flex items-center gap-2 flex-1'
+            className='bg-gray-900 bg-opacity-10 text-white text-opacity-80 rounded-lg flex items-center gap-2 flex-1'
             aria-label='Breadcrumb'
         >
             <ol className='flex text-xs bg-white px-2 py-1  bg-opacity-10   rounded bg-icon-active-bg'>

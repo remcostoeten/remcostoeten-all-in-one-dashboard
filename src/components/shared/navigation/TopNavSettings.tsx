@@ -72,13 +72,13 @@ const SettingWrapper: React.FC<SettingWrapperProps> = ({
     }
 
     return (
-        <button
+        <div
             className='bg-none border-none m-0 p-0 rounded-none'
             onClick={handleClick}
             {...props}
         >
             {children}
-        </button>
+        </div>
     )
 }
 

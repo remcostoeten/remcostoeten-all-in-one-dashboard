@@ -48,7 +48,7 @@ function CurrentTime({
 
     const timeString = time.toLocaleTimeString([], timeOptions)
     const parts = timeString.split(':')
-    const formattedTime = `${parts[0]}${blink ? ':' : ' '}${parts.slice(1).join(':')}`
+    const formattedTime = `${parts[0]}<span style="opacity: ${blink ? '1' : '0'};">:</span>${parts.slice(1).join(':')}`
 
     const handleClick = () => setIsPopoverOpen(!isPopoverOpen) // Toggle popover visibility
 
@@ -57,13 +57,12 @@ function CurrentTime({
             align='end'
             trigger={
                 <time
-                    className='cursor-pointer w-8 h-8'
+                    className='cursor-pointer'
                     dateTime={time.toISOString()}
                     aria-live='polite'
                     onClick={handleClick}
-                >
-                    {formattedTime}
-                </time>
+                    dangerouslySetInnerHTML={{ __html: formattedTime }} // Use dangerouslySetInnerHTML to render the HTML string
+                ></time>
             }
         >
             {isPopoverOpen && <AnalogClock />}
@@ -179,4 +178,4 @@ function AnalogClock() {
         </svg>
     )
 }
-export { CurrentTime}
+export { CurrentTime }

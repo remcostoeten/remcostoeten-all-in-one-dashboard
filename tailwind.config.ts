@@ -27,7 +27,8 @@ const config: Config = {
                     'linear-gradient(to bottom, var(--tw-gradient-stops), #000000)' // Customize the solid color here
             },
             padding: {
-                nav: 'var(--nav-height)'
+                nav: 'var(--nav-height)',
+                outskirts: '1.25rem'
             },
             width: {
                 sidebar: 'var(--sidebar-width)',
