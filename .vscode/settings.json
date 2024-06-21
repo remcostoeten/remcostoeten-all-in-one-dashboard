@@ -62,6 +62,9 @@
         },
         {
             "folderPath": "personal-panel/src/styles/theme/utilities.scss/"
+        },
+        {
+            "folderPath": "personal-panel/src/components/theme/shells/pop.tsx/"
         }
     ],
     "workbench.colorCustomizations": {

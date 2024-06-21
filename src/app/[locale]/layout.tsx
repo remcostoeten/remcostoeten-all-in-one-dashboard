@@ -7,7 +7,7 @@ import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
-import { enUS, frFR } from '@clerk/localizations'
+import { enUS, nlNL } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import TopNav from '@/components/shared/TopNav'
 
@@ -32,8 +32,8 @@ export default function RootLayout(props: {
     let signUpUrl = '/sign-up'
     let dashboardUrl = '/dashboard'
 
-    if (props.params.locale === 'fr') {
-        clerkLocale = frFR
+    if (props.params.locale === 'nl') {
+        clerkLocale = nlNL
     }
 
     if (props.params.locale !== 'en') {
@@ -83,6 +83,32 @@ export default function RootLayout(props: {
 }
 
 export const metadata: Metadata = {
+    title: 'Remco Stoeten - all in one dashboard',
+    description:
+        'A comprehensive personal dashboard built with NextJS 15, TypeScript, Drizzle, Turso (SQLite), TailwindCSS, Clerk, Uploadthing, ShadCN-UI, and more. This all-in-one solution offers tools for file storage, URL extractors, notes, finances, kanban, HTML to TSX, SVG to CSS, reverse geolocation, and more. Currently migrating features from a previous.',
+    keywords: [
+        'Remco Stoeten',
+        'all in one dashboard',
+        'personal dashboard',
+        'NextJS 15',
+        'TypeScript',
+        'Drizzle',
+        'Turso',
+        'SQLite',
+        'TailwindCSS',
+        'Clerk',
+        'Uploadthing',
+        'ShadCN-UI',
+        'file storage',
+        'URL extractors',
+        'notes',
+        'finances',
+        'kanban',
+        'HTML to TSX',
+        'SVG to CSS',
+        'reverse geolocation'
+    ],
+
     icons: [
         {
             rel: 'apple-touch-icon',

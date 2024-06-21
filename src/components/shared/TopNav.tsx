@@ -1,9 +1,6 @@
-import CurrentTime from './navigation/CurrentTime'
-import TopNavSettings from './navigation/TopNavSettings'
-import Breadcrumbs from './navigation/Breadcrumbs'
-import LocaleSwitcher from '../LocaleSwitcher'
-import DisplayCity from './navigation/DisplayCity'
-import Settings from './navigation/Settings'
+import { CurrentTime, DisplayCity, LocaleSwitcher, TopNavSettings } from "./navigation";
+import Breadcrumbs from "./navigation/Breadcrumbs";
+
 
 export default function TopNav() {
     return (
