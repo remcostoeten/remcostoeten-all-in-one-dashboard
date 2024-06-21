@@ -1,5 +1,3 @@
-// src/components/ui/Flex.tsx
-
 import React from 'react'
 import clsx from 'clsx'
 
