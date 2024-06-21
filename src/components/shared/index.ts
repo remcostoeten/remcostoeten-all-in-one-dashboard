@@ -1,7 +1,7 @@
 'use client'
 
 export { default as Breadcrumbs } from './navigation/Breadcrumbs'
-export { AnalogClock, CurrentTime } from './navigation/CurrentTime'
+export { CurrentTime } from './navigation/CurrentTime'
 export { default as DisplayCity } from './navigation/DisplayCity'
 export { default as Logo } from './navigation/Logo'
 export { ModeToggle } from './navigation/ModeToggle'

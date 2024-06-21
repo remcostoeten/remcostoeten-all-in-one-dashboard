@@ -57,7 +57,7 @@ function CurrentTime({
             align='end'
             trigger={
                 <time
-                    className='cursor-pointer w-8 h-8' 
+                    className='cursor-pointer w-8 h-8'
                     dateTime={time.toISOString()}
                     aria-live='polite'
                     onClick={handleClick}
