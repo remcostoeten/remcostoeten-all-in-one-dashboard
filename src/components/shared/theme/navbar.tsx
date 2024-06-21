@@ -26,6 +26,8 @@ import { components } from '@/core/data/menu-items'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
+import ShineBorder from '@/components/effects/magicui/shine-border'
+
 export default function NavBar() {
     const { userId } = useAuth()
 
@@ -132,13 +134,11 @@ export default function NavBar() {
             </NavigationMenu>
             <div className='flex items-center gap-2 max-[825px]:hidden'>
                 <Link href='/dashboard' className='max-[825px]:hidden'>
-                    <Button
-                        className='rounded-lg dark:bg-black dark:bg-opacity-50'
-                        variant='outline'
-                    >
-                        <DashboardIcon className='h-3 w-4' />
-                        <p className='pl-1'>Dashboard</p>
-                    </Button>
+                    <ShineBorder className='text-center px-6 py-2  capitalize'>
+                        <p className='pl-1 flex items-center gap-2'>
+                        <DashboardIcon className='h-4 w-4' />
+                          Dashboard</p>
+                    </ShineBorder>
                 </Link>
                 {userId && <Profile />}
             </div>
