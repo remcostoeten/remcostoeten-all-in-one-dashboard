@@ -4,6 +4,7 @@
 
 @import './misc/animations.scss';
 @import './misc/utilities.scss';
+@import './misc/scrollbar.scss';
 
 @tailwind base;
 @tailwind components;
@@ -65,7 +66,7 @@
         @apply border-border;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply bg-light-blue text-foreground;
     }
 }
 
