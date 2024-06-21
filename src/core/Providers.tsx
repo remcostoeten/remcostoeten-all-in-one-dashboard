@@ -1,13 +1,13 @@
 import { Toaster } from 'sonner'
-import type { ReactNode, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { enUS, nlNL } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from '@vercel/analytics/react'
-import siteConfig from '@/core/data/site-config'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
+import TopNav from '@/components/shared/TopNav'
 
 type ProviderWrapperProps = {
-    children: ReactNode
+    children: ReactNode |any
 }
 
 export default function ProviderWrapper({ children }: ProviderWrapperProps) {
@@ -37,7 +37,7 @@ export default function ProviderWrapper({ children }: ProviderWrapperProps) {
                 signInFallbackRedirectUrl={dashboardUrl}
                 signUpFallbackRedirectUrl={dashboardUrl}
             >
-                {children}
+              <TopNav/>
                 <Toaster />
                 <Analytics />
             </ClerkProvider>

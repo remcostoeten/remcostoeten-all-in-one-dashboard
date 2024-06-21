@@ -3,6 +3,7 @@ import '@/styles/app.scss'
 import ProviderWrapper from '@/core/Providers'
 import type { ReactNode } from 'react'
 import TopNav from '@/components/shared/TopNav'
+import PageWrapper from '@/components/theme/shells/PageWrapper'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -18,12 +19,7 @@ export default function Layout({ children }: RootLayoutProps) {
     return (
         <html lang='en' className='dark'>
             <body className={`${plexsans.className} overflow-x-hidden`}>
-                <ProviderWrapper>
-                    <div>
-                        <TopNav />
-                        {children}
-                    </div>
-                </ProviderWrapper>
+                <ProviderWrapper content={null}/>
             </body>
         </html>
     )
