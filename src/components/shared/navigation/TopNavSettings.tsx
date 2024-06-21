@@ -41,11 +41,7 @@ export default function TopNavSettings() {
                     />
                 </svg>
             </SettingWrapper>
-            <SettingWrapper
-                onClick={toggleTheme}
-                showToast={true}
-                message='Toggle theme (not implemented)'
-            >
+            <SettingWrapper>
                 <Search />
             </SettingWrapper>
         </div>
