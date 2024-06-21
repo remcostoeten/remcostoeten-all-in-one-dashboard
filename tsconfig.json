@@ -51,6 +51,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "**/*.mts"
+        "**/*.mts",
+        "src/components/theme/shells/CustomPopover.tsx"
     ]
 }
