@@ -6,6 +6,7 @@ import { Button } from '../ui/button'
 import siteConfig from '@/core/data/site-config'
 import { useTranslations } from 'next-intl'
 import { BorderBeam } from '../effects/magicui/border-beam'
+import ShineBorder from '../effects/magicui/shine-border'
 
 export default function HeroSection() {
     const t = useTranslations('Landing')
@@ -23,22 +24,12 @@ export default function HeroSection() {
             </p>
             <div className='flex items-center justify-center gap-3'>
                 <Link href='/dashboard' className='mt-5'>
-                    <Button
-                        size='sm'
-                        className='animate-buttonheartbeat rounded-md bg-blue-600 text-sm font-semibold text-white hover:bg-blue-500'
+                    <ShineBorder
+                        className='text-center px-8  font-bold capitalize'
+                        color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
                     >
                         {t('get_started')}
-                    </Button>
-                </Link>
-                <Link href='#' target='_blank' className='mt-5'>
-                    <Button
-                        size='sm'
-                        variant='outline'
-                        className='flex gap-1 text-blue-600 hover:bg-blue-100 hover:text-blue-600'
-                    >
-                        een knop..
-                        <ArrowRight className='size-4' />
-                    </Button>
+                    </ShineBorder>
                 </Link>
                 <Link
                     href={siteConfig.github}
