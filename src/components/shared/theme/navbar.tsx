@@ -136,8 +136,9 @@ export default function NavBar() {
                 <Link href='/dashboard' className='max-[825px]:hidden'>
                     <ShineBorder className='text-center px-6 py-2  capitalize'>
                         <p className='pl-1 flex items-center gap-2'>
-                        <DashboardIcon className='h-4 w-4' />
-                          Dashboard</p>
+                            <DashboardIcon className='h-4 w-4' />
+                            Dashboard
+                        </p>
                     </ShineBorder>
                 </Link>
                 {userId && <Profile />}
