@@ -2,7 +2,6 @@
 
 import { toast } from 'sonner'
 import SearchDialog from './Search'
-import { Button } from '@/components/ui/button'
 import FontToggle from './FontToggle'
 
 export default function TopNavSettings() {
@@ -54,11 +53,8 @@ function SettingWrapper({
         if (showToast && message) toast(message)
     }
 
-    return hasBtn ? (
-        <Button variant='ghost' size='sm' onClick={handleClick} {...props}>
-            {children}
-        </Button>
-    ) : (
+    return (
+
         <>{children}</>
     )
 }

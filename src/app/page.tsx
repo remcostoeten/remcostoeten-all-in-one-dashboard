@@ -5,7 +5,7 @@ import CardHover from '@/components/effects/CardHoverEffect'
 import Roadmap from '@/app/[locale]/readme/page'
 import Circles from '@/components/effects/animated-logo-cloud'
 
-export default function Index() {
+export default function Page() {
     return (
         <>
             {IosNotesIcon()}

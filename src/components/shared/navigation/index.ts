@@ -1,5 +1,4 @@
 export { default as Breadcrumbs } from './Breadcrumbs'
-export { default as CmdPallete } from './CmdPallete'
 export { CurrentTime, AnalogClock } from './CurrentTime'
 export { default as DisplayCity } from './DisplayCity'
 export { default as Logo } from './Logo'
