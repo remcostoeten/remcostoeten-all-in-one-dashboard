@@ -4,14 +4,14 @@ export const components: {
     description: string
 }[] = [
     {
-        title: 'Marketing Page',
-        href: '/marketing-page',
-        description: 'Write some wavy here to get them to click.'
+        title: 'Readme',
+        href: '/readme',
+        description: 'The repository read-me which also contains the roadmap.'
     },
     {
-        title: 'Second Tab',
-        href: '/',
-        description: 'Write some wavy here to get them to click.'
+        title: 'Guestbook ',
+        href: '/guestbook',
+        description: 'Just a page to test crud operations.'
     },
     {
         title: 'Third Tab',

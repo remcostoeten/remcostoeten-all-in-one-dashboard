@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import {
     Popover,
     PopoverContent,
@@ -17,7 +18,14 @@ export default function CustomPopover({
 }) {
     return (
         <Popover>
-            <PopoverTrigger asChild>{trigger}</PopoverTrigger>
+            <PopoverTrigger
+                asChild
+                className='cursor-pointer text-xs font-normal'
+            >
+                <Button variant='ghost' size='icon'>
+                    {trigger}
+                </Button>
+            </PopoverTrigger>
             <PopoverContent
                 align={align}
                 style={{

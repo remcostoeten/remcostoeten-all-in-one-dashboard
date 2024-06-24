@@ -70,7 +70,7 @@ function CurrentTime({
             }
         >
             {isPopoverOpen && (
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2 font-normal'>
                     <AnalogClock />
                 </div>
             )}
