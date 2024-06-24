@@ -1,14 +1,22 @@
 'use client'
 
-import { useState } from 'react'
-import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from '@/core/libs/i18nNavigation'
+import { useState, useEffect } from 'react'
 import CustomPopover from '../../theme/shells/CustomPopover'
 
 type SizeOption = 'Spacious' | 'Compact'
 
 export default function SizeToggle() {
     const [selectedSize, setSelectedSize] = useState<SizeOption>('Spacious')
+
+    useEffect(() => {
+        document.documentElement.style.fontSize = selectedSize === 'Compact' ? '14px' : '16px'
+    }, [selectedSize])
+
+    const handleSizeChange = (size: SizeOption) => {
+        setSelectedSize(size)
+        // You might want to save this preference to localStorage or send it to a backend
+    }
+
 
     const trigger = (
       <svg
@@ -29,22 +37,29 @@ export default function SizeToggle() {
           fill-opacity='0.6'
       />
   </svg>
-    )
-
+    ) 
     const content = (
         <div className="flex bg-gray-800 rounded-lg p-1">
             {(['Spacious', 'Compact'] as SizeOption[]).map((size) => (
                 <button
                     key={size}
-                    onClick={() => setSelectedSize(size)}
+                    onClick={() => handleSizeChange(size)}
                     className={`flex-1 px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                         selectedSize === size
                             ? 'bg-blue-600 text-white'
                             : 'text-gray-300 hover:text-white'
                     }`}
                 >
-                    <span className="block text-xs mb-1">Aa</span>
-                    {size}
+                    {size === 'Spacious' ? (
+                        <svg fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 mb-1 mx-auto">
+                            <path d="M23.8382 23.1294C26.1022 23.1294 27.7617 21.7172 27.7617 19.797V18.7192L24.134 18.9422C22.0501 19.0661 20.9695 19.797 20.9695 21.0854C20.9695 22.3242 22.0886 23.1294 23.8382 23.1294ZM23.3622 25C20.545 25 18.6797 23.4391 18.6797 21.073C18.6797 18.7812 20.5064 17.4309 23.8767 17.2327L27.7617 17.0097V15.8947C27.7617 14.2347 26.6296 13.318 24.5843 13.318C22.9763 13.318 21.7799 14.1108 21.5098 15.3744H19.3615C19.4258 13.1198 21.7027 11.3978 24.61 11.3978C27.8903 11.3978 30 13.0826 30 15.7089V24.8761H27.8775V22.5596H27.826C27.0413 24.0461 25.3047 25 23.3622 25Z"></path><path d="M15.5458 24.8761L13.6805 19.7598H6.29658L4.4313 24.8761H2L8.84365 7H11.1334L17.9771 24.8761H15.5458ZM9.94996 9.71301L6.97837 17.8644H12.9987L10.0271 9.71301H9.94996Z"></path>
+                        </svg>
+                    ) : (
+                        <svg fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mb-1 mx-auto">
+                            <path d="M23.8382 23.1294C26.1022 23.1294 27.7617 21.7172 27.7617 19.797V18.7192L24.134 18.9422C22.0501 19.0661 20.9695 19.797 20.9695 21.0854C20.9695 22.3242 22.0886 23.1294 23.8382 23.1294ZM23.3622 25C20.545 25 18.6797 23.4391 18.6797 21.073C18.6797 18.7812 20.5064 17.4309 23.8767 17.2327L27.7617 17.0097V15.8947C27.7617 14.2347 26.6296 13.318 24.5843 13.318C22.9763 13.318 21.7799 14.1108 21.5098 15.3744H19.3615C19.4258 13.1198 21.7027 11.3978 24.61 11.3978C27.8903 11.3978 30 13.0826 30 15.7089V24.8761H27.8775V22.5596H27.826C27.0413 24.0461 25.3047 25 23.3622 25Z"></path><path d="M15.5458 24.8761L13.6805 19.7598H6.29658L4.4313 24.8761H2L8.84365 7H11.1334L17.9771 24.8761H15.5458ZM9.94996 9.71301L6.97837 17.8644H12.9987L10.0271 9.71301H9.94996Z"></path>
+                        </svg>
+                    )}
+                    <span className="block">{size}</span>
                 </button>
             ))}
         </div>
