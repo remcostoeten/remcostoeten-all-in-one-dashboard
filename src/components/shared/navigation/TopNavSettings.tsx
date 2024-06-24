@@ -23,7 +23,7 @@ export default function TopNavSettings() {
                 </svg>
             </SettingWrapper>
             <SettingWrapper>
-             <SizeToggle />
+                <SizeToggle />
             </SettingWrapper>
             <SettingWrapper>
                 <Search />
