@@ -18,7 +18,10 @@ export default function CustomPopover({
 }) {
     return (
         <Popover>
-            <PopoverTrigger asChild className='cursor-pointer'>
+            <PopoverTrigger
+                asChild
+                className='cursor-pointer text-xs font-normal'
+            >
                 <Button variant='ghost' size='icon'>
                     {trigger}
                 </Button>
