@@ -1,7 +1,7 @@
 'use client'
 
 import { toast } from 'sonner'
-import Search from './Search'
+import { Search } from '.'
 
 export default function TopNavSettings() {
     return (
@@ -41,11 +41,7 @@ export default function TopNavSettings() {
                     />
                 </svg>
             </SettingWrapper>
-            <SettingWrapper
-                onClick={toggleTheme}
-                showToast={true}
-                message='Toggle theme (not implemented)'
-            >
+            <SettingWrapper>
                 <Search />
             </SettingWrapper>
         </div>
@@ -80,8 +76,4 @@ const SettingWrapper: React.FC<SettingWrapperProps> = ({
             {children}
         </div>
     )
-}
-
-function toggleTheme() {
-    // Implementation placeholder
 }

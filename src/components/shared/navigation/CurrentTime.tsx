@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * @note I did NOT copy this and DEFINITELY do know what is going on here. cosinus tangus pi r squared this that yeah boy
+ */
+
 import CustomPopover from '@/components/theme/shells/CustomPopover'
 import { useState, useEffect } from 'react'
 
@@ -61,11 +65,15 @@ function CurrentTime({
                     dateTime={time.toISOString()}
                     aria-live='polite'
                     onClick={handleClick}
-                    dangerouslySetInnerHTML={{ __html: formattedTime }} // Use dangerouslySetInnerHTML to render the HTML string
+                    dangerouslySetInnerHTML={{ __html: formattedTime }}
                 ></time>
             }
         >
-            {isPopoverOpen && <AnalogClock />}
+            {isPopoverOpen && (
+                <div className='flex flex-col gap-2'>
+                    <AnalogClock />
+                </div>
+            )}
         </CustomPopover>
     )
 }

@@ -14,7 +14,6 @@ export default function LocaleSwitcherPopover() {
     const router = useRouter()
     const pathname = usePathname()
     const locale = useLocale()
-    const [open, setOpen] = useState(false)
 
     const handleLocaleChange = (newLocale: string) => {
         router.push(pathname, { locale: newLocale })
@@ -47,7 +46,7 @@ export default function LocaleSwitcherPopover() {
     )
 
     return (
-        <CustomPopover width='205px' trigger={trigger}>
+        <CustomPopover align='end' width='205px' trigger={trigger}>
             {content}
         </CustomPopover>
     )
