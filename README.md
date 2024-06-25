@@ -21,6 +21,7 @@ This is a personal project that combines various tools and features I've built o
 -   **ORM**: [Drizzle ORM](https://github.com/drizzle-team/drizzle-orm)
 -   **Auth**: [Clerk](https://clerk.dev/)
 -   **Database**: [Turso (SQLite)](https://turso.tech/)
+-   **State management**: [Zustand](https://zustand.surge.sh/)
 -   **UI Libraries**: [Radix](https://www.radix-ui.com/), [ShadCN-ui](https://shadcn.dev/), [Framer Motion](https://www.framer.com/motion/), [TailwindCSS](https://tailwindcss.com/) + custom SCSS
 -   **Forms**: [React Hook Forms](https://react-hook-form.com/)
 -   **Validation**: [ZOD](https://zod.dev/)
