@@ -56,3 +56,6 @@ local
 # Sentry Config File
 .sentryclirc
 .env
+
+# Blog
+.contentlayer/

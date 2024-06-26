@@ -37,7 +37,8 @@
             "@ui/*": ["./src/components/ui/*"],
             "@c/*": ["./src/components/*"],
             "@mark/*": ["./src/components/marketing/*"],
-            "@dash/*": ["./src/components/dashboard/*"]
+            "@dash/*": ["./src/components/dashboard/*"],
+            "contentlayer/generated": ["./.contentlayer/generated"]
         },
         "plugins": [
             {
@@ -52,6 +53,7 @@
         "**/*.tsx",
         ".next/types/**/*.ts",
         "**/*.mts",
-        "src/components/theme/shells/CustomPopover.tsx"
+        "src/components/theme/shells/CustomPopover.tsx",
+        ".contentlayer/generated"
     ]
 }
