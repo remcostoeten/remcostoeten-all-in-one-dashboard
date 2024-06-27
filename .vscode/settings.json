@@ -1,11 +1,11 @@
 {
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.detectIndentation": false,
     "search.exclude": {
         "package-lock.json": true
     },
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": [
         "source.addMissingImports",
         "source.fixAll.eslint"
@@ -17,7 +17,8 @@
         "next/router.d.ts",
         "next/dist/client/router.d.ts",
         // give priority for Link to next/link instead of lucide-react
-        "lucide-react"
+        "lucide-react",
+        "node_modules/radix-ui/**"
     ],
     "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
     "testing.openTesting": "neverOpen", // Don't open the testing view automatically when running tests
@@ -68,23 +69,23 @@
         }
     ],
     "workbench.colorCustomizations": {
-      "activityBar.activeBackground": "#65c89b",
-      "activityBar.background": "#65c89b",
-      "activityBar.foreground": "#15202b",
-      "activityBar.inactiveForeground": "#15202b99",
-      "activityBarBadge.background": "#945bc4",
-      "activityBarBadge.foreground": "#e7e7e7",
-      "commandCenter.border": "#15202b99",
-      "sash.hoverBorder": "#65c89b",
-      "statusBar.background": "#42b883",
-      "statusBar.foreground": "#15202b",
-      "statusBarItem.hoverBackground": "#359268",
-      "statusBarItem.remoteBackground": "#42b883",
-      "statusBarItem.remoteForeground": "#15202b",
-      "titleBar.activeBackground": "#42b883",
-      "titleBar.activeForeground": "#15202b",
-      "titleBar.inactiveBackground": "#42b88399",
-      "titleBar.inactiveForeground": "#15202b99"
+        "activityBar.activeBackground": "#65c89b",
+        "activityBar.background": "#65c89b",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#945bc4",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#65c89b",
+        "statusBar.background": "#42b883",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#359268",
+        "statusBarItem.remoteBackground": "#42b883",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#42b883",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#42b88399",
+        "titleBar.inactiveForeground": "#15202b99"
     },
     "peacock.color": "#42b883"
 }

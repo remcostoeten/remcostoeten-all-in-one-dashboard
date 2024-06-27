@@ -1,0 +1,49 @@
+{
+    "Simple Page Component": {
+      "prefix": "page",
+      "body": [
+        "type $1Props = {",
+        "  someProp: string",
+        "}",
+        "",
+        "export default function $1({ someProp }: $1Props) {",
+        "  return (",
+        "    <>",
+        "      <h1>A page</h1>",
+        "    </>",
+        "  );",
+        "}"
+      ],
+      "description": "Creates a simple React component with props."
+    },
+    "React Component with Client Directive": {
+      "prefix": "clientpage",
+      "body": [
+        "'use client'",
+        "",
+        "import React from 'react'",
+        "// Ensure to uncomment and use these imports if needed for state or effects",
+        "// import { useEffect, useState } from 'react'",
+        "",
+        "type SomePageProps = {",
+        "  someProp: string",
+        "}",
+        "",
+        "export default function SomePage({ someProp }: SomePageProps) {",
+        "  // Example of using someProp",
+        "  // const [someState, setSomeState] = useState<string>('')",
+        "  // useEffect(() => {",
+        "  //     setTimeout(() => {",
+        "  //         // Do something in the useEffect",
+        "  //     }, 1000)",
+        "  // }, [])",
+        "  return (",
+        "    <>",
+        "      <h1>{someProp}</h1>",
+        "    </>",
+        "  );",
+        "}"
+      ],
+      "description": "Creates a React component with 'use client' directive, props, and example state and effect hooks."
+    }
+  }
