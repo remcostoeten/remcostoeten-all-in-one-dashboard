@@ -95,7 +95,8 @@ This is a personal project that combines various tools and features I've built o
 
 - [x] Initial setup
 - [x] Add user authentication
-- [ ] Implement dark mode
+- [x] Upgrade to the new react compiler (Next 15 + React 19)
+- [x] Implement dark mode  - Done, but light mode is far from usable.
 - [ ] Add more features
 
 ### Long-Term Goals
@@ -103,11 +104,12 @@ This is a personal project that combines various tools and features I've built o
 - [x] Localization
   - [ ] [Add pretty flags](https://flagpack.xyz/)
 - [ ] [Migrate geolocation](https://features.remcostoeten.com/geolocation) and re-create UI
-- [ ] Create landing page
+- [x] Create landing page - Beta version is done
 - [ ] [Migrate URL tool](https://url.remcostoeten.com/) - [finished version, ugly UI](https://vsc.remcostoeten.com/)
 - [ ] [Migrate HTML to React tool and cleanup UI](https://portfolio.remcostoeten.com/html-to-jsx)
 - [ ] [Migrate and cleanup perfect blackjack strategy tool](https://portfolio.remcostoeten.com/blackjack)
 - [ ] [Migrate SVG to CSS pseudo element and create UI]()
+- [ ] [Migrate my password manager](https://password-manager.remcostoeten.com).
 - [ ] Add file vault feature
   - [ ] Integrate uploadthing
   - [ ] Allow uploading
