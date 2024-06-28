@@ -69,6 +69,7 @@ const config: Config = {
                 'text-active': 'var(--text-active)',
                 'button-primary': 'var(--button-primary)',
                 'button-primary-hover': 'var(--button-primary-hover)',
+                'orange': 'var(--custom-orange)',
                 'top-bar': 'var(--top-bar)',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
