@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import Aside from '@/components/theme/huly/aside'
+import Aside from '@/components/theme/dashboard-sidebar/aside'
 import Navigation from '@/components/theme/sidebar/Navigation'
 
 interface DashboardLayoutProps {

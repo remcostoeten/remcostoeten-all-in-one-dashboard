@@ -23,8 +23,9 @@ const IconShell: FunctionComponent<IconShellProps> = ({
     ...props
 }) => {
     const Component = isButton ? 'button' : 'div'
-    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid ${hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
-        } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
+    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid ${
+        hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
+    } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
 
     return (
         <Tooltip delayDuration={100}>

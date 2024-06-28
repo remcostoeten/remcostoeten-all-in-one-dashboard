@@ -1,8 +1,8 @@
-import create from 'zustand';
+import create from 'zustand'
 
 type MenuState = {
-    enabledNavItems: { [key: string]: boolean };
-    toggleNavItem: (name: string) => void;
+    enabledNavItems: { [key: string]: boolean }
+    toggleNavItem: (name: string) => void
 }
 
 export const useMenuStore = create<MenuState>((set) => ({
@@ -15,12 +15,13 @@ export const useMenuStore = create<MenuState>((set) => ({
         users: true,
         document: true,
         sun: true,
-        database: true,
+        database: true
     },
-    toggleNavItem: (name: string) => set((state) => ({
-        enabledNavItems: {
-            ...state.enabledNavItems,
-            [name]: !state.enabledNavItems[name]
-        }
-    })),
-}));
+    toggleNavItem: (name: string) =>
+        set((state) => ({
+            enabledNavItems: {
+                ...state.enabledNavItems,
+                [name]: !state.enabledNavItems[name]
+            }
+        }))
+}))

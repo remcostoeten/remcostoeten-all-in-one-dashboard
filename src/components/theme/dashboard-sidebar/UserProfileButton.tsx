@@ -15,10 +15,8 @@ export default function ProfileButton() {
                 className='user-btn nostyle'
                 onClick={toggleShowUserButton}
             >
-                <UserIcon width={36} height={24} />
+                <UserButton />
             </IconComponent>
-
-            {showUserButton && <UserButton defaultOpen />}
         </>
     )
 }

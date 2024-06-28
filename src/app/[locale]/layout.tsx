@@ -74,7 +74,8 @@ export default function RootLayout(props: {
                             <main
                                 className='min-w-screen  bg-dot-black/[0.2 flex flex-col items-center justify-between  bg-black pt-16 bg-dot-white/[0.2] -z-10'
                                 style={{
-                                    paddingTop: 'calc(var(--nav-height) + 16px)',
+                                    paddingTop:
+                                        'calc(var(--nav-height) + 16px)',
                                     height: 'calc(100% - 48px)'
                                 }}
                             >
