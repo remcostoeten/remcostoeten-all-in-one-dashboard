@@ -1,4 +1,3 @@
-// src/app/[locale]/(auth)/dashboard/page.tsx
 
 import { getTranslations } from 'next-intl/server'
 
@@ -15,10 +14,10 @@ export async function generateMetadata(props: { params: { locale: string } }) {
     }
 }
 
-const Dashboard = () => (
+const DashboardMainPage = () => (
     <div className='[&_p]:my-6'>
         <HelloWrapper />
     </div>
 )
 
-export default Dashboard
+export default DashboardMainPage

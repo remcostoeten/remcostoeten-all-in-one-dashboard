@@ -1,13 +1,13 @@
 'use client'
 
 import CustomPopover from '@/components/theme/shells/CustomPopover'
-import { useSizeStore } from '@/core/stores/useSizeStore'
+import { SiteSizeStore } from '@/core/stores/SiteSizeStore'
 import { useEffect } from 'react'
 
 type SizeOption = 'Large' | 'Spacious' | 'Compact'
 
 export default function SizeToggle() {
-    const { size, setSize } = useSizeStore()
+    const { size, setSize } = SiteSizeStore()
 
     const fontSizeMap: Record<SizeOption, string> = {
         Large: '18px',
@@ -30,20 +30,18 @@ export default function SizeToggle() {
                     <button
                         key={sizeOption}
                         onClick={() => handleSizeChange(sizeOption)}
-                        className={`flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                            size === sizeOption
-                                ? 'bg-blue-600 text-white'
-                                : 'text-gray-300 hover:text-white'
-                        }`}
+                        className={`flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-md transition-colors ${size === sizeOption
+                            ? 'bg-blue-600 text-white'
+                            : 'text-gray-300 hover:text-white'
+                            }`}
                     >
                         <span
-                            className={`${
-                                sizeOption === 'Large'
-                                    ? 'text-2xl'
-                                    : sizeOption === 'Spacious'
-                                      ? 'text-xl'
-                                      : 'text-base'
-                            }`}
+                            className={`${sizeOption === 'Large'
+                                ? 'text-2xl'
+                                : sizeOption === 'Spacious'
+                                    ? 'text-xl'
+                                    : 'text-base'
+                                }`}
                         >
                             Aa
                         </span>

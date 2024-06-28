@@ -22,7 +22,7 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
-import { components } from '@/core/data/menu-items'
+import { headerDropdownItems } from '@/core/data/menu-items'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
@@ -114,13 +114,13 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className='flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
-                                {components.map((component) => (
+                                {headerDropdownItems.map((items) => (
                                     <ListItem
-                                        key={component.title}
-                                        title={component.title}
-                                        href={component.href}
+                                        key={items.title}
+                                        title={items.title}
+                                        href={items.href}
                                     >
-                                        {component.description}
+                                        {items.description}
                                     </ListItem>
                                 ))}
                             </ul>

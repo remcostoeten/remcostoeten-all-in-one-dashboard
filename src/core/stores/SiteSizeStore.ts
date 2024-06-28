@@ -8,7 +8,7 @@ interface SizeState {
     setSize: (size: SizeOption) => void
 }
 
-export const useSizeStore = create<SizeState>()(
+export const SiteSizeStore = create<SizeState>()(
     persist(
         (set) => ({
             size: 'Spacious',
