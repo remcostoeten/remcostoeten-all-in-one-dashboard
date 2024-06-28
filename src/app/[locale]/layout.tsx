@@ -49,7 +49,11 @@ export default function RootLayout(props: {
         transform: 'rotate(5.11905 735.902 -440.872)'
     }
     return (
-        <html lang={props.params.locale} className='dark overflow-x-hidden'>
+        <html
+            lang={props.params.locale}
+            className='dark
+         overflow-x-hidden'
+        >
             <body className={`${plexsans.className} overflow-x-hidden`}>
                 <NextIntlClientProvider
                     locale={props.params.locale}

@@ -16,7 +16,7 @@ import ProjectNavigation from './ProjectNavigation'
 
 const containerVariants = {
     close: {
-        width: '5rem',
+        width: '5.25rem ',
         transition: {
             type: 'spring',
             damping: 15,
@@ -84,7 +84,7 @@ const Navigation = () => {
                             viewBox='0 0 24 24'
                             strokeWidth={1}
                             stroke='currentColor'
-                            className='size-8 stroke-neutral-200'
+                            className='stroke-neutral-200'
                         >
                             <m.path
                                 strokeLinecap='round'
@@ -102,19 +102,19 @@ const Navigation = () => {
                 </div>
                 <div className='flex flex-col gap-3'>
                     <NavigationLink name='Dashboard'>
-                        <ChartBarIcon className='w-8 min-w-8 stroke-inherit stroke-[0.75]' />
+                        <ChartBarIcon className='h-[20px] w-[20px] stroke-inherit stroke-[0.75]' />
                     </NavigationLink>
                     <NavigationLink name='Projects'>
-                        <Square2StackIcon className='w-8 min-w-8 stroke-inherit stroke-[0.75]' />
+                        <Square2StackIcon className='h-[20px] w-[20px] stroke-inherit stroke-[0.75]' />
                     </NavigationLink>
                     <NavigationLink name='Tasks'>
-                        <DocumentCheckIcon className='w-8 min-w-8 stroke-inherit stroke-[0.75]' />
+                        <DocumentCheckIcon className='h-[20px] w-[20px] stroke-inherit stroke-[0.75]' />
                     </NavigationLink>
                     <NavigationLink name='Reporting'>
-                        <ChartPieIcon className='w-8 min-w-8 stroke-inherit stroke-[0.75]' />
+                        <ChartPieIcon className='h-[20px] w-[20px] stroke-inherit stroke-[0.75]' />
                     </NavigationLink>
                     <NavigationLink name='Users'>
-                        <UsersIcon className='w-8 min-w-8 stroke-inherit stroke-[0.75]' />
+                        <UsersIcon className='h-[20px] w-[20px] stroke-inherit stroke-[0.75]' />
                     </NavigationLink>
                 </div>
                 <div className='flex flex-col gap-3'>

@@ -65,8 +65,9 @@
     * {
         @apply border-border;
     }
+
     body {
-        @apply bg-light-blue text-foreground;
+        @apply bg-dash-body text-foreground;
     }
 }
 
@@ -78,4 +79,8 @@ html,
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+.fit-content {
+    width: fit-content;
 }

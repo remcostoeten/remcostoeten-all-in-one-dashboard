@@ -53,7 +53,7 @@ const config: Config = {
                 'blue-primary': 'var(--blue-primary)',
                 'dark-blue': 'var(--dark-blue)',
                 sidebar: 'var(--dark-blue)',
-                'light-blue': 'var(--light-blue)',
+                'dash-body': 'var(--light-blue)',
                 'bg-body': 'var(--light-blue)',
                 'text-white': 'var(--text-white)',
                 icon: '#1A1A28',

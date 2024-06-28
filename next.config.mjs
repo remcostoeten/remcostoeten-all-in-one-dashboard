@@ -15,10 +15,7 @@ const nextConfig = {
         dirs: ['.']
     },
     poweredByHeader: false,
-    reactStrictMode: true,
-    experimental: {
-        serverComponentsExternalPackages: ['pino']
-    }
+    reactStrictMode: true
 }
 
 export default withContentlayer(bundleAnalyzer(withNextIntlConfig(nextConfig)))

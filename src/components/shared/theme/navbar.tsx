@@ -2,7 +2,7 @@
 
 import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
     SheetTrigger,
@@ -27,23 +27,20 @@ import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
 import ShineBorder from '@/components/effects/magicui/shine-border'
+import { usePathname } from 'next/navigation'
 
 export default function NavBar() {
+    const pathname = usePathname()
     const { userId } = useAuth()
 
-    const ref = React.useRef<HTMLDivElement>(null)
-    const [isFixed, setIsFixed] = React.useState(false)
+    const ref = useRef<HTMLDivElement>(null)
+    const [isFixed, setIsFixed] = useState(false)
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             if (ref.current) {
                 setIsFixed(window.scrollY > ref.current.clientHeight)
             }
-            console.log(window.scrollY)
-        }
-
-        if (ref.current) {
-            setIsFixed(window.scrollY > ref.current.clientHeight)
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -53,11 +50,15 @@ export default function NavBar() {
         }
     }, [])
 
+    // Simplify conditional rendering and class assignment
+    const navClass = `z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3 ${isFixed ? 'fixed top-0' : '-top-5'}`
+
+    if (pathname.includes('dashboard')) {
+        return null // Or render a placeholder if needed
+    }
+
     return (
-        <nav
-            ref={ref}
-            className={`z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3  ${isFixed ? 'fixed top-0 ' : '-top-5'}`}
-        >
+        <nav ref={ref} className={navClass}>
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
