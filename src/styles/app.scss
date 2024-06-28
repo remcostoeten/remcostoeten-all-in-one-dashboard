@@ -2,9 +2,11 @@
 @import './theme/fonts.scss';
 @import './theme/theme.scss';
 
+@import './misc/utillity-classes.scss';
 @import './misc/animations.scss';
-@import './misc/utilities.scss';
 @import './misc/scrollbar.scss';
+@import './misc/clerk_fix.scss';
+
 
 @tailwind base;
 @tailwind components;
@@ -79,8 +81,4 @@ html,
     width: 100%;
     margin: 0;
     padding: 0;
-}
-
-.fit-content {
-    width: fit-content;
 }

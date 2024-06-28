@@ -6,19 +6,41 @@ import { SettingsIcon, UserIcon } from '../icons'
 import IconGhost from '../shells/IconShell'
 import IconComponent from '../shells/IconShell'
 import { containerVariants, svgVariants } from '@/core/libs/animations'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
+import { UserButton, UserProfile } from '@clerk/nextjs'
 
 const BottomSection = () => {
     return (
         <>
             <div className='mx-auto my-4 h-px w-[65%] bg-border px-4' />
-            <div className='flex  w-full flex-col items-center justify-center gap-1'>
+            <div className='flex  w-full flex-col items-center justify-center gap-1 user-button'>
                 <IconGhost hasBorder={false}>
                     <SettingsIcon fill='#fff9' width='20' height='20' />
                 </IconGhost>
-                <IconComponent>
-                    <UserIcon width={36} height={24} />
-                </IconComponent>
+
+                {ProfileButton()}
             </div>
+        </>
+    )
+}
+
+function ProfileButton() {
+    const [showUserButton, setShowUserButton] = useState(false)
+    return (
+        <>
+            <IconComponent
+                className='user-btn'
+                onClick={() => setShowUserButton((prev) => !prev)}
+            >
+                <UserIcon width={36} height={24} />
+            </IconComponent>
+
+            {showUserButton && <UserButton defaultOpen />}
         </>
     )
 }

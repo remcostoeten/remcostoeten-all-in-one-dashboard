@@ -27,9 +27,8 @@ const Wrapper: FunctionComponent<WrapperProps> = ({
 }) => {
     const Component = isButton ? 'button' : 'div' // Determine the component type based on the isButton prop
     // Constructing the class string to conditionally apply border styles
-    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid  ${
-        hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
-    } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
+    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid  ${hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
+        } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
     return (
         <Component className={classes} {...props}>
             {children}
