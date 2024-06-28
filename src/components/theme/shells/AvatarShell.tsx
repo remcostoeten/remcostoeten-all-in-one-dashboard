@@ -10,11 +10,12 @@ export default function AvatarShell({
     Initials = 'RS',
     hasTwoLetters = false,
     firstLetter = 'R',
+    ...props
 }: AvatarShellProps) {
     const showInitials = hasTwoLetters || Initials.length > 2;
 
     return (
-        <div className={`grid place-items-center w-8 h-8 text-sm font-medium text-white whitespace-nowrap rounded ${background}`} {}>
+        <div className={`grid place-items-center w-8 h-8 text-sm font-medium text-white whitespace-nowrap rounded ${background}`} {...props}>
             <p>{firstLetter}{showInitials && <span>{Initials.toUpperCase()}</span>}</p>
         </div>
     );
