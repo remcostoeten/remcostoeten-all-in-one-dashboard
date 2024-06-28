@@ -18,8 +18,8 @@ const Aside = () => {
 
     useEffect(() => {
         setIsLoaded(true)
-        containerControls.start('open')
-        svgControls.start('open')
+        containerControls.start('close')
+        svgControls.start('close')
     }, [])
 
     if (!isLoaded) {
@@ -35,7 +35,7 @@ const Aside = () => {
         >
             <div className='flex w-full flex-1 flex-col items-center'>
                 <TopSection />
-                <div className='flex flex-col items-center gap-4'>
+                <div className='flex flex-col items-center gap-1'>
                     {DashboardAsideItems.map(
                         ({ name, svg }) =>
                             enabledNavItems[name] && (
@@ -46,7 +46,8 @@ const Aside = () => {
                     )}
                 </div>
             </div>
-            <div className='flex w-full flex-col items-center justify-center gap-1 user-button'>
+            <div className='flex w-full flex-col items-center justify-center gap-2 user-button'>
+                <Seperator />
                 <NavSettings />
                 <ProfileButton />
             </div>
@@ -55,3 +56,12 @@ const Aside = () => {
 }
 
 export default Aside
+
+export function Seperator({ ...props }: any) {
+    return (
+        <div
+            {...props}
+            className='h-[1px] px-7 mx-4 bg-neutral-500/50 rounded-full w-max'
+        />
+    )
+}

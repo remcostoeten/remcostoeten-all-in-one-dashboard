@@ -1,18 +1,25 @@
+'use client'
+
 import { useUser } from '@clerk/nextjs'
 import AvatarShell from '../shells/AvatarShell'
 import NotificationMenuItem from './NotificationItem'
-
-type TopSectionProps = {
-    someProp: string
-}
+import { Seperator } from './DashboardAside'
+import Hamburger from '@/components/effects/HamburgerToggle'
+import { toast } from 'sonner'
+import { useState } from 'react'
 
 export default function TopSection() {
     const initial = useUser.name.charAt(0).toUpperCase()
     return (
         <>
-            <div className='flex flex-col gap-1 items-center  mb-4'>
-                <AvatarShell Initials={initial} />
-                <StaticHamburger />
+            <div className='flex flex-col gap-1 items-center  mb-'>
+                <div className='flex items-center gap-2 flex-col'>
+                    <AvatarShell Initials={initial} />
+                    <StaticHamburger />
+                    <Seperator
+                        style={{ marginTop: '20px', marginBottom: '0' }}
+                    />
+                </div>
                 <NotificationMenuItem />
             </div>
         </>
@@ -20,22 +27,24 @@ export default function TopSection() {
 }
 
 function StaticHamburger() {
+    const [isOpen, setIsOpen] = useState(false)
+    const handleTogle = () => {
+        toast('I know, I know, animation is screwed up')
+        if (isOpen) {
+            setIsOpen(false)
+        } else {
+            setIsOpen(true)
+        }
+    }
     return (
-        <button className='p-1.5 hover:bg-gray-900 bg-[#ffffff17] rounded-md'>
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
+        <>
+            <button
+                className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-gray-900 bg-[#ffffff17] rounded-md'
+                onClick={() => handleTogle()}
             >
-                <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 6h16M4 12h16M4 18h16'
-                />
-            </svg>
-        </button>
+                <Hamburger />
+            </button>
+            {isOpen && <></>}
+        </>
     )
 }

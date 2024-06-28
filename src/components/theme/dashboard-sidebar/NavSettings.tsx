@@ -86,13 +86,7 @@ export default function NavSettings() {
     )
 
     return (
-        <CustomPopover
-            trigger={trigger}
-            align='start'
-            width='fit'
-            open={isOpen}
-            onOpenChange={setIsOpen}
-        >
+        <CustomPopover trigger={trigger} align='start' width='fit'>
             {popoverContent}
         </CustomPopover>
     )
