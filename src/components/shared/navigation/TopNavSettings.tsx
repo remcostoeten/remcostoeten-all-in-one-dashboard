@@ -28,13 +28,7 @@ type SettingWrapperProps = {
     message?: string
 }
 
-const SettingWrapper: React.FC<SettingWrapperProps> = ({
-    children,
-    onClick,
-    showToast,
-    message = '',
-    ...props
-}) => {
+   SettingWrapper({ children, onClick, showToast, message = '', ...props }: SettingWrapperProps) => {
     const handleClick = () => {
         if (onClick) onClick()
         if (showToast && message) toast(message)

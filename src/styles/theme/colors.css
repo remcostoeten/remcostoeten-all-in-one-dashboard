@@ -1,0 +1,30 @@
+:root {
+  --theme-primary: #3b82f6;
+  --blue-primary: #205dc2;
+  --blue-alternative: #1A1928 ;
+  --top-bar: var(--blue-alternative);
+  --dark-blue: #14141f;
+  --light-blue: #1a1a28;
+  --text-white: rgba(255, 255, 255, 0.8);
+  --icon: #1a1a28;
+  --icon-border: #ffffff17;
+  --icon-active: white;
+  --icon-on-bg: rgba(255, 255, 255, 0.6);
+  --icon-active-background: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 1);
+  --seperator: var(--border);
+  --bg-ghost: #ffffff05;
+  --bg-ghost-hover: #ffffff0a;
+  --bg-ghost-active: #ffffff0d;
+  --border-ghost: #rgb(255 255 255 / 4%);
+  --border-ghost-hover: #rgb(255 255 255 / 8%);
+  --background-main: #1a1b1e;
+  --background-sidebar: #202225;
+  --background-card: #2c2f33;
+  --background-active: #3b3e44;
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --text-active: #ffffff;
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+}/*# sourceMappingURL=colors.css.map */

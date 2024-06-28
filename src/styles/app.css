@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+:root {
+  --theme-primary: #3b82f6;
+  --blue-primary: #205dc2;
+  --blue-alternative: #1A1928 ;
+  --top-bar: var(--blue-alternative);
+  --dark-blue: #14141f;
+  --light-blue: #1a1a28;
+  --text-white: rgba(255, 255, 255, 0.8);
+  --icon: #1a1a28;
+  --icon-border: #ffffff17;
+  --icon-active: white;
+  --icon-on-bg: rgba(255, 255, 255, 0.6);
+  --icon-active-background: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 1);
+  --seperator: var(--border);
+  --bg-ghost: #ffffff05;
+  --bg-ghost-hover: #ffffff0a;
+  --bg-ghost-active: #ffffff0d;
+  --border-ghost: #rgb(255 255 255 / 4%);
+  --border-ghost-hover: #rgb(255 255 255 / 8%);
+  --background-main: #1a1b1e;
+  --background-sidebar: #202225;
+  --background-card: #2c2f33;
+  --background-active: #3b3e44;
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --text-active: #ffffff;
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+}
+
+.baj {
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.font-interDisplay {
+  font-family: "Inter Display";
+}
+
+.font-inter-ui-normal {
+  font-family: "Inter UI";
+  font-weight: 400;
+}
+
+.font-inter-ui-bold {
+  font-family: "Inter UI";
+  font-weight: 800;
+}
+
+.font-inter-ui-italic {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-inter-ui-italic-bold {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 800;
+}
+
+.font-inter-display-semibold {
+  font-family: "Inter Display";
+  font-weight: 600;
+}
+
+.hero-bg {
+  z-index: -1;
+  background-image: url("../../../public/herobg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: auto;
+}
+
+.hero-bg .mask {
+  background-color: transparent;
+  background-image: linear-gradient(rgba(11, 11, 11, 0), #0b0b0b 65%);
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: visible;
+}
+
+/* .test {
+  position: relative;
+  background: linear-gradient(to bottom, #3b82f6, #000000);
+  color: var(--foreground);
+}
+
+.test::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3e%3ccircle fill='rgb(255 255 255 / 0.2)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3e%3c/circle%3e%3c/svg%3e");
+  background-repeat: repeat;
+}
+
+.test::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: linear-gradient(transparent, black);
+}
+
+.test * {
+  position: relative;
+  z-index: 2 !important;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(rgba(244, 244, 244, 0.2) 1px, transparent 1px);
+  background-size: 10px 10px;
+  position: relative;
+} */
+.fade::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), #000);
+  width: 100vw;
+  height: 51vh;
+  z-index: -2;
+}
+
+.fade {
+  margin: 0;
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(rgba(244, 244, 244, 0.2) 1px, transparent 1px);
+  background-size: 10px 10px;
+  position: fixed;
+}
+
+.logo {
+  transition: all 0.74s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 2222;
+}
+.logo path {
+  box-shadow: rgb(49, 131, 1) 0px 5px 15px;
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.74s;
+  transition: fill 0.74s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transform-origin: bottom right;
+}
+.logo path:nth-child(2) {
+  transform-origin: top left;
+}
+.logo:hover {
+  transform: scale(1.04);
+}
+.logo:hover path {
+  fill: #3b82f6;
+}
+.logo:hover path:nth-child(2) {
+  transform: scale(1.04);
+  transform-origin: top left;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --sidebar-width: 5.25rem;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --icon-size: 18px;
+    --icon-border-radius: 5px;
+    --icon-bg-size: 28px;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+/* Add this to your global CSS file or a relevant CSS module */
+body,
+html,
+#__next {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=app.css.map */

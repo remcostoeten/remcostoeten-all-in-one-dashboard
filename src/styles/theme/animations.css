@@ -1,0 +1,23 @@
+.logo {
+  transition: all 0.74s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 2222;
+}
+.logo path {
+  box-shadow: rgb(49, 131, 1) 0px 5px 15px;
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.74s;
+  transition: fill 0.74s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transform-origin: bottom right;
+}
+.logo path:nth-child(2) {
+  transform-origin: top left;
+}
+.logo:hover {
+  transform: scale(1.04);
+}
+.logo:hover path {
+  fill: #3b82f6;
+}
+.logo:hover path:nth-child(2) {
+  transform: scale(1.04);
+  transform-origin: top left;
+}/*# sourceMappingURL=animations.css.map */
