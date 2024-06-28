@@ -1,27 +1,35 @@
 import create from 'zustand'
+import { persist } from 'zustand/middleware'
+import { DashboardAsideItems } from '@/core/data/menu-items'
 
-type MenuState = {
-    enabledNavItems: { [key: string]: boolean }
+type MenuStore = {
+    enabledNavItems: Record<string, boolean>
     toggleNavItem: (name: string) => void
 }
 
-export const useMenuStore = create<MenuState>((set) => ({
-    enabledNavItems: {
-        bell: true,
-        calendar: true,
-        building: true,
-        user: true,
-        chat: true,
-        users: true,
-        document: true,
-        sun: true,
-        database: true
-    },
-    toggleNavItem: (name: string) =>
-        set((state) => ({
-            enabledNavItems: {
-                ...state.enabledNavItems,
-                [name]: !state.enabledNavItems[name]
-            }
-        }))
-}))
+const initialState = DashboardAsideItems.reduce(
+    (acc, item) => ({
+        ...acc,
+        [item.name]: true
+    }),
+    {}
+)
+
+export const useMenuStore = create(
+    persist<MenuStore>(
+        (set) => ({
+            enabledNavItems: initialState,
+            toggleNavItem: (name) =>
+                set((state) => ({
+                    enabledNavItems: {
+                        ...state.enabledNavItems,
+                        [name]: !state.enabledNavItems[name]
+                    }
+                }))
+        }),
+        {
+            name: 'menu-storage', // unique name for localStorage key
+            getStorage: () => localStorage // (optional) by default, 'localStorage' is used
+        }
+    )
+)

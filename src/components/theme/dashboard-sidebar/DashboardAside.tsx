@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { containerVariants } from '@/core/libs/animations'
 import { useMenuStore } from '@/core/stores/MenuStore'
@@ -9,22 +9,22 @@ import NavSettings from './NavSettings'
 import TopSection from './topSection'
 import MenuItemWithTooltip from './MenuItemWithTooltip'
 import ProfileButton from './UserProfileButton'
-import { useEffect } from 'react'
 
 const Aside = () => {
-    const [isOpen, setIsOpen] = useState(false)
     const { enabledNavItems } = useMenuStore()
+    const [isLoaded, setIsLoaded] = useState(false)
     const containerControls = useAnimationControls()
     const svgControls = useAnimationControls()
 
     useEffect(() => {
-        isOpen
-            ? containerControls.start('open')
-            : containerControls.start('close')
-        svgControls.start(isOpen ? 'open' : 'close')
-    }, [isOpen])
+        setIsLoaded(true)
+        containerControls.start('open')
+        svgControls.start('open')
+    }, [])
 
-    const handleOpenClose = () => setIsOpen(!isOpen)
+    if (!isLoaded) {
+        ;<span className='loading loading-infinity loading-lg'></span>
+    }
 
     return (
         <motion.aside
@@ -36,12 +36,14 @@ const Aside = () => {
             <div className='flex w-full flex-1 flex-col items-center'>
                 <TopSection />
                 <div className='flex flex-col items-center gap-4'>
-                    {DashboardAsideItems.map(({ name, svg }) => (
-                        <MenuItemWithTooltip key={name} svg={svg}>
-                            {' '}
-                            name{' '}
-                        </MenuItemWithTooltip>
-                    ))}
+                    {DashboardAsideItems.map(
+                        ({ name, svg }) =>
+                            enabledNavItems[name] && (
+                                <MenuItemWithTooltip key={name} svg={svg}>
+                                    {name}
+                                </MenuItemWithTooltip>
+                            )
+                    )}
                 </div>
             </div>
             <div className='flex w-full flex-col items-center justify-center gap-1 user-button'>
@@ -53,4 +55,3 @@ const Aside = () => {
 }
 
 export default Aside
-1

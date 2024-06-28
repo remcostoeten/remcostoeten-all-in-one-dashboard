@@ -1,11 +1,14 @@
+'use client'
+
+import { useState } from 'react'
 import IconComponent from '../shells/IconShell'
 import CustomPopover from '../shells/CustomPopover'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
-import MenuItemWithTooltip from './MenuItemWithTooltip'
 
 export default function NavSettings() {
     const { enabledNavItems, toggleNavItem } = useMenuStore()
+    const [isOpen, setIsOpen] = useState(false)
 
     const trigger = (
         <IconComponent
@@ -13,6 +16,7 @@ export default function NavSettings() {
             hasBorder
             isButton={true}
             className='user-btn nostyle'
+            onClick={() => setIsOpen(!isOpen)}
         >
             <span className='icon-settings'>
                 <svg
@@ -29,17 +33,66 @@ export default function NavSettings() {
     )
 
     const popoverContent = (
-        <div className='w-56'>
-            {DashboardAsideItems.map(({ name, svg }, index) => (
-                <MenuItemWithTooltip key={index} svg={svg}>
-                    {name}
-                </MenuItemWithTooltip>
+        <div className='w-64 p-4 space-y-4'>
+            <h3 className='text-lg font-semibold mb-2'>Menu Settings</h3>
+            {DashboardAsideItems.map(({ name, svg }) => (
+                <div key={name} className='flex items-center justify-between'>
+                    <div className='flex items-center space-x-2'>
+                        <div
+                            className='w-6 h-6'
+                            dangerouslySetInnerHTML={{ __html: svg }}
+                        />
+                        <span className='capitalize'>{name}</span>
+                    </div>
+                    <button
+                        onClick={() => toggleNavItem(name)}
+                        className='focus:outline-none'
+                    >
+                        {enabledNavItems[name] ? (
+                            <svg
+                                className='w-6 h-6 text-green-500'
+                                fill='none'
+                                stroke='currentColor'
+                                viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth={2}
+                                    d='M5 13l4 4L19 7'
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                className='w-6 h-6 text-red-500'
+                                fill='none'
+                                stroke='currentColor'
+                                viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth={2}
+                                    d='M6 18L18 6M6 6l12 12'
+                                />
+                            </svg>
+                        )}
+                    </button>
+                </div>
             ))}
         </div>
     )
 
     return (
-        <CustomPopover trigger={trigger} align='start' width='fit'>
+        <CustomPopover
+            trigger={trigger}
+            align='start'
+            width='fit'
+            open={isOpen}
+            onOpenChange={setIsOpen}
+        >
             {popoverContent}
         </CustomPopover>
     )
