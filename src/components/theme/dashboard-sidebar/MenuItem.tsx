@@ -8,7 +8,7 @@ const MenuItem = ({ name, icon, isExpanded, hasNotification }) => {
 
     return (
         <div
-            className={`${notificationClass} flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-center'}`}
+            className={`${notificationClass} trans rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-center'}`}
         >
             <span className='w-6 h-6'>{IconComponent}</span>
             {isExpanded && <span className='ml-3'>{name}</span>}
