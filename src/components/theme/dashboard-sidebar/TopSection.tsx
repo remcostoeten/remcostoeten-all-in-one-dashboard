@@ -15,18 +15,17 @@ export default function TopSection() {
 
     return (
         <div
-            className={`flex flex-col gap-1 mb-4 ${isExpanded ? 'px-3 py-2     items-start' : 'items-center'}`}
+            className={`flex flex-col gap-1     ${isExpanded ? 'px-3 py-2     items-start' : 'items-center'}`}
         >
             <div className='flex items-center gap-2 flex-col'>
                 <AvatarShell Initials={initial} />
             </div>
             <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className='p-1 rounded-md hover:bg-gray-800'
+                className='p-1 trans w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center'
             >
                 <Hamburger />
             </button>
-            <Seperator style={{ marginTop: '20px', marginBottom: '0' }} />
         </div>
     )
 }

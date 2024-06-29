@@ -36,11 +36,11 @@ const Aside = () => {
             }}
             animate={containerControls}
             initial='close'
-            className='flex w-16 flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
+            className='flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
         >
             <div className='flex w-full flex-1 flex-col'>
                 <TopSection />
-                <nav className='mt-4'>
+                <nav className='mb-4'>
                     {favouriteItems.map(({ name, svg, hasNotification }) => (
                         <MenuItem
                             key={name}
@@ -81,7 +81,7 @@ export function Seperator({ ...props }: any) {
     return (
         <div
             {...props}
-            className='h-[1px] px-7 mx-4 bg-neutral-500/50 rounded-full w-max'
+            className='h-[1px] px-7 mx-0 bg-neutral-500/50 rounded-full w-max text-center self-center'
         />
     )
 }
