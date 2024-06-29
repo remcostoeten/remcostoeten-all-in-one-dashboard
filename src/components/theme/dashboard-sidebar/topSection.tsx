@@ -39,7 +39,7 @@ function StaticHamburger() {
     return (
         <>
             <button
-                className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-gray-900 bg-[#ffffff17] rounded-md'
+                className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-icon-active-background bg-[#ffffff17] rounded-md trans hover:border-icon-active-background border'
                 onClick={() => handleTogle()}
             >
                 <Hamburger />

@@ -23,7 +23,7 @@ const Aside = () => {
     }, [])
 
     if (!isLoaded) {
-        ;<span className='loading loading-infinity loading-lg'></span>
+        ; <span className='loading loading-infinity loading-lg'></span>
     }
 
     return (
@@ -36,6 +36,11 @@ const Aside = () => {
             <div className='flex w-full flex-1 flex-col items-center'>
                 <TopSection />
                 <div className='flex flex-col items-center gap-1'>
+                    {DashboardAsideItems.map(({ name, svg, hasNotification }) => (
+                        <MenuItemWithTooltip key={name} svg={svg} hasNotification={hasNotification}>
+                            {name}
+                        </MenuItemWithTooltip>
+                    ))}
                     {DashboardAsideItems.map(
                         ({ name, svg }) =>
                             enabledNavItems[name] && (
