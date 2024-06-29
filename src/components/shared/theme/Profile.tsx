@@ -7,7 +7,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/custom-dropdown-menu'
 import { SignOutButton, useUser } from '@clerk/nextjs'
 import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar'
 import { LogOut, Settings, User } from 'lucide-react'

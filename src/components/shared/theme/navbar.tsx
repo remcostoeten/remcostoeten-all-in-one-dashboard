@@ -22,7 +22,7 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
-import { components } from '@/core/data/menu-items'
+import { headerDropdownItems } from '@/core/data/menu-items'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
@@ -54,7 +54,7 @@ export default function NavBar() {
     const navClass = `z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3 ${isFixed ? 'fixed top-0' : '-top-5'}`
 
     if (pathname.includes('dashboard')) {
-        return null // Or render a placeholder if needed
+        return null
     }
 
     return (
@@ -66,7 +66,7 @@ export default function NavBar() {
                     </SheetTrigger>
                     <SheetContent side='left'>
                         <SheetHeader>
-                            <SheetTitle>Next Starter</SheetTitle>
+                            <SheetTitle>Dashboard - Remcostoeten</SheetTitle>
                         </SheetHeader>
                         <div className='mt-4 flex flex-col space-y-3'>
                             <DialogClose asChild>
@@ -114,13 +114,13 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className='flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
-                                {components.map((component) => (
+                                {headerDropdownItems.map((items) => (
                                     <ListItem
-                                        key={component.title}
-                                        title={component.title}
-                                        href={component.href}
+                                        key={items.title}
+                                        title={items.title}
+                                        href={items.href}
                                     >
-                                        {component.description}
+                                        {items.description}
                                     </ListItem>
                                 ))}
                             </ul>

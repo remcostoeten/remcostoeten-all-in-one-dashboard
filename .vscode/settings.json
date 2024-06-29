@@ -18,6 +18,7 @@
         "next/dist/client/router.d.ts",
         // give priority for Link to next/link instead of lucide-react
         "lucide-react",
+        "**radix-ui**",
         "node_modules/radix-ui/**"
     ],
     "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports

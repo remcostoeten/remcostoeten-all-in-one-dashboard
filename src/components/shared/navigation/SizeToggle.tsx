@@ -1,13 +1,13 @@
 'use client'
 
 import CustomPopover from '@/components/theme/shells/CustomPopover'
-import { useSizeStore } from '@/core/stores/useSizeStore'
+import { SiteSizeStore } from '@/core/stores/SiteSizeStore'
 import { useEffect } from 'react'
 
 type SizeOption = 'Large' | 'Spacious' | 'Compact'
 
 export default function SizeToggle() {
-    const { size, setSize } = useSizeStore()
+    const { size, setSize } = SiteSizeStore()
 
     const fontSizeMap: Record<SizeOption, string> = {
         Large: '18px',

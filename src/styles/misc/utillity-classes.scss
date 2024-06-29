@@ -1,0 +1,42 @@
+.trans {
+    transition: all 0.3s ease-in-out;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.svg-x-small {
+    width: .75rem;
+    height: .75rem;
+}
+
+.svg-smaller {
+    width: .875rem;
+    height: .875rem;
+}
+
+.svg-small {
+    width: 1rem;
+    height: 1rem;
+}
+
+.svg-medium {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.svg-large {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.svg-x-large {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.svg-full {
+    width: inherit;
+    height: inherit;
+}

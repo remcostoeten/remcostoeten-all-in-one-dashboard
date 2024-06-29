@@ -1,61 +1,44 @@
-// Importing necessary types from react
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger
+} from '@/components/ui/tooltip'
 import type { FunctionComponent, ReactNode } from 'react'
 
-// Defining the props for the IconGhost component
-type IconGhostProps = {
+type IconShellProps = {
     as?: 'div' | 'button'
     isButton?: boolean
     [x: string]: any // Allows for additional props
     children: ReactNode // Children must be a valid React node
     hasBorder?: boolean // Optional prop to control border visibility
+    tooltipTitle?: string // New prop for tooltip title
 }
 
-// Defining the props for the Wrapper component
-type WrapperProps = {
-    children: ReactNode // Children must be a valid React node
-    isButton?: boolean // Optional prop to determine if the wrapper should render as a button
-    hasBorder?: boolean // Optional prop to control border visibility
-    [x: string]: any // Allows for additional props
-}
-
-// Implementing the Wrapper component
-const Wrapper: FunctionComponent<WrapperProps> = ({
-    children,
-    isButton,
-    hasBorder = true,
-    ...props
-}) => {
-    const Component = isButton ? 'button' : 'div' // Determine the component type based on the isButton prop
-    // Constructing the class string to conditionally apply border styles
-    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid  ${
-        hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
-    } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
-    return (
-        <Component className={classes} {...props}>
-            {children}
-        </Component>
-    )
-}
-
-export default function IconGhost({
+const IconShell: FunctionComponent<IconShellProps> = ({
     as = 'div',
     children,
     isButton,
-    hasBorder,
+    hasBorder = true,
+    tooltipTitle,
     ...props
-}: IconGhostProps) {
+}) => {
+    const Component = isButton ? 'button' : 'div'
+    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid ${
+        hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
+    } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
+
     return (
-        <Wrapper isButton={isButton} hasBorder={hasBorder} {...props}>
-            <span className='size-ficon-size text-[#fff9]'>{children}</span>
-        </Wrapper>
+        <Tooltip delayDuration={100}>
+            <TooltipTrigger>
+                <Component className={classes} {...props}>
+                    {children}
+                </Component>
+            </TooltipTrigger>
+            <TooltipContent side='right' align='center'>
+                <p>{tooltipTitle}</p>
+            </TooltipContent>
+        </Tooltip>
     )
 }
 
-/* Usage examples
-<IconGhost isButton={true} onClick={() => console.log('Icon clicked')}>
-  <MapIcon />
-</IconGhost>
-<IconGhost>
-  <UserIcon />
-</IconGhost>
-*/
+export default IconShell

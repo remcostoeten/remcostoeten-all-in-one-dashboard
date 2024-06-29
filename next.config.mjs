@@ -2,7 +2,7 @@
 
 import withBundleAnalyzer from '@next/bundle-analyzer'
 import withNextIntl from 'next-intl/plugin'
-import { withContentlayer } from 'next-contentlayer' // Step 1: Import withContentlayer
+import { withContentlayer } from 'next-contentlayer'
 
 const withNextIntlConfig = withNextIntl('./src/core/libs/i18n.ts')
 

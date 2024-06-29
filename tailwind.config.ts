@@ -68,7 +68,9 @@ const config: Config = {
                 'text-secondary': 'var(--text-secondary)',
                 'text-active': 'var(--text-active)',
                 'button-primary': 'var(--button-primary)',
+                // 'ghost-hover': 'var(--border-ghost-hover)',
                 'button-primary-hover': 'var(--button-primary-hover)',
+                orange: 'var(--custom-orange)',
                 'top-bar': 'var(--top-bar)',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',

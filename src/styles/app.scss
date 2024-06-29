@@ -2,9 +2,26 @@
 @import './theme/fonts.scss';
 @import './theme/theme.scss';
 
+.has-notification {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.425rem;
+        height: 0.425rem;
+        background-color: var(--custom-orange);
+        border-radius: 50%;
+        content: "";
+    }
+}
+
+@import './misc/utillity-classes.scss';
 @import './misc/animations.scss';
-@import './misc/utilities.scss';
 @import './misc/scrollbar.scss';
+@import './misc/clerk_fix.scss';
+
 
 @tailwind base;
 @tailwind components;
@@ -79,8 +96,4 @@ html,
     width: 100%;
     margin: 0;
     padding: 0;
-}
-
-.fit-content {
-    width: fit-content;
 }

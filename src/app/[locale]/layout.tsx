@@ -10,6 +10,7 @@ import type { ReactNode } from 'react'
 import { enUS, nlNL } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
 import TopNav from '@/components/shared/TopNav'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -66,18 +67,22 @@ export default function RootLayout(props: {
                         signInFallbackRedirectUrl={dashboardUrl}
                         signUpFallbackRedirectUrl={dashboardUrl}
                     >
-                        {/* <GlowBackground fill='red' style={{ transform: 'translate(0px, -200px)' }} /> */}
-                        <TopNav />
-                        <NavBar />
-                        <main
-                            className='min-w-screen bg-dot-black/[0.2 flex flex-col items-center justify-between  bg-black pt-16 bg-dot-white/[0.2] -z-10'
-                            style={{
-                                paddingTop: 'calc(var(--nav-height) + 16px)'
-                            }}
-                        >
-                            {props.children}
-                        </main>{' '}
-                        <Toaster invert />
+                        <TooltipProvider>
+                            {/* <GlowBackground fill='red' style={{ transform: 'translate(0px, -200px)' }} /> */}
+                            <TopNav />
+                            <NavBar />
+                            <main
+                                className='min-w-screen  bg-dot-black/[0.2 flex flex-col items-center justify-between  bg-black pt-16 bg-dot-white/[0.2] -z-10'
+                                style={{
+                                    paddingTop:
+                                        'calc(var(--nav-height) + 16px)',
+                                    height: 'calc(100% - 48px)'
+                                }}
+                            >
+                                {props.children}
+                            </main>{' '}
+                            <Toaster invert />
+                        </TooltipProvider>
                     </ClerkProvider>
                 </NextIntlClientProvider>
             </body>
