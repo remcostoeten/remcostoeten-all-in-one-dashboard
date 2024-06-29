@@ -1,12 +1,12 @@
-import create from 'zustand';
-import { DashboardAsideItems } from '../data/menu-items';
+import create from 'zustand'
+import { DashboardAsideItems } from '../data/menu-items'
 
 type MenuStore = {
-    isExpanded: boolean;
-    setIsExpanded: (value: boolean) => void;
-    enabledNavItems: Record<string, boolean>;
-    toggleNavItem: (name: string) => void;
-};
+    isExpanded: boolean
+    setIsExpanded: (value: boolean) => void
+    enabledNavItems: Record<string, boolean>
+    toggleNavItem: (name: string) => void
+}
 
 const initialState = DashboardAsideItems.reduce(
     (acc, item) => ({
@@ -14,7 +14,7 @@ const initialState = DashboardAsideItems.reduce(
         [item.name]: true
     }),
     {}
-);
+)
 
 export const useMenuStore = create<MenuStore>((set) => ({
     isExpanded: false,
@@ -26,8 +26,8 @@ export const useMenuStore = create<MenuStore>((set) => ({
                 ...state.enabledNavItems,
                 [name]: !state.enabledNavItems[name]
             }
-        })),
-}));
+        }))
+}))
 
 // If you want to persist the store, ensure you wrap the store creation with `persist`.
 // Example:

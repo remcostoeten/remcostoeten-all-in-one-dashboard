@@ -5,9 +5,6 @@ import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 import TopSection from './TopSection'
-import { SearchIcon, SettingsIcon } from '../icons'
-import MenuItemWithTooltip from './MenuItemWithTooltip'
-import svgToReactComponent from '@/core/libs/svgToComponent'
 import MenuItem from './MenuItem'
 
 const Aside = () => {
@@ -24,6 +21,13 @@ const Aside = () => {
         return <span className='loading loading-infinity loading-lg'></span>
     }
 
+    const favouriteItems = DashboardAsideItems.filter(
+        (item) => item.isFavourite
+    )
+    const itemsWithoutFavourites = DashboardAsideItems.filter(
+        (item) => !item.isFavourite
+    )
+
     return (
         <motion.aside
             variants={{
@@ -37,12 +41,29 @@ const Aside = () => {
             <div className='flex w-full flex-1 flex-col'>
                 <TopSection />
                 <nav className='mt-4'>
-                    {DashboardAsideItems.map(({ name, svg, hasNotification }) => (
-                        <>
-                            {hasNotification && <Seperator />}
-                            <MenuItem name={name} icon={svg} isExpanded={isExpanded} />
-                        </>
+                    {favouriteItems.map(({ name, svg, hasNotification }) => (
+                        <MenuItem
+                            key={name}
+                            name={name}
+                            icon={svg}
+                            isExpanded={isExpanded}
+                            hasNotification={hasNotification}
+                        />
                     ))}
+                </nav>
+                <Seperator />
+                <nav className='mt-4'>
+                    {itemsWithoutFavourites.map(
+                        ({ name, svg, hasNotification }) => (
+                            <MenuItem
+                                key={name}
+                                name={name}
+                                icon={svg}
+                                isExpanded={isExpanded}
+                                hasNotification={hasNotification}
+                            />
+                        )
+                    )}
                 </nav>
             </div>
             <div className='mt-auto'>
@@ -64,4 +85,3 @@ export function Seperator({ ...props }: any) {
         />
     )
 }
-
