@@ -2,59 +2,53 @@
 
 import { useEffect, useState } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
-import { containerVariants } from '@/core/libs/animations'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
-import NavSettings from './NavSettings'
-import TopSection from './topSection'
+import TopSection from './TopSection'
+import { SearchIcon, SettingsIcon } from '../icons'
 import MenuItemWithTooltip from './MenuItemWithTooltip'
-import ProfileButton from './UserProfileButton'
+import svgToReactComponent from '@/core/libs/svgToComponent'
+import MenuItem from './MenuItem'
 
 const Aside = () => {
-    const { enabledNavItems } = useMenuStore()
+    const { isExpanded, setIsExpanded } = useMenuStore()
     const [isLoaded, setIsLoaded] = useState(false)
     const containerControls = useAnimationControls()
-    const svgControls = useAnimationControls()
 
     useEffect(() => {
         setIsLoaded(true)
-        containerControls.start('close')
-        svgControls.start('close')
-    }, [])
+        containerControls.start(isExpanded ? 'open' : 'close')
+    }, [isExpanded])
 
     if (!isLoaded) {
-        ; <span className='loading loading-infinity loading-lg'></span>
+        return <span className='loading loading-infinity loading-lg'></span>
     }
 
     return (
         <motion.aside
-            variants={containerVariants}
+            variants={{
+                open: { width: '240px' },
+                close: { width: '64px' }
+            }}
             animate={containerControls}
             initial='close'
             className='flex w-16 flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
         >
-            <div className='flex w-full flex-1 flex-col items-center'>
+            <div className='flex w-full flex-1 flex-col'>
                 <TopSection />
-                <div className='flex flex-col items-center gap-1'>
+                <nav className='mt-4'>
                     {DashboardAsideItems.map(({ name, svg, hasNotification }) => (
-                        <MenuItemWithTooltip key={name} svg={svg} hasNotification={hasNotification}>
-                            {name}
-                        </MenuItemWithTooltip>
+                        <>
+                            {hasNotification && <Seperator />}
+                            <MenuItem name={name} icon={svg} isExpanded={isExpanded} />
+                        </>
                     ))}
-                    {DashboardAsideItems.map(
-                        ({ name, svg }) =>
-                            enabledNavItems[name] && (
-                                <MenuItemWithTooltip key={name} svg={svg}>
-                                    {name}
-                                </MenuItemWithTooltip>
-                            )
-                    )}
-                </div>
+                </nav>
             </div>
-            <div className='flex w-full flex-col items-center justify-center gap-2 user-button'>
+            <div className='mt-auto'>
                 <Seperator />
-                <NavSettings />
-                <ProfileButton />
+                {/* <MenuItem name="Project Settings" icon={SettingsIcon} isExpanded={isExpanded} /> */}
+                {/* <MenuItem name="Search" icon={SearchIcon} isExpanded={isExpanded} /> */}
             </div>
         </motion.aside>
     )
@@ -70,3 +64,4 @@ export function Seperator({ ...props }: any) {
         />
     )
 }
+

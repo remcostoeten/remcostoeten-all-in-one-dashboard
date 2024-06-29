@@ -34,10 +34,14 @@ export default function MenuItemWithTooltip({
                     >
 
                         <span className='w-8 h-8 inline-flex justify-center items-center {hasNotification ? "has-notification" : ""}'>
-                            <span
+                            {/* <span
                                 className='w-6 h-6'
                                 dangerouslySetInnerHTML={{ __html: svg }}
-                            />
+                            /> */}
+                            <span className='w-6 h-6'>
+
+                                {svg}
+                            </span>
                         </span>
                         <TooltipContent side='right' className='tooltip-right'>
                             {children}
