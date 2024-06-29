@@ -58,6 +58,7 @@
         "nextjs-toploader": "^1.6.12",
         "pino": "^9.1.0",
         "pino-pretty": "^11.2.0",
+        "puppeteer": "^22.12.1",
         "react": "latest",
         "react-dom": "latest",
         "react-hook-form": "^7.51.5",

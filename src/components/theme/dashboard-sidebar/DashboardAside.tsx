@@ -6,7 +6,6 @@ import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 import TopSection from './TopSection'
 import MenuItem from './MenuItem'
-import { SettingsIcon, SearchIcon } from '../icons'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded } = useMenuStore()

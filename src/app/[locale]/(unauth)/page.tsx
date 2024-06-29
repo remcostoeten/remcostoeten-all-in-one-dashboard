@@ -4,10 +4,12 @@ import type { ReactNode } from 'react'
 import CardHover from '@/components/effects/CardHoverEffect'
 import Roadmap from '@/app/[locale]/readme/page'
 import Circles from '@/components/effects/animated-logo-cloud'
+import FetchTest from '@/components/Fetch'
 
 export default function Index() {
     return (
         <>
+            <FetchTest />
             {IosNotesIcon()}
             <Section spacingY='regular'>
                 <HeroSection />
