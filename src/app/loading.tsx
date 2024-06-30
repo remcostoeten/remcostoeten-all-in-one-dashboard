@@ -1,4 +1,4 @@
-import { SkeletonDashboardAside } from '@/components/effects/skeletons'
+import { SkeletonDashboardAside } from '@/components/effects/SkeletonLoaders'
 import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
 import SubMenu from '@/components/theme/dashboard-sidebar/SubMenu'
 
