@@ -6,7 +6,6 @@ import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 import TopSection from './TopSection'
 import MenuItem from './MenuItem'
-import { SettingsIcon, SearchIcon } from '../icons'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded } = useMenuStore()
@@ -55,9 +54,10 @@ const Aside = () => {
                 <Seperator />
                 <nav className='mt-4 space-y-2'>
                     {itemsWithoutFavourites.map(
-                        ({ name, svg, hasNotification }) => (
+                        ({ name, svg, hasNotification, anchor }) => (
                             <MenuItem
                                 key={name}
+                                anchor={anchor}
                                 name={name}
                                 icon={svg}
                                 isExpanded={isExpanded}
