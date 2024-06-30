@@ -1,21 +1,15 @@
-import type { ChatFile, ChatMessage } from '@/core/types/chat-types'
-import { useLocale } from 'next-intl'
+import type { ChatFile } from '@/core/types/chat-types'
 
-export async function getChatFiles(): Promise<string[]> {
-    const locale = useLocale()
-
-    const response = await fetch(`/${locale}/api/chats`)
+export async function GetChatFiles(): Promise<string[]> {
+    const response = await fetch(`/api/chats`)
     if (!response.ok) {
         throw new Error('Failed to fetch chat files')
     }
     return response.json()
 }
 
-export async function getChatData(chatName: string): Promise<ChatFile> {
-    const locale = useLocale()
-
-    // Assuming your API supports fetching chat data based on chatName and locale
-    const response = await fetch(`/${locale}/api/chats/${chatName}`)
+export async function GetChatData(chatName: string): Promise<ChatFile> {
+    const response = await fetch(`/api/chats/${chatName}`)
     if (!response.ok) {
         throw new Error('Failed to fetch chat data')
     }

@@ -8,10 +8,10 @@ import {
 } from '@/components/ui/collapsible'
 import { SearchIcon } from '../icons'
 import IconShell from '../shells/IconShell'
-import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import { ChevronRightIcon, CogIcon, TvIcon } from '@heroicons/react/24/outline'
 import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
-import { useState } from 'react'
-import ChatList from '@/app/[locale]/(unauth)/chats/components/ChatList'
+import { useState, type ReactNode } from 'react'
+import { RenderChatsList } from './RenderChatsList'
 
 // function Channel({
 //     name,
@@ -54,14 +54,11 @@ function SubMenu() {
         image
     }: {
         chatName: string
-        image: string
+        image?: string | ReactNode
     }) {
         return (
             <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
-                {image && (
-                    <Image src={image} width={20} height={20} alt='Threads' />
-                )}
-                <ChatList />
+                {image && <span>{image}</span>}
             </div>
         )
     }
@@ -104,40 +101,16 @@ function SubMenu() {
                 <div className='text-lg font-semibold'>Chat</div>
             </div>
             <div className='flex flex-col px-2 py-4 border-b border-border'>
+                <RenderChatsList />
+                <IndividualChatWrapper chatName='test' image={<TvIcon />} />
                 <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
-                    <Image
-                        src='/path-to-threads-icon.png'
-                        width={20}
-                        height={20}
-                        alt='Threads'
-                    />
-                    <div className='text-sm'>Threads</div>
-                </div>
-                <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
-                    <Image
-                        src='/path-to-saved-icon.png'
-                        width={20}
-                        height={20}
-                        alt='Saved'
-                    />
-                    <div className='text-sm'>Saved</div>
-                </div>
-                <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
-                    <Image
-                        src='/path-to-browser-icon.png'
-                        width={20}
-                        height={20}
-                        alt='Browser'
-                    />
-                    <div className='text-sm'>Browser</div>
-                </div>
-                <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
-                    <Image
+                    {/* <Image
                         src='/path-to-channels-icon.png'
                         width={20}
                         height={20}
                         alt='Channels'
-                    />
+                    /> */}
+                    <CogIcon className='h-6 w-6' />
                     <div className='text-sm'>Channels</div>
                 </div>
             </div>

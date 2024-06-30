@@ -9,17 +9,11 @@ import MenuItem from './MenuItem'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded } = useMenuStore()
-    const [isLoaded, setIsLoaded] = useState(false)
     const containerControls = useAnimationControls()
 
     useEffect(() => {
-        setIsLoaded(true)
         containerControls.start(isExpanded ? 'open' : 'close')
     }, [isExpanded])
-
-    if (!isLoaded) {
-        return <span className='loading loading-infinity loading-lg'></span>
-    }
 
     const favouriteItems = DashboardAsideItems.filter(
         (item) => item.isFavourite

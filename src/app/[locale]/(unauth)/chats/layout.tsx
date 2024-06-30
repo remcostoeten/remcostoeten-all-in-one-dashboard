@@ -9,13 +9,9 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang='en'>
-            <body className={inter.className}>
-                <div className='flex min-h-screen w-full bg-background'>
-                    <ChatList />
-                    <div className='flex-1'>{children}</div>
-                </div>
-            </body>
-        </html>
+        <div className='flex min-h-screen w-full bg-background'>
+            <ChatList />
+            <div className='flex-1'>{children}</div>
+        </div>
     )
 }

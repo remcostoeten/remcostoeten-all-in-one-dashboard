@@ -60,3 +60,4 @@ local
 # Blog
 .contentlayer/
 src/core/data/chats/znew-chat.json
+DB.ts
