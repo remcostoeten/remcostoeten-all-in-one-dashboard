@@ -24,6 +24,7 @@
         "db:studio": "drizzle-kit studio"
     },
     "dependencies": {
+        "@builder.io/react-hydration-overlay": "^0.0.8",
         "@clerk/localizations": "^2.4.5",
         "@clerk/nextjs": "^5.1.6",
         "@heroicons/react": "latest",
