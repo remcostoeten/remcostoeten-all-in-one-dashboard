@@ -1,0 +1,17 @@
+import { SkeletonDashboardAside } from '@/components/effects/skeletons'
+import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
+import SubMenu from '@/components/theme/dashboard-sidebar/SubMenu'
+
+export default function Loading() {
+    return (
+        <main className='relative flex h-full bg-dash-body  w-full flex-row'>
+            <SkeletonDashboardAside />
+            <SubMenu />
+            <section className=' flex w-full flex-col gap-5'>
+                <div className='w-screen h-screen bg-red-400 grid place-items-center'>
+                    <span className='loading loading-spinner text-accent'></span>
+                </div>
+            </section>
+        </main>
+    )
+}
