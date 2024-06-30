@@ -16,15 +16,6 @@ const nextConfig = {
     },
     poweredByHeader: false,
     reactStrictMode: true,
-    remotePatterns: [
-        {
-            protocol: 'https',
-            pathname: '*',
-            hostname: 'cdn.builder.io',
-            port: ''
-        }
-    ],
-
     images: {
         domains: ['cdn.builder.io']
     }
