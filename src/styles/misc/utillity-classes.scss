@@ -40,3 +40,32 @@
     width: inherit;
     height: inherit;
 }
+
+
+.has-notification {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.425rem;
+        height: 0.425rem;
+        background-color: var(--custom-orange);
+        border-radius: 50%;
+        content: "";
+    }
+}
+
+body,
+html,
+#__next {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    min-width: 0
+}

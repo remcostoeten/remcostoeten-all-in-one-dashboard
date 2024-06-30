@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/sheet'
 import { Dialog, DialogClose } from '@radix-ui/react-dialog'
 import { cn } from '@/core/utils/cn'
-import { GiHamburgerMenu } from 'react-icons/gi'
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -28,6 +27,7 @@ import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
 import ShineBorder from '@/components/effects/magicui/shine-border'
 import { usePathname } from 'next/navigation'
+import Hamburger from '@/components/effects/HamburgerToggle'
 
 export default function NavBar() {
     const pathname = usePathname()
@@ -62,7 +62,7 @@ export default function NavBar() {
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
-                        <GiHamburgerMenu />
+                        <Hamburger />
                     </SheetTrigger>
                     <SheetContent side='left'>
                         <SheetHeader>
@@ -133,7 +133,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className='flex items-center gap-2 max-[825px]:hidden'>
+            <div className='flex items-center gap-4 max-[825px]:hidden'>
                 <Link href='/dashboard' className='max-[825px]:hidden'>
                     <ShineBorder className='text-center px-6 py-2  capitalize'>
                         <p className='pl-1 flex items-center gap-2'>

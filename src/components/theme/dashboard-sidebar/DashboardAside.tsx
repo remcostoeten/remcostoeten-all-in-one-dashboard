@@ -6,21 +6,14 @@ import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 import TopSection from './TopSection'
 import MenuItem from './MenuItem'
-import { SettingsIcon, SearchIcon } from '../icons'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded } = useMenuStore()
-    const [isLoaded, setIsLoaded] = useState(false)
     const containerControls = useAnimationControls()
 
     useEffect(() => {
-        setIsLoaded(true)
         containerControls.start(isExpanded ? 'open' : 'close')
     }, [isExpanded])
-
-    if (!isLoaded) {
-        return <span className='loading loading-infinity loading-lg'></span>
-    }
 
     const favouriteItems = DashboardAsideItems.filter(
         (item) => item.isFavourite
@@ -55,9 +48,10 @@ const Aside = () => {
                 <Seperator />
                 <nav className='mt-4 space-y-2'>
                     {itemsWithoutFavourites.map(
-                        ({ name, svg, hasNotification }) => (
+                        ({ name, svg, hasNotification, anchor }) => (
                             <MenuItem
                                 key={name}
+                                anchor={anchor}
                                 name={name}
                                 icon={svg}
                                 isExpanded={isExpanded}
@@ -117,7 +111,7 @@ export function Seperator({ ...props }: any) {
     return (
         <div
             {...props}
-            className='h-[1px] px-7 mx-0 bg-neutral-500/50 rounded-full w-max text-center self-center'
+            className='h-[1px] px-7 mx-0 border-border border-b  rounded-full w-max text-center self-center'
         />
     )
 }

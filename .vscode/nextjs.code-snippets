@@ -16,6 +16,15 @@
       ],
       "description": "Creates a simple React component with props."
     },
+    "Skeleton docstring": {
+        "prefix": "skdoc",
+        "body": [
+          "/**",
+          " * @file [src/$1/components/$2.tsx]",
+          " */"
+        ],
+        "description": "Creates a skeleton documentation comment for a TypeScript component."
+      },
     "React Component with Client Directive": {
       "prefix": "clientpage",
       "body": [

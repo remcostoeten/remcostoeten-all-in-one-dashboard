@@ -1,10 +1,8 @@
-import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
-import { Suspense } from 'react'
-
 import { AddGuestbookForm } from '@/components/dashboard/guestbook/AddGuestbookForm'
-import { GuestbookList } from '@/components/dashboard/guestbook/GuestbookList'
+import GuestbookList from '@/components/dashboard/guestbook/GuestbookList'
+import { getTranslations } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
+import { Suspense } from 'react'
 
 export async function generateMetadata(props: { params: { locale: string } }) {
     const t = await getTranslations({
@@ -22,39 +20,13 @@ const Guestbook = () => {
     const t = useTranslations('Guestbook')
 
     return (
-        <>
+        <div className='max-w-screen-lg mx-auto px-4 py-10 bg-border m-10 rounded-xl  text-white b-dashed border-amber-600'>
             <AddGuestbookForm />
 
-            <Suspense fallback={<p>{t('loading_guestbook')}</p>}>
-                <GuestbookList />
-            </Suspense>
-
-            <div className='mt-2 text-center text-sm'>
-                {`${t('database_powered_by')} `}
-                <a
-                    className='text-blue-700 hover:border-b-2 hover:border-blue-700'
-                    href='https://turso.tech/?utm_source=nextjsstarterbp'
-                    target='_blank'
-                    rel='noreferrer'
-                >
-                    Turso
-                </a>
-            </div>
-
-            <a
-                href='https://turso.tech/?utm_source=nextjsstarterbp'
-                target='_blank'
-                rel='noreferrer'
-            >
-                <Image
-                    className='mx-auto mt-2'
-                    src='/assets/images/turso-dark.png'
-                    alt='SQLite Developer Experience'
-                    width={130}
-                    height={112}
-                />
-            </a>
-        </>
+            {/* <Suspense fallback={<p>{t('loading_guestbook')}</p>}> */}
+            <GuestbookList />
+            {/* </Suspense> */}
+        </div>
     )
 }
 

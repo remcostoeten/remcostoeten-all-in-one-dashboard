@@ -11,7 +11,8 @@ type IconShellProps = {
     [x: string]: any // Allows for additional props
     children: ReactNode // Children must be a valid React node
     hasBorder?: boolean // Optional prop to control border visibility
-    tooltipTitle?: string // New prop for tooltip title
+    tooltipTitle?: string // New prop for tooltip title,
+    className?: string
 }
 
 const IconShell: FunctionComponent<IconShellProps> = ({
@@ -19,13 +20,12 @@ const IconShell: FunctionComponent<IconShellProps> = ({
     children,
     isButton,
     hasBorder = true,
+    className = '',
     tooltipTitle,
     ...props
 }) => {
     const Component = isButton ? 'button' : 'div'
-    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid ${
-        hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
-    } hover:cursor-pointer hover:border-white/40 transition-colors duration-500`
+    const classes = `flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid ${hasBorder ? 'border-[#ffffff17]' : 'border-transparent'} hover:cursor-pointer hover:border-white/40 transition-colors duration-500 grid place-items-center ${className}`
 
     return (
         <Tooltip delayDuration={100}>

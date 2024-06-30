@@ -15,7 +15,10 @@ const nextConfig = {
         dirs: ['.']
     },
     poweredByHeader: false,
-    reactStrictMode: true
+    reactStrictMode: true,
+    images: {
+        domains: ['cdn.builder.io']
+    }
 }
 
 export default withContentlayer(bundleAnalyzer(withNextIntlConfig(nextConfig)))
