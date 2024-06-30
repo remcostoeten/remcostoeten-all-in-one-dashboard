@@ -1,31 +1,28 @@
 import { NextResponse } from 'next/server'
-import {
-    getChatData,
-    paginateMessages
-} from '../../../chats/components/chat-utils'
+import fs from 'fs/promises'
+import path from 'path'
 
 export async function GET(
     request: Request,
     { params }: { params: { chatName: string } }
 ) {
-    const { searchParams } = new URL(request.url)
-    const page = parseInt(searchParams.get('page') || '1', 10)
-    const pageSize = parseInt(searchParams.get('pageSize') || '20', 10)
-    const search = searchParams.get('search') || ''
-
-    const chatData = await getChatData(params.chatName)
-    let filteredMessages = chatData.messages
-
-    if (search) {
-        filteredMessages = filteredMessages.filter(
-            (msg) =>
-                msg.name.toLowerCase().includes(search.toLowerCase()) ||
-                new Date(msg.timestamp).toLocaleDateString().includes(search)
+    try {
+        const filePath = path.join(
+            process.cwd(),
+            'src',
+            'core',
+            'data',
+            'chats',
+            `${params.chatName}-chat.json`
+        )
+        const fileContent = await fs.readFile(filePath, 'utf-8')
+        const messages = JSON.parse(fileContent)
+        return NextResponse.json({ messages })
+    } catch (error) {
+        console.error('Error reading chat data:', error)
+        return NextResponse.json(
+            { error: 'Failed to read chat data' },
+            { status: 500 }
         )
     }
-
-    const paginatedMessages = paginateMessages(filteredMessages, page, pageSize)
-    const totalPages = Math.ceil(filteredMessages.length / pageSize)
-
-    return NextResponse.json({ messages: paginatedMessages, totalPages })
 }

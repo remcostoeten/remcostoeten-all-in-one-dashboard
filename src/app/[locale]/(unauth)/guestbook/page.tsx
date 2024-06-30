@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server'
 import { Suspense } from 'react'
 
 import { AddGuestbookForm } from '@/components/dashboard/guestbook/AddGuestbookForm'
-import { GuestbookList } from '@/components/dashboard/guestbook/GuestbookList'
+import GuestbookList from '@/components/dashboard/guestbook/GuestbookList'
 
 export async function generateMetadata(props: { params: { locale: string } }) {
     const t = await getTranslations({
@@ -22,7 +22,7 @@ const Guestbook = () => {
     const t = useTranslations('Guestbook')
 
     return (
-        <>
+        <div className='max-w-screen-lg mx-auto px-4 py-10 bg-border m-10 rounded-xl  text-white b-dashed border-amber-600'>
             <AddGuestbookForm />
 
             <Suspense fallback={<p>{t('loading_guestbook')}</p>}>
@@ -54,7 +54,7 @@ const Guestbook = () => {
                     height={112}
                 />
             </a>
-        </>
+        </div>
     )
 }
 

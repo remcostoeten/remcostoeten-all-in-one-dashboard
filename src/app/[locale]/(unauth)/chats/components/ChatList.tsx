@@ -12,7 +12,7 @@ export default async function ChatList() {
                 <PhoneIcon className='h-6 w-6 text-green-500' />
                 <h2 className='text-xl font-semibold'>WhatsApp Exports</h2>
             </div>
-            <nav className='flex flex-col gap-2'>
+            <nav className='flex flex-col gap-2 '>
                 {chatFiles.map((file) => (
                     <Link
                         key={file}

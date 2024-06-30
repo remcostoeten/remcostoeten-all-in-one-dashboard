@@ -10,42 +10,93 @@ import { SearchIcon } from '../icons'
 import IconShell from '../shells/IconShell'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
-import React, { useState } from 'react'
+import { useState } from 'react'
+import ChatList from '@/app/[locale]/(unauth)/chats/components/ChatList'
 
-function Channel({
-    name,
-    isNotImplemented,
-    onClick
-}: {
-    name: string
-    isNotImplemented?: boolean | (() => void) | HTMLInputElement
-    onClick?: () => void
-}) {
-    const handleClick = isNotImplemented
-        ? () => useNotImplemented({ isInBeta: false })
-        : onClick
-    return (
-        <div
-            className='flex items-center gap-1 px-2.5 space-x-2'
-            onClick={handleClick}
-        >
-            <IconShell
-                className='h-[20px] p-[0px] w-[20px] translate-y-[2px]'
-                as='div'
-            >
-                <span className='text-text-secondary text-xs translate-x-[2px] '>
-                    #
-                </span>
-            </IconShell>
-            <div className='text-sm text-text-secondary hover:text-text-primary'>
-                {name}
-            </div>
-        </div>
-    )
-}
+// function Channel({
+//     name,
+//     isNotImplemented,
+//     onClick
+// }: {
+//     name: string
+//     isNotImplemented?: boolean | (() => void) | HTMLInputElement
+//     onClick?: () => void
+// }) {
+//     const inProgresstoast = useNotImplemented({ isInBeta: false })
+//     const handleClick = isNotImplemented
+//         ? inProgresstoast : null
+
+//     return (
+//         <div
+//             className='flex items-center gap-1 px-2.5 space-x-2'
+//             onClick={handleClick ? handleClick : () => console.log('clicked')}
+//         >
+//             <IconShell
+//                 className='h-[20px] p-[0px] w-[20px] translate-y-[2px]'
+//                 as='div'
+//             >
+//                 <span className='text-text-secondary text-xs translate-x-[2px] '>
+//                     #
+//                 </span>
+//             </IconShell>
+//             <div className='text-sm text-text-secondary hover:text-text-primary'>
+//                 {name}
+//             </div>
+//         </div>
+//     )
+// }
 
 function SubMenu() {
     const [isOpen, setIsOpen] = useState(true)
+
+    function IndividualChatWrapper({
+        chatName,
+        image
+    }: {
+        chatName: string
+        image: string
+    }) {
+        return (
+            <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
+                {image && (
+                    <Image src={image} width={20} height={20} alt='Threads' />
+                )}
+                <ChatList />
+            </div>
+        )
+    }
+
+    function Channel({
+        name,
+        isNotImplemented,
+        onClick
+    }: {
+        name: string
+        isNotImplemented?: boolean | (() => void) | HTMLInputElement
+        onClick?: () => void
+    }) {
+        const handleClick = isNotImplemented
+            ? () => useNotImplemented({ isInBeta: false })
+            : onClick
+        return (
+            <div
+                className='flex items-center gap-1 px-2.5 space-x-2'
+                onClick={handleClick}
+            >
+                <IconShell
+                    className='h-[20px] p-[0px] w-[20px] translate-y-[2px]'
+                    as='div'
+                >
+                    <span className='text-text-secondary text-xs translate-x-[2px] '>
+                        #
+                    </span>
+                </IconShell>
+                <div className='text-sm text-text-secondary hover:text-text-primary'>
+                    {name}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border'>
