@@ -5,7 +5,7 @@ import { createClient } from '@libsql/client'
 import { drizzle } from 'drizzle-orm/libsql'
 
 const client = createClient({
-    url: 'libsql://all-in-one-dashboard-remcostoeten.turso.io',
+    url: process.env.DATABASE_URL,
     authToken:
         'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MTk3NTg1OTAsImlkIjoiNWE4N2NmNTgtY2RmYi00ZDBjLWI3NWEtZGE0NzBiOWE5OTgxIn0.Hjmql2gJfmhhol98TL2nMDk1IJkNFjDXuTrJuUBsn9zde-wcboo6P1HEsqMUucS-57M_Zq8s-a_6MYfzH02JBw'
 })
