@@ -1,6 +1,5 @@
 'use client'
 
-import * as React from 'react'
 import Image from 'next/image'
 import {
     Collapsible,
@@ -10,14 +9,26 @@ import {
 import { SearchIcon } from '../icons'
 import IconShell from '../shells/IconShell'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
+import React, { useState } from 'react'
 
-type ChannelProps = {
+function Channel({
+    name,
+    isNotImplemented,
+    onClick
+}: {
     name: string
-}
-
-const Channel: React.FC<ChannelProps> = ({ name }) => {
+    isNotImplemented?: boolean | (() => void) | HTMLInputElement
+    onClick?: () => void
+}) {
+    const handleClick = isNotImplemented
+        ? () => useNotImplemented({ isInBeta: false })
+        : onClick
     return (
-        <div className='flex items-center gap-1 px-2.5 space-x-2'>
+        <div
+            className='flex items-center gap-1 px-2.5 space-x-2'
+            onClick={handleClick}
+        >
             <IconShell
                 className='h-[20px] p-[0px] w-[20px] translate-y-[2px]'
                 as='div'
@@ -34,7 +45,7 @@ const Channel: React.FC<ChannelProps> = ({ name }) => {
 }
 
 function SubMenu() {
-    const [isOpen, setIsOpen] = React.useState(true)
+    const [isOpen, setIsOpen] = useState(true)
 
     return (
         <div className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border'>
@@ -83,10 +94,13 @@ function SubMenu() {
                 <div className='relative flex items-center gap-2  py-1.5 bg-bg-ghost rounded'>
                     <div className='relative flex items-center gap-2 py-1.5 bg-bg-ghost rounded'>
                         <input
-                            className='flex-grow w-full rounded-md pl-8 pt-2 pb-2 text-xs px-4 outline-none bg-transparent border-border  border'
+                            className='flex-grow w-full rounded-md pl-8 pt-2 pb-2 text-xs px-4 outline-none bg-transparent border-border border'
                             type='search'
                             placeholder='Search...'
-                            aria-label='Search'
+                            aria-label='Search Channels'
+                            onChange={(event) => {
+                                useNotImplemented({ isInBeta: false })
+                            }}
                         />
                         <SearchIcon
                             width={16}
@@ -99,25 +113,24 @@ function SubMenu() {
             <Collapsible
                 open={isOpen}
                 onOpenChange={setIsOpen}
-                className='border-b border-border pb-4'
+                className='border-b border-border py-4 border-t '
             >
-                <CollapsibleTrigger className='flex items-center justify-between px-4 py-2 w-full hover:bg-bg-ghost-hover '>
+                <CollapsibleTrigger className='flex items-center justify-between px-4 pb-2 w-full hover:bg-bg-ghost-hover '>
                     <div className='flex items-center gap-2'>
                         <span className='text-xs text-text-secondary'>
                             CHANNELS
                         </span>
                     </div>
-                    <Image
-                        src='/path-to-chevron-icon.png'
+                    <ChevronRightIcon
+                        fill='border-border'
                         width={16}
                         height={16}
-                        alt='Toggle channels'
-                        className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        className={`trans transform transition-transform ${isOpen ? 'rotate-90' : 'rotate-180 '}`}
                     />
                 </CollapsibleTrigger>
                 <CollapsibleContent className='flex flex-col gap-2'>
-                    <Channel name='general' />
-                    <Channel name='random' />
+                    <Channel name='general' isNotImplemented />
+                    <Channel name='random' isNotImplemented />
                 </CollapsibleContent>
             </Collapsible>
         </div>
