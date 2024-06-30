@@ -41,7 +41,8 @@ This is a personal project that combines various tools and features I've built o
     <br/>
 
 ## 🐻 Big core overhauls that need to be done
-
+> > [!NOTE]  
+> On hold. After a few days I couldn't build with zero answers on google, deep down the dep. tree. 
 - React 19 upgrade
   - [React 19 release notes](https://reactjs.org/blog/2022/02/23/react-19.html#release-notes)
 - NextJS -15 upgrade]
@@ -116,6 +117,9 @@ This is a personal project that combines various tools and features I've built o
   - [ ] Allow downloading
   - [ ] Allow deleting
   - [ ] Allow sharing
+     
+- [ ] migrate my whatsapp tracker API from chromedriver to puppeteer. See API schema design;
+[https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share](https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share)
 
 ### Unique Implementations
 
