@@ -133,7 +133,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className='flex items-center gap-2 max-[825px]:hidden'>
+            <div className='flex items-center gap-4 max-[825px]:hidden'>
                 <Link href='/dashboard' className='max-[825px]:hidden'>
                     <ShineBorder className='text-center px-6 py-2  capitalize'>
                         <p className='pl-1 flex items-center gap-2'>
