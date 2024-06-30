@@ -1,15 +1,14 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { MenuIcon, SearchIcon } from '@/components/theme/icons'
+import { Button } from '@/components/ui/button'
+import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ChatMessage as ChatMessageType } from '@/core/types/chat-types'
+import { useState, useEffect } from 'react'
 import ChatMessage from '../components/ChatMessage'
 import Pagination from '../components/Pagination'
 import SearchBar from '../components/SearchBar'
-import { Button } from '@/components/ui/button'
-import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
-import { Input } from '@/components/ui/input'
-import { MenuIcon, SearchIcon } from '@/components/theme/icons'
+import { ChatMessage as ChatMessageType } from '@/core/types/chat-types'
 
 const PAGE_SIZE = 20
 

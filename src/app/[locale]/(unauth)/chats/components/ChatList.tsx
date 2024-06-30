@@ -1,7 +1,8 @@
+import { WebcamIcon } from '@/components/theme/icons'
+import { PhoneIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { getChatFiles } from './chat-utils'
-import { PhoneIcon } from '@heroicons/react/24/outline'
-import { WebcamIcon } from '@/components/theme/icons'
+
 export default async function ChatList() {
     const chatFiles = await getChatFiles()
 

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
+import SubMenu from '@/components/theme/dashboard-sidebar/SubMenu'
 
 interface DashboardLayoutProps {
     children: ReactNode
@@ -9,6 +10,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     return (
         <main className='relative flex h-full bg-dash-body  w-full flex-row'>
             <Aside />
+            <SubMenu />
             <section className=' flex w-full flex-col gap-5 p-4'>
                 {children}
                 <h1 className='text-4xl text-neutral-200'>Dashboard</h1>

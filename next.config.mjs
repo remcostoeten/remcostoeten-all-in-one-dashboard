@@ -15,7 +15,19 @@ const nextConfig = {
         dirs: ['.']
     },
     poweredByHeader: false,
-    reactStrictMode: true
+    reactStrictMode: true,
+    remotePatterns: [
+        {
+            protocol: 'https',
+            pathname: '*',
+            hostname: 'cdn.builder.io',
+            port: ''
+        }
+    ],
+
+    images: {
+        domains: ['cdn.builder.io']
+    }
 }
 
 export default withContentlayer(bundleAnalyzer(withNextIntlConfig(nextConfig)))

@@ -117,7 +117,7 @@ export function Seperator({ ...props }: any) {
     return (
         <div
             {...props}
-            className='h-[1px] px-7 mx-0 bg-neutral-500/50 rounded-full w-max text-center self-center'
+            className='h-[1px] px-7 mx-0 border-border border-b  rounded-full w-max text-center self-center'
         />
     )
 }

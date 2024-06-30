@@ -1,26 +1,40 @@
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
-import svgToReactComponent from '@/core/libs/svgToComponent';
-import Link from 'next/link';
+import {
+    Tooltip,
+    TooltipTrigger,
+    TooltipContent
+} from '@/components/ui/tooltip'
+import svgToReactComponent from '@/core/libs/svgToComponent'
+import Link from 'next/link'
 
 type MenuItemProps = {
     name: string
     icon: any
     isExpanded: boolean
-    hasNotification: boolean
+    hasNotification?: boolean
     anchor?: string
+    onClick?: () => void
 }
 
-const MenuItem = ({ name, icon, isExpanded, hasNotification, anchor = '#' }: MenuItemProps) => {
+const MenuItem = ({
+    name,
+    icon,
+    isExpanded,
+    hasNotification,
+    onClick,
+    anchor = '#'
+}: MenuItemProps) => {
     const IconComponent =
-        typeof icon === 'string' ? svgToReactComponent(icon) : icon;
-    const notificationClass = hasNotification ? 'has-notification' : '';
+        typeof icon === 'string' ? svgToReactComponent(icon) : icon
+    const notificationClass = hasNotification ? 'has-notification' : ''
 
     return (
         <>
             <Tooltip>
                 <TooltipTrigger>
                     {anchor && <Link href={anchor}></Link>}
-                    <Link href={anchor}
+                    <Link
+                        href={anchor}
+                        onClick={onClick}
                         className={`${notificationClass} trans rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-center'}`}
                     >
                         <span className='w-6 h-6'>{IconComponent}</span>
@@ -32,7 +46,7 @@ const MenuItem = ({ name, icon, isExpanded, hasNotification, anchor = '#' }: Men
                 </TooltipContent>
             </Tooltip>
         </>
-    );
-};
+    )
+}
 
-export default MenuItem;
+export default MenuItem
