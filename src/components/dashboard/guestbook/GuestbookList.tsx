@@ -31,19 +31,19 @@ export default function GuestbookList() {
 
     return (
         <div
-            className='mt-5 bg-gray-800 p-4 rounded-lg shadow-md'
+            className='mt-5 bg-gray-800 py-4 rounded-lg shadow-md'
             data-testid='guestbook-list'
         >
-            {entries.map(
-                (
-                    entry // Use the state variable here
-                ) => (
-                    <div
-                        key={entry.id}
-                        className='bg-gray-900 p-2 mb-4 rounded-lg flex justify-between items-center'
-                    >
+            {entries.map((entry) => (
+                <div
+                    key={entry.id}
+                    className='bg-gray-900 p-2 mb-4 rounded-lg gap-2 items-center flex justify-between'
+                >
+                    <div className='space-x-4'>
                         <span className='text-white'>{entry.username}</span>
                         <span className='text-gray-300'>{entry.body}</span>
+                    </div>
+                    <div className='flex items-center gap-2'>
                         <div className='text-blue-500 hover:text-blue-700'>
                             <DeleteGuestbookEntry id={entry.id} />
                         </div>
@@ -55,8 +55,8 @@ export default function GuestbookList() {
                             />
                         </div>
                     </div>
-                )
-            )}
+                </div>
+            ))}
         </div>
     )
 }

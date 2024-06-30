@@ -60,12 +60,7 @@ const EditableGuestbookEntry = (props: {
                             setIsEditing(false)
                         }}
                     />
-                ) : (
-                    <>
-                        <span className='text-gray-500'>{props.username}:</span>{' '}
-                        <span className='text-gray-800'>{props.body}</span>
-                    </>
-                )}
+                ) : null}
             </div>
         </>
     )
