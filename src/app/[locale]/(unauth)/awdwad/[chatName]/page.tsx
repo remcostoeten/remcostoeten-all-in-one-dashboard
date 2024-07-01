@@ -17,20 +17,18 @@ export default function ChatPage({ params }: { params: { chatName: string } }) {
     const [currentPage, setCurrentPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
     const router = useRouter()
-    const searchParams = useSearchParams()
 
     useEffect(() => {
-        const fetchChatData = async () => {
-            const response = await fetch(
-                `/api/chats/${params.chatName}?page=${currentPage}&pageSize=${PAGE_SIZE}`
-            )
-            const data = await response.json()
-            setMessages(data.messages)
-            setTotalPages(data.totalPages)
+        const fetchChatData = async (url: string) => {
+            const response = await fetch(url);
+
+            const data = await response.json();
+            setMessages(data.messages);
+            setTotalPages(data.totalPages);
         }
 
-        fetchChatData()
-    }, [params.chatName, currentPage])
+        fetchChatData(`/api/chats/${params.chatName.toLocaleLowerCase()}?page=${currentPage}&pageSize=${PAGE_SIZE}`);
+    }, [params.chatName, currentPage]);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page)
@@ -74,7 +72,7 @@ export default function ChatPage({ params }: { params: { chatName: string } }) {
             </header>
             <main className='flex-1 overflow-y-auto p-4 sm:p-6'>
                 <div className='grid gap-6'>
-                    {messages.map((message, index) => (
+                    {messages?.map((message, index) => (
                         <ChatMessage key={index} message={message} />
                     ))}
                 </div>

@@ -1,9 +1,9 @@
-import { Suspense } from 'react'
+import React, { Suspense } from 'react'
 import ChatHeader from './ChatHeader'
 import ChatInput from './ChatInput'
 import ChatMessages from './ChatMessages'
 
-export default function ChatPage() {
+export default function ChatPage(): JSX.Element {
     return (
         <div className='flex flex-col h-full'>
             <ChatHeader />

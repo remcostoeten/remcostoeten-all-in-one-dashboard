@@ -18,7 +18,7 @@ type MenuItemProps = {
 const MenuItem = ({
     name,
     icon,
-    isExpanded,
+    isExpanded = false,
     hasNotification,
     onClick,
     anchor = '#'

@@ -8,7 +8,7 @@ export default function Loading() {
             <SkeletonDashboardAside />
             <SubMenu />
             <section className=' flex w-full flex-col gap-5'>
-                <div className='w-screen h-screen bg-red-400 grid place-items-center'>
+                <div className='w-screen h-screen  grid place-items-center'>
                     <span className='loading loading-spinner text-accent'></span>
                 </div>
             </section>

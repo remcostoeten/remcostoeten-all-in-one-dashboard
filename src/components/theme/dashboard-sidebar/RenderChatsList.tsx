@@ -1,19 +1,14 @@
-import { GetChatData } from '@/app/[locale]/(unauth)/chats/components/chat-utils'
+import { getChatFiles } from '@/core/@server/actions/getLocalFile'
+import { Fragment } from 'react'
 
-function fetchDataAndMap(callback) {
-    return callback().then((data) => data.map((item) => item))
-}
+export default async function RenderChatsList() {
+    const chatFiles = await getChatFiles()
 
-export function RenderChatsList() {
-    const chatFiles = fetchDataAndMap(GetChatData)
-
-    console.log(chatFiles)
     return (
-        <ul>
-            {/* {chatFiles?.map((file) => ( */}
-            {/* <li key={file}>{file}</li> */}
-            {/* ))} */}
-            kaas
-        </ul>
+        <>
+            {chatFiles.map((file: string) => (
+                <Fragment key={file}>{file} </Fragment>
+            ))}
+        </>
     )
 }

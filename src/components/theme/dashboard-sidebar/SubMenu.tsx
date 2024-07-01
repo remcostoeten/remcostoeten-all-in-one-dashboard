@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import {
     Collapsible,
     CollapsibleContent,
@@ -10,47 +9,20 @@ import { SearchIcon } from '../icons'
 import IconShell from '../shells/IconShell'
 import { ChevronRightIcon, CogIcon, TvIcon } from '@heroicons/react/24/outline'
 import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
-import { useState, type ReactNode } from 'react'
-import { RenderChatsList } from './RenderChatsList'
-
-// function Channel({
-//     name,
-//     isNotImplemented,
-//     onClick
-// }: {
-//     name: string
-//     isNotImplemented?: boolean | (() => void) | HTMLInputElement
-//     onClick?: () => void
-// }) {
-//     const inProgresstoast = useNotImplemented({ isInBeta: false })
-//     const handleClick = isNotImplemented
-//         ? inProgresstoast : null
-
-//     return (
-//         <div
-//             className='flex items-center gap-1 px-2.5 space-x-2'
-//             onClick={handleClick ? handleClick : () => console.log('clicked')}
-//         >
-//             <IconShell
-//                 className='h-[20px] p-[0px] w-[20px] translate-y-[2px]'
-//                 as='div'
-//             >
-//                 <span className='text-text-secondary text-xs translate-x-[2px] '>
-//                     #
-//                 </span>
-//             </IconShell>
-//             <div className='text-sm text-text-secondary hover:text-text-primary'>
-//                 {name}
-//             </div>
-//         </div>
-//     )
-// }
+import { useEffect, useState, type ReactNode } from 'react'
+import { useMenuStore } from '@/core/stores/MenuStore'
+import { motion, useAnimationControls } from 'framer-motion'
 
 function SubMenu() {
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
+    const { isExpanded, setIsExpanded } = useMenuStore()
+    const containerControls = useAnimationControls()
+
+    useEffect(() => {
+        containerControls.start(isExpanded ? 'open' : 'close')
+    }, [isExpanded])
 
     function IndividualChatWrapper({
-        chatName,
         image
     }: {
         chatName: string
@@ -96,12 +68,12 @@ function SubMenu() {
     }
 
     return (
-        <div className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border'>
+        <motion.aside className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border' {...containerControls} >
             <div className='flex items-center  p-3 border-b border-border'>
                 <div className='text-lg font-semibold'>Chat</div>
             </div>
+
             <div className='flex flex-col px-2 py-4 border-b border-border'>
-                <RenderChatsList />
                 <IndividualChatWrapper chatName='test' image={<TvIcon />} />
                 <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
                     {/* <Image
@@ -157,7 +129,7 @@ function SubMenu() {
                     <Channel name='random' isNotImplemented />
                 </CollapsibleContent>
             </Collapsible>
-        </div>
+        </motion.aside>
     )
 }
 

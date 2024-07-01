@@ -2,6 +2,7 @@ import React from 'react'
 import IconShell from '@/components/theme/shells/IconShell'
 import { Input } from '@/components/ui/input'
 import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
+import useChatStore from '@/core/stores/chatStore'
 
 type MainContentHeaderWrapperProps = {
     hasIconBeforeTitle?: boolean
@@ -25,6 +26,8 @@ export default function MainContentHeaderWrapper({
     children,
     ...props
 }: MainContentHeaderWrapperProps) {
+    const ttitle = useChatStore(state => state.setChatTitle)
+
     return (
         <header
             aria-labelledby='main-header-title'
