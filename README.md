@@ -56,7 +56,7 @@ This is a personal project that combines various tools and features I've built o
         [Another skeleton helper](https://mkfizi.dev/tailbone/)
 
 ## 🐻 Interesting and/or very cool/unique components
-
+- [Cool Tailwind only script!](https://codepen.io/cbolson/pen/LYommYY)
 - [Enhanced shadn button](https://enhanced-button.vercel.app/)
 - [File vault - shadcn](https://file-vault-delta.vercel.app/)
 - [File vault v2 - shadnc](https://uploader.sadmn.com/)
