@@ -1,8 +1,8 @@
-import { getChatFiles } from '@/core/@server/actions/getLocalFile'
+import { GetChatFiles } from '@/core/@server/actions/getLocalFile'
 import { Fragment } from 'react'
 
 export default async function RenderChatsList() {
-    const chatFiles = await getChatFiles()
+    const chatFiles = await GetChatFiles()
 
     return (
         <>
