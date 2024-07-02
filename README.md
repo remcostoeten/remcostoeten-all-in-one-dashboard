@@ -76,6 +76,7 @@ This is a personal project that combines various tools and features I've built o
 
 ## 🐻 Design inspiration
 
+- [Nice chat (ai) design/wysiwyg](https://chat-preview.lobehub.com/)
 - [SaaS landing with dope bento glass style](https://www.hover.dev/templates/demo/the-startup)
 - [Vercel blog page with cool gradient](https://vercel.com/blog/deploy-summary)
 - [Supabase dashboard - loaders, collapse menu](https://supabase.com/dashboard/projects)
