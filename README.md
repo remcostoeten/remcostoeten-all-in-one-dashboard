@@ -41,8 +41,8 @@ This is a personal project that combines various tools and features I've built o
     <br/>
 
 ## 🐻 Big core overhauls that need to be done
-> > [!NOTE]  
-> On hold. After a few days I couldn't build with zero answers on google, deep down the dep. tree. 
+> > [!NOTE]
+> On hold. After a few days I couldn't build with zero answers on google, deep down the dep. tree.
 - React 19 upgrade
   - [React 19 release notes](https://reactjs.org/blog/2022/02/23/react-19.html#release-notes)
 - NextJS -15 upgrade]
@@ -99,31 +99,82 @@ This is a personal project that combines various tools and features I've built o
 - [x] Add user authentication
 - [x] Upgrade to the new react compiler (Next 15 + React 19)
 - [x] Implement dark mode  - Done, but light mode is far from usable.
-- [ ] Add more features
 
-### Long-Term Goals
 
-- [x] Localization
-  - [ ] [Add pretty flags](https://flagpack.xyz/)
-- [ ] [Migrate geolocation](https://features.remcostoeten.com/geolocation) and re-create UI
-- [x] Create landing page - Beta version is done
-- [ ] [Migrate URL tool](https://url.remcostoeten.com/) - [finished version, ugly UI](https://vsc.remcostoeten.com/)
-- [ ] [Migrate HTML to React tool and cleanup UI](https://portfolio.remcostoeten.com/html-to-jsx)
-- [ ] [Migrate and cleanup perfect blackjack strategy tool](https://portfolio.remcostoeten.com/blackjack)
-- [ ] [Migrate SVG to CSS pseudo element and create UI]()
-- [ ] [Migrate my password manager](https://password-manager.remcostoeten.com).
-- [ ] Add file vault feature
-  - [ ] Integrate uploadthing
+### x-term goals. Stuff that I just want to do, but only so much time in a day.
+
+🚨 = highest priority
+⚡ = medium priority
+🛣️ = low priority (will probably never happen)
+
+- [✔] Localization (always in progress)
+- [✔] [Add pretty flags](https://flagpack.xyz/) <- did not use this package, will maybe later
+- [🛣️] [Migrate geolocation](https://features.remcostoeten.com/geolocation) and re-create UI
+- [60%🛣️] Create landing page
+- [] Add blog feature which is actually good and not half assed. Also for release notes/changelog. Only know contentlayer. Maybe build a custom blog engine with my own CMS.
+if (contentlayer + markdown)
+    - [ ] Retrieve date from when MDX file was created/last edited.
+    - [ ] basic structure. Date, title, author, content, tags, view count, likes/dislike.
+    - [ ] Allow visitors (rate limit instantly to prevent multiple likes, or try to) to like/dislike posts
+    - [ ] implement view counter. Per ip or so, not session. Think of a accurate way.
+    - [ ] share blog posts on social media
+    - [ ] Syntax highlighting
+    - [ ] Add animated sidebar scroll for progress.
+    - [ ] Add reading duration to blog posts.
+    - [ ] categories via tags?
+    - [ ] Find out how to make the global site search index the bog titles, tags, and content
+    - [ ] Allow users to comment and think of a way to implement a comment system for non-logged in users w/o spam.
+    - [ ] Make sure its semantics are correct.
+    - [ ] Make sure it's accessible.
+    - [ ] Make sure SEO we used all the bells and whistles we can find.
+    - [ ] /blog landing page with categories.
+    - [ ] /blog/categories with landing for the categories/tags
+    - [ ] /blog/categories/params for the actual blog.
+    ....
+    - [ ] I'd rather have my blogs in my database, so first research how much harder that is than a file based system.
+    - [ ] 
+- [🛣️] [Migrate URL tool](https://url.remcostoeten.com/) - [finished version, ugly UI](https://vsc.remcostoeten.com/)
+- [⚡] [Migrate HTML to React tool and cleanup UI](https://portfolio.remcostoeten.com/html-to-jsx) - A lot of work. And things to fix
+- [🛣️] [Migrate and cleanup perfect blackjack strategy tool](https://portfolio.remcostoeten.com/blackjack)
+- [🛣️] [Migrate SVG to CSS pseudo element and create UI]()
+- [⚡] [Migrate my password manager](https://password-manager.remcostoeten.com).
+- [🚨] Add file vault feature
   - [ ] Allow uploading
-  - [ ] Allow downloading
-  - [ ] Allow deleting
+  - [ ] Integrate uploadthing
+    - [ ] images first
+      - [ ] allow max size (5mb?)
+    - [ ] videos second (max size?)
+        - mp4, webm, avi, mov?
+  - [ ] Allow multiple uploads at once
+  - [ ] Visual feedback when uploading, either percentage or progress bar (PER FILE)
+ - [🛣️ ] pdfs/docs third
+  - [ ] add doc support. [Sick library](https://showcase.apryse.com/pdf-viewer-mobile) for pdf/doc support
+
+  - [ ] crud operations (delet, edit, create, and view metadata)
   - [ ] Allow sharing
-     
+- [🚨] In addition to the file vault. I want a separate PRIVATE(!!) image/video gallery with PiP like Firefox has. Maybe also standardized sections like powertoys window manager. Must have 100% privacy. Auth middleware and I also want custom password allowance for each section.
+  - [ ] allow view like regular lightbox
+  - [ ] allow view multiple borderless like PiP in Firefox
+  - [ ] Show all (meta) data of image/video. Like [Pleio](https://wilfred.pleio.nl.nl/)
+  - [ ] Think of rate limiting, file max. Make sure I can't be screwed by a malicious user.
+- [🚨] Notes app, diary, ideas via rich text editor. I suppose Tiptap, but Sick library from above also seems cool.
+- [⚡] A proper kanban / todo board instead of this readme. Ideally integrated with github issues through (graphql?), we'll see.
+- [🛣️] Maybe something nice with release notes/changelog generated from github releases
+- [🛣️] A proper calendar app which maybe can be integrated with google calendar, but also in relation with my kanban board, and notes app. (Dream big honey)
+- [⚡🛣️] Migrate my whatsapp tracker API from chromedriver to puppeteer.
+  - [ ] See API schema design;
+    [https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share](https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share)
+  - [ ] Think of a solution to save data to database instead of local json.
+- [🚨] Display my whatsapp chat history. UI is done, A lot of parts of the logic is done, need to bring it together. <small>Personal use only since whatsapp export = txt. I converted txt via python script to json in certain object format. host as private api, and use it in my app/<small>
+  - [🛣️] Think of a solution to save data to database instead of local json (1mil +objects PER some chats).
+  - [ ] Allow star / favourite messages.
+  - [50%] Proper search with go to and surrounding messages instead of filter
+  - [ ] Maybe ever build a system where people can upload their .txt in an encrypted/client side format, auto convert to json and make it available for others. <small>But it's a dashboard for personal use, so probably not.</small>
 - [ ] migrate my whatsapp tracker API from chromedriver to puppeteer. See API schema design;
-[https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share](https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share)
+  [https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share](https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share)
 
 ### Unique Implementations
-
+- [⚡] A emoji feedback counter sticky thingy. [Design 1 w feedback input](https://codepen.io/kirkov/details/RwwvxjO)P
 - [ ] Add viewport tag ([source](https://www.youtube.com/shorts/YqAxXBrrryc))
 - [ ] Implement logic for tab title change when switching ([source](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c))
 - [ ] Dark light mode toggle ([source](https://codepen.io/jh3y/pen/GRaWZrw))
