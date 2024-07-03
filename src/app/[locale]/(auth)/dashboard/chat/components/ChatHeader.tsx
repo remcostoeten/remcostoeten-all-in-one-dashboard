@@ -1,3 +1,5 @@
+'use client'
+
 import MainContentHeaderWrapper from '@/components/dashboard/guestbook/ui-shells/MainContentHeaderWrapper'
 
 export default function ChatHeader() {

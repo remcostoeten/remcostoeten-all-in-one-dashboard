@@ -16,9 +16,6 @@ export async function GET() {
         return NextResponse.json(chatFiles)
     } catch (error) {
         console.error('Error reading chat files:', error)
-        return NextResponse.json(
-            { error: 'Failed to read chat files' },
-            { status: 500 }
-        )
+        return NextResponse.json({ error: 'Failed to read chat files' })
     }
 }

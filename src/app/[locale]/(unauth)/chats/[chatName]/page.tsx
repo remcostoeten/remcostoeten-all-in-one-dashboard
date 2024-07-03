@@ -22,7 +22,7 @@ export default function ChatPage({ params }: { params: { chatName: string } }) {
     useEffect(() => {
         const fetchChatData = async () => {
             const response = await fetch(
-                `/api/chats/${params.chatName}?page=${currentPage}&pageSize=${PAGE_SIZE}`
+                `/api/dashboard/chats/${params.chatName}?page=${currentPage}&pageSize=${PAGE_SIZE}`
             )
             const data = await response.json()
             setMessages(data.messages)
@@ -34,12 +34,12 @@ export default function ChatPage({ params }: { params: { chatName: string } }) {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page)
-        router.push(`/chats/${params.chatName}?page=${page}`)
+        router.push(`/dashboard/chats/${params.chatName}?page=${page}`)
     }
 
     const handleSearch = (query: string) => {
         router.push(
-            `/chats/${params.chatName}?search=${encodeURIComponent(query)}`
+            `/dashboard/chats/${params.chatName}?search=${encodeURIComponent(query)}`
         )
     }
 

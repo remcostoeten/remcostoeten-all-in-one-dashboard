@@ -17,7 +17,7 @@ export default function SizeToggle() {
 
     useEffect(() => {
         document.documentElement.style.fontSize = fontSizeMap[size]
-    }, [size])
+    }, [size, fontSizeMap])
 
     const handleSizeChange = (newSize: SizeOption) => {
         setSize(newSize as any)

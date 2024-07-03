@@ -13,8 +13,32 @@
  * This project contains  a handfull custom snippets, so if you type "skdoc" in the editor and enter it will generate the entire godcstring for you with the correct file path and syntax. This because of @file ./vscode/nextjs.code-snippets
  */
 
-import { count } from 'drizzle-orm'
 import { Skeleton, SVGSkeleton } from '../ui/SkeletonWrappers'
+
+function IndividualChatSkeleton() {
+    /**
+     * @file src/components/theme/dashboard-sidebar/RenderChatsList.server.tsx]
+     */
+
+    return (
+        <div className='flex flex-col px-4 py-4 border-b border-border'>
+            <nav className='flex flex-col gap-2'>
+                <a className='flex items-center gap-3 p-0'>
+                    <SVGSkeleton className='w-[14px] h-[14px]' />
+                    <Skeleton className='w-[100px] max-w-full' />
+                </a>
+                <a className='flex items-center gap-3 p-0'>
+                    <SVGSkeleton className='w-[14px] h-[14px]' />
+                    <Skeleton className='w-[90px] max-w-full' />
+                </a>
+                <a className='flex items-center gap-3 p-0'>
+                    <SVGSkeleton className='w-[14px] h-[14px]' />
+                    <Skeleton className='w-[50px] max-w-full' />
+                </a>
+            </nav>
+        </div>
+    )
+}
 
 function SkeletonGuestbookEntrys({ count }) {
     /**
@@ -192,4 +216,8 @@ function SkeletonDashboardAside() {
     )
 }
 
-export { SkeletonDashboardAside, SkeletonGuestbookEntrys }
+export {
+    SkeletonDashboardAside,
+    IndividualChatSkeleton,
+    SkeletonGuestbookEntrys
+}

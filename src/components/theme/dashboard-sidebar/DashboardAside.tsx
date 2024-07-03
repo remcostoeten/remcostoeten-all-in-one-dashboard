@@ -13,7 +13,7 @@ const Aside = () => {
 
     useEffect(() => {
         containerControls.start(isExpanded ? 'open' : 'close')
-    }, [isExpanded])
+    }, [isExpanded, containerControls])
 
     const favouriteItems = DashboardAsideItems.filter(
         (item) => item.isFavourite

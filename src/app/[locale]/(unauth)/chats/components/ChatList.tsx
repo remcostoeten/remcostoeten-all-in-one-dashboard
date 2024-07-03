@@ -1,7 +1,6 @@
 import { WebcamIcon } from '@/components/theme/icons'
 import { PhoneIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import DashboardLayout from '@/app/[locale]/(auth)/dashboard/_layout'
 import { GetChatFiles } from './chat-utils'
 
 export default async function ChatList() {
@@ -17,7 +16,7 @@ export default async function ChatList() {
                 {chatFiles.map((name) => (
                     <Link
                         key={name}
-                        href={`/chats/${name.replace('-chat.json', '')}`}
+                        href={`/dashboard/chats/${name.replace('-chat.json', '')}`}
                         className='flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted'
                         prefetch={false}
                     >

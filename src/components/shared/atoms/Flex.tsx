@@ -8,6 +8,7 @@ type FlexProps = {
     align?: 'start' | 'end' | 'center' | 'stretch' | 'baseline'
     gap?: string
     className?: string
+    as?: keyof JSX.IntrinsicElements
 }
 
 /**
@@ -19,6 +20,7 @@ type FlexProps = {
  * @param {'start' | 'end' | 'center' | 'stretch' | 'baseline'} [align='stretch'] - The alignment of the flex items.
  * @param {string} [gap='0'] - The gap between the flex items.
  * @param {string} [className=''] - Additional custom class names.
+ * @param {keyof JSX.IntrinsicElements} [as='div'] - The HTML element to render as.
  * @returns {JSX.Element} The rendered Flex component.
  */
 const Flex: React.FC<FlexProps> = ({
@@ -27,7 +29,9 @@ const Flex: React.FC<FlexProps> = ({
     justify = 'start',
     align = 'stretch',
     gap = '0',
-    className = ''
+    className = '',
+    as: Component = 'div',
+    ...props
 }) => {
     const classes = clsx(
         'flex',
@@ -54,7 +58,11 @@ const Flex: React.FC<FlexProps> = ({
         className
     )
 
-    return <div className={classes}>{children}</div>
+    return (
+        <Component className={classes} {...props}>
+            {children}
+        </Component>
+    )
 }
 
 export default Flex

@@ -1,6 +1,3 @@
-import React from 'react'
-import MenuItemWithTooltip from './MenuItemWithTooltip'
-
 export default function NotificationMenuItem() {
     const notificationsSvg = (
         <svg

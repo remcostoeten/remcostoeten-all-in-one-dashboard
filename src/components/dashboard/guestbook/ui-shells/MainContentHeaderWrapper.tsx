@@ -25,6 +25,8 @@ export default function MainContentHeaderWrapper({
     children,
     ...props
 }: MainContentHeaderWrapperProps) {
+    const showNotImplemented = useNotImplemented({ isInBeta: true })
+
     return (
         <header
             aria-labelledby='main-header-title'
@@ -61,11 +63,9 @@ export default function MainContentHeaderWrapper({
     )
 
     function handleSearch(value) {
-        const showNotImplemented = useNotImplemented({ isInBeta: true })
         if (onSearch) {
-            onSearch(value)
-        } else {
             showNotImplemented
+            onSearch(value)
         }
     }
 
@@ -78,7 +78,7 @@ export default function MainContentHeaderWrapper({
                 >
                     {icon}
                 </IconShell>
-            ) // Assuming icon is a React element, clean up its string representation for accessibility
+            )
         } else if (hasIconBeforeTitle) {
             return null
         } else {
