@@ -17,6 +17,9 @@ export default function TopSection() {
             <div className='flex items-center gap-2 flex-col'>
                 <AvatarShell Initials={initial} />
             </div>
+            <div
+            className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-icon-active-background bg-[#ffffff17] rounded-md trans hover:border-icon-active-background border'
+>
             <button
                 onClick={() => setIsExpanded(!isExpanded)}
                 className='p-1 trans bg-ghost-active w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center'
@@ -24,34 +27,6 @@ export default function TopSection() {
                 <Hamburger />
             </button>
         </div>
-    )
-}
-
-function StaticHamburger() {
-    const { isExpanded, setIsExpanded } = useMenuStore()
-
-    const handleToggle = () => {
-        setIsExpanded(!isExpanded)
-    }
-
-    const handleTogle = () => {
-        toast('I know, I know, animation is screwed up')
-        // if (isOpen) {
-        //     setIsOpen(false)
-        // } else {
-        //     setIsOpen(true)
-        // }
-    }
-
-    return (
-        <>
-            <button
-                className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-icon-active-background bg-[#ffffff17] rounded-md trans hover:border-icon-active-background border'
-                onClick={() => handleTogle()}
-            >
-                <Hamburger />
-            </button>
-            {isExpanded && <></>}
-        </>
-    )
+        </div>
+           )
 }
