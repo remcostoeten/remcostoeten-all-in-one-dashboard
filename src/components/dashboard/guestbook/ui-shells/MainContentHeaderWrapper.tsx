@@ -1,30 +1,57 @@
-import React from 'react'
-import IconShell from '@/components/theme/shells/IconShell'
-import { Input } from '@/components/ui/input'
-import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
-
+import React from 'react';
+import IconShell from '@/components/theme/shells/IconShell';
+import { Input } from '@/components/ui/input';
+import useNotImplemented from '@/core/hooks/useNotYetImplementedToast';
+import { toast } from  'sonner''
+'
 type MainContentHeaderWrapperProps = {
-    hasIconBeforeTitle?: boolean
-    title: string
-    subtitle?: string
-    icon?: React.ReactNode
-    showSearch?: boolean
-    onSearch?: (value: string) => void
-    className?: string
-    children?: React.ReactNode
-}
+    hasIconBeforeTitle?: boolean;
+    title: string;
+    subtitle?: string;
+    icon?: React.ReactNode;
+    showSearch?: boolean;
+    onSearch?: (value: string) => void;
+    className?: string;
+    children?: React.ReactNode;
+};
 
 export default function MainContentHeaderWrapper({
     hasIconBeforeTitle = false,
     title,
     subtitle,
-    icon = '#', // Placeholder icon, consider replacing with a real icon and providing alt text
+    icon = '#',
     showSearch = false,
     onSearch,
     className = '',
     children,
     ...props
 }: MainContentHeaderWrapperProps) {
+    const showNotImplemented = useNotImplemented({ isInBeta: true });
+
+    function handleSearch(value: string) {
+        if (onSearch) {
+            showNotImplemented(); 
+            onSearch(value);
+        }
+    }
+    
+    function renderIconOrChildren() {
+        if (hasIconBeforeTitle && icon) {
+            return (
+                <IconShell
+                    className='mr-2'
+                    aria-label={icon.toString().replace(/<[^>]*>?/gm, '')}
+                >
+                    {icon}
+                </IconShell>
+            ); // Assuming icon is a React element, clean up its string representation for accessibility
+        } else if (hasIconBeforeTitle) {
+            return null;
+        } else {
+            return children || null;
+        }
+    }
+
     return (
         <header
             aria-labelledby='main-header-title'
@@ -58,31 +85,5 @@ export default function MainContentHeaderWrapper({
                 </form>
             )}
         </header>
-    )
-
-    function handleSearch(value) {
-        const showNotImplemented = useNotImplemented({ isInBeta: true })
-        if (onSearch) {
-            onSearch(value)
-        } else {
-            showNotImplemented
-        }
-    }
-
-    function renderIconOrChildren() {
-        if (hasIconBeforeTitle && icon) {
-            return (
-                <IconShell
-                    className='mr-2'
-                    aria-label={icon.toString().replace(/<[^>]*>?/gm, '')}
-                >
-                    {icon}
-                </IconShell>
-            ) // Assuming icon is a React element, clean up its string representation for accessibility
-        } else if (hasIconBeforeTitle) {
-            return null
-        } else {
-            return children || null
-        }
-    }
+    );
 }

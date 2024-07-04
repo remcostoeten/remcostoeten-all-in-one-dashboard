@@ -23,7 +23,13 @@ export const headerDropdownItems: {
         href: '/',
         description:
             'Exported chats from WhatsApp fetched from own API, because why not.'
-    }
+    },
+    {
+title:"notes",
+description: 
+"A simple place to store some thoughts, utilizing a full fledged rich text editor",
+        href: '/dashboard/notes',
+}
 ]
 
 export const DashboardAsideItems = [

@@ -2,11 +2,13 @@ import Link from 'next/link'
 
 import { Github, ArrowRight } from 'lucide-react'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
-import { Button } from '../ui/button'
+import Image  from 'next/image'
 import siteConfig from '@/core/data/site-config'
 import { useTranslations } from 'next-intl'
 import { BorderBeam } from '../effects/magicui/border-beam'
 import ShineBorder from '../effects/magicui/shine-border'
+import { Suspense } from 'react'
+import type Link from 'next/link'
 
 export default function HeroSection() {
     const t = useTranslations('Landing')
@@ -40,20 +42,21 @@ export default function HeroSection() {
                 </Link>
             </div>
             <div>
-                <div className='relative mt-7 flex max-w-6xl justify-center overflow-hidden'>
-                    <div className='relative rounded-xl'>
-                        <img
-                            src='/dash-light.png'
-                            alt='Hero Image'
-                            className='block w-[1200px] rounded-[inherit] border object-contain shadow-lg dark:hidden'
-                        />
-                        <img
+
+
+<div className='relative mt-7 flex max-w-6xl justify-center overflow-hidden'>
+<Suspense fallback={<p>Loading...</p>}>
+            <div className='relative rounded-xl'>
+                        <Image
                             src='/dash.png'
                             alt='Hero Image'
-                            className='hidden w-[1200px] rounded-[inherit] border object-contain shadow-lg dark:block'
+                            width={1200}
+                            height={600}
+                            className='w-[1200px] rounded-[inherit] border object-contain shadow-lg'
                         />
                         <BorderBeam size={250} duration={12} delay={9} />
                     </div>
+      </Suspense>                   
                 </div>
             </div>
         </div>

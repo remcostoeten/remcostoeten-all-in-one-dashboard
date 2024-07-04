@@ -25,3 +25,14 @@ export const taskSchema = sqliteTable('task', {
         sql`(strftime('%s', 'now'))`
     )
 })
+
+export const notes = sqliteTable('notes', {
+    id: text('id').primaryKey(),
+    userId: text('user_id').notNull(),
+    title: text('title').notNull(),
+    content: text('content'),
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull().defaultNow(),
+    updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().defaultNow(),
+  });
+  
+  

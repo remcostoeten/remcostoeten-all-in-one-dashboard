@@ -1,11 +1,35 @@
----
-title: Hello World
-date: 2024-06-25
-author: Your Name
----
 
-# Hello World
+Eigen bevindingen paar dagen later:
+- Types: {
+    Of types, of interfaces, idealiter niet mixen wanneer niet nodig.
+    Daarnaast had Zod ook beter hergebruikt kunnen worden.
+}
+-  Accessibility van de modal, kan niet met escape gesloten worden (al was styling geen must en is het Radix.)
+-   components/shells  (wrappers) zijn soms niet 100% enkel ui wat props ontvangen.
+-TooltipProvider had in layout.tsx gemoeten, of wellicht een Providers.tsx i.v.m. scalabillity in mind, <Toaster/> had daar dan ook in gekund.
+- <Vault/> (Wordt als enige geladen in `page.tsx`, dus de hele landing) had opgesplits moet worden met een shells + logica laag zodat de page.tsx er zo uit kwam te zien.
 
-This is my first blog post using Contentlayer and MDX.
-
-You can use **Markdown** syntax and even include React components!
+Huidig
+```
+tsx
+export default function Page() {
+return <Vault/>
+}
+```
+Was dit beter geweest.
+```tsx
+  <PageWrapper>
+  <div className="flex my-8 justify-end w-full">
+        <AddNewEntryButton />
+      </div>
+      <Suspense fallback={<div>Loading clients.. Of liever 1:1 <ClientListSkeleton.</div>}>
+        <ClientList />
+      </Suspense>
+      <Suspense fallback={<div>^ idem.</div>}>
+        <VaultEntries />
+      </Suspense>
+  </PageWrapper>
+  ```   
+  
+  -Data fetching had niet in een useEffect gehoeven
+  
