@@ -1,3 +1,6 @@
+'use client'
+
+import { AnimatePresence, motion } from 'framer-motion'
 import {
     Tooltip,
     TooltipTrigger,
@@ -24,21 +27,33 @@ const MenuItem = ({
     anchor = '#'
 }: MenuItemProps) => {
     const IconComponent =
-        typeof icon === 'string' ? svgToReactComponent(icon) : icon
-    const notificationClass = hasNotification ? 'has-notification' : ''
+        typeof icon === 'string' ? svgToReactComponent(icon) : icon;
+    const notificationClass = hasNotification ? 'has-notification' : '';
 
     return (
         <>
             <Tooltip>
                 <TooltipTrigger>
-                    {anchor && <Link href={anchor}></Link>}
                     <Link
                         href={anchor}
                         onClick={onClick}
-                        className={`${notificationClass} trans rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-center'}`}
+                        className={`${notificationClass} trans rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer justify-start`}
                     >
                         <span className='w-6 h-6'>{IconComponent}</span>
-                        {isExpanded && <span className='ml-3'>{name}</span>}
+                        <AnimatePresence>
+                            {isExpanded && (
+                                <motion.span
+                                    key={name}
+                                    initial={{ opacity: -10, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -10 }}
+                                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                                    className='ml-3'
+                                >
+                                    {name}
+                                </motion.span>
+                            )}
+                        </AnimatePresence>
                     </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right' align='center'>
@@ -46,7 +61,7 @@ const MenuItem = ({
                 </TooltipContent>
             </Tooltip>
         </>
-    )
+    );
 }
 
-export default MenuItem
+export default MenuItem;

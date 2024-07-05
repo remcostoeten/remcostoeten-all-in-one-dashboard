@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
@@ -46,7 +46,7 @@ const Aside = () => {
                     ))}
                 </nav>
                 <Seperator />
-                <nav className='mt-4 space-y-2'>
+                <nav className='mt-4 space-y-2 flex flex-col'>
                     {itemsWithoutFavourites.map(
                         ({ name, svg, hasNotification, anchor }) => (
                             <MenuItem
@@ -61,7 +61,7 @@ const Aside = () => {
                     )}
                 </nav>
             </div>
-            <div className='mt-auto flex flex-col gap-2 items-center justify-center'>
+            <div className='mt-auto flex flex-col gap-2 px-2 justify-start'>
                 <Seperator />
                 <MenuItem
                     hasNotification={false}
@@ -111,7 +111,7 @@ export function Seperator({ ...props }: any) {
     return (
         <div
             {...props}
-            className='h-[1px] px-7 mx-0 border-border border-b  rounded-full w-max text-center self-center'
+            className='w-[inherit] h-[1px] px-7 mx-0 border-border border-b  rounded-full text-center self-center'
         />
     )
 }
