@@ -16,6 +16,20 @@
       ],
       "description": "Creates a simple React component with props."
     },
+    "className with stringinterpolation": {
+      "prefix": "propclass",
+      "body": [
+        "className={`class ${someprop} ${someProp ? '' : 'isthecase'}`}"
+      ],
+      "description": "ClassName with string interpolation."
+    },
+    "code block": {
+      "prefix": "backtick",
+      "body": [
+        "`"
+      ],
+      "description": "Since my keyboard is broken I backtick like this. Efficiency baby."
+    },
     "Skeleton docstring": {
         "prefix": "skdoc",
         "body": [
