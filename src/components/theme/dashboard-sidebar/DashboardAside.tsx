@@ -62,7 +62,7 @@ const Aside = () => {
                 </nav>
             </div>
             <div className='mt-auto flex flex-col gap-2 px-2 justify-start'>
-                <Seperator />
+                <hr />{' '}
                 <MenuItem
                     hasNotification={false}
                     name='Project Settings'
