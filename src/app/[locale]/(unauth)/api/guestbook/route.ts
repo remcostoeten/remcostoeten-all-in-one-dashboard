@@ -21,8 +21,10 @@ export const POST = async (request: Request) => {
     try {
         const guestbook = await db
             .insert(guestbookSchema)
-            // @ts-ignore
-            .values(parse.data)
+            .values({
+                username: parse.data.username,
+                body: parse.data.body
+            })
             .returning()
 
         logger.info('A new guestbook has been created')

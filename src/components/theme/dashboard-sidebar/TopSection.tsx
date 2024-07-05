@@ -17,16 +17,14 @@ export default function TopSection() {
             <div className='flex items-center gap-2 flex-col'>
                 <AvatarShell Initials={initial} />
             </div>
-            <div
-            className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-icon-active-background bg-[#ffffff17] rounded-md trans hover:border-icon-active-background border'
->
-            <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className='p-1 trans bg-ghost-active w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center'
-            >
-                <Hamburger />
-            </button>
+            <div className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-icon-active-background bg-[#ffffff17] rounded-md trans hover:border-icon-active-background border'>
+                <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className='p-1 trans bg-ghost-active w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center'
+                >
+                    <Hamburger />
+                </button>
+            </div>
         </div>
-        </div>
-           )
+    )
 }

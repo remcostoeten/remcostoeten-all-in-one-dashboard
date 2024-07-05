@@ -7,12 +7,11 @@ type statusProps = {
 }
 
 export default function useNotImplemented({ isInBeta = false }: statusProps) {
-    return () => {
-        if (isInBeta) {
-            toast('Development is in progress, expect bugs '🚧🚧
-        } else {
-            toast('This feature is not yet implemented  😔⌛)😔
+    if (isInBeta) {
+        return () => {
+            toast('Development is in progress, expect bugs 🚧🚧')
         }
+    } else {
+        return toast('This feature is not yet implemented 😔⌛')
     }
 }
-

@@ -18,7 +18,7 @@ const plexsans = IBM_Plex_Sans({
 export default function RootLayout(props: {
     children: ReactNode
     params: { locale: string }
-}) { 
+}) {
     const messages = useMessages()
 
     // Clerk localization and URLs
@@ -26,8 +26,6 @@ export default function RootLayout(props: {
     let signInUrl = '/sign-in'
     let signUpUrl = '/sign-up'
     let dashboardUrl = '/dashboard'
-
-  
 
     if (props.params.locale !== 'en') {
         signInUrl = `/${props.params.locale}${signInUrl}`
