@@ -26,7 +26,7 @@ export default function MainContentHeaderWrapper({
     children,
     ...props
 }: MainContentHeaderWrapperProps) {
-    const ttitle = useChatStore(state => state.setChatTitle)
+    const ttitle = useChatStore((state) => state.setChatTitle)
 
     return (
         <header

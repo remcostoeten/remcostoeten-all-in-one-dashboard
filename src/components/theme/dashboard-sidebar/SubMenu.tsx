@@ -68,7 +68,10 @@ function SubMenu() {
     }
 
     return (
-        <motion.aside className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border' {...containerControls} >
+        <motion.aside
+            className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border'
+            {...containerControls}
+        >
             <div className='flex items-center  p-3 border-b border-border'>
                 <div className='text-lg font-semibold'>Chat</div>
             </div>

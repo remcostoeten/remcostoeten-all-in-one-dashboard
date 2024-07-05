@@ -3,7 +3,11 @@ import Link from 'next/link'
 
 export default async function ChatList() {
     const chats = await getChats()
-    const strippedFileNames = chats.map((chat: string) => chat.replace('-chat.json', '').charAt(0).toUpperCase() + chat.replace('-chat.json', '').slice(1))
+    const strippedFileNames = chats.map(
+        (chat: string) =>
+            chat.replace('-chat.json', '').charAt(0).toUpperCase() +
+            chat.replace('-chat.json', '').slice(1)
+    )
 
     return (
         <div className='flex flex-col gap-2'>

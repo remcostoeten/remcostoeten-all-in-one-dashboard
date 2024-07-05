@@ -9,7 +9,7 @@ import { useChatSubMenuStore } from '@/core/stores/SubMenuStore'
 
 export default function TopSection() {
     const { isExpanded, setIsExpanded } = useMenuStore()
-    const { isSubMenuExpanded, setIsSubMenuExpanded } = useChatSubMenuStore();
+    const { isSubMenuExpanded, setIsSubMenuExpanded } = useChatSubMenuStore()
 
     // ?    const toggleSubMenu = () => {
     // setIsSubMenuExpanded(!isSubMenuExpanded);
@@ -23,7 +23,6 @@ export default function TopSection() {
             <div className='flex  gap-2 flex-col'>
                 <AvatarShell Initials={initial} />
             </div>
-
 
             {/* {!isChat && ( */}
             <button
@@ -39,7 +38,6 @@ export default function TopSection() {
             >
                 <Hamburger />
             </button> */}
-
         </div>
     )
 }

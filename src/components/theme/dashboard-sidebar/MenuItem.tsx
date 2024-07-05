@@ -27,8 +27,8 @@ const MenuItem = ({
     anchor = '#'
 }: MenuItemProps) => {
     const IconComponent =
-        typeof icon === 'string' ? svgToReactComponent(icon) : icon;
-    const notificationClass = hasNotification ? 'has-notification' : '';
+        typeof icon === 'string' ? svgToReactComponent(icon) : icon
+    const notificationClass = hasNotification ? 'has-notification' : ''
 
     return (
         <>
@@ -47,7 +47,10 @@ const MenuItem = ({
                                     initial={{ opacity: -10, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -10 }}
-                                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                                    transition={{
+                                        duration: 0.2,
+                                        ease: 'easeInOut'
+                                    }}
                                     className='ml-3'
                                 >
                                     {name}
@@ -61,7 +64,7 @@ const MenuItem = ({
                 </TooltipContent>
             </Tooltip>
         </>
-    );
+    )
 }
 
-export default MenuItem;
+export default MenuItem

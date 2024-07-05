@@ -3,7 +3,6 @@
 // because u cant use the same component in the server and client
 // so we need to create a new component for the client
 
-
 import Link from 'next/link'
 
 export default function ChatListClient({ chats }: { chats: string[] }) {

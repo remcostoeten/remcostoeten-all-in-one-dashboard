@@ -5,7 +5,7 @@ import MainContentHeaderWrapper from '@/components/dashboard/guestbook/ui-shells
 import chatStore from '@/core/stores/chatStore'
 
 export default function ChatHeader(): JSX.Element {
-    const setChatTitle = chatStore(state => state.setChatTitle)
+    const setChatTitle = chatStore((state) => state.setChatTitle)
 
     useEffect(() => {
         setChatTitle('general')

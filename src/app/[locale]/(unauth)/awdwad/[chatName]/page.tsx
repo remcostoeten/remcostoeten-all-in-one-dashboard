@@ -20,15 +20,17 @@ export default function ChatPage({ params }: { params: { chatName: string } }) {
 
     useEffect(() => {
         const fetchChatData = async (url: string) => {
-            const response = await fetch(url);
+            const response = await fetch(url)
 
-            const data = await response.json();
-            setMessages(data.messages);
-            setTotalPages(data.totalPages);
+            const data = await response.json()
+            setMessages(data.messages)
+            setTotalPages(data.totalPages)
         }
 
-        fetchChatData(`/api/chats/${params.chatName.toLocaleLowerCase()}?page=${currentPage}&pageSize=${PAGE_SIZE}`);
-    }, [params.chatName, currentPage]);
+        fetchChatData(
+            `/api/chats/${params.chatName.toLocaleLowerCase()}?page=${currentPage}&pageSize=${PAGE_SIZE}`
+        )
+    }, [params.chatName, currentPage])
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page)

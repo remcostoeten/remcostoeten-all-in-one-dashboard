@@ -1,10 +1,12 @@
-"use server"
+'use server'
 
 import { revalidateTag } from 'next/cache'
 import { cache } from 'react'
 
 export const GetChatFiles = cache(async (): Promise<string[]> => {
-    const response = await fetch(`http://localhost:3000/nl/api/chats`, { next: { tags: ['chats'] } })
+    const response = await fetch(`http://localhost:3000/nl/api/chats`, {
+        next: { tags: ['chats'] }
+    })
     if (!response.ok) {
         throw new Error('Failed to fetch chat files')
     }
@@ -16,7 +18,10 @@ export type apiProps = {
 }
 
 export const GetChatFile = cache(async ({ chatId = 'a' }: apiProps) => {
-    const response = await fetch(`http://localhost:3000/nl/api/chats/${chatId}`, { next: { tags: [`chat-${chatId}`] } })
+    const response = await fetch(
+        `http://localhost:3000/nl/api/chats/${chatId}`,
+        { next: { tags: [`chat-${chatId}`] } }
+    )
     if (!response.ok) {
         throw new Error('Failed to fetch chat data')
     }
@@ -24,7 +29,9 @@ export const GetChatFile = cache(async ({ chatId = 'a' }: apiProps) => {
 })
 
 export const getChats = cache(async () => {
-    const response = await fetch('http://localhost:3000/api/chats', { next: { tags: ['chats'] } })
+    const response = await fetch('http://localhost:3000/api/chats', {
+        next: { tags: ['chats'] }
+    })
     if (!response.ok) {
         throw new Error('Failed to fetch chats')
     }
@@ -32,7 +39,9 @@ export const getChats = cache(async () => {
 })
 
 export const getChatData = cache(async (chatId: string) => {
-    const response = await fetch(`http://localhost:3000/api/chats/${chatId}`, { next: { tags: [`chat-${chatId}`] } })
+    const response = await fetch(`http://localhost:3000/api/chats/${chatId}`, {
+        next: { tags: [`chat-${chatId}`] }
+    })
     if (!response.ok) {
         throw new Error('Failed to fetch chat data')
     }
