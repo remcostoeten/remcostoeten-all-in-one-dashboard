@@ -65,7 +65,7 @@ export default function NavSettings() {
                             </svg>
                         ) : (
                             <svg
-                                className='w-6 h-6 '
+                                className='w-6 h-6'
                                 fill='#7f7f7f'
                                 stroke='currentColor'
                                 viewBox='0 0 24 24'

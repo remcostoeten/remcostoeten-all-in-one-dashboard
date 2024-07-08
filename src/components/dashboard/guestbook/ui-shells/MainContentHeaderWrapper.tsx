@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useCallback } from 'react'
 import IconShell from '@/components/theme/shells/IconShell'
 import { Input } from '@/components/ui/input'
 import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
@@ -27,6 +29,35 @@ export default function MainContentHeaderWrapper({
     ...props
 }: MainContentHeaderWrapperProps) {
     const ttitle = useChatStore((state) => state.setChatTitle)
+    const showNotImplemented = useNotImplemented
+
+    const handleSearch = useCallback(
+        (value: string) => {
+            if (onSearch) {
+                onSearch(value)
+            } else {
+                showNotImplemented({ isInBeta: true })
+            }
+        },
+        [onSearch, showNotImplemented]
+    )
+
+    const renderIconOrChildren = () => {
+        if (hasIconBeforeTitle && icon) {
+            return (
+                <IconShell
+                    className='mr-2'
+                    aria-label={icon.toString().replace(/<[^>]*>?/gm, '')}
+                >
+                    {icon}
+                </IconShell>
+            ) // Assuming icon is a React element, clean up its string representation for accessibility
+        } else if (hasIconBeforeTitle) {
+            return null
+        } else {
+            return children || null
+        }
+    }
 
     return (
         <header
@@ -62,30 +93,4 @@ export default function MainContentHeaderWrapper({
             )}
         </header>
     )
-
-    function handleSearch(value) {
-        const showNotImplemented = useNotImplemented({ isInBeta: true })
-        if (onSearch) {
-            onSearch(value)
-        } else {
-            showNotImplemented
-        }
-    }
-
-    function renderIconOrChildren() {
-        if (hasIconBeforeTitle && icon) {
-            return (
-                <IconShell
-                    className='mr-2'
-                    aria-label={icon.toString().replace(/<[^>]*>?/gm, '')}
-                >
-                    {icon}
-                </IconShell>
-            ) // Assuming icon is a React element, clean up its string representation for accessibility
-        } else if (hasIconBeforeTitle) {
-            return null
-        } else {
-            return children || null
-        }
-    }
 }
