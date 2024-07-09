@@ -42,13 +42,7 @@ export default function RootLayout(props: {
         signUpUrl = `/${props.params.locale}${signUpUrl}`
         dashboardUrl = `/${props.params.locale}${dashboardUrl}`
     }
-    const ellipseProps = {
-        cx: 735.902,
-        cy: -440.872,
-        rx: 630.75,
-        ry: 638,
-        transform: 'rotate(5.11905 735.902 -440.872)'
-    }
+
     return (
         <html
             lang={props.params.locale}
