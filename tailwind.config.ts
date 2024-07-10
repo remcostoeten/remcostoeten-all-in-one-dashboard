@@ -5,7 +5,7 @@ const {
     default: flattenColorPalette
 } = require('tailwindcss/lib/util/flattenColorPalette')
 
-const withMT = require("@material-tailwind/html/utils/withMT");
+const withMT = require('@material-tailwind/html/utils/withMT')
 
 const config: Config = withMT({
     content: [
@@ -252,6 +252,6 @@ const config: Config = withMT({
             )
         }
     ]
-});
+})
 
-module.exports = config;
+module.exports = config

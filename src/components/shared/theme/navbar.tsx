@@ -2,7 +2,7 @@
 
 import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Button } from '@/components/ui/button'
 import {
     SheetTrigger,
@@ -22,25 +22,28 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
-import { headerDropdownItems } from '@/core/data/menu-items'
 import LogoIcon from './Logo'
 import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
 import ShineBorder from '@/components/effects/magicui/shine-border'
-import { usePathname } from 'next/navigation'
+import { headerDropdownItems } from '@/core/data/menu-items'
 
 export default function NavBar() {
-    const pathname = usePathname()
     const { userId } = useAuth()
 
-    const ref = useRef<HTMLDivElement>(null)
-    const [isFixed, setIsFixed] = useState(false)
+    const ref = React.useRef<HTMLDivElement>(null)
+    const [isFixed, setIsFixed] = React.useState(false)
 
-    useEffect(() => {
+    React.useEffect(() => {
         const handleScroll = () => {
             if (ref.current) {
                 setIsFixed(window.scrollY > ref.current.clientHeight)
             }
+            console.log(window.scrollY)
+        }
+
+        if (ref.current) {
+            setIsFixed(window.scrollY > ref.current.clientHeight)
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -50,15 +53,11 @@ export default function NavBar() {
         }
     }, [])
 
-    // Simplify conditional rendering and class assignment
-    const navClass = `z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3 ${isFixed ? 'fixed top-0' : '-top-5'}`
-
-    if (pathname.includes('dashboard')) {
-        return null
-    }
-
     return (
-        <nav ref={ref} className={navClass}>
+        <nav
+            ref={ref}
+            className={`z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3  ${isFixed ? 'fixed top-0 ' : '-top-5'}`}
+        >
             <div className='flex w-full justify-between min-[825px]:hidden'>
                 <Dialog>
                     <SheetTrigger className='p-2 transition'>
@@ -66,7 +65,7 @@ export default function NavBar() {
                     </SheetTrigger>
                     <SheetContent side='left'>
                         <SheetHeader>
-                            <SheetTitle>Dashboard - Remcostoeten</SheetTitle>
+                            <SheetTitle>Next Starter</SheetTitle>
                         </SheetHeader>
                         <div className='mt-4 flex flex-col space-y-3'>
                             <DialogClose asChild>
@@ -114,13 +113,13 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className='flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
-                                {headerDropdownItems.map((items) => (
+                                {headerDropdownItems.map((component) => (
                                     <ListItem
-                                        key={items.title}
-                                        title={items.title}
-                                        href={items.href}
+                                        key={component.title}
+                                        title={component.title}
+                                        href={component.href}
                                     >
-                                        {items.description}
+                                        {component.description}
                                     </ListItem>
                                 ))}
                             </ul>
