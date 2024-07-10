@@ -13,7 +13,7 @@
  * This project contains  a handfull custom snippets, so if you type "skdoc" in the editor and enter it will generate the entire godcstring for you with the correct file path and syntax. This because of @file ./vscode/nextjs.code-snippets
  */
 
-import { Skeleton, SVGSkeleton } from "../ui/SkeletonwWrapper"
+import { Skeleton, SVGSkeleton } from '../ui/SkeletonwWrapper'
 
 function SkeletonGuestbookEntrys({ count }) {
     /**

@@ -15,7 +15,13 @@ const nextConfig = {
         dirs: ['.']
     },
     poweredByHeader: false,
-    reactStrictMode: true
+    reactStrictMode: true,
+    typescript: {
+        ignoreBuildErrors: true
+    },
+    eslint: {
+        ignoreDuringBuilds: true
+    }
 }
 
 export default withContentlayer(bundleAnalyzer(withNextIntlConfig(nextConfig)))

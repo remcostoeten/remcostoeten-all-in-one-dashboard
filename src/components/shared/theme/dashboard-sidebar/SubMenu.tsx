@@ -35,17 +35,17 @@ const Channel = ({
     isNotImplemented?: boolean
     onClick?: () => void
 }) => {
-    const notImplementedToast = useNotImplemented();
+    const notImplementedToast = useNotImplemented()
 
     const handleClick = useCallback(() => {
         if (isNotImplemented) {
-            notImplementedToast();
+            notImplementedToast()
         } else if (onClick) {
-            onClick();
+            onClick()
         } else {
-            console.log('clicked');
+            console.log('clicked')
         }
-    }, [isNotImplemented, onClick, notImplementedToast]);
+    }, [isNotImplemented, onClick, notImplementedToast])
 
     return (
         <div
