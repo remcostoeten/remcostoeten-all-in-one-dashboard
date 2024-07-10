@@ -7,6 +7,7 @@ import { DashboardAsideItems } from '@/core/data/menu-items'
 import TopSection from './TopSection'
 import MenuItem from './MenuItem'
 import NavSettings from './NavSettings'
+import { cn } from '@/core/utils/cn'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
@@ -62,42 +63,50 @@ const Aside = () => {
                     ))}
                 </nav>
             </div>
-            <div className='mt-auto flex flex-col gap-2 items-center justify-center'>
-                <Seperator />
-                <NavSettings />
-                <MenuItem
-                    name='Search'
-                    icon={
-                        <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            fill='none'
-                            viewBox='0 0 24 24'
-                            strokeWidth={1.5}
-                            stroke='#7f7f7f'
-                            className='size-6'
-                        >
-                            <path
-                                strokeLinecap='round'
-                                strokeLinejoin='round'
-                                d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z'
-                            />
-                        </svg>
-                    }
-                    hasNotification={false}
-                    isExpanded={isExpanded}
-                />
+            <div className='mt-auto flex flex-col gap-2 '>
+                <Seperator style={{ marginBottom: '20px' }} />
+                <div className='px-4'><NavSettings />
+                    <MenuItem
+                        name='Search'
+                        icon={
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                strokeWidth={1.5}
+                                stroke='#7f7f7f'
+                                className='size-6'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z'
+                                />
+                            </svg>
+                        }
+                        hasNotification={false}
+                        isExpanded={isExpanded}
+                    />
+                </div>
             </div>
-        </motion.aside>
+        </motion.aside >
     )
 }
 
 export default Aside
 
-export function Seperator({ ...props }: any) {
+export function Seperator({ mt = '0', mb = '0', mx = '0', ...props }: any) {
     return (
         <div
             {...props}
-            className='h-[1px] px-7 mx-0 bg-neutral-500/50 rounded-full w-max text-center self-center'
+            className={cn(
+                'h-[1px] px-7 mx-0 bg-border rounded-full w-full text-center self-center',
+                {
+                    'mt-[1px]': mt,
+                    'mb-[1px]': mb,
+                    'mx-[1px]': mx,
+                }
+            )}
         />
     )
 }

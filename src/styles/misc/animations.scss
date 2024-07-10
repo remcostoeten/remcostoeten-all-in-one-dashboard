@@ -21,8 +21,10 @@ $duration: 0.74s;
 
     &:hover {
         transform: scale(1.04);
+
         path {
             fill: #3b82f6;
+
             // transform: scale(1.04) rotate(3deg);
             &:nth-child(2) {
                 transform: scale(1.04);
