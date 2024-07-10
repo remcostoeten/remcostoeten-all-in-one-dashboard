@@ -23,6 +23,9 @@ dependencies:
   '@logtail/pino':
     specifier: ^0.4.21
     version: 0.4.22(pino@9.2.0)
+  '@material-tailwind/html':
+    specifier: ^2.2.2
+    version: 2.2.2
   '@radix-ui/react-avatar':
     specifier: ^1.0.4
     version: 1.0.4(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
@@ -1322,6 +1325,13 @@ packages:
 
   /@logtail/types@0.4.20:
     resolution: {integrity: sha512-nYsum10eJMTo+ySBlYXvSrvgD1NDCVUeOlxLBbelq3XUmHu9L48VNR3P0BOmhLamYCTEgjatTj0PyPLfjL1W9g==}
+    dev: false
+
+  /@material-tailwind/html@2.2.2:
+    resolution: {integrity: sha512-sEu+3QKzJ9UVNWWpeKmDyBj3eek11KN1y6AZemSwxzVgkr7FZy+e6sY/8p6JeLS+b2cy7p1em3IV9Q/TUR3RdA==}
+    dependencies:
+      deepmerge: 4.3.1
+      material-ripple-effects: 2.0.1
     dev: false
 
   /@mdx-js/esbuild@2.3.0(esbuild@0.19.12):
@@ -4131,6 +4141,11 @@ packages:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
 
+  /deepmerge@4.3.1:
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /define-data-property@1.1.4:
     resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
     engines: {node: '>= 0.4'}
@@ -6357,6 +6372,10 @@ packages:
   /markdown-extensions@2.0.0:
     resolution: {integrity: sha512-o5vL7aDWatOTX8LzaS1WMoaoxIiLRQJuIKKe2wAw6IeULDHaqbiqiggmx+pKvZDb1Sj+pE46Sn1T7lCqfFtg1Q==}
     engines: {node: '>=16'}
+    dev: false
+
+  /material-ripple-effects@2.0.1:
+    resolution: {integrity: sha512-hHlUkZAuXbP94lu02VgrPidbZ3hBtgXBtjlwR8APNqOIgDZMV8MCIcsclL8FmGJQHvnORyvoQgC965vPsiyXLQ==}
     dev: false
 
   /mdast-util-definitions@5.1.2:

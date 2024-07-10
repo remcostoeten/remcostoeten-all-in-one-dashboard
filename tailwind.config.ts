@@ -5,7 +5,9 @@ const {
     default: flattenColorPalette
 } = require('tailwindcss/lib/util/flattenColorPalette')
 
-const config: Config = {
+const withMT = require("@material-tailwind/html/utils/withMT");
+
+const config: Config = withMT({
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -36,7 +38,7 @@ const config: Config = {
             },
             height: {
                 icon: 'var(--icon-size)',
-                nav: 'var(--nav-height',
+                nav: 'var(--nav-height)',
                 'top-bar': 'var(--top-bar-height)'
             },
             colors: {
@@ -68,7 +70,6 @@ const config: Config = {
                 'text-secondary': 'var(--text-secondary)',
                 'text-active': 'var(--text-active)',
                 'button-primary': 'var(--button-primary)',
-                // 'ghost-hover': 'var(--border-ghost-hover)',
                 'button-primary-hover': 'var(--button-primary-hover)',
                 orange: 'var(--custom-orange)',
                 'top-bar': 'var(--top-bar)',
@@ -218,7 +219,7 @@ const config: Config = {
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'border-beam':
                     'border-beam calc(var(--duration)*1s) infinite linear',
-                'background-shine': 'background-s1A1928hine 2s linear infinite'
+                'background-shine': 'background-shine 2s linear infinite'
             }
         }
     },
@@ -251,6 +252,6 @@ const config: Config = {
             )
         }
     ]
-}
+});
 
-export default config
+module.exports = config;

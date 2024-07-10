@@ -5,6 +5,8 @@ import IconComponent from '../shells/IconShell'
 import CustomPopover from '../shells/CustomPopover'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
+import MuiCheckbox from '@/components/ui/mui/mui-checkbox'
+import { Button } from '@/components/ui/button'
 
 export default function NavSettings() {
     const enabledNavItems = useMenuStore(state => state.enabledNavItems)
@@ -13,6 +15,21 @@ export default function NavSettings() {
     useEffect(() => {
         console.log('enabledNavItems changed:', enabledNavItems)
     }, [enabledNavItems])
+
+    function toggleAllItems() {
+        const allEnabled = DashboardAsideItems.every(item => enabledNavItems[item.name]);
+        DashboardAsideItems.forEach(item => {
+            if (allEnabled) {
+                if (enabledNavItems[item.name]) {
+                    toggleNavItem(item.name);
+                }
+            } else {
+                if (!enabledNavItems[item.name]) {
+                    toggleNavItem(item.name);
+                }
+            }
+        });
+    }
 
     const trigger = (
         <IconComponent
@@ -36,8 +53,8 @@ export default function NavSettings() {
     )
 
     const popoverContent = (
-        <div className='w-64 p-4 space-y-4'>
-            <h3 className='text-lg font-semibold mb-2'>Menu Settings</h3>
+        <div className='w-64 p-4 '>
+            <h3 className='text-lg font-semibold '>Menu Settings</h3>
             {DashboardAsideItems.map((item) => (
                 <div key={item.name} className='flex items-center justify-between'>
                     <div className='flex items-center space-x-2'>
@@ -51,39 +68,19 @@ export default function NavSettings() {
                         className='focus:outline-none'
                     >
                         {enabledNavItems[item.name] ? (
-                            <svg
-                                className='w-6 h-6 text-green-500'
-                                fill='none'
-                                stroke='currentColor'
-                                viewBox='0 0 24 24'
-                                xmlns='http://www.w3.org/2000/svg'
-                            >
-                                <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    strokeWidth={2}
-                                    d='M5 13l4 4L19 7'
-                                />
-                            </svg>
+                            <MuiCheckbox checked={true} />
+
                         ) : (
-                            <svg
-                                className='w-6 h-6 '
-                                fill='#7f7f7f'
-                                stroke='currentColor'
-                                viewBox='0 0 24 24'
-                                xmlns='http://www.w3.org/2000/svg'
-                            >
-                                <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    strokeWidth={2}
-                                    d='M6 18L18 6M6 6l12 12'
-                                />
-                            </svg>
+                            <MuiCheckbox checked={false} />
                         )}
                     </button>
-                </div>
-            ))}
+                </div >
+            ))
+            }
+            <hr className='my-2' />
+            <Button variant='outline' onClick={toggleAllItems}>
+                {DashboardAsideItems.every(item => enabledNavItems[item.name]) ? 'Hide all' : 'Show all'}
+            </Button>
         </div>
     )
 
