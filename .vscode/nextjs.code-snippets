@@ -16,6 +16,29 @@
       ],
       "description": "Creates a simple React component with props."
     },
+    "className with stringinterpolation": {
+      "prefix": "propclass",
+      "body": [
+        "className={`class ${someprop} ${someProp ? '' : 'isthecase'}`}"
+      ],
+      "description": "ClassName with string interpolation."
+    },
+    "code block": {
+      "prefix": "backtick",
+      "body": [
+        "`"
+      ],
+      "description": "Since my keyboard is broken I backtick like this. Efficiency baby."
+    },
+    "Skeleton docstring": {
+        "prefix": "skdoc",
+        "body": [
+          "/**",
+          " * @file [src/$1/components/$2.tsx]",
+          " */"
+        ],
+        "description": "Creates a skeleton documentation comment for a TypeScript component."
+      },
     "React Component with Client Directive": {
       "prefix": "clientpage",
       "body": [

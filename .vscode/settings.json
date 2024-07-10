@@ -23,7 +23,6 @@
     ],
     "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
     "testing.openTesting": "neverOpen", // Don't open the testing view automatically when running tests
-    // Multiple language settings for json and jsonc files
     "[json][jsonc][yaml]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"

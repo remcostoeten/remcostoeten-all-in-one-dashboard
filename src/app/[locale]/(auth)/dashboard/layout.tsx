@@ -1,11 +1,8 @@
-import type { ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
 
 import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
 
-interface DashboardLayoutProps {
-    children: ReactNode
-}
-export default function DashboardLayout({ children }: DashboardLayoutProps) {
+export default function DashboardLayout({ children }: PropsWithChildren) {
     return (
         <main className='relative flex h-full bg-dash-body  w-full flex-row'>
             <Aside />
