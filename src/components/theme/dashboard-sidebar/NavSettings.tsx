@@ -1,14 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect } from 'react'
 import IconComponent from '../shells/IconShell'
 import CustomPopover from '../shells/CustomPopover'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 
 export default function NavSettings() {
-    const { enabledNavItems, toggleNavItem } = useMenuStore()
-    const [isOpen, setIsOpen] = useState(false)
+    const enabledNavItems = useMenuStore(state => state.enabledNavItems)
+    const toggleNavItem = useMenuStore(state => state.toggleNavItem)
+
+    useEffect(() => {
+        console.log('enabledNavItems changed:', enabledNavItems)
+    }, [enabledNavItems])
 
     const trigger = (
         <IconComponent
@@ -16,7 +20,6 @@ export default function NavSettings() {
             hasBorder
             isButton={true}
             className='user-btn nostyle'
-            onClick={() => setIsOpen(!isOpen)}
         >
             <span className='icon-settings'>
                 <svg
@@ -35,20 +38,19 @@ export default function NavSettings() {
     const popoverContent = (
         <div className='w-64 p-4 space-y-4'>
             <h3 className='text-lg font-semibold mb-2'>Menu Settings</h3>
-            {DashboardAsideItems.map(({ name, svg }) => (
-                <div key={name} className='flex items-center justify-between'>
+            {DashboardAsideItems.map((item) => (
+                <div key={item.name} className='flex items-center justify-between'>
                     <div className='flex items-center space-x-2'>
-                        <div
-                            className='w-6 h-6'
-                            dangerouslySetInnerHTML={{ __html: svg }}
-                        />
-                        <span className='capitalize'>{name}</span>
+                        <span className='capitalize'>{item.name}</span>
                     </div>
                     <button
-                        onClick={() => toggleNavItem(name)}
+                        onClick={() => {
+                            console.log('Toggling:', item.name)
+                            toggleNavItem(item.name)
+                        }}
                         className='focus:outline-none'
                     >
-                        {enabledNavItems[name] ? (
+                        {enabledNavItems[item.name] ? (
                             <svg
                                 className='w-6 h-6 text-green-500'
                                 fill='none'
