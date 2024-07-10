@@ -58,50 +58,7 @@ export default function NavBar() {
             ref={ref}
             className={`z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3  ${isFixed ? 'fixed top-0 ' : '-top-5'}`}
         >
-            <div className='flex w-full justify-between min-[825px]:hidden'>
-                <Dialog>
-                    <SheetTrigger className='p-2 transition'>
-                        <GiHamburgerMenu />
-                    </SheetTrigger>
-                    <SheetContent side='left'>
-                        <SheetHeader>
-                            <SheetTitle>Next Starter</SheetTitle>
-                        </SheetHeader>
-                        <div className='mt-4 flex flex-col space-y-3'>
-                            <DialogClose asChild>
-                                <Link href='/'>
-                                    <Button
-                                        variant='outline'
-                                        className='w-full'
-                                    >
-                                        Home
-                                    </Button>
-                                </Link>
-                            </DialogClose>
-                            <DialogClose asChild>
-                                <Link
-                                    href='/dashboard'
-                                    legacyBehavior
-                                    passHref
-                                    className='cursor-pointer'
-                                >
-                                    <Button variant='outline'>Dashboard</Button>
-                                </Link>
-                            </DialogClose>
-                            <DialogClose asChild>
-                                <Link
-                                    href='/blog'
-                                    passHref
-                                    className='cursor-pointer'
-                                >
-                                    <Button variant='outline'>Blog</Button>
-                                </Link>
-                            </DialogClose>
-                        </div>
-                    </SheetContent>
-                </Dialog>
-                <ModeToggle />
-            </div>
+            {/* ToDo add mobile menu */}
             <NavigationMenu>
                 <NavigationMenuList className='flex w-full justify-between gap-3 max-[825px]:hidden'>
                     <LogoIcon isLink />
