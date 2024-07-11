@@ -64,12 +64,8 @@ const CommandGroup: React.FC<CommandGroupProps> = ({ title, items }) => (
     </div>
 )
 
-type SearchDialogProps = {
-    isOpen: boolean
-    setIsOpen: (isOpen: boolean) => void
-}
-
-function SearchDialog({ isOpen, setIsOpen }: SearchDialogProps) {
+function SearchDialog() {
+    const [isOpen, setIsOpen] = useState(false)
     const [searchText, setSearchText] = useState('')
     const modalRef = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
@@ -85,7 +81,7 @@ function SearchDialog({ isOpen, setIsOpen }: SearchDialogProps) {
             }
             if (event.ctrlKey && event.key === 'k') {
                 event.preventDefault()
-                setIsOpen(true)
+                setIsOpen((prev) => !prev)
                 if (!isOpen) {
                     setTimeout(() => {
                         inputRef.current?.focus()
@@ -128,7 +124,11 @@ function SearchDialog({ isOpen, setIsOpen }: SearchDialogProps) {
 
     return (
         <>
-            <Button variant='ghost' size='sm' onClick={() => setIsOpen(true)}>
+            <Button
+                variant='ghost'
+                size='sm'
+                onClick={() => setIsOpen((prev) => !prev)}
+            >
                 {searchIcon()}
             </Button>
             <AnimatePresence>

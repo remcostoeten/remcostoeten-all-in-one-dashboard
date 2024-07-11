@@ -76,9 +76,11 @@ const Aside = () => {
                 </div>
                 <div className='mt-auto flex flex-col px-2 gap-2 '>
                     <Seperator style={{ marginBottom: '20px' }} />
-                    <div className=''>
+                    <div className='space-y-4'>
                         <NavSettings />
-                        <MenuItem
+                        <SearchDialog />
+
+                        {/* <MenuItem
                             name='Search'
                             icon={
                                 <svg
@@ -99,11 +101,10 @@ const Aside = () => {
                             hasNotification={false}
                             isExpanded={isExpanded}
                             onClick={() => setIsSearchOpen(true)}
-                        />
+                        /> */}
                     </div>
                 </div>
             </motion.aside>
-            <SearchDialog isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
         </>
     )
 }

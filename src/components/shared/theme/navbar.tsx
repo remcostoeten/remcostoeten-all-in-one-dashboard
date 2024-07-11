@@ -2,48 +2,36 @@
 
 import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import {
-    SheetTrigger,
-    SheetContent,
-    SheetHeader,
-    SheetTitle
-} from '@/components/ui/sheet'
-import { Dialog, DialogClose } from '@radix-ui/react-dialog'
 import { cn } from '@/core/utils/cn'
-import { GiHamburgerMenu } from 'react-icons/gi'
 import {
-    NavigationMenu,
-    NavigationMenuContent,
+    NavigationMenu, NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
+import { headerDropdownItems } from '@/core/data/menu-items'
 import LogoIcon from './Logo'
-import { ModeToggle } from './ModeToggle'
 import { Profile } from './Profile'
 import ShineBorder from '@/components/effects/magicui/shine-border'
-import { headerDropdownItems } from '@/core/data/menu-items'
+import { usePathname } from 'next/navigation'
+import MobileNav from './MobileNav'
 
 export default function NavBar() {
+    const pathname = usePathname()
     const { userId } = useAuth()
 
-    const ref = React.useRef<HTMLDivElement>(null)
-    const [isFixed, setIsFixed] = React.useState(false)
+    const ref = useRef<HTMLDivElement>(null)
+    const [isFixed, setIsFixed] = useState(false)
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             if (ref.current) {
                 setIsFixed(window.scrollY > ref.current.clientHeight)
             }
-            console.log(window.scrollY)
-        }
-
-        if (ref.current) {
-            setIsFixed(window.scrollY > ref.current.clientHeight)
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -53,43 +41,42 @@ export default function NavBar() {
         }
     }, [])
 
+    // Simplify conditional rendering and class assignment
+    const navClass = `z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3 ${isFixed ? 'fixed top-0' : '-top-5'}`
+
+    if (pathname.includes('dashboard')) {
+        return null
+    }
+
     return (
-        <nav
-            ref={ref}
-            className={`z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3  ${isFixed ? 'fixed top-0 ' : '-top-5'}`}
-        >
-            {/* ToDo add mobile menu */}
+        <nav ref={ref} className={navClass}>
             <NavigationMenu>
-                <NavigationMenuList className='flex w-full justify-between gap-3 max-[825px]:hidden'>
+                <MobileNav />
+                <NavigationMenuList className='hidden sm:flex w-full justify-between gap-3 max-[825px]:hidden'>
                     <LogoIcon isLink />
                 </NavigationMenuList>
-                <NavigationMenuList>
+                <NavigationMenuList className='hidden sm:block '>
                     <NavigationMenuItem className='ml-5 max-[825px]:hidden'>
                         <NavigationMenuTrigger className='bg-black bg-opacity-50'>
                             Features
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className='flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
-                                {headerDropdownItems.map((component) => (
+                            <ul className='hidden sm:flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
+                                {headerDropdownItems.map((items) => (
                                     <ListItem
-                                        key={component.title}
-                                        title={component.title}
-                                        href={component.href}
+                                        key={items.title}
+                                        title={items.title}
+                                        href={items.href}
                                     >
-                                        {component.description}
+                                        {items.description}
                                     </ListItem>
                                 ))}
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
-                    <NavigationMenuItem className='max-[825px]:hidden'>
-                        <Link href='/blog' legacyBehavior passHref>
-                            <Button variant='ghost'>Blog</Button>
-                        </Link>
-                    </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className='flex items-center gap-2 max-[825px]:hidden'>
+            <div className='flex items-center gap-4 max-[825px]:hidden'>
                 <Link href='/dashboard' className='max-[825px]:hidden'>
                     <ShineBorder className='text-center px-6 py-2  capitalize'>
                         <p className='pl-1 flex items-center gap-2'>
@@ -104,7 +91,7 @@ export default function NavBar() {
     )
 }
 
-const ListItem = React.forwardRef<
+export const ListItem = React.forwardRef<
     React.ElementRef<'a'>,
     React.ComponentPropsWithoutRef<'a'>
 >(({ className, title, children, ...props }, ref) => {

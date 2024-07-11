@@ -7,6 +7,7 @@ import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 import MuiCheckbox from '@/components/ui/mui/mui-checkbox'
 import { Button } from '@/components/ui/button'
+import { object } from 'zod'
 
 export default function NavSettings() {
     const enabledNavItems = useMenuStore((state) => state.enabledNavItems)
@@ -35,7 +36,7 @@ export default function NavSettings() {
             tooltipTitle='Settings'
             hasBorder
             isButton={true}
-            className='flex justify-start items-start'
+            className='flex justify-start flex-col space-y-4 items-start'
         >
             <span className='icon-settings  pl-2'>
                 <svg
@@ -53,7 +54,7 @@ export default function NavSettings() {
     )
 
     const popoverContent = (
-        <div className='w-64 p-4 '>
+        <div className=' '>
             <h3 className='text-lg font-semibold '>Menu Settings</h3>
             {DashboardAsideItems.map((item) => (
                 <div
@@ -79,11 +80,12 @@ export default function NavSettings() {
                 </div>
             ))}
             {Object.keys(enabledNavItems).length > 0 && <hr className='my-2' />}
-            <Button variant='outline' onClick={toggleAllItems}>
+            <Button onClick={toggleAllItems}>
                 {Object.keys(enabledNavItems).length > 0
                     ? 'Hide all'
-                    : 'ssow allnever  shows'}
+                    : 'Show all never shows'}
             </Button>
+
         </div>
     )
 
