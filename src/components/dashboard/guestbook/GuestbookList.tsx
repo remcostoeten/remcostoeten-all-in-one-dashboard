@@ -9,7 +9,6 @@ import { DeleteGuestbookEntry } from './DeleteGuestbookEntry'
 const GuestbookList = async () => {
     const guestbook = await db.select().from(guestbookSchema).all()
 
-
     return (
         <div className='mt-5' data-testid='guestbook-list'>
             {guestbook.map((elt) => (
