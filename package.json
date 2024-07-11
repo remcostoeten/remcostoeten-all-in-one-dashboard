@@ -47,6 +47,7 @@
         "clsx": "^2.1.1",
         "cmdk": "^1.0.0",
         "contentlayer": "^0.3.4",
+        "crpyto": "0.0.1-security",
         "date-fns": "^3.6.0",
         "drizzle-orm": "^0.31.1",
         "framer-motion": "^11.2.11",
