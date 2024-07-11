@@ -1,10 +1,11 @@
-import NextTopLoader from 'nextjs-toploader'
-import { ReactNode } from 'react'
-import { NextIntlClientProvider } from 'next-intl'
-import { ClerkProvider } from '@clerk/nextjs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { enUS, nlNL } from '@clerk/localizations'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from "@vercel/analytics/react"
+import { NextIntlClientProvider } from 'next-intl'
+import NextTopLoader from 'nextjs-toploader'
+import { ReactNode } from 'react'
+import {Toaster} from 'sonner'
 
 type ProvidersProps = {
     children: ReactNode
@@ -51,7 +52,8 @@ export default function Providers({
                     />{' '}
                     {children}
                     <Analytics />
-                    <Toaster invert />                </TooltipProvider>
+                    <Toaster
+                      invert />                </TooltipProvider>
             </ClerkProvider>
         </NextIntlClientProvider>
     )
