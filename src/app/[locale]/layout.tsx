@@ -1,3 +1,5 @@
+// app/[locale]/layout.tsx
+
 import NavBar from '@/components/shared/theme/navbar'
 import { AppConfig } from '@/core/utils/AppConfig'
 import '../../styles/app.scss'
@@ -17,7 +19,14 @@ export default function RootLayout(props: {
     children: ReactNode
     params: { locale: string }
 }) {
+    // Set the locale for the request
+    unstable_setRequestLocale(props.params.locale)
+
+    // Validate that the incoming `locale` parameter is valid
     if (!AppConfig.locales.includes(props.params.locale)) notFound()
+
+    // Using internationalization in Client Components
+    const messages = useMessages()
 
     return (
         <html
@@ -69,7 +78,6 @@ export const metadata: Metadata = {
         'SVG to CSS',
         'reverse geolocation'
     ],
-
     icons: [
         {
             rel: 'apple-touch-icon',
