@@ -2,7 +2,6 @@ import { eq, sql } from 'drizzle-orm'
 import { NextResponse } from 'next/server'
 
 import { db } from '@/core/libs/DB'
-import { logger } from '@/core/libs/Logger'
 import { guestbookSchema } from '@/core/models/Schema'
 import {
     DeleteGuestbookValidation,
@@ -25,13 +24,10 @@ export const POST = async (request: Request) => {
             .values(parse.data)
             .returning()
 
-        logger.info('A new guestbook has been created')
-
         return NextResponse.json({
             id: guestbook[0]?.id
         })
     } catch (error) {
-        logger.error(error, 'An error occurred while creating a guestbook')
 
         return NextResponse.json({}, { status: 500 })
     }
@@ -55,11 +51,9 @@ export const PUT = async (request: Request) => {
             .where(eq(guestbookSchema.id, parse.data.id))
             .run()
 
-        logger.info('A guestbook entry has been updated')
 
         return NextResponse.json({})
     } catch (error) {
-        logger.error(error, 'An error occurred while updating a guestbook')
 
         return NextResponse.json({}, { status: 500 })
     }
@@ -79,11 +73,9 @@ export const DELETE = async (request: Request) => {
             .where(eq(guestbookSchema.id, parse.data.id))
             .run()
 
-        logger.info('A guestbook entry has been deleted')
 
         return NextResponse.json({})
     } catch (error) {
-        logger.error(error, 'An error occurred while deleting a guestbook')
 
         return NextResponse.json({}, { status: 500 })
     }

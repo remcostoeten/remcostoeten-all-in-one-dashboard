@@ -224,6 +224,7 @@ const config: Config = withMT({
         }
     },
     plugins: [
+        require('daisyui'),
         require('tailwindcss-animate'),
         require('@tailwindcss/typography'),
         function ({ matchUtilities, theme }: any) {

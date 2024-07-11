@@ -38,9 +38,12 @@ function Breadcrumbs() {
                 .join(' ') // Join the parts with a space
 
             return (
-                <span className='segment' key={`${segmentIndex}`}>
+                <Link
+                    href={`/${pathSegments.slice(1, segmentIndex + 1).join('/')}`}
+                    key={`${segmentIndex}`}
+                >
                     {formattedSegment}
-                </span>
+                </Link>
             )
         }
     })

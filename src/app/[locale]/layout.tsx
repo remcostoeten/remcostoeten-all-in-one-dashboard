@@ -4,15 +4,11 @@ import NavBar from '@/components/shared/theme/navbar'
 import { AppConfig } from '@/core/utils/AppConfig'
 import '../../styles/app.scss'
 import type { Metadata } from 'next'
-import { Toaster } from 'sonner'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import TopNav from '@/components/shared/TopNav'
-import Providers from '@/core/Providers'
-import { useMessages } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
-import TopNav from '@/components/shared/TopNav'
+import AppProviders from '@/core/AppProviders'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -38,7 +34,7 @@ export default function RootLayout(props: {
             className='dark overflow-x-hidden'
         >
             <body className={`${plexsans.className} overflow-x-hidden`}>
-                <Providers locale={props.params.locale} messages={messages}>
+                <AppProviders locale={props.params.locale}>
                     <TopNav />
                     <NavBar />
                     <main
@@ -50,8 +46,7 @@ export default function RootLayout(props: {
                     >
                         {props.children}
                     </main>
-                    <Toaster invert />
-                </Providers>
+                </AppProviders>
             </body>
         </html>
     )
