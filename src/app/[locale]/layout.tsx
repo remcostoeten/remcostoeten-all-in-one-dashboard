@@ -1,15 +1,18 @@
 // app/[locale]/layout.tsx
 
 import NavBar from '@/components/shared/theme/navbar'
-import { AppConfig } from '@/core/utils/AppConfig'
-import '../../styles/app.scss'
+import Providers from '@/core/Providers'
+import { AppConfig } from '@/core/utils/app-config'
 import type { Metadata } from 'next'
+import { useMessages } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
+import { Toaster } from 'sonner'
+import '../../styles/app.scss'
+import '../../styles/app.scss'
 import TopNav from '@/components/shared/TopNav'
-import AppProviders from '@/core/AppProviders'
-
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
@@ -19,31 +22,28 @@ export default function RootLayout(props: {
     children: ReactNode
     params: { locale: string }
 }) {
-    // Set the locale for the request
     unstable_setRequestLocale(props.params.locale)
 
-    // Validate that the incoming `locale` parameter is valid
     if (!AppConfig.locales.includes(props.params.locale)) notFound()
 
-    // Using internationalization in Client Components
     const messages = useMessages()
 
     return (
         <html lang={props.params.locale} className='dark overflow-x-hidden'>
             <body className={`${plexsans.className} overflow-x-hidden`}>
-                <AppProviders locale={props.params.locale}>
+                <Providers locale={props.params.locale} messages={messages}>
                     <TopNav />
                     <NavBar />
                     <main
-                        className='min-w-screen bg-dot-black/[0.2] flex flex-col items-center justify-between bg-black pt-16 bg-dot-white/[0.2] -z-10'
+                        className='min-w-screen bg-dot-black/[0.2] flex flex-col items-center justify-between bg-black pt-16 bg-dot-white/[0.2] -z-10 min-h-screen'
                         style={{
-                            paddingTop: 'calc(var(--nav-height) + 16px)',
-                            height: 'calc(100% - 48px)'
+                            paddingTop: 'calc(var(--nav-height) + 16px)'
                         }}
                     >
                         {props.children}
                     </main>
-                </AppProviders>
+                    <Toaster invert />
+                </Providers>
             </body>
         </html>
     )

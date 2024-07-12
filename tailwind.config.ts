@@ -94,7 +94,7 @@ const config: Config = withMT({
                     foreground: 'hsl(var(--accent-foreground))'
                 },
                 popover: {
-                    DEFAULT: 'hsl(var(--popover))',
+                    DEFAULT: 'rgb(42, 41, 57)',
                     foreground: 'hsl(var(--popover-foreground))'
                 },
                 card: {

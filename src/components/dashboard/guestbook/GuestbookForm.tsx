@@ -20,7 +20,7 @@ type IGuestbookFormProps =
           onValid: SubmitHandler<z.infer<typeof GuestbookValidation>>
       }
 
-const GuestbookForm = (props: IGuestbookFormProps) => {
+const GuestbookForm = ({ props }) => {
     const {
         handleSubmit,
         register,

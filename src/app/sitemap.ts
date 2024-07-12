@@ -1,7 +1,5 @@
+import { getBaseUrl } from '@/core/utils/get-base-url'
 import type { MetadataRoute } from 'next'
-
-import { getBaseUrl } from '@/core/utils/Helpers'
-
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
