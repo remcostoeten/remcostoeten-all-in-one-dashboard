@@ -26,10 +26,9 @@ export default function CustomPopover({
                     {trigger}
                 </Button>
             </PopoverTrigger>
-            <PopoverContent
+            <PopoverContent className='bg-popover'
                 align={align}
                 style={{
-                    backgroundColor: 'rgb(42, 41, 57)',
                     border: '1px solid rgba(255, 255, 255, 0.09)',
                     borderRadius: 'var(--radius)',
                     padding: '16px',

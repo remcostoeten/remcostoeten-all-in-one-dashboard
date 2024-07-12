@@ -31,7 +31,7 @@ export default function Providers({
     if (locale !== 'en') {
         signInUrl = `/${locale}${signInUrl}`
         signUpUrl = `/${locale}${signUpUrl}`
-        dashboardUrl = `/${locale}${dashboardUrl}`
+        dashboardUrl = `/${dashboardUrl}`
     }
 
     return (

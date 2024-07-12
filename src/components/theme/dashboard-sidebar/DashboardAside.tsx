@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
@@ -12,18 +12,11 @@ import SearchDialog from '@/components/shared/navigation/Search'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
-    const [isLoaded, setIsLoaded] = useState(false)
     const containerControls = useAnimationControls()
-    const [isSearchOpen, setIsSearchOpen] = useState(false)
 
     useEffect(() => {
-        setIsLoaded(true)
         containerControls.start(isExpanded ? 'open' : 'close')
     }, [isExpanded])
-
-    if (!isLoaded) {
-        return <span className='loading loading-infinity loading-lg'></span>
-    }
 
     const filteredItems = DashboardAsideItems.filter(
         (item) => enabledNavItems[item.name]
@@ -53,6 +46,7 @@ const Aside = () => {
                                     key={name}
                                     name={name}
                                     icon={svg}
+                                    link={name}x    
                                     isExpanded={isExpanded}
                                     hasNotification={hasNotification}
                                 />

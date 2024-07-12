@@ -32,8 +32,8 @@ export const useMenuStore = create(
                 }))
         }),
         {
-            name: 'menu-storage', // unique name for localStorage key
-            getStorage: () => localStorage // use localStorage for persistence
+            name: 'menu-storage',
+            getStorage: () => localStorage
         }
     )
 )
