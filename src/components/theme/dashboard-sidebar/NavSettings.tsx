@@ -85,7 +85,6 @@ export default function NavSettings() {
                     ? 'Hide all'
                     : 'Show all never shows'}
             </Button>
-
         </div>
     )
 

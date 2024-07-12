@@ -28,7 +28,6 @@ export const POST = async (request: Request) => {
             id: guestbook[0]?.id
         })
     } catch (error) {
-
         return NextResponse.json({}, { status: 500 })
     }
 }
@@ -51,10 +50,8 @@ export const PUT = async (request: Request) => {
             .where(eq(guestbookSchema.id, parse.data.id))
             .run()
 
-
         return NextResponse.json({})
     } catch (error) {
-
         return NextResponse.json({}, { status: 500 })
     }
 }
@@ -73,10 +70,8 @@ export const DELETE = async (request: Request) => {
             .where(eq(guestbookSchema.id, parse.data.id))
             .run()
 
-
         return NextResponse.json({})
     } catch (error) {
-
         return NextResponse.json({}, { status: 500 })
     }
 }
