@@ -1,5 +1,4 @@
 import { GuestbookList } from '@/components/dashboard/guestbook/GuestbookList'
-import { GuestbookForm } from '@/components/dashboard/guestbook/GuestbookForm'
 
 export default async function page() {
     return (
