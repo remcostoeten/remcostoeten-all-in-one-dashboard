@@ -2,7 +2,7 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import type { NextFetchEvent, NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
 
-import { AppConfig } from './core/utils/AppConfig'
+import { AppConfig } from './core/utils/app-config'
 
 const intlMiddleware = createMiddleware({
     locales: AppConfig.locales,

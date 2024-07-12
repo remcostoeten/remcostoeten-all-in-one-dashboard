@@ -1,4 +1,4 @@
-import { getI18nPath } from '@/core/utils/getI18nPath'
+import { getI18nPath } from '@/core/utils/get-I18n-path'
 import { SignUp } from '@clerk/nextjs'
 import { getTranslations } from 'next-intl/server'
 

@@ -2,7 +2,7 @@
 
 import NavBar from '@/components/shared/theme/navbar'
 import Providers from '@/core/Providers'
-import { AppConfig } from '@/core/utils/AppConfig'
+import { AppConfig } from '@/core/utils/app-config'
 import type { Metadata } from 'next'
 import { useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'

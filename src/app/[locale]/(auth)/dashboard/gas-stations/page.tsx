@@ -5,7 +5,7 @@ import { getGasStations } from '@/core/@server/actions/getStations'
 import GasStationList from './components/GasStationList'
 import { RawDataDisplay } from './components/RawDataDisplay'
 import ChatHeader from '@/components/dashboard/guestbook/chat/ChatHeader'
-import { createBroadcastChannel } from '@/core/utils/broadcastChannel'
+import { createBroadcastChannel } from '@/core/utils/broadcast-channel'
 import PageDesign from './PageDesogn'
 
 export default function GasStationsPage() {
