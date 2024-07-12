@@ -46,7 +46,7 @@ const Aside = () => {
                                     key={name}
                                     name={name}
                                     icon={svg}
-                                    link={name}x    
+                                    link={name}
                                     isExpanded={isExpanded}
                                     hasNotification={hasNotification}
                                 />

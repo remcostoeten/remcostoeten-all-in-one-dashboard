@@ -1,72 +1,51 @@
-export default function PageDesign(  ) {
+'use client'
+
+import { useState } from 'react';
+import GasSlider from "./components/PriceSlider";
+import FuelTypeHeader from './components/PriceSlider';
+
+export default function PageDesign({ onCitySubmit }: { onCitySubmit: (city: string) => void }) {
+    const [city, setCity] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        onCitySubmit(city);
+    };
+
     return (
-        <div
-  className="relative flex size-full min-h-screen flex-col bg-[#101823] dark group/design-root overflow-x-hidden"
-  style={{ fontFamily: '"Work Sans", "Noto Sans", sans-serif' }}
->
-  <div className="layout-container flex h-full grow flex-col">
-    <div className="gap-1 px-6 flex flex-1 justify-center py-5">
-      
-      <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-        <div className="flex flex-wrap justify-between gap-3 p-4">
-          <p className="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">
-            Find the best gas prices in your area
-          </p>
-        </div>
-        <h3 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
-          Search area
-        </h3>
-        <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-          <label className="flex flex-col min-w-40 flex-1">
-            <p className="text-white text-base font-medium leading-normal pb-2">
-              City
-            </p>
-            <input
-              placeholder="San Francisco"
-              className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#304769] bg-[#182334] focus:border-[#304769] h-14 placeholder:text-[#8fa7cc] p-[15px] text-base font-normal leading-normal"
-              defaultValue=""
-            />
-          </label>
-          <label className="flex flex-col min-w-40 flex-1">
-            <p className="text-white text-base font-medium leading-normal pb-2">
-              State
-            </p>
-            <input
-              placeholder="CA"
-              className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#304769] bg-[#182334] focus:border-[#304769] h-14 placeholder:text-[#8fa7cc] p-[15px] text-base font-normal leading-normal"
-              defaultValue=""
-            />
-          </label>
-        </div>
+        <div className="relative flex size-full min-h-screen flex-col bg-[#101823] dark group/design-root overflow-x-hidden">
+            <div className="layout-container flex h-full grow flex-col">
+                <div className="gap-1 px-6 flex flex-1 justify-center py-5">
+                    <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+                        <FuelTypeHeader />
+                        <h3 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+                            Search area
+                        </h3>
+                        <form onSubmit={handleSubmit} className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                            <label className="flex flex-col min-w-40 flex-1">
+                                <p className="text-white text-base font-medium leading-normal pb-2">
+                                    City
+                                </p>
+                                <input
+                                    placeholder="San Francisco"
+                                    className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#304769] bg-[#182334] focus:border-[#304769] h-14 placeholder:text-[#8fa7cc] p-[15px] text-base font-normal leading-normal"
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                />
+                            </label>
+                            <button type="submit" className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#3683f7] text-white text-base font-bold leading-normal tracking-[0.015em]">
+                                <span className="truncate">Search Stations</span>
+                            </button>
+                        </form>
         <h3 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
           Price range
         </h3>
         <div className="@container">
           <div className="relative flex w-full flex-col items-start justify-between gap-3 p-4 @[480px]:flex-row">
             <p className="text-white text-base font-medium leading-normal w-full shrink-[3]">
-              Price per gallon
+              Price per liter
             </p>
-            <div className="flex h-[38px] w-full pt-1.5">
-              <div className="flex h-1 w-full rounded-sm bg-[#304769] pl-[60%] pr-[15%]">
-                <div className="relative">
-                  <div className="absolute -left-3 -top-1.5 flex flex-col items-center gap-1">
-                    <div className="size-4 rounded-full bg-[#3683f7]" />
-                    <p className="text-white text-sm font-normal leading-normal">
-                      $1.00
-                    </p>
-                  </div>
-                </div>
-                <div className="h-1 flex-1 rounded-sm bg-[#3683f7]" />
-                <div className="relative">
-                  <div className="absolute -left-3 -top-1.5 flex flex-col items-center gap-1">
-                    <div className="size-4 rounded-full bg-[#3683f7]" />
-                    <p className="text-white text-sm font-normal leading-normal">
-                      $3.00
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+<GasSlider defaultValue={[2, 5]} min={2} max={5} step={1} onValueChange={() => {}} />
           </div>
         </div>
         <h3 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
