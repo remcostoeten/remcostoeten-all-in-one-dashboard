@@ -23,7 +23,20 @@ export default function Providers({
     let signInUrl = '/sign-in'
     let signUpUrl = '/sign-up'
     let dashboardUrl = '/dashboard'
+export default function Providers({
+    children,
+    locale,
+    messages
+}: ProvidersProps) {
+    // Clerk localization and URLs
+    let clerkLocale = enUS
+    let signInUrl = '/sign-in'
+    let signUpUrl = '/sign-up'
+    let dashboardUrl = '/dashboard'
 
+    if (locale === 'nl') {
+        clerkLocale = nlNL
+    }
     if (locale === 'nl') {
         clerkLocale = nlNL
     }
