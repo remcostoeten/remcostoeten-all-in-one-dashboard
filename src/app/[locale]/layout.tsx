@@ -22,13 +22,10 @@ export default function RootLayout(props: {
     children: ReactNode
     params: { locale: string }
 }) {
-    // Set the locale for the request
     unstable_setRequestLocale(props.params.locale)
 
-    // Validate that the incoming `locale` parameter is valid
     if (!AppConfig.locales.includes(props.params.locale)) notFound()
 
-    // Using internationalization in Client Components
     const messages = useMessages()
 
     return (

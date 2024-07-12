@@ -15,24 +15,27 @@ export default function GasStationsPage() {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        const channel = createBroadcastChannel('gasStationsUpdate');
+        const channel = createBroadcastChannel('gasStationsUpdate')
 
         if (channel) {
             channel.onmessage = (event) => {
-                const { city: newCity, fuelType: newFuelType } = event.data;
-                setCity(newCity);
-                setFuelType(newFuelType);
-            };
+                const { city: newCity, fuelType: newFuelType } = event.data
+                setCity(newCity)
+                setFuelType(newFuelType)
+            }
         }
 
         return () => {
             if (channel) {
-                channel.close();
+                channel.close()
             }
-        };
-    }, []);
+        }
+    }, [])
 
-    const fetchGasStations = async (cityName: string, fuelTypeNumber: number) => {
+    const fetchGasStations = async (
+        cityName: string,
+        fuelTypeNumber: number
+    ) => {
         try {
             const result = await getGasStations(cityName, fuelTypeNumber)
             setData(result.data)
@@ -49,17 +52,17 @@ export default function GasStationsPage() {
 
     const handleCitySubmit = (newCity: string) => {
         setCity(newCity)
-        const channel = createBroadcastChannel('gasStationsUpdate');
+        const channel = createBroadcastChannel('gasStationsUpdate')
         if (channel) {
-            channel.postMessage({ city: newCity, fuelType });
+            channel.postMessage({ city: newCity, fuelType })
         }
     }
 
     const handleFuelTypeChange = (newFuelType: number) => {
         setFuelType(newFuelType)
-        const channel = createBroadcastChannel('gasStationsUpdate');
+        const channel = createBroadcastChannel('gasStationsUpdate')
         if (channel) {
-            channel.postMessage({ city, fuelType: newFuelType });
+            channel.postMessage({ city, fuelType: newFuelType })
         }
     }
 
@@ -70,7 +73,10 @@ export default function GasStationsPage() {
 
     return (
         <div>
-            <PageDesign onCitySubmit={handleCitySubmit} onFuelTypeChange={handleFuelTypeChange} />
+            <PageDesign
+                onCitySubmit={handleCitySubmit}
+                onFuelTypeChange={handleFuelTypeChange}
+            />
             <ChatHeader />
             <h1>Gas Stations in {city}</h1>
             <GasStationList stations={gasStations} />

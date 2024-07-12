@@ -2,8 +2,9 @@ import svgToReactComponent from '@/core/libs/svgToComponent'
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const MenuItem = ({ name, link,icon, isExpanded, hasNotification }) => {
-    const IconComponent = typeof icon === 'string' ? svgToReactComponent(icon) : icon
+const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
+    const IconComponent =
+        typeof icon === 'string' ? svgToReactComponent(icon) : icon
     const notificationClass = hasNotification ? 'has-notification' : ''
 
     return (
@@ -13,7 +14,8 @@ const MenuItem = ({ name, link,icon, isExpanded, hasNotification }) => {
             <span className='w-6 h-6'>{IconComponent}</span>
             <AnimatePresence>
                 {isExpanded && (
-                    <motion.a href={link}
+                    <motion.a
+                        href={link}
                         className='ml-3'
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}

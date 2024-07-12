@@ -1,11 +1,11 @@
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { enUS, nlNL } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import NextTopLoader from 'nextjs-toploader'
 import { ReactNode } from 'react'
-import {Toaster} from 'sonner'
+import { Toaster } from 'sonner'
 
 type ProvidersProps = {
     children: ReactNode
@@ -23,20 +23,7 @@ export default function Providers({
     let signInUrl = '/sign-in'
     let signUpUrl = '/sign-up'
     let dashboardUrl = '/dashboard'
-export default function Providers({
-    children,
-    locale,
-    messages
-}: ProvidersProps) {
-    // Clerk localization and URLs
-    let clerkLocale = enUS
-    let signInUrl = '/sign-in'
-    let signUpUrl = '/sign-up'
-    let dashboardUrl = '/dashboard'
 
-    if (locale === 'nl') {
-        clerkLocale = nlNL
-    }
     if (locale === 'nl') {
         clerkLocale = nlNL
     }
@@ -44,7 +31,7 @@ export default function Providers({
     if (locale !== 'en') {
         signInUrl = `/${locale}${signInUrl}`
         signUpUrl = `/${locale}${signUpUrl}`
-        dashboardUrl = `/${dashboardUrl}`
+        dashboardUrl = `/${locale}${dashboardUrl}`
     }
 
     return (
@@ -65,8 +52,8 @@ export default function Providers({
                     />{' '}
                     {children}
                     <Analytics />
-                    <Toaster
-                      invert />                </TooltipProvider>
+                    <Toaster invert />{' '}
+                </TooltipProvider>
             </ClerkProvider>
         </NextIntlClientProvider>
     )

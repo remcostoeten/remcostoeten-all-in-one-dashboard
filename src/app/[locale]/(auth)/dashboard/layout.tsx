@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
             <Aside />
             <section className=' flex w-full flex-col gap-5 p-4'>
                 <DashHeader />
-                        {children}
+                {children}
             </section>
         </main>
     )

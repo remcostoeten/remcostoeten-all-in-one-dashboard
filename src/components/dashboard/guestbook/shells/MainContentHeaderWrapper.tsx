@@ -38,7 +38,7 @@ export default function MainContentHeaderWrapper({
                 onSearch(value)
             } else {
                 toast.error('Not yet implemented')
-                }
+            }
         },
         [onSearch, showNotImplemented]
     )

@@ -1,7 +1,6 @@
-import { UserProfile } from '@clerk/nextjs'
+import { getI18nPath } from '@/core/utils/getI18nPath'
+import { UserProfile, UserProfile } from '@clerk/nextjs'
 import { getTranslations } from 'next-intl/server'
-
-import { getI18nPath } from '@/core/utils/Helpers'
 
 export async function generateMetadata(props: { params: { locale: string } }) {
     const t = await getTranslations({

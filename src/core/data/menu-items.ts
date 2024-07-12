@@ -46,9 +46,9 @@ export const DashboardAsideItems = [
 <path d="M17.5 16.01L22 16V10L20 9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
     `),
-    isFavourite: true,
-    anchor: 'dashboard/gas-stations',
-},
+        isFavourite: true,
+        anchor: 'dashboard/gas-stations'
+    },
     {
         name: 'bell',
         svg: svgToComponent(

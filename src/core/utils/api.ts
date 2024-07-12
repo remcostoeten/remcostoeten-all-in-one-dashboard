@@ -7,8 +7,7 @@ const API_BASE_URL = process.env.API_BASE_URL
 
 export default async function fetchGasStations(
     addressInformation: string = '',
-    fuelType: number = 1
-    ,
+    fuelType: number = 1,
     range: number = 200,
     sorting: number = 1
 ): Promise<ApiResponse<any>> {
