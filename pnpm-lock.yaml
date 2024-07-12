@@ -16,7 +16,7 @@ importers:
         version: 5.1.6(next@15.0.0-rc.0(@opentelemetry/api@1.9.0)(react-dom@19.0.0-rc-85acf2d195-20240711(react@19.0.0-rc-85acf2d195-20240711))(react@19.0.0-rc-85acf2d195-20240711)(sass@1.77.6))(react-dom@19.0.0-rc-85acf2d195-20240711(react@19.0.0-rc-85acf2d195-20240711))(react@19.0.0-rc-85acf2d195-20240711)
       '@heroicons/react':
         specifier: latest
-        version: 2.1.4(react@19.0.0-rc-85acf2d195-20240711)
+        version: 2.1.5(react@19.0.0-rc-85acf2d195-20240711)
       '@hookform/resolvers':
         specifier: ^3.4.2
         version: 3.6.0(react-hook-form@7.52.0(react@19.0.0-rc-85acf2d195-20240711))
@@ -75,8 +75,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.2(@libsql/client@0.6.2)(@opentelemetry/api@1.9.0)(@types/react@18.3.3)(react@19.0.0-rc-85acf2d195-20240711)
       framer-motion:
-        specifier: ^11.2.11
-        version: 11.2.11(react-dom@19.0.0-rc-85acf2d195-20240711(react@19.0.0-rc-85acf2d195-20240711))(react@19.0.0-rc-85acf2d195-20240711)
+        specifier: ^11.3.2
+        version: 11.3.2(react-dom@19.0.0-rc-85acf2d195-20240711(react@19.0.0-rc-85acf2d195-20240711))(react@19.0.0-rc-85acf2d195-20240711)
       lucide-react:
         specifier: ^0.396.0
         version: 0.396.0(react@19.0.0-rc-85acf2d195-20240711)
@@ -608,8 +608,8 @@ packages:
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
 
-  '@heroicons/react@2.1.4':
-    resolution: {integrity: sha512-ju0wj0wwrUTMQ2Yceyrma7TKuI3BpSjp+qKqV81K9KGcUHdvTMdiwfRc2cwXBp3uXtKuDZkh0v03nWOQnJFv2Q==}
+  '@heroicons/react@2.1.5':
+    resolution: {integrity: sha512-FuzFN+BsHa+7OxbvAERtgBTNeZpUjgM/MIizfVkSCL2/edriN0Hx/DWRCR//aPYwO5QX/YlgLGXk+E3PcfZwjA==}
     peerDependencies:
       react: '>= 16'
 
@@ -2615,8 +2615,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.2.11:
-    resolution: {integrity: sha512-n+ozoEzgJu/2h9NoQMokF+CwNqIRVyuRC4RwMPwklfrrTjbVV32k9uBIgqYAwn7Jfpt5LuDVCtT57MWz1FbaLw==}
+  framer-motion@11.3.2:
+    resolution: {integrity: sha512-RgjSzrNFZmedWcvmW4MMc84A7UcoY37jocadE3Mbg3o+UMofodfyeNnYD/HR15UhP22/bb5KOebNhYOj4mYkpQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -3034,6 +3034,7 @@ packages:
 
   libsql@0.3.19:
     resolution: {integrity: sha512-Aj5cQ5uk/6fHdmeW0TiXK42FqUlwx7ytmMLPSaUQPin5HKKKuUPD62MAbN4OEweGBBI7q1BekoEN4gPUEL6MZA==}
+    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lilconfig@2.1.0:
@@ -4694,7 +4695,7 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
-  '@heroicons/react@2.1.4(react@19.0.0-rc-85acf2d195-20240711)':
+  '@heroicons/react@2.1.5(react@19.0.0-rc-85acf2d195-20240711)':
     dependencies:
       react: 19.0.0-rc-85acf2d195-20240711
 
@@ -6260,7 +6261,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   drizzle-kit@0.22.7:
     dependencies:
@@ -6868,7 +6869,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.2.11(react-dom@19.0.0-rc-85acf2d195-20240711(react@19.0.0-rc-85acf2d195-20240711))(react@19.0.0-rc-85acf2d195-20240711):
+  framer-motion@11.3.2(react-dom@19.0.0-rc-85acf2d195-20240711(react@19.0.0-rc-85acf2d195-20240711))(react@19.0.0-rc-85acf2d195-20240711):
     dependencies:
       tslib: 2.6.3
     optionalDependencies:
@@ -7377,7 +7378,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   lru-cache@10.2.2: {}
 
@@ -7840,7 +7841,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   node-domexception@1.0.0: {}
 
@@ -8486,7 +8487,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   snakecase-keys@5.4.4:
     dependencies:
