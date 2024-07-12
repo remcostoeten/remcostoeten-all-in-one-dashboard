@@ -55,12 +55,13 @@ const Aside = () => {
                     </nav>
                     <Seperator />
                     <nav className='mt-4 space-y-2'>
-                        {itemsWithoutFavourites.map(
+                        {itemsWithoutFavouriftes?.map(
                             ({ name, svg, hasNotification }) => (
                                 <MenuItem
                                     key={name}
                                     name={name}
                                     icon={svg}
+                                    link={name}
                                     isExpanded={isExpanded}
                                     hasNotification={hasNotification}
                                 />
