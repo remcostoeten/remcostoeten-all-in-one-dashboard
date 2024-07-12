@@ -29,10 +29,7 @@ export default function RootLayout(props: {
     const messages = useMessages()
 
     return (
-        <html
-            lang={props.params.locale}
-            className='dark overflow-x-hidden'
-        >
+        <html lang={props.params.locale} className='dark overflow-x-hidden'>
             <body className={`${plexsans.className} overflow-x-hidden`}>
                 <AppProviders locale={props.params.locale}>
                     <TopNav />

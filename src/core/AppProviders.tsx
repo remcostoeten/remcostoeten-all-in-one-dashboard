@@ -5,7 +5,7 @@ import { Toaster } from 'sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { useMessages } from 'next-intl'
 import { enUS, nlNL } from '@clerk/localizations'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 interface AppProvidersProps {
     children: ReactNode
     locale: string
