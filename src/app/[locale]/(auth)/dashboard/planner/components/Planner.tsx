@@ -10,8 +10,18 @@ import DropTableCell from "./DropTableCell";
 import CalendarToolbar from "./PlannerToolbar";
 import ResourceTableCell from "./ResourceTableCell";
 import { Timeline } from "./Timeline";
+import { monitorForElements } from "@atlaskit/pragmatic-drag-and-drop/dist/types/adapter/element-adapter";
 
 
+export type AppointmentType = {
+    id: string;
+    title: string;
+    start: Date;
+    end: Date;
+    resourceId: string;
+    order: number;
+    details: Record<string, unknown>;
+}
 
 export interface PlannerProps extends React.HTMLAttributes<HTMLDivElement> {
     initialResources: Resource[];
