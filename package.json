@@ -49,6 +49,7 @@
         "@radix-ui/react-scroll-area": "^1.1.0",
         "@radix-ui/react-select": "^2.1.1",
         "@radix-ui/react-separator": "^1.1.0",
+        "@radix-ui/react-slider": "^1.2.0",
         "@radix-ui/react-slot": "^1.1.0",
         "@radix-ui/react-switch": "^1.1.0",
         "@radix-ui/react-tabs": "^1.1.0",
@@ -79,6 +80,7 @@
         "react-dom": "19.0.0-rc-df5f2736-20240712",
         "react-hook-form": "^7.52.1",
         "react-icons": "^5.2.1",
+        "react-resizable": "^3.0.5",
         "sass": "^1.77.4",
         "sonner": "^1.5.0",
         "tailwind-merge": "^2.3.0",
@@ -87,6 +89,8 @@
         "zustand": "^4.5.2"
     },
     "devDependencies": {
+        "@atlaskit/pragmatic-drag-and-drop": "^1.1.3",
+        "@bitnoi.se/react-scheduler": "^0.1.5",
         "@next/bundle-analyzer": "^14.2.3",
         "@tailwindcss/typography": "^0.5.13",
         "@types/node": "^20.14.7",
@@ -114,7 +118,9 @@
         "postcss": "^8.4.38",
         "prettier": "^3.3.1",
         "tailwindcss": "^3.4.3",
+        "turbo": "^2.0.6",
         "typescript": "^5.4.5"
     },
+    "packageManager": "pnpm@9.2.0",
     "author": "Remco Stoeten (https://github.com/remcostoeten)"
 }
