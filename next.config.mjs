@@ -22,7 +22,7 @@ const nextConfig = {
         ignoreDuringBuilds: true
     },
     experimental: {
-        reactCompiler: true,
+        reactCompiler: true
     }
 }
 

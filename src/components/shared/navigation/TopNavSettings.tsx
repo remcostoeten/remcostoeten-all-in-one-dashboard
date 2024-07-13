@@ -15,7 +15,7 @@ export default function TopNavSettings() {
                 <SizeToggle />
             </SettingWrapper>
             <SettingWrapper>
-                <Search setIsOpen={() => {}} isOpen={false} />
+                <Search />
             </SettingWrapper>
         </div>
     )
