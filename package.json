@@ -47,7 +47,7 @@
         "cmdk": "^1.0.0",
         "drizzle-orm": "^0.31.1",
         "framer-motion": "^11.2.11",
-        "lucide-react": "^0.396.0",
+        "lucide-react": "^0.408.0",
         "mdx-bundler": "^10.0.2",
         "mini-svg-data-uri": "^1.4.4",
         "next": "15.0.0-canary.64",
