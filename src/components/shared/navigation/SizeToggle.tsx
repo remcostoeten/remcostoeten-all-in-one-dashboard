@@ -5,7 +5,7 @@ import CustomPopover from '@/components/theme/shells/CustomPopover'
 import { SiteSizeStore } from '@/core/stores/SiteSizeStore'
 
 const sizeOptions = ['Large', 'Spacious', 'Compact'] as const
-type SizeOption = typeof sizeOptions[number]
+type SizeOption = (typeof sizeOptions)[number]
 
 const fontSizeMap: Record<SizeOption, string> = {
     Large: '18px',
@@ -18,11 +18,17 @@ const defaultSize: SizeOption = 'Spacious'
 export default function SizeToggle() {
     const { size: storeSize, setSize } = SiteSizeStore()
     const [currentSize, setCurrentSize] = useState<SizeOption>(() =>
-        sizeOptions.includes(storeSize as SizeOption) ? (storeSize as SizeOption) : defaultSize
+        sizeOptions.includes(storeSize as SizeOption)
+            ? (storeSize as SizeOption)
+            : defaultSize
     )
 
     useEffect(() => {
-        if (storeSize && sizeOptions.includes(storeSize as SizeOption) && storeSize !== currentSize) {
+        if (
+            storeSize &&
+            sizeOptions.includes(storeSize as SizeOption) &&
+            storeSize !== currentSize
+        ) {
             setCurrentSize(storeSize as SizeOption)
         }
     }, [storeSize, currentSize])
@@ -32,30 +38,31 @@ export default function SizeToggle() {
     }, [currentSize])
     const handleSizeChange = (newSize: SizeOption): void => {
         if (setSize && setCurrentSize) {
-// @ts-ignore
-            setSize(newSize as SizeOption);
+            // @ts-ignore
+            setSize(newSize as SizeOption)
 
-            setCurrentSize(newSize);
-            document.documentElement.style.fontSize = fontSizeMap[newSize];
+            setCurrentSize(newSize)
+            document.documentElement.style.fontSize = fontSizeMap[newSize]
         }
-    };
+    }
 
     const renderSizeButton = (sizeOption: SizeOption) => (
         <button
             key={sizeOption}
             onClick={() => handleSizeChange(sizeOption)}
-            className={`flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-md transition-colors ${currentSize === sizeOption
-                ? 'bg-blue-600 text-white'
-                : 'text-gray-300 hover:text-white'
-                }`}
+            className={`flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                currentSize === sizeOption
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:text-white'
+            }`}
         >
             <span
                 className={
                     sizeOption === 'Large'
                         ? 'text-2xl'
                         : sizeOption === 'Spacious'
-                            ? 'text-xl'
-                            : 'text-base'
+                          ? 'text-xl'
+                          : 'text-base'
                 }
             >
                 Aa

@@ -22,6 +22,4 @@ const AddGuestbookForm: React.FC = () => (
     />
 )
 
-
-
 export { AddGuestbookForm }

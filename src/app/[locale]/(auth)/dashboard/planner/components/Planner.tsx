@@ -49,7 +49,7 @@ const Planner: React.FC<PlannerProps> = ({
 }
 
 export interface PlannerMainComponentProps
-    extends React.HTMLAttributes<HTMLDivElement> { }
+    extends React.HTMLAttributes<HTMLDivElement> {}
 
 const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     return (
@@ -60,7 +60,7 @@ const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     )
 }
 
-interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> { }
+interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
     const { viewMode, dateRange, timeLabels } = useCalendar()
     const { resources, appointments, updateAppointment } = useData()
@@ -68,7 +68,7 @@ const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
     useEffect(() => {
         const onDrop = ({
             source,
-            location,
+            location
         }: {
             source: {
                 data: {
@@ -148,7 +148,7 @@ const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
                                                         viewMode
                                                     ) &&
                                                     appt.resourceId ===
-                                                    resource.id
+                                                        resource.id
                                             )
                                             .sort(
                                                 (a, b) =>

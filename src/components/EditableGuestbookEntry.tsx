@@ -15,7 +15,7 @@ const EditableGuestbookEntry = (props: {
         setIsEditing(true)
     }
 
-    const handleSave = async (data: { username: string, body: string }) => {
+    const handleSave = async (data: { username: string; body: string }) => {
         await fetch(`/api/guestbook/${props.id}`, {
             method: 'PUT',
             headers: {
@@ -28,11 +28,7 @@ const EditableGuestbookEntry = (props: {
 
     return (
         <>
-            <button
-                type='button'
-                aria-label='edit'
-                onClick={handleEdit}
-            >
+            <button type='button' aria-label='edit' onClick={handleEdit}>
                 <svg
                     className='size-6 stroke-current'
                     fill='none'

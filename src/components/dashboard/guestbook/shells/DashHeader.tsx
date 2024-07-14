@@ -1,30 +1,29 @@
 'use client'
 
-import React from 'react';
-import { usePathname } from 'next/navigation';
+import React from 'react'
+import { usePathname } from 'next/navigation'
 
 interface RecordsHeaderProps {
-    onDropdownOpen?: () => void;
-    hasActions?: () => boolean;
-    title?: React.ReactNode;
+    onDropdownOpen?: () => void
+    hasActions?: () => boolean
+    title?: React.ReactNode
 }
 
-import DashHeader from '@/components/dashboard/guestbook/shells/DashHeader';
+import DashHeader from '@/components/dashboard/guestbook/shells/DashHeader'
 
 const RecordsHeader: React.FC<RecordsHeaderProps> = ({
     hasActions = () => false,
     title: titleProp
 }) => {
     const pathname = usePathname()
-    const title = titleProp || (pathname.includes('contact')
-        ? 'Contact'
-        : pathname.split('/').pop()?.replace(/-/g, ' ') || 'Dashboard')
+    const title =
+        titleProp ||
+        (pathname.includes('contact')
+            ? 'Contact'
+            : pathname.split('/').pop()?.replace(/-/g, ' ') || 'Dashboard')
 
-    return (
-        <DashHeader title={title} hasActions={hasActions} />
-    )
+    return <DashHeader title={title} hasActions={hasActions} />
 }
-
 
 export default RecordsHeader
 

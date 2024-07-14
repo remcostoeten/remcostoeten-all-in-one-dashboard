@@ -1,12 +1,6 @@
 'use client'
 
-import {
-    createContext,
-    useContext,
-    useState,
-    ReactNode,
-    FC
-} from 'react'
+import { createContext, useContext, useState, ReactNode, FC } from 'react'
 import { Appointment, Resource } from '../models'
 import { AppointmentService, ResourceService } from '../@server'
 

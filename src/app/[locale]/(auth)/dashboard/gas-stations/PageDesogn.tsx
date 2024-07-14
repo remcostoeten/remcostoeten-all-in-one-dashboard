@@ -21,10 +21,11 @@ export default function FuelTypeHeader({
             {FUEL_TYPES.map((fuelType) => (
                 <button
                     key={fuelType}
-                    className={`px-3 py-1 rounded ${activeFuelType === fuelType
-                        ? 'bg-[#3683f7] text-white'
-                        : 'text-gray-300 hover:bg-[#2a374d]'
-                        }`}
+                    className={`px-3 py-1 rounded ${
+                        activeFuelType === fuelType
+                            ? 'bg-[#3683f7] text-white'
+                            : 'text-gray-300 hover:bg-[#2a374d]'
+                    }`}
                     onClick={() => handleFuelTypeChange(fuelType)}
                 >
                     {fuelType}
