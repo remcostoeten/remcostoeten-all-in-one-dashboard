@@ -22,6 +22,7 @@ const Aside = () => {
         (item) => enabledNavItems[item.name]
     )
     const favouriteItems = filteredItems.filter((item) => item.isFavourite)
+
     const itemsWithoutFavourites = filteredItems.filter(
         (item) => !item.isFavourite
     )
@@ -55,7 +56,7 @@ const Aside = () => {
                     </nav>
                     <Seperator />
                     <nav className='mt-4 space-y-2'>
-                        {itemsWithoutFavouriftes?.map(
+                        {itemsWithoutFavourites?.map(
                             ({ name, svg, hasNotification }) => (
                                 <MenuItem
                                     key={name}
