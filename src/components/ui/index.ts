@@ -1,3 +1,5 @@
+'use client'
+
 export * from './SkeletonwWrapper'
 export * from './accordion'
 export * from './alert-dialog'
@@ -24,7 +26,6 @@ export * from './menubar'
 export * from './mui/mui-checkbox'
 export * from './navigation-menu'
 export * from './pagination'
-export * from './popover'
 export * from './progress'
 export * from './radio-group'
 export * from './scroll-area'
