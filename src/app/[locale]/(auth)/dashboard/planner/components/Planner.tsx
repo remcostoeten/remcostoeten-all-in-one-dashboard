@@ -1,3 +1,5 @@
+'use client'
+
 import { Table, TableBody, TableRow } from '@/components/ui/table'
 
 import {
@@ -8,12 +10,11 @@ import { PlannerProvider, useCalendar } from '@/core/contexts/PlannerContext'
 import type { Resource } from '@/core/models'
 import { calculateNewDates, filterAppointments } from '@/core/utils/utils'
 import React, { FC, useEffect } from 'react'
-import Appointment from './Appointment'
 import DropTableCell from './DropTableCell'
 import CalendarToolbar from './PlannerToolbar'
 import ResourceTableCell from './ResourceTableCell'
 import { Timeline } from './Timeline'
-import { monitorForElements } from '@atlaskit/pragmatic-drag-and-drop/dist/types/adapter/element-adapter'
+import Appointment from './Appointment'
 
 export type AppointmentType = {
     id: string
@@ -48,7 +49,7 @@ const Planner: React.FC<PlannerProps> = ({
 }
 
 export interface PlannerMainComponentProps
-    extends React.HTMLAttributes<HTMLDivElement> {}
+    extends React.HTMLAttributes<HTMLDivElement> { }
 
 const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     return (
@@ -59,47 +60,67 @@ const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     )
 }
 
-interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> { }
 const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
     const { viewMode, dateRange, timeLabels } = useCalendar()
     const { resources, appointments, updateAppointment } = useData()
 
     useEffect(() => {
-        return monitorForElements({
-            onDrop({ source, location }) {
-                const destination = location.current.dropTargets[0]?.data
-                const sourceData = source.data
-
-                if (!destination || !sourceData) return
-
-                const appointment = appointments.find(
-                    (appt) => appt.id === sourceData.appointmentId
-                )
-                if (!appointment) return
-
-                const newResource = resources.find(
-                    (res) => res.id === destination.resourceId
-                )
-                if (!newResource) return
-
-                const newDates = calculateNewDates(
-                    viewMode,
-                    destination.columnIndex as unknown as number,
-                    sourceData.columnIndex as unknown as number,
-                    {
-                        from: appointment.start,
-                        to: appointment.end
-                    }
-                )
-
-                updateAppointment({
-                    ...appointment,
-                    start: newDates.start as Date,
-                    end: newDates.end as Date,
-                    resourceId: newResource.id
-                })
+        const onDrop = ({
+            source,
+            location,
+        }: {
+            source: {
+                data: {
+                    appointmentId: string
+                    columnIndex: number
+                }
             }
-        })
+            location: {
+                current: {
+                    dropTargets: {
+                        0: {
+                            data: {
+                                resourceId: string
+                                columnIndex: number
+                            }
+                        }
+                    }[]
+                }
+            }
+        }) => {
+            const destination = location.current.dropTargets[0]?.data
+            const sourceData = source.data
+
+            if (!destination || !sourceData) return
+
+            const appointment = appointments.find(
+                (appt) => appt.id === sourceData.appointmentId
+            )
+            if (!appointment) return
+
+            const newResource = resources.find(
+                (res) => res.id === destination.resourceId
+            )
+            if (!newResource) return
+
+            const newDates = calculateNewDates(
+                viewMode,
+                destination.columnIndex as unknown as number,
+                sourceData.columnIndex as unknown as number,
+                {
+                    from: appointment.start,
+                    to: appointment.end
+                }
+            )
+
+            updateAppointment({
+                ...appointment,
+                start: newDates.start as Date,
+                end: newDates.end as Date,
+                resourceId: newResource.id
+            })
+        }
     }, [appointments])
 
     return (
@@ -127,7 +148,7 @@ const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
                                                         viewMode
                                                     ) &&
                                                     appt.resourceId ===
-                                                        resource.id
+                                                    resource.id
                                             )
                                             .sort(
                                                 (a, b) =>

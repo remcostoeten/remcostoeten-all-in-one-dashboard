@@ -2,8 +2,7 @@
 import React, { createContext, useContext, useState, useMemo } from 'react'
 import { startOfDay, endOfDay, startOfWeek } from 'date-fns'
 import { DateRange } from 'react-day-picker'
-import { getLabelsForView } from '@/lib/utils'
-
+import { getLabelsForView } from '../utils/utils'
 interface PlannerContextType {
     viewMode: 'day' | 'week' | 'month' | 'year'
     timeLabels: string[]
@@ -69,4 +68,3 @@ export const PlannerProvider: React.FC<{ children: React.ReactNode }> = ({
 export const useCalendar = () => {
     return useContext(PlannerContext)
 }
-h

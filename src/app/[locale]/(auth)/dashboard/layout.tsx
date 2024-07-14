@@ -1,10 +1,9 @@
-import type { PropsWithChildren } from 'react'
 
-import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
-import MainContentHeaderWrapper from '@/components/dashboard/guestbook/shells/MainContentHeaderWrapper'
 import DashHeader from '@/components/dashboard/guestbook/shells/DashHeader'
+import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
 
-export default function DashboardLayout({ children }: PropsWithChildren) {
+export default function Layout({ children }: { children: React.ReactNode }) {
+
     return (
         <main className='relative flex flex-1 bg-dash-body  w-full flex-row'>
             <Aside />

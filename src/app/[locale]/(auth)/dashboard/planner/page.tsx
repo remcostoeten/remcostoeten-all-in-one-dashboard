@@ -13,7 +13,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuItem
 } from '@/components/ui'
-import { generateResources, generateAppointments } from '@/core/data/fakeData'
+import { generateResources, generateAppointments } from '@/core/data/fake-data'
 import type { Resource, Appointment } from '@/core/models'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'

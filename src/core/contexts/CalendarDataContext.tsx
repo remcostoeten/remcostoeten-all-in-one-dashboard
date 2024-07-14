@@ -1,14 +1,14 @@
 'use client'
 
-import React, {
+import {
     createContext,
     useContext,
     useState,
     ReactNode,
     FC
 } from 'react'
-import { AppointmentService, ResourceService } from '../services'
 import { Appointment, Resource } from '../models'
+import { AppointmentService, ResourceService } from '../@server'
 
 interface DataContextType {
     appointments: Appointment[]

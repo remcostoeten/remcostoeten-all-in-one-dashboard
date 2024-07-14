@@ -1,7 +1,7 @@
 'use client'
 
 import { format } from 'date-fns'
-import React, { useEffect, useRef, useState, useTransition } from 'react'
+import React, { useState, useTransition } from 'react'
 
 import {
     Appointment as AppointmentType,
@@ -14,11 +14,7 @@ import { z } from 'zod'
 import {
     Button,
     Calendar,
-    Dialog,
-    DialogClose,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
+    Dialog, DialogContent, DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -29,9 +25,6 @@ import {
     FormLabel,
     FormMessage,
     Input,
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
     Select,
     SelectContent,
     SelectItem,
@@ -43,6 +36,7 @@ import { cn } from '@/core/utils/cn'
 import { CalendarIcon } from '@heroicons/react/24/outline'
 import { toast } from 'sonner'
 import { useData } from '@/core/contexts/CalendarDataContext'
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 
 const AddAppointmentDialog: React.FC = () => {
     const { addAppointment, resources } = useData()
@@ -135,7 +129,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                     className={cn(
                                                         'w-[280px] justify-start text-left font-normal',
                                                         !field.value &&
-                                                            'text-muted-foreground'
+                                                        'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className='mr-2 h-4 w-4' />
@@ -185,7 +179,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                     className={cn(
                                                         'w-[280px] justify-start text-left font-normal',
                                                         !field.value &&
-                                                            'text-muted-foreground'
+                                                        'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className='mr-2 h-4 w-4' />
@@ -234,10 +228,10 @@ const AddAppointmentDialog: React.FC = () => {
                                                 <SelectValue>
                                                     {field.value
                                                         ? resources.find(
-                                                              (resource) =>
-                                                                  resource.id ===
-                                                                  field.value
-                                                          )?.name
+                                                            (resource) =>
+                                                                resource.id ===
+                                                                field.value
+                                                        )?.name
                                                         : 'Select a resource'}
                                                 </SelectValue>
                                             </SelectTrigger>

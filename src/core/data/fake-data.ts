@@ -1,8 +1,6 @@
-import { faker, Randomizer } from '@faker-js/faker'
+import { faker } from '@faker-js/faker'
 import { addDays, addHours, differenceInCalendarDays } from 'date-fns'
-import { Appointment, Resource } from '@/src/core/models'
-
-// Generate a specified number of resources
+import type { Resource, Appointment } from '../models'
 const generateResources = (num: number): Resource[] => {
     enum type {
         room = 'room',

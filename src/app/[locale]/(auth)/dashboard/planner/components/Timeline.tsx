@@ -1,7 +1,7 @@
+import { TableHeader, TableRow, TableHead } from '@/components/ui'
+import { useCalendar } from '@/core/contexts/PlannerContext'
+import { cn } from '@/core/utils/cn'
 import React from 'react'
-import { useCalendar } from '@/contexts/PlannerContext'
-import { cn } from '@/lib/utils'
-import { TableHead, TableHeader, TableRow } from '../ui/table'
 
 export const Timeline: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
     className,

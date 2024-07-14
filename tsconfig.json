@@ -54,6 +54,7 @@
         ".next/types/**/*.ts",
         "**/*.mts",
         "src/components/theme/shells/CustomPopover.tsx",
-        ".contentlayer/generated"
-, "src/components/ui/dropdown-menu.tsx"    ]
+        ".contentlayer/generated",
+        "src/components/ui/dropdown-menu.tsx"
+    ]
 }

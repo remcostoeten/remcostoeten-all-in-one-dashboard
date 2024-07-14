@@ -1,15 +1,9 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { type FuelType, FUEL_TYPES } from './constants'
 
-// In PageDesign.tsx
-interface PageDesignProps {
-    onCitySubmit: (city: string) => void
-    onFuelTypeChange: (fuelType: FuelType) => void
-}
-
-// In FuelTypeHeader.tsx
 interface FuelTypeHeaderProps {
-    onFuelTypeChange: (fuelType: FuelType) => void
+    onCitySubmit: (city: string) => void
+    onFuelTypeChange: any
 }
 
 export default function FuelTypeHeader({
@@ -27,11 +21,10 @@ export default function FuelTypeHeader({
             {FUEL_TYPES.map((fuelType) => (
                 <button
                     key={fuelType}
-                    className={`px-3 py-1 rounded ${
-                        activeFuelType === fuelType
-                            ? 'bg-[#3683f7] text-white'
-                            : 'text-gray-300 hover:bg-[#2a374d]'
-                    }`}
+                    className={`px-3 py-1 rounded ${activeFuelType === fuelType
+                        ? 'bg-[#3683f7] text-white'
+                        : 'text-gray-300 hover:bg-[#2a374d]'
+                        }`}
                     onClick={() => handleFuelTypeChange(fuelType)}
                 >
                     {fuelType}

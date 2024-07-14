@@ -1,32 +1,30 @@
 'use client'
 
-import React from 'react'
-import { usePathname } from 'next/navigation'
-import StaggeredDropDown from '../../DropdownMenu'
+import React from 'react';
+import { usePathname } from 'next/navigation';
 
 interface RecordsHeaderProps {
-    onDropdownOpen: () => void
-    hasActions?: () => boolean
+    onDropdownOpen?: () => void;
+    hasActions?: () => boolean;
+    title?: React.ReactNode;
 }
+
+import DashHeader from '@/components/dashboard/guestbook/shells/DashHeader';
 
 const RecordsHeader: React.FC<RecordsHeaderProps> = ({
-    hasActions = false
+    hasActions = () => false,
+    title: titleProp
 }) => {
     const pathname = usePathname()
-    const title = pathname.includes('contact')
+    const title = titleProp || (pathname.includes('contact')
         ? 'Contact'
-        : pathname.split('/').pop()?.replace(/-/g, ' ') || 'Dashboard'
+        : pathname.split('/').pop()?.replace(/-/g, ' ') || 'Dashboard')
 
     return (
-        <header className='flex gap-5 justify-between self-stretch py-2.5 pr-4 pl-5 text-sm whitespace-nowrap border-b border-solid bg-zinc-800 border-white border-opacity-10 text-white text-opacity-80 max-md:flex-wrap'>
-            <h1 className='my-auto capitalize'>{title}</h1>
-            <div className='flex gap-2'>
-                <SvgButton />
-                {hasActions && <StaggeredDropDown />}
-            </div>
-        </header>
+        <DashHeader title={title} hasActions={hasActions} />
     )
 }
+
 
 export default RecordsHeader
 

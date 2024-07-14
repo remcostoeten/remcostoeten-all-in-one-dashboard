@@ -16,7 +16,7 @@ export default function CustomPopover({
     align?: 'center' | 'end' | 'start'
     children?: ReactNode | any
     width?: string
-    content: ReactNode
+    content?: ReactNode
 }) {
     return (
         <Popover>
