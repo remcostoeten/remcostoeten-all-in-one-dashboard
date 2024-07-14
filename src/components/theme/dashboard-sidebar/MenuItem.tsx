@@ -11,23 +11,23 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
         <div
             className={`${notificationClass}  rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-start'}`}
         >
-            <Link href={link} className='w-6 h-6'>
+            <Link href={`/dashboard/${link}`} className='w-6 h-6'>
                 {IconComponent}
-                <AnimatePresence>
-                    {isExpanded && (
-                        <motion.a
-                            href={link}
-                            className='ml-3'
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            {name}
-                        </motion.a>
-                    )}
-                </AnimatePresence>
             </Link>
+            <AnimatePresence>
+                {isExpanded && (
+                    <motion.a
+                        href={`/dashboard/${link}`}
+                        className='ml-3'
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        {name}
+                    </motion.a>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

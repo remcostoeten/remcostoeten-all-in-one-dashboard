@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 
-const Hamburger: React.FC = () => {
+function Hamburger() {
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleMenu = () => {
@@ -10,7 +10,7 @@ const Hamburger: React.FC = () => {
     }
 
     return (
-        <button
+        <div
             className='flex flex-col justify-center items-center   rounded focus:outline-none'
             onClick={toggleMenu}
         >
@@ -26,7 +26,7 @@ const Hamburger: React.FC = () => {
                 className={`bg-white block transition-all duration-300 ease-out
                 h-0.5 w-4 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}
             />
-        </button>
+        </div>
     )
 }
 

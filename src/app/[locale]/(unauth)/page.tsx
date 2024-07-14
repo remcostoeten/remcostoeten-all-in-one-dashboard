@@ -4,7 +4,6 @@ import type { ReactNode } from 'react'
 import CardHover from '@/components/effects/CardHoverEffect'
 import Roadmap from '@/app/[locale]/(unauth)/readme/page'
 import Circles from '@/components/effects/animated-logo-cloud'
-
 export default function Index() {
     return (
         <>

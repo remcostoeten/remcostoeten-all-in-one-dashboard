@@ -45,12 +45,12 @@ function StaticHamburger() {
 
     return (
         <>
-            <button
+            <div
                 className=' w-[50px] scale-75 grid place-items-center h-[50px] hover:bg-icon-active-background bg-[#ffffff17] rounded-md trans hover:border-icon-active-background border'
                 onClick={() => handleTogle()}
             >
                 <Hamburger />
-            </button>
+            </div>
             {isExpanded && <></>}
         </>
     )

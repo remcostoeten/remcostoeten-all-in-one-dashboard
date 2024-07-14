@@ -5,23 +5,23 @@ export const headerDropdownItems: {
     href: string
     description: string
 }[] = [
-    {
-        title: 'Readme',
-        href: '/readme',
-        description: 'The repository read-me which also contains the roadmap.'
-    },
-    {
-        title: 'Guestbook ',
-        href: '/guestbook',
-        description: 'Just a page to test crud operations.'
-    },
-    {
-        title: 'WhatsApp Exports',
-        href: '/',
-        description:
-            'Exported chats from WhatsApp fetched from own API, because why not.'
-    }
-]
+        {
+            title: 'Readme',
+            href: '/readme',
+            description: 'The repository read-me which also contains the roadmap.'
+        },
+        {
+            title: 'Guestbook ',
+            href: '/guestbook',
+            description: 'Just a page to test crud operations.'
+        },
+        {
+            title: 'WhatsApp Exports',
+            href: '/',
+            description:
+                'Exported chats from WhatsApp fetched from own API, because why not.'
+        }
+    ]
 
 export const DashboardAsideItems = [
     {
@@ -36,7 +36,7 @@ export const DashboardAsideItems = [
     {
         name: 'gasstations',
         svg: svgToComponent(`
-    
+
 <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.5 22V5C3.5 3 4.84 2 6.5 2H14.5C16.16 2 17.5 3 17.5 5V22H3.5Z" stroke="#f7f7f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,7 +47,29 @@ export const DashboardAsideItems = [
 </svg>
     `),
         isFavourite: true,
-        anchor: 'dashboard/gas-stations'
+    },
+    {
+        name: 'planner',
+        isFavourite: true,
+        svg: svgToComponent(
+            `<svg
+            xmlns="http://www.w3.org/2000/svg"
+className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            >
+            <path
+              stroke="#f7f7f7"
+              strokeLinecap="round"
+              strokeWidth="1.5"
+              d="M14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14v-2c0-3.771 0-5.657 1.172-6.828C4.343 4 6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172C22 6.343 22 8.229 22 12v2c0 3.771 0 5.657-1.172 6.828-.653.654-1.528.943-2.828 1.07M7 4V2.5M17 4V2.5M21.5 9H10.75M2 9h3.875"
+            ></path>
+            <path
+              fill="#1C274C"
+              d="M18 17a1 1 0 11-2 0 1 1 0 012 0zM18 13a1 1 0 11-2 0 1 1 0 012 0zM13 17a1 1 0 11-2 0 1 1 0 012 0zM13 13a1 1 0 11-2 0 1 1 0 012 0zM8 17a1 1 0 11-2 0 1 1 0 012 0zM8 13a1 1 0 11-2 0 1 1 0 012 0z"
+            ></path>
+            </svg>`
+        )
     },
     {
         name: 'bell',

@@ -1,5 +1,4 @@
-import { useCallback } from 'react'
-import create from 'zustand'
+import { create } from 'zustand'
 import { DashboardAsideItems } from '../data/menu-items'
 
 type MenuStore = {

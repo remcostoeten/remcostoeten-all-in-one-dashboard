@@ -6,23 +6,31 @@ import { usePathname } from 'next/navigation'
 interface RecordsHeaderProps {
     onDropdownOpen?: () => void
     hasActions?: () => boolean
-    title?: React.ReactNode
+    title?: React.ReactNode | string
 }
 
-import DashHeader from '@/components/dashboard/guestbook/shells/DashHeader'
-
 const RecordsHeader: React.FC<RecordsHeaderProps> = ({
+    onDropdownOpen,
     hasActions = () => false,
-    title: titleProp
+    title: titleProp = ''
 }) => {
     const pathname = usePathname()
+    const pathSegments = pathname.split('/')
+    const lastSegment = pathSegments[pathSegments.length - 1] || ''
     const title =
         titleProp ||
         (pathname.includes('contact')
             ? 'Contact'
-            : pathname.split('/').pop()?.replace(/-/g, ' ') || 'Dashboard')
+            : lastSegment.replace(/-/g, ' ') || 'Dashboard')
 
-    return <DashHeader title={title} hasActions={hasActions} />
+    return (
+        <header>
+            <h1>{title}</h1>
+            {hasActions() && (
+                <button onClick={onDropdownOpen}>Open Dropdown</button>
+            )}
+        </header>
+    )
 }
 
 export default RecordsHeader

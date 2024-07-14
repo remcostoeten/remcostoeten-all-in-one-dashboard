@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { persist, PersistOptions } from 'zustand/middleware'
 import { DashboardAsideItems } from '../data/menu-items'
 
 type MenuStore = {
@@ -17,6 +17,18 @@ const initialState = DashboardAsideItems.reduce(
     {}
 )
 
+// Custom storage object
+const customStorage: PersistOptions<MenuStore>['storage'] = {
+    getItem: (name: string) => {
+        const str = localStorage.getItem(name)
+        return str ? JSON.parse(str) : null
+    },
+    setItem: (name: string, value: MenuStore) => {
+        localStorage.setItem(name, JSON.stringify(value))
+    },
+    removeItem: (name: string) => localStorage.removeItem(name)
+}
+
 export const useMenuStore = create(
     persist<MenuStore>(
         (set) => ({
@@ -33,7 +45,7 @@ export const useMenuStore = create(
         }),
         {
             name: 'menu-storage',
-            getStorage: () => localStorage
+            storage: customStorage
         }
     )
 )
