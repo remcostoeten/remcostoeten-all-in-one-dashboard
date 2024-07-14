@@ -1,8 +1,7 @@
 import Link from 'next/link'
 
-import { Github, ArrowRight } from 'lucide-react'
+import { Github } from 'lucide-react'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
-import { Button } from '../ui/button'
 import siteConfig from '@/core/data/site-config'
 import { useTranslations } from 'next-intl'
 import { BorderBeam } from '../effects/magicui/border-beam'

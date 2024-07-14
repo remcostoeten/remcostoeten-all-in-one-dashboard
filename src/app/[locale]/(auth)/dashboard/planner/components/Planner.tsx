@@ -79,12 +79,12 @@ const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
             location: {
                 current: {
                     dropTargets: {
-                        0: {
-                            data: {
-                                resourceId: string
-                                columnIndex: number
-                            }
+                        // 0: {
+                        data: {
+                            resourceId: string
+                            columnIndex: number
                         }
+                        // }
                     }[]
                 }
             }
