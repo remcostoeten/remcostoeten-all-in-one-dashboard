@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
-import CalendarToolbar from "./PlannerToolbar";
 import Appointment from "./Appointment";
+import CalendarToolbar from "./PlannerToolbar";
 
 import { Timeline } from "./Timeline";
 import ResourceTableCell from "./ResourceTableCell";

@@ -4,14 +4,16 @@ import React, { useState, useTransition } from "react";
 import { format } from "date-fns";
 import {
     Form,
-    FormControl, FormField,
+    FormControl,
+    FormField,
     FormItem,
     FormLabel,
     FormMessage
 } from "@/components/ui/form";
-
 import {
-    Dialog, DialogContent, DialogFooter,
+    Dialog,
+    DialogContent,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger
@@ -38,6 +40,7 @@ const AddAppointmentDialog: React.FC = () => {
     const { addAppointment, resources } = useData();
     const [isOpened, setIsOpened] = useState(false);
     const [isPending, startAddAppointmentTransition] = useTransition();
+
     const form = useForm<AppointmentType>({
         resolver: zodResolver(createAppointmentSchema),
         defaultValues: {
@@ -47,6 +50,7 @@ const AddAppointmentDialog: React.FC = () => {
             resourceId: "",
         },
     });
+
     function onSubmit(values: z.infer<typeof createAppointmentSchema>) {
         const id = crypto.randomUUID();
         const newAppointment: AppointmentType = {
@@ -79,6 +83,7 @@ const AddAppointmentDialog: React.FC = () => {
             setIsOpened(false);
         }, 1000);
     }
+
     return (
         <Dialog open={isOpened} onOpenChange={setIsOpened}>
             <DialogTrigger asChild>
@@ -224,7 +229,6 @@ const AddAppointmentDialog: React.FC = () => {
                                 </FormItem>
                             )}
                         />
-
                         <DialogFooter>
                             <Button type="submit">Save changes</Button>
                         </DialogFooter>

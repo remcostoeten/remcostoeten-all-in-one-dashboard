@@ -5,10 +5,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <main className='relative flex flex-1 bg-dash-body  w-full flex-row'>
             <Aside />
-            <section className=' flex w-full flex-col gap-5 p-4'>
+            <section className=' flex w-full flex-col '>
                 <DashHeader />
                 {children}
             </section>
-        </main>
+        </main >
     )
 }

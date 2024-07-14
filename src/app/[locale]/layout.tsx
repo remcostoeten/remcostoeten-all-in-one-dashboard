@@ -31,10 +31,18 @@ export default function RootLayout(props: {
     // Using internationalization in Client Components
     const messages = useMessages()
 
+
+    const initialAppointments = []
+    const initialResources = []
+
     return (
         <html lang={props.params.locale} className='dark overflow-x-hidden'>
             <body className={`${plexsans.className} overflow-x-hidden`}>
-                <Providers locale={props.params.locale} messages={messages}>
+                <Providers
+                    locale={props.params.locale} messages={messages}
+                    initialAppointments={initialAppointments}
+                    initialResources={initialResources}
+                >
                     <TopNav />
                     <NavBar />
                     <main
