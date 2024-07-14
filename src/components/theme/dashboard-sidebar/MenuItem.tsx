@@ -11,7 +11,8 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
         <div
             className={`${notificationClass}  rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-start'}`}
         >
-            <Link href={link} className='w-6 h-6'>{IconComponent}
+            <Link href={link} className='w-6 h-6'>
+                {IconComponent}
                 <AnimatePresence>
                     {isExpanded && (
                         <motion.a
@@ -25,10 +26,9 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
                             {name}
                         </motion.a>
                     )}
-
                 </AnimatePresence>
             </Link>
-        </div >
+        </div>
     )
 }
 

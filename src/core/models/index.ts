@@ -1,2 +1,2 @@
-export * from './Appointment';
-export * from './Resource';
+export * from './Appointment'
+export * from './Resource'

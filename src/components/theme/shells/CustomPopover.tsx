@@ -1,19 +1,22 @@
-import { Button } from "@/components/ui"
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import type { ReactNode } from "react"
+import { Button } from '@/components/ui'
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent
+} from '@/components/ui/popover'
+import type { ReactNode } from 'react'
 
 export default function CustomPopover({
     trigger,
     align = 'start',
     children,
-    width = '150px',
+    width = '150px'
 }: {
     trigger: JSX.Element | string
     align?: 'center' | 'end' | 'start'
     children?: ReactNode | any
     width?: string
     content: ReactNode
-
 }) {
     return (
         <Popover>

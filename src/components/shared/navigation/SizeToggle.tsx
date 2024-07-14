@@ -5,7 +5,7 @@ import CustomPopover from '@/components/theme/shells/CustomPopover'
 import { SiteSizeStore } from '@/core/stores/SiteSizeStore'
 
 const sizeOptions = ['Large', 'Spacious', 'Compact'] as const
-type SizeOption = typeof sizeOptions[number]
+type SizeOption = (typeof sizeOptions)[number]
 
 const fontSizeMap: Record<SizeOption, string> = {
     Large: '18px',
@@ -17,7 +17,9 @@ const defaultSize: SizeOption = 'Spacious'
 
 export default function SizeToggle() {
     const { size: storeSize, setSize } = SiteSizeStore()
-    const [currentSize, setCurrentSize] = useState<SizeOption>(storeSize || defaultSize)
+    const [currentSize, setCurrentSize] = useState<SizeOption>(
+        storeSize || defaultSize
+    )
 
     useEffect(() => {
         if (storeSize && storeSize !== currentSize) {
@@ -49,8 +51,8 @@ export default function SizeToggle() {
                     sizeOption === 'Large'
                         ? 'text-2xl'
                         : sizeOption === 'Spacious'
-                            ? 'text-xl'
-                            : 'text-base'
+                          ? 'text-xl'
+                          : 'text-base'
                 }
             >
                 Aa
@@ -59,11 +61,14 @@ export default function SizeToggle() {
         </button>
     )
 
-    const content = useMemo(() => (
-        <div className='flex flex-col bg-gray-800 rounded-lg p-1'>
-            {sizeOptions.map(renderSizeButton)}
-        </div>
-    ), [currentSize])
+    const content = useMemo(
+        () => (
+            <div className='flex flex-col bg-gray-800 rounded-lg p-1'>
+                {sizeOptions.map(renderSizeButton)}
+            </div>
+        ),
+        [currentSize]
+    )
 
     const trigger = (
         <svg
@@ -86,7 +91,5 @@ export default function SizeToggle() {
         </svg>
     )
 
-    return (
-        <CustomPopover trigger={trigger} content={content} />
-    )
+    return <CustomPopover trigger={trigger} content={content} />
 }
