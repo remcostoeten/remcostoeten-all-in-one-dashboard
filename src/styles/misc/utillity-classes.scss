@@ -40,3 +40,15 @@
     width: inherit;
     height: inherit;
 }
+
+.h-minus-nav {
+    height: calc(100dvh - var(--top-bar-height)) !important;
+}
+
+.min-h-minus-nav {
+    min-height: calc(100dvh - var(--top-bar-height)) !important;
+}
+
+.max-h-minus-nav {
+    max-height: calc(100dvh - var(--top-bar-height)) !important;
+}

@@ -1,19 +1,22 @@
-import React, { FC, useEffect } from "react";
-import Appointment from "./Appointment";
+import React, { FC, useEffect } from 'react'
+import Appointment from './Appointment'
 
-import { Timeline } from "./Timeline";
-import ResourceTableCell from "./ResourceTableCell";
-import DropTableCell from "./DropTableCell";
-import { monitorForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
-import { PlannerDataContextProvider, useData } from "@/core/contexts/CalendarDataContext";
-import { PlannerProvider, useCalendar } from "@/core/contexts/PlannerContext";
-import { Table, TableBody, TableRow } from "@/components/ui";
-import { calculateNewDates, filterAppointments } from "@/core/utils/utils";
-import type { Resource, Appointment as AppointmentType } from "@/core/models";
+import { Timeline } from './Timeline'
+import ResourceTableCell from './ResourceTableCell'
+import DropTableCell from './DropTableCell'
+import { monitorForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
+import {
+    PlannerDataContextProvider,
+    useData
+} from '@/core/contexts/CalendarDataContext'
+import { PlannerProvider, useCalendar } from '@/core/contexts/PlannerContext'
+import { Table, TableBody, TableRow } from '@/components/ui'
+import { calculateNewDates, filterAppointments } from '@/core/utils/utils'
+import type { Resource, Appointment as AppointmentType } from '@/core/models'
 
 export interface PlannerProps extends React.HTMLAttributes<HTMLDivElement> {
-    initialResources: Resource[];
-    initialAppointments: AppointmentType[];
+    initialResources: Resource[]
+    initialAppointments: AppointmentType[]
 }
 
 const Planner: React.FC<PlannerProps> = ({
@@ -30,45 +33,43 @@ const Planner: React.FC<PlannerProps> = ({
                 <PlannerMainComponent {...props} />
             </PlannerProvider>
         </PlannerDataContextProvider>
-    );
-};
+    )
+}
 
 export interface PlannerMainComponentProps
-    extends React.HTMLAttributes<HTMLDivElement> { }
+    extends React.HTMLAttributes<HTMLDivElement> {}
 
 const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     return (
-        <div className="flex flex-col gap-2  ">
+        <div className='flex flex-col gap-2  '>
             <CalendarContent {...props} />
         </div>
-    );
-};
+    )
+}
 
-interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> { }
-
-
+interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 function CalendarContent({ ...props }: CalendarContentProps) {
-    const { viewMode, dateRange, timeLabels } = useCalendar();
-    const { resources, appointments, updateAppointment } = useData();
+    const { viewMode, dateRange, timeLabels } = useCalendar()
+    const { resources, appointments, updateAppointment } = useData()
 
     useEffect(() => {
         return monitorForElements({
             onDrop({ source, location }) {
-                const destination = location.current.dropTargets[0]?.data;
-                const sourceData = source.data;
+                const destination = location.current.dropTargets[0]?.data
+                const sourceData = source.data
 
-                if (!destination || !sourceData) return;
+                if (!destination || !sourceData) return
 
                 const appointment = appointments.find(
-                    (appt) => appt.id === sourceData.appointmentId,
-                );
-                if (!appointment) return;
+                    (appt) => appt.id === sourceData.appointmentId
+                )
+                if (!appointment) return
 
                 const newResource = resources.find(
-                    (res) => res.id === destination.resourceId,
-                );
-                if (!newResource) return;
+                    (res) => res.id === destination.resourceId
+                )
+                if (!newResource) return
 
                 const newDates = calculateNewDates(
                     viewMode,
@@ -76,23 +77,23 @@ function CalendarContent({ ...props }: CalendarContentProps) {
                     sourceData.columnIndex as unknown as number,
                     {
                         from: appointment.start,
-                        to: appointment.end,
-                    },
-                );
+                        to: appointment.end
+                    }
+                )
 
                 updateAppointment({
                     ...appointment,
                     start: newDates.start as Date,
                     end: newDates.end as Date,
-                    resourceId: newResource.id,
-                });
-            },
-        });
-    }, [appointments]);
+                    resourceId: newResource.id
+                })
+            }
+        })
+    }, [appointments])
 
     return (
-        <div className="flex max-h-[calc(80vh_-_theme(spacing.16))] flex-col  ">
-            <div className="calendar-scroll flex-grow overflow-auto">
+        <div className='flex max-h-[calc(80vh_-_theme(spacing.16))] flex-col  '>
+            <div className='calendar-scroll flex-grow overflow-auto'>
                 <Table>
                     <Timeline />
                     <TableBody>
@@ -112,10 +113,16 @@ function CalendarContent({ ...props }: CalendarContentProps) {
                                                         appt,
                                                         index,
                                                         dateRange,
-                                                        viewMode,
-                                                    ) && appt.resourceId === resource.id,
+                                                        viewMode
+                                                    ) &&
+                                                    appt.resourceId ===
+                                                        resource.id
                                             )
-                                            .sort((a, b) => a.start.getTime() - b.start.getTime())
+                                            .sort(
+                                                (a, b) =>
+                                                    a.start.getTime() -
+                                                    b.start.getTime()
+                                            )
                                             .map((appt) => (
                                                 <Appointment
                                                     appointment={appt}
@@ -132,7 +139,7 @@ function CalendarContent({ ...props }: CalendarContentProps) {
                 </Table>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Planner;
+export default Planner

@@ -20,7 +20,13 @@ export * from './custom-dropdown-menu'
 export * from './dialog'
 export * from './form'
 export * from './hover-card'
-export { CardDescription, CardTitle, CardContent, CardHeader, Card } from './card'
+export {
+    CardDescription,
+    CardTitle,
+    CardContent,
+    CardHeader,
+    Card
+} from './card'
 export * from './input'
 export * from './label'
 export * from './menubar'

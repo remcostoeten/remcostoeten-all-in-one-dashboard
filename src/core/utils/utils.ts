@@ -95,12 +95,12 @@ const isAppointmentInSlot = (
         case 'week':
             return (
                 apptDate.getDay() -
-                (6 -
-                    differenceInDays(
-                        new Date(dateRange.to!),
-                        new Date(dateRange.from)
-                    )) ===
-                index && isSameWeek(apptDate, dateRange.from)
+                    (6 -
+                        differenceInDays(
+                            new Date(dateRange.to!),
+                            new Date(dateRange.from)
+                        )) ===
+                    index && isSameWeek(apptDate, dateRange.from)
             )
         case 'month':
             return (

@@ -1,23 +1,29 @@
 import svgToReactComponent from '@/core/libs/svgToComponent'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger
+} from '@/components/ui/tooltip'
 
 const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
     const IconComponent =
         typeof icon === 'string' ? svgToReactComponent(icon) : icon
     const notificationClass = hasNotification ? 'has-notification' : ''
+    const pathname = usePathname()
+    const isActiveSlug = pathname.includes(link)
 
-    return (
-        <div
-            className={`${notificationClass}  rounded-lg flex items-center px-3 py-2 hover:bg-gray-800 cursor-pointer ${isExpanded ? 'justify-start' : 'justify-start'}`}
-        >
-            <Link href={`/dashboard/${link}`} className='w-6 h-6'>
+    const menuItemContent = (
+        <>
+            <span className={`${notificationClass} w-6 h-6`}>
                 {IconComponent}
-            </Link>
+            </span>
             <AnimatePresence>
                 {isExpanded && (
-                    <motion.a
-                        href={`/dashboard/${link}`}
+                    <motion.span
                         className='ml-3'
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -25,10 +31,28 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
                         transition={{ duration: 0.5 }}
                     >
                         {name}
-                    </motion.a>
+                    </motion.span>
                 )}
             </AnimatePresence>
-        </div>
+        </>
+    )
+
+    return (
+        <TooltipProvider>
+            <Tooltip delayDuration={100}>
+                <TooltipTrigger asChild>
+                    <Link
+                        href={`/dashboard/${link}`}
+                        className={`rounded-lg flex items-center px-3 py-2 cursor-pointer menu-item ${isActiveSlug ? 'bg-icon-active-background' : ''}`}
+                    >
+                        {menuItemContent}
+                    </Link>
+                </TooltipTrigger>
+                <TooltipContent side='right'>
+                    <p>{name}</p>
+                </TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
     )
 }
 

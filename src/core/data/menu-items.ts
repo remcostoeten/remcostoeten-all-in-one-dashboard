@@ -5,23 +5,23 @@ export const headerDropdownItems: {
     href: string
     description: string
 }[] = [
-        {
-            title: 'Readme',
-            href: '/readme',
-            description: 'The repository read-me which also contains the roadmap.'
-        },
-        {
-            title: 'Guestbook ',
-            href: '/guestbook',
-            description: 'Just a page to test crud operations.'
-        },
-        {
-            title: 'WhatsApp Exports',
-            href: '/',
-            description:
-                'Exported chats from WhatsApp fetched from own API, because why not.'
-        }
-    ]
+    {
+        title: 'Readme',
+        href: '/readme',
+        description: 'The repository read-me which also contains the roadmap.'
+    },
+    {
+        title: 'Guestbook ',
+        href: '/guestbook',
+        description: 'Just a page to test crud operations.'
+    },
+    {
+        title: 'WhatsApp Exports',
+        href: '/',
+        description:
+            'Exported chats from WhatsApp fetched from own API, because why not.'
+    }
+]
 
 export const DashboardAsideItems = [
     {
@@ -46,7 +46,7 @@ export const DashboardAsideItems = [
 <path d="M17.5 16.01L22 16V10L20 9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
     `),
-        isFavourite: true,
+        isFavourite: true
     },
     {
         name: 'planner',

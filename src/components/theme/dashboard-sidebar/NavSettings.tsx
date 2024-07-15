@@ -7,12 +7,10 @@ import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/data/menu-items'
 import MuiCheckbox from '@/components/ui/mui/mui-checkbox'
 import { Button } from '@/components/ui/button'
-import { object } from 'zod'
 
 export default function NavSettings() {
     const enabledNavItems = useMenuStore((state) => state.enabledNavItems)
     const toggleNavItem = useMenuStore((state) => state.toggleNavItem)
-    const isExpanded = useMenuStore((state) => state.isExpanded)
     useEffect(() => {
         console.log('enabledNavItems changed:', enabledNavItems)
     }, [enabledNavItems])
@@ -31,6 +29,7 @@ export default function NavSettings() {
             }
         })
     }
+
     const trigger = (
         <IconComponent
             tooltipTitle='Settings'
@@ -49,7 +48,6 @@ export default function NavSettings() {
                     <path d='M22.9998 29.9998C23.552 29.9998 23.9998 29.552 23.9998 28.9998V25.8998C26.2998 25.3998 27.9998 23.3998 27.9998 20.9998C27.9998 18.5998 26.2998 16.5998 23.9998 16.0998V2.99976C23.9998 2.44747 23.552 1.99976 22.9998 1.99976C22.4475 1.99976 21.9998 2.44747 21.9998 2.99976V16.0998C19.6998 16.5998 17.9998 18.5998 17.9998 20.9998C17.9998 23.3998 19.6998 25.3998 21.9998 25.8998V28.9998C21.9998 29.552 22.4475 29.9998 22.9998 29.9998ZM19.9998 20.9998C19.9998 19.2998 21.2998 17.9998 22.9998 17.9998C24.6998 17.9998 25.9998 19.2998 25.9998 20.9998C25.9998 22.6998 24.6998 23.9998 22.9998 23.9998C21.2998 23.9998 19.9998 22.6998 19.9998 20.9998Z'></path>
                 </svg>
             </span>
-            {isExpanded && <span className='ml-2'>Settings</span>}
         </IconComponent>
     )
 

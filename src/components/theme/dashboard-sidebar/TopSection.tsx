@@ -3,23 +3,26 @@
 import { useUser } from '@clerk/nextjs'
 import AvatarShell from '../shells/AvatarShell'
 import Hamburger from '@/components/effects/HamburgerToggle'
-import { toast } from 'sonner'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import Link from 'next/link'
+import { Flex } from '@/components/shared/atoms/Flex'
 
 export default function TopSection() {
-    const { isExpanded, setIsExpanded } = useMenuStore()
-    const initial = useUser.name.charAt(0).toUpperCase()
+    const { isExpanded } = useMenuStore()
+    const { user } = useUser()
+    const initial = user?.firstName?.[0]?.toUpperCase() || ''
 
     return (
-        <div
-            className={`flex flex-col gap-1 mb-4     ${isExpanded ? 'px-3 py-2     items-start' : 'items-center'}`}
+        <Flex
+            direction='col'
+            gap='1'
+            className={`mb-4 ${isExpanded ? 'px-3 py-2 items-start' : 'items-center'}`}
         >
-            <div className='flex items-center gap-2 flex-col'>
+            <Flex direction='col' items='center' gap='2'>
                 <AvatarShell as={Link} href='/dashboard' Initials={initial} />
-            </div>
+            </Flex>
 
             <Hamburger />
-        </div>
+        </Flex>
     )
 }

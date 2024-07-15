@@ -9,6 +9,7 @@ import MenuItem from './MenuItem'
 import NavSettings from './NavSettings'
 import { cn } from '@/core/utils/cn'
 import SearchDialog from '@/components/shared/navigation/Search'
+import { Flex } from '@/components/shared/atoms/Flex'
 
 const Aside = () => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
@@ -30,15 +31,16 @@ const Aside = () => {
     return (
         <>
             <motion.aside
+                // onMouseEnter={() => setIsExpanded(true)}  .// create setting for alow this on of
                 variants={{
                     open: { width: '240px' },
                     close: { width: '64px' }
                 }}
                 animate={containerControls}
                 initial='close'
-                className='flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
+                className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
             >
-                <div className='flex w-full flex-1 flex-col px-2'>
+                <Flex direction='col' variant='space-y-m' items='center'>
                     <TopSection />
                     <nav className='mb-4'>
                         {favouriteItems.map(
@@ -69,37 +71,14 @@ const Aside = () => {
                             )
                         )}
                     </nav>
-                </div>
-                <div className='mt-auto flex flex-col px-2 gap-2 '>
-                    <Seperator style={{ marginBottom: '20px' }} />
-                    <div className='space-y-4'>
+                </Flex>
+                <Flex direction='col' className='mt-auto px-2' gap='2'>
+                    <Seperator className='mb-5' />
+                    <Flex direction='col' variant='space-y-m' items='center'>
                         <NavSettings />
                         <SearchDialog />
-
-                        {/* <MenuItem
-                            name='Search'
-                            icon={
-                                <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    fill='none'
-                                    viewBox='0 0 24 24'
-                                    strokeWidth={1.5}
-                                    stroke='#7f7f7f'
-                                    className='size-6'
-                                >
-                                    <path
-                                        strokeLinecap='round'
-                                        strokeLinejoin='round'
-                                        d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z'
-                                    />
-                                </svg>
-                            }
-                            hasNotification={false}
-                            isExpanded={isExpanded}
-                            onClick={() => setIsSearchOpen(true)}
-                        /> */}
-                    </div>
-                </div>
+                    </Flex>
+                </Flex>
             </motion.aside>
         </>
     )

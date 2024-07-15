@@ -1,28 +1,8 @@
 @import './theme/colors.scss';
-@import './theme/theme.scss';
-
-.has-notification {
-    position: relative;
-
-    &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0.425rem;
-        height: 0.425rem;
-        background-color: var(--custom-orange);
-        border-radius: 50%;
-        content: "";
-    }
-}
-
-
-
 @import './misc/utillity-classes.scss';
 @import './misc/animations.scss';
 @import './misc/scrollbar.scss';
-@import './misc/clerk_fix.scss';
-
+@import './components/dashboard-aside.scss';
 
 @tailwind base;
 @tailwind components;
@@ -30,6 +10,7 @@
 
 @layer base {
     :root {
+        --top-bar-height: 48px;
         --sidebar-width: 5.25rem;
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
@@ -89,7 +70,6 @@
     }
 }
 
-/* Add this to your global CSS file or a relevant CSS module */
 body,
 html,
 #__next {

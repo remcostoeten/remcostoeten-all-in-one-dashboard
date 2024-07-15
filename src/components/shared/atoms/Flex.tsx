@@ -1,60 +1,109 @@
 import React from 'react'
-import clsx from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
-type FlexProps = {
-    children: React.ReactNode
-    dir?: 'row' | 'row-reverse' | 'col' | 'col-reverse'
-    justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
-    align?: 'start' | 'end' | 'center' | 'stretch' | 'baseline'
-    gap?: string
+type FlexDirection = 'row' | 'row-reverse' | 'col' | 'col-reverse'
+type FlexWrap = 'wrap' | 'wrap-reverse' | 'nowrap'
+type JustifyContent =
+    | 'start'
+    | 'end'
+    | 'center'
+    | 'between'
+    | 'around'
+    | 'evenly'
+type AlignItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
+type AlignContent = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
+
+type SpaceSize = 'xs' | 's' | 'm' | 'l' | 'xl'
+
+type FlexVariant =
+    | 'default'
+    | 'center'
+    | `space-x-${SpaceSize}`
+    | `space-y-${SpaceSize}`
+
+interface FlexProps<T extends React.ElementType = 'div'>
+    extends React.HTMLAttributes<HTMLElement> {
+    as?: T
+    direction?: FlexDirection
+    wrap?: FlexWrap
+    justify?: JustifyContent
+    items?: AlignItems
+    content?: AlignContent
+    gap?: number | string
+    variant?: FlexVariant
     className?: string
+    role?: string
+    'aria-label'?: string
+    'aria-labelledby'?: string
+    'data-testid'?: string
 }
 
-/**
- * Flex component to create flexible layouts using a minimalistic API.
- *
- * @param {React.ReactNode} children - The content to be displayed inside the Flex container.
- * @param {'row' | 'row-reverse' | 'col' | 'col-reverse'} [dir='row'] - The direction of the flex items.
- * @param {'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'} [justify='start'] - The justification of the flex items.
- * @param {'start' | 'end' | 'center' | 'stretch' | 'baseline'} [align='stretch'] - The alignment of the flex items.
- * @param {string} [gap='0'] - The gap between the flex items.
- * @param {string} [className=''] - Additional custom class names.
- * @returns {JSX.Element} The rendered Flex component.
- */
-const Flex: React.FC<FlexProps> = ({
+const spaceToGap: Record<SpaceSize, string> = {
+    xs: '2',
+    s: '4',
+    m: '6',
+    l: '8',
+    xl: '10'
+}
+
+const variantClasses: Record<FlexVariant, string> = {
+    default: '',
+    center: 'items-center justify-center',
+    'space-x-xs': `items-center space-x-${spaceToGap.xs}`,
+    'space-x-s': `items-center space-x-${spaceToGap.s}`,
+    'space-x-m': `items-center space-x-${spaceToGap.m}`,
+    'space-x-l': `items-center space-x-${spaceToGap.l}`,
+    'space-x-xl': `items-center space-x-${spaceToGap.xl}`,
+    'space-y-xs': `flex-col items-center space-y-${spaceToGap.xs}`,
+    'space-y-s': `flex-col items-center space-y-${spaceToGap.s}`,
+    'space-y-m': `flex-col items-center space-y-${spaceToGap.m}`,
+    'space-y-l': `flex-col items-center space-y-${spaceToGap.l}`,
+    'space-y-xl': `flex-col items-center space-y-${spaceToGap.xl}`
+}
+
+export const Flex = <T extends React.ElementType = 'div'>({
+    as,
+    direction,
+    wrap,
+    justify,
+    items,
+    content,
+    gap,
+    variant = 'default',
+    className,
     children,
-    dir = 'row',
-    justify = 'start',
-    align = 'stretch',
-    gap = '0',
-    className = ''
-}) => {
-    const classes = clsx(
-        'flex',
-        {
-            'flex-row': dir === 'row',
-            'flex-row-reverse': dir === 'row-reverse',
-            'flex-col': dir === 'col',
-            'flex-col-reverse': dir === 'col-reverse',
-            'justify-start': justify === 'start',
-            'justify-end': justify === 'end',
-            'justify-center': justify === 'center',
-            'justify-between': justify === 'between',
-            'justify-around': justify === 'around',
-            'justify-evenly': justify === 'evenly',
-            'items-start': align === 'start',
-            'items-end': align === 'end',
-            'items-center': align === 'center',
-            'items-stretch': align === 'stretch',
-            'items-baseline': align === 'baseline'
-        },
-        {
-            [`gap-${gap}`]: gap
-        },
+    role,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    'data-testid': dataTestId,
+    ...props
+}: FlexProps<T>) => {
+    const Component = as || 'div'
+    const baseClasses = 'flex'
+    const variantClass = variantClasses[variant]
+
+    const classes = twMerge(
+        baseClasses,
+        variantClass,
+        direction && `flex-${direction}`,
+        wrap && `flex-${wrap}`,
+        justify && `justify-${justify}`,
+        items && `items-${items}`,
+        content && `content-${content}`,
+        gap !== undefined && `gap-${gap}`,
         className
     )
 
-    return <div className={classes}>{children}</div>
+    return (
+        <Component
+            className={classes}
+            role={role}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
+            data-testid={dataTestId}
+            {...props}
+        >
+            {children}
+        </Component>
+    )
 }
-
-export default Flex
