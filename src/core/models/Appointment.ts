@@ -28,7 +28,8 @@ export const createAppointmentSchema = z
             .max(50, { message: 'Title is too long' }),
         start: z.date(),
         end: z.date(),
-        resourceId: z.string().min(1, { message: 'Resource is required' }),
+        resourceId: z.string(),
+        // resourceId: z.string().min(1, { message: 'Resource is required' }),
         order: z.number().optional(),
         details: z.record(z.any()).optional()
     })

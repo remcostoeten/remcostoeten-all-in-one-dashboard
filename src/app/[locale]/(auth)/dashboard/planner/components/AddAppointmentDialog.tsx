@@ -13,10 +13,7 @@ import {
 import {
     Dialog,
     DialogContent,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger
+    DialogFooter, DialogTrigger
 } from "@/components/ui/dialog";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,9 +22,8 @@ import { CalendarIcon } from "lucide-react";
 import {
     Select,
     SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+    SelectItem, SelectTrigger,
+    SelectValue
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { Input, Calendar, TimePicker, Button } from "@/components/ui";
@@ -35,6 +31,24 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { createAppointmentSchema } from "@/core/models";
 import { cn } from "@/core/utils/utils";
 import { useData } from "@/core/contexts/CalendarDataContext";
+import type { Appointment as AppointmentType } from "@/core/models";
+import { ShortcutKey } from "@/components/shared/navigation/Search";
+
+const CustomInput = (props: any) => {
+    return (
+        <div className='relative'>
+            <Input
+                className='border-none w-full bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-500'
+                placeholder={props.placeholder}
+                style={{ paddingRight: '2rem' }}
+                {...props}
+            />
+            <div className='absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-opacity-60'>
+                <ShortcutKey>/</ShortcutKey>
+            </div>
+        </div>
+    )
+}
 
 const AddAppointmentDialog: React.FC = () => {
     const { addAppointment, resources } = useData();
@@ -47,7 +61,9 @@ const AddAppointmentDialog: React.FC = () => {
             title: "",
             start: new Date(),
             end: new Date(new Date().getTime() + 60 * 60 * 1000),
-            resourceId: "",
+            details: {
+                service: "Music",
+            }
         },
     });
 
@@ -62,7 +78,7 @@ const AddAppointmentDialog: React.FC = () => {
             title: values.title,
             start: values.start,
             end: values.end,
-            resourceId: values.resourceId,
+            resourceId: "your_resource_id_here", // Replace "your_resource_id_here" with the actual resourceId
         };
 
         startAddAppointmentTransition(() => {
@@ -90,9 +106,6 @@ const AddAppointmentDialog: React.FC = () => {
                 <Button variant="outline">Add Appointment</Button>
             </DialogTrigger>
             <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Add Appointment</DialogTitle>
-                </DialogHeader>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                         <FormField
@@ -102,7 +115,7 @@ const AddAppointmentDialog: React.FC = () => {
                                 <FormItem>
                                     <FormLabel>Title</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Appointment title" {...field} />
+                                        <CustomInput placeholder="Appointment title" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -198,10 +211,10 @@ const AddAppointmentDialog: React.FC = () => {
                         />
                         <FormField
                             control={form.control}
-                            name="resourceId"
+                            name="details.service"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Resource</FormLabel>
+                                    <FormLabel>Details</FormLabel>
                                     <FormControl>
                                         <Select
                                             onValueChange={field.onChange}
