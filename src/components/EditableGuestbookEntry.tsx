@@ -12,18 +12,23 @@ const EditableGuestbookEntry = (props: {
     const [isEditing, setIsEditing] = useState(false)
 
     const handleEdit = () => {
-        setIsEditing((value) => !value)
+        setIsEditing(true)
+    }
+
+    const handleSave = async (data: { username: string; body: string }) => {
+        await fetch(`/api/guestbook/${props.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        setIsEditing(false)
     }
 
     return (
         <>
-            <button
-                type='button'
-                aria-label='edit'
-                onClick={() => {
-                    handleEdit()
-                }}
-            >
+            <button type='button' aria-label='edit' onClick={handleEdit}>
                 <svg
                     className='size-6 stroke-current'
                     fill='none'
@@ -39,25 +44,14 @@ const EditableGuestbookEntry = (props: {
             <div className='ml-1 grow'>
                 {isEditing ? (
                     <GuestbookForm
-                        edit
-                        id={props.id}
-                        defaultValues={{
-                            username: props.username,
-                            body: props.body
-                        }}
-                        onValid={async (data) => {
-                            await fetch(`/api/guestbook`, {
-                                method: 'PUT',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    id: props.id,
-                                    ...data
-                                })
-                            })
-
-                            setIsEditing(false)
+                        props={{
+                            id: props.id,
+                            edit: true, // Assuming 'edit' is a boolean indicating editing mode
+                            defaultValues: {
+                                username: props.username,
+                                body: props.body
+                            },
+                            onValid: handleSave
                         }}
                     />
                 ) : (

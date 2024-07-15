@@ -4,10 +4,11 @@ import { toast } from 'sonner'
 import { Search } from '.'
 import SizeToggle from './SizeToggle'
 import ThemeToggle from './ModeToggle'
+import { Flex } from '../atoms/Flex'
 
 export default function TopNavSettings() {
     return (
-        <div className='flex gap-4 items-center'>
+        <>
             <SettingWrapper>
                 <ThemeToggle />
             </SettingWrapper>
@@ -17,7 +18,7 @@ export default function TopNavSettings() {
             <SettingWrapper>
                 <Search />
             </SettingWrapper>
-        </div>
+        </>
     )
 }
 

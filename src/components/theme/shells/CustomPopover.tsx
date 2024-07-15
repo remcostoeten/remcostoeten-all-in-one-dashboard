@@ -1,9 +1,10 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui'
 import {
     Popover,
-    PopoverContent,
-    PopoverTrigger
+    PopoverTrigger,
+    PopoverContent
 } from '@/components/ui/popover'
+import type { ReactNode } from 'react'
 
 export default function CustomPopover({
     trigger,
@@ -11,10 +12,11 @@ export default function CustomPopover({
     children,
     width = '150px'
 }: {
-    trigger: JSX.Element
+    trigger: JSX.Element | string
     align?: 'center' | 'end' | 'start'
-    children: React.ReactNode
+    children?: ReactNode | any
     width?: string
+    content?: ReactNode
 }) {
     return (
         <Popover>
@@ -27,7 +29,6 @@ export default function CustomPopover({
                 </Button>
             </PopoverTrigger>
             <PopoverContent
-                className='bg-popover'
                 align={align}
                 style={{
                     border: '1px solid rgba(255, 255, 255, 0.09)',

@@ -1,15 +1,9 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { type FuelType, FUEL_TYPES } from './constants'
 
-// In PageDesign.tsx
-interface PageDesignProps {
-    onCitySubmit: (city: string) => void
-    onFuelTypeChange: (fuelType: FuelType) => void
-}
-
-// In FuelTypeHeader.tsx
 interface FuelTypeHeaderProps {
-    onFuelTypeChange: (fuelType: FuelType) => void
+    onCitySubmit: (city: string) => void
+    onFuelTypeChange: any
 }
 
 export default function FuelTypeHeader({

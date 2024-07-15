@@ -44,7 +44,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title }) => (
     </div>
 )
 
-const ShortcutKey: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+export const ShortcutKey: React.FC<{ children: React.ReactNode }> = ({
+    children
+}) => (
     <div className='justify-center px-2 py-px rounded border border-solid bg-white bg-opacity-0 border-white border-opacity-10'>
         {children}
     </div>
@@ -125,8 +127,9 @@ function SearchDialog() {
     return (
         <>
             <Button
+                className='justify-center'
                 variant='ghost'
-                size='sm'
+                size='icon'
                 onClick={() => setIsOpen((prev) => !prev)}
             >
                 {searchIcon()}

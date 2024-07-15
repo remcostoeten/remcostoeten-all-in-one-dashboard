@@ -31,20 +31,21 @@ export default function RootLayout(props: {
     // Using internationalization in Client Components
     const messages = useMessages()
 
+    const initialAppointments = []
+    const initialResources = []
+
     return (
         <html lang={props.params.locale} className='dark overflow-x-hidden'>
             <body className={`${plexsans.className} overflow-x-hidden`}>
-                <Providers locale={props.params.locale} messages={messages}>
+                <Providers
+                    locale={props.params.locale}
+                    messages={messages}
+                    initialAppointments={initialAppointments}
+                    initialResources={initialResources}
+                >
                     <TopNav />
                     <NavBar />
-                    <main
-                        className='min-w-screen bg-dot-black/[0.2] flex flex-col items-center justify-between bg-black pt-16 bg-dot-white/[0.2] -z-10 min-h-screen'
-                        style={{
-                            paddingTop: 'calc(var(--nav-height) + 16px)'
-                        }}
-                    >
-                        {props.children}
-                    </main>
+                    {props.children}
                     <Toaster invert />
                 </Providers>
             </body>

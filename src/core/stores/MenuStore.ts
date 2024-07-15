@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { persist, PersistOptions, StorageValue } from 'zustand/middleware'
 import { DashboardAsideItems } from '../data/menu-items'
 
 type MenuStore = {
@@ -17,23 +17,48 @@ const initialState = DashboardAsideItems.reduce(
     {}
 )
 
+const customStorage: PersistOptions<MenuStore>['storage'] = {
+    getItem: (name: string) => {
+        const str = localStorage.getItem(name)
+        return str ? JSON.parse(str) : null
+    },
+    setItem: (name: string, value: StorageValue<MenuStore>) => {
+        if (
+            name &&
+            typeof value === 'object' &&
+            'state' in value &&
+            value.state &&
+            'isExpanded' in value.state &&
+            'setIsExpanded' in value.state &&
+            'enabledNavItems' in value.state &&
+            'toggleNavItem' in value.state
+        ) {
+            localStorage.setItem(name, JSON.stringify(value))
+        } else {
+            console.error('Invalid arguments for localStorage.setItem')
+        }
+    },
+    removeItem: (name: string) => localStorage.removeItem(name)
+}
+
 export const useMenuStore = create(
     persist<MenuStore>(
         (set) => ({
             isExpanded: false,
             setIsExpanded: (value) => set({ isExpanded: value }),
             enabledNavItems: initialState,
-            toggleNavItem: (name) =>
+            toggleNavItem: (name) => {
                 set((state) => ({
                     enabledNavItems: {
                         ...state.enabledNavItems,
                         [name]: !state.enabledNavItems[name]
                     }
                 }))
+            }
         }),
         {
             name: 'menu-storage',
-            getStorage: () => localStorage
+            storage: customStorage
         }
     )
 )

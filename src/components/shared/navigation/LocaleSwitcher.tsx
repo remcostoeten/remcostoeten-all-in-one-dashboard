@@ -27,7 +27,7 @@ export default function LocaleSwitcherPopover() {
     )
 
     const content = (
-        <div className='space-y-4'>
+        <div className='space-y-4 '>
             {Object.entries(flagMap).map(([key, { flag, name }]) => (
                 <button
                     key={key}

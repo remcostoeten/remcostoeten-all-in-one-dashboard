@@ -18,3 +18,4 @@ const SignUpPage = (props: { params: { locale: string } }) => (
     <SignUp path={getI18nPath('/sign-up', props.params.locale)} />
 )
 
+export default SignUpPage

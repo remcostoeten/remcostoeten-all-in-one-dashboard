@@ -1,67 +1,52 @@
 'use client'
 
-import React from 'react'
-import { usePathname } from 'next/navigation'
-import StaggeredDropDown from '../../DropdownMenu'
+import React, { useState, useCallback, useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import RouteGuard from '@/components/RouteGaurd'
+import AddAppointmentDialog from '@/app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
+import CalendarToolbar from '@/app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
 
-interface RecordsHeaderProps {
-    onDropdownOpen: () => void
-    hasActions?: () => boolean
-}
-
-const RecordsHeader: React.FC<RecordsHeaderProps> = ({
-    hasActions = false
-}) => {
+function DashHeader() {
     const pathname = usePathname()
-    const title = pathname.includes('contact')
-        ? 'Contact'
-        : pathname.split('/').pop()?.replace(/-/g, ' ') || 'Dashboard'
+    const [title, setTitle] = useState('Dashboard')
+
+    useEffect(() => {
+        const pathSegments = pathname.split('/')
+        const lastSegment = pathSegments[pathSegments.length - 1] || ''
+        setTitle(lastSegment.replace(/-/g, ' ') || 'Dashboard')
+    }, [pathname])
 
     return (
-        <header className='flex gap-5 justify-between self-stretch py-2.5 pr-4 pl-5 text-sm whitespace-nowrap border-b border-solid bg-zinc-800 border-white border-opacity-10 text-white text-opacity-80 max-md:flex-wrap'>
-            <h1 className='my-auto capitalize'>{title}</h1>
-            <div className='flex gap-2'>
-                <SvgButton />
-                {hasActions && <StaggeredDropDown />}
+        <header className='flex flex-col space-y-4 p-4 bg-blue-alternative text-text-white'>
+            <div className='flex justify-between items-center'>
+                <h1 className='text-xl font-semibold'>
+                    {title.charAt(0).toUpperCase() + title.slice(1)}
+                </h1>
+                <div className='flex space-x-2'>
+                    <RouteGuard patterns={['/dashboard/planner']}>
+                        <AddAppointmentDialog />
+                        <CalendarToolbar />
+                    </RouteGuard>
+                </div>
             </div>
         </header>
     )
 }
 
-export default RecordsHeader
+interface ActionButtonProps {
+    onClick?: () => void
+    children: React.ReactNode
+}
 
-const SvgButton: React.FC = () => {
+const ActionButton: React.FC<ActionButtonProps> = ({ onClick, children }) => {
     return (
-        <button className='p-2 rounded-full hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-20'>
-            <svg
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-            >
-                <path
-                    d='M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z'
-                    stroke='white'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                />
-                <path
-                    d='M12 16V12'
-                    stroke='white'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                />
-                <path
-                    d='M12 8H12.01'
-                    stroke='white'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                />
-            </svg>
+        <button
+            onClick={onClick}
+            className='bg-ghost hover:bg-ghost-hover text-text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-primary'
+        >
+            {children}
         </button>
     )
 }
+
+export default DashHeader

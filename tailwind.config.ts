@@ -57,7 +57,7 @@ const config: Config = withMT({
                 sidebar: 'var(--dark-blue)',
                 'dash-body': 'var(--light-blue)',
                 'bg-body': 'var(--light-blue)',
-                'text-white': 'var(--text-white)',
+                'text-white': 'var(--text-white)', // #fff 80%
                 icon: '#1A1A28',
                 'icon-active': 'var(--icon-active)',
                 'icon-active-background': 'var(--icon-active-background)',
@@ -94,7 +94,7 @@ const config: Config = withMT({
                     foreground: 'hsl(var(--accent-foreground))'
                 },
                 popover: {
-                    DEFAULT: 'rgb(42, 41, 57)',
+                    DEFAULT: 'var(--bg-popover)',
                     foreground: 'hsl(var(--popover-foreground))'
                 },
                 card: {

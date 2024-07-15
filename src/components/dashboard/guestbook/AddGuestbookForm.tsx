@@ -2,16 +2,22 @@
 
 import { GuestbookForm } from './GuestbookForm'
 
-const AddGuestbookForm = () => (
+const AddGuestbookForm: React.FC = () => (
     <GuestbookForm
-        onValid={async (data) => {
-            await fetch(`/api/guestbook`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
+        props={{
+            onValid: async (data) => {
+                const res = await fetch(`/api/guestbook`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+
+                if (!res.ok) {
+                    throw new Error('Failed to add guestbook entry')
+                }
+            }
         }}
     />
 )

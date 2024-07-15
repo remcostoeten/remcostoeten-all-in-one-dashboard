@@ -1,0 +1,32 @@
+.menu-item {
+
+    svg,
+    path {
+        transition: 250ms ease-in-out;
+        stroke: rgb(127, 127, 127) !important;
+    }
+
+    &:hover {
+
+        svg,
+        path {
+            stroke: #fff;
+
+        }
+    }
+}
+
+.has-notification {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.425rem;
+        height: 0.425rem;
+        background-color: var(--custom-orange);
+        border-radius: 50%;
+        content: "";
+    }
+}

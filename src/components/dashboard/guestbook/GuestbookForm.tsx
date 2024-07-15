@@ -11,7 +11,7 @@ import { GuestbookValidation } from '@/core/validations/GuestbookValidation'
 type IGuestbookFormProps =
     | {
           edit: true
-          id: number
+          id: any
           defaultValues: z.infer<typeof GuestbookValidation>
           onValid: SubmitHandler<z.infer<typeof GuestbookValidation>>
       }
@@ -20,7 +20,7 @@ type IGuestbookFormProps =
           onValid: SubmitHandler<z.infer<typeof GuestbookValidation>>
       }
 
-const GuestbookForm = ({ props }) => {
+const GuestbookForm = ({ props }: { props: IGuestbookFormProps }) => {
     const {
         handleSubmit,
         register,
