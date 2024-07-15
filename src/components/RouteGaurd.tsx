@@ -1,19 +1,21 @@
-import React from 'react'
-import { useRouteMatch } from '@/core/hooks/useRouteMatch'
+import { useRouteMatch } from "@/core/hooks/useRouteMatch";
+import type { ReactNode } from "react";
 
 type RouteGuardProps = {
-    patterns: string | string[]
-    children: React.ReactNode
+    patterns: string | string[];
+    children: ReactNode;
 }
+export default function RouteGuard({
+    patterns,
+    children,
+}: RouteGuardProps) {
+    const isRouteMatch = useRouteMatch(patterns);
 
-export default function RouteGuard({ patterns, children }: RouteGuardProps) {
-    const isMatch = useRouteMatch(patterns)
-
-    if (isMatch) {
-        return <>{children}</>
+    if (isRouteMatch) {
+        return <>{children}</>;
     }
 
-    return null
+    return null;
 }
 
 /**

@@ -12,8 +12,8 @@ type ProvidersProps = {
     children: ReactNode
     locale: string
     messages: any
-    initialAppointments: any[] // Add this
-    initialResources: any[] // Add this
+    initialAppointments: any[]
+    initialResources: any[]
 }
 
 export default function Providers({

@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from "react";
 import Appointment from "./Appointment";
-import CalendarToolbar from "./PlannerToolbar";
 
 import { Timeline } from "./Timeline";
 import ResourceTableCell from "./ResourceTableCell";
@@ -40,14 +39,16 @@ export interface PlannerMainComponentProps
 const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     return (
         <div className="flex flex-col gap-2  ">
-            <CalendarToolbar />
             <CalendarContent {...props} />
         </div>
     );
 };
 
 interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> { }
-const CalendarContent: React.FC<CalendarContentProps> = ({ ...props }) => {
+
+
+
+function CalendarContent({ ...props }: CalendarContentProps) {
     const { viewMode, dateRange, timeLabels } = useCalendar();
     const { resources, appointments, updateAppointment } = useData();
 

@@ -13,7 +13,7 @@ const HamburgerToggle = () => {
     return (
         <button
             onClick={toggleMenu}
-            className={`p-1 trans bg-ghost-active w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center`}
+            className={`p-1  bg-ghost-active w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center`}
         >
             <div className='flex flex-col justify-center items-center   rounded focus:outline-none'>
                 <span

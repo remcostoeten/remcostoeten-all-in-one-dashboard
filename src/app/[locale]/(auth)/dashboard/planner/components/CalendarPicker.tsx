@@ -9,10 +9,7 @@ import { cn } from "@/core/utils/cn";
 
 interface CalendarToolbarProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-const CalendarToolbar: React.FC<CalendarToolbarProps> = ({
-    className,
-    ...props
-}) => {
+function CalendarPicker() {
     const { setDateRange } = useCalendar();
     const { addResource, addAppointment } = useData();
     const [range, setRange] = useState<DateRange>({
@@ -36,11 +33,7 @@ const CalendarToolbar: React.FC<CalendarToolbarProps> = ({
     }, [range, setDateRange]);
 
     return (
-        <div
-            className={cn("flex items-center justify-end space-x-2", className)}
-            {...props}
-        >
-            <AddAppointmentDialog />
+        <div className="flex items-center justify-end space-x-2">
             <DateRangePicker
                 onUpdate={(value) => handleDateRangeUpdate(value.range)}
                 initialDateFrom={range.from}
@@ -50,6 +43,6 @@ const CalendarToolbar: React.FC<CalendarToolbarProps> = ({
             />
         </div>
     );
-};
+}
 
-export default React.memo(CalendarToolbar);
+export default React.memo(CalendarPicker);
