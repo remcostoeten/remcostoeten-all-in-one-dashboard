@@ -1,0 +1,27 @@
+.h-minus-nav {
+    height: calc(100vh - var(--top-bar-height)) !important;
+}
+
+.min-h-minus-nav {
+    min-height: calc(100vh - var(--top-bar-height)) !important;
+}
+
+.max-h-minus-nav {
+    max-height: calc(100vh - var(--top-bar-height)) !important;
+}
+
+.w-minus-sidebar {
+    width: calc(100vw - 64px);
+}
+
+.min-w-minus-sidebar {
+    min-width: calc(100vw - 64px);
+}
+
+.max-w-minus-sidebar {
+    max-width: calc(100vw - 64px);
+}
+
+.sidebar-space {
+    padding-left: 64px;
+}

@@ -3,9 +3,9 @@ import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <main className='relative flex  bg-dash-body  w-full flex-row border-t h-minus-nav border border-red-400'>
+        <main className='flex h-minus-nav'>
             <Aside />
-            <section className=' flex w-full flex-col '>
+            <section className='w-minus-sidebar flex w- flex-col h-minus-nav'>
                 <DashHeader />
                 {children}
             </section>

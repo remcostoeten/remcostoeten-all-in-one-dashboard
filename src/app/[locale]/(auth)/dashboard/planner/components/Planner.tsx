@@ -37,7 +37,7 @@ const Planner: React.FC<PlannerProps> = ({
 }
 
 export interface PlannerMainComponentProps
-    extends React.HTMLAttributes<HTMLDivElement> {}
+    extends React.HTMLAttributes<HTMLDivElement> { }
 
 const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     return (
@@ -47,7 +47,7 @@ const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     )
 }
 
-interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 function CalendarContent({ ...props }: CalendarContentProps) {
     const { viewMode, dateRange, timeLabels } = useCalendar()
@@ -92,53 +92,53 @@ function CalendarContent({ ...props }: CalendarContentProps) {
     }, [appointments])
 
     return (
-        <div className='flex max-h-[calc(80vh_-_theme(spacing.16))] flex-col  '>
-            <div className='calendar-scroll flex-grow overflow-auto'>
-                <Table>
-                    <Timeline />
-                    <TableBody>
-                        {resources.map((resource) => (
-                            <TableRow key={resource.id}>
-                                <ResourceTableCell resourceItem={resource} />
-                                {timeLabels?.map((label, index) => (
-                                    <DropTableCell
-                                        resourceId={resource.id}
-                                        columnIndex={index}
-                                        key={index}
-                                    >
-                                        {appointments
-                                            .filter(
-                                                (appt) =>
-                                                    filterAppointments(
-                                                        appt,
-                                                        index,
-                                                        dateRange,
-                                                        viewMode
-                                                    ) &&
-                                                    appt.resourceId ===
-                                                        resource.id
-                                            )
-                                            .sort(
-                                                (a, b) =>
-                                                    a.start.getTime() -
-                                                    b.start.getTime()
-                                            )
-                                            .map((appt) => (
-                                                <Appointment
-                                                    appointment={appt}
-                                                    columnIndex={index}
-                                                    resourceId={resource.id}
-                                                    key={appt.id}
-                                                />
-                                            ))}
-                                    </DropTableCell>
-                                ))}
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
+        // <div className='flex max-h-[calc(80vh_-_theme(spacing.16))] flex-col  '>
+        <div className='calendar-scroll flex-grow overflow-auto'>
+            <Table>
+                <Timeline />
+                <TableBody>
+                    {resources.map((resource) => (
+                        <TableRow key={resource.id}>
+                            <ResourceTableCell resourceItem={resource} />
+                            {timeLabels?.map((label, index) => (
+                                <DropTableCell
+                                    resourceId={resource.id}
+                                    columnIndex={index}
+                                    key={index}
+                                >
+                                    {appointments
+                                        .filter(
+                                            (appt) =>
+                                                filterAppointments(
+                                                    appt,
+                                                    index,
+                                                    dateRange,
+                                                    viewMode
+                                                ) &&
+                                                appt.resourceId ===
+                                                resource.id
+                                        )
+                                        .sort(
+                                            (a, b) =>
+                                                a.start.getTime() -
+                                                b.start.getTime()
+                                        )
+                                        .map((appt) => (
+                                            <Appointment
+                                                appointment={appt}
+                                                columnIndex={index}
+                                                resourceId={resource.id}
+                                                key={appt.id}
+                                            />
+                                        ))}
+                                </DropTableCell>
+                            ))}
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
         </div>
+        // </div >
     )
 }
 

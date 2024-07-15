@@ -1,7 +1,10 @@
 @import './theme/colors.scss';
+@import './theme/layout.scss';
+
 @import './misc/utillity-classes.scss';
 @import './misc/animations.scss';
 @import './misc/scrollbar.scss';
+
 @import './components/dashboard-aside.scss';
 
 @tailwind base;
@@ -10,6 +13,7 @@
 
 @layer base {
     :root {
+
         --top-bar-height: 48px;
         --sidebar-width: 5.25rem;
         --background: 0 0% 100%;
@@ -59,6 +63,7 @@
         --ring: 212.7 26.8% 83.9%;
     }
 }
+
 
 @layer base {
     * {
