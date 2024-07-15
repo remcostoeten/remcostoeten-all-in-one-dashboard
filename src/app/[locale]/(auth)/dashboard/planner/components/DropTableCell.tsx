@@ -28,7 +28,7 @@ const DropTableCell: FC<DropTableCellProps> = ({
                 return { resourceId: resourceId, columnIndex: columnIndex }
             },
             onDragEnter: () => setIsOver(true),
-            onDragLeave: () => setIsOvefr(false),
+            onDragLeave: () => setIsOver(false),
             onDrop: () => {
                 setIsOver(false)
             }
