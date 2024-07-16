@@ -35,3 +35,65 @@ $duration: 0.74s;
 }
 
 // End animation for icon log hover
+
+// Start styling for grid hover background
+
+.bg-fade {
+    background: linear-gradient(to bottom, #008080 0%, #006666 100%);
+    filter: blur(10px);
+    animation: glow 2s infinite;
+}
+
+// @keyframes glow {
+//     0% {
+//         background: linear-gradient(to bottom, #008080 0%, #006666 100%);
+//         filter: blur(10px) brightness(150%);
+//     }
+
+//     50% {
+//         background: linear-gradient(to bottom, #006666 0%, #008080 100%);
+//         filter: blur(20px) brightness(120%);
+//     }
+
+//     100% {
+//         background: linear-gradient(to bottom, #008080 0%, #006666 100%);
+//         filter: blur(10px) brightness(150%);
+//     }
+// }
+
+.bg-fade {
+    background: linear-gradient(176deg, rgba(32, 24, 223, 0.2), rgba(162, 255, 252, 0.2), rgba(221, 69, 253, 0.2), rgba(25, 76, 195, 0.2), rgba(252, 237, 253, 0.2), rgba(72, 93, 175, 0.2));
+    background-size: 360% 360%;
+    opacity: .2;
+    animation: gradient-animation 2 ease infinite;
+
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    animation: gradient-animation 12s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

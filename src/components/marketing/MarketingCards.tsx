@@ -1,130 +1,149 @@
-'use client'
+import { cn } from '@/core/utils/cn'
+import Marquee from '../effects/magicui/marquee'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-
-const ProjectsData = [
+const techStack = [
     {
-        id: 1,
-        name: 'Nextjs 14',
-        description:
-            'A framework for React that enables server-side rendering and effortless deployment.',
-        image: '/home/nextjs.svg',
-        imageDark: '/home/nextjs-dark.png'
+        name: 'NextJS 15',
+        category: 'Frontend',
+        description: 'React framework for production',
+        img: 'https://avatar.vercel.sh/nextjs'
     },
     {
-        id: 2,
-        name: 'TypeScript',
-        description:
-            'A typed superset of JavaScript that enhances code maintainability and scalability.',
-        image: '/home/typescript.png'
-    },
-    {
-        id: 3,
-        name: 'Tailwind CSS',
-        description:
-            'A utility-first CSS framework for building custom designs with ease.',
-        image: '/home/tailwind.png'
-    },
-    {
-        id: 4,
-        name: 'Shadcn UI',
-        description: 'Beautifully designed components by Shadcn.',
-        image: '/home/shadcn.png',
-        imageDark: '/home/shadcn-dark.png'
-    },
-    {
-        id: 5,
-        name: 'Syntax UI',
-        description: 'Beautifully designed components by Syntax UI.',
-        image: '/home/syntaxUI.svg'
-    },
-    {
-        id: 6,
-        name: 'MagicUI',
-        description: 'Beautifully designed components by Magic UI.',
-        image: '/home/magicui.png'
-    },
-    {
-        id: 7,
-        name: 'Postgres (Supabase)',
-        description:
-            'PostgreSQL-based open-source database with Supabase for building scalable applications.',
-        image: '/home/supabase.png'
-    },
-    {
-        id: 8,
         name: 'Drizzle ORM',
-        description:
-            'Modern database toolkit for TypeScript and Node.js, simplifying database interactions.',
-        image: '/home/drizzle.png'
+        category: 'ORM',
+        description: 'TypeScript ORM for SQL databases',
+        img: 'https://avatar.vercel.sh/drizzle'
     },
     {
-        id: 9,
-        name: 'Clerk Authentication',
-        description:
-            'Seamless and secure authentication service for web applications.',
-        image: '/home/clerk.png'
+        name: 'Clerk',
+        category: 'Auth',
+        description: 'Authentication and user management',
+        img: 'https://avatar.vercel.sh/clerk'
     },
     {
-        id: 11,
-        name: 'Turso (Sqlite)',
-        description: 'Turso is a simple and fast SQLite cloud solution.',
-        image: '/home/turso.png'
+        name: 'Turso',
+        category: 'Database',
+        description: 'SQL database for edge computing',
+        img: 'https://avatar.vercel.sh/turso'
+    },
+    {
+        name: 'Zustand',
+        category: 'State management',
+        description: 'Small, fast and scalable state-management',
+        img: 'https://avatar.vercel.sh/zustand'
+    },
+    {
+        name: 'Radix UI',
+        category: 'UI Libraries',
+        description: 'Unstyled, accessible UI components',
+        img: 'https://avatar.vercel.sh/radix'
+    },
+    {
+        name: 'React Hook Form',
+        category: 'Forms',
+        description: 'Performant, flexible and extensible forms',
+        img: 'https://avatar.vercel.sh/react-hook-form'
+    },
+    {
+        name: 'ZOD',
+        category: 'Validation',
+        description: 'TypeScript-first schema validation',
+        img: 'https://avatar.vercel.sh/zod'
+    },
+    {
+        name: 'Posthog',
+        category: 'Analytics',
+        description: 'Open-source product analytics',
+        img: 'https://avatar.vercel.sh/posthog'
+    },
+    {
+        name: 'i18next',
+        category: 'i18n',
+        description: 'Internationalization framework',
+        img: 'https://avatar.vercel.sh/i18next'
+    },
+    {
+        name: 'Contentlayer',
+        category: 'Blog/MDX',
+        description: 'Content SDK for developers',
+        img: 'https://avatar.vercel.sh/contentlayer'
+    },
+    {
+        name: 'Tailwind CSS',
+        category: 'Styling',
+        description: 'Utility-first CSS framework',
+        img: 'https://avatar.vercel.sh/tailwindcss'
     }
 ]
 
-const SpringAnimatedFeatures = () => {
+const firstRow = techStack.slice(0, techStack.length / 2)
+const secondRow = techStack.slice(techStack.length / 2)
+
+const TechCard = ({
+    img,
+    name,
+    category,
+    description
+}: {
+    img: string
+    name: string
+    category: string
+    description: string
+}) => {
     return (
-        <div className='flex flex-col justify-center items-center lg:w-[75%]'>
-            <div className='flex flex-col mb-[3rem]'>
-                <h1 className='scroll-m-20 text-3xl sm:text-xl md:text-3xl font-semibold tracking-tight lg:text-4xl text-center max-w-[700px]'>
-                    Built with the best
-                </h1>
-                <p className='mx-auto max-w-[500px]  md:text-lg text-center mt-2 '>
-                    Your customers deserve a product built with the best
-                    technologies
-                </p>
+        <figure
+            className={cn(
+                'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
+                // light styles
+                'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
+                // dark styles
+                'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]'
+            )}
+        >
+            <div className='flex flex-row items-center gap-2'>
+                <img
+                    className='rounded-full'
+                    width='32'
+                    height='32'
+                    alt=''
+                    src={img}
+                />
+                <div className='flex flex-col'>
+                    <figcaption className='text-sm font-medium dark:text-white'>
+                        {name}
+                    </figcaption>
+                    <p className='text-xs font-medium dark:text-white/40'>
+                        {category}
+                    </p>
+                </div>
             </div>
-            <div className='grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                {ProjectsData.map((project) => {
-                    return (
-                        <motion.div
-                            whileHover={{
-                                y: -8
-                            }}
-                            transition={{
-                                type: 'spring',
-                                bounce: 0.7
-                            }}
-                            key={project.id}
-                            className='mt-5 text-left border p-6 rounded-md dark:bg-black'
-                        >
-                            <a target='_blank' rel='noopener noreferrer'>
-                                <Image
-                                    src={
-                                        project?.imageDark
-                                            ? project?.imageDark
-                                            : project.image
-                                    }
-                                    width={40}
-                                    height={30}
-                                    className='mb-3 rounded'
-                                    alt={project.name}
-                                />
-                                <div className='mb-1 text-sm font-medium '>
-                                    {project.name}
-                                </div>
-                                <div className='max-w-[250px] text-sm font-normal text-gray-500'>
-                                    {project.description}
-                                </div>
-                            </a>
-                        </motion.div>
-                    )
-                })}
-            </div>
-        </div>
+            <blockquote className='mt-2 text-sm'>{description}</blockquote>
+        </figure>
     )
 }
 
-export default SpringAnimatedFeatures
+export function MarqueeHorizontal() {
+    return (
+        <div className='relative flex h-[500px] rotate w-full flex-col items-center justify-center overflow-hidden rounded-lg  bg-body md:shadow-xl'>
+            <Marquee
+                pauseOnHover
+                className='[--duration:20s] rotate-2 translate-y-8'
+            >
+                {firstRow.map((tech) => (
+                    <TechCard key={tech.name} {...tech} />
+                ))}
+            </Marquee>
+            <Marquee
+                reverse
+                pauseOnHover
+                className='[--duration:20s] -rotate-2'
+            >
+                {secondRow.map((tech) => (
+                    <TechCard key={tech.name} {...tech} />
+                ))}
+            </Marquee>
+            <div className='pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black'></div>
+            <div className='pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black'></div>
+        </div>
+    )
+}

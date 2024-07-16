@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
 import { Github } from 'lucide-react'
-import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
 import siteConfig from '@/core/data/site-config'
 import { useTranslations } from 'next-intl'
 import { BorderBeam } from '../effects/magicui/border-beam'
 import ShineBorder from '../effects/magicui/shine-border'
+import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
 
 export default function HeroSection() {
     const t = useTranslations('Landing')
@@ -13,7 +13,14 @@ export default function HeroSection() {
     return (
         <div className='flex flex-col items-center justify-center leading-6'>
             <div className='my-5'>
-                <AnimatedGradientPill />
+                <AnimatedGradientPill
+                    href='/dashboard'
+                    emoji='🎉'
+                    hasSeperator
+                    text1={t('usp1')}
+                    text2={t('usp2')}
+                    gradientColors='from-[#ffaa40] via-[#9c40ff] to-[#ffaa40]'
+                />
             </div>
             <h1 className='inline-block max-w-screen-lg scroll-m-20 bg-gradient-to-b from-black to-gray-700/80 bg-clip-text text-balance text-center prose-4xl font-semibold tracking-tight text-transparent dark:from-white dark:to-slate-400 sm:text-4xl md:text-6xl lg:text-7xl'>
                 {t('intro_heading')}
