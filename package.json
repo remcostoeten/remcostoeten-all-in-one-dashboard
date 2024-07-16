@@ -69,7 +69,7 @@
         "clsx": "^2.1.1",
         "cmdk": "^1.0.0",
         "date-fns": "^3.6.0",
-        "drizzle-orm": "^0.31.1",
+        "drizzle-orm": "^0.32.0",
         "embla-carousel-react": "^8.1.6",
         "framer-motion": "^11.2.11",
         "lucide-react": "^0.408.0",
