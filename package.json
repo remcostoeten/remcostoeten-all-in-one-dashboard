@@ -22,6 +22,11 @@
         "db:migrate": "drizzle-kit migrate",
         "db:studio": "drizzle-kit studio"
     },
+    "config": {
+        "commitizen": {
+          "path": "@commitlint/cz-commitlint"
+        }
+      },
     "dependencies": {
         "@atlaskit/pragmatic-drag-and-drop": "^1.2.1",
         "@builder.io/dev-tools": "^1.0.18",

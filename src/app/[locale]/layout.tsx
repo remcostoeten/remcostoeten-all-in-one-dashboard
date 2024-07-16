@@ -36,7 +36,7 @@ export default function RootLayout(props: {
 
     return (
         <html lang={props.params.locale} className='dark overflow-x-hidden'>
-            <body className={`${plexsans.className} overflow-x-hidden`}>
+            <body className={`${plexsans.className} !overflow-x-hidden`}>
                 <Providers
                     locale={props.params.locale}
                     messages={messages}

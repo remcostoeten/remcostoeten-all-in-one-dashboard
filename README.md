@@ -1,34 +1,24 @@
 # Personal all-in-one panel
-
 <small>Because I hate load times (cloudflare ugh), and not owning my own stuff</small>
-
-> [!NOTE]
-
 > Just started this repo, will be migrating features I've built over so it's far from done. And probably never will be.
 
 This is a personal project that combines various tools and features I've built over the years. It's a one-stop solution for managing personal finance, secure file storage, code snippets, and tools I've built for myself such as URL/text extractors, (reverse) geolocation finder, SVG to CSS-pseudo elements, HTML to JSX/TSX converter, and loads more probably.
 
-## 🚀 Demo
-
 [Visit the demo](https://panel.remcostoeten.com)
 
 [The design im working with](https://www.figma.com/community/file/1380305920742671237)
-<br/>
-
-## 🧐 Features
-
-- **Frontend**: [NextJS 15](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/)
-- **ORM**: [Drizzle ORM](https://github.com/drizzle-team/drizzle-orm)
-- **Auth**: [Clerk](https://clerk.dev/)
-- **Database**: [Turso (SQLite)](https://turso.tech/)
-- **State management**: [Zustand](https://zustand.surge.sh/)
-- **UI Libraries**: [Radix](https://www.radix-ui.com/), [ShadCN-ui](https://shadcn.dev/), [Framer Motion](https://www.framer.com/motion/), [TailwindCSS](https://tailwindcss.com/) + custom SCSS
-- **Forms**: [React Hook Forms](https://react-hook-form.com/)
-- **Validation**: [ZOD](https://zod.dev/)
-- **Analytics**: [Posthog](https://posthog.com/)
+- **Frontend**: [NextJS 15]
+- **ORM**: [Drizzle ORM](ht
+- **Auth**: [Clerk](https:/
+- **Database**: [Turso (SQL
+- **State management**: [Zu
+- **UI Libraries**: [Radix] framer
+- **Forms**: [React Hook Fo
+- **Validation**: [ZOD](htt
+- **Analytics**: [Posthog](
     <br/>
-- **i18n**: [i18next](https://www.i18next.com/)
-- Blog/MDX: [contentlayer](https://contentlayer.dev/)
+- **i18n**: [i18next](https
+- Blog/MDX: [contentlayer](
 
 ## 🐻 Packages
 
@@ -41,8 +31,8 @@ This is a personal project that combines various tools and features I've built o
     <br/>
 
 ## 🐻 Big core overhauls that need to be done
-> > [!NOTE]  
-> On hold. After a few days I couldn't build with zero answers on google, deep down the dep. tree. 
+> > [!NOTE]
+> On hold. After a few days I couldn't build with zero answers on google, deep down the dep. tree.
 - React 19 upgrade
   - [React 19 release notes](https://reactjs.org/blog/2022/02/23/react-19.html#release-notes)
 - NextJS -15 upgrade]
@@ -117,7 +107,7 @@ This is a personal project that combines various tools and features I've built o
   - [ ] Allow downloading
   - [ ] Allow deleting
   - [ ] Allow sharing
-     
+
 - [ ] migrate my whatsapp tracker API from chromedriver to puppeteer. See API schema design;
 [https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share](https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share)
 

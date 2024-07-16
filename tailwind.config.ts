@@ -117,6 +117,14 @@ const config: Config = withMT({
                 'icon-bg-size': 'var(--icon-bg-size)'
             },
             keyframes: {
+                marquee: {
+                    from: { transform: 'translateX(0)' },
+                    to: { transform: 'translateX(calc(-100% - var(--gap)))' }
+                },
+                'marquee-vertical': {
+                    from: { transform: 'translateY(0)' },
+                    to: { transform: 'translateY(calc(-100% - var(--gap)))' }
+                },
                 'shine-pulse': {
                     '0%': {
                         'background-position': '0% 0%'
@@ -145,88 +153,124 @@ const config: Config = withMT({
                     from: { transform: 'translateX(0)' },
                     to: { transform: 'translateX(calc(-100% - 4rem))' }
                 },
-                orbit: {
+                'spin-around': {
                     '0%': {
-                        transform:
-                            'rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)'
+                        transform: 'translateZ(0) rotate(0)'
+                    },
+                    '15%, 35%': {
+                        transform: 'translateZ(0) rotate(90deg)'
+                    },
+                    '65%, 85%': {
+                        transform: 'translateZ(0) rotate(270deg)'
                     },
                     '100%': {
-                        transform:
-                            'rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)'
+                        transform: 'translateZ(0) rotate(360deg)'
                     }
                 },
-                gradient: {
+                slide: {
                     to: {
-                        backgroundPosition: 'var(--bg-size) 0'
-                    }
-                },
-                shimmer: {
-                    '0%, 90%, 100%': {
-                        'background-position':
-                            'calc(-100% - var(--shimmer-width)) 0'
-                    },
-                    '30%, 60%': {
-                        'background-position':
-                            'calc(100% + var(--shimmer-width)) 0'
-                    }
-                },
-                'accordion-down': {
-                    from: { height: '0' },
-                    to: { height: 'var(--radix-accordion-content-height)' }
-                },
-                'accordion-up': {
-                    from: { height: 'var(--radix-accordion-content-height)' },
-                    to: { height: '0' }
-                },
-                buttonheartbeat: {
-                    '0%': {
-                        'box-shadow': '0 0 0 0 theme("colors.blue.500")',
-                        transform: 'scale(1)'
-                    },
-                    '50%': {
-                        'box-shadow': '0 0 0 7px theme("colors.blue.500/0")',
-                        transform: 'scale(1.05)'
-                    },
-                    '100%': {
-                        'box-shadow': '0 0 0 0 theme("colors.blue.500/0")',
-                        transform: 'scale(1)'
+                        transform: 'translate(calc(100cqw - 100%), 0)'
                     }
                 }
             },
-            gap: {
-                '0': '0',
-                '1': '0.25rem',
-                '2': '0.5rem',
-                '3': '0.75rem',
-                '4': '1rem',
-                '5': '1.25rem',
-                '6': '1.5rem',
-                '8': '2rem',
-                '10': '2.5rem',
-                '12': '3rem',
-                '16': '4rem',
-                '20': '5rem',
-                '24': '6rem',
-                '32': '8rem'
+            orbit: {
+                '0%': {
+                    transform:
+                        'rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)'
+                },
+                '100%': {
+                    transform:
+                        'rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)'
+                }
             },
-            animation: {
-                'logo-cloud': 'logo-cloud 30s linear infinite',
-                orbit: 'orbit calc(var(--duration)*1s) linear infinite',
-                gradient: 'gradient 8s linear infinite',
-                shimmer: 'shimmer 8s infinite',
-                buttonheartbeat: 'buttonheartbeat 2s infinite ease-in-out',
-                'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out',
-                'border-beam':
-                    'border-beam calc(var(--duration)*1s) infinite linear',
-                'background-shine': 'background-shine 2s linear infinite'
+            gradient: {
+                to: {
+                    backgroundPosition: 'var(--bg-size) 0'
+                }
+            },
+            shimmer: {
+                '0%, 90%, 100%': {
+                    'background-position':
+                        'calc(-100% - var(--shimmer-width)) 0'
+                },
+                '30%, 60%': {
+                    'background-position': 'calc(100% + var(--shimmer-width)) 0'
+                }
+            },
+            'accordion-down': {
+                from: { height: '0' },
+                to: { height: 'var(--radix-accordion-content-height)' }
+            },
+            'accordion-up': {
+                from: { height: 'var(--radix-accordion-content-height)' },
+                to: { height: '0' }
+            },
+            buttonheartbeat: {
+                '0%': {
+                    'box-shadow': '0 0 0 0 theme("colors.blue.500")',
+                    transform: 'scale(1)'
+                },
+                '50%': {
+                    'box-shadow': '0 0 0 7px theme("colors.blue.500/0")',
+                    transform: 'scale(1.05)'
+                },
+                '100%': {
+                    'box-shadow': '0 0 0 0 theme("colors.blue.500/0")',
+                    transform: 'scale(1)'
+                }
             }
+        },
+        gap: {
+            '0': '0',
+            '1': '0.25rem',
+            '2': '0.5rem',
+            '3': '0.75rem',
+            '4': '1rem',
+            '5': '1.25rem',
+            '6': '1.5rem',
+            '8': '2rem',
+            '10': '2.5rem',
+            '12': '3rem',
+            '16': '4rem',
+            '20': '5rem',
+            '24': '6rem',
+            '32': '8rem'
+        },
+        animation: {
+            marquee: 'marquee var(--duration) linear infinite',
+            'marquee-vertical':
+                'marquee-vertical var(--duration) linear infinite',
+            'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
+            slide: 'slide var(--speed) ease-in-out infinite alternate',
+            'logo-cloud': 'logo-cloud 30s linear infinite',
+            orbit: 'orbit calc(var(--duration)*1s) linear infinite',
+            gradient: 'gradient 8s linear infinite',
+            shimmer: 'shimmer 8s infinite',
+            buttonheartbeat: 'buttonheartbeat 2s infinite ease-in-out',
+            'accordion-down': 'accordion-down 0.2s ease-out',
+            'accordion-up': 'accordion-up 0.2s ease-out',
+            'border-beam':
+                'border-beam calc(var(--duration)*1s) infinite linear',
+            'background-shine': 'background-shine 2s linear infinite'
         }
     },
     plugins: [
         require('daisyui'),
         require('tailwindcss-animate'),
         require('@tailwindcss/typography'),
+        function ({ addUtilities }) {
+            const newUtilities = {
+                '.break-container': {
+                    width: '100vw',
+                    position: 'relative',
+                    left: '50%',
+                    right: '50%',
+                    marginLeft: '-50vw',
+                    marginRight: '-50vw'
+                }
+            }
+            addUtilities(newUtilities)
+        },
         function ({ matchUtilities, theme }: any) {
             matchUtilities(
                 {
