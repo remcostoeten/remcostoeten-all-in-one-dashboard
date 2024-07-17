@@ -18,7 +18,7 @@ const Aside = () => {
     const favouriteItems = DashboardAsideItems.filter(
         (item) => item.isFavourite
     )
-    
+
     const itemsWithoutFavourites = DashboardAsideItems.filter(
         (item) => !item.isFavourite
     )

@@ -8,7 +8,6 @@ export default function ChatHeader() {
             subtitle='General Channel'
             icon={<span>#</span>} // You can replace this with an actual icon component if needed
             showSearch={true}
-            onSearch={(value) => console.log(`Search: ${value}`)}
             className='bg-[#1f1f2c] border-b border-border min-h-[3rem] px-3 py-2 text-xs'
         />
     )

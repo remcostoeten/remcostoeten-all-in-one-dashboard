@@ -15,4 +15,3 @@ export default function useNotImplemented({ isInBeta = false }: statusProps) {
         }
     }
 }
-

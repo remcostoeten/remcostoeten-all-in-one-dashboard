@@ -31,8 +31,10 @@ export const notes = sqliteTable('notes', {
     userId: text('user_id').notNull(),
     title: text('title').notNull(),
     content: text('content'),
-    createdAt: integer('created_at', { mode: 'timestamp' }).notNull().defaultNow(),
-    updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().defaultNow(),
-  });
-  
-  
+    createdAt: integer('created_at', { mode: 'timestamp' })
+        .notNull()
+        .defaultNow(),
+    updatedAt: integer('updated_at', { mode: 'timestamp' })
+        .notNull()
+        .defaultNow()
+})

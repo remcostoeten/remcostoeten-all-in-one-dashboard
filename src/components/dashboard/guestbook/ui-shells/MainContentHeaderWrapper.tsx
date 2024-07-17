@@ -1,19 +1,20 @@
-import React from 'react';
-import IconShell from '@/components/theme/shells/IconShell';
-import { Input } from '@/components/ui/input';
-import useNotImplemented from '@/core/hooks/useNotYetImplementedToast';
-import { toast } from  'sonner''
-'
+'use client'
+
+import IconShell from '@/components/theme/shells/IconShell'
+import { Input } from '@/components/ui/input'
+import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
+import { toast } from 'sonner'
+import type React from 'react'
 type MainContentHeaderWrapperProps = {
-    hasIconBeforeTitle?: boolean;
-    title: string;
-    subtitle?: string;
-    icon?: React.ReactNode;
-    showSearch?: boolean;
-    onSearch?: (value: string) => void;
-    className?: string;
-    children?: React.ReactNode;
-};
+    hasIconBeforeTitle?: boolean
+    title: string
+    subtitle?: string
+    icon?: React.ReactNode
+    showSearch?: boolean
+    onSearch?: (value: string) => void
+    className?: string
+    children?: React.ReactNode
+}
 
 export default function MainContentHeaderWrapper({
     hasIconBeforeTitle = false,
@@ -21,20 +22,11 @@ export default function MainContentHeaderWrapper({
     subtitle,
     icon = '#',
     showSearch = false,
-    onSearch,
     className = '',
     children,
     ...props
 }: MainContentHeaderWrapperProps) {
-    const showNotImplemented = useNotImplemented({ isInBeta: true });
 
-    function handleSearch(value: string) {
-        if (onSearch) {
-            showNotImplemented(); 
-            onSearch(value);
-        }
-    }
-    
     function renderIconOrChildren() {
         if (hasIconBeforeTitle && icon) {
             return (
@@ -44,11 +36,11 @@ export default function MainContentHeaderWrapper({
                 >
                     {icon}
                 </IconShell>
-            ); // Assuming icon is a React element, clean up its string representation for accessibility
+            ) // Assuming icon is a React element, clean up its string representation for accessibility
         } else if (hasIconBeforeTitle) {
-            return null;
+            return null
         } else {
-            return children || null;
+            return children || null
         }
     }
 
@@ -79,11 +71,10 @@ export default function MainContentHeaderWrapper({
                         type='search'
                         placeholder='Search'
                         className='w-64 bg-background-active text-text-primary'
-                        onChange={(e) => handleSearch(e.target.value)}
                         aria-label='Search input'
                     />
                 </form>
             )}
         </header>
-    );
+    )
 }

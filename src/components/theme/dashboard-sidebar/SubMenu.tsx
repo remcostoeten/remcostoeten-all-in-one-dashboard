@@ -1,34 +1,34 @@
-'use client';
+'use client'
 
-import { useState } from 'react'; 
+import { useState } from 'react'
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger
-} from '@/components/ui/collapsible';
-import { SearchIcon } from '../icons';
-import IconShell from '../shells/IconShell';
-import { ChevronRightIcon, CogIcon, TvIcon } from '@heroicons/react/24/outline';
-import useNotImplemented from '@/core/hooks/useNotYetImplementedToast';
-import { RenderChatsList } from './RenderChatsList';
-import type { ReactNode } from 'react';
+} from '@/components/ui/collapsible'
+import { SearchIcon } from '../icons'
+import IconShell from '../shells/IconShell'
+import { ChevronRightIcon, CogIcon, TvIcon } from '@heroicons/react/24/outline'
+import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
+import { RenderChatsList } from './RenderChatsList'
+import type { ReactNode } from 'react'
 
 function SubMenu() {
-    const [isOpen, setIsOpen] = useState(true);
-    const handleNotImplemented = useNotImplemented({ isInBeta: false });
+    const [isOpen, setIsOpen] = useState(true)
+    const handleNotImplemented = useNotImplemented({ isInBeta: false })
 
     function IndividualChatWrapper({
         chatName,
         image
     }: {
-        chatName: string;
-        image?: string | ReactNode;
+        chatName: string
+        image?: string | ReactNode
     }) {
         return (
             <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
                 {image && <span>{image}</span>}
             </div>
-        );
+        )
     }
 
     function Channel({
@@ -36,13 +36,13 @@ function SubMenu() {
         isNotImplemented,
         onClick
     }: {
-        name: string;
-        isNotImplemented?: boolean | (() => void) | HTMLInputElement;
-        onClick?: () => void;
+        name: string
+        isNotImplemented?: boolean | (() => void) | HTMLInputElement
+        onClick?: () => void
     }) {
         const handleClick = isNotImplemented
             ? () => handleNotImplemented()
-            : onClick;
+            : onClick
 
         return (
             <div
@@ -61,7 +61,7 @@ function SubMenu() {
                     {name}
                 </div>
             </div>
-        );
+        )
     }
 
     return (
@@ -84,7 +84,7 @@ function SubMenu() {
                         type='search'
                         placeholder='Search...'
                         aria-label='Search Channels'
-                        onChange={() => {}} 
+                        onChange={() => {}}
                     />
                     <SearchIcon
                         width={16}
@@ -117,7 +117,7 @@ function SubMenu() {
                 </CollapsibleContent>
             </Collapsible>
         </div>
-    );
+    )
 }
 
-export default SubMenu;
+export default SubMenu

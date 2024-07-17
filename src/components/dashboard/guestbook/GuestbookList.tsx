@@ -38,10 +38,7 @@ export default function GuestbookList() {
             data-testid='guestbook-list'
         >
             {isLoading ? (
-
-                <div
-                    className=' p-2 mb-4  flex-col rounded-lg gap-2 items-center flex justify-between'
-                >
+                <div className=' p-2 mb-4  flex-col rounded-lg gap-2 items-center flex justify-between'>
                     <SkeletonGuestbookEntrys count={7} />
                 </div>
             ) : (
