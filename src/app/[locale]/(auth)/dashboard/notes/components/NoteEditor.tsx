@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { getNotes } from '@/core/@server/actions/posts'
 
-
-interface NoteEditorProps {
-    content: string;
-    onChange: (content: string) => void;
-  }
+type NoteEditorProps = {
+    content: string
+    onChange: (content: string) => void
+}
 
 export async function NoteEditor({ content, onChange }: NoteEditorProps) {
     const userNotes = await getNotes()

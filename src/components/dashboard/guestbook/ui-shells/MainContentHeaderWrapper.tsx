@@ -26,7 +26,6 @@ export default function MainContentHeaderWrapper({
     children,
     ...props
 }: MainContentHeaderWrapperProps) {
-
     function renderIconOrChildren() {
         if (hasIconBeforeTitle && icon) {
             return (
