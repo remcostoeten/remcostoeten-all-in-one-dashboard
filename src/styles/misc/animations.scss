@@ -62,9 +62,17 @@ $duration: 0.74s;
 // }
 
 .bg-fade {
-    background: linear-gradient(176deg, rgba(32, 24, 223, 0.2), rgba(162, 255, 252, 0.2), rgba(221, 69, 253, 0.2), rgba(25, 76, 195, 0.2), rgba(252, 237, 253, 0.2), rgba(72, 93, 175, 0.2));
+    background: linear-gradient(
+        176deg,
+        rgba(32, 24, 223, 0.2),
+        rgba(162, 255, 252, 0.2),
+        rgba(221, 69, 253, 0.2),
+        rgba(25, 76, 195, 0.2),
+        rgba(252, 237, 253, 0.2),
+        rgba(72, 93, 175, 0.2)
+    );
     background-size: 360% 360%;
-    opacity: .2;
+    opacity: 0.2;
     animation: gradient-animation 2 ease infinite;
 
     @keyframes gradient-animation {

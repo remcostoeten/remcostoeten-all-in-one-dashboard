@@ -70,7 +70,6 @@
         "typescriptreact"
     ],
     "prettier.singleQuote": true,
-    "prettier.trailingComma": "all",
     "prettier.jsxSingleQuote": true,
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
