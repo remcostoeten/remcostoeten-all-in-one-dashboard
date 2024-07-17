@@ -62,3 +62,4 @@ local
 
 # Turborepo
 .turbo
+pnpm-lock.yaml

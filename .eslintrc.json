@@ -1,3 +1,29 @@
 {
-    "extends": "next"
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2023, // Updated to 2023 to reflect ES version 13
+        "sourceType": "module"
+    },
+    "settings": {
+        "react": {
+            "version": "detect" // Automatically detect the React version
+        }
+    }
 }
