@@ -3,9 +3,10 @@
 import { MagicCard } from '@/components/effects/magicui/cursor-card'
 import ShimmerButton from '@/components/effects/magicui/shimmer-button'
 import { MarqueeHorizontal } from '@/components/marketing/MarketingCards'
+import Pill from '@/components/Pill'
 import { Flex } from '@/components/shared/atoms/Flex'
+import { features } from '@/core/data/marketing-data'
 import Link from 'next/link'
-import Pill from 'pull'
 
 const FeatureCard = ({ icon: Icon, title, status, children }) => (
     <MagicCard className='!bg-black'>
