@@ -8,7 +8,7 @@ import AvatarShell from '../../theme/shells/AvatarShell'
 import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
 import Link from 'next/link'
 import { getInitials } from '../../../core/utils/get-initials'
-import { index } from 'drizzle-orm/mysql-core'
+import { usePathname } from 'next/navigation'
 
 const tailwindBackgrounds = [
     'bg-red-500',
@@ -23,14 +23,17 @@ const tailwindBackgrounds = [
 function DirectMessage({ name }) {
     const initials = getInitials(name)
     const firstLetter = initials[0]
-    const randomBackground = tailwindBackgrounds[
-        Math.floor(Math.random() * tailwindBackgrounds.length)
-    ]
+    const randomBackground =
+        tailwindBackgrounds[
+            Math.floor(Math.random() * tailwindBackgrounds.length)
+        ]
+    const pathname = usePathname()
+    const isActive = pathname.includes(name)
 
     return (
         <Link
             href={`/dashboard/chat/${encodeURIComponent(name)}`}
-            className='flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost'
+            className={`'flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'flex items-center bg-ghost py-1' : 'flex items-center py-.5 hover:bg-ghost'}`}
         >
             <AvatarShell
                 Initials={initials}

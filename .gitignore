@@ -63,3 +63,8 @@ local
 # Turborepo
 .turbo
 pnpm-lock.yaml
+
+# Chat local files
+src/core/data/chats/*.json
+!src/core/data/chats/peter.json
+!src/core/data/chats/jamie.json

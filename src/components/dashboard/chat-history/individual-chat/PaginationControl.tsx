@@ -1,4 +1,5 @@
 'use client'
+import React, { useState } from 'react'
 import {
     Pagination,
     PaginationContent,
@@ -6,10 +7,19 @@ import {
     PaginationItem,
     PaginationLink,
     PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { usePathname } from "next/navigation"
+    PaginationPrevious
+} from '@/components/ui/pagination'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
+} from '@/components/ui/select'
+import { usePathname, useRouter } from 'next/navigation'
+import { Loader2 } from 'lucide-react'
+import { FixedSizeList as List } from 'react-window'
+import AutoSizer from 'react-virtualized-auto-sizer'
 
 interface PaginationControlProps {
     currentPage: number
@@ -18,9 +28,24 @@ interface PaginationControlProps {
     name: string
 }
 
-export function PaginationControl({ currentPage, totalMessages, pageSize, name }: PaginationControlProps) {
+export function PaginationControl({
+    currentPage,
+    totalMessages,
+    pageSize,
+    name
+}: PaginationControlProps) {
+    const [isLoading, setIsLoading] = useState(false)
     const totalPages = Math.ceil(totalMessages / pageSize)
     const pathname = usePathname()
+    const router = useRouter()
+
+    const handlePageChange = (page: number) => {
+        setIsLoading(true)
+        router
+            .push(`${pathname}?page=${page}&pageSize=${pageSize}`)
+            .then(() => setIsLoading(false))
+    }
+
     const generatePaginationItems = () => {
         let items = []
         const maxVisiblePages = 5
@@ -30,7 +55,8 @@ export function PaginationControl({ currentPage, totalMessages, pageSize, name }
                 items.push(
                     <PaginationItem key={i}>
                         <PaginationLink
-                            href={`${pathname}?page=${i}&pageSize=${pageSize}`}
+                            href='#'
+                            onClick={() => handlePageChange(i)}
                             isActive={currentPage === i}
                         >
                             {i}
@@ -39,44 +65,149 @@ export function PaginationControl({ currentPage, totalMessages, pageSize, name }
                 )
             }
         } else {
-            // Logic for ellipsis and page numbers
-            // Make sure to use the correct href format: `/nl/chat/${name}?page=${i}&pageSize=${pageSize}`
+            items.push(
+                <PaginationItem key={1}>
+                    <PaginationLink
+                        href='#'
+                        onClick={() => handlePageChange(1)}
+                        isActive={currentPage === 1}
+                    >
+                        1
+                    </PaginationLink>
+                </PaginationItem>
+            )
+
+            if (currentPage > 3) {
+                items.push(<PaginationEllipsis key='ellipsis-start' />)
+            }
+
+            for (
+                let i = Math.max(2, currentPage - 1);
+                i <= Math.min(totalPages - 1, currentPage + 1);
+                i++
+            ) {
+                items.push(
+                    <PaginationItem key={i}>
+                        <PaginationLink
+                            href='#'
+                            onClick={() => handlePageChange(i)}
+                            isActive={currentPage === i}
+                        >
+                            {i}
+                        </PaginationLink>
+                    </PaginationItem>
+                )
+            }
+
+            if (currentPage < totalPages - 2) {
+                items.push(<PaginationEllipsis key='ellipsis-end' />)
+            }
+
+            items.push(
+                <PaginationItem key={totalPages}>
+                    <PaginationLink
+                        href='#'
+                        onClick={() => handlePageChange(totalPages)}
+                        isActive={currentPage === totalPages}
+                    >
+                        {totalPages}
+                    </PaginationLink>
+                </PaginationItem>
+            )
         }
 
         return items
     }
 
     return (
-        <div className="flex items-center justify-between">
+        <div className='flex items-center justify-between'>
+            {isLoading && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
             <Pagination>
                 <PaginationContent>
                     <PaginationItem>
                         <PaginationPrevious
-                            href={`${pathname}?page=${Math.max(1, currentPage - 1)}&pageSize=${pageSize}`}
+                            href='#'
+                            onClick={() =>
+                                handlePageChange(Math.max(1, currentPage - 1))
+                            }
                         />
                     </PaginationItem>
                     {generatePaginationItems()}
                     <PaginationItem>
                         <PaginationNext
-                            href={`${pathname}?page=${Math.min(totalPages, currentPage + 1)}&pageSize=${pageSize}`}
+                            href='#'
+                            onClick={() =>
+                                handlePageChange(
+                                    Math.min(totalPages, currentPage + 1)
+                                )
+                            }
                         />
                     </PaginationItem>
                 </PaginationContent>
             </Pagination>
             <Select
                 onValueChange={(value) => {
-                    window.location.href = `${pathname}?&pageSize=${value}`
+                    setIsLoading(true)
+                    router
+                        .push(`${pathname}?page=1&pageSize=${value}`)
+                        .then(() => setIsLoading(false))
                 }}
             >
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className='w-[180px]'>
                     <SelectValue placeholder={`${pageSize} per page`} />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectItem value="25">25 per page</SelectItem>
-                    <SelectItem value="50">50 per page</SelectItem>
-                    <SelectItem value="100">100 per page</SelectItem>
+                    <SelectItem value='25'>25 per page</SelectItem>
+                    <SelectItem value='50'>50 per page</SelectItem>
+                    <SelectItem value='100'>100 per page</SelectItem>
+                    <SelectItem value='250'>250 per page</SelectItem>
+                    <SelectItem value='500'>500 per page</SelectItem>
                 </SelectContent>
             </Select>
+        </div>
+    )
+}
+
+interface MessageItem {
+    id: string
+    content: string
+    // ... other message properties
+}
+
+interface MessageListProps {
+    messages: MessageItem[]
+}
+
+export function MessageList({ messages }: MessageListProps) {
+    const Row = ({
+        index,
+        style
+    }: {
+        index: number
+        style: React.CSSProperties
+    }) => (
+        <div style={style}>
+            {/* Render your message item here */}
+            <div>{messages[index].content}</div>
+        </div>
+    )
+
+    return (
+        <div style={{ height: '400px', width: '100%' }}>
+            {' '}
+            {/* Adjust height as needed */}
+            <AutoSizer>
+                {({ height, width }) => (
+                    <List
+                        height={height}
+                        itemCount={messages.length}
+                        itemSize={50} // Adjust based on your message item height
+                        width={width}
+                    >
+                        {Row}
+                    </List>
+                )}
+            </AutoSizer>
         </div>
     )
 }

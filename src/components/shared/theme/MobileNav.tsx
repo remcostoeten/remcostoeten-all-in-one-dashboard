@@ -1,5 +1,5 @@
 import { headerDropdownItems } from '@/core/config/menu-items'
-import { ListItem } from './navbar'
+import { ListItem } from './NavBar'
 
 export default function MobileNav() {
     return (

@@ -7,7 +7,6 @@ type IconProps = {
     height?: string | number
 }
 
-
 export function TriggerIcon() {
     return (
         <svg

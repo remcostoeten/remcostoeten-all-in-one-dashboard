@@ -8,7 +8,7 @@ export default async function ChatPage({
     searchParams
 }: {
     params: { name: string }
-    searchParams: { page?: string, pageSize?: string }
+    searchParams: { page?: string; pageSize?: string }
 }) {
     const page = parseInt(searchParams.page || '1', 10)
     const pageSize = parseInt(searchParams.pageSize || '50', 10)
@@ -21,14 +21,16 @@ export default async function ChatPage({
     return (
         <div className='flex flex-col h-full p-4 gap-4'>
             <Suspense fallback={<h1 className='text-4xl'>Loading...</h1>}>
-
                 <PaginationControl
                     currentPage={chatData.currentPage}
                     totalMessages={chatData.totalMessages}
                     pageSize={chatData.pageSize}
                     name={params.name}
                 />
-                <ChatMessages messages={chatData.messages} currentUserId={chatData.userId} />
+                <ChatMessages
+                    messages={chatData.messages}
+                    currentUserId={chatData.userId}
+                />
                 <PaginationControl
                     currentPage={chatData.currentPage}
                     totalMessages={chatData.totalMessages}

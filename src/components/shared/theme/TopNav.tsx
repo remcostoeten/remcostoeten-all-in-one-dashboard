@@ -1,10 +1,10 @@
 import {
-    CurrentTime,
-    DisplayCity,
+    Breadcrumbs,
+    TopNavSettings,
     LocaleSwitcher,
-    TopNavSettings
-} from './navigation'
-import Breadcrumbs from './navigation/Breadcrumbs'
+    DisplayCity,
+    CurrentTime
+} from '../navigation'
 
 export default function TopNav() {
     return (

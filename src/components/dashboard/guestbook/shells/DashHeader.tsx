@@ -15,7 +15,7 @@ function DashHeader() {
         const pathSegments = pathname.split('/')
         const lastSegment = pathSegments[pathSegments.length - 1] || ''
         if (pathname.includes('chat')) {
-            setTitle("Chat with " + lastSegment.replace(/-/g, ' '))
+            setTitle('Chat with ' + lastSegment.replace(/-/g, ' '))
         } else {
             setTitle(lastSegment.replace(/-/g, ' ') || 'Dashboard')
         }
