@@ -20,7 +20,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -48,34 +48,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
-        "timestamp": "2024-07-18T10:10:00Z",
-        "type": "image"
-      },
-      {
-        "id": "msg4",
-        "sender": "alice456",
-        "content": "Nice picture! 😊",
-        "timestamp": "2024-07-18T10:12:00Z",
-        "type": "text"
-      },      {
-        "id": "msg1",
-        "sender": "john123",
-        "content": "Hey, how's it going?",
-        "timestamp": "2024-07-18T10:00:00Z",
-        "type": "text"
-      },
-      {
-        "id": "msg2",
-        "sender": "alice456",
-        "content": "Hi John! I'm doing well, thanks. How about you?",
-        "timestamp": "2024-07-18T10:05:00Z",
-        "type": "text"
-      },
-      {
-        "id": "msg3",
-        "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -102,7 +75,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -129,7 +102,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -156,7 +129,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -183,7 +156,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -210,35 +183,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
-        "timestamp": "2024-07-18T10:10:00Z",
-        "type": "image"
-      },
-      {
-        "id": "msg4",
-        "sender": "alice456",
-        "content": "Nice picture! 😊",
-        "timestamp": "2024-07-18T10:12:00Z",
-        "type": "text"
-      },
-      {
-        "id": "msg1",
-        "sender": "john123",
-        "content": "Hey, how's it going?",
-        "timestamp": "2024-07-18T10:00:00Z",
-        "type": "text"
-      },
-      {
-        "id": "msg2",
-        "sender": "alice456",
-        "content": "Hi John! I'm doing well, thanks. How about you?",
-        "timestamp": "2024-07-18T10:05:00Z",
-        "type": "text"
-      },
-      {
-        "id": "msg3",
-        "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -265,7 +210,35 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
+        "timestamp": "2024-07-18T10:10:00Z",
+        "type": "image"
+      },
+      {
+        "id": "msg4",
+        "sender": "alice456",
+        "content": "Nice picture! 😊",
+        "timestamp": "2024-07-18T10:12:00Z",
+        "type": "text"
+      },
+      {
+        "id": "msg1",
+        "sender": "john123",
+        "content": "Hey, how's it going?",
+        "timestamp": "2024-07-18T10:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": "msg2",
+        "sender": "alice456",
+        "content": "Hi John! I'm doing well, thanks. How about you?",
+        "timestamp": "2024-07-18T10:05:00Z",
+        "type": "text"
+      },
+      {
+        "id": "msg3",
+        "sender": "john123",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -292,7 +265,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -319,7 +292,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -346,7 +319,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -373,7 +346,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -400,7 +373,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -427,7 +400,7 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },
@@ -454,7 +427,34 @@
       {
         "id": "msg3",
         "sender": "john123",
-        "content": "https://example.com/image.jpg",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
+        "timestamp": "2024-07-18T10:10:00Z",
+        "type": "image"
+      },
+      {
+        "id": "msg4",
+        "sender": "alice456",
+        "content": "Nice picture! 😊",
+        "timestamp": "2024-07-18T10:12:00Z",
+        "type": "text"
+      },      {
+        "id": "msg1",
+        "sender": "john123",
+        "content": "Hey, how's it going?",
+        "timestamp": "2024-07-18T10:00:00Z",
+        "type": "text"
+      },
+      {
+        "id": "msg2",
+        "sender": "alice456",
+        "content": "Hi John! I'm doing well, thanks. How about you?",
+        "timestamp": "2024-07-18T10:05:00Z",
+        "type": "text"
+      },
+      {
+        "id": "msg3",
+        "sender": "john123",
+        "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
         "timestamp": "2024-07-18T10:10:00Z",
         "type": "image"
       },

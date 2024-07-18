@@ -19,9 +19,15 @@ export default async function ChatPage({
     }
 
     return (
-        <div className='flex flex-col h-full'>
-            <h1 className='text-2xl font-bold mb-4'>Chat with {chatData.userName}</h1>
+        <div className='flex flex-col h-full p-4 gap-4'>
             <Suspense fallback={<h1 className='text-4xl'>Loading...</h1>}>
+
+                <PaginationControl
+                    currentPage={chatData.currentPage}
+                    totalMessages={chatData.totalMessages}
+                    pageSize={chatData.pageSize}
+                    name={params.name}
+                />
                 <ChatMessages messages={chatData.messages} currentUserId={chatData.userId} />
                 <PaginationControl
                     currentPage={chatData.currentPage}

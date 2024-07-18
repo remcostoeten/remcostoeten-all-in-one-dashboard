@@ -8,6 +8,7 @@ import AvatarShell from '../../theme/shells/AvatarShell'
 import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
 import Link from 'next/link'
 import { getInitials } from '../../../core/utils/get-initials'
+import { index } from 'drizzle-orm/mysql-core'
 
 const tailwindBackgrounds = [
     'bg-red-500',
@@ -29,7 +30,7 @@ function DirectMessage({ name }) {
     return (
         <Link
             href={`/dashboard/chat/${encodeURIComponent(name)}`}
-            className='flex items-center gap-2 px-2.5 space-x-2 hover:bg-gray-100 rounded'
+            className='flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost'
         >
             <AvatarShell
                 Initials={initials}
@@ -77,6 +78,15 @@ export default function DirectMessageList() {
                     className={`h-3 w-3 text-text-secondary transition-transform ${isOpen ? 'rotate-90' : ''}`}
                 />
             </div>
+            {isLoading && (
+                <div className='flex flex-col gap-2'>
+                    {Array(3)
+                        .fill(0)
+                        .map((_, index) => (
+                            <DirectMessageSkeleton key={index} />
+                        ))}
+                </div>
+            )}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -86,15 +96,9 @@ export default function DirectMessageList() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {isLoading
-                            ? Array(3)
-                                .fill(0)
-                                .map((_, index) => (
-                                    <DirectMessageSkeleton key={index} />
-                                ))
-                            : chatNames.map((name, index) => (
-                                <DirectMessage key={index} name={name} />
-                            ))}
+                        {chatNames.map((name, index) => (
+                            <DirectMessage key={index} name={name} />
+                        ))}
                     </motion.div>
                 )}
             </AnimatePresence>

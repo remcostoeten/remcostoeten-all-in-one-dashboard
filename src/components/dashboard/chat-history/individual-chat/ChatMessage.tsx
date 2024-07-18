@@ -1,5 +1,7 @@
 import { getInitials } from "../../../../core/utils/get-initials";
-import { formatDate } from "../../../../core/utils/format-date"; // You'll need to create this utility function
+import { formatDate } from "../../../../core/utils/format-date";
+import { LinkPreview } from "../../../effects/magicui/link-preview";
+import Image from 'next/image';
 
 interface Message {
     id: string;
@@ -16,7 +18,7 @@ interface ChatMessagesProps {
 
 export default function ChatMessages({ messages, currentUserId }: ChatMessagesProps) {
     return (
-        <div className='flex-1 overflow-y-auto p-4'>
+        <div className='flex-1 overflow-y-auto '>
             {messages.map((message) => {
                 const isCurrentUser = message.sender === currentUserId;
                 return (
@@ -35,9 +37,24 @@ export default function ChatMessages({ messages, currentUserId }: ChatMessagesPr
                                         {message.content}
                                     </p>
                                 ) : message.type === 'file' ? (
-                                    <a href={message.content} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-                                        View File
-                                    </a>
+                                    <LinkPreview
+                                        url={message.content}
+                                        className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
+                                    >
+                                        {message.content}
+                                    </LinkPreview>
+                                ) : message.type === 'image' ? (
+                                    <div className="mt-1">
+                                        <Image
+
+                                            src={`/${message.content}`}
+                                            alt="Shared image"
+                                            width={300}
+                                            height={200}
+                                            layout="responsive"
+                                            className="rounded-md"
+                                        />
+                                    </div>
                                 ) : null}
                             </div>
                         </div>

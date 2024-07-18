@@ -9,7 +9,7 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import Link from 'next/link'
+import { usePathname } from "next/navigation"
 
 interface PaginationControlProps {
     currentPage: number
@@ -20,7 +20,7 @@ interface PaginationControlProps {
 
 export function PaginationControl({ currentPage, totalMessages, pageSize, name }: PaginationControlProps) {
     const totalPages = Math.ceil(totalMessages / pageSize)
-
+    const pathname = usePathname()
     const generatePaginationItems = () => {
         let items = []
         const maxVisiblePages = 5
@@ -30,7 +30,7 @@ export function PaginationControl({ currentPage, totalMessages, pageSize, name }
                 items.push(
                     <PaginationItem key={i}>
                         <PaginationLink
-                            href={`/nl/chat/${name}?page=${i}&pageSize=${pageSize}`}
+                            href={`${pathname}?page=${i}&pageSize=${pageSize}`}
                             isActive={currentPage === i}
                         >
                             {i}
@@ -52,21 +52,20 @@ export function PaginationControl({ currentPage, totalMessages, pageSize, name }
                 <PaginationContent>
                     <PaginationItem>
                         <PaginationPrevious
-                            href={`/nl/dashboard/chat/${name}?page=${Math.max(1, currentPage - 1)}&pageSize=${pageSize}`}
+                            href={`${pathname}?page=${Math.max(1, currentPage - 1)}&pageSize=${pageSize}`}
                         />
                     </PaginationItem>
                     {generatePaginationItems()}
                     <PaginationItem>
                         <PaginationNext
-                            href={`/nl/dashboard/chat/${name}?page=${Math.min(totalPages, currentPage + 1)}&pageSize=${pageSize}`}
-                        // href={`/nl/dashboard/chat/${name}?page=${currentPage + 1}`}
+                            href={`${pathname}?page=${Math.min(totalPages, currentPage + 1)}&pageSize=${pageSize}`}
                         />
                     </PaginationItem>
                 </PaginationContent>
             </Pagination>
             <Select
                 onValueChange={(value) => {
-                    window.location.href = `/nl/chat/${name}?page=1&pageSize=${value}`
+                    window.location.href = `${pathname}?&pageSize=${value}`
                 }}
             >
                 <SelectTrigger className="w-[180px]">

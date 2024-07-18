@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { BorderBeam } from '../effects/magicui/border-beam'
 import ShineBorder from '../effects/magicui/shine-border'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
+import { LinkPreview } from '../effects/magicui/link-preview'
 
 export default function HeroSection() {
     const t = useTranslations('Landing')

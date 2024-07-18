@@ -10,6 +10,11 @@ const bundleAnalyzer = withBundleAnalyzer({
 })
 
 const nextConfig = {
+    images: {
+        domains: [
+          "api.microlink.io",
+        ],
+    },
     eslint: {
         dirs: ['.']
     },

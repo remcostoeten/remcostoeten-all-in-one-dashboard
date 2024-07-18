@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import RouteGuard from '@/components/RouteGaurd'
 import AddAppointmentDialog from '@/app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
 import CalendarToolbar from '@/app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
+import { title } from 'process'
 
 function DashHeader() {
     const pathname = usePathname()
@@ -13,7 +14,11 @@ function DashHeader() {
     useEffect(() => {
         const pathSegments = pathname.split('/')
         const lastSegment = pathSegments[pathSegments.length - 1] || ''
-        setTitle(lastSegment.replace(/-/g, ' ') || 'Dashboard')
+        if (pathname.includes('chat')) {
+            setTitle("Chat with " + lastSegment.replace(/-/g, ' '))
+        } else {
+            setTitle(lastSegment.replace(/-/g, ' ') || 'Dashboard')
+        }
     }, [pathname])
 
     return (

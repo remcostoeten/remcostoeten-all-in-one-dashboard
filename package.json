@@ -84,6 +84,7 @@
         "next-intl": "^3.14.1",
         "next-themes": "^0.3.0",
         "nextjs-toploader": "^1.6.12",
+        "qss": "^3.0.0",
         "react": "latest",
         "react-day-picker": "^8.10.1",
         "react-dom": "latest",
