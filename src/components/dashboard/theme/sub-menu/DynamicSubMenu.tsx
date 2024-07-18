@@ -10,18 +10,20 @@ import { usePathname } from 'next/navigation'
 // import SettingsSubMenu from './SettingsSubMenu'
 // import TodosSubMenu from './TodosSubMenu'
 import { routeConfig } from '@/core/config/route-config'
-import ChatSubMenu from '@/app/[locale]/(auth)/dashboard/chat/_components/ChatSubMenu';
+import ChatSubMenu from '@/app/[locale]/(auth)/dashboard/chat/_components/ChatSubMenu'
 
 const componentMap = {
-    ChatSubMenu,
+    ChatSubMenu
     // DriveSubMenu,
     // SettingsSubMenu,
     // TodosSubMenu,
-};
+}
 
 const DynamicSubMenu = () => {
     const pathname = usePathname()
-    const currentRoute = routeConfig.find(route => pathname.includes(route.path))
+    const currentRoute = routeConfig.find((route) =>
+        pathname.includes(route.path)
+    )
 
     if (!currentRoute || !currentRoute.subMenu) return null
 

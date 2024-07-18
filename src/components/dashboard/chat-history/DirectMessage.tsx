@@ -6,5 +6,5 @@ export default function DirectMessage({ name }: { name: string }) {
                 {name}
             </div>
         </div>
-    );
+    )
 }

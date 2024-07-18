@@ -17,8 +17,8 @@ const SubMenu: React.FC<SubMenuProps> = ({
     return (
         <div className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border'>
             <SubMenuHeader title={title} />
-            <SubMenuContent>{children}</SubMenuContent>
             {showSearch && <SubMenuSearch />}
+            <SubMenuContent>{children}</SubMenuContent>
         </div>
     )
 }

@@ -53,7 +53,7 @@ export default function AvatarShell({
             className={`grid place-items-center w-${width} h-${height} text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
             {...props}
         >
-            <p>
+            <p className='leading-[0px] text-xs'>
                 {firstLetter}
                 {showInitials && <span>{Initials.toUpperCase()}</span>}
             </p>

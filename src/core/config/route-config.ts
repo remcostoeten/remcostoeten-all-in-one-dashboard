@@ -6,9 +6,9 @@
  */
 
 type RouteConfig = {
-    path: string;
-    subMenu?: string;
-};
+    path: string
+    subMenu?: string
+}
 
 export const routeConfig: RouteConfig[] = [
     {
@@ -16,7 +16,7 @@ export const routeConfig: RouteConfig[] = [
         subMenu: 'ChatSubMenu'
     },
     {
-        path: '/dashboard/planner',
+        path: '/dashboard/planner'
         // subMenu: 'DriveSubMenu'
     },
     {
@@ -26,6 +26,6 @@ export const routeConfig: RouteConfig[] = [
     {
         path: '/dashboard/todos',
         subMenu: 'TodosSubMenu'
-    },
+    }
     // Add more route configurations as needed
-];
+]

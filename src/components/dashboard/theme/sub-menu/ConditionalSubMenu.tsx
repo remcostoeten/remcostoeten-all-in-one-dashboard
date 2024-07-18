@@ -10,7 +10,7 @@ const ConditionalSubMenu = () => {
 
     if (pathname.includes('/dashboard/chat')) {
         return (
-            <SubMenu title="Chat">
+            <SubMenu title='Chat'>
                 <RenderChatsList />
                 <ChannelList channels={['general', 'random']} />
             </SubMenu>

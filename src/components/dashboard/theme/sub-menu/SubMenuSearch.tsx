@@ -2,7 +2,6 @@
 
 import { SearchIcon } from '@/components/theme/icons'
 
-
 export default function SubMenuSearch() {
     return (
         <div className='px-2 pr-8 py-2'>
@@ -12,7 +11,7 @@ export default function SubMenuSearch() {
                     type='search'
                     placeholder='Search...'
                     aria-label='Search'
-                    onChange={() => { }}
+                    onChange={() => {}}
                 />
                 <SearchIcon
                     width={16}
