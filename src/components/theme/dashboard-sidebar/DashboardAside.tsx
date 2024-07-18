@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
-import { DashboardAsideItems } from '@/core/data/menu-items'
+import { DashboardAsideItems } from '@/core/config/menu-items'
 import TopSection from './TopSection'
 import MenuItem from './MenuItem'
 import NavSettings from './NavSettings'

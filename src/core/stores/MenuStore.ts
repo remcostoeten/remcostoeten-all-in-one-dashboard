@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist, PersistOptions, StorageValue } from 'zustand/middleware'
-import { DashboardAsideItems } from '../data/menu-items'
+import { DashboardAsideItems } from '../config/menu-items'
 
 type MenuStore = {
     isExpanded: boolean

@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { DashboardAsideItems } from '../data/menu-items'
+import { DashboardAsideItems } from '../config/menu-items'
 
 type MenuStore = {
     isSubMenuExpanded: boolean
