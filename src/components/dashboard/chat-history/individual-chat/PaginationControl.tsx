@@ -41,9 +41,8 @@ export function PaginationControl({
 
     const handlePageChange = (page: number) => {
         setIsLoading(true)
-        router
-            .push(`${pathname}?page=${page}&pageSize=${pageSize}`)
-            .then(() => setIsLoading(false))
+        router.push(`${pathname}?page=${page}&pageSize=${pageSize}`)
+        setIsLoading(false)
     }
 
     const generatePaginationItems = () => {
