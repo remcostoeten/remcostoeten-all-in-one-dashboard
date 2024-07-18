@@ -1,9 +1,7 @@
-// components/dashboard/chat-history/individual-chat/ChatMessage.tsx
-
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { getInitials } from '@/core/utils/get-initials'
 import { formatDate } from '@/core/utils/format-date'
 import { LinkPreview } from '@/components/effects/magicui/link-preview'
@@ -25,13 +23,19 @@ type Message = {
 type ChatMessagesProps = {
     messages: Message[]
     currentUserId: string
-    chatName: string
+    chatName: string,
+    currentPage: number,
+    pageSize: number,
+    totalMessages: number
 }
 
 export default function ChatMessages({
     messages,
     currentUserId,
-    chatName
+    chatName,
+    currentPage,
+    pageSize,
+    totalMessages
 }: ChatMessagesProps) {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false)
     const [lightboxImageUrl, setLightboxImageUrl] = useState('')
@@ -39,7 +43,38 @@ export default function ChatMessages({
     const [searchResults, setSearchResults] = useState<Message[]>([])
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const [isSearching, setIsSearching] = useState(false)
+    const [messageToScrollTo, setMessageToScrollTo] = useState<string | null>(null)
+    const router = useRouter()
+    const searchParams = useSearchParams()
     const messageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+    const chatContainerRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const scrollToMessageId = searchParams.get('scrollTo')
+        if (scrollToMessageId) {
+            console.log('ScrollTo parameter found:', scrollToMessageId)
+            setMessageToScrollTo(scrollToMessageId)
+        }
+    }, [searchParams])
+
+    useEffect(() => {
+        if (messageToScrollTo) {
+            console.log('Attempting to scroll to message:', messageToScrollTo)
+            const scrollToMessage = () => {
+                const messageElement = messageRefs.current[messageToScrollTo]
+                if (messageElement && chatContainerRef.current) {
+                    console.log('Scrolling to message element')
+                    messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    setMessageToScrollTo(null)
+                } else {
+                    console.log('Message element not found on current page')
+                }
+            }
+
+            // Add a slight delay to ensure the DOM is updated
+            setTimeout(scrollToMessage, 100)
+        }
+    }, [messageToScrollTo, messages])
 
     const openLightbox = (url: string) => {
         setLightboxImageUrl(url)
@@ -69,9 +104,28 @@ export default function ChatMessages({
         }
     }
 
-    const scrollToMessage = (messageId: string) => {
-        messageRefs.current[messageId]?.scrollIntoView({ behavior: 'smooth' })
+    const scrollToMessage = async (messageId: string) => {
+        console.log('scrollToMessage called with id:', messageId)
         setIsDrawerOpen(false)
+
+        // Check if the message is on the current page
+        if (messages.some(msg => msg.id === messageId)) {
+            setMessageToScrollTo(messageId)
+        } else {
+            // If not, we need to fetch the correct page
+            try {
+                const response = await fetch(`/api/find-message-page?chatName=${chatName}&messageId=${messageId}`)
+                const data = await response.json()
+                if (data.page) {
+                    console.log(`Message found on page ${data.page}, navigating...`)
+                    router.push(`?page=${data.page}&scrollTo=${messageId}`)
+                } else {
+                    console.error('Message not found')
+                }
+            } catch (error) {
+                console.error('Error finding message page:', error)
+            }
+        }
     }
 
     const renderMessage = (message: Message, isSearchResult = false) => {
@@ -79,7 +133,6 @@ export default function ChatMessages({
         return (
             <div
                 key={message.id}
-
                 ref={(el: HTMLDivElement | null) => {
                     if (el) messageRefs.current[message.id] = el
                 }}
@@ -120,11 +173,7 @@ export default function ChatMessages({
                         ) : message.type === 'image' ? (
                             <div className='mt-1'>
                                 <button
-                                    onClick={() =>
-                                        openLightbox(
-                                            `/${message.content}`
-                                        )
-                                    }
+                                    onClick={() => openLightbox(`/${message.content}`)}
                                     className='block w-80 *:rounded-md overflow-hidden transition-all hover:opacity-80'
                                 >
                                     <Image
@@ -167,8 +216,7 @@ export default function ChatMessages({
                 </Button>
             </div>
 
-            <div className='flex-1 overflow-y-auto'>
-                {messages.map((message) => renderMessage(message))}
+            <div ref={chatContainerRef} className='flex-1 overflow-y-auto'>                {messages.map((message) => renderMessage(message))}
             </div>
 
             {isLightboxOpen && (
