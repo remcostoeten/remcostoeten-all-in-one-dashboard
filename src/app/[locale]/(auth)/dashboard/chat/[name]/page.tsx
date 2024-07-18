@@ -9,16 +9,15 @@ export default async function ChatPage({
 }) {
     const chatData = await getChatData(params.name)
 
+    if (!chatData) {
+        return <div>Chat not found</div>
+    }
+
     return (
-        // <div className='p-4'>
-        //     <h1 className='text-2xl font-bold mb-4'>Chat with {params.name}</h1>
-        //     <pre className='bg-gray-100 p-4 rounded overflow-auto'>
-        //         {JSON.stringify(chatData, null, 2)}
-        //     </pre>
-        // </div>
         <div className='flex flex-col h-full'>
+            <h1 className='text-2xl font-bold mb-4'>Chat with {chatData.userName}</h1>
             <Suspense fallback={<h1 className='text-4xl'>Loading...</h1>}>
-                <ChatMessages />
+                <ChatMessages messages={chatData.messages} currentUserId={chatData.userId} />
             </Suspense>
         </div>
     )
