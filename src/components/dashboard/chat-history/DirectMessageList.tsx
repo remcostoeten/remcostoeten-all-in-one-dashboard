@@ -7,6 +7,7 @@ import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
 import AvatarShell from '../../theme/shells/AvatarShell'
 import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
 import Link from 'next/link'
+import { getInitials } from '../../../core/utils/get-initials'
 
 const tailwindBackgrounds = [
     'bg-red-500',
@@ -18,18 +19,12 @@ const tailwindBackgrounds = [
     'bg-pink-500'
 ]
 
-function DirectMessage({ name }: { name: string }) {
-    const initials = name
-        .split(' ')
-        .map((n) => n[0])
-        .join('')
-        .slice(0, 2)
-        .toUpperCase()
+function DirectMessage({ name }) {
+    const initials = getInitials(name)
     const firstLetter = initials[0]
-    const randomBackground =
-        tailwindBackgrounds[
-            Math.floor(Math.random() * tailwindBackgrounds.length)
-        ]
+    const randomBackground = tailwindBackgrounds[
+        Math.floor(Math.random() * tailwindBackgrounds.length)
+    ]
 
     return (
         <Link
@@ -53,7 +48,7 @@ function DirectMessage({ name }: { name: string }) {
 
 export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
-    const [chatNames, setChatNames] = useState<string[]>([])
+    const [chatNames, setChatNames] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -93,13 +88,13 @@ export default function DirectMessageList() {
                     >
                         {isLoading
                             ? Array(3)
-                                  .fill(0)
-                                  .map((_, index) => (
-                                      <DirectMessageSkeleton key={index} />
-                                  ))
+                                .fill(0)
+                                .map((_, index) => (
+                                    <DirectMessageSkeleton key={index} />
+                                ))
                             : chatNames.map((name, index) => (
-                                  <DirectMessage key={index} name={name} />
-                              ))}
+                                <DirectMessage key={index} name={name} />
+                            ))}
                     </motion.div>
                 )}
             </AnimatePresence>
