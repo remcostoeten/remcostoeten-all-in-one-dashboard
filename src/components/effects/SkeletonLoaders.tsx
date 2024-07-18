@@ -15,6 +15,19 @@
 
 import { Skeleton, SVGSkeleton } from '../ui/SkeletonwWrapper'
 
+function DirectMessageSkeleton() {
+    /**
+     * @file [src/src/components/dashboard/chat-history/DirectMessageList.tsx]
+     */
+
+    return (
+        <div className='flex items-center gap-2 px-2.5 space-x-2 animate-pulse'>
+            <div className='w-5 h-5 rounded-full bg-gray-300'></div>
+            <div className='h-4 w-24 bg-gray-300 rounded'></div>
+        </div>
+    )
+}
+
 function SkeletonGuestbookEntrys({ count }) {
     /**
      * @file src/components/dashboard/guestbook/GuestbookForm.tsx
@@ -191,4 +204,8 @@ function SkeletonDashboardAside() {
     )
 }
 
-export { SkeletonDashboardAside, SkeletonGuestbookEntrys }
+export {
+    SkeletonDashboardAside,
+    DirectMessageSkeleton,
+    SkeletonGuestbookEntrys
+}

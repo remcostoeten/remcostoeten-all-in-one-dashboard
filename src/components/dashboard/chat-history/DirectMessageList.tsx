@@ -5,6 +5,8 @@ import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
 import AvatarShell from '../../theme/shells/AvatarShell'
+import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
+import Link from 'next/link'
 
 const tailwindBackgrounds = [
     'bg-red-500',
@@ -30,7 +32,10 @@ function DirectMessage({ name }: { name: string }) {
         ]
 
     return (
-        <div className='flex items-center gap-2 px-2.5 space-x-2'>
+        <Link
+            href={`/dashboard/chat/${encodeURIComponent(name)}`}
+            className='flex items-center gap-2 px-2.5 space-x-2 hover:bg-gray-100 rounded'
+        >
             <AvatarShell
                 Initials={initials}
                 firstLetter={firstLetter}
@@ -42,30 +47,35 @@ function DirectMessage({ name }: { name: string }) {
             <div className='text-sm text-text-secondary hover:text-text-primary'>
                 {name}
             </div>
-        </div>
+        </Link>
     )
 }
 
 export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
     const [chatNames, setChatNames] = useState<string[]>([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         fetch('/api/chat-names')
             .then((response) => response.json())
-            .then((data) => setChatNames(data))
-            .catch((error) =>
+            .then((data) => {
+                setChatNames(data)
+                setIsLoading(false)
+            })
+            .catch((error) => {
                 console.error('Error fetching chat names:', error)
-            )
+                setIsLoading(false)
+            })
     }, [])
 
     return (
         <SubMenuInnerContent>
             <div
                 onClick={() => setIsOpen(!isOpen)}
-                className='flex items-center justify-between wpl-1 pr-2 pb-2 w-full hover:bg-bg-ghost-hover cursor-pointer'
+                className='flex items-center justify-between pl-2 pr-2 pb-2 w-full hover:bg-bg-ghost-hover cursor-pointer'
             >
-                <span className='text-xs font-semibold text-text-tertiary uppercase'>
+                <span className='text-xs text-text-secondary uppercase pb-1'>
                     Direct messages
                 </span>
                 <ChevronRightIcon
@@ -81,9 +91,15 @@ export default function DirectMessageList() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {chatNames.map((name, index) => (
-                            <DirectMessage key={index} name={name} />
-                        ))}
+                        {isLoading
+                            ? Array(3)
+                                  .fill(0)
+                                  .map((_, index) => (
+                                      <DirectMessageSkeleton key={index} />
+                                  ))
+                            : chatNames.map((name, index) => (
+                                  <DirectMessage key={index} name={name} />
+                              ))}
                     </motion.div>
                 )}
             </AnimatePresence>
