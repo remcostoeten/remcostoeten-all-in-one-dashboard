@@ -5,8 +5,8 @@ import ShimmerButton from '@/components/effects/magicui/shimmer-button'
 import { MarqueeHorizontal } from '@/components/marketing/MarketingCards'
 import Pill from '@/components/Pill'
 import { Flex } from '@/components/shared/atoms/Flex'
-import { features } from '@/core/data/marketing-data'
 import Link from 'next/link'
+import { features } from '@/core/config/marketing-data'
 
 const FeatureCard = ({ icon: Icon, title, status, children }) => (
     <MagicCard className='!bg-black'>

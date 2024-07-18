@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import IconComponent from '../shells/IconShell'
 import CustomPopover from '../shells/CustomPopover'
 import { useMenuStore } from '@/core/stores/MenuStore'
-import { DashboardAsideItems } from '@/core/data/menu-items'
+import { DashboardAsideItems } from '@/core/config/menu-items'
 import MuiCheckbox from '@/components/ui/mui/mui-checkbox'
 import { Button } from '@/components/ui/button'
 
