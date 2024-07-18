@@ -11,7 +11,7 @@ import { cn } from '@/core/utils/cn'
 import SearchDialog from '@/components/shared/navigation/Search'
 import { Flex } from '@/components/shared/atoms/Flex'
 
-const Aside = () => {
+const Aside = ({ className }) => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
     const containerControls = useAnimationControls()
 
@@ -31,11 +31,11 @@ const Aside = () => {
     return (
         <>
             <motion.aside
-                // onMouseEnter={() => setIsExpanded(true)}  .// create setting for alow this on of
                 variants={{
                     open: { width: '240px' },
                     close: { width: '64px' }
                 }}
+                onMouseLeave={() => setIsExpanded(false)}
                 animate={containerControls}
                 initial='close'
                 className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
