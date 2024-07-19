@@ -1,11 +1,12 @@
 import Link from 'next/link'
 
 import { Github } from 'lucide-react'
-import siteConfig from '@/core/data/site-config'
+import siteConfig from '@/core/config/site-config'
 import { useTranslations } from 'next-intl'
 import { BorderBeam } from '../effects/magicui/border-beam'
 import ShineBorder from '../effects/magicui/shine-border'
 import { AnimatedGradientPill } from '../effects/AnimatedGradientPill'
+import { LinkPreview } from '../effects/magicui/link-preview'
 
 export default function HeroSection() {
     const t = useTranslations('Landing')

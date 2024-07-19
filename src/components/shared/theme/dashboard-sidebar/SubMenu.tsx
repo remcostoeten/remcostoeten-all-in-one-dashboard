@@ -10,7 +10,6 @@ import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
 import { useState, useCallback, type ReactNode } from 'react'
 import { SearchIcon } from '@/components/theme/icons'
 import IconShell from '@/components/theme/shells/IconShell'
-import RenderChatsList from './RenderChatsList'
 
 const IndividualChatWrapper = ({
     chatName,
@@ -77,7 +76,6 @@ function SubMenu() {
                 <div className='text-lg font-semibold'>Chat</div>
             </div>
             <div className='flex flex-col px-2 py-4 border-b border-border'>
-                <RenderChatsList />
                 <IndividualChatWrapper chatName='test' image={<TvIcon />} />
                 <div className='flex items-center gap-3 px-2 py-1.5 hover:bg-bg-ghost-hover rounded'>
                     <CogIcon className='h-6 w-6' />

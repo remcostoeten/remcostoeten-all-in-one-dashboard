@@ -1,84 +1,96 @@
 {
-    "reactSnippets.settings.importReactOnTop": false,
-    "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Ayu Mirage Bordered",
-    "doublebot.enableInlineEditPreview": true,
-    "reactSnippets.settings.prettierEnabled": true,
-    "terminal.integrated.allowChords": false,
-    "editor.fontFamily": "'JetBrains Mono'",
-    "editor.fontLigatures": true,
-    "editor.lineHeight": 22,
-    "editor.wordWrap": "on",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit",
-        "source.fixAll": "explicit"
-    },
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/build": true,
-        "**/generated": true,
-        "**/node_modules": true,
-        "**/tmp": true,
-        "**/.next": true,
-        "**/.cache": true
-    },
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/build": true,
-        "**/vendor": true,
-        "**/.tmp": true,
-        "**/generated": true,
-        "**/next": true,
-        "/tmp": true,
-        "**/.cache": true,
-        "**/migrations": true,
-        "**/tmp": true
-    },
     "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.minimap.enabled": true,
-    "files.autoSave": "onFocusChange",
-    "files.eol": "\n",
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "files.associations": {
-        "*.js": "javascriptreact",
-        "*.jsx": "javascriptreact",
-        "*.ts": "typescriptreact",
-        "*.tsx": "typescriptreact"
+    "editor.detectIndentation": false,
+    "search.exclude": {
+        "package-lock.json": true
     },
-    "javascript.validate.enable": false,
-    "typescript.validate.enable": true,
-    "typescript.tsserver.log": "off",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.preferences.importModuleSpecifier": "relative",
-    "typescript.preferences.jsxAttributeCompletionStyle": "braces",
-    "typescript.preferences.includeCompletionsForImportStatements": true,
-    "typescript.preferences.includeCompletionsWithInsertText": true,
-    "typescript.suggest.enabled": true,
-    "eslint.alwaysShowStatus": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+        "source.addMissingImports",
+        "source.fixAll.eslint"
     ],
-    "prettier.singleQuote": true,
-    "prettier.jsxSingleQuote": true,
-    "prettier.tabWidth": 4,
-    "prettier.useTabs": false,
-    "prettier.semi": false,
-    "prettier.arrowParens": "always",
-    "prettier.printWidth": 80,
-    "prettier.endOfLine": "lf",
-    "prettier.bracketSpacing": true,
-    "prettier.jsxBracketSameLine": false,
-    "prettier.proseWrap": "preserve",
-    "prettier.htmlWhitespaceSensitivity": "css"
+    "typescript.tsdk": "node_modules/typescript/lib", // Use the workspace version of TypeScript
+    "typescript.enablePromptUseWorkspaceTsdk": true, // For security reasons it's require that users opt into using the workspace version of typescript
+    "typescript.preferences.autoImportFileExcludePatterns": [
+        // useRouter should be imported from `next/navigation` instead of `next/router`
+        "next/router.d.ts",
+        "next/dist/client/router.d.ts",
+        // give priority for Link to next/link instead of lucide-react
+        "lucide-react",
+        "**radix-ui**",
+        "node_modules/radix-ui/**"
+    ],
+    "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
+    "testing.openTesting": "neverOpen", // Don't open the testing view automatically when running tests
+    "[json][jsonc][yaml]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
+    "i18n-ally.localesPaths": [
+        "src/locales"
+    ],
+    "i18n-ally.keystyle": "nested",
+    "folder-color.pathColors": [
+        {
+            "folderPath": "personal-panel/migrations/meta/",
+            "color": "foldercolorizer.LightYellow"
+        },
+        {
+            "folderPath": "personal-panel/src/",
+            "color": "foldercolorizer.LightPink",
+            "badge": "😀"
+        },
+        {
+            "folderPath": "personal-panel/ddd.local/",
+            "badge": "🥶"
+        },
+        {
+            "folderPath": "personal-panel/src/components/DeleteGuestbookEntry.tsx/",
+            "color": "foldercolorizer.Platinum"
+        },
+        {
+            "folderPath": "personal-panel/src/app/[locale]/(unauth)/tasks/",
+            "color": "foldercolorizer.PaleTaupe",
+            "badge": "✍️"
+        },
+        {
+            "folderPath": "personal-panel/src/core/",
+            "badge": "🥰"
+        },
+        {
+            "folderPath": "personal-panel/src/components/ui/",
+            "badge": "😍"
+        },
+        {
+            "folderPath": "personal-panel/src/styles/theme/utilities.scss/"
+        },
+        {
+            "folderPath": "personal-panel/src/components/theme/shells/pop.tsx/"
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#65c89b",
+        "activityBar.background": "#65c89b",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#945bc4",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#65c89b",
+        "statusBar.background": "#42b883",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#359268",
+        "statusBarItem.remoteBackground": "#42b883",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#42b883",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#42b88399",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#42b883",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }

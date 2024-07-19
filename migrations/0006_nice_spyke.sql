@@ -1,0 +1,1 @@
+ALTER TABLE `favorite_messages` DROP COLUMN `chat_between`;

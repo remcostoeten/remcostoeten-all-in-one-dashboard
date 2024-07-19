@@ -3,15 +3,16 @@
 import { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
-import { DashboardAsideItems } from '@/core/data/menu-items'
+import { DashboardAsideItems } from '@/core/config/menu-items'
 import TopSection from './TopSection'
 import MenuItem from './MenuItem'
 import NavSettings from './NavSettings'
 import { cn } from '@/core/utils/cn'
 import SearchDialog from '@/components/shared/navigation/Search'
 import { Flex } from '@/components/shared/atoms/Flex'
+import CreatePincode from '../../auth/CreatePincode'
 
-const Aside = () => {
+const Aside = ({ className }) => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
     const containerControls = useAnimationControls()
 
@@ -31,11 +32,11 @@ const Aside = () => {
     return (
         <>
             <motion.aside
-                // onMouseEnter={() => setIsExpanded(true)}  .// create setting for alow this on of
                 variants={{
                     open: { width: '240px' },
                     close: { width: '64px' }
                 }}
+                onMouseLeave={() => setIsExpanded(false)}
                 animate={containerControls}
                 initial='close'
                 className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
@@ -74,7 +75,9 @@ const Aside = () => {
                 </Flex>
                 <Flex direction='col' className='mt-auto px-2' gap='2'>
                     <Seperator className='mb-5' />
-                    <Flex direction='col' variant='space-y-m' items='center'>
+                    <Flex direction='col' variant='space-y-m' items='center' gap='2'>
+
+                        <CreatePincode />
                         <NavSettings />
                         <SearchDialog />
                     </Flex>

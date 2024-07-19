@@ -1,6 +1,3 @@
-// app/[locale]/layout.tsx
-
-import NavBar from '@/components/shared/theme/navbar'
 import Providers from '@/core/Providers'
 import { AppConfig } from '@/core/utils/app-config'
 import type { Metadata } from 'next'
@@ -11,8 +8,10 @@ import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { Toaster } from 'sonner'
 import '../../styles/app.scss'
-import '../../styles/app.scss'
-import TopNav from '@/components/shared/TopNav'
+import TopNav from '../../components/shared/theme/TopNav'
+import NavBar from '../../components/shared/theme/NavBar'
+import HeaderWrapper from '../../components/shared/theme/HeaderWrapper'
+
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
@@ -43,8 +42,7 @@ export default function RootLayout(props: {
                     initialAppointments={initialAppointments}
                     initialResources={initialResources}
                 >
-                    <TopNav />
-                    <NavBar />
+                    <HeaderWrapper />
                     {props.children}
                     <Toaster invert />
                 </Providers>

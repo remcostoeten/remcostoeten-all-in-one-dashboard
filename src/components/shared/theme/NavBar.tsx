@@ -14,7 +14,7 @@ import {
     NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 import { DashboardIcon } from '@radix-ui/react-icons'
-import { headerDropdownItems } from '@/core/data/menu-items'
+import { headerDropdownItems } from '@/core/config/menu-items'
 import LogoIcon from './Logo'
 import { Profile } from './Profile'
 import ShineBorder from '@/components/effects/magicui/shine-border'

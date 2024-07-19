@@ -12,6 +12,7 @@ const HamburgerToggle = () => {
 
     return (
         <button
+            onMouseEnter={() => setIsExpanded(true)}
             onClick={toggleMenu}
             className={`p-1  bg-ghost-active w-min border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800 h-8 grid place-items-center`}
         >

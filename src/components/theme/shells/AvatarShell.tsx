@@ -10,9 +10,11 @@ type AvatarShellProps = {
     as?: keyof JSX.IntrinsicElements | typeof Link
     href?: string
     target?: string
+    width?: string
+    height?: string
 }
 
-export default function wAvatarShell({
+export default function AvatarShell({
     background = 'bg-orange',
     Initials = 'RS',
     hasTwoLetters = false,
@@ -21,6 +23,8 @@ export default function wAvatarShell({
     as: Component = 'div',
     href,
     target,
+    width = '8',
+    height = '8',
     ...props
 }: AvatarShellProps) {
     const showInitials = hasTwoLetters || Initials.length > 2
@@ -30,7 +34,7 @@ export default function wAvatarShell({
             <Link
                 href={href}
                 passHref
-                className={`grid place-items-center w-8 h-8 text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
+                className={`grid place-items-center w-${width} h-${height} text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
                 target={target}
                 {...props}
             >
@@ -46,10 +50,10 @@ export default function wAvatarShell({
     return (
         <Component
             href={''}
-            className={`grid place-items-center w-8 h-8 text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
+            className={`grid place-items-center w-${width} h-${height} text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
             {...props}
         >
-            <p>
+            <p className='leading-[0px] text-xs'>
                 {firstLetter}
                 {showInitials && <span>{Initials.toUpperCase()}</span>}
             </p>
