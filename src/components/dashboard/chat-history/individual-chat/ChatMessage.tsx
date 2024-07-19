@@ -32,6 +32,9 @@ export default function ChatMessages({
     const messageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
     const chatContainerRef = useRef<HTMLDivElement>(null)
 
+
+
+
     const openLightbox = (url: string) => {
         setLightboxImageUrl(url)
         setIsLightboxOpen(true)

@@ -86,3 +86,15 @@ html,
 body {
     overflow: none !important;
 }
+.highlight {
+    animation: highlight 3s ease-out;
+  }
+
+  @keyframes highlight {
+    0% {
+      background-color: yellow;
+    }
+    100% {
+      background-color: transparent;
+    }
+  }

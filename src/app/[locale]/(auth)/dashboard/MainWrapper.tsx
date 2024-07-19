@@ -4,7 +4,6 @@ import { ReactNode, type MouseEventHandler } from 'react'
 import { Button } from '@/components/ui/button'
 import { useSubMenuStore } from '@/core/stores/SubMenuStore'
 import { FiSidebar, FiSearch } from 'react-icons/fi'
-import SearchDrawer from '@/components/dashboard/chat-history/SearchDrawer'
 import { useChatSearchStore } from '@/core/stores/chatStore'
 
 type MainWrapperProps = {
@@ -26,7 +25,6 @@ export default function MainWrapper({ children, chatName }: MainWrapperProps) {
             }}
         >
             {children}
-            <SearchDrawer chatName={chatName} />
         </section>
     )
 }
