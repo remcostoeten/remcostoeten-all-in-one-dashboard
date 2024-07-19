@@ -18,8 +18,6 @@ import {
 } from '@/components/ui/select'
 import { usePathname, useRouter } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
-import { FixedSizeList as List } from 'react-window'
-import AutoSizer from 'react-virtualized-auto-sizer'
 
 interface PaginationControlProps {
     currentPage: number
@@ -119,7 +117,7 @@ export function PaginationControl({
     }
 
     return (
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between py-4'>
             {isLoading && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
             <Pagination>
                 <PaginationContent>
@@ -147,9 +145,11 @@ export function PaginationControl({
             <Select
                 onValueChange={(value) => {
                     setIsLoading(true)
-                    router
-                        .push(`${pathname}?page=1&pageSize=${value}`)
-                        .then(() => setIsLoading(false))
+
+                    void (async () => {
+                        await router.push(`${pathname}?page=1&pageSize=${value}`)
+                        setIsLoading(false)
+                    })()
                 }}
             >
                 <SelectTrigger className='w-[180px]'>
@@ -163,50 +163,6 @@ export function PaginationControl({
                     <SelectItem value='500'>500 per page</SelectItem>
                 </SelectContent>
             </Select>
-        </div>
-    )
-}
-
-interface MessageItem {
-    id: string
-    content: string
-    // ... other message properties
-}
-
-interface MessageListProps {
-    messages: MessageItem[]
-}
-
-export function MessageList({ messages }: MessageListProps) {
-    const Row = ({
-        index,
-        style
-    }: {
-        index: number
-        style: React.CSSProperties
-    }) => (
-        <div style={style}>
-            {/* Render your message item here */}
-            <div>{messages[index].content}</div>
-        </div>
-    )
-
-    return (
-        <div style={{ height: '400px', width: '100%' }}>
-            {' '}
-            {/* Adjust height as needed */}
-            <AutoSizer>
-                {({ height, width }) => (
-                    <List
-                        height={height}
-                        itemCount={messages.length}
-                        itemSize={50} // Adjust based on your message item height
-                        width={width}
-                    >
-                        {Row}
-                    </List>
-                )}
-            </AutoSizer>
         </div>
     )
 }

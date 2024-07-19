@@ -1,22 +1,13 @@
 import { create } from 'zustand'
-import { DashboardAsideItems } from '../config/menu-items'
 
 type MenuStore = {
-    isSubMenuExpanded: boolean
-    setIsSubMenuExpanded: (value: boolean) => void
+    isSubMenuVisible: boolean
+    toggleSubMenu: () => void
 }
 
-const initialState = DashboardAsideItems.reduce(
-    (acc, item) => ({
-        ...acc,
-        [item.name]: true
-    }),
-    {}
-)
-
-export const useChatSubMenuStore = create<MenuStore>((set) => ({
-    isSubMenuExpanded: true,
-    setIsSubMenuExpanded: (value) => set({ isSubMenuExpanded: value })
+export const useSubMenuStore = create<MenuStore>((set) => ({
+    isSubMenuVisible: true,
+    toggleSubMenu: () => set((state) => ({ isSubMenuVisible: !state.isSubMenuVisible }))
 }))
 
 // If you want to persist the store, ensure you wrap the store creation with `persist`.

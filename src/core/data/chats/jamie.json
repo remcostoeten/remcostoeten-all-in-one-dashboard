@@ -160,9 +160,9 @@
       {
         "id": "msg19",
         "sender": "john123",
-        "content": "Looks good, Eve. The changes should resolve the issue. Good job!",
+        "content": "https://wikipedia.nl",
         "timestamp": "2024-07-18T10:40:00Z",
-        "type": "text"
+        "type": "file"
       },
       {
         "id": "msg20",

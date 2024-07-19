@@ -1,140 +1,118 @@
-'use client'
+'use client';
 
-import { useState, useRef, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { getInitials } from '@/core/utils/get-initials'
-import { formatDate } from '@/core/utils/format-date'
-import { LinkPreview } from '@/components/effects/magicui/link-preview'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { Input } from "@/components/ui/input"
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from "@/components/ui/drawer"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { searchChatMessages } from '../../../../core/@server/actions/searchChatMessages'
+import { useState, useRef, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { getInitials } from '@/core/utils/get-initials';
+import { formatDate } from '@/core/utils/format-date';
+import { LinkPreview } from '@/components/effects/magicui/link-preview';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@/components/ui/drawer';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import Search from '../ChatSearch';
+import { FavouriteChatMessage } from '../FavouriteChatMessage';
 
-type Message = {
-    id: string
-    sender: string
-    content: string
-    timestamp: string
-    type: string
-}
+export type Message = {
+    id: string;
+    sender: string;
+    content: string;
+    timestamp: string;
+    type: string;
+};
 
 type ChatMessagesProps = {
-    messages: Message[]
-    currentUserId: string
-    chatName: string,
-    currentPage: number,
-    pageSize: number,
-    totalMessages: number
-}
+    messages: Message[];
+    currentUserId: string;
+    chatName: string;
+    currentPage: number;
+    pageSize: number;
+    totalMessages: number;
+};
 
 export default function ChatMessages({
     messages,
     currentUserId,
     chatName,
-    currentPage,
-    pageSize,
-    totalMessages
 }: ChatMessagesProps) {
-    const [isLightboxOpen, setIsLightboxOpen] = useState(false)
-    const [lightboxImageUrl, setLightboxImageUrl] = useState('')
-    const [searchQuery, setSearchQuery] = useState('')
-    const [searchResults, setSearchResults] = useState<Message[]>([])
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-    const [isSearching, setIsSearching] = useState(false)
-    const [messageToScrollTo, setMessageToScrollTo] = useState<string | null>(null)
-    const router = useRouter()
-    const searchParams = useSearchParams()
-    const messageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
-    const chatContainerRef = useRef<HTMLDivElement>(null)
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+    const [lightboxImageUrl, setLightboxImageUrl] = useState('');
+    const [searchResults, setSearchResults] = useState<Message[]>([]);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [messageToScrollTo, setMessageToScrollTo] = useState<string | null>(null);
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const messageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const scrollToMessageId = searchParams.get('scrollTo')
+        const scrollToMessageId = searchParams.get('scrollTo');
         if (scrollToMessageId) {
-            console.log('ScrollTo parameter found:', scrollToMessageId)
-            setMessageToScrollTo(scrollToMessageId)
+            console.log('ScrollTo parameter found:', scrollToMessageId);
+            setMessageToScrollTo(scrollToMessageId);
         }
-    }, [searchParams])
+    }, [searchParams]);
 
     useEffect(() => {
         if (messageToScrollTo) {
-            console.log('Attempting to scroll to message:', messageToScrollTo)
+            console.log('Attempting to scroll to message:', messageToScrollTo);
             const scrollToMessage = () => {
-                const messageElement = messageRefs.current[messageToScrollTo]
+                const messageElement = messageRefs.current[messageToScrollTo];
                 if (messageElement && chatContainerRef.current) {
-                    console.log('Scrolling to message element')
-                    messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    setMessageToScrollTo(null)
+                    console.log('Scrolling to message element');
+                    messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setMessageToScrollTo(null);
                 } else {
-                    console.log('Message element not found on current page')
+                    console.log('Message element not found on current page');
                 }
-            }
+            };
 
-            // Add a slight delay to ensure the DOM is updated
-            setTimeout(scrollToMessage, 100)
+            setTimeout(scrollToMessage, 100);
         }
-    }, [messageToScrollTo, messages])
+    }, [messageToScrollTo, messages]);
 
     const openLightbox = (url: string) => {
-        setLightboxImageUrl(url)
-        setIsLightboxOpen(true)
-    }
+        setLightboxImageUrl(url);
+        setIsLightboxOpen(true);
+    };
 
     const closeLightbox = () => {
-        setIsLightboxOpen(false)
-    }
+        setIsLightboxOpen(false);
+    };
 
-    const handleSearch = async () => {
-        if (searchQuery.trim() === '') {
-            setSearchResults([])
-            setIsDrawerOpen(false)
-            return
-        }
-
-        setIsSearching(true)
-        try {
-            const results = await searchChatMessages(chatName, searchQuery)
-            setSearchResults(results.messages)
-            setIsDrawerOpen(true)
-        } catch (error) {
-            console.error('Error searching messages:', error)
-        } finally {
-            setIsSearching(false)
-        }
-    }
+    const handleSearchResults = (results: Message[]) => {
+        setSearchResults(results);
+        setIsDrawerOpen(true);
+    };
 
     const scrollToMessage = async (messageId: string) => {
-        console.log('scrollToMessage called with id:', messageId)
-        setIsDrawerOpen(false)
+        console.log('scrollToMessage called with id:', messageId);
+        setIsDrawerOpen(false);
 
-        // Check if the message is on the current page
         if (messages.some(msg => msg.id === messageId)) {
-            setMessageToScrollTo(messageId)
+            setMessageToScrollTo(messageId);
         } else {
-            // If not, we need to fetch the correct page
             try {
-                const response = await fetch(`/api/find-message-page?chatName=${chatName}&messageId=${messageId}`)
-                const data = await response.json()
+                const response = await fetch(`/api/find-message-page?chatName=${chatName}&messageId=${messageId}`);
+                const data = await response.json();
                 if (data.page) {
-                    console.log(`Message found on page ${data.page}, navigating...`)
-                    router.push(`?page=${data.page}&scrollTo=${messageId}`)
+                    console.log(`Message found on page ${data.page}, navigating...`);
+                    router.push(`?page=${data.page}&scrollTo=${messageId}`);
                 } else {
-                    console.error('Message not found')
+                    console.error('Message not found');
                 }
             } catch (error) {
-                console.error('Error finding message page:', error)
+                console.error('Error finding message page:', error);
             }
         }
-    }
+    };
 
     const renderMessage = (message: Message, isSearchResult = false) => {
-        const isCurrentUser = message.sender === currentUserId
+        const isCurrentUser = message.sender === currentUserId;
         return (
             <div
                 key={message.id}
                 ref={(el: HTMLDivElement | null) => {
-                    if (el) messageRefs.current[message.id] = el
+                    if (el) messageRefs.current[message.id] = el;
                 }}
                 className={`mb-4 ${isCurrentUser ? 'flex justify-end' : ''}`}
             >
@@ -147,7 +125,7 @@ export default function ChatMessages({
                         {getInitials(message.sender)}
                     </div>
                     <div
-                        className={`${isCurrentUser ? 'text-right' : ''}`}
+                        className={`${isCurrentUser ? 'text-right max-w-[80%]' : 'max-w-[80%]'}`}
                     >
                         <div className='flex items-baseline'>
                             <span className='font-semibold'>
@@ -158,11 +136,14 @@ export default function ChatMessages({
                             </span>
                         </div>
                         {message.type === 'text' ? (
-                            <p
-                                className={`bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
-                            >
-                                {message.content}
-                            </p>
+                            <FavouriteChatMessage messageId={message.id} userId={currentUserId}>
+
+
+                                <p
+                                    className={`text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
+                                >
+                                    {message.content}
+                                </p></FavouriteChatMessage>
                         ) : message.type === 'file' ? (
                             <LinkPreview
                                 url={message.content}
@@ -189,34 +170,26 @@ export default function ChatMessages({
                         ) : null}
                     </div>
                 </div>
-                {isSearchResult && (
-                    <Button
-                        onClick={() => scrollToMessage(message.id)}
-                        className="mt-2"
-                    >
-                        Go to message
-                    </Button>
-                )}
-            </div>
-        )
-    }
+                {
+                    isSearchResult && (
+                        <Button
+                            onClick={() => scrollToMessage(message.id)}
+                            className="mt-2"
+                        >
+                            Go to message
+                        </Button>
+                    )
+                }
+            </div >
+        );
+    };
 
     return (
         <>
-            <div className="mb-4 flex space-x-2">
-                <Input
-                    type="text"
-                    placeholder="Search messages..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                />
-                <Button onClick={handleSearch} disabled={isSearching}>
-                    {isSearching ? 'Searching...' : 'Search'}
-                </Button>
-            </div>
+            <Search chatName={chatName} onSearchResults={handleSearchResults} />
 
-            <div ref={chatContainerRef} className='flex-1 overflow-y-auto'>                {messages.map((message) => renderMessage(message))}
+            <div ref={chatContainerRef} className='flex-1'>
+                {messages.map((message) => renderMessage(message))}
             </div>
 
             {isLightboxOpen && (
@@ -243,7 +216,7 @@ export default function ChatMessages({
                 <DrawerContent>
                     <DrawerHeader>
                         <DrawerTitle>Search Results</DrawerTitle>
-                        <DrawerDescription>Found {searchResults.length} results for "{searchQuery}"</DrawerDescription>
+                        <DrawerDescription>Found {searchResults.length} results for ""</DrawerDescription>
                     </DrawerHeader>
                     <ScrollArea className="h-[70vh] p-4">
                         {searchResults.map((result) => renderMessage(result, true))}
@@ -256,5 +229,5 @@ export default function ChatMessages({
                 </DrawerContent>
             </Drawer>
         </>
-    )
+    );
 }

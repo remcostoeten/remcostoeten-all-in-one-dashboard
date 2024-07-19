@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import RouteGuard from '@/components/RouteGaurd'
 import AddAppointmentDialog from '@/app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
 import CalendarToolbar from '@/app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
-import { title } from 'process'
+import { ToggleSideMenu } from '../../../../app/[locale]/(auth)/dashboard/MainWrapper'
 
 function DashHeader() {
     const pathname = usePathname()
@@ -22,7 +22,7 @@ function DashHeader() {
     }, [pathname])
 
     return (
-        <header className='flex flex-col space-y-4 p-4 bg-blue-alternative text-text-white'>
+        <header className='flex flex-col justify-center space-y-4 p-4 bg-section text-text-white max-h-top-section'>
             <div className='flex justify-between items-center'>
                 <h1 className='text-xl font-semibold'>
                     {title.charAt(0).toUpperCase() + title.slice(1)}
@@ -33,6 +33,7 @@ function DashHeader() {
                         <CalendarToolbar />
                     </RouteGuard>
                 </div>
+                <ToggleSideMenu />
             </div>
         </header>
     )

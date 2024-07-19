@@ -19,7 +19,7 @@ export default async function ChatPage({
     }
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col max-h-screen min-h-screen p-4 pb-8 mr-4">
             <PaginationControl
                 currentPage={chatData.currentPage}
                 totalMessages={chatData.totalMessages}

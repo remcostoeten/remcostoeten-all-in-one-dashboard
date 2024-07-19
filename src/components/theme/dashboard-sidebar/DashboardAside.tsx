@@ -10,6 +10,7 @@ import NavSettings from './NavSettings'
 import { cn } from '@/core/utils/cn'
 import SearchDialog from '@/components/shared/navigation/Search'
 import { Flex } from '@/components/shared/atoms/Flex'
+import CreatePincode from '../../auth/CreatePincode'
 
 const Aside = ({ className }) => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
@@ -74,7 +75,9 @@ const Aside = ({ className }) => {
                 </Flex>
                 <Flex direction='col' className='mt-auto px-2' gap='2'>
                     <Seperator className='mb-5' />
-                    <Flex direction='col' variant='space-y-m' items='center'>
+                    <Flex direction='col' variant='space-y-m' items='center' gap='2'>
+
+                        <CreatePincode />
                         <NavSettings />
                         <SearchDialog />
                     </Flex>

@@ -36,12 +36,17 @@ const config: Config = withMT({
                 sidebar: 'var(--sidebar-width)',
                 icon: 'var(--icon-size)'
             },
+            maxHeight: {
+                "top-section": "53px",
+            },
             height: {
+                "top-section": "53px",
                 icon: 'var(--icon-size)',
                 nav: 'var(--nav-height)',
                 'top-bar': 'var(--top-bar-height)'
             },
             colors: {
+                section: '#1f1f2c',
                 'theme-primary': 'var(--theme-primary)',
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
@@ -57,7 +62,7 @@ const config: Config = withMT({
                 sidebar: 'var(--dark-blue)',
                 'dash-body': 'var(--light-blue)',
                 'bg-body': 'var(--light-blue)',
-                'text-white': 'var(--text-white)', // #fff 80%
+                'text-white': 'var(--text-white)',
                 icon: '#1A1A28',
                 'icon-active': 'var(--icon-active)',
                 'icon-active-background': 'var(--icon-active-background)',
@@ -117,6 +122,10 @@ const config: Config = withMT({
                 'icon-bg-size': 'var(--icon-bg-size)'
             },
             keyframes: {
+                "caret-blink": {
+                    "0%,70%,100%": { opacity: "1" },
+                    "20%,50%": { opacity: "0" },
+                },
                 marquee: {
                     from: { transform: 'translateX(0)' },
                     to: { transform: 'translateX(calc(-100% - var(--gap)))' }
@@ -237,6 +246,7 @@ const config: Config = withMT({
             '32': '8rem'
         },
         animation: {
+            "caret-blink": "caret-blink 1.25s ease-out infinite",
             marquee: 'marquee var(--duration) linear infinite',
             'marquee-vertical':
                 'marquee-vertical var(--duration) linear infinite',
