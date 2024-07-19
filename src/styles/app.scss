@@ -14,7 +14,8 @@
 @layer base {
     :root {
         --top-bar-height: 48px;
-        --sidebar-width: 5.25rem;
+        --sidebar-width: 64px; // 64px
+        --submenu-width: 15rem;
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
         --card: 0 0% 100%;
@@ -83,6 +84,5 @@ html,
 }
 
 body {
-
     overflow: none !important;
 }

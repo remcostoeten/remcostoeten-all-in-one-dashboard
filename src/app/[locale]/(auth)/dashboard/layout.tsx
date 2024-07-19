@@ -1,20 +1,10 @@
-
-
-
 'use client'
 import DashHeader from '@/components/dashboard/guestbook/shells/DashHeader'
 import Aside from '@/components/theme/dashboard-sidebar/DashboardAside'
 import DynamicSubMenu from '@/components/dashboard/theme/sub-menu/DynamicSubMenu'
-import { useSubMenuStore } from '../../../../core/stores/SubMenuStore'
-import { FiSidebar } from 'react-icons/fi'
-import { Button } from '@/components/ui'
 import MainWrapper from './MainWrapper'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-
-
-
-
     return (
         <main className='flex' style={{ marginTop: 'var(--top-bar-height)' }}>
             <div className='fixed top-[] left-0 flex h-full'>
@@ -23,9 +13,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
             <MainWrapper>
                 <DashHeader />
-                {children}
+                <main className='p-4'>{children}</main>
             </MainWrapper>
         </main>
     )
 }
-

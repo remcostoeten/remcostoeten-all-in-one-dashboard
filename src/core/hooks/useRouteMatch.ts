@@ -2,30 +2,37 @@
 
 import { usePathname } from 'next/navigation'
 
-export function useRouteMatch(patterns) {
+type MatchOptions = {
+    suffix?: string
+    dynamicSegments?: string[]
+}
+
+function removeLocale(pathname: string): string {
+    const localePattern = /^\/([a-z]{2})\//
+    return pathname.replace(localePattern, '/')
+}
+
+function createRegexPattern(pattern: string, options: MatchOptions): RegExp {
+    const dynamicPattern =
+        options.dynamicSegments?.reduce(
+            (acc, segment) => acc.replace(segment, '([^/]+)'),
+            '^'
+        ) || '^'
+    return new RegExp(`${dynamicPattern}${pattern}${options.suffix || ''}`)
+}
+
+export function useRouteMatch(
+    patterns: string | string[],
+    options: MatchOptions = {}
+) {
     const pathname = usePathname()
-    const localePattern = /^\/([a-z]{2})\// // Assuming locale is always two lowercase letters
+    const pathWithoutLocale = removeLocale(pathname)
 
-    // Extract locale from pathname
-    const localeMatch = pathname.match(localePattern)
-    const locale = localeMatch ? localeMatch[1] : ''
-
-    // Remove locale from pathname
-    const pathWithoutLocale = pathname.replace(localePattern, '/')
-
-    // Check if any pattern matches the pathname without locale
     const isMatch = Array.isArray(patterns)
         ? patterns.some((pattern) =>
-              new RegExp(`^${pattern}$`).test(pathWithoutLocale)
+              createRegexPattern(pattern, options).test(pathWithoutLocale)
           )
-        : new RegExp(`^${patterns}$`).test(pathWithoutLocale)
+        : createRegexPattern(patterns, options).test(pathWithoutLocale)
 
     return isMatch
 }
-
-/**
- * Checks if the current pathname matches any of the provided patterns.
- *
- * @param {string | string[]} patterns - The patterns to match against the pathname.
- * @return {boolean} Returns true if any of the patterns match the pathname, false otherwise.
- */

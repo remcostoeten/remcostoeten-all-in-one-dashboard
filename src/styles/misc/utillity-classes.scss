@@ -40,3 +40,15 @@
     width: inherit;
     height: inherit;
 }
+
+.w-minus-sidebar {
+    width: calc(100% - var(--sidebar-width));
+}
+
+.w-minus-submenu {
+    width: calc(100% - var(--submenu-width));
+}
+
+.w-minus-menus {
+    width: calc(100% - var(--submenu-width) - var(--sidebar-width));
+}

@@ -1,4 +1,7 @@
+'use server'
+
 import fs from 'fs/promises'
+
 import path from 'path'
 
 export async function getChatData(name: string, page = 1, pageSize = 50) {

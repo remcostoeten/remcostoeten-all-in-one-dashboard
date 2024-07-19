@@ -15,608 +15,606 @@
 
 import { Skeleton, SVGSkeleton } from '../ui/SkeletonwWrapper'
 
-
 function ChatMessagesSkeleton() {
     return (
-        < div className="flex flex-col h-full p-4 gap-4" >
-            <div className="flex items-center justify-between">
-                <nav className="mx-auto flex w-full justify-center">
-                    <ul className="flex flex-row items-center gap-1">
+        <div className='flex flex-col h-full p-4 gap-4'>
+            <div className='flex items-center justify-between'>
+                <nav className='mx-auto flex w-full justify-center'>
+                    <ul className='flex flex-row items-center gap-1'>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pl-2.5">
-                                <SVGSkeleton className="lucide-chevron-left w-[24px] h-[24px]" />
+                            <a className='inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pl-2.5'>
+                                <SVGSkeleton className='lucide-chevron-left w-[24px] h-[24px]' />
                                 <span>
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors border border-input size-10">
-                                <Skeleton className="w-[14px] max-w-full" />
+                            <a className='inline-flex items-center justify-center transition-colors border border-input size-10'>
+                                <Skeleton className='w-[14px] max-w-full' />
                             </a>
                         </li>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors size-10">
-                                <Skeleton className="w-[14px] max-w-full" />
+                            <a className='inline-flex items-center justify-center transition-colors size-10'>
+                                <Skeleton className='w-[14px] max-w-full' />
                             </a>
                         </li>
-                        <span className="flex h-9 w-9 items-center justify-center">
-                            <SVGSkeleton className="w-[24px] h-[24px]" />
+                        <span className='flex h-9 w-9 items-center justify-center'>
+                            <SVGSkeleton className='w-[24px] h-[24px]' />
                         </span>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors size-10">
-                                <Skeleton className="w-[30px] max-w-full" />
+                            <a className='inline-flex items-center justify-center transition-colors size-10'>
+                                <Skeleton className='w-[30px] max-w-full' />
                             </a>
                         </li>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pr-2.5">
+                            <a className='inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pr-2.5'>
                                 <span>
-                                    <Skeleton className="w-[40px] max-w-full" />
+                                    <Skeleton className='w-[40px] max-w-full' />
                                 </span>
-                                <SVGSkeleton className="lucide-chevron-right w-[24px] h-[24px]" />
+                                <SVGSkeleton className='lucide-chevron-right w-[24px] h-[24px]' />
                             </a>
                         </li>
                     </ul>
                 </nav>
-                <div className="flex h-10 items-center justify-between border border-input px-3 py-2 [&amp;>span]:line-clamp-1 w-[180px]">
+                <div className='flex h-10 items-center justify-between border border-input px-3 py-2 [&amp;>span]:line-clamp-1 w-[180px]'>
                     <span>
-                        <Skeleton className="w-[110px] max-w-full" />
+                        <Skeleton className='w-[110px] max-w-full' />
                     </span>
-                    <SVGSkeleton className="w-[24px] h-[24px]" />
+                    <SVGSkeleton className='w-[24px] h-[24px]' />
                 </div>
             </div>
-            <div className="flex-1 overflow-y-auto">
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+            <div className='flex-1 overflow-y-auto'>
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[270px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[270px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[30px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[30px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[220px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[220px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[510px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[510px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[440px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[440px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[360px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[360px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[330px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[330px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[60px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[60px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[40px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[40px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[260px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[260px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[160px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[160px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[340px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[340px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[90px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[90px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[310px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[310px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[520px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[520px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[100px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[100px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[340px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[340px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[30px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[30px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[80px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[80px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[350px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[350px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[120px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[120px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[80px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[80px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[20px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[20px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4">
-                    <div className="flex items-start">
-                        <div className="w-10 h-10 flex items-center justify-center mr-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4'>
+                    <div className='flex items-start'>
+                        <div className='w-10 h-10 flex items-center justify-center mr-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
                         <div>
-                            <div className="flex items-baseline">
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[60px] max-w-full" />
+                                    <Skeleton className='w-[60px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[150px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[150px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-4 flex justify-end">
-                    <div className="flex items-start flex-row-reverse">
-                        <div className="w-10 h-10 flex items-center justify-center ml-3">
-                            <Skeleton className="w-[14px] max-w-full" />
+                <div className='mb-4 flex justify-end'>
+                    <div className='flex items-start flex-row-reverse'>
+                        <div className='w-10 h-10 flex items-center justify-center ml-3'>
+                            <Skeleton className='w-[14px] max-w-full' />
                         </div>
-                        <div className="text-right">
-                            <div className="flex items-baseline">
+                        <div className='text-right'>
+                            <div className='flex items-baseline'>
                                 <span>
-                                    <Skeleton className="w-[50px] max-w-full" />
+                                    <Skeleton className='w-[50px] max-w-full' />
                                 </span>
-                                <span className="ml-2">
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                <span className='ml-2'>
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </div>
-                            <p className="mt-1 p-2">
-                                <Skeleton className="w-[270px] max-w-full" />
+                            <p className='mt-1 p-2'>
+                                <Skeleton className='w-[270px] max-w-full' />
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="flex items-center justify-between">
-                <nav className="mx-auto flex w-full justify-center">
-                    <ul className="flex flex-row items-center gap-1">
+            <div className='flex items-center justify-between'>
+                <nav className='mx-auto flex w-full justify-center'>
+                    <ul className='flex flex-row items-center gap-1'>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pl-2.5">
-                                <SVGSkeleton className="lucide-chevron-left w-[24px] h-[24px]" />
+                            <a className='inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pl-2.5'>
+                                <SVGSkeleton className='lucide-chevron-left w-[24px] h-[24px]' />
                                 <span>
-                                    <Skeleton className="w-[80px] max-w-full" />
+                                    <Skeleton className='w-[80px] max-w-full' />
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors border border-input size-10">
-                                <Skeleton className="w-[14px] max-w-full" />
+                            <a className='inline-flex items-center justify-center transition-colors border border-input size-10'>
+                                <Skeleton className='w-[14px] max-w-full' />
                             </a>
                         </li>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors size-10">
-                                <Skeleton className="w-[14px] max-w-full" />
+                            <a className='inline-flex items-center justify-center transition-colors size-10'>
+                                <Skeleton className='w-[14px] max-w-full' />
                             </a>
                         </li>
-                        <span className="flex h-9 w-9 items-center justify-center">
-                            <SVGSkeleton className="w-[24px] h-[24px]" />
+                        <span className='flex h-9 w-9 items-center justify-center'>
+                            <SVGSkeleton className='w-[24px] h-[24px]' />
                         </span>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors size-10">
-                                <Skeleton className="w-[30px] max-w-full" />
+                            <a className='inline-flex items-center justify-center transition-colors size-10'>
+                                <Skeleton className='w-[30px] max-w-full' />
                             </a>
                         </li>
                         <li>
-                            <a className="inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pr-2.5">
+                            <a className='inline-flex items-center justify-center transition-colors h-10 px-4 py-2 gap-1 pr-2.5'>
                                 <span>
-                                    <Skeleton className="w-[40px] max-w-full" />
+                                    <Skeleton className='w-[40px] max-w-full' />
                                 </span>
-                                <SVGSkeleton className="lucide-chevron-right w-[24px] h-[24px]" />
+                                <SVGSkeleton className='lucide-chevron-right w-[24px] h-[24px]' />
                             </a>
                         </li>
                     </ul>
                 </nav>
-                <div className="flex h-10 items-center justify-between border border-input px-3 py-2 [&amp;>span]:line-clamp-1 w-[180px]">
+                <div className='flex h-10 items-center justify-between border border-input px-3 py-2 [&amp;>span]:line-clamp-1 w-[180px]'>
                     <span>
-                        <Skeleton className="w-[110px] max-w-full" />
+                        <Skeleton className='w-[110px] max-w-full' />
                     </span>
-                    <SVGSkeleton className="w-[24px] h-[24px]" />
+                    <SVGSkeleton className='w-[24px] h-[24px]' />
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
-
 
 function DirectMessageSkeleton() {
     /**
@@ -811,5 +809,5 @@ export {
     SkeletonDashboardAside,
     DirectMessageSkeleton,
     ChatMessagesSkeleton,
-    SkeletonGuestbookEntrys,
+    SkeletonGuestbookEntrys
 }

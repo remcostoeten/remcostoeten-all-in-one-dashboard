@@ -125,19 +125,12 @@ const TechCard = ({
 export function MarqueeHorizontal() {
     return (
         <div className='relative flex h-[500px] rotate w-full flex-col items-center justify-center overflow-hidden rounded-lg  bg-body md:shadow-xl'>
-            <Marquee
-                pauseOnHover
-                className='[--duration:20s] rotate-2 translate-y-8'
-            >
+            <Marquee pauseOnHover className='[--duration:30s] translate-y-8'>
                 {firstRow.map((tech) => (
                     <TechCard key={tech.name} {...tech} />
                 ))}
             </Marquee>
-            <Marquee
-                reverse
-                pauseOnHover
-                className='[--duration:20s] -rotate-2'
-            >
+            <Marquee pauseOnHover className='[--duration:40s]'>
                 {secondRow.map((tech) => (
                     <TechCard key={tech.name} {...tech} />
                 ))}

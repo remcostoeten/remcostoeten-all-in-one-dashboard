@@ -34,13 +34,17 @@ const config: Config = withMT({
             },
             width: {
                 sidebar: 'var(--sidebar-width)',
+                submenu: 'var(--submenu-width)',
                 icon: 'var(--icon-size)'
             },
+            maxWidth: {
+                submenu: 'var(--submenu-width)'
+            },
             maxHeight: {
-                "top-section": "53px",
+                'top-section': '53px'
             },
             height: {
-                "top-section": "53px",
+                'top-section': '53px',
                 icon: 'var(--icon-size)',
                 nav: 'var(--nav-height)',
                 'top-bar': 'var(--top-bar-height)'
@@ -122,9 +126,9 @@ const config: Config = withMT({
                 'icon-bg-size': 'var(--icon-bg-size)'
             },
             keyframes: {
-                "caret-blink": {
-                    "0%,70%,100%": { opacity: "1" },
-                    "20%,50%": { opacity: "0" },
+                'caret-blink': {
+                    '0%,70%,100%': { opacity: '1' },
+                    '20%,50%': { opacity: '0' }
                 },
                 marquee: {
                     from: { transform: 'translateX(0)' },
@@ -155,7 +159,7 @@ const config: Config = withMT({
                 },
                 'border-beam': {
                     '100%': {
-                        'offset-distance': '100%'
+                        'offset-msstance': '100%'
                     }
                 },
                 'logo-cloud': {
@@ -246,7 +250,7 @@ const config: Config = withMT({
             '32': '8rem'
         },
         animation: {
-            "caret-blink": "caret-blink 1.25s ease-out infinite",
+            'caret-blink': 'caret-blink 1.25s ease-out infinite',
             marquee: 'marquee var(--duration) linear infinite',
             'marquee-vertical':
                 'marquee-vertical var(--duration) linear infinite',

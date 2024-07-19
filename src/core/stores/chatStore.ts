@@ -1,13 +1,11 @@
 import { create } from 'zustand'
 
-type ChatState = {
-    chatTitle: string
-    setChatTitle: (title: string) => void
+type SearchState = {
+    isSearchOpen: boolean
+    toggleSearch: () => void
 }
 
-const useChatStore = create<ChatState>((set) => ({
-    chatTitle: '',
-    setChatTitle: (title: string) => set({ chatTitle: title })
+export const useChatSearchStore = create<SearchState>((set) => ({
+    isSearchOpen: false,
+    toggleSearch: () => set((state) => ({ isSearchOpen: !state.isSearchOpen }))
 }))
-
-export default useChatStore

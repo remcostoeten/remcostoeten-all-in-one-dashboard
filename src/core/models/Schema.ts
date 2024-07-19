@@ -29,11 +29,11 @@ export const taskSchema = sqliteTable('task', {
 export const favoriteMessagesSchema = sqliteTable('favorite_messages', {
     id: integer('id').primaryKey(),
     messageId: text('message_id').notNull(),
-    userId: text('user_id').notNull(),
-});
+    userId: text('user_id').notNull()
+})
 
 export const userPincodes = sqliteTable('user_pincodes', {
     id: integer('id').primaryKey(),
     userId: text('user_id').notNull().unique(),
-    pincode: text('pincode').notNull(),
-});
+    pincode: text('pincode').notNull()
+})

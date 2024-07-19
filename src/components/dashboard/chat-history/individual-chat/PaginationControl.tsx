@@ -147,7 +147,9 @@ export function PaginationControl({
                     setIsLoading(true)
 
                     void (async () => {
-                        await router.push(`${pathname}?page=1&pageSize=${value}`)
+                        await router.push(
+                            `${pathname}?page=1&pageSize=${value}`
+                        )
                         setIsLoading(false)
                     })()
                 }}

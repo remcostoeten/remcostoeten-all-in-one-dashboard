@@ -3,7 +3,12 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-export async function searchChatMessages(name: string, query: string, page = 1, pageSize = 50) {
+export async function searchChatMessages(
+    name: string,
+    query: string,
+    page = 1,
+    pageSize = 50
+) {
     const chatDirectory = path.join(process.cwd(), 'src/core/data/chats')
     const filePath = path.join(chatDirectory, `${name}.json`)
 
@@ -11,7 +16,7 @@ export async function searchChatMessages(name: string, query: string, page = 1, 
         const fileContent = await fs.readFile(filePath, 'utf-8')
         const fullData = JSON.parse(fileContent)
 
-        const matchingMessages = fullData.messages.filter(message =>
+        const matchingMessages = fullData.messages.filter((message) =>
             message.content.toLowerCase().includes(query.toLowerCase())
         )
 

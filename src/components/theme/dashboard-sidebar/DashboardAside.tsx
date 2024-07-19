@@ -33,15 +33,19 @@ const Aside = ({ className }) => {
         <>
             <motion.aside
                 variants={{
-                    open: { width: '240px' },
+                    open: { width: '168px' },
                     close: { width: '64px' }
                 }}
                 onMouseLeave={() => setIsExpanded(false)}
                 animate={containerControls}
-                initial='close'
+                initial='open'
                 className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
             >
-                <Flex direction='col' variant='space-y-m' items='center'>
+                <Flex
+                    direction='col'
+                    variant='space-y-m'
+                    {...(isExpanded && { items: 'start' })}
+                >
                     <TopSection />
                     <nav className='mb-4'>
                         {favouriteItems.map(
@@ -75,8 +79,12 @@ const Aside = ({ className }) => {
                 </Flex>
                 <Flex direction='col' className='mt-auto px-2' gap='2'>
                     <Seperator className='mb-5' />
-                    <Flex direction='col' variant='space-y-m' items='center' gap='2'>
-
+                    <Flex
+                        direction='col'
+                        variant='space-y-m'
+                        items='center'
+                        gap='2'
+                    >
                         <CreatePincode />
                         <NavSettings />
                         <SearchDialog />

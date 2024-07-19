@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "lib": ["dom", "dom.iterable", "esnext"],
+        "lib": ["es2015"],
         "module": "esnext",
         "moduleResolution": "bundler",
         "resolveJsonModule": true,

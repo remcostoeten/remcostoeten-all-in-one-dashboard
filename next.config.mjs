@@ -11,9 +11,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig = {
     images: {
-        domains: [
-          "api.microlink.io",
-        ],
+        domains: ['api.microlink.io', 'images.unsplash.com']
     },
     eslint: {
         dirs: ['.']

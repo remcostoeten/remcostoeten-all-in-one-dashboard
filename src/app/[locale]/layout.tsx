@@ -7,10 +7,8 @@ import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { Toaster } from 'sonner'
-import '../../styles/app.scss'
-import TopNav from '../../components/shared/theme/TopNav'
-import NavBar from '../../components/shared/theme/NavBar'
-import HeaderWrapper from '../../components/shared/theme/HeaderWrapper'
+import '@/styles/app.scss'
+import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
 
 const plexsans = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
@@ -34,8 +32,8 @@ export default function RootLayout(props: {
     const initialResources = []
 
     return (
-        <html lang={props.params.locale} className='dark overflow-x-hidden'>
-            <body className={`${plexsans.className} !overflow-x-hidden`}>
+        <html lang={props.params.locale} className='dark '>
+            <body className={`${plexsans.className} `}>
                 <Providers
                     locale={props.params.locale}
                     messages={messages}

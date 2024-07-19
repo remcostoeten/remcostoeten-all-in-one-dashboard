@@ -8,7 +8,10 @@ export async function GET(request: NextRequest) {
     const messageId = searchParams.get('messageId')
 
     if (!chatName || !messageId) {
-        return NextResponse.json({ error: 'Missing chatName or messageId' }, { status: 400 })
+        return NextResponse.json(
+            { error: 'Missing chatName or messageId' },
+            { status: 400 }
+        )
     }
 
     try {
@@ -17,9 +20,14 @@ export async function GET(request: NextRequest) {
         const fileContent = await fs.readFile(filePath, 'utf-8')
         const chatData = JSON.parse(fileContent)
 
-        const messageIndex = chatData.messages.findIndex((msg: any) => msg.id === messageId)
+        const messageIndex = chatData.messages.findIndex(
+            (msg: any) => msg.id === messageId
+        )
         if (messageIndex === -1) {
-            return NextResponse.json({ error: 'Message not found' }, { status: 404 })
+            return NextResponse.json(
+                { error: 'Message not found' },
+                { status: 404 }
+            )
         }
 
         const page = Math.floor(messageIndex / 50) + 1 // Assuming 50 messages per page
@@ -27,6 +35,9 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ page })
     } catch (error) {
         console.error('Error finding message page:', error)
-        return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+        return NextResponse.json(
+            { error: 'Internal server error' },
+            { status: 500 }
+        )
     }
 }
