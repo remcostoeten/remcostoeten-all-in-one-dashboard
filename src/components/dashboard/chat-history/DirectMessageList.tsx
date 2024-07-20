@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
@@ -9,7 +9,11 @@ import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
 import Link from 'next/link'
 import { getInitials } from '../../../core/utils/get-initials'
 import { usePathname } from 'next/navigation'
-
+import { Button } from '@/components/ui'
+import { Bookmark } from 'lucide-react'
+import { render } from 'react-dom'
+import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
+import { useSubMenuStore } from '../../../core/stores/SubMenuStore'
 const tailwindBackgrounds = [
     'bg-red-500',
     'bg-yellow-500',
@@ -54,6 +58,7 @@ export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
     const [chatNames, setChatNames] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
 
     useEffect(() => {
         fetch('/api/chat-names')
@@ -70,6 +75,19 @@ export default function DirectMessageList() {
 
     return (
         <SubMenuInnerContent>
+            <Link
+                href='#'
+                className='w-full p-0 max-w-[399px] h-[28px] text-text text-xs hover:bg-[rgba(165,189,255,0.15)]font-normal rounded-[5.25px] py-0 justify-start'
+            >
+                {' '}
+                <div className='flex items-center justify-between pl-2 pr-2 pb-2 w-full hover:bg-bg-ghost-hover cursor-pointer'>
+                    <Bookmark className='w-3.5 h-3.5 mr-[7px] flex-shrink-0' />
+                    <span className='flex-grow truncate text-left'>
+                        Saved
+                    </span>{' '}
+                </div>
+            </Link>
+            <SubMenuSearch />
             <div
                 onClick={() => setIsOpen(!isOpen)}
                 className='flex items-center justify-between pl-2 pr-2 pb-2 w-full hover:bg-bg-ghost-hover cursor-pointer'

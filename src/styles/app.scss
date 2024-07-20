@@ -88,13 +88,13 @@ body {
 }
 .highlight {
     animation: highlight 3s ease-out;
-  }
+}
 
-  @keyframes highlight {
+@keyframes highlight {
     0% {
-      background-color: yellow;
+        background-color: yellow;
     }
     100% {
-      background-color: transparent;
+        background-color: transparent;
     }
-  }
+}

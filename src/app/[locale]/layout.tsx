@@ -32,7 +32,7 @@ export default function RootLayout(props: {
     const initialResources = []
 
     return (
-        <html lang={props.params.locale} className='dark '>
+        <html lang={props.params.locale} className='bg-dash-body dark '>
             <body className={`${plexsans.className} `}>
                 <Providers
                     locale={props.params.locale}

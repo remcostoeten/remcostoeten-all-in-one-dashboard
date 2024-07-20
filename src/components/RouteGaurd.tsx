@@ -20,8 +20,6 @@ export default function RouteGuard({
     if (isRouteMatch) {
         return <>{children}</>
     }
-
-    return null
 }
 
 /**

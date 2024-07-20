@@ -16,7 +16,7 @@ export default function MainWrapper({ children, chatName }: MainWrapperProps) {
 
     return (
         <section
-            className='flex flex-col ml-auto transition-[width]'
+            className='flex  flex-col ml-auto transition-[width]'
             style={{
                 width: isSubMenuVisible
                     ? 'calc(100vw - var(--submenu-width) - var(--sidebar-width)'

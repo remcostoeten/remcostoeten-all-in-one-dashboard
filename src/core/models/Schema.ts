@@ -28,8 +28,11 @@ export const taskSchema = sqliteTable('task', {
 
 export const favoriteMessagesSchema = sqliteTable('favorite_messages', {
     id: integer('id').primaryKey(),
-    messageId: text('message_id').notNull(),
-    userId: text('user_id').notNull()
+    messageId: text('message_id').notNull().unique(),
+    userId: text('user_id').notNull(),
+    chatBetween: text('chat_between').notNull(),
+    messageContent: text('message_content'),
+    messageTimestamp: text('message_timestamp')
 })
 
 export const userPincodes = sqliteTable('user_pincodes', {

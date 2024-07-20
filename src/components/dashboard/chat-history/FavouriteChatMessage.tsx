@@ -1,6 +1,6 @@
 'use client'
 
-import { HeartIcon, ShareIcon, TrashIcon } from '@heroicons/react/24/outline'
+import { HeartIcon, TrashIcon } from '@heroicons/react/24/outline'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,21 +10,34 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { addFavorite } from '../../../core/@server/actions/favoriteMessage'
+import { timestamp } from 'drizzle-orm/mysql-core'
 
 export function FavouriteChatMessage({
     messageId,
     userId,
     chatBetween,
-    children
+    children,
+    timestamp
 }) {
     const [isFavorited, setIsFavorited] = useState(false)
+
     const handleFavorite = async () => {
         try {
-            await addFavorite(messageId, chatBetween, userId)
-            setIsFavorited(!isFavorited)
-            console.log('Message favorited successfully')
+            const result = await addFavorite(
+                messageId,
+                userId,
+                chatBetween,
+                children.props.children,
+                timestamp
+            )
+            if (result.success) {
+                setIsFavorited(!isFavorited)
+                console.log('Message favorited successfully')
+            } else {
+                console.error('Failed to favorite message:', result.message)
+            }
         } catch (error) {
             console.error('Error favoriting message:', error)
         }
@@ -43,10 +56,6 @@ export function FavouriteChatMessage({
                         {isFavorited
                             ? 'Unfavorite message'
                             : 'Favorite message'}
-                    </DropdownMenuItem>
-                    <DropdownMenuItem disabled={false}>
-                        <ShareIcon className='mr-2 h-4 w-4' />
-                        Share message...
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />

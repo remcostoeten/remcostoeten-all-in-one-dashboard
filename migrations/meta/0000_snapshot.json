@@ -1,9 +1,66 @@
 {
     "version": "6",
     "dialect": "sqlite",
-    "id": "d09763f2-5192-4e17-8b4a-89887aa6f0a7",
+    "id": "5bc252f9-5eb5-461e-a391-c1d20c0f55b0",
     "prevId": "00000000-0000-0000-0000-000000000000",
     "tables": {
+        "favorite_messages": {
+            "name": "favorite_messages",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "integer",
+                    "primaryKey": true,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "message_id": {
+                    "name": "message_id",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "user_id": {
+                    "name": "user_id",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "chat_between": {
+                    "name": "chat_between",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true,
+                    "autoincrement": false
+                },
+                "message_content": {
+                    "name": "message_content",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "autoincrement": false
+                },
+                "message_timestamp": {
+                    "name": "message_timestamp",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": false,
+                    "autoincrement": false
+                }
+            },
+            "indexes": {
+                "favorite_messages_message_id_unique": {
+                    "name": "favorite_messages_message_id_unique",
+                    "columns": ["message_id"],
+                    "isUnique": true
+                }
+            },
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
         "guestbook": {
             "name": "guestbook",
             "columns": {
@@ -97,23 +154,45 @@
                     "notNull": false,
                     "autoincrement": false,
                     "default": "(strftime('%s', 'now'))"
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "user_pincodes": {
+            "name": "user_pincodes",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "integer",
+                    "primaryKey": true,
+                    "notNull": true,
+                    "autoincrement": false
                 },
-                "body": {
-                    "name": "body",
+                "user_id": {
+                    "name": "user_id",
                     "type": "text",
                     "primaryKey": false,
                     "notNull": true,
                     "autoincrement": false
                 },
-                "username": {
-                    "name": "username",
+                "pincode": {
+                    "name": "pincode",
                     "type": "text",
                     "primaryKey": false,
                     "notNull": true,
                     "autoincrement": false
                 }
             },
-            "indexes": {},
+            "indexes": {
+                "user_pincodes_user_id_unique": {
+                    "name": "user_pincodes_user_id_unique",
+                    "columns": ["user_id"],
+                    "isUnique": true
+                }
+            },
             "foreignKeys": {},
             "compositePrimaryKeys": {},
             "uniqueConstraints": {}
@@ -124,5 +203,8 @@
         "schemas": {},
         "tables": {},
         "columns": {}
+    },
+    "internal": {
+        "indexes": {}
     }
 }

@@ -4,7 +4,7 @@ import SubMenuContent from './SubMenuContent'
 import SubMenuSearch from './SubMenuSearch'
 import { useSubMenuStore } from '../../../../core/stores/SubMenuStore'
 
-interface SubMenuProps {
+export interface SubMenuProps {
     title: string
     children: React.ReactNode
     showSearch?: boolean
@@ -22,7 +22,6 @@ const SubMenu: React.FC<SubMenuProps> = ({
     return (
         <aside className='flex flex-col w-submenu max-w-submenu bg-sidebar text-text-primary border-r border-border'>
             <SubMenuHeader title={title} />
-            {showSearch && <SubMenuSearch />}
             <SubMenuContent>{children}</SubMenuContent>
         </aside>
     )

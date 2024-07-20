@@ -1,54 +1,12 @@
 {
-    "version": "6",
+    "version": "7",
     "dialect": "sqlite",
     "entries": [
         {
             "idx": 0,
             "version": "6",
-            "when": 1717308475629,
-            "tag": "0000_regular_doctor_strange",
-            "breakpoints": true
-        },
-        {
-            "idx": 1,
-            "version": "6",
-            "when": 1717308672478,
-            "tag": "0001_brown_corsair",
-            "breakpoints": true
-        },
-        {
-            "idx": 2,
-            "version": "6",
-            "when": 1721341285049,
-            "tag": "0002_famous_proemial_gods",
-            "breakpoints": true
-        },
-        {
-            "idx": 3,
-            "version": "6",
-            "when": 1721347873892,
-            "tag": "0003_magical_thundra",
-            "breakpoints": true
-        },
-        {
-            "idx": 4,
-            "version": "6",
-            "when": 1721347933979,
-            "tag": "0004_polite_toad",
-            "breakpoints": true
-        },
-        {
-            "idx": 5,
-            "version": "6",
-            "when": 1721347988195,
-            "tag": "0005_huge_kulan_gath",
-            "breakpoints": true
-        },
-        {
-            "idx": 6,
-            "version": "6",
-            "when": 1721349593593,
-            "tag": "0006_nice_spyke",
+            "when": 1721433305812,
+            "tag": "0000_tiresome_morgan_stark",
             "breakpoints": true
         }
     ]

@@ -6,9 +6,26 @@ import { favoriteMessagesSchema } from '../../models/Schema'
 export async function addFavorite(
     messageId: string,
     userId: string,
-    chatBetween: string
+    chatBetween: string,
+    messageContent: string,
+    messageTimestamp: string
 ) {
-    await db
-        .insert(favoriteMessagesSchema)
-        .values({ messageId, chatBetween, userId })
+    try {
+        const result = await db
+            .insert(favoriteMessagesSchema)
+            .values({
+                messageId,
+                userId,
+                chatBetween,
+                messageContent,
+                messageTimestamp
+            })
+            .onConflictDoNothing()
+
+        console.log('Favorite added successfully:', result)
+        return { success: true, message: 'Favorite added successfully' }
+    } catch (error) {
+        console.error('Error adding favorite:', error)
+        return { success: false, message: 'Failed to add favorite' }
+    }
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import { getInitials } from '@/core/utils/get-initials'
 import { formatDate } from '@/core/utils/format-date'
@@ -13,13 +13,22 @@ export type Message = {
     sender: string
     content: string
     timestamp: string
-    type: string
+    type: 'text' | 'file' | 'image'
 }
 
 type ChatMessagesProps = {
     messages: Message[]
     currentUserId: string
     chatName: string
+}
+
+const formatDateLabel = (timestamp: string) => {
+    return new Date(timestamp).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    })
 }
 
 export default function ChatMessages({
@@ -31,9 +40,6 @@ export default function ChatMessages({
     const [lightboxImageUrl, setLightboxImageUrl] = useState('')
     const messageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
     const chatContainerRef = useRef<HTMLDivElement>(null)
-
-
-
 
     const openLightbox = (url: string) => {
         setLightboxImageUrl(url)
@@ -48,7 +54,6 @@ export default function ChatMessages({
         const isCurrentUser = message.sender === currentUserId
         return (
             <div
-                key={message.id}
                 ref={(el) => {
                     if (el) messageRefs.current[message.id] = el
                 }}
@@ -73,54 +78,88 @@ export default function ChatMessages({
                                 {formatDate(message.timestamp)}
                             </span>
                         </div>
-                        {message.type === 'text' ? (
-                            <FavouriteChatMessage
-                                chatBetween={message.sender}
-                                messageId={message.id}
-                                userId={currentUserId}
-                            >
-                                <p
-                                    className={`text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
-                                >
-                                    {message.content}
-                                </p>
-                            </FavouriteChatMessage>
-                        ) : message.type === 'file' ? (
-                            <LinkPreview
-                                url={message.content}
-                                className='font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500'
-                            >
-                                {message.content}
-                            </LinkPreview>
-                        ) : message.type === 'image' ? (
-                            <div className='mt-1'>
-                                <button
-                                    onClick={() =>
-                                        openLightbox(`/${message.content}`)
-                                    }
-                                    className='block w-80 rounded-md overflow-hidden transition-all hover:opacity-80'
-                                >
-                                    <Image
-                                        src={`/${message.content}`}
-                                        alt='Shared image'
-                                        width={280}
-                                        height={160}
-                                        layout='responsive'
-                                        className='rounded-md'
-                                    />
-                                </button>
-                            </div>
-                        ) : null}
+                        <FavouriteChatMessage
+                            messageId={message.id}
+                            userId={message.sender}
+                            chatBetween={message.sender}
+                            timestamp={message.timestamp}
+                        >
+                            {renderMessageContent(message, isCurrentUser)}
+                        </FavouriteChatMessage>
                     </div>
                 </div>
             </div>
         )
     }
 
+    const renderMessageContent = (message: Message, isCurrentUser: boolean) => {
+        switch (message.type) {
+            case 'text':
+                return (
+                    <p
+                        className={`text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
+                    >
+                        {message.content}
+                    </p>
+                )
+            case 'file':
+                return (
+                    <LinkPreview
+                        url={message.content}
+                        className='font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500'
+                    >
+                        {message.content}
+                    </LinkPreview>
+                )
+            case 'image':
+                return (
+                    <div className='mt-1'>
+                        <button
+                            onClick={() => openLightbox(`/${message.content}`)}
+                            className='block w-80 rounded-md overflow-hidden transition-all hover:opacity-80'
+                        >
+                            <Image
+                                src={`/${message.content}`}
+                                alt='Shared image'
+                                width={280}
+                                height={160}
+                                layout='responsive'
+                                className='rounded-md'
+                            />
+                        </button>
+                    </div>
+                )
+            default:
+                return null
+        }
+    }
+
+    const renderMessages = () => {
+        let currentDate = ''
+        return messages.map((message, index) => {
+            const messageDate = formatDateLabel(message.timestamp)
+            const showDateLabel = messageDate !== currentDate
+            currentDate = messageDate
+
+            return (
+                <React.Fragment key={message.id}>
+                    {showDateLabel && (
+                        <div className='text-center my-4'>
+                            <span className='bg-muted px-2 py-1 rounded-full text-sm'>
+                                {messageDate}
+                            </span>
+                        </div>
+                    )}
+                    {renderMessage(message)}
+                </React.Fragment>
+            )
+        })
+    }
+
     return (
         <>
             <div ref={chatContainerRef} className='flex-1'>
-                {messages.map((message) => renderMessage(message))}
+                {renderMessages()}
             </div>
 
             {isLightboxOpen && (

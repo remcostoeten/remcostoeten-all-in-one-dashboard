@@ -1,1 +1,0 @@
-ALTER TABLE `favorite_messages` DROP COLUMN `znew`;

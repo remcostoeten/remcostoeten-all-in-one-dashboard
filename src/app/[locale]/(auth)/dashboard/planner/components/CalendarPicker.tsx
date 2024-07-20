@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { DateRange } from 'react-day-picker'
 import { endOfDay, endOfWeek, startOfWeek } from 'date-fns'
-import AddAppointmentDialog from './AddAppointmentDialog'
 import { DateRangePicker } from '@/components/ui'
 import { useData } from '@/core/contexts/CalendarDataContext'
 import { useCalendar } from '@/core/contexts/PlannerContext'
-import { cn } from '@/core/utils/cn'
 
 interface CalendarToolbarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
