@@ -16,7 +16,11 @@ export const routeConfig: RouteConfig[] = [
         subMenu: 'ChatSubMenu'
     },
     {
-        path: '/dashboard/planner'
+        path: '/dashboard/color-tool',
+        subMenu: 'ColorToolSubMenu',
+    },
+    {
+        path: '/dashboard/planner',
         // subMenu: 'DriveSubMenu'
     },
     {
