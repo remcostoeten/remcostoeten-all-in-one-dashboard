@@ -36,7 +36,6 @@ const Aside = ({ className }) => {
                     open: { width: '168px' },
                     close: { width: '64px' }
                 }}
-                onMouseLeave={() => setIsExpanded(false)}
                 animate={containerControls}
                 initial='open'
                 className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
@@ -47,12 +46,13 @@ const Aside = ({ className }) => {
                     {...(isExpanded && { items: 'start' })}
                 >
                     <TopSection />
-                    <nav className='mb-4'>
+
+                    <Flex as='nav' gap='2' variant='space-y-m' style={{ marginBottom: '1rem' }}>
                         {favouriteItems.map(
                             ({ name, svg, hasNotification }) => (
                                 <MenuItem
                                     key={name}
-                                    name={name}
+                                    name={name.replace('-', ' ').charAt(0).toUpperCase() + name.replace('-', ' ').slice(1)}
                                     icon={svg}
                                     link={name}
                                     isExpanded={isExpanded}
@@ -60,7 +60,7 @@ const Aside = ({ className }) => {
                                 />
                             )
                         )}
-                    </nav>
+                    </Flex>
                     <Seperator />
                     <nav className='mt-4 space-y-2'>
                         {itemsWithoutFavourites?.map(
@@ -90,7 +90,7 @@ const Aside = ({ className }) => {
                         <SearchDialog />
                     </Flex>
                 </Flex>
-            </motion.aside>
+            </motion.aside >
         </>
     )
 }

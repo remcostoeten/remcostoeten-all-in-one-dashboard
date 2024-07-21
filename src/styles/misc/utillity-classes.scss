@@ -42,7 +42,7 @@
 }
 
 .w-minus-sidebar {
-    width: calc(100% - var(--sidebar-width));
+    width: calc(100vw - var(--sidebar-width));
 }
 
 .w-minus-submenu {
@@ -51,4 +51,14 @@
 
 .w-minus-menus {
     width: calc(100% - var(--submenu-width) - var(--sidebar-width));
+}
+
+@media (max-width: 768px) {
+    .mobile-max-width {
+      max-width: 50vw !important;
+    }
+  }
+
+.mobil-only {
+
 }

@@ -37,7 +37,7 @@ function DashHeader() {
     }, [pathname])
 
     return (
-        <header className='flex flex-col  space-y-4 p-4 bg-section text-text-white max-h-top-section justify-center'>
+        <header className='flex flex-col  space-y-4 p-4 bg-section text-text-white max-h-top-section justify-center h-[46px]'>
             <div className='flex items-center justify-between'>
                 <Flex
                     gap={1}

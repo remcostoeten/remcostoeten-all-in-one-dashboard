@@ -16,6 +16,8 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
     const pathname = usePathname()
     const isActiveSlug = pathname.includes(link)
 
+
+
     const menuItemContent = (
         <>
             <span className={`${notificationClass} w-6 h-6`}>
@@ -43,7 +45,7 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
                 <TooltipTrigger asChild>
                     <Link
                         href={`/dashboard/${link}`}
-                        className={`rounded-lg flex items-center px-3 py-2 cursor-pointer menu-item ${isActiveSlug ? 'bg-icon-active-background' : ''}`}
+                        className={`rounded-lg flex  px-3 py-2 cursor-pointer menu-item  ${isExpanded ? 'mr-auto' : 'mx-auto'} ${isActiveSlug ? 'bg-icon-active-background' : ''}`}
                     >
                         {menuItemContent}
                     </Link>

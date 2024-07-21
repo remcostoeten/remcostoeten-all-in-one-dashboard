@@ -8,7 +8,7 @@ interface LocalIconContainerProps {
 }
 
 const sharedClasses =
-    'flex gap-1.5 flex items-center justify-center px-3 py-1.5 mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover hover:bg-ghost-hover border-transition'
+    'flex gap-1.5 flex items-center justify-center px-3 py-1.5 mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover  border-transition'
 
 const LocalIconContainer: FunctionComponent<LocalIconContainerProps> = ({
     children,
@@ -16,12 +16,23 @@ const LocalIconContainer: FunctionComponent<LocalIconContainerProps> = ({
     href,
     ...props
 }) => {
+    if (Component === 'button') {
+        return (
+            <button
+                {...props}
+                className='
+     !m-0 gap-1.5 flex items-center justify-center mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover  border-transition !px-4 py-2 !hover:bg-red-400 hover:scale-105 transition-all duration-300'                    >
+                {children}
+            </button >
+        )
+    }
+
     if (Component === 'a') {
         return (
             <a
                 href={href!}
                 {...props}
-                className={`${sharedClasses} border-ghost hover:border-ghost-hover hover:bg-ghost-hover`}
+                className={`${sharedClasses} border-ghost hover:border-ghost-hover hover:bg-red-400`}
             >
                 {children}
             </a>
@@ -65,6 +76,8 @@ const GhostLabel: FunctionComponent<LocalIconShellProps> = ({
         <LocalIconContainer as={as} href={href} {...props}>
             {Icon && <Icon className='h-icon w-icon' />}
             <LocalIconLabel label={label} />
+
+
         </LocalIconContainer>
     )
 }

@@ -18,15 +18,18 @@ import {
     DrawerTitle,
     DrawerTrigger
 } from '@/components/ui/drawer'
-import { useChatSearchStore } from '../../../../core/stores/chatStore'
-import { set } from 'date-fns'
+import { useChatSearchStore } from '@/core/stores/chatStore'
+import GhostLabel from '../../../theme/shells/GhostLabel'
+import IconShell from '../../../theme/shells/IconShell'
+import { Flex } from '../../../shared/atoms/Flex'
 
 type MainWrapperProps = {
-    children: ReactNode
+    children?: ReactNode
     chatName?: string
+    onSearch?: (results: any[]) => void
 }
 
-export default function ChatZoeken({ children, chatName }: MainWrapperProps) {
+export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps, 'onSearch'>) {
     const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
@@ -45,9 +48,7 @@ export default function ChatZoeken({ children, chatName }: MainWrapperProps) {
 
         setIsSearching(true)
         try {
-            console.log('Searching for:', searchQuery, 'in chat:', chatName)
             const results = await searchChatMessages(chatName, searchQuery)
-            console.log('Search results:', results)
             setSearchResults(results.messages)
         } catch (error) {
             console.error('Error searching messages:', error)
@@ -123,11 +124,11 @@ export default function ChatZoeken({ children, chatName }: MainWrapperProps) {
     }, [scrollToRef.current])
 
     useEffect(() => {
-        const handleKeyDown = (event: React.KeyboardEvent) => {
+        const handleKeyDown = (event: KeyboardEvent) => {
             if (
                 (event.key === 'k' && event.ctrlKey) ||
                 (event.key === 's' &&
-                    document.activeElement.tagName !== 'INPUT')
+                    (document.activeElement as HTMLElement).tagName !== 'INPUT')
             ) {
                 event.preventDefault()
                 setIsDrawerOpen(true)
@@ -156,28 +157,25 @@ export default function ChatZoeken({ children, chatName }: MainWrapperProps) {
             </section>
 
             <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-                <DrawerTrigger asChild>
-                    <Button
-                        variant='outline'
-                        className='flex items-center gap-2'
-                        onClick={() => setIsDrawerOpen(true)}
-                    >
-                        <SearchIcon
-                            className='w-5 h-5'
-                            width={20}
-                            height={20}
-                        />
-                        <span className='hidden sm:inline'>
-                            Advanced Search
-                        </span>
-                        <kbd className='ml-2 text-xs border rounded px-1'>
-                            S
-                        </kbd>
-                        <kbd className='ml-1 text-xs border rounded px-1'>
-                            Ctrl+K
-                        </kbd>
-                    </Button>
-                </DrawerTrigger>
+                <Flex gap='2' items='center' style={{ marginRight: '1rem' }}>
+                    <DrawerTrigger asChild>
+                        <Button
+                            variant='ghost'
+                            className='flex items-center gap-2'
+                            onClick={() => setIsDrawerOpen(true)}
+                        >
+                            <SearchIcon
+                                className='w-5 h-5'
+                                width={20}
+                                height={20}
+                            />
+                        </Button>
+                    </DrawerTrigger>
+                    <Flex gap='2' style={{ marginRight: '1rem' }}>
+                        <kbd className="kbd text-xs h-fit">s</kbd>
+                        <kbd className="kbd min-w-full text-xs h-fit">ctrl + k</kbd>
+                    </Flex>
+                </Flex>
 
                 <DrawerContent className='max-w-[65vw] backdrop-blur-xl !backdrop-brightness-100'>
                     <DrawerHeader>
@@ -236,7 +234,7 @@ export default function ChatZoeken({ children, chatName }: MainWrapperProps) {
                                             {result.sender}
                                         </p>
                                         <p className='text-xs text-muted-foreground'>
-                                            {result.content} &middot;{' '}
+                                            {result.content} ·{' '}
                                             {result.timestamp}
                                         </p>
                                         <Button

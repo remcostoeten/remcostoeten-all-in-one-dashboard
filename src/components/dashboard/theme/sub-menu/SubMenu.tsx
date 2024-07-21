@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { type MouseEventHandler } from 'react'
 import SubMenuHeader from './SubMenuHeader'
 import SubMenuContent from './SubMenuContent'
 import SubMenuSearch from './SubMenuSearch'
@@ -19,8 +19,16 @@ const SubMenu: React.FC<SubMenuProps> = ({
 
     if (!isSubMenuVisible) return null
 
+    const dragMenu = () => {
+        useSubMenuStore.getState().toggleSubMenu()
+    }
+
     return (
-        <aside className='flex flex-col w-submenu max-w-submenu bg-sidebar text-text-primary border-r border-border'>
+        <aside
+            onDragStart={dragMenu}
+            onDragEnd={dragMenu}
+            className='flex flex-col sm:w-submenu sm:max-w-submenu bg-sidebar text-text-primary border-r border-border sm:flex w-minus-sidebar -[64px]'
+        >
             <SubMenuHeader title={title} />
             <SubMenuContent>{children}</SubMenuContent>
         </aside>

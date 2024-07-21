@@ -36,6 +36,7 @@ interface FlexProps<T extends React.ElementType = 'div'>
     'aria-label'?: string
     'aria-labelledby'?: string
     'data-testid'?: string
+    margin?: string
 }
 
 const spaceToGap: Record<SpaceSize, string> = {
@@ -72,6 +73,7 @@ export const Flex = <T extends React.ElementType = 'div'>({
     variant = 'default',
     className,
     children,
+    margin,
     role,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,

@@ -21,7 +21,9 @@ const config: Config = withMT({
             center: true,
             padding: '2rem',
             screens: {
-                '2xl': '1400px'
+                '2xl': '1400px',
+                'mobile': { 'max': '639px' },
+
             }
         },
         extend: {
@@ -32,6 +34,9 @@ const config: Config = withMT({
             padding: {
                 nav: 'var(--nav-height)',
                 outskirts: '1.25rem'
+            },
+            dropShadow: {
+                popover: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
             },
             width: {
                 sidebar: 'var(--sidebar-width)',
