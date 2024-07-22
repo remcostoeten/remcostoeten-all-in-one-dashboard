@@ -1,3 +1,10 @@
+CREATE TABLE `chats` (
+	`name` text PRIMARY KEY NOT NULL,
+	`user_id` text NOT NULL,
+	`user_name` text NOT NULL,
+	`last_active` text NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE `favorite_messages` (
 	`id` integer PRIMARY KEY NOT NULL,
 	`message_id` text NOT NULL,
@@ -13,6 +20,15 @@ CREATE TABLE `guestbook` (
 	`body` text NOT NULL,
 	`created_at` integer DEFAULT (strftime('%s', 'now')),
 	`updated_at` integer DEFAULT (strftime('%s', 'now'))
+);
+--> statement-breakpoint
+CREATE TABLE `messages` (
+	`id` text PRIMARY KEY NOT NULL,
+	`chat_name` text NOT NULL,
+	`sender` text NOT NULL,
+	`content` text NOT NULL,
+	`timestamp` text NOT NULL,
+	`type` text NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `task` (

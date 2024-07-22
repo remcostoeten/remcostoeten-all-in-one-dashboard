@@ -1,38 +1,36 @@
 'use server'
 
-import fs from 'fs/promises'
-
-import path from 'path'
+import { db } from '@/core/libs/DB';
+import { messages, chats } from '@/core/models/Schema';
+import { eq, and, gte, lte, sql } from 'drizzle-orm';
 
 export async function getChatData(name: string, page = 1, pageSize = 50) {
-    const chatDirectory = path.join(process.cwd(), 'src/core/data/chats')
-    const filePath = path.join(chatDirectory, `${name}.json`)
     try {
-        console.log(`Attempting to read file: ${filePath}`)
-        console.log(`Page: ${page}, PageSize: ${pageSize}`)
+        const startIndex = (page - 1) * pageSize;
 
-        const fileContent = await fs.readFile(filePath, 'utf-8')
-        const fullData = JSON.parse(fileContent)
-        const startIndex = (page - 1) * pageSize
-        const endIndex = startIndex + pageSize
+        const chatData = await db.select().from(chats).where(eq(chats.name, name)).limit(1);
 
-        console.log(`Start Index: ${startIndex}, End Index: ${endIndex}`)
-
-        if (startIndex >= fullData.messages.length) {
-            console.log('Page out of bounds')
-            return null
+        if (chatData.length === 0) {
+            return null;
         }
 
-        const paginatedMessages = fullData.messages.slice(startIndex, endIndex)
+        const totalMessages = await db.select({ count: sql`count(*)` }).from(messages).where(eq(messages.chatName, name));
+
+        const messagesData = await db.select().from(messages)
+            .where(eq(messages.chatName, name))
+            .limit(pageSize)
+            .offset(startIndex)
+            .orderBy(messages.timestamp);
+
         return {
-            ...fullData,
-            messages: paginatedMessages,
-            totalMessages: fullData.messages.length,
+            ...chatData[0],
+            messages: messagesData,
+            totalMessages: totalMessages[0].count,
             currentPage: page,
             pageSize: pageSize
-        }
+        };
     } catch (error) {
-        console.error(`Error reading chat file for ${name}:`, error)
-        return null
+        console.error(`Error fetching chat data for ${name}:`, error);
+        return null;
     }
 }

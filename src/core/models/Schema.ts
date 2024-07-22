@@ -40,3 +40,19 @@ export const userPincodes = sqliteTable('user_pincodes', {
     userId: text('user_id').notNull().unique(),
     pincode: text('pincode').notNull()
 })
+
+export const messages = sqliteTable('messages', {
+    id: text('id').primaryKey(),
+    chatName: text('chat_name').notNull(),
+    sender: text('sender').notNull(),
+    content: text('content').notNull(),
+    timestamp: text('timestamp').notNull(),
+    type: text('type').notNull(),
+});
+
+export const chats = sqliteTable('chats', {
+    name: text('name').primaryKey(),
+    userId: text('user_id').notNull(),
+    userName: text('user_name').notNull(),
+    lastActive: text('last_active').notNull(),
+});

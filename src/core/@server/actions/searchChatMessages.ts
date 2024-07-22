@@ -1,7 +1,8 @@
 'use server'
 
-import fs from 'fs/promises'
-import path from 'path'
+import { db } from '@/core/libs/DB';
+import { messages } from '@/core/models/Schema';
+import { eq, and, sql } from 'drizzle-orm';
 
 export async function searchChatMessages(
     name: string,
@@ -9,31 +10,45 @@ export async function searchChatMessages(
     page = 1,
     pageSize = 50
 ) {
-    const chatDirectory = path.join(process.cwd(), 'src/core/data/chats')
-    const filePath = path.join(chatDirectory, `${name}.json`)
-
     try {
-        const fileContent = await fs.readFile(filePath, 'utf-8')
-        const fullData = JSON.parse(fileContent)
+        const startIndex = (page - 1) * pageSize;
 
-        const matchingMessages = fullData.messages.filter((message) =>
-            message.content.toLowerCase().includes(query.toLowerCase())
-        )
+        // Count total matching messages
+        const totalCountResult = await db
+            .select({ count: sql`count(*)` })
+            .from(messages)
+            .where(
+                and(
+                    eq(messages.chatName, name),
+                    sql`${messages.content} LIKE '%' || ${query} || '%'`
+                )
+            );
 
-        const startIndex = (page - 1) * pageSize
-        const endIndex = startIndex + pageSize
+        const totalMessages = Number(totalCountResult[0].count);
 
-        const paginatedMessages = matchingMessages.slice(startIndex, endIndex)
+        // Fetch paginated matching messages
+        const matchingMessages = await db
+            .select()
+            .from(messages)
+            .where(
+                and(
+                    eq(messages.chatName, name),
+                    sql`${messages.content} LIKE '%' || ${query} || '%'`
+                )
+            )
+            .limit(pageSize)
+            .offset(startIndex)
+            .orderBy(messages.timestamp);
 
         return {
-            messages: paginatedMessages,
-            totalMessages: matchingMessages.length,
+            messages: matchingMessages,
+            totalMessages: totalMessages,
             currentPage: page,
             pageSize: pageSize,
-            totalPages: Math.ceil(matchingMessages.length / pageSize)
+            totalPages: Math.ceil(totalMessages / pageSize)
         }
     } catch (error) {
-        console.error(`Error searching chat file for ${name}:`, error)
+        console.error(`Error searching chat messages for ${name}:`, error);
         return {
             messages: [],
             totalMessages: 0,
