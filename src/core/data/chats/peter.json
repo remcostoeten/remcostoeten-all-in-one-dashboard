@@ -1,0 +1,35 @@
+{
+    "userId": "alice456",
+    "userName": "Alice Smith",
+    "lastActive": "2024-07-18T15:45:00Z",
+    "messages": [
+        {
+            "id": "msg1",
+            "sender": "alice456",
+            "content": "Hey team, any updates on the project?",
+            "timestamp": "2024-07-18T09:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg2",
+            "sender": "bob789",
+            "content": "I've finished the design mockups. Sharing them now.",
+            "timestamp": "2024-07-18T09:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg3",
+            "sender": "bob789",
+            "content": "https://s29.q4cdn.com/175625835/files/doc_downloads/test.pdf",
+            "timestamp": "2024-07-18T09:06:00Z",
+            "type": "file"
+        },
+        {
+            "id": "msg4",
+            "sender": "alice456",
+            "content": "Thanks, Bob! I'll review them shortly.",
+            "timestamp": "2024-07-18T09:10:00Z",
+            "type": "text"
+        }
+    ]
+}
