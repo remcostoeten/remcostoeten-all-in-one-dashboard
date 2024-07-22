@@ -12,7 +12,11 @@ type ChatPageClientProps = {
     scrollTo?: string
 }
 
-export default function ChatPageClient({ initialChatData, chatName, scrollTo }: ChatPageClientProps) {
+export default function ChatPageClient({
+    initialChatData,
+    chatName,
+    scrollTo
+}: ChatPageClientProps) {
     const [chatData, setChatData] = useState(initialChatData)
 
     useEffect(() => {
@@ -36,7 +40,9 @@ export default function ChatPageClient({ initialChatData, chatName, scrollTo }: 
                 />
                 <ChatZoeken
                     chatName={chatName}
-                    onSearch={(results) => setChatData((prev) => ({ ...prev, messages: results }))}
+                    onSearch={(results) =>
+                        setChatData((prev) => ({ ...prev, messages: results }))
+                    }
                 />
                 <ChatMessages
                     messages={chatData.messages}

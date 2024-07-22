@@ -47,12 +47,23 @@ const Aside = ({ className }) => {
                 >
                     <TopSection />
 
-                    <Flex as='nav' gap='2' variant='space-y-m' style={{ marginBottom: '1rem' }}>
+                    <Flex
+                        as='nav'
+                        gap='2'
+                        variant='space-y-m'
+                        style={{ marginBottom: '1rem' }}
+                    >
                         {favouriteItems.map(
                             ({ name, svg, hasNotification }) => (
                                 <MenuItem
                                     key={name}
-                                    name={name.replace('-', ' ').charAt(0).toUpperCase() + name.replace('-', ' ').slice(1)}
+                                    name={
+                                        name
+                                            .replace('-', ' ')
+                                            .charAt(0)
+                                            .toUpperCase() +
+                                        name.replace('-', ' ').slice(1)
+                                    }
                                     icon={svg}
                                     link={name}
                                     isExpanded={isExpanded}
@@ -90,7 +101,7 @@ const Aside = ({ className }) => {
                         <SearchDialog />
                     </Flex>
                 </Flex>
-            </motion.aside >
+            </motion.aside>
         </>
     )
 }

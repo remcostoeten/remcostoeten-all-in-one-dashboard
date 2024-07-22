@@ -5,23 +5,23 @@ export const headerDropdownItems: {
     href: string
     description: string
 }[] = [
-        {
-            title: 'Readme',
-            href: '/readme',
-            description: 'The repository read-me which also contains the roadmap.'
-        },
-        {
-            title: 'Guestbook ',
-            href: '/guestbook',
-            description: 'Just a page to test crud operations.'
-        },
-        {
-            title: 'WhatsApp Exports',
-            href: '/dashboard/chat',
-            description:
-                'Exported chats from WhatsApp fetched from own API, because why not.'
-        }
-    ]
+    {
+        title: 'Readme',
+        href: '/readme',
+        description: 'The repository read-me which also contains the roadmap.'
+    },
+    {
+        title: 'Guestbook ',
+        href: '/guestbook',
+        description: 'Just a page to test crud operations.'
+    },
+    {
+        title: 'WhatsApp Exports',
+        href: '/dashboard/chat',
+        description:
+            'Exported chats from WhatsApp fetched from own API, because why not.'
+    }
+]
 
 export const DashboardAsideItems = [
     {

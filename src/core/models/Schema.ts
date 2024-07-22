@@ -47,12 +47,12 @@ export const messages = sqliteTable('messages', {
     sender: text('sender').notNull(),
     content: text('content').notNull(),
     timestamp: text('timestamp').notNull(),
-    type: text('type').notNull(),
-});
+    type: text('type').notNull()
+})
 
 export const chats = sqliteTable('chats', {
     name: text('name').primaryKey(),
     userId: text('user_id').notNull(),
     userName: text('user_name').notNull(),
-    lastActive: text('last_active').notNull(),
-});
+    lastActive: text('last_active').notNull()
+})

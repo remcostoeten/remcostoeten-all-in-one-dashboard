@@ -29,7 +29,10 @@ type MainWrapperProps = {
     onSearch?: (results: any[]) => void
 }
 
-export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps, 'onSearch'>) {
+export default function ChatZoeken({
+    children,
+    chatName
+}: Omit<MainWrapperProps, 'onSearch'>) {
     const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
@@ -172,8 +175,10 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
                         </Button>
                     </DrawerTrigger>
                     <Flex gap='2' style={{ marginRight: '1rem' }}>
-                        <kbd className="kbd text-xs h-fit">s</kbd>
-                        <kbd className="kbd min-w-full text-xs h-fit">ctrl + k</kbd>
+                        <kbd className='kbd text-xs h-fit'>s</kbd>
+                        <kbd className='kbd min-w-full text-xs h-fit'>
+                            ctrl + k
+                        </kbd>
                     </Flex>
                 </Flex>
 

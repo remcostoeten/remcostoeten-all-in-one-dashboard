@@ -1,8 +1,8 @@
 'use server'
 
-import { db } from '@/core/libs/DB';
-import { messages } from '@/core/models/Schema';
-import { eq, and, sql } from 'drizzle-orm';
+import { db } from '@/core/libs/DB'
+import { messages } from '@/core/models/Schema'
+import { eq, and, sql } from 'drizzle-orm'
 
 export async function searchChatMessages(
     name: string,
@@ -11,7 +11,7 @@ export async function searchChatMessages(
     pageSize = 50
 ) {
     try {
-        const startIndex = (page - 1) * pageSize;
+        const startIndex = (page - 1) * pageSize
 
         // Count total matching messages
         const totalCountResult = await db
@@ -22,9 +22,9 @@ export async function searchChatMessages(
                     eq(messages.chatName, name),
                     sql`${messages.content} LIKE '%' || ${query} || '%'`
                 )
-            );
+            )
 
-        const totalMessages = Number(totalCountResult[0].count);
+        const totalMessages = Number(totalCountResult[0].count)
 
         // Fetch paginated matching messages
         const matchingMessages = await db
@@ -38,7 +38,7 @@ export async function searchChatMessages(
             )
             .limit(pageSize)
             .offset(startIndex)
-            .orderBy(messages.timestamp);
+            .orderBy(messages.timestamp)
 
         return {
             messages: matchingMessages,
@@ -48,7 +48,7 @@ export async function searchChatMessages(
             totalPages: Math.ceil(totalMessages / pageSize)
         }
     } catch (error) {
-        console.error(`Error searching chat messages for ${name}:`, error);
+        console.error(`Error searching chat messages for ${name}:`, error)
         return {
             messages: [],
             totalMessages: 0,

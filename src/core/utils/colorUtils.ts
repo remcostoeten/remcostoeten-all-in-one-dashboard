@@ -6,10 +6,10 @@ export const hexToRgb = (hex: string) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
     return result
         ? {
-            r: parseInt(result[1], 16),
-            g: parseInt(result[2], 16),
-            b: parseInt(result[3], 16)
-        }
+              r: parseInt(result[1], 16),
+              g: parseInt(result[2], 16),
+              b: parseInt(result[3], 16)
+          }
         : { r: 0, g: 0, b: 0 }
 }
 
@@ -129,10 +129,17 @@ export const findClosestTailwindColor = (hex: string) => {
 }
 
 export const calculateContrast = (color1: string, color2: string) => {
-    const rgb1 = hexToRgb(color1);
-    const rgb2 = hexToRgb(color2);
-    const lum1 = 0.2126 * Math.pow(rgb1.r / 255, 2.2) + 0.7152 * Math.pow(rgb1.g / 255, 2.2) + 0.0722 * Math.pow(rgb1.b / 255, 2.2);
-    const lum2 = 0.2126 * Math.pow(rgb2.r / 255, 2.2) + 0.7152 * Math.pow(rgb2.g / 255, 2.2) + 0.0722 * Math.pow(rgb2.b / 255, 2.2);
-    const contrast = (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
-    return contrast;
-};
+    const rgb1 = hexToRgb(color1)
+    const rgb2 = hexToRgb(color2)
+    const lum1 =
+        0.2126 * Math.pow(rgb1.r / 255, 2.2) +
+        0.7152 * Math.pow(rgb1.g / 255, 2.2) +
+        0.0722 * Math.pow(rgb1.b / 255, 2.2)
+    const lum2 =
+        0.2126 * Math.pow(rgb2.r / 255, 2.2) +
+        0.7152 * Math.pow(rgb2.g / 255, 2.2) +
+        0.0722 * Math.pow(rgb2.b / 255, 2.2)
+    const contrast =
+        (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05)
+    return contrast
+}

@@ -52,7 +52,8 @@ function DashHeader() {
                     <RouteGuard patterns={['/dashboard/chat']}>
                         <ToggleSearch />
                         <ToggleSideMenu />
-                    </RouteGuard>                <RouteGuard patterns={['/dashboard/color']}>
+                    </RouteGuard>{' '}
+                    <RouteGuard patterns={['/dashboard/color']}>
                         <ToggleSideMenu />
                     </RouteGuard>
                     <RouteGuard patterns={['/dashboard/planner']}>

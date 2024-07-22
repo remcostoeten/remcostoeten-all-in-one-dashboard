@@ -21,9 +21,10 @@ const LocalIconContainer: FunctionComponent<LocalIconContainerProps> = ({
             <button
                 {...props}
                 className='
-     !m-0 gap-1.5 flex items-center justify-center mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover  border-transition !px-4 py-2 !hover:bg-red-400 hover:scale-105 transition-all duration-300'                    >
+     !m-0 gap-1.5 flex items-center justify-center mt-7 text-xs text-center whitespace-nowrap rounded-md border border-solid bg-ghost text-white h-max border-ghost hover:border-ghost-hover  border-transition !px-4 py-2 !hover:bg-red-400 hover:scale-105 transition-all duration-300'
+            >
                 {children}
-            </button >
+            </button>
         )
     }
 
@@ -76,8 +77,6 @@ const GhostLabel: FunctionComponent<LocalIconShellProps> = ({
         <LocalIconContainer as={as} href={href} {...props}>
             {Icon && <Icon className='h-icon w-icon' />}
             <LocalIconLabel label={label} />
-
-
         </LocalIconContainer>
     )
 }

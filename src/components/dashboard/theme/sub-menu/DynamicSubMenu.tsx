@@ -15,7 +15,7 @@ import ColorToolSubMenu from '../../../../app/[locale]/(auth)/dashboard/color-to
 
 const componentMap = {
     ChatSubMenu,
-    ColorToolSubMenu,
+    ColorToolSubMenu
     // DriveSubMenu,
     // SettingsSubMenu,
     // TodosSubMenu,

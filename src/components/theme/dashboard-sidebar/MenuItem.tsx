@@ -16,8 +16,6 @@ const MenuItem = ({ name, link, icon, isExpanded, hasNotification }) => {
     const pathname = usePathname()
     const isActiveSlug = pathname.includes(link)
 
-
-
     const menuItemContent = (
         <>
             <span className={`${notificationClass} w-6 h-6`}>
