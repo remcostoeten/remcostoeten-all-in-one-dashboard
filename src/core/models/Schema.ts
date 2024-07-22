@@ -57,3 +57,15 @@ export const chats = sqliteTable('chats', {
     userName: text('user_name').notNull(),
     lastActive: text('last_active').notNull()
 })
+
+export const usersSchema = sqliteTable('users', {
+    id: text('id').primaryKey().unique(),
+    email: text('email').notNull().unique(),
+    createdAt: integer('created_at', { mode: 'timestamp' }).default(
+        sql`(strftime('%s', 'now'))`
+    ),
+    updatedAt: integer('updated_at', { mode: 'timestamp' }).default(
+        sql`(strftime('%s', 'now'))`
+    ),
+    isAdmin: integer('is_admin', { mode: 'boolean' })
+})

@@ -7,7 +7,7 @@ import { ReactNode } from 'react'
 import { Toaster } from 'sonner'
 import { PlannerDataContextProvider } from '@/core/contexts/CalendarDataContext'
 import { enUS, nlNL } from '@clerk/localizations'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 type ProvidersProps = {
     children: ReactNode

@@ -1,4 +1,3 @@
-
 $bezier: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $bezier2: cubic-bezier(0.645, 0.045, 0.355, 1);
 $duration: 0.74s;
@@ -107,400 +106,398 @@ $duration: 0.74s;
     }
 }
 
-
-
 // start hearts
 @keyframes love1 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 5px;
     }
     25% {
-      font-size: 8px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 8px;
+        opacity: 1;
+        padding-left: 10px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 18px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 18px;
+        opacity: 1;
+        padding-left: 10px;
     }
     100% {
-      font-size: 28px;
-      opacity: 0;
-      line-height: 28px;
-      padding-left: 5px;
+        font-size: 28px;
+        opacity: 0;
+        line-height: 28px;
+        padding-left: 5px;
     }
-  }
-  @-moz-keyframes love1 {
+}
+@-moz-keyframes love1 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 5px;
     }
     25% {
-      font-size: 8px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 8px;
+        opacity: 1;
+        padding-left: 10px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 18px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 18px;
+        opacity: 1;
+        padding-left: 10px;
     }
     100% {
-      font-size: 28px;
-      opacity: 0;
-      line-height: 28px;
-      padding-left: 5px;
+        font-size: 28px;
+        opacity: 0;
+        line-height: 28px;
+        padding-left: 5px;
     }
-  }
-  @-webkit-keyframes love1 {
+}
+@-webkit-keyframes love1 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 5px;
     }
     25% {
-      font-size: 8px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 8px;
+        opacity: 1;
+        padding-left: 10px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 18px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 18px;
+        opacity: 1;
+        padding-left: 10px;
     }
     100% {
-      font-size: 28px;
-      opacity: 0;
-      line-height: 28px;
-      padding-left: 5px;
+        font-size: 28px;
+        opacity: 0;
+        line-height: 28px;
+        padding-left: 5px;
     }
-  }
-  @-o-keyframes love1 {
+}
+@-o-keyframes love1 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 5px;
     }
     25% {
-      font-size: 8px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 8px;
+        opacity: 1;
+        padding-left: 10px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 18px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 18px;
+        opacity: 1;
+        padding-left: 10px;
     }
     100% {
-      font-size: 28px;
-      opacity: 0;
-      line-height: 28px;
-      padding-left: 5px;
+        font-size: 28px;
+        opacity: 0;
+        line-height: 28px;
+        padding-left: 5px;
     }
-  }
-  @-ms-keyframes love1 {
+}
+@-ms-keyframes love1 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 5px;
     }
     25% {
-      font-size: 8px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 8px;
+        opacity: 1;
+        padding-left: 10px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 18px;
-      opacity: 1;
-      padding-left: 10px;
+        font-size: 18px;
+        opacity: 1;
+        padding-left: 10px;
     }
     100% {
-      font-size: 28px;
-      opacity: 0;
-      line-height: 28px;
-      padding-left: 5px;
+        font-size: 28px;
+        opacity: 0;
+        line-height: 28px;
+        padding-left: 5px;
     }
-  }
-  @keyframes love2 {
+}
+@keyframes love2 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 4.16666667px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 4.16666667px;
     }
     25% {
-      font-size: 9.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 9.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     50% {
-      padding-left: 8.33333333px;
+        padding-left: 8.33333333px;
     }
     75% {
-      font-size: 21.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 21.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     100% {
-      font-size: 33.6px;
-      opacity: 0;
-      line-height: 33.6px;
-      padding-left: 4.16666667px;
+        font-size: 33.6px;
+        opacity: 0;
+        line-height: 33.6px;
+        padding-left: 4.16666667px;
     }
-  }
-  @-moz-keyframes love2 {
+}
+@-moz-keyframes love2 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 4.16666667px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 4.16666667px;
     }
     25% {
-      font-size: 9.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 9.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     50% {
-      padding-left: 8.33333333px;
+        padding-left: 8.33333333px;
     }
     75% {
-      font-size: 21.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 21.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     100% {
-      font-size: 33.6px;
-      opacity: 0;
-      line-height: 33.6px;
-      padding-left: 4.16666667px;
+        font-size: 33.6px;
+        opacity: 0;
+        line-height: 33.6px;
+        padding-left: 4.16666667px;
     }
-  }
-  @-webkit-keyframes love2 {
+}
+@-webkit-keyframes love2 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 4.16666667px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 4.16666667px;
     }
     25% {
-      font-size: 9.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 9.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     50% {
-      padding-left: 8.33333333px;
+        padding-left: 8.33333333px;
     }
     75% {
-      font-size: 21.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 21.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     100% {
-      font-size: 33.6px;
-      opacity: 0;
-      line-height: 33.6px;
-      padding-left: 4.16666667px;
+        font-size: 33.6px;
+        opacity: 0;
+        line-height: 33.6px;
+        padding-left: 4.16666667px;
     }
-  }
-  @-o-keyframes love2 {
+}
+@-o-keyframes love2 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 4.16666667px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 4.16666667px;
     }
     25% {
-      font-size: 9.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 9.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     50% {
-      padding-left: 8.33333333px;
+        padding-left: 8.33333333px;
     }
     75% {
-      font-size: 21.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 21.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     100% {
-      font-size: 33.6px;
-      opacity: 0;
-      line-height: 33.6px;
-      padding-left: 4.16666667px;
+        font-size: 33.6px;
+        opacity: 0;
+        line-height: 33.6px;
+        padding-left: 4.16666667px;
     }
-  }
-  @-ms-keyframes love2 {
+}
+@-ms-keyframes love2 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 4.16666667px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 4.16666667px;
     }
     25% {
-      font-size: 9.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 9.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     50% {
-      padding-left: 8.33333333px;
+        padding-left: 8.33333333px;
     }
     75% {
-      font-size: 21.6px;
-      opacity: 1;
-      padding-left: 0px;
+        font-size: 21.6px;
+        opacity: 1;
+        padding-left: 0px;
     }
     100% {
-      font-size: 33.6px;
-      opacity: 0;
-      line-height: 33.6px;
-      padding-left: 4.16666667px;
+        font-size: 33.6px;
+        opacity: 0;
+        line-height: 33.6px;
+        padding-left: 4.16666667px;
     }
-  }
-  @keyframes love3 {
+}
+@keyframes love3 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 2.5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 2.5px;
     }
     25% {
-      font-size: 16px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 16px;
+        opacity: 1;
+        padding-left: 5px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 36px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 36px;
+        opacity: 1;
+        padding-left: 5px;
     }
     100% {
-      font-size: 56px;
-      opacity: 0;
-      line-height: 56px;
-      padding-left: 2.5px;
+        font-size: 56px;
+        opacity: 0;
+        line-height: 56px;
+        padding-left: 2.5px;
     }
-  }
-  @-moz-keyframes love3 {
+}
+@-moz-keyframes love3 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 2.5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 2.5px;
     }
     25% {
-      font-size: 16px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 16px;
+        opacity: 1;
+        padding-left: 5px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 36px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 36px;
+        opacity: 1;
+        padding-left: 5px;
     }
     100% {
-      font-size: 56px;
-      opacity: 0;
-      line-height: 56px;
-      padding-left: 2.5px;
+        font-size: 56px;
+        opacity: 0;
+        line-height: 56px;
+        padding-left: 2.5px;
     }
-  }
-  @-webkit-keyframes love3 {
+}
+@-webkit-keyframes love3 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 2.5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 2.5px;
     }
     25% {
-      font-size: 16px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 16px;
+        opacity: 1;
+        padding-left: 5px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 36px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 36px;
+        opacity: 1;
+        padding-left: 5px;
     }
     100% {
-      font-size: 56px;
-      opacity: 0;
-      line-height: 56px;
-      padding-left: 2.5px;
+        font-size: 56px;
+        opacity: 0;
+        line-height: 56px;
+        padding-left: 2.5px;
     }
-  }
-  @-o-keyframes love3 {
+}
+@-o-keyframes love3 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 2.5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 2.5px;
     }
     25% {
-      font-size: 16px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 16px;
+        opacity: 1;
+        padding-left: 5px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 36px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 36px;
+        opacity: 1;
+        padding-left: 5px;
     }
     100% {
-      font-size: 56px;
-      opacity: 0;
-      line-height: 56px;
-      padding-left: 2.5px;
+        font-size: 56px;
+        opacity: 0;
+        line-height: 56px;
+        padding-left: 2.5px;
     }
-  }
-  @-ms-keyframes love3 {
+}
+@-ms-keyframes love3 {
     0% {
-      font-size: 0;
-      opacity: 0;
-      padding-left: 2.5px;
+        font-size: 0;
+        opacity: 0;
+        padding-left: 2.5px;
     }
     25% {
-      font-size: 16px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 16px;
+        opacity: 1;
+        padding-left: 5px;
     }
     50% {
-      padding-left: 0px;
+        padding-left: 0px;
     }
     75% {
-      font-size: 36px;
-      opacity: 1;
-      padding-left: 5px;
+        font-size: 36px;
+        opacity: 1;
+        padding-left: 5px;
     }
     100% {
-      font-size: 56px;
-      opacity: 0;
-      line-height: 56px;
-      padding-left: 2.5px;
+        font-size: 56px;
+        opacity: 0;
+        line-height: 56px;
+        padding-left: 2.5px;
     }
-  }
-  #hearts {
+}
+#hearts {
     display: block;
     position: absolute;
     left: 0;
@@ -510,8 +507,8 @@ $duration: 0.74s;
     width: 300px;
     height: 200px;
     text-align: center;
-  }
-  .heart {
+}
+.heart {
     display: block;
     position: absolute;
     left: 0;
@@ -519,9 +516,9 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
-  }
-  .heart1 {
+    color: #fc7283;
+}
+.heart1 {
     display: block;
     position: absolute;
     left: 0;
@@ -529,7 +526,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 100px;
     line-height: 100px;
     margin-left: 210px;
@@ -549,8 +546,8 @@ $duration: 0.74s;
     -o-animation: love1 0.7s infinite ease-in-out;
     -ms-animation: love1 0.7s infinite ease-in-out;
     animation: love1 0.7s infinite ease-in-out;
-  }
-  .heart2 {
+}
+.heart2 {
     display: block;
     position: absolute;
     left: 0;
@@ -558,7 +555,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 110px;
     line-height: 110px;
     margin-left: 180px;
@@ -578,8 +575,8 @@ $duration: 0.74s;
     -o-animation: love3 0.7s infinite ease-in-out 0.3s;
     -ms-animation: love3 0.7s infinite ease-in-out 0.3s;
     animation: love3 0.7s infinite ease-in-out 0.3s;
-  }
-  .heart3 {
+}
+.heart3 {
     display: block;
     position: absolute;
     left: 0;
@@ -587,7 +584,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 80px;
     line-height: 80px;
     margin-left: 150px;
@@ -597,8 +594,8 @@ $duration: 0.74s;
     -o-animation: love2 0.6s infinite ease-in-out 0.6s;
     -ms-animation: love2 0.6s infinite ease-in-out 0.6s;
     animation: love2 0.6s infinite ease-in-out 0.6s;
-  }
-  .heart4 {
+}
+.heart4 {
     display: block;
     position: absolute;
     left: 0;
@@ -606,7 +603,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 90px;
     margin-left: 120px;
     line-height: 90px;
@@ -626,8 +623,8 @@ $duration: 0.74s;
     -o-animation: love1 0.7s infinite ease-in-out;
     -ms-animation: love1 0.7s infinite ease-in-out;
     animation: love1 0.7s infinite ease-in-out;
-  }
-  .heart5 {
+}
+.heart5 {
     display: block;
     position: absolute;
     left: 0;
@@ -635,7 +632,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 100px;
     margin-left: 90px;
     line-height: 80px;
@@ -655,8 +652,8 @@ $duration: 0.74s;
     -o-animation: love2 0.6s infinite ease-in-out 0.3s;
     -ms-animation: love2 0.6s infinite ease-in-out 0.3s;
     animation: love2 0.6s infinite ease-in-out 0.3s;
-  }
-  .heart6 {
+}
+.heart6 {
     display: block;
     position: absolute;
     left: 0;
@@ -664,7 +661,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 110px;
     margin-left: 60px;
     line-height: 90px;
@@ -674,8 +671,8 @@ $duration: 0.74s;
     -o-animation: love3 0.7s infinite ease-in-out 0.6s;
     -ms-animation: love3 0.7s infinite ease-in-out 0.6s;
     animation: love3 0.7s infinite ease-in-out 0.6s;
-  }
-  .heart7 {
+}
+.heart7 {
     display: block;
     position: absolute;
     left: 0;
@@ -683,7 +680,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 90px;
     line-height: 90px;
     margin-left: 30px;
@@ -703,8 +700,8 @@ $duration: 0.74s;
     -o-animation: love2 0.7s infinite ease-in-out 0.3s;
     -ms-animation: love2 0.7s infinite ease-in-out 0.3s;
     animation: love2 0.7s infinite ease-in-out 0.3s;
-  }
-  .heart8 {
+}
+.heart8 {
     display: block;
     position: absolute;
     left: 0;
@@ -712,7 +709,7 @@ $duration: 0.74s;
     bottom: 0;
     width: 30%;
     vertical-align: bottom;
-    color: #FC7283;
+    color: #fc7283;
     height: 100px;
     line-height: 100px;
     opacity: 0;
@@ -731,4 +728,4 @@ $duration: 0.74s;
     -o-animation: love1 0.7s infinite ease-in-out;
     -ms-animation: love1 0.7s infinite ease-in-out;
     animation: love1 0.7s infinite ease-in-out;
-  }
+}

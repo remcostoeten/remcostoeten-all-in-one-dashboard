@@ -40,7 +40,7 @@ export async function getChatData(name: string, page = 1, pageSize = 50) {
             .where(eq(messages.chatName, name))
             .orderBy(messages.timestamp)
             .limit(pageSize)
-            .offset(startIndex);
+            .offset(startIndex)
 
         return {
             ...chatData[0],
