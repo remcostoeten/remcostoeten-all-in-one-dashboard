@@ -4,6 +4,17 @@ import { db } from '@/core/libs/DB'
 import { messages, chats } from '@/core/models/Schema'
 import { eq, and, gte, lte, sql } from 'drizzle-orm'
 
+export async function getAllChats() {
+    try {
+        const allChats = await db.select({ name: chats.name }).from(chats)
+
+        return allChats.map((chat) => chat.name)
+    } catch (error) {
+        console.error('Error fetching all chats:', error)
+        return []
+    }
+}
+
 export async function getChatData(name: string, page = 1, pageSize = 50) {
     try {
         const startIndex = (page - 1) * pageSize
@@ -27,9 +38,9 @@ export async function getChatData(name: string, page = 1, pageSize = 50) {
             .select()
             .from(messages)
             .where(eq(messages.chatName, name))
-            .limit(pageSize)
-            .offset(startIndex)
             .orderBy(messages.timestamp)
+            .limit(pageSize)
+            .offset(startIndex);
 
         return {
             ...chatData[0],

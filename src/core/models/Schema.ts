@@ -47,7 +47,8 @@ export const messages = sqliteTable('messages', {
     sender: text('sender').notNull(),
     content: text('content').notNull(),
     timestamp: text('timestamp').notNull(),
-    type: text('type').notNull()
+    type: text('type').notNull(),
+    isFavourited: integer('is_favourited', { mode: 'boolean' })
 })
 
 export const chats = sqliteTable('chats', {

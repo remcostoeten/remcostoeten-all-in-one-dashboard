@@ -5,6 +5,13 @@ def escape_sql_string(value):
     """Escapes single quotes in SQL strings."""
     return value.replace("'", "''")
 
+import json
+import pyperclip
+
+def escape_sql_string(value):
+    """Escapes single quotes in SQL strings."""
+    return value.replace("'", "''")
+
 def json_to_sql_inserts(json_data):
     chat_name = f"chat_{json_data['userId']}"
 
@@ -27,10 +34,11 @@ def json_to_sql_inserts(json_data):
         content = escape_sql_string(msg['content'])
         timestamp = escape_sql_string(msg['timestamp'])
         msg_type = escape_sql_string(msg['type'])
+        is_favourited = escape_sql_string('false')  # Add isFavourited field
 
         messages_insert = f"""
-        INSERT INTO messages (id, chat_name, sender, content, timestamp, type)
-        VALUES ('{msg_id}', '{chat_name}', '{sender}', '{content}', '{timestamp}', '{msg_type}');
+        INSERT INTO messages (id, chat_name, sender, content, timestamp, type, is_favourited)
+        VALUES ('{msg_id}', '{chat_name}', '{sender}', '{content}', '{timestamp}', '{msg_type}', '{is_favourited}');
         """
         messages_inserts.append(messages_insert.strip())
 

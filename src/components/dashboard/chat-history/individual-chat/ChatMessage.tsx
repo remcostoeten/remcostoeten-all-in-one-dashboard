@@ -7,6 +7,7 @@ import { formatDate } from '@/core/utils/format-date'
 import { LinkPreview } from '@/components/effects/magicui/link-preview'
 import { Button } from '@/components/ui/button'
 import { FavouriteChatMessage } from '../FavouriteChatMessage'
+import Hearts from '@c/effects/Hearts'
 
 export type Message = {
     id: string
@@ -14,6 +15,7 @@ export type Message = {
     content: string
     timestamp: string
     type: 'text' | 'file' | 'image'
+    isFavourited: boolean
 }
 
 type ChatMessagesProps = {
@@ -81,10 +83,13 @@ export default function ChatMessages({
                         <FavouriteChatMessage
                             messageId={message.id}
                             userId={message.sender}
-                            chatBetween={message.sender}
-                            timestamp={message.timestamp}
+                            isFavourited={message.isFavourited}
                         >
-                            {renderMessageContent(message, isCurrentUser)}
+                            {renderMessageContent(
+                                message,
+                                isCurrentUser,
+                                message.isFavourited
+                            )}
                         </FavouriteChatMessage>
                     </div>
                 </div>
@@ -92,14 +97,19 @@ export default function ChatMessages({
         )
     }
 
-    const renderMessageContent = (message: Message, isCurrentUser: boolean) => {
+    const renderMessageContent = (
+        message: Message,
+        isCurrentUser: boolean,
+        is_favourited
+    ) => {
         switch (message.type) {
             case 'text':
                 return (
                     <p
-                        className={`text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
+                        className={`relative text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
                     >
                         {message.content}
+                        {is_favourited ? <Hearts numHearts={5} /> : ''}
                     </p>
                 )
             case 'file':

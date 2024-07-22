@@ -1,6 +1,5 @@
-'use client'
-
-import React, { useState, useEffect, Component } from 'react'
+// components/DirectMessageList.tsx
+import React, { useState, useEffect } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
@@ -11,9 +10,10 @@ import { getInitials } from '../../../core/utils/get-initials'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui'
 import { Bookmark } from 'lucide-react'
-import { render } from 'react-dom'
-import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
+import { getAllChats } from '../../../core/@server/actions/getChatData' // Import the new function
 import { useSubMenuStore } from '../../../core/stores/SubMenuStore'
+import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
+
 const tailwindBackgrounds = [
     'bg-red-500',
     'bg-yellow-500',
@@ -37,7 +37,7 @@ function DirectMessage({ name }) {
     return (
         <Link
             href={`/dashboard/chat/${encodeURIComponent(name)}`}
-            className={`'flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'flex items-center bg-ghost py-1' : 'flex items-center py-.5 hover:bg-ghost'}`}
+            className={`flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'flex items-center bg-ghost py-1' : 'flex items-center py-.5 hover:bg-ghost'}`}
         >
             <AvatarShell
                 Initials={initials}
@@ -56,35 +56,32 @@ function DirectMessage({ name }) {
 
 export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
-    const [chatNames, setChatNames] = useState([])
+    const [chatNames, setChatNames] = useState<string[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
 
     useEffect(() => {
-        fetch('/api/chat-names')
-            .then((response) => response.json())
-            .then((data) => {
-                setChatNames(data)
-                setIsLoading(false)
-            })
-            .catch((error) => {
-                console.error('Error fetching chat names:', error)
-                setIsLoading(false)
-            })
+        async function fetchChats() {
+            setIsLoading(true)
+            const names = await getAllChats() // Fetch all chat names
+            setChatNames(names)
+            setIsLoading(false)
+        }
+
+        fetchChats()
     }, [])
 
     return (
         <SubMenuInnerContent>
             <Link
                 href='#'
-                className='w-full p-0 max-w-[399px] h-[28px] text-text text-xs hover:bg-[rgba(165,189,255,0.15)]font-normal rounded-[5.25px] py-0 justify-start'
+                className='w-full p-0 max-w-[399px] h-[28px] text-text text-xs hover:bg-[rgba(165,189,255,0.15)] font-normal rounded-[5.25px] py-0 justify-start'
             >
-                {' '}
                 <div className='flex items-center justify-between pl-2 pr-2 pb-2 w-full hover:bg-bg-ghost-hover cursor-pointer'>
                     <Bookmark className='w-3.5 h-3.5 mr-[7px] flex-shrink-0' />
                     <span className='flex-grow truncate text-left'>
-                        Saved
-                    </span>{' '}
+                        Faourited
+                    </span>
                 </div>
             </Link>
             <SubMenuSearch />

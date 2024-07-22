@@ -6,7 +6,6 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
-import { Toaster } from 'sonner'
 import '@/styles/app.scss'
 import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
 
@@ -42,7 +41,6 @@ export default function RootLayout(props: {
                 >
                     <HeaderWrapper />
                     {props.children}
-                    <Toaster invert />
                 </Providers>
             </body>
         </html>
