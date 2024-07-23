@@ -1,13 +1,18 @@
-import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
-import { roboto } from '@/core/constants/fonts'
 import Providers from '@/core/Providers'
 import { AppConfig } from '@/core/utils/app-config'
-import '@/styles/app.scss'
 import type { Metadata } from 'next'
 import { useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
+import { Roboto_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import '@/styles/app.scss'
+import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
+
+const roboto = Roboto_Mono({
+    weight: ['200', '300', '400', '500', '600', '700'],
+    subsets: ['latin']
+})
 
 export default function RootLayout(props: {
     children: ReactNode
