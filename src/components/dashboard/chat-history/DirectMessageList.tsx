@@ -80,7 +80,7 @@ export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
     const [chatNames, setChatNames] = useState<Chat[]>([])
     const [isLoading, setIsLoading] = useState(true)
-    const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
+    const isSubMenuVisible = useSubMenuStore(state => state.isSubMenuVisible)
 
     useEffect(() => {
         async function fetchChats() {
@@ -152,8 +152,8 @@ export default function DirectMessageList() {
                             )}
                         </motion.div>
                     )}
+                </AnimatePresence>
             </AdminProtectedContent>
-        </AnimatePresence>
-        </SubMenuInnerContent >
+        </SubMenuInnerContent>
     )
 }
