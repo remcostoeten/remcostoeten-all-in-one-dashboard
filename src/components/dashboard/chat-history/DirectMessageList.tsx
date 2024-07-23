@@ -129,29 +129,31 @@ export default function DirectMessageList() {
                         ))}
                 </div>
             )}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        className='flex flex-col gap-2'
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        {chatNames.length > 0 ? (
-                            chatNames.map((chat, index) => (
-                                <DirectMessage
-                                    key={index}
-                                    name={chat.name}
-                                    adminOnly={chat.adminOnly ?? false} // Provide a default value if null
-                                />
-                            ))
-                        ) : (
-                            <div>No chats available</div>
-                        )}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </SubMenuInnerContent>
+            <AdminProtectedContent>
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            className='flex flex-col gap-2'
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            {chatNames.length > 0 ? (
+                                chatNames.map((chat, index) => (
+                                    <DirectMessage
+                                        key={index}
+                                        name={chat.name}
+                                        adminOnly={chat.adminOnly ?? false} // Provide a default value if null
+                                    />
+                                ))
+                            ) : (
+                                <div>No chats available</div>
+                            )}
+                        </motion.div>
+                    )}
+            </AdminProtectedContent>
+        </AnimatePresence>
+        </SubMenuInnerContent >
     )
 }
