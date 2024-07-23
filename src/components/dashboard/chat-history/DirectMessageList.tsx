@@ -1,4 +1,5 @@
-// components/DirectMessageList.tsx
+'use client'
+
 import React, { useState, useEffect } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -8,11 +9,12 @@ import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
 import Link from 'next/link'
 import { getInitials } from '../../../core/utils/get-initials'
 import { usePathname } from 'next/navigation'
-import { Button } from '@/components/ui'
 import { Bookmark } from 'lucide-react'
-import { getAllChats } from '../../../core/@server/actions/getChatData' // Import the new function
+import { getAllChats } from '../../../core/@server/actions/getChatData'
 import { useSubMenuStore } from '../../../core/stores/SubMenuStore'
 import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
+import ToggleAdminVisibility from './ToggleAdminVisibillity'
+import { name } from 'assert'
 
 const tailwindBackgrounds = [
     'bg-red-500',
@@ -24,47 +26,65 @@ const tailwindBackgrounds = [
     'bg-pink-500'
 ]
 
-function DirectMessage({ name }) {
-    const initials = getInitials(name)
-    const firstLetter = initials[0]
+interface DirectMessageProps {
+    name: string
+    adminOnly: boolean
+}
+
+function DirectMessage({
+    name,
+    adminOnly: initialAdminOnly
+}: DirectMessageProps) {
+    const [adminOnly] = useState(initialAdminOnly)
+    const initials = getInitials(name || '')
+    const firstLetter = initials[0] || ''
     const randomBackground =
         tailwindBackgrounds[
-            Math.floor(Math.random() * tailwindBackgrounds.length)
+        Math.floor(Math.random() * tailwindBackgrounds.length)
         ]
     const pathname = usePathname()
     const isActive = pathname.includes(name)
 
     return (
-        <Link
-            href={`/dashboard/chat/${encodeURIComponent(name)}`}
-            className={`flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'flex items-center bg-ghost py-1' : 'flex items-center py-.5 hover:bg-ghost'}`}
-        >
-            <AvatarShell
-                Initials={initials}
-                firstLetter={firstLetter}
-                hasTwoLetters={initials.length > 1}
-                width='5'
-                height='5'
-                background={randomBackground}
-            />
-            <div className='text-sm text-text-secondary hover:text-text-primary'>
-                {name}
-            </div>
-        </Link>
+        <div className='flex items-center justify-between'>
+            <Link
+                href={`/dashboard/chat/${encodeURIComponent(name)}`}
+                className={`flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'flex items-center bg-ghost py-1' : 'flex items-center py-.5 hover:bg-ghost'}`}
+            >
+                <AvatarShell
+                    Initials={initials}
+                    firstLetter={firstLetter}
+                    hasTwoLetters={initials.length > 1}
+                    width='5'
+                    height='5'
+                    background={randomBackground}
+                />
+                <div className='text-sm text-text-secondary hover:text-text-primary'>
+                    {name}
+                </div>
+            </Link>
+            <ToggleAdminVisibility name={name} initialAdminOnly={adminOnly} />
+        </div>
     )
+}
+
+interface Chat {
+    name: string
+    adminOnly: boolean
 }
 
 export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
-    const [chatNames, setChatNames] = useState<string[]>([])
+    const [chatNames, setChatNames] = useState<Chat[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
 
     useEffect(() => {
         async function fetchChats() {
             setIsLoading(true)
-            const names = await getAllChats() // Fetch all chat names
-            setChatNames(names)
+            const chats = await getAllChats()
+            console.log('Fetched chats:', chats)
+            setChatNames(chats)
             setIsLoading(false)
         }
 
@@ -80,7 +100,7 @@ export default function DirectMessageList() {
                 <div className='flex items-center justify-between pl-2 pr-2 pb-2 w-full hover:bg-bg-ghost-hover cursor-pointer'>
                     <Bookmark className='w-3.5 h-3.5 mr-[7px] flex-shrink-0' />
                     <span className='flex-grow truncate text-left'>
-                        Faourited
+                        Favorited
                     </span>
                 </div>
             </Link>
@@ -114,9 +134,17 @@ export default function DirectMessageList() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {chatNames.map((name, index) => (
-                            <DirectMessage key={index} name={name} />
-                        ))}
+                        {chatNames.length > 0 ? (
+                            chatNames.map((chat, index) => (
+                                <DirectMessage
+                                    key={index}
+                                    name={chat.name}
+                                    adminOnly={chat.adminOnly ?? false} // Provide a default value if null
+                                />
+                            ))
+                        ) : (
+                            <div>No chats available</div>
+                        )}
                     </motion.div>
                 )}
             </AnimatePresence>

@@ -2,19 +2,23 @@
 
 import { db } from '@/core/libs/DB'
 import { messages, chats } from '@/core/models/Schema'
-import { eq, and, gte, lte, sql } from 'drizzle-orm'
+import { eq, sql } from 'drizzle-orm'
 
 export async function getAllChats() {
     try {
-        const allChats = await db.select({ name: chats.name }).from(chats)
-
-        return allChats.map((chat) => chat.name)
+        console.log('Fetching chats...')
+        const fetchedChats = await db.select().from(chats)
+        console.log('Fetched chats:', fetchedChats)
+        if (fetchedChats.length === 0) {
+            console.log('No chats found')
+            return []
+        }
+        return fetchedChats
     } catch (error) {
-        console.error('Error fetching all chats:', error)
-        return []
+        console.error('Error fetching chats:', error)
+        throw new Error('Could not fetch chats')
     }
 }
-
 export async function getChatData(name: string, page = 1, pageSize = 50) {
     try {
         const startIndex = (page - 1) * pageSize

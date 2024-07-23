@@ -55,7 +55,8 @@ export const chats = sqliteTable('chats', {
     name: text('name').primaryKey(),
     userId: text('user_id').notNull(),
     userName: text('user_name').notNull(),
-    lastActive: text('last_active').notNull()
+    lastActive: text('last_active').notNull(),
+    adminOnly: integer('admin_only', { mode: 'boolean' })
 })
 
 export const usersSchema = sqliteTable('users', {
