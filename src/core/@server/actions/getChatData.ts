@@ -1,7 +1,7 @@
 'use server'
 
 import { db } from '@/core/libs/DB'
-import { messages, chats } from '@/core/models/Schema'
+import { chats, messages } from '@/core/models/Schema'
 import { eq, sql } from 'drizzle-orm'
 
 export async function getAllChats() {
@@ -20,42 +20,49 @@ export async function getAllChats() {
         throw new Error('Could not fetch chats')
     }
 }
-export async function getChatData(name: string, page = 1, pageSize = 50) {
-    try {
-        const startIndex = (page - 1) * pageSize
 
-        const chatData = await db
+export async function getChatWithMessages(
+    name: string,
+    page = 1,
+    pageSize = 50
+) {
+    try {
+        const chatInfo = await db
             .select()
             .from(chats)
             .where(eq(chats.name, name))
             .limit(1)
+            .then(results => results[0])
 
-        if (chatData.length === 0) {
+        if (!chatInfo) {
             return null
         }
 
+        const startIndex = (page - 1) * pageSize
+
         const totalMessages = await db
-            .select({ count: sql`count(*)` })
+            .select({ count: sql<number>`count(*)` })
             .from(messages)
             .where(eq(messages.chatName, name))
+            .then(result => result[0].count)
 
         const messagesData = await db
             .select()
             .from(messages)
             .where(eq(messages.chatName, name))
-            .orderBy(messages.timestamp)
+            .orderBy(sql`${messages.timestamp} DESC`)
             .limit(pageSize)
             .offset(startIndex)
 
         return {
-            ...chatData[0],
+            ...chatInfo,
             messages: messagesData,
-            totalMessages: totalMessages[0].count,
+            totalMessages: totalMessages,
             currentPage: page,
             pageSize: pageSize
         }
     } catch (error) {
         console.error(`Error fetching chat data for ${name}:`, error)
-        return null
+        throw new Error('Could not fetch chat data')
     }
 }

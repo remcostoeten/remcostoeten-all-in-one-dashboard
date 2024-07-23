@@ -1,5 +1,7 @@
 'use client'
 
+import AdminProtectedContent from '@/components/auth/AdminProtectedContent'
+import { getRandomBackground } from '@/core/utils/colorUtils'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Bookmark } from 'lucide-react'
@@ -7,24 +9,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getAllChats } from '../../../core/@server/actions/getChatData'
-import { useSubMenuStore } from '../../../core/stores/SubMenuStore'
 import { getInitials } from '../../../core/utils/get-initials'
 import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
 import AvatarShell from '../../theme/shells/AvatarShell'
 import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
 import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
 import ToggleAdminVisibility from './ToggleAdminVisibillity'
-import AdminProtectedContent from '@/components/auth/AdminProtectedContent'
-
-const backgrounds = [
-    'bg-red-500',
-    'bg-yellow-500',
-    'bg-green-500',
-    'bg-blue-500',
-    'bg-indigo-500',
-    'bg-purple-500',
-    'bg-pink-500'
-]
 
 interface DirectMessageProps {
     name: string
@@ -38,8 +28,7 @@ function DirectMessage({
     const [adminOnly] = useState(initialAdminOnly)
     const initials = getInitials(name || '')
     const firstLetter = initials[0] || ''
-    const randomBackground =
-        backgrounds[Math.floor(Math.random() * backgrounds.length)]
+    const randomBackground = getRandomBackground()
     const pathname = usePathname()
     const isActive = pathname.includes(name)
 
@@ -80,7 +69,6 @@ export default function DirectMessageList() {
     const [isOpen, setIsOpen] = useState(true)
     const [chatNames, setChatNames] = useState<Chat[]>([])
     const [isLoading, setIsLoading] = useState(true)
-    const isSubMenuVisible = useSubMenuStore(state => state.isSubMenuVisible)
 
     useEffect(() => {
         async function fetchChats() {

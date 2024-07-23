@@ -1,5 +1,5 @@
 import { PaginationControl } from '@/components/dashboard/chat-history/individual-chat/PaginationControl'
-import { getChatData } from '@/core/@server/actions/getChatData'
+import { getChatWithMessages } from '@/core/@server/actions/getChatData'
 import ChatZoeken from '@/components/dashboard/chat-history/individual-chat/ChatZoeken'
 import MainWrapper from '../../MainWrapper'
 import ChatMessages from '../../../../../../components/dashboard/chat-history/individual-chat/ChatMessage'
@@ -16,7 +16,7 @@ export default async function ChatPage({
     const page = parseInt(searchParams.page || '1', 10)
     const pageSize = parseInt(searchParams.pageSize || '50', 10)
 
-    const chatData = await getChatData(params.name, page, pageSize)
+    const chatData = await getChatWithMessages(params.name, page, pageSize)
 
     if (!chatData || chatData.messages.length === 0) {
         return <div>No messages found</div>

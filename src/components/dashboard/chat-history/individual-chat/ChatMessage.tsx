@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
-import Image from 'next/image'
-import { getInitials } from '@/core/utils/get-initials'
-import { formatDate } from '@/core/utils/format-date'
 import { LinkPreview } from '@/components/effects/magicui/link-preview'
 import { Button } from '@/components/ui/button'
-import { FavouriteChatMessage } from '../FavouriteChatMessage'
+import { formatDate } from '@/core/utils/format-date'
+import { getInitials } from '@/core/utils/get-initials'
 import Hearts from '@c/effects/Hearts'
+import Image from 'next/image'
+import React, { useRef, useState } from 'react'
+import { FavouriteChatMessage } from '../FavouriteChatMessage'
 
 export type Message = {
     id: string
@@ -57,7 +57,7 @@ export default function ChatMessages({
 
         return (
             <div
-                ref={(el) => {
+                ref={el => {
                     if (el) messageRefs.current[message.id] = el
                 }}
                 className={`mb-4 ${isCurrentUser ? 'flex justify-end' : ''}`}
@@ -101,7 +101,7 @@ export default function ChatMessages({
     const renderMessageContent = (
         message: Message,
         isCurrentUser: boolean,
-        is_favourited
+        is_favourited: boolean
     ) => {
         switch (message.type) {
             case 'text':
@@ -171,7 +171,7 @@ export default function ChatMessages({
 
     return (
         <>
-            <div ref={chatContainerRef} className='flex-1'>
+            <div ref={chatContainerRef} className='flex-1 overflow-y-auto'>
                 {renderMessages()}
             </div>
 

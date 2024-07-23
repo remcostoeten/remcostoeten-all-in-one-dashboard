@@ -150,3 +150,10 @@ export const calculateContrast = (color1: string, color2: string) => {
 
     return contrast
 }
+
+export function getRandomBackground(): string {
+    const Backgrounds = ['#FF5733', '#33FF57', '#3357FF', '#F0F0F0']
+    const randomIndex = Math.floor(Math.random() * Backgrounds.length)
+
+    return Backgrounds[randomIndex] || '#FFFFFF' // Fallback color if array is empty
+}
