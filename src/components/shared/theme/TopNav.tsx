@@ -1,3 +1,4 @@
+import KeyboardMacros from '@/components/KeyboardMacros'
 import {
     Breadcrumbs,
     TopNavSettings,
@@ -18,6 +19,7 @@ export default function TopNav() {
                     <CurrentTime />
                 </div>
             </div>
+            <KeyboardMacros />
         </div>
     )
 }
