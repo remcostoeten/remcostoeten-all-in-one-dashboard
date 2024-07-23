@@ -7,6 +7,7 @@ function Breadcrumbs() {
     let pathname = usePathname()
     // This regex matches the start of the string, followed by any two or more characters (the locale),
     // followed by a slash, and replaces it with an empty string.
+
     pathname = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/')
 
     const pathSegments = [
@@ -33,6 +34,7 @@ function Breadcrumbs() {
                     if (part.length === 0) return ''
                     const formattedPart =
                         part[0]?.toUpperCase() + part.slice(1).toLowerCase()
+
                     return formattedPart
                 })
                 .join(' ') // Join the parts with a space

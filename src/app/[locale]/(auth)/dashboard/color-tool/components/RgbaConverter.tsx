@@ -34,6 +34,7 @@ export default function RgbaConverter({
         if (values.length >= 3 && values.every((v) => !isNaN(v))) {
             if (channel === 'r' || channel === 'g' || channel === 'b') {
                 const index = channel === 'r' ? 0 : channel === 'g' ? 1 : 2
+
                 onChange({
                     ...value,
                     [channel]: Math.min(255, Math.max(0, values[index]))
@@ -47,6 +48,7 @@ export default function RgbaConverter({
                 channel === 'a'
                     ? Math.min(1, Math.max(0, Number(pastedText)))
                     : Math.min(255, Math.max(0, Number(pastedText)))
+
             onChange({ ...value, [channel]: newValue })
         }
     }

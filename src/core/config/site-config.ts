@@ -15,4 +15,6 @@ const siteConfig = {
         'https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard'
 }
 
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL
+
 export default siteConfig

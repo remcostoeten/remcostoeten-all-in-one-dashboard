@@ -23,6 +23,7 @@ export async function GET(request: NextRequest) {
         const messageIndex = chatData.messages.findIndex(
             (msg: any) => msg.id === messageId
         )
+
         if (messageIndex === -1) {
             return NextResponse.json(
                 { error: 'Message not found' },

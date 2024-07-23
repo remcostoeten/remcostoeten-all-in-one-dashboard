@@ -1,22 +1,22 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
-import { motion, AnimatePresence } from 'framer-motion'
-import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
-import AvatarShell from '../../theme/shells/AvatarShell'
-import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
-import Link from 'next/link'
-import { getInitials } from '../../../core/utils/get-initials'
-import { usePathname } from 'next/navigation'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Bookmark } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { getAllChats } from '../../../core/@server/actions/getChatData'
 import { useSubMenuStore } from '../../../core/stores/SubMenuStore'
+import { getInitials } from '../../../core/utils/get-initials'
+import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
+import AvatarShell from '../../theme/shells/AvatarShell'
+import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
 import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
 import ToggleAdminVisibility from './ToggleAdminVisibillity'
-import { name } from 'assert'
+import AdminProtectedContent from '@/components/auth/AdminProtectedContent'
 
-const tailwindBackgrounds = [
+const backgrounds = [
     'bg-red-500',
     'bg-yellow-500',
     'bg-green-500',
@@ -39,9 +39,7 @@ function DirectMessage({
     const initials = getInitials(name || '')
     const firstLetter = initials[0] || ''
     const randomBackground =
-        tailwindBackgrounds[
-        Math.floor(Math.random() * tailwindBackgrounds.length)
-        ]
+        backgrounds[Math.floor(Math.random() * backgrounds.length)]
     const pathname = usePathname()
     const isActive = pathname.includes(name)
 
@@ -63,7 +61,12 @@ function DirectMessage({
                     {name}
                 </div>
             </Link>
-            <ToggleAdminVisibility name={name} initialAdminOnly={adminOnly} />
+            <AdminProtectedContent>
+                <ToggleAdminVisibility
+                    name={name}
+                    initialAdminOnly={adminOnly}
+                />
+            </AdminProtectedContent>
         </div>
     )
 }
@@ -83,6 +86,7 @@ export default function DirectMessageList() {
         async function fetchChats() {
             setIsLoading(true)
             const chats = await getAllChats()
+
             console.log('Fetched chats:', chats)
             setChatNames(chats)
             setIsLoading(false)

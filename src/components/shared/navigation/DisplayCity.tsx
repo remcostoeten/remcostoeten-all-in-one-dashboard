@@ -9,6 +9,7 @@ export default function DisplayCity() {
 
     useEffect(() => {
         const cachedCity = localStorage.getItem('city')
+
         if (cachedCity) {
             setCity(cachedCity)
             setLoading(false)

@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import { Flex } from '@/components/shared/atoms/Flex'
 import {
     DropdownMenu,
-    DropdownMenuTrigger,
     DropdownMenuContent,
     DropdownMenuGroup,
-    DropdownMenuItem
+    DropdownMenuItem,
+    DropdownMenuTrigger
 } from '@c/ui'
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import { HeartIcon } from 'lucide-react'
-import { updateChatVisibility } from './Test'
+import { LockIcon, LockOpen } from 'lucide-react'
+import { useState } from 'react'
 import { toast } from 'sonner'
+import { updateChatVisibility } from './updateChatVisibility'
 
 interface ToggleProps {
     name: string
@@ -20,13 +21,14 @@ export default function ToggleAdminVisibility({
     name,
     initialAdminOnly
 }: ToggleProps) {
-    const [adminOnly, setAdminOnly] = useState(initialAdminOnly)
+    const [publicVisible, setPublicVisible] = useState(initialAdminOnly)
 
     const handleClick = async () => {
-        const newAdminOnly = !adminOnly // Toggle the boolean value
+        const newAdminOnly = !publicVisible
+
         try {
             await updateChatVisibility(name, newAdminOnly)
-            setAdminOnly(newAdminOnly)
+            setPublicVisible(newAdminOnly)
             toast('Visibility updated')
         } catch (error) {
             console.error('Error handling click:', error)
@@ -36,17 +38,29 @@ export default function ToggleAdminVisibility({
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <DotsVerticalIcon className='cursor-pointer' />
+                <button className='w-6 h-6'>
+                    <DotsVerticalIcon
+                        className='cursor-pointer'
+                        color='#7f7f7f'
+                    />
+                </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuGroup>
                     <DropdownMenuItem onClick={handleClick}>
-                        <div>
-                            <HeartIcon
-                                className={`mr-2 h-4 w-4 ${adminOnly ? 'text-red-500' : ''}`}
-                            />
-                            {adminOnly ? 'Remove lock' : 'Hide for non admins'}
-                        </div>
+                        <Flex items='center'>
+                            {publicVisible ? (
+                                <Flex items='center' gap='1'>
+                                    <LockIcon className='text-white w-4 h-4' />
+                                    Only visible for admins
+                                </Flex>
+                            ) : (
+                                <Flex items='center' gap='1'>
+                                    <LockOpen className='w-4 h-4' />
+                                    Visible for everyone
+                                </Flex>
+                            )}
+                        </Flex>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
             </DropdownMenuContent>

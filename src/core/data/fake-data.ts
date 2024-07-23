@@ -40,6 +40,7 @@ const generateAppointments = (num: number, resources: any[]): Appointment[] => {
 
         // Randomly decide to add between 1 hour to 48 hours to the start time for the end time
         const hoursToAdd = faker.number.int({ min: 1, max: 48 })
+
         end = addHours(end, hoursToAdd)
 
         // Ensure the appointment does not accidentally exceed two weeks from now
@@ -62,4 +63,5 @@ const generateAppointments = (num: number, resources: any[]): Appointment[] => {
         }
     })
 }
+
 export { generateResources, generateAppointments }

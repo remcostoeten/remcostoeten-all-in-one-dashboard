@@ -12,12 +12,14 @@ export default function ThemeToggle() {
 
     useEffect(() => {
         const root = window.document.documentElement
+
         if (theme === 'System') {
             const systemTheme = window.matchMedia(
                 '(prefers-color-scheme: dark)'
             ).matches
                 ? 'Dark'
                 : 'Light'
+
             root.classList.toggle('dark', systemTheme === 'Dark')
         } else {
             root.classList.toggle('dark', theme === 'Dark')

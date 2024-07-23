@@ -49,6 +49,7 @@ export default function ColorConverter() {
             newRgbColor.g,
             newRgbColor.b
         )
+
         setHexColor(newHexColor)
         setHslColor(rgbToHsl(newRgbColor.r, newRgbColor.g, newRgbColor.b))
     }
@@ -56,6 +57,7 @@ export default function ColorConverter() {
     const handleHexChange = (newHexColor: string) => {
         setHexColor(newHexColor)
         const newRgbColor = hexToRgb(newHexColor)
+
         setRgbColor(newRgbColor)
         setHslColor(rgbToHsl(newRgbColor.r, newRgbColor.g, newRgbColor.b))
     }
@@ -71,6 +73,7 @@ export default function ColorConverter() {
             newHslColor.s,
             newHslColor.l
         )
+
         setRgbColor(newRgbColor)
         setHexColor(rgbToHex(newRgbColor.r, newRgbColor.g, newRgbColor.b))
     }
@@ -87,6 +90,7 @@ export default function ColorConverter() {
             newRgbaColor.g,
             newRgbaColor.b
         )
+
         setHexColor(newHexColor)
         setHslColor(rgbToHsl(newRgbaColor.r, newRgbaColor.g, newRgbaColor.b))
     }

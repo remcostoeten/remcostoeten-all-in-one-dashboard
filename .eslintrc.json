@@ -7,7 +7,29 @@
     ],
     "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": [
+            "error",
+            {
+                "@typescript-eslint/no-explicit-any": "false",
+                "singleQuote": true, // Enforce single quotes
+                "endOfLine": "lf", // Enforce LF line endings
+                "insertPragma": false,
+                "requirePragma": false,
+                "trailingComma": "none",
+                "arrowParens": "avoid",
+                "printWidth": 80,
+                "tabWidth": 4,
+                "semi": false
+            }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "quotes": ["error", "single"], // Enforce single quotes
+        "eol-last": ["error", "always"], // Enforce newline at the end of the file
+        "newline-after-var": ["error", "always"], // Enforce newline after variable declarations
+        "padding-line-between-statements": [
+            "error",
+            { "blankLine": "always", "prev": "directive", "next": "*" } // Enforce newline after directives like 'use client'
+        ]
     },
     "parserOptions": {
         "ecmaFeatures": {

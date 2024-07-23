@@ -16,6 +16,7 @@ export class ResourceService {
         const index = this.resources.findIndex(
             (r) => r.id === updatedResource.id
         )
+
         if (index !== -1) {
             this.resources[index] = {
                 ...this.resources[index],

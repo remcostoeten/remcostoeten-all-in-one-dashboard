@@ -39,7 +39,7 @@ export function AnimatedGradientPill({
                 )}
                 <span
                     className={cn(
-                        `inline animate-gradient bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                        'inline animate-gradient bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent',
                         gradientColors
                     )}
                 >

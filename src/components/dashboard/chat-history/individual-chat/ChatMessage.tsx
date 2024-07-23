@@ -54,6 +54,7 @@ export default function ChatMessages({
 
     const renderMessage = (message: Message) => {
         const isCurrentUser = message.sender === currentUserId
+
         return (
             <div
                 ref={(el) => {
@@ -146,9 +147,11 @@ export default function ChatMessages({
 
     const renderMessages = () => {
         let currentDate = ''
+
         return messages.map((message, index) => {
             const messageDate = formatDateLabel(message.timestamp)
             const showDateLabel = messageDate !== currentDate
+
             currentDate = messageDate
 
             return (

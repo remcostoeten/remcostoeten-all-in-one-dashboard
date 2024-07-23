@@ -33,6 +33,7 @@ export function ToggleSideMenu({ className }: { className?: string }) {
     const toggleSubMenu: MouseEventHandler<HTMLButtonElement> = () => {
         useSubMenuStore.getState().toggleSubMenu()
     }
+
     return (
         <Button
             variant='ghost'
@@ -47,6 +48,7 @@ export function ToggleSideMenu({ className }: { className?: string }) {
 
 export function ToggleSearch({ className }: { className?: string }) {
     const { toggleSearch } = useChatSearchStore()
+
     return (
         <Button
             variant='ghost'

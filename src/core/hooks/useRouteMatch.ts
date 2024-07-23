@@ -9,6 +9,7 @@ type MatchOptions = {
 
 function removeLocale(pathname: string): string {
     const localePattern = /^\/([a-z]{2})\//
+
     return pathname.replace(localePattern, '/')
 }
 
@@ -18,6 +19,7 @@ function createRegexPattern(pattern: string, options: MatchOptions): RegExp {
             (acc, segment) => acc.replace(segment, '([^/]+)'),
             '^'
         ) || '^'
+
     return new RegExp(`${dynamicPattern}${pattern}${options.suffix || ''}`)
 }
 

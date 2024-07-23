@@ -1,1 +1,0 @@
-ALTER TABLE `users` ADD `is_favourited` integer;

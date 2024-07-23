@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from 'react'
 import {
     Pagination,
@@ -44,7 +45,7 @@ export function PaginationControl({
     }
 
     const generatePaginationItems = () => {
-        let items = []
+        const items = []
         const maxVisiblePages = 5
 
         if (totalPages <= maxVisiblePages) {

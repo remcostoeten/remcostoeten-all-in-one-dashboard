@@ -52,6 +52,7 @@ export default function ChatZoeken({
         setIsSearching(true)
         try {
             const results = await searchChatMessages(chatName, searchQuery)
+
             setSearchResults(results.messages)
         } catch (error) {
             console.error('Error searching messages:', error)
@@ -78,6 +79,7 @@ export default function ChatZoeken({
                     `/api/find-message-page?chatName=${chatName}&messageId=${messageId}`
                 )
                 const data = await response.json()
+
                 if (data.page) {
                     window.location.href = `?page=${data.page}&scrollTo=${messageId}`
                 } else {
@@ -92,6 +94,7 @@ export default function ChatZoeken({
     const scrollToMessageElement = (messageId: string) => {
         if (typeof document !== 'undefined') {
             const messageElement = document.getElementById(messageId)
+
             if (messageElement) {
                 messageElement.scrollIntoView({
                     behavior: 'smooth',
@@ -111,6 +114,7 @@ export default function ChatZoeken({
         const scrollToMessageId = new URLSearchParams(
             window.location.search
         ).get('scrollTo')
+
         if (scrollToMessageId) {
             scrollToRef.current = scrollToMessageId
         }
@@ -120,6 +124,7 @@ export default function ChatZoeken({
         if (scrollToRef.current) {
             const messageId = scrollToRef.current
             const scrollAttempts = [0, 100, 500, 1000, 2000]
+
             scrollAttempts.forEach((delay) => {
                 setTimeout(() => scrollToMessageElement(messageId), delay)
             })
@@ -263,6 +268,7 @@ export default function ChatZoeken({
 
 export function ToggleSearch({ className }: { className?: string }) {
     const { toggleSearch } = useChatSearchStore()
+
     return (
         <Button
             variant='ghost'

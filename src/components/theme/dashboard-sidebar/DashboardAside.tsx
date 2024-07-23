@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/config/menu-items'
@@ -12,7 +12,7 @@ import SearchDialog from '@/components/shared/navigation/Search'
 import { Flex } from '@/components/shared/atoms/Flex'
 import CreatePincode from '../../auth/CreatePincode'
 
-const Aside = ({ className }) => {
+const Aside = () => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
     const containerControls = useAnimationControls()
 
@@ -93,7 +93,7 @@ const Aside = ({ className }) => {
                     <Flex
                         direction='col'
                         variant='space-y-m'
-                        items='center'
+                        items='start'
                         gap='2'
                     >
                         <CreatePincode />

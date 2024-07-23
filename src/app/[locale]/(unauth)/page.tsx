@@ -35,6 +35,7 @@ const Section = ({
     children: ReactNode
 }) => {
     let spacingClass = ''
+
     switch (spacingY) {
         case '0':
             spacingClass = 'my-0'

@@ -1,18 +1,13 @@
+import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
+import { roboto } from '@/core/constants/fonts'
 import Providers from '@/core/Providers'
 import { AppConfig } from '@/core/utils/app-config'
+import '@/styles/app.scss'
 import type { Metadata } from 'next'
 import { useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
-import type { ReactNode } from 'react'
-import '@/styles/app.scss'
-import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
-
-const plexsans = IBM_Plex_Sans({
-    weight: ['200', '300', '400', '500', '600', '700'],
-    subsets: ['latin']
-})
+import { ReactNode } from 'react'
 
 export default function RootLayout(props: {
     children: ReactNode
@@ -32,7 +27,7 @@ export default function RootLayout(props: {
 
     return (
         <html lang={props.params.locale} className='bg-dash-body dark '>
-            <body className={`${plexsans.className} `}>
+            <body className={`${roboto.className} `}>
                 <Providers
                     locale={props.params.locale}
                     messages={messages}

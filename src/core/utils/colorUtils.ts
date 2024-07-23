@@ -4,6 +4,7 @@ export const rgbToHex = (r: number, g: number, b: number) => {
 
 export const hexToRgb = (hex: string) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+
     return result
         ? {
               r: parseInt(result[1], 16),
@@ -22,10 +23,12 @@ export const rgbToHsl = (r: number, g: number, b: number) => {
     let h: number,
         s: number,
         l = (max + min) / 2
+
     if (max === min) {
         h = s = 0
     } else {
         const d = max - min
+
         s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
         switch (max) {
             case r:
@@ -54,6 +57,7 @@ export const hslToRgb = (h: number, s: number, l: number) => {
     s /= 100
     l /= 100
     let r: number, g: number, b: number
+
     if (s === 0) {
         r = g = b = l
     } else {
@@ -67,6 +71,7 @@ export const hslToRgb = (h: number, s: number, l: number) => {
         }
         const q = l < 0.5 ? l * (1 + s) : l + s - l * s
         const p = 2 * l - q
+
         r = hue2rgb(p, q, h + 1 / 3)
         g = hue2rgb(p, q, h)
         b = hue2rgb(p, q, h - 1 / 3)
@@ -119,6 +124,7 @@ export const findClosestTailwindColor = (hex: string) => {
         const distance = Math.sqrt(
             Math.pow(r - tr, 2) + Math.pow(g - tg, 2) + Math.pow(b - tb, 2)
         )
+
         if (distance < minDistance) {
             minDistance = distance
             closestColor = colorName
@@ -141,5 +147,6 @@ export const calculateContrast = (color1: string, color2: string) => {
         0.0722 * Math.pow(rgb2.b / 255, 2.2)
     const contrast =
         (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05)
+
     return contrast
 }

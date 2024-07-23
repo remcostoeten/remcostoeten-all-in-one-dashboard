@@ -6,7 +6,7 @@ const DeleteGuestbookEntry = (props: { id: number }) => {
     const router = useRouter()
 
     const handleDelete = async () => {
-        await fetch(`/api/guestbook`, {
+        await fetch('/api/guestbook', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

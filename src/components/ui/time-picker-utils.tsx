@@ -67,6 +67,7 @@ export function getValidArrowNumber(
     { min, max, step }: GetValidArrowNumberConfig
 ) {
     let numericValue = parseInt(value, 10)
+
     if (!isNaN(numericValue)) {
         numericValue += step
         return getValidNumber(String(numericValue), { min, max, loop: true })
@@ -84,18 +85,21 @@ export function getValidArrowMinuteOrSecond(value: string, step: number) {
 
 export function setMinutes(date: Date, value: string) {
     const minutes = getValidMinuteOrSecond(value)
+
     date.setMinutes(parseInt(minutes, 10))
     return date
 }
 
 export function setSeconds(date: Date, value: string) {
     const seconds = getValidMinuteOrSecond(value)
+
     date.setSeconds(parseInt(seconds, 10))
     return date
 }
 
 export function setHours(date: Date, value: string) {
     const hours = getValidHour(value)
+
     date.setHours(parseInt(hours, 10))
     return date
 }

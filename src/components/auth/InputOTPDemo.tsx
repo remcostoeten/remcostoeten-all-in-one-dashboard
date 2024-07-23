@@ -23,6 +23,7 @@ export function PincodeForm() {
             <form
                 action={async (formData) => {
                     const result = await verifyPincode(formData)
+
                     setMessage(
                         result.success ? 'Access granted' : result.message
                     )

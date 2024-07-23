@@ -29,6 +29,7 @@ export function FavouriteChatMessage({
         try {
             setIsDeleting(true)
             const result = await updateFavorite(messageId, !isMsgFavorited)
+
             if (result.success) {
                 setMsgIsFavorited(!isMsgFavorited)
                 if (isMsgFavorited) {

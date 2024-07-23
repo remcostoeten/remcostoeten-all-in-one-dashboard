@@ -19,6 +19,7 @@ const DropTableCell: FC<DropTableCellProps> = ({
 }) => {
     const ref = useRef<HTMLTableCellElement>(null)
     const [isOver, setIsOver] = useState(false)
+
     useEffect(() => {
         const element = ref.current!
 
@@ -38,6 +39,7 @@ const DropTableCell: FC<DropTableCellProps> = ({
         backgroundColor: isOver ? '#f0f0f0' : '#fff',
         border: '1px solid #ddd'
     }
+
     return (
         <TableCell
             className={cn(

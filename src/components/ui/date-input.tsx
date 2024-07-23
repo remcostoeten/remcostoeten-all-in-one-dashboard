@@ -14,6 +14,7 @@ interface DateParts {
 const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
     const [date, setDate] = React.useState<DateParts>(() => {
         const d = value ? new Date(value) : new Date()
+
         return {
             day: d.getDate(),
             month: d.getMonth() + 1, // JavaScript months are 0-indexed
@@ -27,6 +28,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
 
     useEffect(() => {
         const d = value ? new Date(value) : new Date()
+
         setDate({
             day: d.getDate(),
             month: d.getMonth() + 1,
@@ -46,6 +48,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
         // Validate the day of the month
         const newDate = { ...date, [field]: value }
         const d = new Date(newDate.year, newDate.month - 1, newDate.day)
+
         return (
             d.getFullYear() === newDate.year &&
             d.getMonth() + 1 === newDate.month &&
@@ -62,6 +65,7 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
 
             // If the new value is valid, update the date
             const newDate = { ...date, [field]: newValue }
+
             setDate(newDate)
 
             // only call onChange when the entry is valid

@@ -64,11 +64,13 @@ function CalendarContent({ ...props }: CalendarContentProps) {
                 const appointment = appointments.find(
                     (appt) => appt.id === sourceData.appointmentId
                 )
+
                 if (!appointment) return
 
                 const newResource = resources.find(
                     (res) => res.id === destination.resourceId
                 )
+
                 if (!newResource) return
 
                 const newDates = calculateNewDates(

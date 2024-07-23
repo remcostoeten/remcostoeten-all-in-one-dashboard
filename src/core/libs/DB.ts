@@ -8,6 +8,7 @@ const client = createClient({
     url: 'libsql://all-in-one-dashboard-remcostoeten.turso.io',
     authToken: process.env.DATABASE_AUTH_TOKEN
 })
+
 export const db = drizzle(client)
 
 // Disable migrate function if using Edge runtime and use `npm run db:migrate` instead.

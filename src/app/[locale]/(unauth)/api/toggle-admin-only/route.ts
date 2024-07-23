@@ -15,6 +15,7 @@ export async function POST(req: NextRequest) {
             .from(chats)
             .where(eq(chats.name, chatName))
             .first()
+
         console.log('Existing chat:', existingChat)
 
         if (!existingChat) {

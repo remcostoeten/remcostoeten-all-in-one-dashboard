@@ -19,6 +19,7 @@ export default async function HelloWrapper() {
         if (userExists.length === 0) {
             const adminEmail = process.env.ADMIN_EMAIL
             const isAdmin = adminEmail === user.emailAddresses[0]?.emailAddress
+
             await saveUser({
                 id: user.id,
                 email: user.emailAddresses[0]?.emailAddress,

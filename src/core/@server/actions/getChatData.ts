@@ -8,6 +8,7 @@ export async function getAllChats() {
     try {
         console.log('Fetching chats...')
         const fetchedChats = await db.select().from(chats)
+
         console.log('Fetched chats:', fetchedChats)
         if (fetchedChats.length === 0) {
             console.log('No chats found')

@@ -53,6 +53,7 @@ const getDateAdjustedForTimezone = (dateInput: Date | string): Date => {
         // Create a new Date object using the local timezone
         // Note: Month is 0-indexed, so subtract 1 from the month part
         const date = new Date(parts[0]!, parts[1]! - 1, parts[2])
+
         return date
     } else {
         // If dateInput is already a Date object, return it directly
@@ -148,6 +149,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
     const getPresetRange = (presetName: string): DateRange => {
         const preset = PRESETS.find(({ name }) => name === presetName)
+
         if (!preset) throw new Error(`Unknown date range preset: ${presetName}`)
         const from = new Date()
         const to = new Date()
@@ -209,6 +211,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
     const setPreset = (preset: string): void => {
         const range = getPresetRange(preset)
+
         setRange(range)
         if (rangeCompare) {
             const rangeCompare = {
@@ -225,6 +228,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                       )
                     : undefined
             }
+
             setRangeCompare(rangeCompare)
         }
     }
@@ -234,12 +238,14 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
             const presetRange = getPresetRange(preset.name)
 
             const normalizedRangeFrom = new Date(range.from)
+
             normalizedRangeFrom.setHours(0, 0, 0, 0)
             const normalizedPresetFrom = new Date(
                 presetRange.from.setHours(0, 0, 0, 0)
             )
 
             const normalizedRangeTo = new Date(range.to ?? 0)
+
             normalizedRangeTo.setHours(0, 0, 0, 0)
             const normalizedPresetTo = new Date(
                 presetRange.to?.setHours(0, 0, 0, 0) ?? 0
@@ -442,6 +448,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                                                     date > range.to
                                                         ? date
                                                         : range.to
+
                                                 setRange((prevRange) => ({
                                                     ...prevRange,
                                                     from: date,
@@ -457,6 +464,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                                                     date < range.from
                                                         ? date
                                                         : range.from
+
                                                 setRange((prevRange) => ({
                                                     ...prevRange,
                                                     from: fromDate,
@@ -478,6 +486,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                                                                 rangeCompare.to
                                                                 ? date
                                                                 : rangeCompare.to
+
                                                         setRangeCompare(
                                                             (
                                                                 prevRangeCompare
@@ -508,6 +517,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                                                             rangeCompare.from
                                                                 ? date
                                                                 : rangeCompare.from
+
                                                         setRangeCompare({
                                                             ...rangeCompare,
                                                             from: compareFromDate,

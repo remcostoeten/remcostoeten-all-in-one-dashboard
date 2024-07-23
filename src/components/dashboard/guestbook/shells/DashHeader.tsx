@@ -20,6 +20,7 @@ function DashHeader() {
     const { isSubMenuVisible } = useSubMenuStore((state) => ({
         isSubMenuVisible: state.isSubMenuVisible
     }))
+
     useEffect(() => {
         const pathSegments = pathname.split('/')
         const lastSegment = pathSegments[pathSegments.length - 1] || ''
