@@ -3,14 +3,13 @@ import { AppConfig } from '@/core/utils/app-config'
 import type { Metadata } from 'next'
 import { useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { IBM_Plex_Sans } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
-import { Toaster } from 'sonner'
 import '@/styles/app.scss'
 import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
 
-const plexsans = IBM_Plex_Sans({
+const roboto = Roboto_Mono({
     weight: ['200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
@@ -33,7 +32,7 @@ export default function RootLayout(props: {
 
     return (
         <html lang={props.params.locale} className='bg-dash-body dark '>
-            <body className={`${plexsans.className} `}>
+            <body className={`${roboto.className} `}>
                 <Providers
                     locale={props.params.locale}
                     messages={messages}
@@ -42,7 +41,6 @@ export default function RootLayout(props: {
                 >
                     <HeaderWrapper />
                     {props.children}
-                    <Toaster invert />
                 </Providers>
             </body>
         </html>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import RouteGuard from '@/components/RouteGaurd'
+import RouteGuard from '@/components/auth/RouteGaurd'
 import AddAppointmentDialog from '@/app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
 import CalendarToolbar from '@/app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
 import {
@@ -20,6 +20,7 @@ function DashHeader() {
     const { isSubMenuVisible } = useSubMenuStore((state) => ({
         isSubMenuVisible: state.isSubMenuVisible
     }))
+
     useEffect(() => {
         const pathSegments = pathname.split('/')
         const lastSegment = pathSegments[pathSegments.length - 1] || ''
@@ -49,16 +50,17 @@ function DashHeader() {
                     {showInfo && <ChatInfo />}
                 </Flex>
                 <div className='flex space-x-2'>
-                    <RouteGuard patterns={['/dashboard/chat']}>
+                    {/* <RouteGuard patterns={['/dashboard/chat']}>
                         <ToggleSearch />
                         <ToggleSideMenu />
-                    </RouteGuard>                <RouteGuard patterns={['/dashboard/color']}>
+                    </RouteGuard>{' '}
+                    <RouteGuard patterns={['/dashboard/color']}>
                         <ToggleSideMenu />
                     </RouteGuard>
                     <RouteGuard patterns={['/dashboard/planner']}>
                         <AddAppointmentDialog />
                         <CalendarToolbar />
-                    </RouteGuard>
+                    </RouteGuard> */}
                 </div>
             </div>
         </header>

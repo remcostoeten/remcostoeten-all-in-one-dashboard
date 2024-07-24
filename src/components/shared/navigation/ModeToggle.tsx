@@ -12,12 +12,14 @@ export default function ThemeToggle() {
 
     useEffect(() => {
         const root = window.document.documentElement
+
         if (theme === 'System') {
             const systemTheme = window.matchMedia(
                 '(prefers-color-scheme: dark)'
             ).matches
                 ? 'Dark'
                 : 'Light'
+
             root.classList.toggle('dark', systemTheme === 'Dark')
         } else {
             root.classList.toggle('dark', theme === 'Dark')
@@ -55,10 +57,11 @@ export default function ThemeToggle() {
                     <button
                         key={themeOption}
                         onClick={() => handleThemeChange(themeOption)}
-                        className={`flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-md transition-colors ${theme === themeOption
-                            ? 'bg-blue-600 text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                            }`}
+                        className={`flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                            theme === themeOption
+                                ? 'bg-blue-600 text-white'
+                                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                        }`}
                     >
                         <div className='flex items-center'>
                             <span className='w-8 h-8 mr-3 flex items-center justify-center bg-gray-700 rounded-md'>

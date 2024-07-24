@@ -15,4 +15,7 @@ const siteConfig = {
         'https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard'
 }
 
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL
+export const WHATSAPP_NAME = process.env.MY_NAME
+export const WHATSAPP_NAME_FULL = process.env.MY_FULL_NAME
 export default siteConfig

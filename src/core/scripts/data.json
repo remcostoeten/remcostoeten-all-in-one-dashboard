@@ -1,0 +1,714 @@
+{
+    "userId": "john123",
+    "userName": "John Doe",
+    "lastActive": "2024-07-18T14:30:00Z",
+    "messages": [
+        {
+            "id": "msg1",
+            "sender": "john123",
+            "content": "Hey, how's it going?",
+            "timestamp": "2024-07-18T10:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg2",
+            "sender": "alice456",
+            "content": "Hi John! I'm doing well, thanks. How about you?",
+            "timestamp": "2024-07-18T10:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg3",
+            "sender": "john123",
+            "content": "00000224-PHOTO-2017-05-03-18-52-18.jpg",
+            "timestamp": "2024-07-18T10:10:00Z",
+            "type": "image"
+        },
+        {
+            "id": "msg4",
+            "sender": "alice456",
+            "content": "Nice picture! 😊",
+            "timestamp": "2024-07-18T10:12:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg5",
+            "sender": "john123",
+            "content": "I'm good too, thanks for asking.",
+            "timestamp": "2024-07-18T10:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg2",
+            "sender": "bob789",
+            "content": "I've finished the design mockups. Sharing them now.",
+            "timestamp": "2024-07-18T09:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg3",
+            "sender": "bob789",
+            "content": "https://example.com/mockups.pdf",
+            "timestamp": "2024-07-18T09:06:00Z",
+            "type": "file"
+        },
+        {
+            "id": "msg4",
+            "sender": "john123",
+            "content": "Great work, Bob! I'll review these tonight.",
+            "timestamp": "2024-07-18T09:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg5",
+            "sender": "dave202",
+            "content": "Can we schedule a meeting to discuss next steps?",
+            "timestamp": "2024-07-18T09:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg6",
+            "sender": "alice456",
+            "content": "Absolutely, Dave. How about tomorrow at 10 AM?",
+            "timestamp": "2024-07-18T09:25:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg7",
+            "sender": "bob789",
+            "content": "Sounds good. I'll add it to my calendar.",
+            "timestamp": "2024-07-18T09:30:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg8",
+            "sender": "john123",
+            "content": "I'm free then too. Looking forward to it!",
+            "timestamp": "2024-07-18T09:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg9",
+            "sender": "dave202",
+            "content": "Perfect, I'll send out the meeting invite shortly.",
+            "timestamp": "2024-07-18T09:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg10",
+            "sender": "alice456",
+            "content": "Thanks, Dave. See you all there!",
+            "timestamp": "2024-07-18T09:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg11",
+            "sender": "john123",
+            "content": "I've started working on the backend integration. Facing some issues though.",
+            "timestamp": "2024-07-18T10:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg12",
+            "sender": "bob789",
+            "content": "Let me know what you need help with, Eve.",
+            "timestamp": "2024-07-18T10:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg13",
+            "sender": "john123",
+            "content": "The API endpoint isn't returning the expected data. It seems like there's an issue with the query parameters.",
+            "timestamp": "2024-07-18T10:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg14",
+            "sender": "bob789",
+            "content": "Could be a problem with the database schema or the way the query is written. Let's check both.",
+            "timestamp": "2024-07-18T10:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg15",
+            "sender": "john123",
+            "content": "I've updated the query based on our last discussion. Can you take a look?",
+            "timestamp": "2024-07-18T10:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg16",
+            "sender": "bob789",
+            "content": "Sure thing, Eve. I'll review it right away.",
+            "timestamp": "2024-07-18T10:25:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg17",
+            "sender": "john123",
+            "content": "Eve, can you share the updated query? I'd like to see how you've modified it.",
+            "timestamp": "2024-07-18T10:30:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg18",
+            "sender": "john123",
+            "content": "Certainly, Charlie. Here's the updated SQL query.",
+            "timestamp": "2024-07-18T10:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg19",
+            "sender": "john123",
+            "content": "https://wikipedia.nl",
+            "timestamp": "2024-07-18T10:40:00Z",
+            "type": "file"
+        },
+        {
+            "id": "msg20",
+            "sender": "john123",
+            "content": "Phew, glad to hear that! Thanks for the support, everyone.",
+            "timestamp": "2024-07-18T10:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg21",
+            "sender": "dave202",
+            "content": "Moving on, let's discuss the deployment strategy for the new features.",
+            "timestamp": "2024-07-18T11:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg22",
+            "sender": "alice456",
+            "content": "We should consider rolling out incrementally to minimize risks.",
+            "timestamp": "2024-07-18T11:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg23",
+            "sender": "bob789",
+            "content": "That's a wise approach. We could start with a beta release to gather feedback.",
+            "timestamp": "2024-07-18T11:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg24",
+            "sender": "john123",
+            "content": "Agreed. A beta release would allow us to identify and fix potential issues early on.",
+            "timestamp": "2024-07-18T11:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg25",
+            "sender": "dave202",
+            "content": "Great point, Charlie. I'll draft up a plan for the beta release and get back to you all.",
+            "timestamp": "2024-07-18T11:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg26",
+            "sender": "alice456",
+            "content": "Sounds good, Dave. Just make sure to include timelines and resource allocation in the plan.",
+            "timestamp": "2024-07-18T11:25:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg27",
+            "sender": "dave202",
+            "content": "Will do, Alice. I'll have the initial draft ready by EOD.",
+            "timestamp": "2024-07-18T11:30:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg28",
+            "sender": "john123",
+            "content": "I'm excited to see the plan. This is going to be a big step forward for our project.",
+            "timestamp": "2024-07-18T11:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg29",
+            "sender": "bob789",
+            "content": "Me too, Eve. Let's make it happen!",
+            "timestamp": "2024-07-18T11:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg30",
+            "sender": "john123",
+            "content": "Count me in. I'm here to support wherever needed.",
+            "timestamp": "2024-07-18T11:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg31",
+            "sender": "dave202",
+            "content": "Appreciate the support, Charlie. We're all in this together.",
+            "timestamp": "2024-07-18T11:50:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg32",
+            "sender": "alice456",
+            "content": "Excellent teamwork, everyone. Let's keep the momentum going!",
+            "timestamp": "2024-07-18T11:55:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg33",
+            "sender": "bob789",
+            "content": "Absolutely, Alice. Let's crush those goals!",
+            "timestamp": "2024-07-18T12:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg34",
+            "sender": "john123",
+            "content": "Here's to another successful sprint!",
+            "timestamp": "2024-07-18T12:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg35",
+            "sender": "dave202",
+            "content": "And remember, communication is key. Let's stay connected throughout the process.",
+            "timestamp": "2024-07-18T12:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg36",
+            "sender": "alice456",
+            "content": "Couldn't agree more, Dave. Let's make sure to touch base daily.",
+            "timestamp": "2024-07-18T12:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg37",
+            "sender": "bob789",
+            "content": "Daily stand-ups will be crucial. I'll set them up starting tomorrow.",
+            "timestamp": "2024-07-18T12:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg18",
+            "sender": "john123",
+            "content": "Certainly, Charlie. Here's the updated SQL query.",
+            "timestamp": "2024-07-18T10:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg19",
+            "sender": "john123",
+            "content": "Looks good, Eve. The changes should resolve the issue. Good job!",
+            "timestamp": "2024-07-18T10:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg20",
+            "sender": "john123",
+            "content": "Phew, glad to hear that! Thanks for the support, everyone.",
+            "timestamp": "2024-07-18T10:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg21",
+            "sender": "dave202",
+            "content": "Moving on, let's discuss the deployment strategy for the new features.",
+            "timestamp": "2024-07-18T11:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg22",
+            "sender": "alice456",
+            "content": "We should consider rolling out incrementally to minimize risks.",
+            "timestamp": "2024-07-18T11:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg23",
+            "sender": "bob789",
+            "content": "That's a wise approach. We could start with a beta release to gather feedback.",
+            "timestamp": "2024-07-18T11:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg24",
+            "sender": "john123",
+            "content": "Agreed. A beta release would allow us to identify and fix potential issues early on.",
+            "timestamp": "2024-07-18T11:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg25",
+            "sender": "dave202",
+            "content": "Great point, Charlie. I'll draft up a plan for the beta release and get back to you all.",
+            "timestamp": "2024-07-18T11:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg26",
+            "sender": "alice456",
+            "content": "Sounds good, Dave. Just make sure to include timelines and resource allocation in the plan.",
+            "timestamp": "2024-07-18T11:25:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg27",
+            "sender": "dave202",
+            "content": "Will do, Alice. I'll have the initial draft ready by EOD.",
+            "timestamp": "2024-07-18T11:30:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg28",
+            "sender": "john123",
+            "content": "I'm excited to see the plan. This is going to be a big step forward for our project.",
+            "timestamp": "2024-07-18T11:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg29",
+            "sender": "bob789",
+            "content": "Me too, Eve. Let's make it happen!",
+            "timestamp": "2024-07-18T11:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg30",
+            "sender": "john123",
+            "content": "Count me in. I'm here to support wherever needed.",
+            "timestamp": "2024-07-18T11:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg31",
+            "sender": "dave202",
+            "content": "Appreciate the support, Charlie. We're all in this together.",
+            "timestamp": "2024-07-18T11:50:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg32",
+            "sender": "alice456",
+            "content": "Excellent teamwork, everyone. Let's keep the momentum going!",
+            "timestamp": "2024-07-18T11:55:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg33",
+            "sender": "bob789",
+            "content": "Absolutely, Alice. Let's crush those goals!",
+            "timestamp": "2024-07-18T12:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg34",
+            "sender": "john123",
+            "content": "Here's to another successful sprint!",
+            "timestamp": "2024-07-18T12:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg35",
+            "sender": "dave202",
+            "content": "And remember, communication is key. Let's stay connected throughout the process.",
+            "timestamp": "2024-07-18T12:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg36",
+            "sender": "alice456",
+            "content": "Couldn't agree more, Dave. Let's make sure to touch base daily.",
+            "timestamp": "2024-07-18T12:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg37",
+            "sender": "bob789",
+            "content": "Daily stand-ups will be crucial. I'll set them up starting tomorrow.",
+            "timestamp": "2024-07-18T12:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg18",
+            "sender": "john123",
+            "content": "Certainly, Charlie. Here's the updated SQL query.",
+            "timestamp": "2024-07-18T10:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg19",
+            "sender": "john123",
+            "content": "Looks good, Eve. The changes should resolve the issue. Good job!",
+            "timestamp": "2024-07-18T10:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg20",
+            "sender": "john123",
+            "content": "Phew, glad to hear that! Thanks for the support, everyone.",
+            "timestamp": "2024-07-18T10:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg21",
+            "sender": "dave202",
+            "content": "Moving on, let's discuss the deployment strategy for the new features.",
+            "timestamp": "2024-07-18T11:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg22",
+            "sender": "alice456",
+            "content": "We should consider rolling out incrementally to minimize risks.",
+            "timestamp": "2024-07-18T11:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg23",
+            "sender": "bob789",
+            "content": "That's a wise approach. We could start with a beta release to gather feedback.",
+            "timestamp": "2024-07-18T11:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg24",
+            "sender": "john123",
+            "content": "Agreed. A beta release would allow us to identify and fix potential issues early on.",
+            "timestamp": "2024-07-18T11:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg25",
+            "sender": "dave202",
+            "content": "Great point, Charlie. I'll draft up a plan for the beta release and get back to you all.",
+            "timestamp": "2024-07-18T11:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg26",
+            "sender": "alice456",
+            "content": "Sounds good, Dave. Just make sure to include timelines and resource allocation in the plan.",
+            "timestamp": "2024-07-18T11:25:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg27",
+            "sender": "dave202",
+            "content": "Will do, Alice. I'll have the initial draft ready by EOD.",
+            "timestamp": "2024-07-18T11:30:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg28",
+            "sender": "john123",
+            "content": "I'm excited to see the plan. This is going to be a big step forward for our project.",
+            "timestamp": "2024-07-18T11:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg29",
+            "sender": "bob789",
+            "content": "Me too, Eve. Let's make it happen!",
+            "timestamp": "2024-07-18T11:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg30",
+            "sender": "john123",
+            "content": "Count me in. I'm here to support wherever needed.",
+            "timestamp": "2024-07-18T11:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg31",
+            "sender": "dave202",
+            "content": "Appreciate the support, Charlie. We're all in this together.",
+            "timestamp": "2024-07-18T11:50:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg32",
+            "sender": "alice456",
+            "content": "Excellent teamwork, everyone. Let's keep the momentum going!",
+            "timestamp": "2024-07-18T11:55:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg33",
+            "sender": "bob789",
+            "content": "Absolutely, Alice. Let's crush those goals!",
+            "timestamp": "2024-07-18T12:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg34",
+            "sender": "john123",
+            "content": "Here's to another successful sprint!",
+            "timestamp": "2024-07-18T12:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg35",
+            "sender": "dave202",
+            "content": "And remember, communication is key. Let's stay connected throughout the process.",
+            "timestamp": "2024-07-18T12:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg36",
+            "sender": "alice456",
+            "content": "Couldn't agree more, Dave. Let's make sure to touch base daily.",
+            "timestamp": "2024-07-18T12:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg37",
+            "sender": "bob789",
+            "content": "Daily stand-ups will be crucial. I'll set them up starting tomorrow.",
+            "timestamp": "2024-07-18T12:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg18",
+            "sender": "john123",
+            "content": "Certainly, Charlie. Here's the updated SQL query.",
+            "timestamp": "2024-07-18T10:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg19",
+            "sender": "john123",
+            "content": "Looks good, Eve. The changes should resolve the issue. Good job!",
+            "timestamp": "2024-07-18T10:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg20",
+            "sender": "john123",
+            "content": "Phew, glad to hear that! Thanks for the support, everyone.",
+            "timestamp": "2024-07-18T10:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg21",
+            "sender": "dave202",
+            "content": "Moving on, let's discuss the deployment strategy for the new features.",
+            "timestamp": "2024-07-18T11:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg22",
+            "sender": "alice456",
+            "content": "We should consider rolling out incrementally to minimize risks.",
+            "timestamp": "2024-07-18T11:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg23",
+            "sender": "bob789",
+            "content": "That's a wise approach. We could start with a beta release to gather feedback.",
+            "timestamp": "2024-07-18T11:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg24",
+            "sender": "john123",
+            "content": "Agreed. A beta release would allow us to identify and fix potential issues early on.",
+            "timestamp": "2024-07-18T11:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg25",
+            "sender": "dave202",
+            "content": "Great point, Charlie. I'll draft up a plan for the beta release and get back to you all.",
+            "timestamp": "2024-07-18T11:20:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg26",
+            "sender": "alice456",
+            "content": "Sounds good, Dave. Just make sure to include timelines and resource allocation in the plan.",
+            "timestamp": "2024-07-18T11:25:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg27",
+            "sender": "dave202",
+            "content": "Will do, Alice. I'll have the initial draft ready by EOD.",
+            "timestamp": "2024-07-18T11:30:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg28",
+            "sender": "john123",
+            "content": "I'm excited to see the plan. This is going to be a big step forward for our project.",
+            "timestamp": "2024-07-18T11:35:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg29",
+            "sender": "bob789",
+            "content": "Me too, Eve. Let's make it happen!",
+            "timestamp": "2024-07-18T11:40:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg30",
+            "sender": "john123",
+            "content": "Count me in. I'm here to support wherever needed.",
+            "timestamp": "2024-07-18T11:45:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg31",
+            "sender": "dave202",
+            "content": "Appreciate the support, Charlie. We're all in this together.",
+            "timestamp": "2024-07-18T11:50:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg32",
+            "sender": "alice456",
+            "content": "Excellent teamwork, everyone. Let's keep the momentum going!",
+            "timestamp": "2024-07-18T11:55:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg33",
+            "sender": "bob789",
+            "content": "Absolutely, Alice. Let's crush those goals!",
+            "timestamp": "2024-07-18T12:00:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg34",
+            "sender": "john123",
+            "content": "Here's to another successful sprint!",
+            "timestamp": "2024-07-18T12:05:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg35",
+            "sender": "dave202",
+            "content": "And remember, communication is key. Let's stay connected throughout the process.",
+            "timestamp": "2024-07-18T12:10:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg36",
+            "sender": "alice456",
+            "content": "Couldn't agree more, Dave. Let's make sure to touch base daily.",
+            "timestamp": "2024-07-18T12:15:00Z",
+            "type": "text"
+        },
+        {
+            "id": "msg37",
+            "sender": "bob789",
+            "content": "Daily stand-ups will be crucial. I'll set them up starting tomorrow.",
+            "timestamp": "2024-07-18T12:20:00Z",
+            "type": "text"
+        }
+    ]
+}

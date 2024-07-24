@@ -19,6 +19,7 @@ export default function CreatePincode() {
 
     const handleSetPincode = async (formData: FormData) => {
         const result = await savePincode(formData)
+
         setMessage(result.success ? 'Pincode set successfully' : result.message)
         if (result.success) {
             setIsPincodeSet(true)
@@ -27,6 +28,7 @@ export default function CreatePincode() {
 
     const handleVerifyPincode = async (formData: FormData) => {
         const result = await verifyPincode(formData)
+
         setMessage(result.success ? 'Access granted' : result.message)
     }
 

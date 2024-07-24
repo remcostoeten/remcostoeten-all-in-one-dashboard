@@ -1,4 +1,3 @@
-
 import type { Config } from 'tailwindcss'
 const svgToDataUri = require('mini-svg-data-uri')
 const colors = require('tailwindcss/colors')
@@ -22,8 +21,7 @@ const config: Config = withMT({
             padding: '2rem',
             screens: {
                 '2xl': '1400px',
-                'mobile': { 'max': '639px' },
-
+                mobile: { max: '639px' }
             }
         },
         extend: {
@@ -36,7 +34,8 @@ const config: Config = withMT({
                 outskirts: '1.25rem'
             },
             dropShadow: {
-                popover: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
+                popover:
+                    'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
             },
             width: {
                 sidebar: 'var(--sidebar-width)',
@@ -132,6 +131,10 @@ const config: Config = withMT({
                 'icon-bg-size': 'var(--icon-bg-size)'
             },
             keyframes: {
+                shine: {
+                    from: { backgroundPosition: '200% 0' },
+                    to: { backgroundPosition: '-200% 0' }
+                },
                 'caret-blink': {
                     '0%,70%,100%': { opacity: '1' },
                     '20%,50%': { opacity: '0' }
@@ -256,6 +259,7 @@ const config: Config = withMT({
             '32': '8rem'
         },
         animation: {
+            shine: 'shine 8s ease-in-out infinite',
             'caret-blink': 'caret-blink 1.25s ease-out infinite',
             marquee: 'marquee var(--duration) linear infinite',
             'marquee-vertical':
@@ -289,6 +293,7 @@ const config: Config = withMT({
                     marginRight: '-50vw'
                 }
             }
+
             addUtilities(newUtilities)
         },
         function ({ matchUtilities, theme }: any) {

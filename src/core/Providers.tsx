@@ -7,6 +7,7 @@ import { ReactNode } from 'react'
 import { Toaster } from 'sonner'
 import { PlannerDataContextProvider } from '@/core/contexts/CalendarDataContext'
 import { enUS, nlNL } from '@clerk/localizations'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 type ProvidersProps = {
     children: ReactNode
@@ -61,7 +62,8 @@ export default function Providers({
                         />
                         {children}
                         <Analytics />
-                        <Toaster invert />
+                        <SpeedInsights />
+                        <Toaster position='top-center' />
                     </TooltipProvider>
                 </PlannerDataContextProvider>
             </ClerkProvider>

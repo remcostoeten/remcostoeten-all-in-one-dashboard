@@ -1,31 +1,32 @@
 'use server'
 
-import { db } from '../../libs/DB'
-import { favoriteMessagesSchema } from '../../models/Schema'
+import { db } from '@/core/libs/DB'
+import { messages } from '@/core/models/Schema'
+import { eq } from 'drizzle-orm'
 
-export async function addFavorite(
-    messageId: string,
-    userId: string,
-    chatBetween: string,
-    messageContent: string,
-    messageTimestamp: string
-) {
+export async function updateFavorite(messageId: string, isFavourited: boolean) {
     try {
         const result = await db
-            .insert(favoriteMessagesSchema)
-            .values({
-                messageId,
-                userId,
-                chatBetween,
-                messageContent,
-                messageTimestamp
-            })
-            .onConflictDoNothing()
+            .update(messages)
+            .set({ isFavourited: isFavourited ? true : false })
+            .where(eq(messages.id, messageId))
+            .run()
 
-        console.log('Favorite added successfully:', result)
-        return { success: true, message: 'Favorite added successfully' }
+        console.log('Favorite updated successfully:', result)
+        return { success: true, message: 'Favorite updated successfully' }
     } catch (error) {
-        console.error('Error adding favorite:', error)
-        return { success: false, message: 'Failed to add favorite' }
+        console.error('Error updating favorite:', error)
+        return { success: false, message: 'Failed to update favorite' }
+    }
+}
+
+export async function getFavoriteMessages() {
+    try {
+        const result = await db.select().from(messages).where(is_favourited)
+
+        return result // Return the result to the caller
+    } catch (error) {
+        console.error('Error fetching favorite messages:', error)
+        throw error // Propagate the error
     }
 }

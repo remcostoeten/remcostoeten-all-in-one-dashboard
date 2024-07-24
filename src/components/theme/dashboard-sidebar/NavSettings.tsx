@@ -15,6 +15,7 @@ export default function NavSettings() {
 
     function toggleAllItems() {
         const selectAll = Object.keys(enabledNavItems).length === 0
+
         DashboardAsideItems.forEach((item) => {
             if (selectAll) {
                 if (!enabledNavItems[item.name]) {

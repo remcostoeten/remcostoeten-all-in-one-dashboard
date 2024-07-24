@@ -20,6 +20,7 @@ const initialState = DashboardAsideItems.reduce(
 const customStorage: PersistOptions<MenuStore>['storage'] = {
     getItem: (name: string) => {
         const str = localStorage.getItem(name)
+
         return str ? JSON.parse(str) : null
     },
     setItem: (name: string, value: StorageValue<MenuStore>) => {

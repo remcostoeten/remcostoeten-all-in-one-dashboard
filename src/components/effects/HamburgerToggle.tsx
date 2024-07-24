@@ -35,88 +35,89 @@
 
 // export default HamburgerToggle
 
-import React, { useState } from "react";
-import { MotionConfig, motion } from "framer-motion";
-import { useMenuStore } from "../../core/stores/MenuStore";
+import React, { useState } from 'react'
+import { MotionConfig, motion } from 'framer-motion'
+import { useMenuStore } from '../../core/stores/MenuStore'
 
 export default function HamburgerToggle() {
-    return (
-        <AnimatedHamburgerButton />
-    );
-};
+    return <AnimatedHamburgerButton />
+}
 
 const AnimatedHamburgerButton = () => {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(false)
     const { isExpanded, setIsExpanded } = useMenuStore()
-
 
     return (
         <MotionConfig
             transition={{
                 duration: 0.5,
-                ease: "easeInOut",
+                ease: 'easeInOut'
             }}
         >
             <motion.button
                 initial={false}
-                animate={isExpanded ? "open" : "closed"}
-                onClick={isExpanded ? () => setIsExpanded(false) : () => setIsExpanded(true)}
-                className="relative w-16 h-16 p-4 scale-[.6] transition-colors hover:bg-white/20 bg-ghost-active border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800"
+                animate={isExpanded ? 'open' : 'closed'}
+                onClick={
+                    isExpanded
+                        ? () => setIsExpanded(false)
+                        : () => setIsExpanded(true)
+                }
+                className='relative w-16 h-16 p-4 scale-[.6] transition-colors hover:bg-white/20 bg-ghost-active border border-transparent hover:border-ghost-active rounded-md hover:bg-gray-800'
             >
                 <motion.span
                     variants={VARIANTS.top}
-                    className="absolute h-1 w-10 bg-white"
-                    style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
+                    className='absolute h-1 w-10 bg-white'
+                    style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
                 />
                 <motion.span
                     variants={VARIANTS.middle}
-                    className="absolute h-1 w-10 bg-white"
-                    style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+                    className='absolute h-1 w-10 bg-white'
+                    style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
                 />
                 <motion.span
                     variants={VARIANTS.bottom}
-                    className="absolute h-1 w-5 bg-white"
+                    className='absolute h-1 w-5 bg-white'
                     style={{
-                        x: "-50%",
-                        y: "50%",
-                        bottom: "35%",
-                        left: "calc(50% + 10px)",
+                        x: '-50%',
+                        y: '50%',
+                        bottom: '35%',
+                        left: 'calc(50% + 10px)'
                     }}
                 />
             </motion.button>
-        </MotionConfig >
-    );
-};
+        </MotionConfig>
+    )
+}
 
 const VARIANTS = {
     top: {
         open: {
-            rotate: ["0deg", "0deg", "45deg"],
-            top: ["35%", "50%", "50%"],
+            rotate: ['0deg', '0deg', '45deg'],
+            top: ['35%', '50%', '50%']
         },
         closed: {
-            rotate: ["45deg", "0deg", "0deg"],
-            top: ["50%", "50%", "35%"],
-        },
+            rotate: ['45deg', '0deg', '0deg'],
+            top: ['50%', '50%', '35%']
+        }
     },
     middle: {
         open: {
-            rotate: ["0deg", "0deg", "-45deg"],
+            rotate: ['0deg', '0deg', '-45deg']
         },
         closed: {
-            rotate: ["-45deg", "0deg", "0deg"],
-        },
+            rotate: ['-45deg', '0deg', '0deg']
+        }
     },
     bottom: {
         open: {
-            rotate: ["0deg", "0deg", "45deg"],
-            bottom: ["35%", "50%", "50%"],
-            left: "50%",
+            rotate: ['0deg', '0deg', '45deg'],
+            bottom: ['35%', '50%', '50%'],
+            left: '50%'
         },
         closed: {
-            rotate: ["45deg", "0deg", "0deg"],
-            bottom: ["50%", "50%", "35%"],
-            left: "calc(50% + 10px)",
-        },
-    },
-};
+            rotate: ['45deg', '0deg', '0deg'],
+            bottom: ['50%', '50%', '35%'],
+            left: 'calc(50% + 10px)'
+        }
+    }
+}

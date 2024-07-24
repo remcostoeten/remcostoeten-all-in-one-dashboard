@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuStore } from '@/core/stores/MenuStore'
 import { DashboardAsideItems } from '@/core/config/menu-items'
@@ -12,7 +12,7 @@ import SearchDialog from '@/components/shared/navigation/Search'
 import { Flex } from '@/components/shared/atoms/Flex'
 import CreatePincode from '../../auth/CreatePincode'
 
-const Aside = ({ className }) => {
+const Aside = () => {
     const { isExpanded, setIsExpanded, enabledNavItems } = useMenuStore()
     const containerControls = useAnimationControls()
 
@@ -47,12 +47,23 @@ const Aside = ({ className }) => {
                 >
                     <TopSection />
 
-                    <Flex as='nav' gap='2' variant='space-y-m' style={{ marginBottom: '1rem' }}>
+                    <Flex
+                        as='nav'
+                        gap='2'
+                        variant='space-y-m'
+                        style={{ marginBottom: '1rem' }}
+                    >
                         {favouriteItems.map(
                             ({ name, svg, hasNotification }) => (
                                 <MenuItem
                                     key={name}
-                                    name={name.replace('-', ' ').charAt(0).toUpperCase() + name.replace('-', ' ').slice(1)}
+                                    name={
+                                        name
+                                            .replace('-', ' ')
+                                            .charAt(0)
+                                            .toUpperCase() +
+                                        name.replace('-', ' ').slice(1)
+                                    }
                                     icon={svg}
                                     link={name}
                                     isExpanded={isExpanded}
@@ -82,7 +93,7 @@ const Aside = ({ className }) => {
                     <Flex
                         direction='col'
                         variant='space-y-m'
-                        items='center'
+                        items='start'
                         gap='2'
                     >
                         <CreatePincode />
@@ -90,7 +101,7 @@ const Aside = ({ className }) => {
                         <SearchDialog />
                     </Flex>
                 </Flex>
-            </motion.aside >
+            </motion.aside>
         </>
     )
 }

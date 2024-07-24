@@ -54,6 +54,7 @@ const Appointment: React.FC<AppointmentProps> = ({
 
     useEffect(() => {
         const element = ref.current!
+
         return draggable({
             element,
             getInitialData: () => ({
@@ -284,4 +285,5 @@ const Appointment: React.FC<AppointmentProps> = ({
         </Card>
     )
 }
+
 export default Appointment

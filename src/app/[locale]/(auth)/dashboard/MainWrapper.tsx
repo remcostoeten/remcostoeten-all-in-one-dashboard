@@ -20,7 +20,7 @@ export default function MainWrapper({ children, chatName }: MainWrapperProps) {
             style={{
                 width: isSubMenuVisible
                     ? 'calc(100vw - var(--submenu-width) - var(--sidebar-width)'
-                    : 'calc(100% - var(--sidebar-width))',
+                    : 'calc(100vw - var(--sidebar-width))',
                 height: 'calc(100vh - var(--nav-height))'
             }}
         >
@@ -33,6 +33,7 @@ export function ToggleSideMenu({ className }: { className?: string }) {
     const toggleSubMenu: MouseEventHandler<HTMLButtonElement> = () => {
         useSubMenuStore.getState().toggleSubMenu()
     }
+
     return (
         <Button
             variant='ghost'
@@ -47,6 +48,7 @@ export function ToggleSideMenu({ className }: { className?: string }) {
 
 export function ToggleSearch({ className }: { className?: string }) {
     const { toggleSearch } = useChatSearchStore()
+
     return (
         <Button
             variant='ghost'

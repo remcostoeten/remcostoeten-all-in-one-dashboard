@@ -1,7 +1,13 @@
 'use client'
 
-import React, { useState, useTransition } from 'react'
-import { format } from 'date-fns'
+import { ShortcutKey } from '@/components/shared/navigation/Search'
+import { Button, Calendar, Input, TimePicker } from '@/components/ui'
+import {
+    Dialog,
+    DialogContent,
+    DialogFooter,
+    DialogTrigger
+} from '@/components/ui/dialog'
 import {
     Form,
     FormControl,
@@ -11,15 +17,10 @@ import {
     FormMessage
 } from '@/components/ui/form'
 import {
-    Dialog,
-    DialogContent,
-    DialogFooter,
-    DialogTrigger
-} from '@/components/ui/dialog'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { CalendarIcon } from 'lucide-react'
+    Popover,
+    PopoverContent,
+    PopoverTrigger
+} from '@/components/ui/popover'
 import {
     Select,
     SelectContent,
@@ -27,21 +28,19 @@ import {
     SelectTrigger,
     SelectValue
 } from '@/components/ui/select'
-import { toast } from 'sonner'
-import { Input, Calendar, TimePicker, Button } from '@/components/ui'
-import {
-    Popover,
-    PopoverTrigger,
-    PopoverContent
-} from '@/components/ui/popover'
-import { createAppointmentSchema } from '@/core/models'
-import { cn } from '@/core/utils/utils'
 import { useData } from '@/core/contexts/CalendarDataContext'
 import type { Appointment as AppointmentType } from '@/core/models'
-import { ShortcutKey } from '@/components/shared/navigation/Search'
-import GhostLabel from '../../../../../../components/theme/shells/GhostLabel'
-import IconShell from '../../../../../../components/theme/shells/IconShell'
+import { createAppointmentSchema } from '@/core/models'
+import { cn } from '@/core/utils/utils'
 import { PlusIcon } from '@heroicons/react/24/outline'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { format } from 'date-fns'
+import { CalendarIcon } from 'lucide-react'
+import React, { useState, useTransition } from 'react'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import { z } from 'zod'
+import IconShell from '../../../../../../components/theme/shells/IconShell'
 
 const CustomInput = (props: any) => {
     return (
@@ -112,7 +111,13 @@ const AddAppointmentDialog: React.FC = () => {
     return (
         <Dialog open={isOpened} onOpenChange={setIsOpened}>
             <DialogTrigger asChild>
-                <IconShell className='py-1 box-content h-[25px] w-[25px] bg-ghost-hover ' tooltipPos='bottom' tooltipTitle='Add dialog'><PlusIcon width={18} height={18} /></IconShell>
+                <IconShell
+                    className='py-1 box-content h-[25px] w-[25px] bg-ghost-hover '
+                    tooltipPos='bottom'
+                    tooltipTitle='Add dialog'
+                >
+                    <PlusIcon width={18} height={18} />
+                </IconShell>
             </DialogTrigger>
             <DialogContent>
                 <Form {...form}>
@@ -152,7 +157,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                     className={cn(
                                                         'w-[280px] justify-start text-left font-normal',
                                                         !field.value &&
-                                                        'text-muted-foreground'
+                                                            'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className='mr-2 h-4 w-4' />
@@ -202,7 +207,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                     className={cn(
                                                         'w-[280px] justify-start text-left font-normal',
                                                         !field.value &&
-                                                        'text-muted-foreground'
+                                                            'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className='mr-2 h-4 w-4' />
@@ -251,10 +256,10 @@ const AddAppointmentDialog: React.FC = () => {
                                                 <SelectValue>
                                                     {field.value
                                                         ? resources.find(
-                                                            (resource) =>
-                                                                resource.id ===
-                                                                field.value
-                                                        )?.name
+                                                              (resource) =>
+                                                                  resource.id ===
+                                                                  field.value
+                                                          )?.name
                                                         : 'Select a resource'}
                                                 </SelectValue>
                                             </SelectTrigger>

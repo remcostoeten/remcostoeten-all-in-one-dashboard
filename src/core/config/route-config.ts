@@ -17,10 +17,10 @@ export const routeConfig: RouteConfig[] = [
     },
     {
         path: '/dashboard/color-tool',
-        subMenu: 'ColorToolSubMenu',
+        subMenu: 'ColorToolSubMenu'
     },
     {
-        path: '/dashboard/planner',
+        path: '/dashboard/planner'
         // subMenu: 'DriveSubMenu'
     },
     {

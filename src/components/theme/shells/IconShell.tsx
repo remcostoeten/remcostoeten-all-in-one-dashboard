@@ -12,7 +12,7 @@ type IconShellProps = {
     hasBorder?: boolean // Optional prop to control border visibility
     tooltipTitle?: string // New prop for tooltip title
     className?: string // Optional class name for custom styling
-    tooltipPos?: "right" | "top" | "bottom" | "left"
+    tooltipPos?: 'right' | 'top' | 'bottom' | 'left'
 }
 
 const IconShell: FunctionComponent<IconShellProps> = ({
@@ -24,8 +24,9 @@ const IconShell: FunctionComponent<IconShellProps> = ({
     tooltipPos = 'right',
     ...props
 }) => {
-    const classes = `${className} flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid  ${hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
-        } hover:cursor-pointer hover:border-icon-active-background   transition-colors duration-500 `
+    const classes = `${className} flex justify-center items-center px-2 w-8 h-8 rounded-md border border-solid  ${
+        hasBorder ? 'border-[#ffffff17]' : 'border-transparent'
+    } hover:cursor-pointer hover:border-icon-active-background   transition-colors duration-500 `
 
     const content = (
         <div
@@ -41,12 +42,15 @@ const IconShell: FunctionComponent<IconShellProps> = ({
         <Tooltip delayDuration={100}>
             <TooltipTrigger asChild>{content}</TooltipTrigger>
             {tooltipTitle && (
-                <TooltipContent side={tooltipPos} align='end' className='bg-icon shadow-2xl'>
+                <TooltipContent
+                    side={tooltipPos}
+                    align='end'
+                    className='bg-icon shadow-2xl'
+                >
                     <p>{tooltipTitle}</p>
                 </TooltipContent>
-            )
-            }
-        </Tooltip >
+            )}
+        </Tooltip>
     )
 }
 

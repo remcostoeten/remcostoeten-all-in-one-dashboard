@@ -1,38 +1,92 @@
 'use server'
 
-import fs from 'fs/promises'
+import { db } from '@/core/libs/DB'
+import { messages, chats } from '@/core/models/Schema'
+import { auth, clerkClient } from '@clerk/nextjs/server'
+import { desc, eq, isNull, or, sql } from 'drizzle-orm'
 
-import path from 'path'
-
-export async function getChatData(name: string, page = 1, pageSize = 50) {
-    const chatDirectory = path.join(process.cwd(), 'src/core/data/chats')
-    const filePath = path.join(chatDirectory, `${name}.json`)
+export async function getAllChats() {
     try {
-        console.log(`Attempting to read file: ${filePath}`)
-        console.log(`Page: ${page}, PageSize: ${pageSize}`)
+        console.log('Fetching chats...')
+        const { userId } = auth()
 
-        const fileContent = await fs.readFile(filePath, 'utf-8')
-        const fullData = JSON.parse(fileContent)
-        const startIndex = (page - 1) * pageSize
-        const endIndex = startIndex + pageSize
+        if (!userId) {
+            throw new Error('Not authenticated')
+        }
 
-        console.log(`Start Index: ${startIndex}, End Index: ${endIndex}`)
+        const user = await clerkClient.users.getUser(userId)
+        const isAdmin = user.publicMetadata.isAdmin === true
 
-        if (startIndex >= fullData.messages.length) {
-            console.log('Page out of bounds')
+        let query = db.select().from(chats)
+
+        if (!isAdmin) {
+            query = query.where(
+                or(eq(chats.adminOnly, 0), isNull(chats.adminOnly))
+            )
+        }
+
+        const fetchedChats = await query
+
+        console.log('Fetched chats:', fetchedChats)
+        if (fetchedChats.length === 0) {
+            console.log('No chats found')
+            return []
+        }
+        return fetchedChats
+    } catch (error) {
+        console.error('Error fetching chats:', error)
+        throw new Error('Could not fetch chats')
+    }
+}
+
+export async function getChatWithMessages(
+    name: string,
+    page = 1,
+    pageSize = 50
+) {
+    console.time('getChatWithMessages')
+    try {
+        const chatInfo = await db
+            .select()
+            .from(chats)
+            .where(eq(chats.name, name))
+            .limit(1)
+
+            .then((results) => results[0])
+
+        if (!chatInfo) {
             return null
         }
 
-        const paginatedMessages = fullData.messages.slice(startIndex, endIndex)
+        const startIndex = (page - 1) * pageSize
+
+        const totalMessages = await db
+            .select({ count: sql<number>`count(*)` })
+            .from(messages)
+            .where(eq(messages.chatName, name))
+            .then((result) => result[0].count)
+
+        const messagesData = await db
+            .select()
+            .from(messages)
+            .where(eq(messages.chatName, name))
+            .orderBy(sql`${messages.timestamp} ASC`)
+            .limit(pageSize)
+            .offset(startIndex)
+
+        console.log(`Fetched ${messagesData.length} messages for chat ${name}`)
+
         return {
-            ...fullData,
-            messages: paginatedMessages,
-            totalMessages: fullData.messages.length,
+            ...chatInfo,
+            messages: messagesData,
+            totalMessages: totalMessages,
             currentPage: page,
             pageSize: pageSize
         }
     } catch (error) {
-        console.error(`Error reading chat file for ${name}:`, error)
-        return null
+        console.error(`Error fetching chat data for ${name}:`, error)
+        throw new Error('Could not fetch chat data')
+    } finally {
+        console.timeEnd('getChatWithMessages')
     }
 }

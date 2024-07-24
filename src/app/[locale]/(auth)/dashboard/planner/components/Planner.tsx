@@ -37,7 +37,7 @@ const Planner: React.FC<PlannerProps> = ({
 }
 
 export interface PlannerMainComponentProps
-    extends React.HTMLAttributes<HTMLDivElement> { }
+    extends React.HTMLAttributes<HTMLDivElement> {}
 
 const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     return (
@@ -47,7 +47,7 @@ const PlannerMainComponent: FC<PlannerMainComponentProps> = ({ ...props }) => {
     )
 }
 
-interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> { }
+interface CalendarContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 function CalendarContent({ ...props }: CalendarContentProps) {
     const { viewMode, dateRange, timeLabels } = useCalendar()
@@ -64,11 +64,13 @@ function CalendarContent({ ...props }: CalendarContentProps) {
                 const appointment = appointments.find(
                     (appt) => appt.id === sourceData.appointmentId
                 )
+
                 if (!appointment) return
 
                 const newResource = resources.find(
                     (res) => res.id === destination.resourceId
                 )
+
                 if (!newResource) return
 
                 const newDates = calculateNewDates(

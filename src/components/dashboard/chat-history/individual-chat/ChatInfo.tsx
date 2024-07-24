@@ -10,6 +10,7 @@ export default function ChatInfo() {
         unreadMessages: 3,
         lastMessageFrom: 'Bot'
     }
+
     return (
         <Tooltip delayDuration={100}>
             <TooltipTrigger>

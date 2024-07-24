@@ -34,7 +34,7 @@ export default function AvatarShell({
             <Link
                 href={href}
                 passHref
-                className={`grid place-items-center w-${width} h-${height} text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
+                className={`mx-4 grid place-items-center w-${width} h-${height} text-lg font-medium text-white whitespace-nowrap rounded ${background}`}
                 target={target}
                 {...props}
             >

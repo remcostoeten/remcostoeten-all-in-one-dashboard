@@ -1,4 +1,5 @@
 'use client'
+
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
 import Image from 'next/image'
 import { encode } from 'qss'
@@ -37,6 +38,7 @@ export const LinkPreview = ({
     imageSrc = ''
 }: LinkPreviewProps) => {
     let src
+
     if (!isStatic) {
         const params = encode({
             url,
@@ -49,6 +51,7 @@ export const LinkPreview = ({
             'viewport.width': width * 3,
             'viewport.height': height * 3
         })
+
         src = `https://api.microlink.io/?${params}`
     } else {
         src = imageSrc
@@ -71,6 +74,7 @@ export const LinkPreview = ({
         const targetRect = event.target.getBoundingClientRect()
         const eventOffsetX = event.clientX - targetRect.left
         const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2 // Reduce the effect to make it subtle
+
         x.set(offsetFromCenter)
     }
 

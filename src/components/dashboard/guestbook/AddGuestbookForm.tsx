@@ -6,7 +6,7 @@ const AddGuestbookForm: React.FC = () => (
     <GuestbookForm
         props={{
             onValid: async (data) => {
-                const res = await fetch(`/api/guestbook`, {
+                const res = await fetch('/api/guestbook', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

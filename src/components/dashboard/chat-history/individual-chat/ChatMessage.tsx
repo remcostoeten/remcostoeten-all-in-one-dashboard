@@ -1,11 +1,13 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
-import Image from 'next/image'
-import { getInitials } from '@/core/utils/get-initials'
-import { formatDate } from '@/core/utils/format-date'
 import { LinkPreview } from '@/components/effects/magicui/link-preview'
 import { Button } from '@/components/ui/button'
+import { WHATSAPP_NAME } from '@/core/config/site-config'
+import { formatDate, formatDateLabel } from '@/core/utils/format-date'
+import { getInitials } from '@/core/utils/get-initials'
+import Hearts from '@c/effects/Hearts'
+import Image from 'next/image'
+import React, { useRef, useState } from 'react'
 import { FavouriteChatMessage } from '../FavouriteChatMessage'
 
 export type Message = {
@@ -14,6 +16,7 @@ export type Message = {
     content: string
     timestamp: string
     type: 'text' | 'file' | 'image'
+    isFavourited: boolean
 }
 
 type ChatMessagesProps = {
@@ -22,19 +25,9 @@ type ChatMessagesProps = {
     chatName: string
 }
 
-const formatDateLabel = (timestamp: string) => {
-    return new Date(timestamp).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    })
-}
-
 export default function ChatMessages({
     messages,
-    currentUserId,
-    chatName
+    currentUserId
 }: ChatMessagesProps) {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false)
     const [lightboxImageUrl, setLightboxImageUrl] = useState('')
@@ -52,12 +45,13 @@ export default function ChatMessages({
 
     const renderMessage = (message: Message) => {
         const isCurrentUser = message.sender === currentUserId
+
         return (
             <div
                 ref={(el) => {
                     if (el) messageRefs.current[message.id] = el
                 }}
-                className={`mb-4 ${isCurrentUser ? 'flex justify-end' : ''}`}
+                className={`mb-4 ${message.sender.includes('emco') ? 'flex justify-end' : ''}`}
             >
                 <div
                     className={`flex items-start ${isCurrentUser ? 'flex-row-reverse' : ''}`}
@@ -81,10 +75,13 @@ export default function ChatMessages({
                         <FavouriteChatMessage
                             messageId={message.id}
                             userId={message.sender}
-                            chatBetween={message.sender}
-                            timestamp={message.timestamp}
+                            isFavourited={message.isFavourited}
                         >
-                            {renderMessageContent(message, isCurrentUser)}
+                            {renderMessageContent(
+                                message,
+                                isCurrentUser,
+                                message.isFavourited
+                            )}
                         </FavouriteChatMessage>
                     </div>
                 </div>
@@ -92,14 +89,19 @@ export default function ChatMessages({
         )
     }
 
-    const renderMessageContent = (message: Message, isCurrentUser: boolean) => {
+    const renderMessageContent = (
+        message: Message,
+        isCurrentUser: boolean,
+        is_favourited: boolean
+    ) => {
         switch (message.type) {
             case 'text':
                 return (
                     <p
-                        className={`text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
+                        className={`relative text-balance bg-popover bg-opacity-10 mt-1 p-2 rounded-md ${isCurrentUser ? 'rounded-tr-xl' : 'rounded-tl-xl'}`}
                     >
                         {message.content}
+                        {is_favourited ? <Hearts numHearts={5} /> : ''}
                     </p>
                 )
             case 'file':
@@ -136,9 +138,11 @@ export default function ChatMessages({
 
     const renderMessages = () => {
         let currentDate = ''
+
         return messages.map((message, index) => {
             const messageDate = formatDateLabel(message.timestamp)
             const showDateLabel = messageDate !== currentDate
+
             currentDate = messageDate
 
             return (
@@ -158,7 +162,7 @@ export default function ChatMessages({
 
     return (
         <>
-            <div ref={chatContainerRef} className='flex-1'>
+            <div ref={chatContainerRef} className='pl-2 pr-4'>
                 {renderMessages()}
             </div>
 

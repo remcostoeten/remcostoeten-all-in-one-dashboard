@@ -37,6 +37,7 @@ export const PlannerProvider: React.FC<{ children: React.ReactNode }> = ({
     const viewMode = useMemo(() => {
         const days =
             (Number(dateRange.to) - Number(dateRange.from)) / (1000 * 3600 * 24)
+
         if (days < 1) return 'day'
         if (days <= 7) return 'week'
         if (days <= 31) return 'month'

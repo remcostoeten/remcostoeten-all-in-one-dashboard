@@ -25,6 +25,7 @@ export default function FuelTypeHeader({
 
         try {
             const response = await fetchGasStations('', fuelTypeNumber)
+
             console.log(response)
         } catch (error) {
             console.error('Error fetching gas stations:', error)

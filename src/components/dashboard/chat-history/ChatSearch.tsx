@@ -43,6 +43,7 @@ const Search = ({ chatName, onSearchResults }: SearchProps) => {
         try {
             console.log('Searching for:', searchQuery, 'in chat:', chatName)
             const results = await searchChatMessages(chatName, searchQuery)
+
             console.log('Search results:', results)
             onSearchResults(results.messages)
         } catch (error) {
@@ -51,6 +52,7 @@ const Search = ({ chatName, onSearchResults }: SearchProps) => {
             setIsSearching(false)
         }
     }
+
     return (
         <div className='mb-4 flex space-x-2 max-w-sm'>
             <Input

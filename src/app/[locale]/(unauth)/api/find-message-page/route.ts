@@ -1,36 +1,50 @@
-import { NextRequest, NextResponse } from 'next/server'
-import path from 'path'
-import fs from 'fs/promises'
+import { NextResponse } from 'next/server'
+import { db } from '@/core/libs/DB'
+import { messages } from '@/core/models/Schema'
+import { eq, and, sql } from 'drizzle-orm'
 
-export async function GET(request: NextRequest) {
-    const searchParams = request.nextUrl.searchParams
+export async function GET(request: Request) {
+    const { searchParams } = new URL(request.url)
     const chatName = searchParams.get('chatName')
     const messageId = searchParams.get('messageId')
 
     if (!chatName || !messageId) {
         return NextResponse.json(
-            { error: 'Missing chatName or messageId' },
+            { error: 'Invalid parameters' },
             { status: 400 }
         )
     }
 
     try {
-        const chatDirectory = path.join(process.cwd(), 'src/core/data/chats')
-        const filePath = path.join(chatDirectory, `${chatName}.json`)
-        const fileContent = await fs.readFile(filePath, 'utf-8')
-        const chatData = JSON.parse(fileContent)
+        const message = await db
+            .select()
+            .from(messages)
+            .where(
+                and(eq(messages.chatName, chatName), eq(messages.id, messageId))
+            )
+            .limit(1)
 
-        const messageIndex = chatData.messages.findIndex(
-            (msg: any) => msg.id === messageId
-        )
-        if (messageIndex === -1) {
+        if (message.length === 0) {
             return NextResponse.json(
                 { error: 'Message not found' },
                 { status: 404 }
             )
         }
 
-        const page = Math.floor(messageIndex / 50) + 1 // Assuming 50 messages per page
+        // Calculate the page number based on the message's position
+        const messageIndex = await db
+            .select({ count: sql<number>`count(*)` })
+            .from(messages)
+            .where(
+                and(
+                    eq(messages.chatName, chatName),
+                    sql`${messages.timestamp} <= ${message[0].timestamp}`
+                )
+            )
+            .then((result) => result[0].count)
+
+        const pageSize = 50 // Make sure this matches your frontend page size
+        const page = Math.floor(messageIndex / pageSize) + 1
 
         return NextResponse.json({ page })
     } catch (error) {

@@ -1,45 +1,56 @@
-'use client'
-
-import { HeartIcon, TrashIcon } from '@heroicons/react/24/outline'
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import { HeartIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
-import { addFavorite } from '../../../core/@server/actions/favoriteMessage'
-import { timestamp } from 'drizzle-orm/mysql-core'
+import { toast } from 'sonner'
+import { updateFavorite } from '../../../core/@server/actions/favoriteMessage'
 
 export function FavouriteChatMessage({
     messageId,
-    userId,
-    chatBetween,
-    children,
-    timestamp
+    isFavourited,
+    children
+}: {
+    messageId: string
+    userId: string
+    isFavourited: boolean
+    children: React.ReactNode
 }) {
-    const [isFavorited, setIsFavorited] = useState(false)
+    const [isMsgFavorited, setMsgIsFavorited] = useState(isFavourited)
+    const [isDeleting, setIsDeleting] = useState(false)
 
     const handleFavorite = async () => {
         try {
-            const result = await addFavorite(
-                messageId,
-                userId,
-                chatBetween,
-                children.props.children,
-                timestamp
-            )
+            setIsDeleting(true)
+            const result = await updateFavorite(messageId, !isMsgFavorited)
+
             if (result.success) {
-                setIsFavorited(!isFavorited)
-                console.log('Message favorited successfully')
+                setMsgIsFavorited(!isMsgFavorited)
+                if (isMsgFavorited) {
+                    toast('Message unfavorited successfully')
+                } else {
+                    toast('Message favorited successfully')
+                }
             } else {
-                console.error('Failed to favorite message:', result.message)
+                toast('Failed to favorite message', {
+                    description: result.message
+                })
             }
+            setIsDeleting(false)
         } catch (error) {
+            toast('Error favoriting message', {
+                description:
+                    error instanceof Error
+                        ? error.message
+                        : 'Unknown error occurred'
+            })
             console.error('Error favoriting message:', error)
+            setIsDeleting(false)
         }
     }
 
@@ -51,18 +62,13 @@ export function FavouriteChatMessage({
                 <DropdownMenuGroup>
                     <DropdownMenuItem onClick={handleFavorite}>
                         <HeartIcon
-                            className={`mr-2 h-4 w-4 ${isFavorited ? 'text-red-500' : ''}`}
+                            className={`mr-2 h-4 w-4 ${isMsgFavorited ? 'text-red-500' : ''}`}
                         />
-                        {isFavorited
+                        {isMsgFavorited
                             ? 'Unfavorite message'
                             : 'Favorite message'}
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className='text-red-600'>
-                    <TrashIcon className='mr-2 h-4 w-4' />
-                    Delete
-                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )

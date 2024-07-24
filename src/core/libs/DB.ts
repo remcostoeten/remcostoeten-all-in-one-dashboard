@@ -8,7 +8,15 @@ const client = createClient({
     url: 'libsql://all-in-one-dashboard-remcostoeten.turso.io',
     authToken: process.env.DATABASE_AUTH_TOKEN
 })
-export const db = drizzle(client)
+
+const customLogger = {
+    logQuery: (query: string, params: unknown[]) => {
+        console.log('Query:', query)
+        console.log('Params:', params)
+    }
+}
+
+export const db = drizzle(client, { logger: customLogger })
 
 // Disable migrate function if using Edge runtime and use `npm run db:migrate` instead.
 // Only run migrate in development. Otherwise, migrate will also be run during the build which can cause errors.

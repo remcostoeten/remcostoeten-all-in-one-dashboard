@@ -1,5 +1,6 @@
 'use client'
-import React, { useState } from 'react'
+
+import React, { ReactNode, ReactNode, useState } from 'react'
 import {
     Pagination,
     PaginationContent,
@@ -24,13 +25,16 @@ interface PaginationControlProps {
     totalMessages: number
     pageSize: number
     name: string
+    children?: ReactNode
+    toTop?: ReactNode
 }
 
 export function PaginationControl({
     currentPage,
     totalMessages,
+    toTop,
     pageSize,
-    name
+    children
 }: PaginationControlProps) {
     const [isLoading, setIsLoading] = useState(false)
     const totalPages = Math.ceil(totalMessages / pageSize)
@@ -44,7 +48,7 @@ export function PaginationControl({
     }
 
     const generatePaginationItems = () => {
-        let items = []
+        const items = []
         const maxVisiblePages = 5
 
         if (totalPages <= maxVisiblePages) {
@@ -119,6 +123,8 @@ export function PaginationControl({
     return (
         <div className='flex items-center justify-between py-4'>
             {isLoading && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
+            {children}
+            {toTop}
             <Pagination>
                 <PaginationContent>
                     <PaginationItem>

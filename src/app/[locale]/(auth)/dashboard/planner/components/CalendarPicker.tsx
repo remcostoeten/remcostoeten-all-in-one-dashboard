@@ -20,6 +20,7 @@ function CalendarPicker() {
     const handleDateRangeUpdate = (range: DateRange) => {
         const from = range.from
         const to = range.to ?? endOfDay(range.from as Date)
+
         setDateRange({
             from: from,
             to: to

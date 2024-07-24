@@ -1,14 +1,13 @@
 import { getI18nPath } from '@/core/utils/get-I18n-path'
 import { UserProfile } from '@clerk/nextjs'
 import { getTranslations } from 'next-intl/server'
-import SetPincode from '../../../../../../components/auth/SetPincode'
-import {
-    Collapsible,
-    CollapsibleTrigger,
-    CollapsibleContent,
-    Button
-} from '../../../../../../components/ui'
 import { PincodeForm } from '../../../../../../components/auth/InputOTPDemo'
+import {
+    Button,
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger
+} from '../../../../../../components/ui'
 
 export async function generateMetadata(props: { params: { locale: string } }) {
     const t = await getTranslations({

@@ -20,6 +20,7 @@ export default function GasStationsPage() {
         if (channel) {
             channel.onmessage = (event) => {
                 const { city: newCity, fuelType: newFuelType } = event.data
+
                 setCity(newCity)
                 setFuelType(newFuelType)
             }
@@ -38,6 +39,7 @@ export default function GasStationsPage() {
     ) => {
         try {
             const result = await getGasStations(cityName, fuelTypeNumber)
+
             setData(result.data)
             setError(result.error)
         } catch (err) {
@@ -53,6 +55,7 @@ export default function GasStationsPage() {
     const handleCitySubmit = (newCity: string) => {
         setCity(newCity)
         const channel = createBroadcastChannel('gasStationsUpdate')
+
         if (channel) {
             channel.postMessage({ city: newCity, fuelType })
         }
@@ -61,6 +64,7 @@ export default function GasStationsPage() {
     const handleFuelTypeChange = (newFuelType: number) => {
         setFuelType(newFuelType)
         const channel = createBroadcastChannel('gasStationsUpdate')
+
         if (channel) {
             channel.postMessage({ city, fuelType: newFuelType })
         }

@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useUser } from '@clerk/nextjs'
@@ -17,7 +16,7 @@ export default function TopSection() {
         <Flex
             direction='col'
             gap='1'
-            className={`mb-4 ${isExpanded ? 'px-3 py-2 items-start' : 'items-center'}`}
+            className={`mb-4 ${isExpanded ? ' py-2 items-start' : 'items-center'}`}
         >
             <Flex direction='col' gap='2 '>
                 <AvatarShell as={Link} href='/dashboard' Initials={initial} />

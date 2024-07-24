@@ -14,6 +14,7 @@ type CurrentTimeProps = {
 
 const useCustomTime = () => {
     const now = new Date()
+
     return {
         hours: now.getHours(),
         minutes: now.getMinutes(),
@@ -34,6 +35,7 @@ function CurrentTime({
             setTime(new Date())
             setBlink((prev) => !prev)
         }, 1000)
+
         return () => clearInterval(timer)
     }, [])
 

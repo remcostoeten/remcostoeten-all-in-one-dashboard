@@ -6,6 +6,7 @@ import { userPincodes } from '@/core/models/Schema'
 
 export async function GET() {
     const { userId } = auth()
+
     if (!userId) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -21,11 +22,13 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
     const { userId } = auth()
+
     if (!userId) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const { pincode } = await request.json()
+
     if (!pincode || pincode.length !== 6) {
         return NextResponse.json({ error: 'Invalid pincode' }, { status: 400 })
     }

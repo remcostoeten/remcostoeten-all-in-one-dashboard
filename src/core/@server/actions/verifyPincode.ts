@@ -7,11 +7,13 @@ import { auth } from '@clerk/nextjs/server'
 
 export async function verifyPincode(formData: FormData) {
     const { userId } = auth()
+
     if (!userId) {
         throw new Error('User not authenticated')
     }
 
     const pincode = formData.get('pincode') as string
+
     if (!pincode) {
         throw new Error('Pincode is required')
     }

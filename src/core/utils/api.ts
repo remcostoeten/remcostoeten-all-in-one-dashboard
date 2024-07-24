@@ -26,10 +26,12 @@ export default async function fetchGasStations(
 
     try {
         const response = await fetch(API_URL)
+
         if (!response.ok) {
             throw new Error('Failed to fetch data')
         }
         const rawData = await response.json()
+
         return { data: rawData, error: null }
     } catch (error) {
         console.error('Error fetching gas stations:', error)

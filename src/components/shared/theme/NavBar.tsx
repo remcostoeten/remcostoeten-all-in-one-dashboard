@@ -43,7 +43,7 @@ export default function NavBar() {
     }, [])
 
     // Simplify conditional rendering and class assignment
-    const navClass = `z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3 ${isFixed ? 'fixed top-0' : '-top-5'}`
+    const navClass = `z-10 flex min-w-full justify-between border-b p-2 transition-all duration-1000 bg-black bg-opacity-50 pr-4 pl-3 z-10 ${isFixed ? 'fixed top-0' : '-top-5'}`
 
     if (pathname.includes('dashboard')) {
         return null

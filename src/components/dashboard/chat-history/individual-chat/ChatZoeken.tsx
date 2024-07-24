@@ -1,13 +1,6 @@
 'use client'
 
-import { ReactNode, useEffect, useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
-import { useSubMenuStore } from '@/core/stores/SubMenuStore'
-import { FiSearch } from 'react-icons/fi'
-import { Input } from '@/components/ui/input'
-import { searchChatMessages } from '@/core/@server/actions/searchChatMessages'
-import { SearchIcon } from '../../../theme/icons'
-import { Avatar, AvatarImage, AvatarFallback } from '../../../ui'
 import {
     Drawer,
     DrawerClose,
@@ -18,10 +11,15 @@ import {
     DrawerTitle,
     DrawerTrigger
 } from '@/components/ui/drawer'
+import { Input } from '@/components/ui/input'
+import { searchChatMessages } from '@/core/@server/actions/searchChatMessages'
 import { useChatSearchStore } from '@/core/stores/chatStore'
-import GhostLabel from '../../../theme/shells/GhostLabel'
-import IconShell from '../../../theme/shells/IconShell'
+import { ReactNode, useEffect, useRef, useState } from 'react'
+import { FiSearch } from 'react-icons/fi'
 import { Flex } from '../../../shared/atoms/Flex'
+import { SearchIcon } from '../../../theme/icons'
+import { Avatar, AvatarFallback, AvatarImage } from '../../../ui'
+import { useRouter } from 'next/navigation'
 
 type MainWrapperProps = {
     children?: ReactNode
@@ -29,14 +27,16 @@ type MainWrapperProps = {
     onSearch?: (results: any[]) => void
 }
 
-export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps, 'onSearch'>) {
-    const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
+export default function ChatZoeken({
+    children,
+    chatName
+}: Omit<MainWrapperProps, 'onSearch'>) {
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [isSearching, setIsSearching] = useState(false)
-    const { isSearchOpen, toggleSearch } = useChatSearchStore()
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const scrollToRef = useRef(null)
+    const router = useRouter() // Use useRouter from next/navigation
 
     const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -49,6 +49,7 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
         setIsSearching(true)
         try {
             const results = await searchChatMessages(chatName, searchQuery)
+
             setSearchResults(results.messages)
         } catch (error) {
             console.error('Error searching messages:', error)
@@ -59,29 +60,37 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
 
     const scrollToMessage = async (messageId: string) => {
         setIsDrawerOpen(false) // Close the drawer
+        let newUrl: URL // Declare newUrl outside of the try block
 
-        scrollToRef.current = messageId
+        try {
+            const response = await fetch(
+                `/api/find-message-page?chatName=${chatName}&messageId=${messageId}`
+            )
+            const data = await response.json()
 
-        // Attempt to scroll immediately
-        scrollToMessageElement(messageId)
+            if (data.page) {
+                // Update URL with page and scrollTo parameters
+                newUrl = new URL(window.location.href)
 
-        // If the message is not found, it might be on another page
-        if (
-            typeof document !== 'undefined' &&
-            !document.getElementById(messageId)
-        ) {
-            try {
-                const response = await fetch(
-                    `/api/find-message-page?chatName=${chatName}&messageId=${messageId}`
-                )
-                const data = await response.json()
-                if (data.page) {
-                    window.location.href = `?page=${data.page}&scrollTo=${messageId}`
+                newUrl.searchParams.set('page', data.page)
+                newUrl.searchParams.set('scrollTo', messageId)
+                window.history.pushState({}, '', newUrl.toString())
+
+                // If we're already on the correct page, scroll immediately
+                if (data.page === currentPage) {
+                    scrollToMessageElement(messageId)
                 } else {
-                    console.error('Message not found')
+                    // Otherwise, reload the page (which will trigger the useEffect to scroll)
+                    window.location.reload()
                 }
-            } catch (error) {
-                console.error('Error finding message page:', error)
+            } else {
+                console.error('Message not found')
+            }
+        } catch (error) {
+            console.error('Error finding message page:', error)
+        } finally {
+            if (newUrl) {
+                router.push(newUrl.toString()) // Use router.push
             }
         }
     }
@@ -89,6 +98,7 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
     const scrollToMessageElement = (messageId: string) => {
         if (typeof document !== 'undefined') {
             const messageElement = document.getElementById(messageId)
+
             if (messageElement) {
                 messageElement.scrollIntoView({
                     behavior: 'smooth',
@@ -108,8 +118,16 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
         const scrollToMessageId = new URLSearchParams(
             window.location.search
         ).get('scrollTo')
+
         if (scrollToMessageId) {
-            scrollToRef.current = scrollToMessageId
+            const scrollAttempts = [0, 100, 500, 1000, 2000]
+
+            scrollAttempts.forEach((delay) => {
+                setTimeout(
+                    () => scrollToMessageElement(scrollToMessageId),
+                    delay
+                )
+            })
         }
     }, [])
 
@@ -117,6 +135,7 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
         if (scrollToRef.current) {
             const messageId = scrollToRef.current
             const scrollAttempts = [0, 100, 500, 1000, 2000]
+
             scrollAttempts.forEach((delay) => {
                 setTimeout(() => scrollToMessageElement(messageId), delay)
             })
@@ -145,13 +164,14 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
     return (
         <>
             <section
-                className='flex flex-col ml-auto transition-[width]'
-                style={{
-                    width: isSubMenuVisible
-                        ? 'calc('
-                        : 'calc(100% - var(--sidebar-width))',
-                    height: 'calc(100vh - var(--nav-height))'
-                }}
+            //     className='flex flex-col ml-auto transition-[width]'
+            //     style={{
+            //         width: isSubMenuVisible
+            //             ? 'calc('
+            //             : 'calc(100% - var(--sidebar-width))',
+            //         height: 'calc(100vh - var(--nav-height))'
+            //     }}
+            // >
             >
                 {children}
             </section>
@@ -172,8 +192,10 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
                         </Button>
                     </DrawerTrigger>
                     <Flex gap='2' style={{ marginRight: '1rem' }}>
-                        <kbd className="kbd text-xs h-fit">s</kbd>
-                        <kbd className="kbd min-w-full text-xs h-fit">ctrl + k</kbd>
+                        <kbd className='kbd text-xs h-fit'>s</kbd>
+                        <kbd className='kbd min-w-full text-xs h-fit'>
+                            ctrl + k
+                        </kbd>
                     </Flex>
                 </Flex>
 
@@ -258,6 +280,7 @@ export default function ChatZoeken({ children, chatName }: Omit<MainWrapperProps
 
 export function ToggleSearch({ className }: { className?: string }) {
     const { toggleSearch } = useChatSearchStore()
+
     return (
         <Button
             variant='ghost'

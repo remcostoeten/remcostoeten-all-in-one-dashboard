@@ -6,7 +6,11 @@ type ColorInputProps = {
     onChange: (value: number) => void
 }
 
-export default function ColorInput({ label, value, onChange }: ColorInputProps) {
+export default function ColorInput({
+    label,
+    value,
+    onChange
+}: ColorInputProps) {
     return (
         <div>
             <label>{label}</label>
@@ -19,4 +23,3 @@ export default function ColorInput({ label, value, onChange }: ColorInputProps) 
         </div>
     )
 }
-

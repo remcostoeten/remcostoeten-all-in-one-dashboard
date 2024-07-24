@@ -4,8 +4,10 @@
  * @returns {string} The initials of the name.
  */
 export function getInitials(name: string): string {
+    if (!name || typeof name !== 'string') return ''
+
     return name
-        .split(' ')
+        ?.split(' ')
         .map((n) => n[0])
         .join('')
         .slice(0, 2)

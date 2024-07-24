@@ -35,6 +35,7 @@ export const calculateNewDates = (
     let start = new Date(dateRange.from as Date)
     let end = new Date(dateRange.to as Date)
     const delta = (currentIndex - index) * -1
+
     switch (viewMode) {
         case 'day':
             start.setHours(start.getHours() + delta)
@@ -65,6 +66,7 @@ export const filterAppointments = (
     viewMode: string
 ): boolean => {
     const apptDate = new Date(appt.start)
+
     if (
         !dateRange.from ||
         !dateRange.to ||

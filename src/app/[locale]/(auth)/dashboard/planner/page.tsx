@@ -27,6 +27,7 @@ export default function HomePage() {
             appointmentCount,
             newResources
         )
+
         setResources(newResources)
         setAppointments(newAppointments)
     }
