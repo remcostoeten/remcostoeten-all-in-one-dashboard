@@ -131,6 +131,10 @@ const config: Config = withMT({
                 'icon-bg-size': 'var(--icon-bg-size)'
             },
             keyframes: {
+                shine: {
+                    from: { backgroundPosition: '200% 0' },
+                    to: { backgroundPosition: '-200% 0' }
+                },
                 'caret-blink': {
                     '0%,70%,100%': { opacity: '1' },
                     '20%,50%': { opacity: '0' }
@@ -255,6 +259,7 @@ const config: Config = withMT({
             '32': '8rem'
         },
         animation: {
+            shine: 'shine 8s ease-in-out infinite',
             'caret-blink': 'caret-blink 1.25s ease-out infinite',
             marquee: 'marquee var(--duration) linear infinite',
             'marquee-vertical':
@@ -288,6 +293,7 @@ const config: Config = withMT({
                     marginRight: '-50vw'
                 }
             }
+
             addUtilities(newUtilities)
         },
         function ({ matchUtilities, theme }: any) {

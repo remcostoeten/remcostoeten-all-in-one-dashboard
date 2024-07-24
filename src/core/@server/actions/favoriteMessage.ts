@@ -19,3 +19,14 @@ export async function updateFavorite(messageId: string, isFavourited: boolean) {
         return { success: false, message: 'Failed to update favorite' }
     }
 }
+
+export async function getFavoriteMessages() {
+    try {
+        const result = await db.select().from(messages).where(is_favourited)
+
+        return result // Return the result to the caller
+    } catch (error) {
+        console.error('Error fetching favorite messages:', error)
+        throw error // Propagate the error
+    }
+}

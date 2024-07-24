@@ -2,7 +2,7 @@ import { PaginationControl } from '@/components/dashboard/chat-history/individua
 import { getChatWithMessages } from '@/core/@server/actions/getChatData'
 import ChatZoeken from '@/components/dashboard/chat-history/individual-chat/ChatZoeken'
 import MainWrapper from '../../MainWrapper'
-import ChatMessages from '../../../../../../components/dashboard/chat-history/individual-chat/ChatMessage'
+import ChatMessages from '@/components/dashboard/chat-history/individual-chat/ChatMessage'
 
 type ChatPageProps = {
     params: { name: string }

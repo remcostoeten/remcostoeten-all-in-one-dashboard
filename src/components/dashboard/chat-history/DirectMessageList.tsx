@@ -8,9 +8,9 @@ import { Bookmark } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { getAllChats } from '../../../core/@server/actions/getChatData'
-import { getInitials } from '../../../core/utils/get-initials'
-import { DirectMessageSkeleton } from '../../effects/SkeletonLoaders'
+import { getAllChats } from '@/core/@server/actions/getChatData'
+import { getInitials } from '@/core/utils/get-initials'
+import { DirectMessageSkeleton } from '@c/effects/SkeletonLoaders'
 import AvatarShell from '../../theme/shells/AvatarShell'
 import { SubMenuInnerContent } from '../theme/sub-menu/SubMenuContent'
 import SubMenuSearch from '../theme/sub-menu/SubMenuSearch'
@@ -27,16 +27,17 @@ function DirectMessage({
 }: DirectMessageProps) {
     const [adminOnly] = useState(initialAdminOnly)
     const initials = getInitials(name || '')
-    const firstLetter = initials[0] || ''
     const randomBackground = getRandomBackground()
     const pathname = usePathname()
     const isActive = pathname.includes(name)
+    const strippedName = name.split('_')[1]
+    const firstLetter = strippedName[0] || ''
 
     return (
         <div className='flex items-center justify-between'>
             <Link
                 href={`/dashboard/chat/${encodeURIComponent(name)}`}
-                className={`flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'flex items-center bg-ghost py-1' : 'flex items-center py-.5 hover:bg-ghost'}`}
+                className={`flex items-center gap-2 px-2.5 space-x-2 hover:bg-ghost ${isActive ? 'bg-ghost py-1' : 'py-0.5 hover:bg-ghost'}`}
             >
                 <AvatarShell
                     Initials={initials}
@@ -44,10 +45,10 @@ function DirectMessage({
                     hasTwoLetters={initials.length > 1}
                     width='5'
                     height='5'
-                    background={randomBackground}
+                    style={{ backgroundColor: randomBackground }}
                 />
                 <div className='text-sm text-text-secondary hover:text-text-primary'>
-                    {name}
+                    {strippedName}
                 </div>
             </Link>
             <AdminProtectedContent>
@@ -117,31 +118,29 @@ export default function DirectMessageList() {
                         ))}
                 </div>
             )}
-            <AdminProtectedContent>
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            className='flex flex-col gap-2'
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            {chatNames.length > 0 ? (
-                                chatNames.map((chat, index) => (
-                                    <DirectMessage
-                                        key={index}
-                                        name={chat.name}
-                                        adminOnly={chat.adminOnly ?? false} // Provide a default value if null
-                                    />
-                                ))
-                            ) : (
-                                <div>No chats available</div>
-                            )}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </AdminProtectedContent>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className='flex flex-col gap-2'
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        {chatNames.length > 0 ? (
+                            chatNames.map((chat, index) => (
+                                <DirectMessage
+                                    key={index}
+                                    name={chat.name}
+                                    adminOnly={chat.adminOnly ?? false}
+                                />
+                            ))
+                        ) : (
+                            <div>No chats available</div>
+                        )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </SubMenuInnerContent>
     )
 }

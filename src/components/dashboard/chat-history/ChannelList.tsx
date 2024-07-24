@@ -39,7 +39,7 @@ export default function ChannelList({ channels }: { channels: any[] }) {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className='flex flex-col gap-2 overflow-hidden'
                     >
-                        {channels.map((channel) => (
+                        {channels.map(channel => (
                             <Channel key={channel} name={channel} />
                         ))}
                     </motion.div>

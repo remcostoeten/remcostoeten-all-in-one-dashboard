@@ -4,12 +4,11 @@ import {
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import { HeartIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { toast } from 'sonner'
-import { HeartIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { updateFavorite } from '../../../core/@server/actions/favoriteMessage'
 
 export function FavouriteChatMessage({
@@ -70,11 +69,6 @@ export function FavouriteChatMessage({
                             : 'Favorite message'}
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem disabled={true}>
-                    <TrashIcon className='mr-2 h-4 w-4' />
-                    Delete
-                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )

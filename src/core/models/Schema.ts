@@ -26,21 +26,6 @@ export const taskSchema = sqliteTable('task', {
     )
 })
 
-export const favoriteMessagesSchema = sqliteTable('favorite_messages', {
-    id: integer('id').primaryKey(),
-    messageId: text('message_id').notNull().unique(),
-    userId: text('user_id').notNull(),
-    chatBetween: text('chat_between').notNull(),
-    messageContent: text('message_content'),
-    messageTimestamp: text('message_timestamp')
-})
-
-export const userPincodes = sqliteTable('user_pincodes', {
-    id: integer('id').primaryKey(),
-    userId: text('user_id').notNull().unique(),
-    pincode: text('pincode').notNull()
-})
-
 export const messages = sqliteTable('messages', {
     id: text('id').primaryKey(),
     chatName: text('chat_name').notNull(),
@@ -48,6 +33,7 @@ export const messages = sqliteTable('messages', {
     content: text('content').notNull(),
     timestamp: text('timestamp').notNull(),
     type: text('type').notNull(),
+
     isFavourited: integer('is_favourited', { mode: 'boolean' })
 })
 

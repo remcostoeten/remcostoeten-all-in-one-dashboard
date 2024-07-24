@@ -2,7 +2,8 @@
 
 import { LinkPreview } from '@/components/effects/magicui/link-preview'
 import { Button } from '@/components/ui/button'
-import { formatDate } from '@/core/utils/format-date'
+import { WHATSAPP_NAME } from '@/core/config/site-config'
+import { formatDate, formatDateLabel } from '@/core/utils/format-date'
 import { getInitials } from '@/core/utils/get-initials'
 import Hearts from '@c/effects/Hearts'
 import Image from 'next/image'
@@ -24,19 +25,9 @@ type ChatMessagesProps = {
     chatName: string
 }
 
-const formatDateLabel = (timestamp: string) => {
-    return new Date(timestamp).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    })
-}
-
 export default function ChatMessages({
     messages,
-    currentUserId,
-    chatName
+    currentUserId
 }: ChatMessagesProps) {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false)
     const [lightboxImageUrl, setLightboxImageUrl] = useState('')
@@ -60,7 +51,7 @@ export default function ChatMessages({
                 ref={el => {
                     if (el) messageRefs.current[message.id] = el
                 }}
-                className={`mb-4 ${isCurrentUser ? 'flex justify-end' : ''}`}
+                className={`mb-4 ${message.sender.includes(WHATSAPP_NAME) ? 'flex justify-end' : ''}`}
             >
                 <div
                     className={`flex items-start ${isCurrentUser ? 'flex-row-reverse' : ''}`}
@@ -171,7 +162,7 @@ export default function ChatMessages({
 
     return (
         <>
-            <div ref={chatContainerRef} className='flex-1 overflow-y-auto'>
+            <div ref={chatContainerRef} className='pl-2 pr-4'>
                 {renderMessages()}
             </div>
 

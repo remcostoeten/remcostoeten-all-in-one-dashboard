@@ -134,26 +134,26 @@ export const findClosestTailwindColor = (hex: string) => {
     return closestColor
 }
 
-export const calculateContrast = (color1: string, color2: string) => {
-    const rgb1 = hexToRgb(color1)
-    const rgb2 = hexToRgb(color2)
-    const lum1 =
-        0.2126 * Math.pow(rgb1.r / 255, 2.2) +
-        0.7152 * Math.pow(rgb1.g / 255, 2.2) +
-        0.0722 * Math.pow(rgb1.b / 255, 2.2)
-    const lum2 =
-        0.2126 * Math.pow(rgb2.r / 255, 2.2) +
-        0.7152 * Math.pow(rgb2.g / 255, 2.2) +
-        0.0722 * Math.pow(rgb2.b / 255, 2.2)
-    const contrast =
-        (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05)
+export function getRandomBackground(): string {
+    const randomColor = Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, '0')
 
-    return contrast
+    return `#${randomColor}`
 }
 
-export function getRandomBackground(): string {
-    const Backgrounds = ['#FF5733', '#33FF57', '#3357FF', '#F0F0F0']
-    const randomIndex = Math.floor(Math.random() * Backgrounds.length)
+function getContrastYIQ(hexcolor: string): string {
+    const r = parseInt(hexcolor.substr(1, 2), 16)
+    const g = parseInt(hexcolor.substr(3, 2), 16)
+    const b = parseInt(hexcolor.substr(5, 2), 16)
+    const yiq = (r * 299 + g * 587 + b * 114) / 1000
 
-    return Backgrounds[randomIndex] || '#FFFFFF' // Fallback color if array is empty
+    return yiq >= 128 ? '#000000' : '#FFFFFF'
+}
+
+export function setRandomBackground(): { bgColor: string; textColor: string } {
+    const bgColor = getRandomBackground()
+    const textColor = getContrastYIQ(bgColor)
+
+    return { bgColor, textColor }
 }

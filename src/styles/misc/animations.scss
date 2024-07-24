@@ -1,6 +1,6 @@
 $bezier: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $bezier2: cubic-bezier(0.645, 0.045, 0.355, 1);
-$duration: 0.74s;
+$duration: .7s;
 
 .logo {
     transition: all $duration $bezier2;
@@ -541,11 +541,11 @@ $duration: 0.74s;
     -o-transform: rotate(-6deg);
     -ms-transform: rotate(-6deg);
     transform: rotate(-6deg);
-    -webkit-animation: love1 0.7s infinite ease-in-out;
-    -moz-animation: love1 0.7s infinite ease-in-out;
-    -o-animation: love1 0.7s infinite ease-in-out;
-    -ms-animation: love1 0.7s infinite ease-in-out;
-    animation: love1 0.7s infinite ease-in-out;
+    -webkit-animation: love1 1.7s infinite ease-in-out;
+    -moz-animation: love1 1.7s infinite ease-in-out;
+    -o-animation: love1 1.7s infinite ease-in-out;
+    -ms-animation: love1 1.7s infinite ease-in-out;
+    animation: love1 1.7s infinite ease-in-out;
 }
 .heart2 {
     display: block;
@@ -570,11 +570,11 @@ $duration: 0.74s;
     -o-transform: rotate(6deg);
     -ms-transform: rotate(6deg);
     transform: rotate(6deg);
-    -webkit-animation: love3 0.7s infinite ease-in-out 0.3s;
-    -moz-animation: love3 0.7s infinite ease-in-out 0.3s;
-    -o-animation: love3 0.7s infinite ease-in-out 0.3s;
-    -ms-animation: love3 0.7s infinite ease-in-out 0.3s;
-    animation: love3 0.7s infinite ease-in-out 0.3s;
+    -webkit-animation: love3 1.7s infinite ease-in-out 0.3s;
+    -moz-animation: love3 1.7s infinite ease-in-out 0.3s;
+    -o-animation: love3 1.7s infinite ease-in-out 0.3s;
+    -ms-animation: love3 1.7s infinite ease-in-out 0.3s;
+    animation: love3 1.7s infinite ease-in-out 0.3s;
 }
 .heart3 {
     display: block;
@@ -589,11 +589,11 @@ $duration: 0.74s;
     line-height: 80px;
     margin-left: 150px;
     opacity: 0;
-    -webkit-animation: love2 0.6s infinite ease-in-out 0.6s;
-    -moz-animation: love2 0.6s infinite ease-in-out 0.6s;
-    -o-animation: love2 0.6s infinite ease-in-out 0.6s;
-    -ms-animation: love2 0.6s infinite ease-in-out 0.6s;
-    animation: love2 0.6s infinite ease-in-out 0.6s;
+    -webkit-animation: love2 2.6s infinite ease-in-out 2.6s;
+    -moz-animation: love2 2.6s infinite ease-in-out 2.6s;
+    -o-animation: love2 2.6s infinite ease-in-out 2.6s;
+    -ms-animation: love2 2.6s infinite ease-in-out 2.6s;
+    animation: love2 2.6s infinite ease-in-out 2.6s;
 }
 .heart4 {
     display: block;
@@ -618,11 +618,11 @@ $duration: 0.74s;
     -o-transform: rotate(-6deg);
     -ms-transform: rotate(-6deg);
     transform: rotate(-6deg);
-    -webkit-animation: love1 0.7s infinite ease-in-out;
-    -moz-animation: love1 0.7s infinite ease-in-out;
-    -o-animation: love1 0.7s infinite ease-in-out;
-    -ms-animation: love1 0.7s infinite ease-in-out;
-    animation: love1 0.7s infinite ease-in-out;
+    -webkit-animation: love1 1.7s infinite ease-in-out;
+    -moz-animation: love1 1.7s infinite ease-in-out;
+    -o-animation: love1 1.7s infinite ease-in-out;
+    -ms-animation: love1 1.7s infinite ease-in-out;
+    animation: love1 1.7s infinite ease-in-out;
 }
 .heart5 {
     display: block;
@@ -647,11 +647,11 @@ $duration: 0.74s;
     -o-transform: rotate(6deg);
     -ms-transform: rotate(6deg);
     transform: rotate(6deg);
-    -webkit-animation: love2 0.6s infinite ease-in-out 0.3s;
-    -moz-animation: love2 0.6s infinite ease-in-out 0.3s;
-    -o-animation: love2 0.6s infinite ease-in-out 0.3s;
-    -ms-animation: love2 0.6s infinite ease-in-out 0.3s;
-    animation: love2 0.6s infinite ease-in-out 0.3s;
+    -webkit-animation: love2 2.6s infinite ease-in-out 0.3s;
+    -moz-animation: love2 2.6s infinite ease-in-out 0.3s;
+    -o-animation: love2 2.6s infinite ease-in-out 0.3s;
+    -ms-animation: love2 2.6s infinite ease-in-out 0.3s;
+    animation: love2 2.6s infinite ease-in-out 0.3s;
 }
 .heart6 {
     display: block;
@@ -666,11 +666,11 @@ $duration: 0.74s;
     margin-left: 60px;
     line-height: 90px;
     opacity: 0;
-    -webkit-animation: love3 0.7s infinite ease-in-out 0.6s;
-    -moz-animation: love3 0.7s infinite ease-in-out 0.6s;
-    -o-animation: love3 0.7s infinite ease-in-out 0.6s;
-    -ms-animation: love3 0.7s infinite ease-in-out 0.6s;
-    animation: love3 0.7s infinite ease-in-out 0.6s;
+    -webkit-animation: love3 1.7s infinite ease-in-out 2.6s;
+    -moz-animation: love3 1.7s infinite ease-in-out 2.6s;
+    -o-animation: love3 1.7s infinite ease-in-out 2.6s;
+    -ms-animation: love3 1.7s infinite ease-in-out 2.6s;
+    animation: love3 1.7s infinite ease-in-out 2.6s;
 }
 .heart7 {
     display: block;
@@ -695,11 +695,11 @@ $duration: 0.74s;
     -o-transform: rotate(6deg);
     -ms-transform: rotate(6deg);
     transform: rotate(6deg);
-    -webkit-animation: love2 0.7s infinite ease-in-out 0.3s;
-    -moz-animation: love2 0.7s infinite ease-in-out 0.3s;
-    -o-animation: love2 0.7s infinite ease-in-out 0.3s;
-    -ms-animation: love2 0.7s infinite ease-in-out 0.3s;
-    animation: love2 0.7s infinite ease-in-out 0.3s;
+    -webkit-animation: love2 1.7s infinite ease-in-out 0.3s;
+    -moz-animation: love2 1.7s infinite ease-in-out 0.3s;
+    -o-animation: love2 1.7s infinite ease-in-out 0.3s;
+    -ms-animation: love2 1.7s infinite ease-in-out 0.3s;
+    animation: love2 1.7s infinite ease-in-out 0.3s;
 }
 .heart8 {
     display: block;
@@ -723,9 +723,9 @@ $duration: 0.74s;
     -o-transform: rotate(-6deg);
     -ms-transform: rotate(-6deg);
     transform: rotate(-6deg);
-    -webkit-animation: love1 0.7s infinite ease-in-out;
-    -moz-animation: love1 0.7s infinite ease-in-out;
-    -o-animation: love1 0.7s infinite ease-in-out;
-    -ms-animation: love1 0.7s infinite ease-in-out;
-    animation: love1 0.7s infinite ease-in-out;
+    -webkit-animation: love1 1.7s infinite ease-in-out;
+    -moz-animation: love1 1.7s infinite ease-in-out;
+    -o-animation: love1 1.7s infinite ease-in-out;
+    -ms-animation: love1 1.7s infinite ease-in-out;
+    animation: love1 1.7s infinite ease-in-out;
 }
