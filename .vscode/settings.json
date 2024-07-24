@@ -1,94 +1,96 @@
+// 2024
 {
-    "editor.tabSize": 4,
-    "editor.detectIndentation": false,
-    "search.exclude": {
-        "package-lock.json": true
-    },
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": [
-        "source.addMissingImports",
-        "source.fixAll.eslint"
-    ],
-    "typescript.tsdk": "node_modules/typescript/lib", // Use the workspace version of TypeScript
-    "typescript.enablePromptUseWorkspaceTsdk": true, // For security reasons it's require that users opt into using the workspace version of typescript
-    "typescript.preferences.autoImportFileExcludePatterns": [
-        // useRouter should be imported from `next/navigation` instead of `next/router`
-        "next/router.d.ts",
-        "next/dist/client/router.d.ts",
-        // give priority for Link to next/link instead of lucide-react
-        "lucide-react",
-        "**radix-ui**",
-        "node_modules/radix-ui/**"
-    ],
-    "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
-    "testing.openTesting": "neverOpen", // Don't open the testing view automatically when running tests
-    "[json][jsonc][yaml]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
-    "i18n-ally.localesPaths": ["src/locales"],
-    "i18n-ally.keystyle": "nested",
-    "folder-color.pathColors": [
-        {
-            "folderPath": "personal-panel/migrations/meta/",
-            "color": "foldercolorizer.LightYellow"
-        },
-        {
-            "folderPath": "personal-panel/src/",
-            "color": "foldercolorizer.LightPink",
-            "badge": "😀"
-        },
-        {
-            "folderPath": "personal-panel/ddd.local/",
-            "badge": "🥶"
-        },
-        {
-            "folderPath": "personal-panel/src/components/DeleteGuestbookEntry.tsx/",
-            "color": "foldercolorizer.Platinum"
-        },
-        {
-            "folderPath": "personal-panel/src/app/[locale]/(unauth)/tasks/",
-            "color": "foldercolorizer.PaleTaupe",
-            "badge": "✍️"
-        },
-        {
-            "folderPath": "personal-panel/src/core/",
-            "badge": "🥰"
-        },
-        {
-            "folderPath": "personal-panel/src/components/ui/",
-            "badge": "😍"
-        },
-        {
-            "folderPath": "personal-panel/src/styles/theme/utilities.scss/"
-        },
-        {
-            "folderPath": "personal-panel/src/components/theme/shells/pop.tsx/"
-        }
-    ],
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#65c89b",
-        "activityBar.background": "#65c89b",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#945bc4",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "commandCenter.border": "#15202b99",
-        "sash.hoverBorder": "#65c89b",
-        "statusBar.background": "#42b883",
-        "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#359268",
-        "statusBarItem.remoteBackground": "#42b883",
-        "statusBarItem.remoteForeground": "#15202b",
-        "titleBar.activeBackground": "#42b883",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#42b88399",
-        "titleBar.inactiveForeground": "#15202b99"
-    },
-    "peacock.color": "#42b883",
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+  "workbench.iconTheme": "moxer-icons",
+  // Theme often switched...Try Kanagawa Black or Aura Theme Dark
+  "workbench.settings.editor": "json",
+  "breadcrumbs.enabled": true,
+  "explorer.compactFolders": true,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 4,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontSize": 15,
+  "editor.fontSize": 16,
+  "html.autoClosingTags": true,
+  "editor.fontWeight": "400",
+  "editor.cursorWidth": 2,
+  "git.autofetch": true,
+  "workbench.settings.applyToAllProfiles": [],
+  "editor.fontVariations": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "phase",
+  "explorer.confirmDelete": false,
+  "apc.font.family": "Geist Mono",
+  "apc.activityBar": {
+    "position": "bottom",
+    "hideSettings": true,
+    "size": 24
+  },
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 22,
+    "fontSize": 12
+  },
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 8,
+      "y": 10
     }
+  },
+  "apc.header": {
+    "height": 34,
+    "fontSize": 14
+  },
+  "apc.listRow": {
+    "height": 21,
+    "fontSize": 13
+  },
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "nxConsole.showNodeVersionOnStartup": false,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+
+  // used by the toggle excluded files extension
+  "files.exclude": {
+    "**/.open-next": true,
+    "**/.sst": true,
+    "**/.nx": true,
+    "**/.turbo": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.husky": true,
+    "**/.github": true,
+    "**/.gitignore": true,
+    "**/dist": true,
+    "**/.next": true,
+    "**/*.tsbuildinfo": true,
+    "**/.astro": true
+  },
+  "workbench.sideBar.location": "right",
+  "tabnine.experimentalAutoImports": true,
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.colorTheme": "Vesper Purple Dark",
+  "editor.fontFamily": "\"Geist Mono\"",
+  "git.enableSmartCommit": true,
+  "vscode_custom_css.imports": [
+      "file:///home/remcostoeten/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+  ],
+  "github.copilot.advanced": {
+
+
+  },
+  "window.zoomLevel": 2
 }
