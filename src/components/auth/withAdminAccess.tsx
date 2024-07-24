@@ -9,7 +9,7 @@ function withAdminAccess<P extends object>(
     WrappedComponent: ComponentType<P>,
     { fallback = null }: WithAdminAccessProps = {}
 ): FC<P> {
-    const AdminProtectedComponent: FC<P> = props => {
+    const AdminProtectedComponent: FC<P> = (props) => {
         const { isLoaded, isSignedIn, user } = useUser()
 
         if (!isLoaded || !isSignedIn) {

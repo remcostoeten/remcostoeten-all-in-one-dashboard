@@ -92,7 +92,7 @@ const AddAppointmentDialog: React.FC = () => {
         startAddAppointmentTransition(() => {
             toast.promise(
                 () =>
-                    new Promise(resolve => {
+                    new Promise((resolve) => {
                         resolve(addAppointment(newAppointment))
                     }),
                 {
@@ -157,7 +157,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                     className={cn(
                                                         'w-[280px] justify-start text-left font-normal',
                                                         !field.value &&
-                                                        'text-muted-foreground'
+                                                            'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className='mr-2 h-4 w-4' />
@@ -207,7 +207,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                     className={cn(
                                                         'w-[280px] justify-start text-left font-normal',
                                                         !field.value &&
-                                                        'text-muted-foreground'
+                                                            'text-muted-foreground'
                                                     )}
                                                 >
                                                     <CalendarIcon className='mr-2 h-4 w-4' />
@@ -256,15 +256,15 @@ const AddAppointmentDialog: React.FC = () => {
                                                 <SelectValue>
                                                     {field.value
                                                         ? resources.find(
-                                                            resource =>
-                                                                resource.id ===
-                                                                field.value
-                                                        )?.name
+                                                              (resource) =>
+                                                                  resource.id ===
+                                                                  field.value
+                                                          )?.name
                                                         : 'Select a resource'}
                                                 </SelectValue>
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {resources.map(resource => (
+                                                {resources.map((resource) => (
                                                     <SelectItem
                                                         key={resource.id}
                                                         value={resource.id}

@@ -48,10 +48,10 @@ export default function ChatMessages({
 
         return (
             <div
-                ref={el => {
+                ref={(el) => {
                     if (el) messageRefs.current[message.id] = el
                 }}
-                className={`mb-4 ${message.sender.includes(WHATSAPP_NAME) ? 'flex justify-end' : ''}`}
+                className={`mb-4 ${message.sender.includes('emco') ? 'flex justify-end' : ''}`}
             >
                 <div
                     className={`flex items-start ${isCurrentUser ? 'flex-row-reverse' : ''}`}

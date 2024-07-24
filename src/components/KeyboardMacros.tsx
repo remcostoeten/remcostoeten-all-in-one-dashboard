@@ -11,7 +11,7 @@ export default function KeyboardMacros() {
     const router = useRouter()
 
     useEffect(() => {
-        const handleKeyDown = event => {
+        const handleKeyDown = (event) => {
             if (event.shiftKey && event.key === 'P') {
                 event.preventDefault()
                 signOut()

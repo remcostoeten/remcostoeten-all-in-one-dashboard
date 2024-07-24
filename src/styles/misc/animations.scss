@@ -1,6 +1,6 @@
 $bezier: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $bezier2: cubic-bezier(0.645, 0.045, 0.355, 1);
-$duration: .7s;
+$duration: 0.7s;
 
 .logo {
     transition: all $duration $bezier2;

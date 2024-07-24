@@ -17,7 +17,7 @@ function DashHeader() {
     const pathname = usePathname()
     const [showInfo, setShowInfo] = useState(false)
     const [title, setTitle] = useState('Dashboard')
-    const { isSubMenuVisible } = useSubMenuStore(state => ({
+    const { isSubMenuVisible } = useSubMenuStore((state) => ({
         isSubMenuVisible: state.isSubMenuVisible
     }))
 

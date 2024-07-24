@@ -20,50 +20,49 @@ This guide will walk you through the process of exporting a WhatsApp chat and co
 
 ### 3. Verify Skweel Format
 
-1. Ensure that the sql file format conforms to the `data.json` schema provided below:
+1.  Ensure that the sql file format conforms to the `data.json` schema provided below:
 
-    ```sql
-   CREATE TABLE IF NOT EXISTS chats (
+        ```sql
+
+    CREATE TABLE IF NOT EXISTS chats (
     name TEXT PRIMARY KEY,
     user_id TEXT NOT NULL,
     user_name TEXT NOT NULL,
     last_active TEXT NOT NULL,
     admin_only INTEGER
-);
+    );
 
 CREATE TABLE IF NOT EXISTS messages (
-    id TEXT PRIMARY KEY,
-    chat_name TEXT NOT NULL,
-    sender TEXT NOT NULL,
-    content TEXT NOT NULL,
-    timestamp TEXT NOT NULL,
-    type TEXT NOT NULL,
-    is_favourited INTEGER
+id TEXT PRIMARY KEY,
+chat_name TEXT NOT NULL,
+sender TEXT NOT NULL,
+content TEXT NOT NULL,
+timestamp TEXT NOT NULL,
+type TEXT NOT NULL,
+is_favourited INTEGER
 );
 
 INSERT OR IGNORE INTO chats (name, user_id, user_name, last_active, admin_only) VALUES ('chat_EXPORTEDNAME', 'EXPORTEDNAME', 'EXPORTEDNAME', '2024-07-23T22:19:06.386164', 0);
 
 INSERT INTO messages (id, chat_name, sender, content, timestamp, type, is_favourited) VALUES ('ce7e1bd4-fcd8-46b2-a60d-e4f71c20ec6f', 'chat_EXPORTEDNAME', 'YOUR NAME', 'A whatsapp message', '2015-11-23T23:22:30', 'text', NULL);
-    ```
-
+```
 
 ### 4. Set Up Turso
 
 1. Ensure you have Turso set up with your tables.
 2. Run the following commands to generate and migrate your schema:
 
-    ```pnpm drizzle-kit generate```
+    `pnpm drizzle-kit generate`
 
-    ```pnpm drizzle-kit migrate```
+    `pnpm drizzle-kit migrate`
 
-    ```pnpm drizzle-kit push```
-
+    `pnpm drizzle-kit push`
 
 ### 6. Seed the Database
 
 1. Log in to the Turso CLI:
 
-    ```turso db shell <yourndbname>```
+    `turso db shell <yourndbname>`
 
     Replace `<yourndbname>` with your database name.
 

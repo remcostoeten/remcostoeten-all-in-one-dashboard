@@ -122,7 +122,7 @@ export default function ChatZoeken({
         if (scrollToMessageId) {
             const scrollAttempts = [0, 100, 500, 1000, 2000]
 
-            scrollAttempts.forEach(delay => {
+            scrollAttempts.forEach((delay) => {
                 setTimeout(
                     () => scrollToMessageElement(scrollToMessageId),
                     delay
@@ -136,7 +136,7 @@ export default function ChatZoeken({
             const messageId = scrollToRef.current
             const scrollAttempts = [0, 100, 500, 1000, 2000]
 
-            scrollAttempts.forEach(delay => {
+            scrollAttempts.forEach((delay) => {
                 setTimeout(() => scrollToMessageElement(messageId), delay)
             })
         }
@@ -214,7 +214,7 @@ export default function ChatZoeken({
                                 placeholder='Search messages...'
                                 className='w-full'
                                 value={searchQuery}
-                                onChange={e => setSearchQuery(e.target.value)}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                             />
                         </form>
                     </div>

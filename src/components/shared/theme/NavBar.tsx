@@ -63,7 +63,7 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className='hidden sm:flex w-[400px] flex-col gap-3 p-4  lg:w-[500px]'>
-                                {headerDropdownItems.map(items => (
+                                {headerDropdownItems.map((items) => (
                                     <ListItem
                                         key={items.title}
                                         title={items.title}

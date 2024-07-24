@@ -149,7 +149,7 @@ export function PaginationControl({
                 </PaginationContent>
             </Pagination>
             <Select
-                onValueChange={value => {
+                onValueChange={(value) => {
                     setIsLoading(true)
 
                     void (async () => {

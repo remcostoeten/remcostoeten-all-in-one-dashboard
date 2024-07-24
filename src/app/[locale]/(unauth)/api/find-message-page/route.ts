@@ -41,7 +41,7 @@ export async function GET(request: Request) {
                     sql`${messages.timestamp} <= ${message[0].timestamp}`
                 )
             )
-            .then(result => result[0].count)
+            .then((result) => result[0].count)
 
         const pageSize = 50 // Make sure this matches your frontend page size
         const page = Math.floor(messageIndex / pageSize) + 1
