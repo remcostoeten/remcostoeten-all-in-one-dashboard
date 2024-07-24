@@ -20,13 +20,16 @@ export async function updateFavorite(messageId: string, isFavourited: boolean) {
     }
 }
 
-export async function getFavoriteMessages() {
-    try {
-        const result = await db.select().from(messages).where(is_favourited)
-
-        return result // Return the result to the caller
-    } catch (error) {
-        console.error('Error fetching favorite messages:', error)
-        throw error // Propagate the error
-    }
+export async function getFavoritedMessages() {
+    return db
+        .select({
+            id: messages.id,
+            sender: messages.sender,
+            content: messages.content,
+            timestamp: messages.timestamp,
+            chatName: messages.chatName
+        })
+        .from(messages)
+        .where(eq(messages.isFavourited, true))
+        .orderBy(messages.timestamp)
 }
