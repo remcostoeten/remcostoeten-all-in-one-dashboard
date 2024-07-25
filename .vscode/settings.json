@@ -17,7 +17,7 @@
   "git.autofetch": true,
   "workbench.settings.applyToAllProfiles": [],
   "editor.fontVariations": true,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "phase",
   "explorer.confirmDelete": false,

@@ -1,3 +1,4 @@
+
 'use client'
 
 import { LinkPreview } from '@/components/effects/magicui/link-preview'
