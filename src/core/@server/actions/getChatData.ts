@@ -1,15 +1,14 @@
 'use server'
 
 import { db } from '@/core/libs/DB'
-import { messages, chats } from '@/core/models/Schema'
+import { chats, messages } from '@/core/models/Schema'
 import { auth, clerkClient } from '@clerk/nextjs/server'
-import { desc, eq, isNull, or, sql } from 'drizzle-orm'
+import { eq, isNull, or, sql } from 'drizzle-orm'
 
 export async function getAllChats() {
     try {
         console.log('Fetching chats...')
         const { userId } = auth()
-
         if (!userId) {
             throw new Error('Not authenticated')
         }
@@ -46,16 +45,28 @@ export async function getChatWithMessages(
 ) {
     console.time('getChatWithMessages')
     try {
+        const { userId } = auth()
+        if (!userId) {
+            throw new Error('Not authenticated')
+        }
+
+        const user = await clerkClient.users.getUser(userId)
+        const isAdmin = user.publicMetadata.isAdmin === true
+
         const chatInfo = await db
             .select()
             .from(chats)
             .where(eq(chats.name, name))
             .limit(1)
-
             .then((results) => results[0])
 
         if (!chatInfo) {
             return null
+        }
+
+        // Ensure user has access to this chat
+        if (!isAdmin && chatInfo.adminOnly) {
+            throw new Error('Not authorized to access this chat')
         }
 
         const startIndex = (page - 1) * pageSize

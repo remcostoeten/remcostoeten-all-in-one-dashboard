@@ -45,6 +45,7 @@ is_favourited INTEGER
 INSERT OR IGNORE INTO chats (name, user_id, user_name, last_active, admin_only) VALUES ('chat_EXPORTEDNAME', 'EXPORTEDNAME', 'EXPORTEDNAME', '2024-07-23T22:19:06.386164', 0);
 
 INSERT INTO messages (id, chat_name, sender, content, timestamp, type, is_favourited) VALUES ('ce7e1bd4-fcd8-46b2-a60d-e4f71c20ec6f', 'chat_EXPORTEDNAME', 'YOUR NAME', 'A whatsapp message', '2015-11-23T23:22:30', 'text', NULL);
+
 ```
 
 ### 4. Set Up Turso
@@ -71,3 +72,4 @@ INSERT INTO messages (id, chat_name, sender, content, timestamp, type, is_favour
 ### 7. Done!
 
 You have successfully converted your WhatsApp chat into a SQL format and seeded your database with the chat data. Enjoy!
+```
