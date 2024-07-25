@@ -1,96 +1,93 @@
 // 2024
 {
-  "workbench.iconTheme": "moxer-icons",
-  // Theme often switched...Try Kanagawa Black or Aura Theme Dark
-  "workbench.settings.editor": "json",
-  "breadcrumbs.enabled": true,
-  "explorer.compactFolders": true,
-  "editor.wordWrap": "on",
-  "editor.tabSize": 4,
-  "editor.inlineSuggest.enabled": true,
-  "editor.minimap.enabled": false,
-  "terminal.integrated.fontSize": 15,
-  "editor.fontSize": 16,
-  "html.autoClosingTags": true,
-  "editor.fontWeight": "400",
-  "editor.cursorWidth": 2,
-  "git.autofetch": true,
-  "workbench.settings.applyToAllProfiles": [],
-  "editor.fontVariations": true,
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.smoothScrolling": true,
-  "editor.cursorBlinking": "phase",
-  "explorer.confirmDelete": false,
-  "apc.font.family": "Geist Mono",
-  "apc.activityBar": {
-    "position": "bottom",
-    "hideSettings": true,
-    "size": 24
-  },
-  "apc.statusBar": {
-    "position": "editor-bottom",
-    "height": 22,
-    "fontSize": 12
-  },
-  "apc.electron": {
-    "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 8,
-      "y": 10
-    }
-  },
-  "apc.header": {
-    "height": 34,
-    "fontSize": 14
-  },
-  "apc.listRow": {
-    "height": 21,
-    "fontSize": 13
-  },
-  "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "nxConsole.showNodeVersionOnStartup": false,
-  "typescript.updateImportsOnFileMove.enabled": "never",
-  "explorer.confirmDragAndDrop": false,
-  "javascript.updateImportsOnFileMove.enabled": "never",
+    "workbench.iconTheme": "moxer-icons",
+    // Theme often switched...Try Kanagawa Black or Aura Theme Dark
+    "workbench.settings.editor": "json",
+    "breadcrumbs.enabled": true,
+    "explorer.compactFolders": true,
+    "editor.wordWrap": "on",
+    "editor.tabSize": 4,
+    "editor.inlineSuggest.enabled": true,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontSize": 15,
+    "editor.fontSize": 16,
+    "html.autoClosingTags": true,
+    "editor.fontWeight": "400",
+    "editor.cursorWidth": 2,
+    "git.autofetch": true,
+    "workbench.settings.applyToAllProfiles": [],
+    "editor.fontVariations": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "phase",
+    "explorer.confirmDelete": false,
+    "apc.font.family": "Geist Mono",
+    "apc.activityBar": {
+        "position": "bottom",
+        "hideSettings": true,
+        "size": 24
+    },
+    "apc.statusBar": {
+        "position": "editor-bottom",
+        "height": 22,
+        "fontSize": 12
+    },
+    "apc.electron": {
+        "titleBarStyle": "hiddenInset",
+        "trafficLightPosition": {
+            "x": 8,
+            "y": 10
+        }
+    },
+    "apc.header": {
+        "height": 34,
+        "fontSize": 14
+    },
+    "apc.listRow": {
+        "height": 21,
+        "fontSize": 13
+    },
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "nxConsole.showNodeVersionOnStartup": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
 
-  // used by the toggle excluded files extension
-  "files.exclude": {
-    "**/.open-next": true,
-    "**/.sst": true,
-    "**/.nx": true,
-    "**/.turbo": true,
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/node_modules": true,
-    "**/.husky": true,
-    "**/.github": true,
-    "**/.gitignore": true,
-    "**/dist": true,
-    "**/.next": true,
-    "**/*.tsbuildinfo": true,
-    "**/.astro": true
-  },
-  "workbench.sideBar.location": "right",
-  "tabnine.experimentalAutoImports": true,
-  "files.autoSave": "onFocusChange",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "workbench.colorTheme": "Vesper Purple Dark",
-  "editor.fontFamily": "\"Geist Mono\"",
-  "git.enableSmartCommit": true,
-  "vscode_custom_css.imports": [
-      "file:///home/remcostoeten/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
-  ],
-  "github.copilot.advanced": {
-
-
-  },
-  "window.zoomLevel": 2
+    // used by the toggle excluded files extension
+    "files.exclude": {
+        "**/.open-next": true,
+        "**/.sst": true,
+        "**/.nx": true,
+        "**/.turbo": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/.husky": true,
+        "**/.github": true,
+        "**/.gitignore": true,
+        "**/dist": true,
+        "**/.next": true,
+        "**/*.tsbuildinfo": true,
+        "**/.astro": true
+    },
+    "workbench.sideBar.location": "right",
+    "tabnine.experimentalAutoImports": true,
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.colorTheme": "Vesper Purple Dark",
+    "editor.fontFamily": "\"Geist Mono\"",
+    "git.enableSmartCommit": true,
+    "vscode_custom_css.imports": [
+        "file:///home/remcostoeten/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+    ],
+    "github.copilot.advanced": {},
+    "window.zoomLevel": 2
 }

@@ -58,7 +58,7 @@ export async function getChatWithMessages(
             .from(chats)
             .where(eq(chats.name, name))
             .limit(1)
-            .then(results => results[0])
+            .then((results) => results[0])
 
         if (!chatInfo) {
             return null
@@ -75,7 +75,7 @@ export async function getChatWithMessages(
             .select({ count: sql<number>`count(*)` })
             .from(messages)
             .where(eq(messages.chatName, name))
-            .then(result => result[0].count)
+            .then((result) => result[0].count)
 
         const messagesData = await db
             .select()
