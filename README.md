@@ -1,140 +1,123 @@
-# Personal all-in-one panel
+![image](https://github.com/user-attachments/assets/f40be116-4ea3-49ee-928f-fe588a402c50)
+<small>Because I hate load times (Cloudflare, ugh), and not owning my own stuff.</small>
 
-<small>Because I hate load times (cloudflare ugh), and not owning my own stuff</small>
-
-> Just started this repo, will be migrating features I've built over so it's far from done. And probably never will be.
-
-This is a personal project that combines various tools and features I've built over the years. It's a one-stop solution for managing personal finance, secure file storage, code snippets, and tools I've built for myself such as URL/text extractors, (reverse) geolocation finder, SVG to CSS-pseudo elements, HTML to JSX/TSX converter, and loads more probably.
+> [!IMPORTANT]  
+>  No production grade. The goal is having fun, learning, giving and eventually create a one-stop shop for me.
 
 [Visit the demo](https://panel.remcostoeten.com)
 
-[The design im working with](https://www.figma.com/community/file/1380305920742671237)
+[The design I'm working with](https://www.figma.com/community/file/1380305920742671237)
 
--   **Frontend**: [NextJS 15]
--   **ORM**: [Drizzle ORM](ht
--   **Auth**: [Clerk](https:/
--   **Database**: [Turso (SQL
--   **State management**: [Zu
--   **UI Libraries**: [Radix] framer
--   **Forms**: [React Hook Fo
--   **Validation**: [ZOD](htt
--   **Analytics**: [Posthog](
-    <br/>
--   **i18n**: [i18next](https
--   Blog/MDX: [contentlayer](
 
-## 🐻 Packages
+## Why and what?
 
--   [useHooksPackage](https://usehooks.com/)
-    -   [useFavicon](https://usehooks.com/useFavicon) (dynamically update the favicon)
-        could be paired with the logic of changing tab-title when switching tabs -> [Phind Search](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c)
-    -   [useLocalStorage](https://usehooks.com/uselocalstorage)
-    -   [useGeoLocation](https://usehooks.com/usegeolocation) - Maybe when extending my own reverse geo app? -[Zustand](https://zustand.surge.sh/) - State management<br/>
--   [React Query ?](https://react-query.tanstack.com/) - Data fetching (trying/PoC vs server actions/api calls)
-    <br/>
+This is a personal project that combines various tools and features I've built over the year and plan on building. It's intended for personal (as in, for me) use.Openly building because there aren’t many SQLite Turso references available with this stack. It's my way of figuring out how non-document/object databases work and implementing server actions and API route handlers and most important, doing what I love.
 
-## 🐻 Big core overhauls that need to be done
+<span style="font-size:5px;">Currently, the component and core folder is a hot mess with a lot of unused code and bad organization, but this will be refactored sooner or later. My priorities lay on an MVP for certain features and mastering the back-end side. I know SOLID principles, but best practices will come when I have everything shaped the right direction.</span>
 
-> > [!NOTE]
-> > On hold. After a few days I couldn't build with zero answers on google, deep down the dep. tree.
+Settign up locally is straight forward
+```bash
+git clone https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard.git remcostoeten-dashboard
+cd remcostoeten-dashboard
+cp .env.example .env.local
+```
+Fill in all the enviorments credentials. Not all are neccissary but some features won't work without. Another configuration file in `src/core/config/site-config.ts` to be renamed to your own likings. Running the project is as easy as 
 
--   React 19 upgrade
-    -   [React 19 release notes](https://reactjs.org/blog/2022/02/23/react-19.html#release-notes)
--   NextJS -15 upgrade]
-    -   [NextJS -15 release notes](https://nextjs.org/blog/next-15#release-notes)
+```bash
+bun i
+#or npm , pnpm. I use pnpm or bun
+bun dev
+```
+That should be it. IF you struggle with the turbo flag for some reason edit the dev command in `packages.json` to just `next-dev` 
 
-## 🐻 Tools that can be useful
+## Technologies Used
 
--   AI prompt optimizer(<https://promptperfect.jina.ai/interactive>)]
--   [HTML to skeleton loader for Tailwind](https://gpt-skeleton.vercel.app/generate)
-    -   [Finance maybe app has a cool modular way of creating skeletons](https://github.com/maybe-finance/maybe-archive/tree/main/libs/design-system/src/lib/LoadingPlaceholder)[usage]()
-        [Another skeleton helper](https://mkfizi.dev/tailbone/)
+- **Frontend**: NextJS 14
+- **Languages**: TypeScript (TSX)
+- **Styling**: TailwindCSS/Sass
+- **Database**: SQLite (Turso)
+- **ORM**: Drizzle ORM
+- **Auth**: Clerk
+- **State Management**: Zustand
 
-## 🐻 Interesting and/or very cool/unique components
+## Features Done
 
--   [Enhanced shadn button](https://enhanced-button.vercel.app/)
--   [File vault - shadcn](https://file-vault-delta.vercel.app/)
--   [File vault v2 - shadnc](https://uploader.sadmn.com/)
--   [Magic UI](https://magicui.design/)
--   [Shad Rich text editor AWESOME](https://github.com/udecode/plate)
--   [Shadcn chat](https://shadcn-chat.vercel.app/)
--   [Shadcn country dropdown + zustand state](https://github.com/Jayprecode/country-state-dropdown)
--   [Shadcn DND](https://github.com/Georgegriff/react-dnd-kit-tailwind-shadcn-ui)
--   [Shadcn extensioned](https://shadcn-extension.vercel.app/docs/file-upload)
--   [TomIsLoading](https://www.hover.dev/)
--   [Way to fancy GSAP/Framer stuff](https://blog.olivierlarose.com/tutorials)
--   [?? components](https://components.bridger.to/hero)
--   [own components showcase](https://github.com/remcostoeten/fancy-component-showcase)
--   [syntaxUI](https://syntaxui.com/)
 
-<br/>
 
-## 🐻 Design inspiration
+> Besides the HOmepag and the overall structure/shell of the dashboard is the UI lacking for most tools, as I am focusing on core functionalities and thinking of what design to implement..
 
--   [SaaS landing with dope bento glass style](https://www.hover.dev/templates/demo/the-startup)
--   [Vercel blog page with cool gradient](https://vercel.com/blog/deploy-summary)
--   [Supabase dashboard - loaders, collapse menu](https://supabase.com/dashboard/projects)
--   [Fancy ?all-in-one? dashboard](https://web.clay.earth/)
+- **WhatsApp History Showcase** (Beta & mostly personal, dummy demo available):
+  - WhatsApp chat export > txt to SQL via Python > Seed database > display paginated.
+  - Favourite messages.
+  - Search messages.
+  - Admin protect certain chats.
+  - For more info or instructions in the [setup guide](https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard/blob/main/src/core/scripts/whatsapp-readme.md).
 
-### Too fancy ui stuff
+- **Color Helper Tool**:
+  - **Convert Colors**: RGB to Hex, HSL to Hex, and vice versa.
+  - **Nearest Color**: Find the closest color in a given palette.
+  - **Save to Palette**: Save colors to a custom palette.
+  - **Auto CSS/Tailwind Syntax**: Generate CSS variables and Tailwind syntax.
+  - **Contrast Ratio Check**: Verify color contrast ratios for accessibility.
 
--   Spark effect ([source](https://codepen.io/hexagoncircle/details/bGZdWyw))
--   Dark glow button ([source](https://codepen.io/collinsworth/pen/zYepgqG))
--   Glow card ([source](https://codepen.io/jh3y/pen/MWxgJXY)
--   Menu animation ([source](https://codepen.io/jh3y/pen/GRapZqO))
--   Card anchor effect ([source](https://codepen.io/jh3y/pen/MWLyGxo))
-    </br>
+- **Diff Checker**:
+  - **Compare Files**: See differences between files with syntax highlighting.
+  - **Keyboard Macros**: Implement macros for quick operations.
+  - **Local Storage**: Save diff results and input to local storage.
+  - **Database Integration**: Save comparison results (input A + B and the result) to the database.
 
-## 🛣️ Roadmap and To-Do
+- **Kanban Planner**:
+  - Data via fakers, no CRUD yet.
 
-### Short-Term Goals
+- **Gas Station Tool**:
+  - **Search and Add KM Range**: Search for gas stations and specify a kilometer range.
+  - **Cheapest Fuel Prices**: Display the cheapest fuel prices within the specified range.
 
--   [x] Initial setup
--   [x] Add user authentication
--   [x] Upgrade to the new react compiler (Next 15 + React 19)
--   [x] Implement dark mode - Done, but light mode is far from usable.
--   [ ] Add more features
+## Features to Migrate
 
-### Long-Term Goals
+These are tools I've built in the past and plan to integrate into this project:
 
--   [x] Localization
-    -   [ ] [Add pretty flags](https://flagpack.xyz/)
--   [ ] [Migrate geolocation](https://features.remcostoeten.com/geolocation) and re-create UI
--   [x] Create landing page - Beta version is done
--   [ ] [Migrate URL tool](https://url.remcostoeten.com/) - [finished version, ugly UI](https://vsc.remcostoeten.com/)
--   [ ] [Migrate HTML to React tool and cleanup UI](https://portfolio.remcostoeten.com/html-to-jsx)
--   [ ] [Migrate and cleanup perfect blackjack strategy tool](https://portfolio.remcostoeten.com/blackjack)
--   [ ] [Migrate SVG to CSS pseudo element and create UI]()
--   [ ] [Migrate my password manager](https://password-manager.remcostoeten.com).
--   [ ] Add file vault feature
+- **(Reverse) Geolocation Tool**: Input address/longitude/latitude, and get the opposite. Save to database.
+- **Compare Two Longitudes/Latitudes**: Calculate the skywide distance between two points.
+- **HTML to JSX/TSX Converter**: Convert HTML code to JSX/TSX.
+- **Blackjack Perfect Strategy Helper**: Tool for learning and applying perfect blackjack strategies.
+- **Chromedriver WhatsApp Status Scraper**: Scrape WhatsApp statuses using Chromedriver.
+- **Budget Tracker/Future Expense Tool**: Track budget and forecast future expenses.
+- **URL Extract Tool**: Extract, mutate, open big pieces of text 
+- **CSS Bezier Curve Helper Showcase Tool**
+- **SVG to Pseudo Element Tool**
+- **SVG to React Component Tool**
+- **Password Manager**
 
-    -   [ ] Integrate uploadthing
-    -   [ ] Allow uploading
-    -   [ ] Allow downloading
-    -   [ ] Allow deleting
-    -   [ ] Allow sharing
+## Tools to Build
 
--   [ ] migrate my whatsapp tracker API from chromedriver to puppeteer. See API schema design;
-        [https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share](https://app.eraser.io/workspace/9fMMWL4pZTG9as7cNDtB?origin=share)
+- **Notes App with MDX Support via Frontend**:
+  - Share/invite collaboration.
+  - Password protect.
+  - History.
+  - Folders/categories.
 
-### Unique Implementations
+- **File Vault Storage**:
+  - Proper security.
+  - All CRUD options + metadata.
+  - Rate limit.
 
--   [ ] Add viewport tag ([source](https://www.youtube.com/shorts/YqAxXBrrryc))
--   [ ] Implement logic for tab title change when switching ([source](https://www.phind.com/search?cache=bop1542bh6cu90jan1hi6y4c))
--   [ ] Dark light mode toggle ([source](https://codepen.io/jh3y/pen/GRaWZrw))
+- **Keep Myself Accountable App**:
+  - How, I don’t know yet.
 
-<h2> 📋 Repos Used</h2>
+- **Automated Release Note System**
 
--   [Turso next crud operations (no orm) - ez drizzle installation](https://github.com/remcostoeten/turso-nextjs-starter)
--   [nextjs-drizzle-crud-w-images](https://github.com/remcostoeten/nextjs-drizzle-crud-w-images-tfw-no-relation-ship-sad-pepe)
--   [t3gallery](https://github.com/remcostoeten/t3gallery)
--   [personal-platform](https://github.com/remcostoeten/personal-platform)
--   Local project with recent features that i must migrate sit over at [/home/remcostoeten/projects/dashboard_w_chat-history-api_working-status-tracker]
--   and more over the previous years..
-    <br/>
+- **A Way to Share/Organize/Sync/Tweak My Custom Bash Scripts and ZSH Configuration**
 
-<h2>💖Like my work?</h2>
+- **A Way to Switch Between Completely Different Designs UI Wise**:
+  - Not just variables.
 
-I appreciate a star aka e-karma. If you have any questions you can reach through:
-[LinkedIn](https://linkedin.com/in/remco-stoeten/), email: <a href="mailto:remcostoeten@hotmail.com">remcostoeten@hotmail.com</a>
-or visit my personal site over at [remcostoeten.com](https://remcostoeten.com).
+- **Custom CMS in the Frontend, Hosted in My Own Database**
+
+Some inspiration regarding used repositories, handy packages which I might implement or cool designs are documented [here](https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard/blob/main/INSPIRATION.MD).
+
+
+## 💖 Like My Work?
+
+I appreciate a star aka e-karma. If you have any questions, you can reach out through:
+[LinkedIn](https://linkedin.com/in/remco-stoeten/), email: [remcostoeten@hotmail.com](mailto:remcostoeten@hotmail.com), or visit my personal site: [remcostoeten.com](https://remcostoeten.com).
