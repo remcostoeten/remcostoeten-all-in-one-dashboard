@@ -278,6 +278,9 @@ const config: Config = withMT({
             'background-shine': 'background-shine 2s linear infinite'
         }
     },
+    daisyui: {
+        themes: ['light', 'sunset', 'cupcake']
+    },
     plugins: [
         require('daisyui'),
         require('tailwindcss-animate'),

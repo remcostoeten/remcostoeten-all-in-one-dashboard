@@ -56,3 +56,16 @@ export const usersSchema = sqliteTable('users', {
     ),
     isAdmin: integer('is_admin', { mode: 'boolean' })
 })
+
+export const textComparisonSchema = sqliteTable('text_comparisons', {
+    id: integer('id').primaryKey(),
+    listA: text('list_a').notNull(),
+    listB: text('list_b').notNull(),
+    result: text('result').notNull(),
+    createdAt: integer('created_at', { mode: 'timestamp' }).default(
+        sql`(strftime('%s', 'now'))`
+    ),
+    updatedAt: integer('updated_at', { mode: 'timestamp' }).default(
+        sql`(strftime('%s', 'now'))`
+    )
+})

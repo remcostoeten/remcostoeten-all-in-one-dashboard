@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import RouteGuard from '@/components/auth/RouteGaurd'
 import AddAppointmentDialog from '@/app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
 import CalendarToolbar from '@/app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
 import {
@@ -12,6 +11,7 @@ import {
 import { useSubMenuStore } from '../../../../core/stores/SubMenuStore'
 import ChatInfo from '../../chat-history/individual-chat/ChatInfo'
 import { Flex } from '../../../shared/atoms/Flex'
+import RouteGuard from '@/components/RouteGaurd'
 
 function DashHeader() {
     const pathname = usePathname()
@@ -50,17 +50,17 @@ function DashHeader() {
                     {showInfo && <ChatInfo />}
                 </Flex>
                 <div className='flex space-x-2'>
-                    {/* <RouteGuard patterns={['/dashboard/chat']}>
+                    <RouteGuard patterns={['/dashboard/chat']}>
                         <ToggleSearch />
                         <ToggleSideMenu />
                     </RouteGuard>{' '}
-                    <RouteGuard patterns={['/dashboard/color']}>
+                    <RouteGuard patterns={['/dashboard/diff-checker']}>
                         <ToggleSideMenu />
                     </RouteGuard>
                     <RouteGuard patterns={['/dashboard/planner']}>
                         <AddAppointmentDialog />
                         <CalendarToolbar />
-                    </RouteGuard> */}
+                    </RouteGuard>
                 </div>
             </div>
         </header>

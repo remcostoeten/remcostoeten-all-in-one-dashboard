@@ -12,10 +12,12 @@ import { usePathname } from 'next/navigation'
 import { routeConfig } from '@/core/config/route-config'
 import ChatSubMenu from '@/app/[locale]/(auth)/dashboard/chat/_components/ChatSubMenu'
 import ColorToolSubMenu from '../../../../app/[locale]/(auth)/dashboard/color-tool/components/ColorToolSubMenu'
+import DiffCheckerSubMenu from '@/app/[locale]/(auth)/dashboard/diff-checker/components/DiffCheckerSubMenu'
 
 const componentMap = {
     ChatSubMenu,
-    ColorToolSubMenu
+    ColorToolSubMenu,
+    DiffCheckerSubMenu
     // DriveSubMenu,
     // SettingsSubMenu,
     // TodosSubMenu,

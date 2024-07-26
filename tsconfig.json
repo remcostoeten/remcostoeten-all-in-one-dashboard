@@ -2,7 +2,7 @@
     "compilerOptions": {
         "lib": ["dom", "dom.iterable", "esnext"],
         "module": "esnext",
-        "moduleResolution": "bundler",
+        "moduleResolution": "node",
         "resolveJsonModule": true,
         "removeComments": false,
         "preserveConstEnums": true,
@@ -25,7 +25,7 @@
         "allowJs": true,
         "checkJs": false,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": false,
+        "forceConsistentCasingInFileNames": true,
         "jsx": "preserve",
         "noEmit": false,
         "isolatedModules": true,
@@ -38,6 +38,7 @@
             "@c/*": ["./src/components/*"],
             "@mark/*": ["./src/components/marketing/*"],
             "@dash/*": ["./src/components/dashboard/*"],
+            "@shadcn": ["./src/components/ui"],
             "contentlayer/generated": ["./.contentlayer/generated"]
         },
         "plugins": [
