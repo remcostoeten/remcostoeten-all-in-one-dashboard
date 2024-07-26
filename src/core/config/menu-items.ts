@@ -11,9 +11,9 @@ export const headerDropdownItems: {
         description: 'The repository read-me which also contains the roadmap.'
     },
     {
-        title: 'Guestbook ',
-        href: '/guestbook',
-        description: 'Just a page to test crud operations.'
+        title: 'Diff checker',
+        href: '/dashboard/diff-checker,
+        description: "A diff checker with the goal of saving checks in your personal vault.
     },
     {
         title: 'WhatsApp Exports',
