@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f40be116-4ea3-49ee-928f-fe588a402c50)
+![open-graph](https://github.com/user-attachments/assets/7dca751e-9a3b-4f48-afc9-f11004f18727)
 <small>Because I hate load times (Cloudflare, ugh), and not owning my own stuff.</small>
 
 > [!IMPORTANT]  
