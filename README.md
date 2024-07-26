@@ -1,4 +1,4 @@
-![open-graph](https://github.com/user-attachments/assets/7dca751e-9a3b-4f48-afc9-f11004f18727)
+![Remco Stoeten - all in one dashboard banner](https://github.com/user-attachments/assets/7324013b-faad-4081-86bb-23890f445552)
 <small>Because I hate load times (Cloudflare, ugh), and not owning my own stuff.</small>
 
 > [!IMPORTANT]  
