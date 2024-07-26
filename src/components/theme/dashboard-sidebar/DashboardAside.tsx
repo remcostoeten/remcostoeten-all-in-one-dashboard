@@ -30,6 +30,7 @@ const Aside = () => {
     )
 
     return (
+<>
   <motion.aside
     variants={{
         open: { width: '168px' },
