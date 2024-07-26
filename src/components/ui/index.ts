@@ -30,7 +30,6 @@ export {
 export * from './input'
 export * from './label'
 export * from './menubar'
-export * from './mui/mui-checkbox'
 export * from './navigation-menu'
 export * from './pagination'
 export * from './progress'

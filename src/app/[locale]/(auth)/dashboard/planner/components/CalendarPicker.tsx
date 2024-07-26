@@ -1,11 +1,11 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import { DateRange } from 'react-day-picker'
 import { endOfDay, endOfWeek, startOfWeek } from 'date-fns'
 import { DateRangePicker } from '@/components/ui'
 import { useData } from '@/core/contexts/CalendarDataContext'
 import { useCalendar } from '@/core/contexts/PlannerContext'
-
-interface CalendarToolbarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 function CalendarPicker() {
     const { setDateRange } = useCalendar()
