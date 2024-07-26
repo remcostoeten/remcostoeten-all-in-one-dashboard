@@ -30,16 +30,15 @@ const Aside = () => {
     )
 
     return (
-        <>
-            <motion.aside
-                variants={{
-                    open: { width: '168px' },
-                    close: { width: '64px' }
-                }}
-                animate={containerControls}
-                initial='open'
-                className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
-            >
+  <motion.aside
+    variants={{
+        open: { width: '168px' },
+        close: { width: '64px' }
+    }}
+    animate={containerControls}
+    initial='open'
+    className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white overflow-x-auto'
+>
                 <Flex
                     direction='col'
                     variant='space-y-m'
