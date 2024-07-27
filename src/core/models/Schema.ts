@@ -79,3 +79,21 @@ export const posts = sqliteTable('posts', {
         .notNull()
         .default(sql`CURRENT_TIMESTAMP`)
 })
+
+export const categories = sqliteTable('categories', {
+    id: integer('id').primaryKey(),
+    name: text('name').notNull().unique()
+})
+
+export const tasks = sqliteTable('tasks', {
+    id: integer('id').primaryKey(),
+    title: text('title').notNull(),
+    description: text('description'),
+    content: text('content')
+})
+
+export const subtasks = sqliteTable('subtasks', {
+    id: integer('id').primaryKey(),
+    taskId: integer('task_id').references(() => tasks.id),
+    content: text('content').notNull()
+})
