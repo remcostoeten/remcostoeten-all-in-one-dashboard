@@ -2,22 +2,36 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import AddAppointmentDialog from '@/app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
-import CalendarToolbar from '@/app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
-import {
-    ToggleSearch,
-    ToggleSideMenu
-} from '@/app/[locale]/(auth)/dashboard/MainWrapper'
+import 'next/dynamic' // Add this line to import the type declarations for 'next/dynamic'
 import { useSubMenuStore } from '../../../../core/stores/SubMenuStore'
 import ChatInfo from '../../chat-history/individual-chat/ChatInfo'
 import { Flex } from '../../../shared/atoms/Flex'
 import RouteGuard from '@/components/RouteGaurd'
+import { ToggleSideMenu } from '@/app/[locale]/(auth)/dashboard/MainWrapper'
+import { ToggleSearch } from '../../chat-history/individual-chat/ChatZoeken'
+
+import dynamic from 'next/dynamic'
+
+const AddAppointmentDialog = dynamic(
+    () =>
+        import(
+            '../../../../app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
+        ),
+    { ssr: false }
+)
+const CalendarToolbar = dynamic(
+    () =>
+        import(
+            '../../../../app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
+        ),
+    { ssr: false }
+)
 
 function DashHeader() {
     const pathname = usePathname()
     const [showInfo, setShowInfo] = useState(false)
     const [title, setTitle] = useState('Dashboard')
-    const { isSubMenuVisible } = useSubMenuStore((state) => ({
+    const { isSubMenuVisible } = useSubMenuStore(state => ({
         isSubMenuVisible: state.isSubMenuVisible
     }))
 
@@ -38,7 +52,7 @@ function DashHeader() {
     }, [pathname])
 
     return (
-        <header className='flex flex-col  space-y-4 p-4 bg-section text-text-white max-h-top-section justify-center h-[46px]'>
+        <header className='flex flex-col space-y-4 p-4 bg-section text-text-white max-h-top-section justify-center h-[46px]'>
             <div className='flex items-center justify-between'>
                 <Flex
                     gap={1}

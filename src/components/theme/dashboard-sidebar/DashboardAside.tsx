@@ -37,8 +37,8 @@ const Aside = () => {
                     close: { width: '64px' }
                 }}
                 animate={containerControls}
-                initial='open'
-                className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white'
+                initial='close'
+                className='dashboard-aside max-h-minus-nav flex w-[64px] flex-col justify-between bg-sidebar border-r border-border py-4 text-sm font-medium text-white overflow-x-auto'
             >
                 <Flex
                     direction='col'
@@ -65,6 +65,7 @@ const Aside = () => {
                                         name.replace('-', ' ').slice(1)
                                     }
                                     icon={svg}
+                                    isDisabled={false}
                                     link={name}
                                     isExpanded={isExpanded}
                                     hasNotification={hasNotification}
@@ -75,10 +76,11 @@ const Aside = () => {
                     <Seperator />
                     <nav className='mt-4 space-y-2'>
                         {itemsWithoutFavourites?.map(
-                            ({ name, svg, hasNotification }) => (
+                            ({ name, svg, hasNotification, isDisabled }) => (
                                 <MenuItem
                                     key={name}
                                     name={name}
+                                    isDisabled={isDisabled}
                                     icon={svg}
                                     link={name}
                                     isExpanded={isExpanded}

@@ -11,6 +11,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 @layer base {
     :root {
         --top-bar-height: 48px;

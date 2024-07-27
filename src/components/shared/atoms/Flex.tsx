@@ -37,6 +37,7 @@ interface FlexProps<T extends React.ElementType = 'div'>
     'aria-labelledby'?: string
     'data-testid'?: string
     margin?: string
+    key?: React.Key
 }
 
 const spaceToGap: Record<SpaceSize, string> = {
@@ -71,19 +72,18 @@ export const Flex = <T extends React.ElementType = 'div'>({
     content,
     gap,
     variant = 'default',
-    className,
     children,
-    margin,
     role,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
     'data-testid': dataTestId,
+    className,
+    key,
     ...props
 }: FlexProps<T>) => {
     const Component = as || 'div'
     const baseClasses = 'flex'
     const variantClass = variantClasses[variant]
-
     const classes = twMerge(
         baseClasses,
         variantClass,
@@ -103,6 +103,7 @@ export const Flex = <T extends React.ElementType = 'div'>({
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy}
             data-testid={dataTestId}
+            key={key}
             {...props}
         >
             {children}
