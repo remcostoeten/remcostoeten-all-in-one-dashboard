@@ -1,3 +1,4 @@
+// AddTaskPanel.jsx
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -31,6 +32,11 @@ type TaskProps = {
     onClose: () => void
 }
 
+type Category = {
+    id: string
+    name: string
+}
+
 const AddTaskPanel = ({ isOpen, onClose }: TaskProps) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -41,7 +47,12 @@ const AddTaskPanel = ({ isOpen, onClose }: TaskProps) => {
         const fetchCategories = async () => {
             const fetchedCategories = await getCategories()
 
-            setCategories(fetchedCategories)
+            setCategories(
+                fetchedCategories.map(cat => ({
+                    ...cat,
+                    id: String(cat.id)
+                }))
+            )
         }
 
         fetchCategories()
@@ -49,6 +60,10 @@ const AddTaskPanel = ({ isOpen, onClose }: TaskProps) => {
 
     const handleSaveTask = async () => {
         try {
+            if (title.trim() === '') {
+                toast('Please enter a title')
+                return
+            }
             await addTask({
                 title,
                 description,
@@ -60,33 +75,43 @@ const AddTaskPanel = ({ isOpen, onClose }: TaskProps) => {
             setCategoryId('')
             onClose()
             toast('Task added successfully')
-        } catch {
-            if (title.trim() === '') {
-                toast('Please enter a title')
-                return
-            }
+        } catch (error) {
+            toast('Failed to add task')
         }
     }
 
-    const handleCategoryAdded = newCategory => {
+    const handleCategoryAdded = (newCategory: Category) => {
         setCategories(prevCategories => [...prevCategories, newCategory])
+        toast('Category added successfully')
+    }
+
+    const handleCategoryDeleted = (categoryId: string) => {
+        setCategories(prevCategories =>
+            prevCategories.filter(cat => cat.id !== categoryId)
+        )
+        if (categoryId === categoryId) {
+            setCategoryId('')
+        }
     }
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalTrigger>
-                <Button size='icon' variant='secondary' className='mb-4'>
+                <div
+                    role='button'
+                    className='w-12 h-12 rounded-lg bg-section shadow-md flex items-center justify-center'
+                >
                     <AddTodoIcon />
-                </Button>
+                </div>
             </ModalTrigger>
             <ModalBody>
                 <ModalContent className='space-y-2'>
                     <Input
-                        backgroundColor='!bg-section'
                         type='text'
                         value={title}
                         onChange={e => setTitle(e.target.value)}
                         placeholder='Task Title'
+                        className='bg-section'
                     />
                     <Textarea
                         placeholder='Task description'
@@ -97,11 +122,12 @@ const AddTaskPanel = ({ isOpen, onClose }: TaskProps) => {
                         <SelectTrigger className='w-[180px]'>
                             <SelectValue placeholder='Category' />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className='w-full'>
                             {categories.map(category => (
                                 <SelectItem
                                     key={category.id}
                                     value={category.id}
+                                    className='flex justify-between min-w-[200px]'
                                 >
                                     {category.name}
                                 </SelectItem>
@@ -109,7 +135,10 @@ const AddTaskPanel = ({ isOpen, onClose }: TaskProps) => {
                         </SelectContent>
                     </Select>
 
-                    <CategoryManager onCategoryAdded={handleCategoryAdded} />
+                    <CategoryManager
+                        onCategoryAdded={handleCategoryAdded}
+                        onCategoryDeleted={handleCategoryDeleted}
+                    />
                 </ModalContent>
                 <ModalFooter>
                     <Button onClick={handleSaveTask}>Save Task</Button>

@@ -40,3 +40,11 @@ export async function addCategory(name: string) {
     await db.insert(categories).values({ name })
     return { success: true, message: 'Category added successfully' }
 }
+
+export async function deleteCategory(id: number) {
+    await db.delete(categories).where(eq(categories.id, id))
+}
+
+export async function updateCategory(id: number, name: string) {
+    await db.update(categories).set({ name }).where(eq(categories.id, id))
+}
