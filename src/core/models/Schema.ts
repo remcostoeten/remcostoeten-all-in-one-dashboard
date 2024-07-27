@@ -69,6 +69,7 @@ export const textComparisonSchema = sqliteTable('text_comparisons', {
         sql`(strftime('%s', 'now'))`
     )
 })
+
 export const posts = sqliteTable('posts', {
     id: integer('id').primaryKey(),
     title: text('title').notNull(),
