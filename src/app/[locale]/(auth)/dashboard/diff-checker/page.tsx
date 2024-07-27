@@ -50,7 +50,7 @@ const DiffCheckerDashboard: React.FC = () => {
         setListB('')
         setResults([])
     }
-    const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
+    const isSubMenuVisible = useSubMenuStore(state => state.isSubMenuVisible)
 
     function toggleSubMenu() {
         useSubMenuStore.getState().toggleSubMenu()
@@ -60,18 +60,8 @@ const DiffCheckerDashboard: React.FC = () => {
         <>
             <button onClick={toggleSubMenu}>Toggle SubMenu</button>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <TextArea
-                    id='listA'
-                    title='List A'
-                    value={listA}
-                    onChange={setListA}
-                />
-                <TextArea
-                    id='listB'
-                    title='List B'
-                    value={listB}
-                    onChange={setListB}
-                />
+                <TextArea id='listA' value={listA} onChange={setListA} />
+                <TextArea id='listB' value={listB} onChange={setListB} />
             </div>
             <div className='flex justify-between'>
                 <CompareButton onClick={handleCompare} />
