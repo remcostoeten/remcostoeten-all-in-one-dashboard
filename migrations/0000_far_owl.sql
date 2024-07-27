@@ -24,11 +24,28 @@ CREATE TABLE `messages` (
 	`is_favourited` integer
 );
 --> statement-breakpoint
+CREATE TABLE `posts` (
+	`id` integer PRIMARY KEY NOT NULL,
+	`title` text NOT NULL,
+	`content` text NOT NULL,
+	`view_count` integer DEFAULT 0 NOT NULL,
+	`created_at` integer DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE `task` (
 	`id` integer PRIMARY KEY NOT NULL,
 	`title` text NOT NULL,
 	`description` text,
 	`completed` integer DEFAULT 0 NOT NULL,
+	`created_at` integer DEFAULT (strftime('%s', 'now')),
+	`updated_at` integer DEFAULT (strftime('%s', 'now'))
+);
+--> statement-breakpoint
+CREATE TABLE `text_comparisons` (
+	`id` integer PRIMARY KEY NOT NULL,
+	`list_a` text NOT NULL,
+	`list_b` text NOT NULL,
+	`result` text NOT NULL,
 	`created_at` integer DEFAULT (strftime('%s', 'now')),
 	`updated_at` integer DEFAULT (strftime('%s', 'now'))
 );

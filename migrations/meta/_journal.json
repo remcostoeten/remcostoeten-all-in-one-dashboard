@@ -1,27 +1,13 @@
 {
-    "version": "7",
-    "dialect": "sqlite",
-    "entries": [
-        {
-            "idx": 0,
-            "version": "6",
-            "when": 1721779580842,
-            "tag": "0000_lucky_ozymandias",
-            "breakpoints": true
-        },
-        {
-            "idx": 1,
-            "version": "6",
-            "when": 1721943830660,
-            "tag": "0001_conscious_nova",
-            "breakpoints": true
-        },
-        {
-            "idx": 2,
-            "version": "6",
-            "when": 1721943901400,
-            "tag": "0002_chief_valeria_richards",
-            "breakpoints": true
-        }
-    ]
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1722079409209,
+      "tag": "0000_far_owl",
+      "breakpoints": true
+    }
+  ]
 }
