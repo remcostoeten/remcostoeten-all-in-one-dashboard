@@ -2,7 +2,6 @@
 
 import { db } from '@/core/libs/DB'
 import { textComparisonSchema } from '@/core/models/Schema'
-import { redirect } from 'next/navigation'
 
 export const handleSave = async (
     listA: string,
@@ -17,7 +16,6 @@ export const handleSave = async (
             listB,
             result: JSON.stringify(results)
         })
-        redirect('/dashboard/diff-checker/overview')
     } catch (error) {
         console.error('Error saving comparison:', error)
         throw error // Rethrow error to be caught by the caller

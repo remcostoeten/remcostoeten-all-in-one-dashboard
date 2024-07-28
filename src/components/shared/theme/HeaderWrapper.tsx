@@ -10,7 +10,7 @@ export default function HeaderWrapper() {
 
     return (
         <div
-            className={` ${dashboard ? 'fixed top-0 left-0 w-full bg-top-bar' : ''}`}
+            className={` ${dashboard ? 'fixed top-0 left-0 w-full bg-top-bar z-50' : ''}`}
         >
             <TopNav />
             <NavBar />

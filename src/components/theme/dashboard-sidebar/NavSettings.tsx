@@ -38,17 +38,22 @@ export default function NavSettings() {
     }
 
     function toggleAllItems() {
-        const selectAll = Object.keys(enabledNavItems).length === 0
+        const allItemsEnabled = DashboardAsideItems.every(
+            (item) => enabledNavItems[item.name]
+        )
 
-        DashboardAsideItems.forEach((item) => {
-            if (selectAll) {
-                if (!enabledNavItems[item.name]) {
-                    toggleNavItem(item.name)
-                }
+        useMenuStore.setState((state) => {
+            if (allItemsEnabled) {
+                // If all items are enabled, disable all
+                return { enabledNavItems: {} }
             } else {
-                if (enabledNavItems[item.name]) {
-                    toggleNavItem(item.name)
-                }
+                // If not all items are enabled, enable all
+                const newEnabledNavItems = {}
+
+                DashboardAsideItems.forEach((item) => {
+                    newEnabledNavItems[item.name] = true
+                })
+                return { enabledNavItems: newEnabledNavItems }
             }
         })
     }
@@ -81,18 +86,22 @@ export default function NavSettings() {
                             {DashboardAsideItems.map((item) => (
                                 <Flex justify='between' key={item.name}>
                                     <span>{item.name}</span>
-                                    <LabeledToggleSwitch
-                                        itemName={item.name}
-                                        key={item.name}
+                                    <input
+                                        type='checkbox'
+                                        onChange={() =>
+                                            toggleNavItem(item.name)
+                                        }
+                                        checked={!!enabledNavItems[item.name]}
+                                        className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                                     />
                                 </Flex>
                             ))}
                         </Flex>
-                        {Object.keys(enabledNavItems).length > 0 && (
-                            <hr className='my-2' />
-                        )}
+                        <hr className='my-2' />
                         <Button onClick={toggleAllItems}>
-                            {Object.keys(enabledNavItems).length > 0
+                            {DashboardAsideItems.every(
+                                (item) => enabledNavItems[item.name]
+                            )
                                 ? 'Hide all'
                                 : 'Show all'}
                         </Button>
@@ -120,14 +129,16 @@ export default function NavSettings() {
                             </Flex>
                             <Flex items='center' justify='between'>
                                 <span>Submenu</span>
-                                <LabeledToggleSwitch
-                                    onToggle={isSubMenuVisible}
-                                    onToggle={() =>
+                                <input
+                                    type='checkbox'
+                                    onChange={() =>
                                         useSubMenuStore.setState((state) => ({
                                             isSubMenuVisible:
                                                 !state.isSubMenuVisible
                                         }))
                                     }
+                                    checked={isSubMenuVisible}
+                                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                                 />
                             </Flex>
                         </Flex>

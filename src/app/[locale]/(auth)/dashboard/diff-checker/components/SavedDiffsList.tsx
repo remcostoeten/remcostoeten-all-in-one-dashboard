@@ -8,9 +8,12 @@ import SubMenuSearch from '@/components/dashboard/theme/sub-menu/SubMenuSearch'
 import SavedDiff from './SavedDiff'
 import { Skeleton } from '@/components/ui'
 import { fetchSavedDiffsFromAPI } from '@/core/@server/actions/getSavedDiffs'
+import { useRealtimeUpdates } from '@/core/hooks/useRealtimeUpdates'
+import { useUser } from '@clerk/nextjs'
 
 interface SavedDiff {
     id: string
+    title: string
     diff: string
 }
 
@@ -18,15 +21,23 @@ export default function SavedDiffsList() {
     const [isOpen, setIsOpen] = useState(true)
     const [savedDiffs, setSavedDiffs] = useState<SavedDiff[]>([])
     const [isLoading, setIsLoading] = useState(true)
+    const newDiff = useRealtimeUpdates()
+    const { isSignedIn, user } = useUser()
 
     useEffect(() => {
         async function fetchSavedDiffs() {
+            if (!isSignedIn) {
+                setIsLoading(false)
+                return
+            }
+
             try {
                 setIsLoading(true)
                 const diffs = await fetchSavedDiffsFromAPI()
                 const formattedDiffs = diffs.map((diff) => ({
                     id: diff.id.toString(),
-                    title: diff.title
+                    title: diff.title,
+                    diff: diff.diff
                 }))
 
                 setSavedDiffs(formattedDiffs)
@@ -36,12 +47,21 @@ export default function SavedDiffsList() {
                 setIsLoading(false)
             }
         }
-
         fetchSavedDiffs()
-    }, [])
+    }, [isSignedIn])
+
+    useEffect(() => {
+        if (newDiff) {
+            setSavedDiffs((prevDiffs) => [newDiff, ...prevDiffs])
+        }
+    }, [newDiff])
+
+    if (!isSignedIn) {
+        return <div>Please sign in to view your saved diffs.</div>
+    }
 
     return (
-        <SubMenuInnerContent>
+        <SubMenuInnerContent showBorder={false}>
             <SubMenuSearch />
             <div
                 onClick={() => setIsOpen(!isOpen)}

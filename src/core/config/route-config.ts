@@ -21,10 +21,6 @@ export const routeConfig: RouteConfig[] = [
     },
     { path: '/dashboard/diff-checker', subMenu: 'DiffCheckerSubMenu' },
     {
-        path: '/dashboard/planner'
-        // subMenu: 'DriveSubMenu'
-    },
-    {
         path: '/dashboard/settings',
         subMenu: 'SettingsSubMenu'
     },

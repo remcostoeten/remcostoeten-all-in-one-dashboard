@@ -171,7 +171,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
     }
 
     return (
-        <div>
+        <div className='space-y-2 space-x-2'>
             <JumpBar />
             <div className='relative overflow-hidden'>
                 <div
@@ -199,10 +199,20 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
 
             <div className='flex justify-between items-center'>
                 <div className='space-x-2'>
-                    <Button onClick={handleSort} variant='outline' size='sm'>
-                        Sort A-Z
+                    <Button
+                        onClick={handleSort}
+                        variant='outline'
+                        size='sm'
+                        className='ghost'
+                    >
+                        A-Z
                     </Button>
-                    <Button onClick={handlePaste} variant='outline' size='sm'>
+                    <Button
+                        onClick={handlePaste}
+                        variant='outline'
+                        size='sm'
+                        className='ghost'
+                    >
                         Paste
                     </Button>
                     <Button
@@ -213,7 +223,12 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
                     >
                         {isFormatting ? 'Formatting...' : 'Format'}
                     </Button>
-                    <Button onClick={handleClear} variant='outline' size='sm'>
+                    <Button
+                        onClick={handleClear}
+                        variant='outline'
+                        size='sm'
+                        className='ghost'
+                    >
                         Clear
                     </Button>
                 </div>

@@ -7,10 +7,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import NextTopLoader from 'nextjs-toploader'
 import { ReactNode } from 'react'
 import { Toaster } from 'sonner'
-import { PlannerDataContextProvider } from '@/core/contexts/CalendarDataContext'
 import { enUS, nlNL } from '@clerk/localizations'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { PlannerProvider } from './contexts/PlannerContext'
 
 type ProvidersProps = {
     children: ReactNode
@@ -23,9 +21,7 @@ type ProvidersProps = {
 export default function Providers({
     children,
     locale,
-    messages,
-    initialAppointments,
-    initialResources
+    messages
 }: ProvidersProps) {
     // Clerk localization and URLs
     let clerkLocale = enUS
@@ -52,25 +48,18 @@ export default function Providers({
                 signInFallbackRedirectUrl={dashboardUrl}
                 signUpFallbackRedirectUrl={dashboardUrl}
             >
-                <PlannerDataContextProvider
-                    initialAppointments={initialAppointments}
-                    initialResources={initialResources}
-                >
-                    <PlannerProvider>
-                        <TooltipProvider>
-                            <NextTopLoader
-                                showSpinner={false}
-                                color='#02c9a5'
-                                initialPosition={0.38}
-                                easing='ease-in-out'
-                            />
-                            {children}
-                            <Analytics />
-                            <SpeedInsights />
-                            <Toaster position='top-center' />
-                        </TooltipProvider>
-                    </PlannerProvider>
-                </PlannerDataContextProvider>
+                <TooltipProvider>
+                    <NextTopLoader
+                        showSpinner={false}
+                        color='#02c9a5'
+                        initialPosition={0.38}
+                        easing='ease-in-out'
+                    />
+                    {children}
+                    <Analytics />
+                    <SpeedInsights />
+                    <Toaster position='top-center' />
+                </TooltipProvider>
             </ClerkProvider>
         </NextIntlClientProvider>
     )

@@ -55,13 +55,15 @@ const DiffCheckerDashboard: React.FC = () => {
         toast('Cleared all text fields.')
     }
 
-    const handleSaveWithTitle = async () => {
-        if (!title.trim()) {
+    const handleSaveWithTitle = async (formData: FormData) => {
+        const titleFromForm = formData.get('title') as string
+
+        if (!titleFromForm.trim()) {
             toast('Please enter a title for the comparison.')
             return
         }
         try {
-            await handleSave(listA, listB, results, title)
+            await handleSave(listA, listB, results, titleFromForm)
             setIsPopoverOpen(false)
             toast('Comparison saved successfully.')
         } catch (error) {
@@ -70,7 +72,7 @@ const DiffCheckerDashboard: React.FC = () => {
     }
 
     return (
-        <>
+        <div className='space-y-2'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <TextArea id='listA' value={listA} onChange={setListA} />
                 <TextArea id='listB' value={listB} onChange={setListB} />
@@ -92,34 +94,33 @@ const DiffCheckerDashboard: React.FC = () => {
                             <Button>Save Comparison</Button>
                         </PopoverTrigger>
                         <PopoverContent className='w-80'>
-                            <div className='grid gap-4'>
-                                <div className='space-y-2'>
-                                    <h4 className='font-medium leading-none'>
-                                        Save Comparison
-                                    </h4>
-                                    <p className='text-sm text-muted-foreground'>
-                                        Enter a title for this comparison
-                                    </p>
+                            <form action={handleSaveWithTitle}>
+                                <div className='grid gap-4'>
+                                    <div className='space-y-2'>
+                                        <h4 className='font-medium leading-none'>
+                                            Save Comparison
+                                        </h4>
+                                        <p className='text-sm text-muted-foreground'>
+                                            Enter a title for this comparison
+                                        </p>
+                                    </div>
+                                    <div className='grid gap-2'>
+                                        <Input
+                                            id='title'
+                                            name='title'
+                                            backgroundColor='!bg-section'
+                                            defaultValue={title}
+                                            placeholder='Enter title'
+                                        />
+                                        <Button type='submit'>Save</Button>
+                                    </div>
                                 </div>
-                                <div className='grid gap-2'>
-                                    <Input
-                                        id='title'
-                                        value={title}
-                                        onChange={(e) =>
-                                            setTitle(e.target.value)
-                                        }
-                                        placeholder='Enter title'
-                                    />
-                                    <Button onClick={handleSaveWithTitle}>
-                                        Save
-                                    </Button>
-                                </div>
-                            </div>
+                            </form>
                         </PopoverContent>
                     </Popover>
                 </>
             )}
-        </>
+        </div>
     )
 }
 

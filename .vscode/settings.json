@@ -16,7 +16,7 @@
     "git.autofetch": true,
     "editor.fontVariations": true,
     "editor.cursorStyle": "underline",
-    "editor.cursorSmoothCaretAnimation": on,
+    "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorBlinking": "phase",
     "editor.smoothScrolling": true,
     "explorer.confirmDelete": false,
@@ -50,10 +50,10 @@
         "**/*.tsbuildinfo": true,
         "**/.astro": true
     },
-"editor.codeActionsOnSave": {
-    "source.fixAll": "always", 
-    "source.fixAll.eslint": "always"
-},
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.fixAll.eslint": "always"
+    },
     "eslint.validate": [
         "javascript",
         "javascriptreact",
@@ -72,62 +72,26 @@
     ],
     "github.copilot.advanced": {
         "github.copilot.enable": true, // Enable or disable GitHub Copilot
-        "github.copilot.autoComplete": true, // Enable or disable automatic code completion
-      
         // Inline Suggestions
         "github.copilot.inlineSuggest.enable": true, // Enable inline code suggestions
         "github.copilot.inlineSuggest.show": true, // Show inline suggestions
-      
         // Editor Behavior
         "github.copilot.editor.useTabCompletion": true, // Use tab completion for suggestions
         "github.copilot.editor.acceptSuggestionOnEnter": true, // Accept suggestions with Enter key
-      
         // Suggestions Configuration
         "github.copilot.suggestion.maxSuggestions": 5, // Maximum number of suggestions displayed
         "github.copilot.suggestion.timeout": 1000, // Timeout for suggestion responses (in milliseconds)
-      
         // Advanced Settings
         "github.copilot.advanced.experimentalFeatures": false, // Enable or disable experimental features
         "github.copilot.advanced.loggingLevel": "info", // Logging level for debugging
         "github.copilot.advanced.tracking": true, // Enable or disable tracking settings for telemetry
-      
         // Language-Specific Settings
         "github.copilot.languageSupport.enableForJavaScript": true, // Enable suggestions for JavaScript
         "github.copilot.languageSupport.enableForPython": true, // Enable suggestions for Python
         "github.copilot.languageSupport.enableForTypeScript": true, // Enable suggestions for TypeScript
-      
         // User Experience Settings
         "github.copilot.feedback.enable": true, // Enable feedback collection
-        "github.copilot.theme": "dark" // Set the theme for Copilot suggestions  "github.copilot.{
-            // General Settings
-            "github.copilot.enable": true, // Enable or disable GitHub Copilot
-            "github.copilot.autoComplete": true, // Enable or disable automatic code completion
-          
-            // Inline Suggestions
-            "github.copilot.inlineSuggest.enable": true, // Enable inline code suggestions
-            "github.copilot.inlineSuggest.show": true, // Show inline suggestions
-          
-            // Editor Behavior
-            "github.copilot.editor.useTabCompletion": true, // Use tab completion for suggestions
-            "github.copilot.editor.acceptSuggestionOnEnter": true, // Accept suggestions with Enter key
-          
-            // Suggestions Configuration
-            "github.copilot.suggestion.maxSuggestions": 5, // Maximum number of suggestions displayed
-            "github.copilot.suggestion.timeout": 1000, // Timeout for suggestion responses (in milliseconds)
-          
-            // Advanced Settings
-            "github.copilot.advanced.experimentalFeatures": false, // Enable or disable experimental features
-            "github.copilot.advanced.loggingLevel": "info", // Logging level for debugging
-            "github.copilot.advanced.tracking": true, // Enable or disable tracking settings for telemetry
-          
-            // Language-Specific Settings
-            "github.copilot.languageSupport.enableForJavaScript": true, // Enable suggestions for JavaScript
-            "github.copilot.languageSupport.enableForPython": true, // Enable suggestions for Python
-            "github.copilot.languageSupport.enableForTypeScript": true, // Enable suggestions for TypeScript
-          
-            // User Experience Settings
-            "github.copilot.feedback.enable": true, // Enable feedback collection
-            "github.copilot.theme": "dark" // Set the theme for Copilot suggestions
+        "github.copilot.theme": "dark" // Set the theme for Copilot suggestions
     },
     "window.zoomLevel": 2
 }

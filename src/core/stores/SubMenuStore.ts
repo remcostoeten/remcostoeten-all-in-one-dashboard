@@ -8,9 +8,9 @@ interface SubMenuState {
 }
 
 export const useSubMenuStore = create<SubMenuState>((set) => ({
-    w: false,
+    isSubMenuVisible: false,
     toggleSubMenu: () =>
         set((state) => ({ isSubMenuVisible: !state.isSubMenuVisible })),
-    closeSubMenu: () => set({ isSubMenuVisible: false }),
+    closeSubMenu: () => set({ isSubMenuVisible: true }),
     openSubMenu: () => set({ isSubMenuVisible: true })
 }))
