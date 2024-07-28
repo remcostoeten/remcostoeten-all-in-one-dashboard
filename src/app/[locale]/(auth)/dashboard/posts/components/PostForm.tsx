@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Editor from '@/components/editor/advanced-editor'
-import { defaultValue } from '@/app/default-value'
+import { defaultValue } from '@/core/data/default-value'
 import { JSONContent } from 'novel'
 
 type PostFormProps = {

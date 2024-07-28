@@ -18,7 +18,7 @@ const formatJavaScript = (code: string): string => {
     const indentChar = '    ' // four spaces for indentation
 
     return lines
-        .map(line => {
+        .map((line) => {
             line = line.trim()
             if (line.endsWith('{')) {
                 const indentedLine = indentChar.repeat(indentLevel) + line
@@ -144,7 +144,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
                     type='number'
                     placeholder='Jump to line'
                     value={lineNumber}
-                    onChange={e => setLineNumber(e.target.value)}
+                    onChange={(e) => setLineNumber(e.target.value)}
                     onKeyDown={handleKeyDown}
                     className='w-full h-8 px-2 border rounded-md rounded-b-0  text-xs text-text bg-[#070D1C]'
                 />
@@ -169,7 +169,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
                     id={id}
                     ref={textareaRef}
                     value={value}
-                    onChange={e => onChange(e.target.value)}
+                    onChange={(e) => onChange(e.target.value)}
                     className='w-full h-40 pl-10 border rounded-md !border-t-0'
                     style={{
                         fontFamily: 'monospace',
