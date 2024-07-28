@@ -2,21 +2,22 @@
 
 import { db } from '@/core/libs/DB'
 import { textComparisonSchema } from '@/core/models/Schema'
-import router from 'next/navigation'
 
 export const handleSave = async (
-    listA: string[],
-    listB: string[],
-    results: any
+    listA: string,
+    listB: string,
+    results: any,
+    title: string
 ) => {
     try {
         await db.insert(textComparisonSchema).values({
+            title,
             listA,
             listB,
             result: JSON.stringify(results)
         })
-        router.push('/dashboard/diff-checker/overview')
     } catch (error) {
         console.error('Error saving comparison:', error)
+        throw error // Rethrow error to be caught by the caller
     }
 }

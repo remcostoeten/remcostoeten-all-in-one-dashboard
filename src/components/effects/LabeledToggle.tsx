@@ -1,7 +1,11 @@
-'use client'
+import React, { useState, useEffect } from 'react'
+import { AnimatePresence, motion, Transition } from 'framer-motion'
 
-import React, { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+const springConfig: Transition = {
+    duration: 0.4,
+    delay: 0.07,
+    type: 'spring'
+}
 
 /**
  - onToggle: Callback function called when the toggle state changes.
@@ -19,12 +23,20 @@ export default function LabeledToggle({
     disableText?: boolean
 }) {
     const [toggled, setToggled] = useState<boolean>(initialToggleOn || false)
-    const springConfig = { type: 'spring', stiffness: 500, damping: 30 }
+
+    useEffect(() => {
+        const savedState = localStorage.getItem('toggleState')
+
+        if (savedState !== null) {
+            setToggled(JSON.parse(savedState))
+        }
+    }, [])
 
     const handleToggle = () => {
         const newState = !toggled
 
         setToggled(newState)
+        localStorage.setItem('toggleState', JSON.stringify(newState))
         if (onToggle) {
             onToggle(newState)
         }

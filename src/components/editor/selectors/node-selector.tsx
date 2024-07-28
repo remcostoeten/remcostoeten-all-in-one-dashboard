@@ -28,9 +28,9 @@ const items: SelectorItem[] = [
     {
         name: 'Text',
         icon: TextIcon,
-        command: editor => editor.chain().focus().clearNodes().run(),
+        command: (editor) => editor.chain().focus().clearNodes().run(),
         // I feel like there has to be a more efficient way to do this – feel free to PR if you know how!
-        isActive: editor =>
+        isActive: (editor) =>
             editor.isActive('paragraph') &&
             !editor.isActive('bulletList') &&
             !editor.isActive('orderedList')
@@ -38,73 +38,73 @@ const items: SelectorItem[] = [
     {
         name: 'Heading 1',
         icon: Heading1,
-        command: editor =>
+        command: (editor) =>
             editor
                 .chain()
                 .focus()
                 .clearNodes()
                 .toggleHeading({ level: 1 })
                 .run(),
-        isActive: editor => editor.isActive('heading', { level: 1 })
+        isActive: (editor) => editor.isActive('heading', { level: 1 })
     },
     {
         name: 'Heading 2',
         icon: Heading2,
-        command: editor =>
+        command: (editor) =>
             editor
                 .chain()
                 .focus()
                 .clearNodes()
                 .toggleHeading({ level: 2 })
                 .run(),
-        isActive: editor => editor.isActive('heading', { level: 2 })
+        isActive: (editor) => editor.isActive('heading', { level: 2 })
     },
     {
         name: 'Heading 3',
         icon: Heading3,
-        command: editor =>
+        command: (editor) =>
             editor
                 .chain()
                 .focus()
                 .clearNodes()
                 .toggleHeading({ level: 3 })
                 .run(),
-        isActive: editor => editor.isActive('heading', { level: 3 })
+        isActive: (editor) => editor.isActive('heading', { level: 3 })
     },
     {
         name: 'To-do List',
         icon: CheckSquare,
-        command: editor =>
+        command: (editor) =>
             editor.chain().focus().clearNodes().toggleTaskList().run(),
-        isActive: editor => editor.isActive('taskItem')
+        isActive: (editor) => editor.isActive('taskItem')
     },
     {
         name: 'Bullet List',
         icon: ListOrdered,
-        command: editor =>
+        command: (editor) =>
             editor.chain().focus().clearNodes().toggleBulletList().run(),
-        isActive: editor => editor.isActive('bulletList')
+        isActive: (editor) => editor.isActive('bulletList')
     },
     {
         name: 'Numbered List',
         icon: ListOrdered,
-        command: editor =>
+        command: (editor) =>
             editor.chain().focus().clearNodes().toggleOrderedList().run(),
-        isActive: editor => editor.isActive('orderedList')
+        isActive: (editor) => editor.isActive('orderedList')
     },
     {
         name: 'Quote',
         icon: TextQuote,
-        command: editor =>
+        command: (editor) =>
             editor.chain().focus().clearNodes().toggleBlockquote().run(),
-        isActive: editor => editor.isActive('blockquote')
+        isActive: (editor) => editor.isActive('blockquote')
     },
     {
         name: 'Code',
         icon: Code,
-        command: editor =>
+        command: (editor) =>
             editor.chain().focus().clearNodes().toggleCodeBlock().run(),
-        isActive: editor => editor.isActive('codeBlock')
+        isActive: (editor) => editor.isActive('codeBlock')
     }
 ]
 
@@ -118,7 +118,7 @@ export const NodeSelector = ({ open, onOpenChange }: NodeSelectorProps) => {
 
     if (!editor) return null
 
-    const activeItem = items.filter(item => item.isActive(editor)).pop() ?? {
+    const activeItem = items.filter((item) => item.isActive(editor)).pop() ?? {
         name: 'Multiple'
     }
 
@@ -139,7 +139,7 @@ export const NodeSelector = ({ open, onOpenChange }: NodeSelectorProps) => {
                 {items.map((item, index) => (
                     <EditorBubbleItem
                         key={index}
-                        onSelect={editor => {
+                        onSelect={(editor) => {
                             item.command(editor)
                             onOpenChange(false)
                         }}

@@ -65,7 +65,7 @@ export const LinkSelector = ({ open, onOpenChange }: LinkSelectorProps) => {
             </PopoverTrigger>
             <PopoverContent align='start' className='w-60 p-0' sideOffset={10}>
                 <form
-                    onSubmit={e => {
+                    onSubmit={(e) => {
                         const target = e.currentTarget as HTMLFormElement
 
                         e.preventDefault()

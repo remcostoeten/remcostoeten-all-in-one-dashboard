@@ -3,12 +3,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Button } from '@c/ui/button'
 import { Textarea } from '@c/ui/textarea'
-import { useToast } from '@/components/ui'
 import useKeyboardShortcut from '@/core/hooks/useKeyboardShortcut'
+import { toast } from 'sonner'
 
 type TextAreaProps = {
     id: string
-    title: string
     value: string
     onChange: (value: string) => void
 }
@@ -19,7 +18,7 @@ const formatJavaScript = (code: string): string => {
     const indentChar = '    ' // four spaces for indentation
 
     return lines
-        .map((line) => {
+        .map(line => {
             line = line.trim()
             if (line.endsWith('{')) {
                 const indentedLine = indentChar.repeat(indentLevel) + line
@@ -36,16 +35,10 @@ const formatJavaScript = (code: string): string => {
         .join('\n')
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({
-    id,
-    title,
-    value,
-    onChange
-}) => {
+export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
     const [isFormatting, setIsFormatting] = useState(false)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const lineNumbersRef = useRef<HTMLDivElement>(null)
-    const { toast } = useToast()
 
     const [charCount, setCharCount] = useState(0)
     const [lineCount, setLineCount] = useState(0)
@@ -74,10 +67,8 @@ export const TextArea: React.FC<TextAreaProps> = ({
         const sortedText = value.split('\n').sort().join('\n')
 
         onChange(sortedText)
-        toast({
-            title: 'Sorted',
-            description: 'The text has been sorted alphabetically.'
-        })
+
+        toast('Lines sorted alphabetically.')
     }
 
     const handlePaste = async () => {
@@ -85,17 +76,11 @@ export const TextArea: React.FC<TextAreaProps> = ({
             const text = await navigator.clipboard.readText()
 
             onChange(text)
-            toast({
-                title: 'Pasted',
-                description: 'Text pasted from clipboard.'
-            })
+
+            toast('Pasted from clipboard.')
         } catch (err) {
             console.error('Failed to read clipboard contents: ', err)
-            toast({
-                title: 'Error',
-                description: 'Failed to paste from clipboard.',
-                variant: 'destructive'
-            })
+            toast('Failed to read clipboard contents.', 'error')
         }
     }
 
@@ -105,17 +90,11 @@ export const TextArea: React.FC<TextAreaProps> = ({
             const formattedText = formatJavaScript(value)
 
             onChange(formattedText)
-            toast({
-                title: 'Formatted',
-                description: 'The code has been formatted.'
-            })
+
+            toast('Code formatted successfully.')
         } catch (err) {
             console.error('Failed to format code: ', err)
-            toast({
-                title: 'Error',
-                description: 'Failed to format code.',
-                variant: 'destructive'
-            })
+            toast('Failed to format code.', 'error')
         } finally {
             setIsFormatting(false)
         }
@@ -123,10 +102,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
     const handleClear = () => {
         onChange('')
-        toast({
-            title: 'Cleared',
-            description: 'The text area has been cleared.'
-        })
+        toast('Cleared text area.')
     }
 
     const jumpToLine = (lineNumber: number) => {
@@ -168,7 +144,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
                     type='number'
                     placeholder='Jump to line'
                     value={lineNumber}
-                    onChange={(e) => setLineNumber(e.target.value)}
+                    onChange={e => setLineNumber(e.target.value)}
                     onKeyDown={handleKeyDown}
                     className='w-full h-8 px-2 border rounded-md rounded-b-0  text-xs text-text bg-[#070D1C]'
                 />
@@ -177,13 +153,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
     }
 
     return (
-        <div>
-            <label
-                htmlFor={id}
-                className='block text-sm font-medium text-gray-700 dark:text-gray-300'
-            >
-                {title}
-            </label>
+        <div className='space-y-2 space-x-2'>
             <JumpBar />
             <div className='relative overflow-hidden'>
                 <div
@@ -199,7 +169,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
                     id={id}
                     ref={textareaRef}
                     value={value}
-                    onChange={(e) => onChange(e.target.value)}
+                    onChange={e => onChange(e.target.value)}
                     className='w-full h-40 pl-10 border rounded-md !border-t-0'
                     style={{
                         fontFamily: 'monospace',
@@ -211,10 +181,20 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
             <div className='flex justify-between items-center'>
                 <div className='space-x-2'>
-                    <Button onClick={handleSort} variant='outline' size='sm'>
-                        Sort A-Z
+                    <Button
+                        onClick={handleSort}
+                        variant='outline'
+                        size='sm'
+                        className='ghost'
+                    >
+                        A-Z
                     </Button>
-                    <Button onClick={handlePaste} variant='outline' size='sm'>
+                    <Button
+                        onClick={handlePaste}
+                        variant='outline'
+                        size='sm'
+                        className='ghost'
+                    >
                         Paste
                     </Button>
                     <Button
@@ -225,7 +205,12 @@ export const TextArea: React.FC<TextAreaProps> = ({
                     >
                         {isFormatting ? 'Formatting...' : 'Format'}
                     </Button>
-                    <Button onClick={handleClear} variant='outline' size='sm'>
+                    <Button
+                        onClick={handleClear}
+                        variant='outline'
+                        size='sm'
+                        className='ghost'
+                    >
                         Clear
                     </Button>
                 </div>

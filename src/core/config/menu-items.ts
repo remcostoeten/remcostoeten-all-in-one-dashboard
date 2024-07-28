@@ -1,3 +1,4 @@
+import { is } from 'drizzle-orm'
 import svgToComponent from '../libs/svgToComponent'
 
 export const headerDropdownItems: {
@@ -59,6 +60,7 @@ export const DashboardAsideItems = [
     {
         name: 'diff-checker',
         isFavourite: true,
+        isDisabled: true,
         svg: svgToComponent(
             `<svg
         xmlns="http://www.w3.org/2000/svg"
@@ -74,28 +76,15 @@ export const DashboardAsideItems = [
         </svg>`
         )
     },
+
     {
-        name: 'planner',
+        name: 'task',
         isFavourite: true,
         svg: svgToComponent(
-            `<svg
-            xmlns="http://www.w3.org/2000/svg"
-className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            >
-            <path
-              stroke="#f7f7f7"
-              strokeLinecap="round"
-              strokeWidth="1.5"
-              d="M14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14v-2c0-3.771 0-5.657 1.172-6.828C4.343 4 6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172C22 6.343 22 8.229 22 12v2c0 3.771 0 5.657-1.172 6.828-.653.654-1.528.943-2.828 1.07M7 4V2.5M17 4V2.5M21.5 9H10.75M2 9h3.875"
-            ></path>
-            <path
-              fill="#1C274C"
-              d="M18 17a1 1 0 11-2 0 1 1 0 012 0zM18 13a1 1 0 11-2 0 1 1 0 012 0zM13 17a1 1 0 11-2 0 1 1 0 012 0zM13 13a1 1 0 11-2 0 1 1 0 012 0zM8 17a1 1 0 11-2 0 1 1 0 012 0zM8 13a1 1 0 11-2 0 1 1 0 012 0z"
-            ></path>
-            </svg>`
-        )
+            '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path></svg>'
+        ),
+        isDisabled: false,
+        hasNotification: true
     },
     {
         name: 'posts',

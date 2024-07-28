@@ -8,7 +8,7 @@ export default function CreatePost() {
     const router = useRouter()
     const [error, setError] = useState('')
 
-    const handleSubmit = async postData => {
+    const handleSubmit = async (postData) => {
         try {
             const response = await fetch('/api/posts', {
                 method: 'POST',

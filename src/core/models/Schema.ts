@@ -59,6 +59,7 @@ export const usersSchema = sqliteTable('users', {
 
 export const textComparisonSchema = sqliteTable('text_comparisons', {
     id: integer('id').primaryKey(),
+    title: text('title').notNull(), // Add this line
     listA: text('list_a').notNull(),
     listB: text('list_b').notNull(),
     result: text('result').notNull(),
@@ -78,4 +79,24 @@ export const posts = sqliteTable('posts', {
     createdAt: integer('created_at', { mode: 'timestamp' })
         .notNull()
         .default(sql`CURRENT_TIMESTAMP`)
+})
+
+export const categories = sqliteTable('categories', {
+    id: integer('id').primaryKey(),
+    name: text('name').notNull().unique()
+})
+
+export const tasks = sqliteTable('tasks', {
+    id: integer('id').primaryKey(),
+    title: text('title').notNull(),
+    description: text('description'),
+    content: text('content'),
+    priority: integer('priority').notNull(),
+    categoryId: integer('category_id').references(() => categories.id)
+})
+
+export const subtasks = sqliteTable('subtasks', {
+    id: integer('id').primaryKey(),
+    taskId: integer('task_id').references(() => tasks.id),
+    content: text('content').notNull()
 })

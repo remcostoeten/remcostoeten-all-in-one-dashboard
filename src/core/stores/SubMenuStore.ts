@@ -7,10 +7,10 @@ interface SubMenuState {
     openSubMenu: () => void
 }
 
-export const useSubMenuStore = create<SubMenuState>((set) => ({
+export const useSubMenuStore = create<SubMenuState>(set => ({
     w: false,
     toggleSubMenu: () =>
-        set((state) => ({ isSubMenuVisible: !state.isSubMenuVisible })),
+        set(state => ({ isSubMenuVisible: !state.isSubMenuVisible })),
     closeSubMenu: () => set({ isSubMenuVisible: false }),
     openSubMenu: () => set({ isSubMenuVisible: true })
 }))

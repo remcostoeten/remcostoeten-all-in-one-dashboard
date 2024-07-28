@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from '@c/ui/button'
 import ShinyButton from '@/components/magicui/shiny-button'
 
 type CompareButtonProps = {
@@ -7,7 +6,7 @@ type CompareButtonProps = {
 }
 
 export const CompareButton: React.FC<CompareButtonProps> = ({ onClick }) => (
-    <span onClick={onClick}>
+    <span onClick={onClick} className='my-2'>
         <ShinyButton text='Compare' />
     </span>
 )

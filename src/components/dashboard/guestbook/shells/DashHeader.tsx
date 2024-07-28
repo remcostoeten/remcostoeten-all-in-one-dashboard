@@ -10,28 +10,11 @@ import RouteGuard from '@/components/RouteGaurd'
 import { ToggleSideMenu } from '@/app/[locale]/(auth)/dashboard/MainWrapper'
 import { ToggleSearch } from '../../chat-history/individual-chat/ChatZoeken'
 
-import dynamic from 'next/dynamic'
-
-const AddAppointmentDialog = dynamic(
-    () =>
-        import(
-            '../../../../app/[locale]/(auth)/dashboard/planner/components/AddAppointmentDialog'
-        ),
-    { ssr: false }
-)
-const CalendarToolbar = dynamic(
-    () =>
-        import(
-            '../../../../app/[locale]/(auth)/dashboard/planner/components/CalendarPicker'
-        ),
-    { ssr: false }
-)
-
 function DashHeader() {
     const pathname = usePathname()
     const [showInfo, setShowInfo] = useState(false)
     const [title, setTitle] = useState('Dashboard')
-    const { isSubMenuVisible } = useSubMenuStore(state => ({
+    const { isSubMenuVisible } = useSubMenuStore((state) => ({
         isSubMenuVisible: state.isSubMenuVisible
     }))
 
@@ -70,10 +53,6 @@ function DashHeader() {
                     </RouteGuard>{' '}
                     <RouteGuard patterns={['/dashboard/diff-checker']}>
                         <ToggleSideMenu />
-                    </RouteGuard>
-                    <RouteGuard patterns={['/dashboard/planner']}>
-                        <AddAppointmentDialog />
-                        <CalendarToolbar />
                     </RouteGuard>
                 </div>
             </div>

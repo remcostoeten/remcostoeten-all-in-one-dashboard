@@ -1,3 +1,5 @@
+'use client'
+
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from '@vercel/analytics/react'
@@ -5,7 +7,6 @@ import { NextIntlClientProvider } from 'next-intl'
 import NextTopLoader from 'nextjs-toploader'
 import { ReactNode } from 'react'
 import { Toaster } from 'sonner'
-import { PlannerDataContextProvider } from '@/core/contexts/CalendarDataContext'
 import { enUS, nlNL } from '@clerk/localizations'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -20,9 +21,7 @@ type ProvidersProps = {
 export default function Providers({
     children,
     locale,
-    messages,
-    initialAppointments,
-    initialResources
+    messages
 }: ProvidersProps) {
     // Clerk localization and URLs
     let clerkLocale = enUS
@@ -49,23 +48,23 @@ export default function Providers({
                 signInFallbackRedirectUrl={dashboardUrl}
                 signUpFallbackRedirectUrl={dashboardUrl}
             >
-                <PlannerDataContextProvider
-                    initialAppointments={initialAppointments}
-                    initialResources={initialResources}
-                >
-                    <TooltipProvider>
-                        <NextTopLoader
-                            showSpinner={false}
-                            color='#02c9a5'
-                            initialPosition={0.38}
-                            easing='ease-in-out'
-                        />
-                        {children}
-                        <Analytics />
-                        <SpeedInsights />
-                        <Toaster position='top-center' />
-                    </TooltipProvider>
-                </PlannerDataContextProvider>
+                <TooltipProvider>
+                    <NextTopLoader
+                        showSpinner={false}
+                        color='#02c9a5'
+                        initialPosition={0.38}
+                        easing='ease-in-out'
+                    />
+                    {children}
+                    <Analytics />
+                    <SpeedInsights />
+                    <Toaster
+                        toastOptions={{
+                            closeButton: true
+                        }}
+                        position='top-center'
+                    />
+                </TooltipProvider>
             </ClerkProvider>
         </NextIntlClientProvider>
     )

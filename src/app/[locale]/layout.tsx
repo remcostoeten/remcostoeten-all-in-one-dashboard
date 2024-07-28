@@ -3,13 +3,14 @@ import { AppConfig } from '@/core/utils/app-config'
 import type { Metadata } from 'next'
 import { useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { Roboto_Mono } from 'next/font/google'
+import { IBM_Plex_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import '@/styles/app.scss'
 import HeaderWrapper from '@/components/shared/theme/HeaderWrapper'
+import AddTaskPanel from '@/components/quick-tasks/AddTaskPanel'
 
-const roboto = Roboto_Mono({
+const font = IBM_Plex_Sans({
     weight: ['200', '300', '400', '500', '600', '700'],
     subsets: ['latin']
 })
@@ -32,7 +33,7 @@ export default function RootLayout(props: {
 
     return (
         <html lang={props.params.locale} className='bg-dash-body dark '>
-            <body className={`${roboto.className} `}>
+            <body className={`${font.className} `}>
                 <Providers
                     locale={props.params.locale}
                     messages={messages}
@@ -41,6 +42,7 @@ export default function RootLayout(props: {
                 >
                     <HeaderWrapper />
                     {props.children}
+                    <AddTaskPanel />
                 </Providers>
             </body>
         </html>

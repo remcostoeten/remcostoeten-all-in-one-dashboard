@@ -6,13 +6,11 @@ import {
     CollapsibleTrigger
 } from '@/components/ui/collapsible'
 import { ChevronRightIcon, CogIcon, TvIcon } from '@heroicons/react/24/outline'
-import useNotImplemented from '@/core/hooks/useNotYetImplementedToast'
 import { useState, useCallback, type ReactNode } from 'react'
 import { SearchIcon } from '@/components/theme/icons'
 import IconShell from '@/components/theme/shells/IconShell'
 
 const IndividualChatWrapper = ({
-    chatName,
     image
 }: {
     chatName: string
@@ -25,32 +23,9 @@ const IndividualChatWrapper = ({
     )
 }
 
-const Channel = ({
-    name,
-    isNotImplemented,
-    onClick
-}: {
-    name: string
-    isNotImplemented?: boolean
-    onClick?: () => void
-}) => {
-    const notImplementedToast = useNotImplemented()
-
-    const handleClick = useCallback(() => {
-        if (isNotImplemented) {
-            notImplementedToast()
-        } else if (onClick) {
-            onClick()
-        } else {
-            console.log('clicked')
-        }
-    }, [isNotImplemented, onClick, notImplementedToast])
-
+const Channel = ({ name }: { name: string }) => {
     return (
-        <div
-            className='flex items-center gap-1 px-2.5 space-x-2'
-            onClick={handleClick}
-        >
+        <div className='flex items-center gap-1 px-2.5 space-x-2'>
             <IconShell
                 className='h-[20px] p-[0px] w-[20px] translate-y-[2px]'
                 as='div'
@@ -68,7 +43,6 @@ const Channel = ({
 
 function SubMenu() {
     const [isOpen, setIsOpen] = useState(true)
-    const notImplementedToast = useNotImplemented()
 
     return (
         <div className='flex flex-col w-full max-w-[240px] bg-sidebar text-text-primary border-r border-border'>
@@ -90,7 +64,6 @@ function SubMenu() {
                             type='search'
                             placeholder='Search...'
                             aria-label='Search Channels'
-                            onClick={notImplementedToast}
                         />
                         <SearchIcon
                             width={16}
@@ -119,8 +92,8 @@ function SubMenu() {
                     />
                 </CollapsibleTrigger>
                 <CollapsibleContent className='flex flex-col gap-2'>
-                    <Channel name='general' isNotImplemented />
-                    <Channel name='random' isNotImplemented />
+                    <Channel name='general' />
+                    <Channel name='random' />
                 </CollapsibleContent>
             </Collapsible>
         </div>

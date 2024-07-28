@@ -1,7 +1,6 @@
-import React, { type MouseEventHandler } from 'react'
+import React from 'react'
 import SubMenuHeader from './SubMenuHeader'
 import SubMenuContent from './SubMenuContent'
-import SubMenuSearch from './SubMenuSearch'
 import { useSubMenuStore } from '../../../../core/stores/SubMenuStore'
 
 export interface SubMenuProps {
@@ -10,11 +9,7 @@ export interface SubMenuProps {
     showSearch?: boolean
 }
 
-const SubMenu: React.FC<SubMenuProps> = ({
-    title,
-    children,
-    showSearch = true
-}) => {
+export default function SubMenu({ title, children }: SubMenuProps) {
     const isSubMenuVisible = useSubMenuStore((state) => state.isSubMenuVisible)
 
     if (!isSubMenuVisible) return null
@@ -34,5 +29,3 @@ const SubMenu: React.FC<SubMenuProps> = ({
         </aside>
     )
 }
-
-export default SubMenu

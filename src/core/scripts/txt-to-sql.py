@@ -14,8 +14,8 @@ def parse_message(line):
     return None
 
 def process_chat_history(input_file, output_file):
-    chat_name = "chat_Daphne"
-    user_name = "Daphne"
+    chat_name = "chat_name"
+    user_name = "Name"
     
     with open(output_file, 'w', encoding='utf-8') as out_file:
         # Write create table statements

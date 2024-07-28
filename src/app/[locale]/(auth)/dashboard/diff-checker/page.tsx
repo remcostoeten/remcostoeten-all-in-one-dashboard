@@ -3,19 +3,23 @@
 import React, { useState, useEffect } from 'react'
 import { TextArea, CompareButton } from './components'
 import { diffLines, Change } from 'diff'
-import { db } from 'src/core/libs/DB'
 import { Button } from '@c/ui/button'
-import { useRouter } from 'next/navigation'
-import { textComparisonSchema } from 'src/core/models/Schema'
 import Results from './components/Results'
-import { useSubMenuStore } from '@/core/stores/SubMenuStore'
 import { handleSave } from './save'
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger
+} from '@/components/ui/popover'
+import { Input } from '@/components/ui/input'
+import { toast } from 'sonner'
 
 const DiffCheckerDashboard: React.FC = () => {
     const [listA, setListA] = useState('')
     const [listB, setListB] = useState('')
     const [results, setResults] = useState<Change[]>([])
-    const router = useRouter()
+    const [title, setTitle] = useState('')
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
     useEffect(() => {
         const storedListA = localStorage.getItem('diffCheckerListA')
@@ -33,7 +37,6 @@ const DiffCheckerDashboard: React.FC = () => {
             localStorage.setItem('diffCheckerListB', listB)
             localStorage.setItem('diffCheckerResults', JSON.stringify(results))
         }
-
         const debounce = setTimeout(storeResults, 500)
 
         return () => clearTimeout(debounce)
@@ -49,16 +52,27 @@ const DiffCheckerDashboard: React.FC = () => {
         setListA('')
         setListB('')
         setResults([])
+        toast('Cleared all text fields.')
     }
-    const isSubMenuVisible = useSubMenuStore(state => state.isSubMenuVisible)
 
-    function toggleSubMenu() {
-        useSubMenuStore.getState().toggleSubMenu()
+    const handleSaveWithTitle = async (formData: FormData) => {
+        const titleFromForm = formData.get('title') as string
+
+        if (!titleFromForm.trim()) {
+            toast('Please enter a title for the comparison.')
+            return
+        }
+        try {
+            await handleSave(listA, listB, results, titleFromForm)
+            setIsPopoverOpen(false)
+            toast('Comparison saved successfully.')
+        } catch (error) {
+            toast('Error saving comparison. Please try again.')
+        }
     }
 
     return (
-        <>
-            <button onClick={toggleSubMenu}>Toggle SubMenu</button>
+        <div className='space-y-2'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <TextArea id='listA' value={listA} onChange={setListA} />
                 <TextArea id='listB' value={listB} onChange={setListB} />
@@ -71,13 +85,42 @@ const DiffCheckerDashboard: React.FC = () => {
             </div>
             {results.length > 0 && (
                 <>
-                    <Results results={results} />{' '}
-                    <Button onClick={() => handleSave(listA, listB, results)}>
-                        Save Comparison
-                    </Button>
+                    <Results results={results} />
+                    <Popover
+                        open={isPopoverOpen}
+                        onOpenChange={setIsPopoverOpen}
+                    >
+                        <PopoverTrigger asChild>
+                            <Button>Save Comparison</Button>
+                        </PopoverTrigger>
+                        <PopoverContent className='w-80'>
+                            <form action={handleSaveWithTitle}>
+                                <div className='grid gap-4'>
+                                    <div className='space-y-2'>
+                                        <h4 className='font-medium leading-none'>
+                                            Save Comparison
+                                        </h4>
+                                        <p className='text-sm text-muted-foreground'>
+                                            Enter a title for this comparison
+                                        </p>
+                                    </div>
+                                    <div className='grid gap-2'>
+                                        <Input
+                                            id='title'
+                                            name='title'
+                                            backgroundColor='!bg-section'
+                                            defaultValue={title}
+                                            placeholder='Enter title'
+                                        />
+                                        <Button type='submit'>Save</Button>
+                                    </div>
+                                </div>
+                            </form>
+                        </PopoverContent>
+                    </Popover>
                 </>
             )}
-        </>
+        </div>
     )
 }
 

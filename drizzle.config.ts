@@ -7,9 +7,9 @@ export default {
     schema: './src/core/models/Schema.ts',
     dialect: 'sqlite',
     dbCredentials: {
-        url: 'libsql://all-in-one-dashboard-remcostoeten.turso.io',
+        url: 'libsql://topical-the-wasp-remcostoeten.turso.io',
         authToken:
-            'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MjEzNDEzNzYsImlkIjoiNWE4N2NmNTgtY2RmYi00ZDBjLWI3NWEtZGE0NzBiOWE5OTgxIn0.0axiZEHj1ekTLw1B_LcKeJqBVj3o3shvDgXC46NYnKSCt4sYyfOCPdLUBrnrhq5uCm0Huog0_gpRM-PG6w5xBQ'
+            'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MjIwNzk1NDYsImlkIjoiMWRhNjMwODEtMDU1NC00MmEyLThmN2UtNDFjN2NlNjJiZjllIn0.jUQYb-deciQi850e2pVogNsbKKprjpl7znM-FXWQwVHZKgZNBYTz-qxtag0DQlRBvJvdxTeJKzh36bpU-jEXCw'
     },
     verbose: true
 } satisfies Config
