@@ -58,7 +58,12 @@ export default function Providers({
                     {children}
                     <Analytics />
                     <SpeedInsights />
-                    <Toaster position='top-center' />
+                    <Toaster
+                        toastOptions={{
+                            closeButton: true
+                        }}
+                        position='top-center'
+                    />
                 </TooltipProvider>
             </ClerkProvider>
         </NextIntlClientProvider>

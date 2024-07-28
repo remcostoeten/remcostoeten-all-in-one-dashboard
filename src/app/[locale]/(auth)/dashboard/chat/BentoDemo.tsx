@@ -1,4 +1,10 @@
-import { Card, CardContent } from '@/components/ui/card'
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/lLIzjAqorJ1
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export default function Component() {
@@ -6,48 +12,50 @@ export default function Component() {
         <div className='flex min-h-screen w-full flex-col bg-muted/40'>
             <div className='flex flex-1 flex-col items-center justify-center gap-4 p-4 sm:px-6 md:gap-8'>
                 <Card className='w-full max-w-md'>
-                    <CardContent className='space-y-4 py-4'>
+                    <CardHeader className='border-b pb-4'>
+                        <div className='flex items-center justify-between'>
+                            <CardTitle>Chat</CardTitle>
+                            <div className='flex items-center gap-2'>
+                                <Button variant='ghost' size='icon'>
+                                    <SearchIcon className='h-4 w-4' />
+                                    <span className='sr-only'>Search</span>
+                                </Button>
+                                <Button variant='ghost' size='icon'>
+                                    <SettingsIcon className='h-4 w-4' />
+                                    <span className='sr-only'>Settings</span>
+                                </Button>
+                            </div>
+                        </div>
+                    </CardHeader>
+                    <CardContent className='space-y-4'>
                         <p>
-                            The chat feature is currently unavailable due
-                            current database restructuring process.
+                            The chat feature is currently unavailable due to an
+                            ongoing database restructuring process.
                         </p>
                         <p>
                             This chat feature was originally designed to support
-                            the export of WhatsApp chat logs to
-                            <code>.txt</code> files, which were then converted
-                            to <code>.json</code> format. However, as the
-                            feature evolved, we have now transitioned to storing
-                            the chat data in a SQLite database for better
-                            performance and scalability.
+                            the export of WhatsApp chat logs to .txt files,
+                            which were then converted to .json format. However,
+                            as the feature evolved, we have now transitioned to
+                            storing the chat data in a SQLite database for
+                            better performance and scalability.
                         </p>
                         <p>
-                            Worked like a charm, mutate favourites, mutate
-                            adminOnly, search through 100k messages instantly,
-                            pagination etc. Only problem was 450M reads in a
-                            couple days, thus have to rethink the structure.
-                        </p>
-                        <p>
-                            The script used to convert the <code>.txt</code>
-                            files to a SQLite database is available in our{' '}
-                            <code>SQLite</code>
+                            The script used to convert the .txt files to a
+                            SQLite database is available in our{' '}
                             <Link
-                                href='https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard/blob/main/src/core/scripts/txt-to-sql.py'
-                                target='_blank'
-                                className='ml-1 text-primary underline'
+                                href='#'
+                                className='text-primary underline'
                                 prefetch={false}
                             >
                                 GitHub repository
                             </Link>
-                            . Feel free to check it out if you`re interested in
-                            the technical details of this migration. The guide
-                            to setting up the SQLite database is available{' '}
-                            <Link
-                                href='https://github.com/remcostoeten/remcostoeten-all-in-one-dashboard/blob/main/src/core/scripts/whatsapp-readme.md'
-                                target='_blank'
-                                className='underline'
-                            >
-                                here
-                            </Link>
+                            . Feel free to check it out if you're interested in
+                            the technical details of this migration.
+                        </p>
+                        <p>
+                            We apologize for the inconvenience and appreciate
+                            your patience as we work to improve the platform.
                         </p>
                     </CardContent>
                 </Card>

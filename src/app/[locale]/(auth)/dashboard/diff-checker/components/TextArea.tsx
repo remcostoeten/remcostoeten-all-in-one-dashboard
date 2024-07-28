@@ -3,8 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Button } from '@c/ui/button'
 import { Textarea } from '@c/ui/textarea'
-import { useToast } from '@/components/ui'
 import useKeyboardShortcut from '@/core/hooks/useKeyboardShortcut'
+import { toast } from 'sonner'
 
 type TextAreaProps = {
     id: string
@@ -18,7 +18,7 @@ const formatJavaScript = (code: string): string => {
     const indentChar = '    ' // four spaces for indentation
 
     return lines
-        .map((line) => {
+        .map(line => {
             line = line.trim()
             if (line.endsWith('{')) {
                 const indentedLine = indentChar.repeat(indentLevel) + line
@@ -39,7 +39,6 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
     const [isFormatting, setIsFormatting] = useState(false)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const lineNumbersRef = useRef<HTMLDivElement>(null)
-    const { toast } = useToast()
 
     const [charCount, setCharCount] = useState(0)
     const [lineCount, setLineCount] = useState(0)
@@ -68,10 +67,8 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
         const sortedText = value.split('\n').sort().join('\n')
 
         onChange(sortedText)
-        toast({
-            title: 'Sorted',
-            description: 'The text has been sorted alphabetically.'
-        })
+
+        toast('Lines sorted alphabetically.')
     }
 
     const handlePaste = async () => {
@@ -79,17 +76,11 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
             const text = await navigator.clipboard.readText()
 
             onChange(text)
-            toast({
-                title: 'Pasted',
-                description: 'Text pasted from clipboard.'
-            })
+
+            toast('Pasted from clipboard.')
         } catch (err) {
             console.error('Failed to read clipboard contents: ', err)
-            toast({
-                title: 'Error',
-                description: 'Failed to paste from clipboard.',
-                variant: 'destructive'
-            })
+            toast('Failed to read clipboard contents.', 'error')
         }
     }
 
@@ -99,17 +90,11 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
             const formattedText = formatJavaScript(value)
 
             onChange(formattedText)
-            toast({
-                title: 'Formatted',
-                description: 'The code has been formatted.'
-            })
+
+            toast('Code formatted successfully.')
         } catch (err) {
             console.error('Failed to format code: ', err)
-            toast({
-                title: 'Error',
-                description: 'Failed to format code.',
-                variant: 'destructive'
-            })
+            toast('Failed to format code.', 'error')
         } finally {
             setIsFormatting(false)
         }
@@ -117,10 +102,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
 
     const handleClear = () => {
         onChange('')
-        toast({
-            title: 'Cleared',
-            description: 'The text area has been cleared.'
-        })
+        toast('Cleared text area.')
     }
 
     const jumpToLine = (lineNumber: number) => {
@@ -162,7 +144,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
                     type='number'
                     placeholder='Jump to line'
                     value={lineNumber}
-                    onChange={(e) => setLineNumber(e.target.value)}
+                    onChange={e => setLineNumber(e.target.value)}
                     onKeyDown={handleKeyDown}
                     className='w-full h-8 px-2 border rounded-md rounded-b-0  text-xs text-text bg-[#070D1C]'
                 />
@@ -187,7 +169,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
                     id={id}
                     ref={textareaRef}
                     value={value}
-                    onChange={(e) => onChange(e.target.value)}
+                    onChange={e => onChange(e.target.value)}
                     className='w-full h-40 pl-10 border rounded-md !border-t-0'
                     style={{
                         fontFamily: 'monospace',
