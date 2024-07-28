@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { db } from 'src/core/libs/DB'
 import Link from 'next/link'
-import { textComparisonSchema } from 'src/core/models/Schema'
+import { db } from '@/core/libs/DB'
+import { textComparisonSchema } from '@/core/models/Schema'
 
 const OverviewPage: React.FC = () => {
     const [comparisons, setComparisons] = useState([])

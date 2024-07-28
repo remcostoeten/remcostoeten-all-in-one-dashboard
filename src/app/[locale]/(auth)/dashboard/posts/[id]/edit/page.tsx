@@ -11,12 +11,12 @@ export default function EditPost({ params }: { params: { id: string } }) {
 
     useEffect(() => {
         fetch(`/api/posts/${params.id}`)
-            .then(res => res.json())
+            .then((res) => res.json())
             .then(setPost)
             .catch(() => setError('Failed to load post'))
     }, [params.id])
 
-    const handleSubmit = async postData => {
+    const handleSubmit = async (postData) => {
         try {
             const response = await fetch(`/api/posts/${params.id}`, {
                 method: 'PUT',

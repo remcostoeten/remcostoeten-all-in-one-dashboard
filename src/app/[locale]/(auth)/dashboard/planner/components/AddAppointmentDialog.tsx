@@ -92,7 +92,7 @@ const AddAppointmentDialog: React.FC = () => {
         startAddAppointmentTransition(() => {
             toast.promise(
                 () =>
-                    new Promise(resolve => {
+                    new Promise((resolve) => {
                         resolve(addAppointment(newAppointment))
                     }),
                 {
@@ -255,7 +255,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                 <SelectValue>
                                                     {field.value
                                                         ? resources.find(
-                                                              resource =>
+                                                              (resource) =>
                                                                   resource.id ===
                                                                   field.value
                                                           )?.name
@@ -263,7 +263,7 @@ const AddAppointmentDialog: React.FC = () => {
                                                 </SelectValue>
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {resources.map(resource => (
+                                                {resources.map((resource) => (
                                                     <SelectItem
                                                         key={resource.id}
                                                         value={resource.id}

@@ -12,7 +12,6 @@ import { SearchIcon } from '@/components/theme/icons'
 import IconShell from '@/components/theme/shells/IconShell'
 
 const IndividualChatWrapper = ({
-    chatName,
     image
 }: {
     chatName: string

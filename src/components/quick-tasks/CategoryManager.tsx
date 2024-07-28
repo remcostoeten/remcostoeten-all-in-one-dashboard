@@ -15,7 +15,7 @@ type CategoryManagerProps = {
     onCategoryDeleted: (categoryId: string) => void
 }
 
-type Category = {
+export type Category = {
     id: string
     name: string
 }
@@ -32,7 +32,7 @@ export default function CategoryManager({
     useEffect(() => {
         const fetchCategories = async () => {
             const fetchedCategories = await getCategories()
-            const updatedCategories = fetchedCategories.map(category => ({
+            const updatedCategories = fetchedCategories.map((category) => ({
                 id: category.id.toString(),
                 name: category.name
             }))
@@ -55,7 +55,7 @@ export default function CategoryManager({
                 if (result.success) {
                     const newCat = { id: result.id, name: newCategory.trim() }
 
-                    setCategories(prev => [...prev, newCat])
+                    setCategories((prev) => [...prev, newCat])
                     setNewCategory('')
                     onCategoryAdded(newCat)
                     toast('Category added successfully')
@@ -73,17 +73,19 @@ export default function CategoryManager({
     const handleDeleteCategory = useCallback(
         async (categoryId: string) => {
             try {
-                setDeletingCategories(prev => [...prev, categoryId])
-                await new Promise(resolve => setTimeout(resolve, 300))
+                setDeletingCategories((prev) => [...prev, categoryId])
+                await new Promise((resolve) => setTimeout(resolve, 300))
                 await deleteCategory(Number(categoryId))
-                setCategories(prev => prev.filter(cat => cat.id !== categoryId))
+                setCategories((prev) =>
+                    prev.filter((cat) => cat.id !== categoryId)
+                )
                 onCategoryDeleted(categoryId)
                 toast('Category deleted successfully')
             } catch (error) {
                 toast('Failed to delete category')
             } finally {
-                setDeletingCategories(prev =>
-                    prev.filter(id => id !== categoryId)
+                setDeletingCategories((prev) =>
+                    prev.filter((id) => id !== categoryId)
                 )
             }
         },
@@ -99,12 +101,18 @@ export default function CategoryManager({
                     <div className='flex items-center'>
                         <Input
                             type='text'
+                            backgroundColor='bg-section !border-none'
                             placeholder='New Category'
                             className='flex-grow mr-2'
                             value={newCategory}
-                            onChange={e => setNewCategory(e.target.value)}
+                            onChange={(e) => setNewCategory(e.target.value)}
                         />
-                        <Button onClick={handleAddCategory}>Add</Button>
+                        <button
+                            className='btn btn-secondary bg-background text-white border-none rounded-l-none'
+                            onClick={handleAddCategory}
+                        >
+                            Add
+                        </button>
                     </div>
                 </div>
             )
@@ -114,7 +122,12 @@ export default function CategoryManager({
             value: 'delete',
             content: (
                 <div className=''>
-                    {categories.map(category => (
+                    {categories.length === 0 && (
+                        <div className='text-center text-gray-500'>
+                            No categories to delete
+                        </div>
+                    )}
+                    {categories.map((category) => (
                         <Flex
                             key={category.id}
                             className={`justify-between items-center mb-2 bg-section p-4 category-item ${
@@ -149,8 +162,6 @@ export default function CategoryManager({
             <AnimatedTabs
                 tabs={tabs}
                 containerClassName='mb-4'
-                contentClassName='flex flex-col justify-start
-                items-center'
                 value={activeTab}
                 onValueChange={setActiveTab}
             />

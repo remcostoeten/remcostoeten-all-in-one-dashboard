@@ -7,7 +7,7 @@ import { cn } from '@/core/utils/cn'
 type Tab = {
     title: string
     value: string
-    content?: string | React.ReactNode | any
+    content?: string | React.ReactNode
 }
 
 export default function AnimatedTabs({
@@ -16,8 +16,7 @@ export default function AnimatedTabs({
     activeTabClassName,
     tabClassName,
     contentClassName,
-    value,
-    onValueChange
+    value
 }: {
     tabs: Tab[]
     containerClassName?: string
@@ -25,7 +24,6 @@ export default function AnimatedTabs({
     tabClassName?: string
     contentClassName?: string
     value: string
-    onValueChange: (value: string) => void
 }) {
     const [hovering, setHovering] = useState(false)
     const [tabs, setTabs] = useState<Tab[]>(propTabs)
@@ -34,7 +32,7 @@ export default function AnimatedTabs({
         setTabs(propTabs)
     }, [propTabs])
 
-    const activeTab = tabs.find(tab => tab.value === value) || tabs[0]
+    const activeTab = tabs.find((tab) => tab.value === value) || tabs[0]
 
     const moveSelectedTabToTop = (idx: number) => {
         const newTabs = [...tabs]
@@ -42,7 +40,6 @@ export default function AnimatedTabs({
 
         newTabs.unshift(selectedTab)
         setTabs(newTabs)
-        onValueChange(selectedTab.value)
     }
 
     return (

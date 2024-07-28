@@ -52,7 +52,8 @@ export const ModalTrigger = ({
     const { setOpen } = useModal()
 
     return (
-        <button
+        <div
+            role='button'
             className={cn(
                 'px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden',
                 className
@@ -60,7 +61,7 @@ export const ModalTrigger = ({
             onClick={() => setOpen(true)}
         >
             {children}
-        </button>
+        </div>
     )
 }
 
@@ -200,7 +201,7 @@ const CloseIcon = () => {
             onClick={() => setOpen(false)}
             size='icon'
             variant='outline'
-            className='absolute top-4 right-4 rounded-full'
+            className='absolute top-0  hover:bg-section/80 right-0 rounded-l-none rounded-tr-xl rounded-tl-sm rounded-br-sm bg-section'
         >
             <svg
                 xmlns='http://www.w3.org/2000/svg'

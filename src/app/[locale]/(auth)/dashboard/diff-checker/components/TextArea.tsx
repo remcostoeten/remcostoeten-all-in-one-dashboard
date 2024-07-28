@@ -8,7 +8,6 @@ import useKeyboardShortcut from '@/core/hooks/useKeyboardShortcut'
 
 type TextAreaProps = {
     id: string
-    title: string
     value: string
     onChange: (value: string) => void
 }
@@ -36,12 +35,7 @@ const formatJavaScript = (code: string): string => {
         .join('\n')
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({
-    id,
-    title,
-    value,
-    onChange
-}) => {
+export const TextArea: React.FC<TextAreaProps> = ({ id, value, onChange }) => {
     const [isFormatting, setIsFormatting] = useState(false)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const lineNumbersRef = useRef<HTMLDivElement>(null)
@@ -178,12 +172,6 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
     return (
         <div>
-            <label
-                htmlFor={id}
-                className='block text-sm font-medium text-gray-700 dark:text-gray-300'
-            >
-                {title}
-            </label>
             <JumpBar />
             <div className='relative overflow-hidden'>
                 <div

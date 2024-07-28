@@ -19,7 +19,7 @@ export default function PostForm({ post, onSubmit }: PostFormProps) {
     const [title, setTitle] = useState(post?.title || '')
     const [content, setContent] = useState(post?.content || '')
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         onSubmit({ title, content })
     }
@@ -39,7 +39,7 @@ export default function PostForm({ post, onSubmit }: PostFormProps) {
         <form onSubmit={handleSubmit} className='space-y-4'>
             <Input
                 value={title}
-                onChange={e => setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}
                 placeholder='Title'
             />
             <Editor

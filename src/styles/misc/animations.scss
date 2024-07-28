@@ -38,15 +38,15 @@ $duration: 0.7s;
     transition: all 0.3s ease-out;
     max-height: 50px; /* Adjust based on your item height */
     opacity: 1;
-  }
-  
-  .category-item.deleting {
+}
+
+.category-item.deleting {
     max-height: 0;
     opacity: 0;
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
+}
 
 // End animation for icon log hover
 

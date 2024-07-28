@@ -1,3 +1,5 @@
+'use client'
+
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from '@vercel/analytics/react'
@@ -8,6 +10,7 @@ import { Toaster } from 'sonner'
 import { PlannerDataContextProvider } from '@/core/contexts/CalendarDataContext'
 import { enUS, nlNL } from '@clerk/localizations'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { PlannerProvider } from './contexts/PlannerContext'
 
 type ProvidersProps = {
     children: ReactNode
@@ -53,18 +56,20 @@ export default function Providers({
                     initialAppointments={initialAppointments}
                     initialResources={initialResources}
                 >
-                    <TooltipProvider>
-                        <NextTopLoader
-                            showSpinner={false}
-                            color='#02c9a5'
-                            initialPosition={0.38}
-                            easing='ease-in-out'
-                        />
-                        {children}
-                        <Analytics />
-                        <SpeedInsights />
-                        <Toaster position='top-center' />
-                    </TooltipProvider>
+                    <PlannerProvider>
+                        <TooltipProvider>
+                            <NextTopLoader
+                                showSpinner={false}
+                                color='#02c9a5'
+                                initialPosition={0.38}
+                                easing='ease-in-out'
+                            />
+                            {children}
+                            <Analytics />
+                            <SpeedInsights />
+                            <Toaster position='top-center' />
+                        </TooltipProvider>
+                    </PlannerProvider>
                 </PlannerDataContextProvider>
             </ClerkProvider>
         </NextIntlClientProvider>

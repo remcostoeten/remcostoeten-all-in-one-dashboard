@@ -37,7 +37,7 @@ export function ActionsDropdownMenu({
                     {menuItems.map((item, index) => (
                         <DropdownMenuItem
                             key={index}
-                            onSelect={event => {
+                            onSelect={(event) => {
                                 event.preventDefault()
                                 item.onClick()
                             }}

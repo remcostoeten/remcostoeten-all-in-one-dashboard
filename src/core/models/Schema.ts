@@ -59,6 +59,7 @@ export const usersSchema = sqliteTable('users', {
 
 export const textComparisonSchema = sqliteTable('text_comparisons', {
     id: integer('id').primaryKey(),
+    title: text('title').notNull(), // Add this line
     listA: text('list_a').notNull(),
     listB: text('list_b').notNull(),
     result: text('result').notNull(),
@@ -89,7 +90,9 @@ export const tasks = sqliteTable('tasks', {
     id: integer('id').primaryKey(),
     title: text('title').notNull(),
     description: text('description'),
-    content: text('content')
+    content: text('content'),
+    priority: integer('priority').notNull(),
+    categoryId: integer('category_id').references(() => categories.id)
 })
 
 export const subtasks = sqliteTable('subtasks', {

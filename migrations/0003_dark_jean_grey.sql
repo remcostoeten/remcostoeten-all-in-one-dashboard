@@ -1,0 +1,1 @@
+ALTER TABLE `text_comparisons` ADD `title` text NOT NULL;
