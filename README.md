@@ -1,3 +1,13 @@
+## Currently on hold 
+
+I'm currently reevaluating the architecture and direction of my projects, as I'm not entirely satisfied with the current setup. Lately, I've been working on a few smaller, enjoyable projects:
+- [Emoji Feedback Form](https://github.com/remcostoeten/Emoji-feedback-form)
+- [Next.js GitHub Metrics (Vercel Style)](https://github.com/remcostoeten/nextjs-github-metrics-vercel-style)
+
+As I work through these, I'm rethinking what I want in terms of architecture and design.
+<hr/>
+
+
 ![Remco Stoeten - all in one dashboard banner](https://github.com/user-attachments/assets/7324013b-faad-4081-86bb-23890f445552)
 <small>Because I hate load times (Cloudflare, ugh), and not owning my own stuff.</small>
 
