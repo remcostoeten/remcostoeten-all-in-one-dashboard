@@ -31,7 +31,7 @@
         "@atlaskit/pragmatic-drag-and-drop": "^1.2.1",
         "@babel/parser": "^7.24.8",
         "@builder.io/dev-tools": "^1.0.18",
-        "@builder.io/react": "^3.2.11",
+        "@builder.io/react": "^8.0.5",
         "@builder.io/sdk": "^2.2.5",
         "@clerk/localizations": "^2.4.5",
         "@clerk/nextjs": "^5.1.6",
