@@ -82,7 +82,7 @@
         "cmdk": "^1.0.0",
         "date-fns": "^3.6.0",
         "diff": "^5.2.0",
-        "drizzle-orm": "^0.31.1",
+        "drizzle-orm": "^0.40.0",
         "embla-carousel-react": "^8.1.6",
         "framer-motion": "^11.2.11",
         "input-otp": "^1.2.4",
